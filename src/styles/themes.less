@@ -1,0 +1,439 @@
+// Any changes needed for specific bootswatch themes should be put in here
+
+/* Light themes */
+.cerulean, .cosmo, .flatly, .journal, .litera, .lumen, .lux, .materia, .minty, .pulse, .sandstone, .simplex, .spacelab, .sketchy, .united, .yeti {
+  // make the boss icon dark
+  img[src="assets/images/dungeons/boss.svg"] {
+    filter: invert(1) brightness(90%);
+  }
+}
+
+/* Dark themes */
+.cyborg, .darkly, .slate, .superhero, .solar {
+  // make pokeball and gear images lighter
+  img[src="assets/images/pokeball/None.svg"], img[src="assets/images/fa-cog.svg"] {
+    filter: invert(1) brightness(90%);
+  }
+
+  // make the pokemon silhouettes lighter
+  .dungeon-pokemon-locked {
+    filter: brightness(0%) invert(100%);
+    opacity: 0.3;
+  }
+
+  code {
+      color: #f291bf;
+  }
+}
+
+/* Themes with light start menu text */
+.cosmo, .cyborg, .darkly, .flatly, .journal, .litera, .minty, .sandstone, .sketchy, .slate, .solar, .spacelab, .superhero, .united {
+  // make mute, unmute, save images white to match "Start Menu" text color
+  img[src="assets/images/volume-high.svg"],
+  img[src="assets/images/volume-xmark.svg"],
+  img[src="assets/images/floppy-disk.svg"] {
+    filter: invert(1) brightness(100%);
+  }
+}
+
+/* Themes who need more space in tables */
+.cerulean, .cyborg, .darkly, .flatly, .journal, .litera, .materia, .minty, .pulse, .sandstone, .simplex, .sketchy, .slate, .spacelab, .superhero, .united, .yeti {
+  @media (max-width: 992px)
+  {
+    #pokemonVitaminExpandedModal {
+      .tight {
+        .btn {
+          padding-left: 5px !important;
+          padding-right: 5px !important;
+        }
+      }
+    }
+  }
+}
+
+/* Fixes font-light being too bright / unreadable for table-warnings theme specific colour themes */
+.journal, .lux, .materia, .pulse, .sketchy, .spacelab, .united {
+  .table-warning.text-light {
+    color: black !important;
+  }
+}
+
+/* Individual themes */
+.cerulean {
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .item-selected, .pokemon-selected {
+      color: whitesmoke;
+      background-image: linear-gradient(#4e5458, #565b60 40%, #5b6165);
+    }
+  }
+
+  .dropdown-item:hover {
+    color: #495057;
+  }
+}
+
+.cosmo {
+  .progress .progress-bar {
+    font-size: 12px;
+  }
+
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .list-group-item-action {
+      color: whitesmoke;
+    }
+
+    .list-group-item-action:hover {
+      color: black;
+    }
+  }
+
+  .dropdown-item:hover {
+    color: #fff;
+  }
+}
+
+.cyborg {
+  .text-light {
+    color: whitesmoke !important;
+  }
+
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .list-group-item-action {
+      color: whitesmoke;
+    }
+  }
+}
+
+.darkly {
+  .text-primary, .text-light {
+    color: whitesmoke !important;
+  }
+
+  #FAQModal {
+    .border-bottom.border-dark {
+        border-color: var(--secondary) !important;
+    }
+  }
+}
+
+.flatly {
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .list-group-item-action:hover {
+      color: black;
+    }
+  }
+}
+
+.litera {
+  @media (max-width: 767px) {
+    #berryDexPreviewList {
+      @media (max-height: 650px) {
+        max-height: calc(40vh - 50px);
+      }
+    }
+  }
+}
+
+.lumen {
+  /* Weather button in dock modal */
+  .btn-weather-dock {
+    border-color: rgba(0,0,0,25%);
+  }
+
+  .dropdown-item.active:hover {
+    color: #000;
+  }
+}
+
+.lux {
+  // Font was too large, covering other ui elements
+  .pageItemFooter {
+    font-size: 12px !important;
+  }
+
+  .pageItemTitle {
+    font-size: 30px !important;
+  }
+
+  #pokemonVitaminExpandedModal {
+    .tight {
+      .btn {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+      }
+    }
+  }
+
+  #berryDexModal {
+    .table-sm td, .table-sm th {
+      padding: 0.3rem;
+    }
+  }
+
+  #pokemonStatisticsModal {
+    .table-sm td, .table-sm th {
+        padding: 0.3rem 0;
+    }
+  }
+
+  /* Berrydex List */
+  @media (max-width: 991px) {
+    .berryDexPreviewColumn {
+      max-height: calc(100vh - 240px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    #berryDexPreviewList {
+      max-height: calc(50vh - 50px);
+
+      @media (max-height: 393px) {
+        max-height: calc(40vh - 55px);
+      }
+    }
+  }
+
+  .dropdown-item.active:hover {
+    color: #000;
+  }
+}
+
+.materia {
+  // Fixes button floating away on this theme
+  .stop-auto {
+    position: absolute;
+  }
+
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .item-selected, .pokemon-selected {
+      background: #2196f3 linear-gradient(180deg,#42a6f5,#2196f3) repeat-x;
+    }
+  }
+}
+
+.minty {
+    // Button without color class text is light, but expected to be dark
+    .btn:not([class*="btn-"]) {
+        color: #495057;
+    }
+
+    /* Evolution items */
+    #evo-item-list, #evo-pokemon-list {
+      .list-group-item-action:hover {
+        color: black;
+      }
+    }
+
+    .btn-dropdown {
+        color: #5a5a5a;
+    }
+}
+
+.sandstone {
+    /* Berrydex List */
+    @media (max-width: 991px) {
+      #berryDexPreviewFlavors {
+        font-size: small;
+      }
+    }
+
+    .dropdown-item:hover {
+        color: #fff;
+    }
+}
+
+.simplex {
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .item-selected, .pokemon-selected {
+      background: #d9230f !important;
+    }
+  }
+
+  .dropdown-item:hover {
+    color: #000;
+  }
+}
+
+.sketchy {
+  // Fix double close button
+  #toaster .toast-body, .text-light {
+    .close, .close:hover {
+      color: transparent;
+    }
+
+    .close::before,
+    .close:hover::before,
+    .close:focus::before,
+    .close:active::before {
+      color: whitesmoke;
+    }
+  }
+
+  #toaster .toast-header {
+    .close, .close:hover {
+      color: transparent;
+    }
+
+    .close::before,
+    .close:hover::before,
+    .close:focus::before,
+    .close:active::before {
+      color: #333;
+    }
+  }
+
+  //Still had double close for Battle Frontier
+  .close span {
+    visibility: hidden !important;
+  }
+
+  //Fixes margins causing white to float off modal
+  #battleContainer table .row {
+    margin: 0 !important
+  }
+
+  //Fixes save containers having a white table
+  .save-container table td {
+    background-color:unset !important;
+  }
+
+  .modal-header {
+    border-radius: 0;
+  }
+
+   // Font was not visible on the footer of battle-views
+  .pageItemFooter {
+    background-color: white; // Ensures background is white
+    color: black;
+    font-weight: 700;
+  }
+
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .list-group-item-action {
+      color: whitesmoke;
+    }
+
+    .list-group-item-action:hover {
+      color: black;
+    }
+  }
+
+  .multiselect-dropdown {
+    .form-check-input {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.slate {
+  #toaster, #achievementsModal {
+    .text-primary {
+      color: whitesmoke !important;
+    }
+  }
+
+  // BerryDex
+  @media (max-width: 991px) { // tablet
+    .berryDexPreviewColumn {
+      max-height: calc(100vh - 240px);
+    }
+  }
+
+  @media (max-width: 767px) {
+    #berryDexPreviewList {
+      max-height: calc(50vh - 50px);
+
+      @media (max-height: 393px) {
+        max-height: calc(40vh - 50px);
+      }
+    }
+  }
+
+  // Evolution items modal
+  #showItemsModal {
+    .item-selected {
+      color: whitesmoke;
+    }
+
+    .pokemon-selected {
+      background-image: linear-gradient(#4e5458, #565b60 40%, #5b6165);
+    }
+  }
+
+  // Main page
+  .card.border-secondary {
+    color: #ddd;
+  }
+
+  // make Modal Headers lighter
+  .modal-header {
+    color: whitesmoke
+  }
+}
+
+.solar {
+  // Farming
+  .seed-list-item.active {
+    background: rgba(255, 255, 255, 20%);
+  }
+
+  .berryDexButtons.btn-secondary {
+    background: rgba(0,0,0,0%);
+
+    span {
+      color: var(--secondary);
+    }
+  }
+
+  .berryDexButtons:hover {
+    span {
+      color: whitesmoke;
+    }
+  }
+
+  // Evolution items modal
+  #evo-item-list, #evo-pokemon-list {
+    .item-selected, .pokemon-selected {
+      color: whitesmoke;
+      background: #b58900 linear-gradient(180deg,#c09b26,#b58900) repeat-x;
+    }
+
+    .list-group-item-action {
+      color: whitesmoke;
+    }
+  }
+
+  // Main page
+  .card.border-secondary, #pokemonList {
+    color: #a0b6b8;
+  }
+}
+
+.spacelab {
+  /* Evolution items */
+  #evo-item-list, #evo-pokemon-list {
+    .item-selected, .pokemon-selected {
+      background: linear-gradient(#6d94bf,#446e9b 50%,#3e648d)
+    }
+  }
+}
+
+.superhero {
+  .text-light {
+    color: whitesmoke !important;
+  }
+}
+
+.yeti {
+    .dropdown-item.active:hover,
+    .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu .dropdown-item:hover {
+        color: #222;
+    }
+}
