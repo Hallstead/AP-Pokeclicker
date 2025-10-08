@@ -1301,6 +1301,7 @@ export const EnergyRestoreEffect = {
 
 // For random quest, name matches entry in gymList (created in Gym.ts)
 export const KantoGyms = [
+    'Hallstead\'s Yacht',
     'Pewter City',
     'Cerulean City',
     'Vermilion City',

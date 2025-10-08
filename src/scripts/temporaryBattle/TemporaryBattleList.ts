@@ -3,8 +3,8 @@
 const TemporaryBattleList: { [battleName: string]: TemporaryBattle } = {};
 
 //Kanto Temporary Battles
-TemporaryBattleList['JH'] = new TemporaryBattle(
-    'JH',
+TemporaryBattleList['Hallstead'] = new TemporaryBattle(
+    'Hallstead',
     [
         new GymPokemon('Squirtle', 1040, 9),
         new GymPokemon('Squirtle', 1040, 9),
@@ -22,7 +22,7 @@ TemporaryBattleList['JH'] = new TemporaryBattle(
     ],
     undefined,
     {
-        displayName: 'Champeon Hallstead',
+        displayName: 'Hallstead',
         returnTown: 'Viridian City',
         imageName: 'Black Mage',
         battleBackground: 'Default',

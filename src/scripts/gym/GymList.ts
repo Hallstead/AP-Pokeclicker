@@ -2,6 +2,28 @@
 const GymList: { [townName: string]: Gym } = {};
 
 // Kanto Gyms
+GymList['Hallstead\'s Yacht'] = new Gym(
+    'Hallstead',
+    'Hallstead\'s Yacht',
+    [
+        new GymPokemon('Blastoise', 1040, 100)
+    ],
+    BadgeEnums.None,
+    1000000,
+    '...Urge...to destroy world...rising...',
+    [new RouteKillRequirement(1, GameConstants.Region.kanto, 1)],
+    () => {
+        BagHandler.gainItem({type: ItemType.item, id: 'Mystery_egg'}, 100);
+        App.game.pokeballs.gainPokeballs(GameConstants.Pokeball.Masterball, 100, false);
+        Notifier.notify({
+            message: 'You were awarded 100 Mystery Eggs and 100 Masterballs for defeating the Hallstead!',
+            type: NotificationConstants.NotificationOption.success,
+            setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
+        });
+    },
+    undefined,
+    { imageName: 'Black Mage' }
+);
 GymList['Pewter City'] = new Gym(
     'Brock',
     'Pewter City',

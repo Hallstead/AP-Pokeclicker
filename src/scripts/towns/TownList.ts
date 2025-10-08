@@ -896,6 +896,16 @@ const UnownFigure = new NPC('Unown Figure', [
 ], { image: 'assets/images/npcs/Scientist (male).png' });
 
 //Kanto Towns
+TownList['Hallstead\'s Yacht'] = new Town(
+    'Hallstead\'s Yacht',
+    GameConstants.Region.kanto,
+    GameConstants.KantoSubRegions.Kanto,
+    [],
+    {
+        npcs: [],
+        ignoreAreaStatus: true,
+    }
+);
 TownList['Pallet Town'] = new Town(
     'Pallet Town',
     GameConstants.Region.kanto,
@@ -909,7 +919,7 @@ TownList['Viridian City'] = new Town(
     'Viridian City',
     GameConstants.Region.kanto,
     GameConstants.KantoSubRegions.Kanto,
-    [ViridianCityShop, TemporaryBattleList['Unrivaled Blue'], TemporaryBattleList["JH"]],
+    [ViridianCityShop, TemporaryBattleList['Unrivaled Blue']],
     {
         requirements: [new RouteKillRequirement(10, GameConstants.Region.kanto, 1)],
         npcs: [ViridianCityOldMan1, ViridianCityOldMan2, ViridianCityOldMan3, UnrivaledBlue],

@@ -106,7 +106,11 @@ class GymRunner {
                 setting: NotificationConstants.NotificationSetting.General.gym_won,
             });
             // If this is the first time defeating this gym
-            if (!App.game.badgeCase.hasBadge(gym.badgeReward)) {
+            // Note: some gyms don't award a badge (BadgeEnums.None). Using badge presence
+            // to detect first clear will fail for those gyms, so check the clears counter.
+            const gymIndex = GameConstants.getGymIndex(gym.town);
+            const gymClears = App.game.statistics.gymsDefeated[gymIndex]();
+            if (gymClears === 0) {
                 gym.firstWinReward();
             }
             GameHelper.incrementObservable(App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)]);

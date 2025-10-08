@@ -1,6 +1,7 @@
 enum BadgeEnums {
     'None',
     // Kanto
+    // 'Hallstead',
     'Boulder',
     'Cascade',
     'Thunder',
