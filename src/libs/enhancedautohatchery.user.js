@@ -242,6 +242,12 @@ function autoHatchFossil() {
         return false;
     }
     let priorityList = fossilList.filter(f => { 
+        // Defensive: GameConstants.FossilToPokemon may be missing in some builds
+        const mappingExists = typeof GameConstants.FossilToPokemon !== 'undefined' && GameConstants.FossilToPokemon[f.name];
+        if (!mappingExists) {
+            // If no mapping, treat as not priority (avoid throwing)
+            return false;
+        }
         const caughtStatus = PartyController.getCaughtStatusByName(GameConstants.FossilToPokemon[f.name]);
         return caughtStatus == CaughtStatus.NotCaught || (shinyFossilState && caughtStatus == CaughtStatus.Caught);
     });

@@ -71,14 +71,14 @@
         const chisel = tools.getTool(UndergroundToolType.Chisel);
         const grid = mine.grid;
 
-        if (bomb.durability >= bomb.durabilityPerUse) {
-            const targetIndex = grid.findIndex(tile => tile && tile.layerDepth > 0);
-            if (targetIndex !== -1) {
-                tools.selectedToolType = UndergroundToolType.Bomb;
-                UndergroundController.clickModalMineSquare(targetIndex);
-                return;
-            }
-        }
+        // if (bomb.durability >= bomb.durabilityPerUse) {
+        //     const targetIndex = grid.findIndex(tile => tile && tile.layerDepth > 0);
+        //     if (targetIndex !== -1) {
+        //         tools.selectedToolType = UndergroundToolType.Bomb;
+        //         UndergroundController.clickModalMineSquare(targetIndex);
+        //         return;
+        //     }
+        // }
 
         const rewardTiles = grid
             .map((tile, index) => ({ tile, index }))

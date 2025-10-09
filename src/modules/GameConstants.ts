@@ -820,7 +820,7 @@ export const Environments: Record<string, EnvironmentData> = {
     },
 
     Water: { // Diveball and, for Kanto, Surf RouteCss
-        [Region.kanto]: new Set([12, 13, 19, 20, 21, 24, 26, 31, 32, 33, 34, 35, 36, 'Cerulean City', 'Tanoby Ruins']),
+        [Region.kanto]: new Set([12, 13, 19, 20, 21, 24, 26, 31, 32, 33, 34, 35, 36, 'Cerulean City', "Hallstead's Yacht", 'Tanoby Ruins']),
         [Region.johto]: new Set([40, 41, 'Slowpoke Well']),
         [Region.hoenn]: new Set([105, 106, 107, 108, 109, 118, 122, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 'Gateon Port Battles']),
         [Region.sinnoh]: new Set([218, 219, 220, 223, 230, 'Pastoria City', 'Lake Verity', 'Lake Valor', 'Lake Acuity', 'Sendoff Spring']),
@@ -875,7 +875,7 @@ export type Environment = keyof typeof Environments;
 export type BattleBackgroundData = Partial<Record<Region, Set<string | number>>>;
 export const BattleBackgrounds: Record<string, BattleBackgroundData> = {
     Water: {
-        [Region.kanto]: new Set([12, 13, 19, 20, 21, 24, 26, 31, 32, 33, 34, 35, 36, 'Cerulean City', 'Tanoby Ruins']),
+        [Region.kanto]: new Set([12, 13, 19, 20, 21, 24, 26, 31, 32, 33, 34, 35, 36, 'Cerulean City', "Hallstead's Yacht", 'Tanoby Ruins']),
         [Region.johto]: new Set([40, 41, 'Slowpoke Well']),
         [Region.hoenn]: new Set([105, 106, 107, 108, 109, 118, 122, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 'Gateon Port Battles']),
         [Region.sinnoh]: new Set([218, 219, 220, 223, 230, 'Pastoria City', 'Lake Verity', 'Lake Valor', 'Sendoff Spring']),
@@ -1002,6 +1002,26 @@ export const BattleBackgroundImage: Record<BattleBackground, string> = {
     Mansion: 'mansion',
     Graveyard: 'graveyard',
     Default: '',
+};
+
+// Map Fossil item display names to the revived Pokémon name
+export const FossilToPokemon: Record<string, PokemonNameType> = {
+    'Helix Fossil': 'Omanyte',
+    'Dome Fossil': 'Kabuto',
+    'Old Amber': 'Aerodactyl',
+    'Root Fossil': 'Lileep',
+    'Claw Fossil': 'Anorith',
+    'Armor Fossil': 'Armaldo',
+    'Skull Fossil': 'Cranidos',
+    'Cover Fossil': 'Tirtouga',
+    'Plume Fossil': 'Archen',
+    'Jaw Fossil': 'Tyrunt',
+    'Sail Fossil': 'Amaura',
+    // Fossil pieces -> revived forms where applicable (they're pieces, but include common mappings)
+    'Fossilized Bird': 'Archen',
+    'Fossilized Fish': 'Dunsparce' as unknown as PokemonNameType,
+    'Fossilized Drake': 'Dratini' as unknown as PokemonNameType,
+    'Fossilized Dino': 'Tyrantrum' as unknown as PokemonNameType,
 };
 
 // Starter Pokémon
