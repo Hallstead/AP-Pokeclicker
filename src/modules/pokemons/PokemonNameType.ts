@@ -158,6 +158,7 @@ export type PokemonNameType
     | 'Persian'
     | 'Alolan Persian'
     | 'Psyduck'
+    | 'Psyduck (Black Mage)'
     | 'Golduck'
     | 'Mankey'
     | 'Pinkan Mankey'
