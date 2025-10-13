@@ -1,0 +1,90 @@
+<div class="modal fade noselect" id="gemMasterModal" tabindex="-1" role="dialog"
+     aria-labelledby="gemMasterModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4>Gem Master</h4>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">&times;</button>
+            </div>
+            <div>
+                <ul class="nav nav-tabs nav-fill">
+                    <li class="nav-item"><a data-toggle='tab' class='nav-link active' href="#gemMasterTrade">Trades</a></li>
+                </ul>
+            </div>
+            <div class="modal-body tab-content">
+                <div id="gemMasterTrade" class="tab-pane fade in active show">
+                    <div class="table-responsive" id="gemDealsBody">
+                        <table class="table table-sm table-hover table-striped m-0 text-left">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Inv</th>
+                                    <th></th>
+                                    <th>Gems</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Item</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind='foreach: GemDeals.getDeals(ShopHandler.shopObservable().shop)'>
+                                <!-- ko if: $data.isVisible() -->
+                                    <!-- ko foreach: gems -->
+                                    <tr>
+                                        <td class="vertical-middle" data-bind="text: App.game.gems.gemWallet[$data.gemType]().toLocaleString('en-US')"></td>
+                                        <td class="vertical-middle"><img height="24px" data-bind="attr: {src: Gems.image($data.gemType) }"/></td>
+                                        <td class="vertical-middle" data-bind="text: amount.toLocaleString('en-US') + ' x ' + PokemonType[$data.gemType]"></td>
+                                        <!-- ko if: $index() === 0 -->
+                                        <td class='vertical-middle' data-bind="attr: { rowspan: $parent.gems.length }">→</td>
+                                        <td class='vertical-middle' data-bind="attr: { rowspan: $parent.gems.length }">
+                                              <img class='mineInventoryItem' data-bind="attr: {
+                                                src: $parent.item.itemType.image
+                                              },
+                                              tooltip: {
+                                                title: ItemList[$parent.item.itemType.name].getDescription(),
+                                                trigger: 'hover',
+                                                placement:'bottom',
+                                                html: true
+                                              }"/>
+                                        </td>
+                                        <td class='vertical-middle' data-bind='attr: { rowspan: $parent.gems.length }'>
+                                            <span data-bind='text: $parent.item.amount + " × " + $parent.item.itemType.displayName'></span>
+                                            <span style="float: right; margin-right: 5px">
+                                                <knockout data-bind="if: ($parent.item.itemType instanceof CaughtIndicatingItem)">
+                                                    <span data-bind="template: { name: 'caughtStatusTemplate', data: {'status': $parent.item.itemType.getCaughtStatus()}}"></span>
+                                                </knockout>
+                                                <knockout data-bind="if: ($parent.item.itemType instanceof PokemonItem)">
+                                                    <span style="position: relative; top: -1px;"
+                                                        data-bind="template: { name: 'pokerusStatusTemplate', data: {
+                                                            'pokerus': $parent.item.itemType.getPokerusStatus(), 'width': '32px',
+                                                            'evs': App.game.party.getPokemonByName($parent.item.itemType.type)?.evs() }}">
+                                                    </span>
+                                                </knockout>
+                                            </span>
+                                        </td>
+                                        <td class='vertical-middle' data-bind="attr: { rowspan: $parent.gems.length }">
+                                            <div class="btn-group btn-block" data-bind="let: { tradeAmount: ko.observable(1) }">
+                                                <button class='btn btn-success btn-block' data-bind='click: function(){GemDeals.use(ShopHandler.shopObservable().shop, $parentContext.$index(), tradeAmount())}, css: { disabled: !GemDeals.canUse(ShopHandler.shopObservable().shop, $parentContext.$index()) }'>
+                                                    <knockout data-bind="text: !ItemList[$parent.item.itemType.name].isSoldOut() ? 'Trade' : 'Sold out'"></knockout>
+                                                </button>
+                                                <button type="button" data-bind="visible: ItemList[$parent.item.itemType.name].maxAmount > 1, text: tradeAmount() + '&nbsp;'" class="btn btn-success dropdown-toggle dropdown-toggle-split active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"'>
+                                                </button>
+                                                <div class="dropdown-menu" data-bind="foreach: [1, 10, 100, 1000, Infinity]">
+                                                    <button class="dropdown-item" type="button" data-bind="visible: ItemList[$parents[1].item.itemType.name].maxAmount > 1, click: function(){tradeAmount($data)}, text: $data"></button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <!-- /ko -->
+                                    </tr>
+                                    <!-- /ko -->
+                                <!-- /ko -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

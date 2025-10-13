@@ -1,0 +1,290 @@
+@import url("variables.less");
+
+@padding: 3px;
+
+#farmModal {
+    ul.nav {
+        width: 100%;
+    }
+}
+
+#farmView {
+  margin: 0 !important;
+}
+
+#seedList {
+  padding-top: 10px;
+  min-height: 362px;
+}
+
+#mulchList {
+  padding-top: 10px;
+}
+
+.seed-list-item {
+  cursor: pointer;
+  padding: @padding;
+  text-align: left !important;
+
+  :first-child {
+    margin-right: 3px;
+  }
+}
+
+.berryLocked {
+  filter: brightness(0%);
+  opacity: 0.2;
+}
+
+.BerrySelected {
+    cursor:url('../assets/images/farm/berry.png'), auto;
+}
+
+.MulchSelected {
+    cursor:url('../assets/images/farm/mulch.png'), auto;
+}
+
+.ShovelSelected {
+    cursor:url('../assets/images/farm/shovel.png'), auto;
+}
+
+.MulchShovelSelected {
+  cursor:url('../assets/images/farm/mulchShovel.png'), auto;
+}
+
+.PlotSafeLockSelected {
+  cursor:url('../assets/images/farm/plotSafeLock.png'), auto;
+}
+
+.ShiftPressed .plot-content {
+    cursor:url('../assets/images/farm/plotSafeLock.png'), auto;
+}
+
+.WandererHandling {
+  cursor:url('../assets/images/farm/wandererHandling.png'), auto;
+}
+
+.Boost_Mulch {
+    filter: hue-rotate(200deg);
+}
+
+.Rich_Mulch {
+    filter: hue-rotate(90deg);
+}
+
+.Surprise_Mulch {
+    filter: hue-rotate(300deg);
+}
+
+.Amaze_Mulch {
+    filter: hue-rotate(250deg);
+}
+
+.Freeze_Mulch {
+    filter: brightness(200%) hue-rotate(210deg);
+}
+
+.Gooey_Mulch {
+  filter: hue-rotate(30deg) saturate(200%);
+}
+
+#plotList, #plotListCard .row {
+  padding: 10px;
+
+  .plot {
+    padding: 2px;
+
+    .lock {
+      position: absolute;
+      width: 80%;
+      left: 10%;
+      bottom: 10%;
+    }
+
+    &:hover {
+      filter: brightness(95%);
+      cursor: pointer;
+
+      .plotLockHover {
+          display: flex;
+      }
+    }
+  }
+
+  .plotLocked {
+    opacity: 0.7;
+  }
+
+  .plotLockHover {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .plotImage {
+      aspect-ratio : 1 / 1;
+      width: 100%;
+      position: relative;
+
+      .plotSafeLockIcon {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          height: 16px;
+          width: 16px;
+          filter:
+                drop-shadow(0.2px 0.2px 0 black)
+                drop-shadow(-0.2px 0.2px 0 black)
+                drop-shadow(0.2px -0.2px 0 black)
+                drop-shadow(-0.2px -0.2px 0 black);
+      }
+  }
+
+  .plotButton {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+/* Overrides for farm module */
+#farmDisplay #plotListCard .row {
+  .plotImage {
+      .plotSafeLockIcon {
+          bottom: 3px;
+          right: 3px;
+          height: 12px;
+          width: 12px;
+          filter: none;
+      }
+      
+
+      .wandererSprite, .wandererCapture {
+        height: 60%;
+        width: 60%;
+        position: absolute;
+        pointer-events: none;
+        top: -10%;
+        left: -10%;
+      }
+  }
+}
+
+#farmHandsView {
+  .plot:hover {
+    cursor: pointer;
+  }
+
+  .plotEnabled {
+    filter: hue-rotate(90deg);
+  }
+
+  .plotDisabled {
+    filter: brightness(50%) opacity(90%);
+  }
+}
+
+@media (min-width: 992px) { // computer
+  .berryDexPreviewColumn {
+    max-height: calc(100vh - 205px);
+  }
+}
+
+@media (max-width: 991px) { // tablet
+  .berryDexPreviewColumn {
+    max-height: calc(100vh - 225px);
+  }
+}
+
+@media (max-width: 767px) { // phone
+  #berryDexPreviewContainer {
+    flex-direction: column-reverse;
+  }
+
+  #berryDexPreviewList {
+    max-height: calc(47vh - 5px);
+
+    @media (max-height: 550px) {
+      max-height: calc(40vh - 50px);
+    }
+  }
+
+  #berryDexPreviewTable {
+    max-height: calc(50vh - 205px);
+  }
+}
+
+#berryDexPreviewTable {
+  scrollbar-width: thin;
+}
+
+
+#berryDexModal .wanderPokemonList, #berryDexPreviewTable .wanderPokemonList {
+  width: 100%;
+
+  .list-inline-item {
+    position: relative;
+    margin-top: 7px;
+
+    .lock {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: 10;
+    }
+
+    .shiny {
+      position: absolute;
+      top: 10px;
+      right: -5px;
+    }
+  }
+
+  .list-inline-item:nth-child(n+6) {
+    margin-top: 14px;
+  }
+}
+
+.wandererSprite, .wandererCapture {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  pointer-events: none;
+  top: -16px;
+  left: -16px;
+}
+
+.wandererSprite {
+  image-rendering: pixelated;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes flee {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.pokemonSprite.walkDownFlash {
+  background-position: 0.00000% 0.00000%;
+  opacity: 1;
+  animation: walkDown 0.6s steps(4) infinite, flash 1.5s linear infinite;
+}
+
+.pokemonSprite.walkDownFlee {
+  background-position: 0.00000% 0.00000%;
+  opacity: 1;
+  animation: walkDown 0.6s steps(4) infinite, flee 0.250s linear 1 forwards;
+}

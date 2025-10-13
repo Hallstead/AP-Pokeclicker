@@ -1,0 +1,33 @@
+.player-animated {
+  animation:spin 1s linear infinite;
+}
+
+.player-animated-counter {
+    animation:spin 1s linear infinite;
+    animation-direction: reverse;
+  }
+
+#battleCafeModal {
+    .sweet-display {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .alcremie-display {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2px;
+    }
+
+    .pokeball-smallest {
+        margin: 0;
+    }
+
+    .pokeball-image, .pokerus-image {
+        line-height: 0;
+    }
+
+    .pokerus-image img {
+        height: 12px;
+    }
+}
