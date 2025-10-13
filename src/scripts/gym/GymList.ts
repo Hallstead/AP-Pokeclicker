@@ -15,7 +15,7 @@ GymList['Hallstead\'s Yacht'] = new Gym(
         new GymPokemon('Primarina', 1040000, 100),
         new GymPokemon('Inteleon', 1040000, 100),
         new GymPokemon('Quaquaval', 1040000, 100),
-        new GymPokemon('Psyduck (Black Mage)', 1040000, 100)
+        new GymPokemon('Psyduck (Dark Mage)', 1040000, 100)
     ],
     BadgeEnums.None,
     1000000,

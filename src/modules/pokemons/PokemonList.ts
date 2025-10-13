@@ -2887,7 +2887,7 @@ export const pokemonList = createPokemonArray(
     },
     {
         'id': 54.01,
-        'name': 'Psyduck (Black Mage)',
+        'name': 'Psyduck (Dark Mage)',
         'catchRate': 190,
         'type': [PokemonType.Water, PokemonType.Dark],
         'levelType': LevelType.mediumfast,
