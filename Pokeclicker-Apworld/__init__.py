@@ -390,12 +390,6 @@ class Pokeclicker(World):
 
         return slot_data
 
-    # def generate_output(self, output_directory: str):
-    #     data = self.client_data()
-    #     filename = f"{self.multiworld.get_out_file_name_base(self.player)}.apmanual"
-    #     with open(os.path.join(output_directory, filename), 'wb') as f:
-    #         f.write(b64encode(bytes(json.dumps(data), 'utf-8')))
-
     def write_spoiler(self, spoiler_handle):
         before_write_spoiler(self, self.multiworld, spoiler_handle)
 
@@ -498,16 +492,3 @@ class Pokeclicker(World):
             return self.item_counts_progression.get(player, Counter())
         else:
             return self.item_counts.get(player, Counter())
-
-
-    # def client_data(self):
-    #     return {
-    #         "game": self.game,
-    #         'player_name': self.multiworld.get_player_name(self.player),
-    #         'player_id': self.player,
-    #         'items': self.item_name_to_item,
-    #         'locations': self.location_name_to_location,
-    #         # todo: extract connections out of multiworld.get_regions() instead, in case hooks have modified the regions.
-    #         'regions': region_table,
-    #         'categories': category_table
-    #     }
