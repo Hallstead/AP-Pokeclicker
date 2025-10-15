@@ -90,7 +90,6 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "archipelago.js": "^2.0.4",
     "bootstrap": "^4.5.3",
     "i18next": "^21.9.2",
     "i18next-browser-languagedetector": "^6.1.5",
