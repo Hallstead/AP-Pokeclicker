@@ -6,7 +6,16 @@ GymList['Hallstead\'s Yacht'] = new Gym(
     'Hallstead',
     'Hallstead\'s Yacht',
     [
-        new GymPokemon('Blastoise', 1040, 100)
+        new GymPokemon('Blastoise', 1040000, 100),
+        new GymPokemon('Feraligatr', 1040000, 100),
+        new GymPokemon('Swampert', 1040000, 100),
+        new GymPokemon('Empoleon', 1040000, 100),
+        new GymPokemon('Samurott', 1040000, 100),
+        new GymPokemon('Greninja', 1040000, 100),
+        new GymPokemon('Primarina', 1040000, 100),
+        new GymPokemon('Inteleon', 1040000, 100),
+        new GymPokemon('Quaquaval', 1040000, 100),
+        new GymPokemon('Psyduck (Dark Mage)', 1040000, 100)
     ],
     BadgeEnums.None,
     1000000,

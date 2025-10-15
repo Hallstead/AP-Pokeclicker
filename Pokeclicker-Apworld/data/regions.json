@@ -1,0 +1,37 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
+    "Pallet Town": {
+        "starting": true,
+        "connects_to": [
+            "Kanto"
+        ],
+        "requires": []
+    },
+    "Kanto": {
+        "connects_to": [
+            "Sevii Islands 123",
+            "Safari Zone"
+        ],
+        "requires": "|Dungeon Ticket|"
+    },
+    "Safari Zone": {
+        "connects_to": [],
+        "requires": "|Safari Ticket|"
+    },
+    "Sevii Islands 123": {
+        "connects_to": [
+            "Indigo Plateau"
+        ],
+        "requires": "|Volcano Badge|"
+    },
+    "Indigo Plateau": {
+        "connects_to": [
+            "Kanto Champion"
+        ],
+        "requires": "|Boulder Badge| AND |Cascade Badge| AND |Thunder Badge| AND |Rainbow Badge| AND |Marsh Badge| AND |Soul Badge| AND |Volcano Badge| AND |Earth Badge|"
+    },
+    "Kanto Champion": {
+        "connects_to": [],
+        "requires": "|Progressive Elite Badge:5|"
+    }
+}

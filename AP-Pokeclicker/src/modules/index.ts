@@ -9,3 +9,6 @@ import './koBindingHandlers';
 
 // Load everything else
 import './temporaryWindowInjection';
+
+// Integrations
+import './integrations/archipelago/ArchipelagoIntegration';

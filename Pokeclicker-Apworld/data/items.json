@@ -1,0 +1,1586 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.items.schema.json",
+    "data": [
+        {
+            "count": "1",
+            "name": "Town Map",
+            "category": [
+                "Key Items",
+                "Town Map"
+            ],
+            "progression": true
+        },
+        {
+            "count": "1",
+            "name": "Dungeon Ticket",
+            "category": [
+                "Key Items"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Mystery Egg",
+            "category": [
+                "Key Items"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Wailmer Pail",
+            "category": [
+                "Key Items"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Super Rod",
+            "category": [
+                "Key Items"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Safari Ticket",
+            "category": [
+                "Key Items"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Explorer Kit",
+            "category": [
+                "Key Items"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Gem Case",
+            "category": [
+                "Key Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Holo Caster",
+            "category": [
+                "Key Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Magic Ball",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Amulet Coin",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Rocky Helmet",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "EXP Share",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Sprayduck",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Shiny Charm",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Magma Stone",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Cell Battery",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Explosive Charge",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Treasure Scanner",
+            "category": [
+                "Oak Items"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Auto Battle Items",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Catch Filter Fantasia",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Enhanced Auto Clicker",
+            "category": [
+                "Scripts",
+                "Not Progressive Auto Clicker"
+            ],
+            "useful": true
+        },
+        {
+            "count": 5,
+            "name": "Enhanced Auto Clicker (Progressive Clicks/Second)",
+            "category": [
+                "Scripts",
+                "Progressive Auto Clicker"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Enhanced Auto Hatchery",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Enhanced Auto Mine",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Simple Auto Farmer",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Auto Quest Completer",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Auto Safari Zone",
+            "category": [
+                "Scripts",
+                "Not Progressive Safari Zone"
+            ],
+            "useful": true
+        },
+        {
+            "count": 6,
+            "name": "Auto Safari Zone (Progressive Fast Animations)",
+            "category": [
+                "Scripts",
+                "Progressive Safari Zone"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Catch Speed Adjuster",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Discord Code Generator",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Infinite Seasonal Events",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Oak Items Unlimited",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Omega Protein Gains",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Overnight Berry Growth",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": 1,
+            "name": "Simple Weather Changer",
+            "category": [
+                "Scripts"
+            ],
+            "useful": true
+        },
+        {
+            "count": "3",
+            "name": "Progressive Pokeball",
+            "category": [
+                "Shop"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Boulder Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Cascade Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Thunder Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Rainbow Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Marsh Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Soul Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Volcano Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "Earth Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": "5",
+            "name": "Progressive Elite Badge",
+            "category": [
+                "Badges"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "001 Bulbasaur",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "002 Ivysaur",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "003 Venusaur",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "004 Charmander",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "005 Charmeleon",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "006 Charizard",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "007 Squirtle",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "008 Wartortle",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "009 Blastoise",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "010 Caterpie",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "011 Metapod",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "012 Butterfree",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "013 Weedle",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "014 Kakuna",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "015 Beedrill",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "016 Pidgey",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "017 Pidgeotto",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "018 Pidgeot",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "019 Rattata",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "020 Raticate",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "021 Spearow",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "022 Fearow",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "023 Ekans",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "024 Arbok",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "025 Pikachu",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "026 Raichu",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "027 Sandshrew",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "028 Sandslash",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "029 Nidoran (F)",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "030 Nidorina",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "031 Nidoqueen",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "032 Nidoran (M)",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "033 Nidorino",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "034 Nidoking",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "035 Clefairy",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "036 Clefable",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "037 Vulpix",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "038 Ninetails",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "039 Jigglypuff",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "040 Wigglytuff",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "041 Zubat",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "042 Golbat",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "043 Oddish",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "044 Gloom",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "045 Vileplume",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "046 Paras",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "047 Parasect",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "048 Venonat",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "049 Venomoth",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "050 Diglett",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "051 Dugtrio",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "052 Meowth",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "053 Persian",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "054 Psyduck",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "055 Golduck",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "056 Mankey",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "057 Primape",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "058 Growlithe",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "059 Arcanine",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "060 Poliwag",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "061 Poliwhirl",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "062 Poliwrath",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "063 Abra",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "064 Kadabra",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "065 Alakazam",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "066 Machop",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "067 Machoke",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "068 Machamp",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "069 Bellsprout",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "070 Weepinbell",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "071 Victreebel",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "072 Tentacool",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "073 Tentacruel",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "074 Geodude",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "075 Graveler",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "076 Golem",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "077 Ponyta",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "078 Rapidash",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "079 Slowpoke",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "080 Slowbro",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "081 Magnemite",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "082 Magneton",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "083 Farfetch'd",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "084 Doduo",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "085 Dodrio",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "086 Seel",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "087 Dewgong",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "088 Grimer",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "089 Muk",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "090 Shellder",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "091 Cloyster",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "092 Gastly",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "093 Haunter",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "094 Gengar",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "095 Onix",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "096 Drowzee",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "097 Hypno",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "098 Krabby",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "099 Kingler",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "100 Voltorb",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "101 Electrode",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "102 Exeggcute",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "103 Exeggutor",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "104 Cubone",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "105 Marowak",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "106 Hitmonlee",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "107 Hitmonchan",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "108 Lickitung",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "109 Koffing",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "110 Weezing",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "111 Rhyhorn",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "112 Rhydon",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "113 Chansey",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "114 Tangela",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "115 Kangaskhan",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "116 Horsea",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "117 Seadra",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "118 Goldeen",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "119 Seaking",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "120 Staryu",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "121 Starmie",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "122 Mr. Mime",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "123 Scyther",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "124 Jynx",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "125 Electabuzz",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "126 Magmar",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "127 Pinsir",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "128 Tauros",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "129 Magikarp",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "130 Gyarados",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "131 Lapras",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "132 Ditto",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "133 Eevee",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "134 Vaporeon",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "135 Jolteon",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "136 Flareon",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "137 Porygon",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "138 Omanyte",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "139 Omastar",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "140 Kabuto",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "141 Kabutops",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "142 Aerodactyl",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "143 Snorlax",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "144 Articuno",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "145 Zapdos",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "146 Moltres",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "147 Dratini",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "148 Dragonair",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "149 Dragonite",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "150 Mewtwo",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "count": 1,
+            "name": "151 Mew",
+            "category": [
+                "Pokemon"
+            ],
+            "progression": true
+        }
+    ]
+}

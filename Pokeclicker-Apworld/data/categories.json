@@ -1,0 +1,21 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.categories.schema.json",
+    "scripts": {
+        "yaml_option": ["include_scripts_as_items"]
+    },
+    "Not Progressive Auto Clicker": {
+        "yaml_option": ["!progressive_autoclicker"]
+    },
+    "Progressive Auto Clicker": {
+        "yaml_option": ["progressive_autoclicker"]
+    },
+    "Not Progressive Safari Zone": {
+        "yaml_option": ["!progressive_auto_safari_zone"]
+    },
+    "Progressive Safari Zone": {
+        "yaml_option": ["progressive_auto_safari_zone"]
+    },
+    "Pokemon": {
+        "yaml_option": ["dexsanity"]
+    }
+}
