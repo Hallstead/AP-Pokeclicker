@@ -25,6 +25,20 @@ export default class RedeemableCodes implements Saveable {
 
     constructor() {
         this.codeList = [
+            new RedeemableCode('jh', GameHelper.hash('jh'), false, async () => {
+                // Example reward: give 1000 farm points
+                App.game.wallet.gainFarmPoints(1000);
+
+                Notifier.notify({
+                    title: 'Code activated!',
+                    message: 'You gained 1,000 Farm Points!',
+                    type: NotificationConstants.NotificationOption.success,
+                    timeout: 1e4,
+                });
+
+                // return true to mark redeemed (or return false to not mark)
+                return false;
+            }, /* optional requirement e.g. new MaxRegionRequirement(Region.johto) */),
             new RedeemableCode('farming-quick-start', -83143881, false, async () => {
                 // Give the player 10k farming points, 100 Cheri berries
                 App.game.wallet.gainFarmPoints(10000);

@@ -499,9 +499,9 @@ function initAutoSafari() {
 
   function autoSafariFastAnimations() {
     for (const anim of Object.keys(SafariBattle.Speed)) {
-      SafariBattle.Speed[anim] = autoSafariFastAnimationsState ? CACHED_ANIM_SPEEDS[anim] / 2 : CACHED_ANIM_SPEEDS[anim];
+      SafariBattle.Speed[anim] = autoSafariFastAnimationsState ? CACHED_ANIM_SPEEDS[anim] / 5 : CACHED_ANIM_SPEEDS[anim];
     }
-    Safari.moveSpeed = autoSafariFastAnimationsState ? CACHED_MOVE_SPEED / 2 : CACHED_MOVE_SPEED;
+    Safari.moveSpeed = autoSafariFastAnimationsState ? CACHED_MOVE_SPEED / 10 : CACHED_MOVE_SPEED;
 
     if (autoSafariState) {
       clearInterval(autoSafariProcessId);
