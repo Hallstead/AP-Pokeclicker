@@ -17,7 +17,7 @@ def load_data_file(*args) -> dict:
 def convert_to_list(data, property_name: str) -> list:
     if isinstance(data, dict):
         data = data.get(property_name, [])
-    return datazczcxzzx
+    return data
 
 class ManualFile:
     filename: str
