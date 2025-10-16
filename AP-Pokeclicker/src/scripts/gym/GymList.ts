@@ -30,7 +30,7 @@ GymList['Hallstead\'s Yacht'] = new Gym(
             setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
         });
     },
-    undefined,
+    { quest: false },
     { imageName: 'Black Mage' }
 );
 GymList['Pewter City'] = new Gym(
