@@ -110,4 +110,26 @@
     } catch (e) {
         // ignore observer failures
     }
+    // Expose a global connect helper for UI buttons to call.
+    try {
+        (window as any).archipelagoConnect = function(serverUrl?: string, playerName?: string) {
+            try {
+                var mod = (window as any).ArchipelagoIntegrationModule;
+                var player = playerName || 'JH';
+                // try { if (window['App'] && (App as any).game && (App as any).game.player && (App as any).game.player.name) player = (App as any).game.player.name; } catch (e) {}
+                var url = serverUrl || 'ws://localhost:38281';
+                if (mod && typeof mod.init === 'function') {
+                    Notifier.notify({ message: 'Archipelago: attempting to connect...', type: NotificationConstants.NotificationOption.info });
+                    mod.init(url, player, true);
+                    return true;
+                }
+                try { Notifier.notify({ message: 'Archipelago module not available', type: NotificationConstants.NotificationOption.warning }); } catch (_) {}
+            } catch (e) {
+                try { Notifier.notify({ message: 'Archipelago connect failed: ' + (e && e.message ? e.message : e), type: NotificationConstants.NotificationOption.danger }); } catch (_) {}
+            }
+            return false;
+        };
+    } catch (e) {
+        // ignore
+    }
 })();

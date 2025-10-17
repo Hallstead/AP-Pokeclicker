@@ -134,6 +134,31 @@ class ArchipelagoIntegrationModule {
                 } catch (e) {
                     // ignore
                 }
+                    try {
+                        // also set playerName in common locations
+                        if (!this.client.options) this.client.options = {};
+                        this.client.options.playerName = this.client.options.playerName || playerName;
+                        this.client.options.connectionOptions = this.client.options.connectionOptions || {};
+                        this.client.options.connectionOptions.playerName = this.client.options.connectionOptions.playerName || playerName;
+                        // set direct fields if present
+                        try { if (!this.client.playerName) (this.client as any).playerName = playerName; } catch (e) {}
+                        try { if (!this.client.name) (this.client as any).name = playerName; } catch (e) {}
+                        try { if (!this.client.username) (this.client as any).username = playerName; } catch (e) {}
+                        // also set serverUrl in other common shapes
+                        try { (this.client as any).serverUrl = (this.client as any).serverUrl || serverUrl; } catch (e) {}
+                        try { this.client.options.url = this.client.options.url || serverUrl; } catch (e) {}
+                    } catch (e) {}
+                    try {
+                        // also propagate into nested connection/socket objects some libs store configuration there
+                        try { this.client.connectionOptions = this.client.connectionOptions || {}; this.client.connectionOptions.url = this.client.connectionOptions.url || serverUrl; } catch (e) {}
+                        const s = (this.client as any).socket;
+                        if (s) {
+                            try { s.connectionOptions = s.connectionOptions || {}; s.connectionOptions.url = s.connectionOptions.url || serverUrl; } catch (e) {}
+                            try { s.options = s.options || {}; s.options.url = s.options.url || serverUrl; } catch (e) {}
+                            try { s.serverUrl = s.serverUrl || serverUrl; } catch (e) {}
+                            try { s.playerName = s.playerName || playerName; } catch (e) {}
+                        }
+                    } catch (e) {}
                 try {
                     // some implementations use defaultConnectionOptions on instance
                     if (typeof (this.client as any).defaultConnectionOptions === 'object') {
@@ -143,10 +168,12 @@ class ArchipelagoIntegrationModule {
                 // Try several possible connect entry points. Different package versions
                 // expose connect on different objects (client.connect, client.socket.connect, etc.).
                 const connectCandidates: Array<{ obj: any; fn: string }> = [
+                    // prefer socket-level connect with explicit URL
+                    { obj: this.client?.socket, fn: 'connect' },
+                    { obj: this.client, fn: 'login' },
                     { obj: this.client, fn: 'connect' },
                     { obj: this.client, fn: 'start' },
                     { obj: this.client, fn: 'open' },
-                    { obj: this.client?.socket, fn: 'connect' },
                     { obj: this.client?.socket, fn: 'open' },
                     { obj: this.client?.socket, fn: 'connectTo' },
                     { obj: this.client?.socket, fn: 'connectWS' },
@@ -160,19 +187,36 @@ class ArchipelagoIntegrationModule {
                             console.log(`[ArchipelagoModule] attempting connect via ${cand.fn} on`, cand.obj);
                             // Try multiple common argument shapes
                             let res: any;
+                            // Log connection-related values for debugging
                             try {
-                                res = cand.obj[cand.fn](serverUrl);
-                            } catch (e) {
-                                try {
-                                    res = cand.obj[cand.fn]({ url: serverUrl });
-                                } catch (e2) {
-                                    try {
-                                        res = cand.obj[cand.fn]({ connectionOptions: { url: serverUrl } });
-                                    } catch (e3) {
-                                        // last-resort: call with no args
-                                        res = cand.obj[cand.fn]();
+                                console.log('[ArchipelagoModule] pre-connect options', {
+                                    clientOptions: (this.client && this.client.options) || null,
+                                    clientConnectionOptions: (this.client && this.client.connectionOptions) || null,
+                                    socketOptions: (this.client && (this.client as any).socket && (this.client as any).socket.options) || null,
+                                    socketConnectionOptions: (this.client && (this.client as any).socket && (this.client as any).socket.connectionOptions) || null,
+                                    serverUrl,
+                                    playerName,
+                                });
+                            } catch (e) {}
+
+                            // Prefer socket.connect(serverUrl) where available (explicit URL avoids mis-parsing)
+                            try {
+                                if (cand.obj === this.client?.socket && typeof cand.obj[cand.fn] === 'function') {
+                                    res = cand.obj[cand.fn](serverUrl);
+                                } else {
+                                    // Prefer calling with no args for methods like 'login' that use configured options
+                                    try { res = cand.obj[cand.fn](); } catch (e) {
+                                        try { res = cand.obj[cand.fn]({ url: serverUrl }); } catch (e2) {
+                                            try { res = cand.obj[cand.fn]({ connectionOptions: { url: serverUrl } }); } catch (e3) {
+                                                try { res = cand.obj[cand.fn](serverUrl); } catch (e4) {
+                                                    try { res = cand.obj[cand.fn](playerName); } catch (e5) { res = null; }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
+                            } catch (e) {
+                                res = null;
                             }
                             if (res && typeof res.then === 'function') {
                                 // await promise-like results
