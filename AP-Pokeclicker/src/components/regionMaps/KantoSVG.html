@@ -344,10 +344,22 @@
         <!-- Hallstead's Yacht -->
         <%- include('templates/mapTown',
             { name: "Hallstead's Yacht"
-            , x: 90    /* change this */
-            , y: 54    /* change this */
-            , width: 3 /* change if you want bigger/smaller */
-            , height: 3
+            , x: 91.25
+            , y: 55.25
+            , width: 1
+            , height: 1
+            , randomGroup: 'hallstead'
+            })
+        %>
+
+        <!-- Alternate Hallstead's Yacht location (randomized with the other entry) -->
+        <%- include('templates/mapTown',
+            { name: "Hallstead's Yacht"
+            , x: 7.25
+            , y: 51.5
+            , width: 1
+            , height: 1
+            , randomGroup: 'hallstead'
             })
         %>
 

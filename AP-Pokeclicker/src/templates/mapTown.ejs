@@ -29,6 +29,7 @@ Parameters:
 
 <rect class="city"
     data-town="<%= locals.name %>"
+    <% if (locals.randomGroup) { %> data-random-group="<%= locals.randomGroup %>" data-random-id="<%= locals.randomGroup + '-' + locals.x + '-' + locals.y %>" <% } %>
     x="<%= locals.x * 16 %>"
     y="<%= locals.y * 16 %>"
     height="<%= (locals.height || 4) * 16 %>"
@@ -43,6 +44,7 @@ Parameters:
 </rect>
 <% if (!locals.isExtension) { %>
     <image width="48" height="48"
+        <% if (locals.randomGroup) { %> data-random-id="<%= locals.randomGroup + '-' + locals.x + '-' + locals.y %>" <% } %>
         x="<%= locals.x * 16 + ((locals.width || 4) * 16) / 2 - 24 %>"
         y="<%= locals.y * 16 + ((locals.height || 4) * 16) / 2 - 24 %>"
         class="iconLocation hide"

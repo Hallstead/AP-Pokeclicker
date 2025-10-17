@@ -3,6 +3,7 @@
 
 
 class MapHelper {
+    public static randomizeTownPositions?: () => void;
 
     public static getUsableFilters(): CssVariableSetting[] {
         const priority = Settings.getSetting('mapAreaStateOrder').observableValue();
@@ -400,3 +401,45 @@ class MapHelper {
 }
 
 MapHelper satisfies TmpMapHelperType;
+
+// Randomize town positions for groups marked with data-random-group
+document.addEventListener('DOMContentLoaded', () => {
+    MapHelper.randomizeTownPositions?.();
+});
+
+(function() {
+    // Attach the function to MapHelper (declared above)
+    (MapHelper as any).randomizeTownPositions = function() {
+        try {
+            const groups: Record<string, string[]> = {};
+            // Build a map of group -> data-random-id values
+            document.querySelectorAll('[data-random-group]').forEach(el => {
+                const group = el.getAttribute('data-random-group') || '';
+                const id = el.getAttribute('data-random-id') || '';
+                if (!groups[group]) groups[group] = [];
+                if (!groups[group].includes(id)) groups[group].push(id);
+            });
+
+            Object.entries(groups).forEach(([group, ids]) => {
+                if (!ids.length) return;
+                const chosenId = ids[Math.floor(Math.random() * ids.length)];
+                // For every element with this group's random-id, show if chosen, hide otherwise
+                ids.forEach(id => {
+                    const show = (id === chosenId);
+                    document.querySelectorAll(`[data-random-id="${id}"]`).forEach(el => {
+                        if (show) {
+                            // remove any forced hiding so KO can control visibility normally
+                            try { (el as HTMLElement).style.removeProperty('display'); } catch {}
+                        } else {
+                            // remove the element from the DOM so KO won't bind/mirror it for the player sprite
+                            try { el.parentNode?.removeChild(el); } catch {}
+                        }
+                    });
+                });
+            });
+        } catch (e) {
+            // Fail silently if map not present
+            // console.debug('randomizeTownPositions failed', e);
+        }
+    };
+})();
