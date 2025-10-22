@@ -62,6 +62,7 @@ ItemList.SmallRestore    = new EnergyRestore(EnergyRestoreSize.SmallRestore, 300
 ItemList.MediumRestore   = new EnergyRestore(EnergyRestoreSize.MediumRestore, 75000, undefined, 'Medium Restore');
 ItemList.LargeRestore    = new EnergyRestore(EnergyRestoreSize.LargeRestore, 200000, undefined, 'Large Restore');
 
+ItemList.AP_logo = new BuyKeyItem(KeyItemType.AP_logo, 100, undefined, undefined, 'AP Item');
 ItemList.Dungeon_ticket = new BuyKeyItem(KeyItemType.Dungeon_ticket, 100, undefined, undefined, 'Dungeon Ticket');
 ItemList.Explorer_kit = new BuyKeyItem(KeyItemType.Explorer_kit, 5000, undefined, undefined, 'Explorer Kit');
 ItemList.Event_calendar = new BuyKeyItem(KeyItemType.Event_calendar, 100000, undefined, undefined, 'Event Calendar');
