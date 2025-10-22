@@ -23,7 +23,20 @@
         <div class="new-import-buttons justify-content-center container row">
             <label class="btn btn-success col-md-4 col-xs-12 mx-1" onclick="Save.key = Rand.string(6); document.querySelector('#saveSelector').remove(); App.start();">New Save</label>
             <label for="import-save" class="btn btn-warning col-md-4 col-xs-12 mx-1" onclick="Save.key = Rand.string(6);">Import Save</label>
-            <label id="archipelago-connect-btn" class="btn btn-primary col-md-4 col-xs-12 mx-1" onclick="(window.archipelagoConnect || function(){ var mod = window.ArchipelagoIntegrationModule; var player = 'JH'; try { if (window.App && App.game && App.game.player && App.game.player.name) player = App.game.player.name; } catch(e) {} if (mod && typeof mod.init === 'function') { try { mod.init('ws://localhost:38281', player, true); } catch(e) { try { Notifier.notify({ message: 'Archipelago init failed: ' + (e && e.message ? e.message : e), type: NotificationConstants.NotificationOption.danger }); } catch(_) {} } } else { try { Notifier.notify({ message: 'Archipelago module not available', type: NotificationConstants.NotificationOption.warning }); } catch(_) {} } })()">Connect (Archipelago)</label>
+            <div class="col-12 mb-2 text-center">
+                <div class="form-row justify-content-center">
+                    <div class="col-auto mb-1">
+                        <input id="archipelago-host" class="form-control" type="text" placeholder="www.archipelago.com" />
+                    </div>
+                    <div class="col-auto mb-1">
+                        <input id="archipelago-port" class="form-control" type="number" placeholder="38281" />
+                    </div>
+                    <div class="col-auto mb-1">
+                        <input id="archipelago-slot" class="form-control" type="text" placeholder="Slot name" />
+                    </div>
+                </div>
+            </div>
+            <label id="archipelago-connect-btn" class="btn btn-primary col-md-4 col-xs-12 mx-1" onclick="(window.archipelagoConnectFromUI || function(){})()">Connect (Archipelago)</label>
         </div>
 
     </div>
