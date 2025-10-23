@@ -4,6 +4,9 @@
 
 (function () {
     // Guard: require App and window module to exist
+    const App = (window as any).App;
+    const player = (window as any).player || ((window as any).App?.game?.player);
+    const BadgeEnums = (window as any).BadgeEnums;
 
     // Client will be available after init; access it lazily
     let checked_locations: number[] = [];
@@ -38,6 +41,26 @@
                 const client = mod.client;
                 if (client) {
                     try {
+                        // Wire up error handlers on the socket
+                        if (client.socket && typeof client.socket.on === 'function') {
+                            client.socket.on('error', (err: any) => {
+                                console.error("[ArchipelagoBootstrap] Socket error:", err);
+                                Notifier.notify({
+                                    message: `Archipelago error: ${err?.message || err}`,
+                                    type: NotificationConstants.NotificationOption.danger,
+                                });
+                            });
+                            client.socket.on('close', (code: any, reason: any) => {
+                                console.warn("[ArchipelagoBootstrap] Socket closed:", code, reason);
+                                if (code && code !== 1000) { // 1000 is normal closure
+                                    Notifier.notify({
+                                        message: `Archipelago disconnected: ${reason || code}`,
+                                        type: NotificationConstants.NotificationOption.warning,
+                                    });
+                                }
+                            });
+                        }
+                        
                         // Get all player slots if available
                         thisPlayer = player.slot;
                         const slots = client.players?.slots;
@@ -228,7 +251,7 @@
     }
     // Expose a global connect helper for UI buttons to call.
     try {
-        (window as any).archipelagoConnect = function (
+        (window as any).archipelagoConnect = async function (
             serverUrl?: string,
             playerName?: string
         ) {
@@ -239,10 +262,24 @@
                 var url = serverUrl || "ws://localhost:38281";
                 if (mod && typeof mod.init === "function") {
                     Notifier.notify({
-                        message: "Archipelago: attempting to connect...",
+                        message: `Archipelago: connecting to ${url} as '${player}'...`,
                         type: NotificationConstants.NotificationOption.info,
                     });
-                    mod.init(url, player, true);
+                    console.log(`[ArchipelagoBootstrap] Connecting to ${url} with slot name '${player}'`);
+                    await mod.init(url, player, true);
+                    
+                    // Wait a bit and check for errors
+                    setTimeout(() => {
+                        if (!mod.connected && mod.lastError) {
+                            console.error("[ArchipelagoBootstrap] Connection failed with error:", mod.lastError);
+                            const errMsg = mod.lastError?.message || mod.lastError?.toString() || "Unknown error";
+                            Notifier.notify({
+                                message: `Archipelago connection failed: ${errMsg}`,
+                                type: NotificationConstants.NotificationOption.danger,
+                            });
+                        }
+                    }, 3000);
+                    
                     return true;
                 }
                 try {
@@ -277,9 +314,9 @@
                 const h = hostEl?.value || 'localhost';
                 const p = portEl?.value || '38281';
                 const s = slotEl?.value || 'JH';
-                const url = `wss://${h}:${p}`;
+                const url = `ws://${h}:${p}`;
                 if ((window as any).archipelagoConnect) {
-                    return (window as any).archipelagoConnect(url, s);
+                    return (window as any).archipelagoConnect(url, s, "Pokeclicker");
                 }
                 try { Notifier.notify({ message: 'Archipelago module not available yet', type: NotificationConstants.NotificationOption.warning }); } catch (_) {}
             } catch (e) {
