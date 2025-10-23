@@ -86,6 +86,104 @@ class ArchipelagoIntegrationModule {
                 }
             }
 
+            // Expose constructor and instance on window for legacy bootstrap/legacy scripts.
+            try {
+                if (typeof window !== 'undefined') {
+                    const w = window as any;
+                    // expose constructor under several common names
+                    w.Archipelago = w.Archipelago || {};
+                    w.Archipelago.Client = w.Archipelago.Client || ArchipelagoClient;
+                    w.ArchipelagoClient = w.ArchipelagoClient || ArchipelagoClient;
+                    w.ArchipelagoClientConstructor = w.ArchipelagoClientConstructor || ArchipelagoClient;
+                    // expose the created instance
+                    w.archipelagoClientInstance = this.client;
+                    // also set a generic client global for debugging/legacy code
+                    w.client = w.client || this.client;
+                    console.log('[ArchipelagoModule] exposed Archipelago constructor and instance on window');
+                }
+            } catch (e) {
+                // ignore exposure failures
+            }
+
+            // Expose additional runtime exports (if present) to window for legacy scripts
+            try {
+                const wanted = [
+                    'BouncedPacket', 'Client', 'Item', 'itemsHandlingFlags',
+                    'JSONRecord', 'LocationInfoPacket', 'MessageNode', 'NetworkSlot', 'Player'
+                ];
+                const w = (window as any);
+                w.Archipelago = w.Archipelago || {};
+                for (const name of wanted) {
+                    let val: any = undefined;
+                    try {
+                        if (pkg && Object.prototype.hasOwnProperty.call(pkg, name)) val = (pkg as any)[name];
+                        if (val === undefined && pkg && pkg.default && Object.prototype.hasOwnProperty.call(pkg.default, name)) val = (pkg as any).default[name];
+                        // try lowercase-first alternative (some libs export lowercased keys)
+                        if (val === undefined) {
+                            const alt = name.charAt(0).toLowerCase() + name.slice(1);
+                            if (pkg && Object.prototype.hasOwnProperty.call(pkg, alt)) val = (pkg as any)[alt];
+                            if (val === undefined && pkg && pkg.default && Object.prototype.hasOwnProperty.call(pkg.default, alt)) val = (pkg as any).default[alt];
+                        }
+                    } catch (e) { /* ignore lookup errors */ }
+
+                    if (val !== undefined) {
+                        try { if (!w.Archipelago[name]) w.Archipelago[name] = val; } catch (e) {}
+                        try { if (!w[name]) w[name] = val; } catch (e) {}
+                    } else {
+                        // not fatal, warn for debugging
+                        try { console.warn(`[ArchipelagoModule] export '${name}' not found on package; skipping`); } catch (e) {}
+                    }
+                }
+                try { console.log('[ArchipelagoModule] exposed additional archipelago exports to window.Archipelago'); } catch (e) {}
+            } catch (e) {
+                // ignore exposure errors
+            }
+
+            // Compatibility shims for legacy bootstrap expectations.
+            try {
+                const c = this.client as any;
+                // Ensure a messages.on API that proxies to client.on or socket events
+                if (!c.messages || typeof c.messages.on !== 'function') {
+                    c.messages = c.messages || {};
+                    c.messages.on = c.messages.on || function (ev: string, cb: any) {
+                        if (typeof c.on === 'function') {
+                            try { c.on(ev, (...args: any[]) => cb(...args)); return; } catch (e) { /* continue */ }
+                        }
+                        if (c.socket && typeof c.socket.on === 'function') {
+                            try { c.socket.on(ev, cb); return; } catch (e) { /* continue */ }
+                        }
+                        // fallback no-op
+                        // store subscribers optionally (not necessary for now)
+                    };
+                }
+
+                // Ensure players.findPlayer exists and slots shape is present
+                c.players = c.players || { slots: {} };
+                if (typeof c.players.findPlayer !== 'function') {
+                    c.players.findPlayer = function (slotNumber: number) {
+                        try {
+                            const s = c.players.slots && c.players.slots[slotNumber];
+                            if (s) return s;
+                        } catch (e) { }
+                        return { alias: '' };
+                    };
+                }
+
+                // Ensure socket.send exists and proxies to common send/connect variants
+                c.socket = c.socket || {};
+                if (typeof c.socket.send !== 'function') {
+                    if (typeof c.send === 'function') {
+                        c.socket.send = (...args: any[]) => c.send(...args);
+                    } else if (c.socket && typeof c.socket.emit === 'function') {
+                        c.socket.send = (...args: any[]) => c.socket.emit(...args);
+                    } else {
+                        c.socket.send = (_: any) => { /* noop */ };
+                    }
+                }
+            } catch (e) {
+                // ignore shim failures
+            }
+
             // Wire known hooks if present (client implementations differ slightly)
             try {
                 if ('onConnected' in this.client) {
