@@ -10,7 +10,7 @@
 
     // Client will be available after init; access it lazily
     let checked_locations: number[] = [];
-    
+
     // Access types exposed by ArchipelagoIntegration module
     type NetworkSlot = any; // Will be available at runtime via window.Archipelago.NetworkSlot
     type Player = any; // Will be available at runtime via window.Archipelago.Player
@@ -36,7 +36,7 @@
                     message: "Archipelago: Connected",
                     type: NotificationConstants.NotificationOption.success,
                 });
-                
+
                 // Access client after connection is established
                 const client = mod.client;
                 if (client) {
@@ -60,7 +60,7 @@
                                 }
                             });
                         }
-                        
+
                         // Get all player slots if available
                         thisPlayer = player.slot;
                         const slots = client.players?.slots;
@@ -95,32 +95,13 @@
                 });
             };
             mod.onItemReceived = (item) => {
-                // Keep this adapter minimal: emit a game-level notification and attempt
-                // to map a few simple items. Do not import modules here.
-                try {
-                    const mapped = mapReceivedItem(item?.item ?? item);
-                    if (mapped?.type === "badge") {
-                        try {
-                            App.game.badgeCase.gainBadge(mapped.value);
-                        } catch (e) {
-                            console.warn("Failed to grant badge", e);
-                        }
-                    } else if (mapped?.type === "flag") {
-                        // example: grant bike
-                        player.hasBike = true;
-                    }
-                    Notifier.notify({
-                        message: `Received ${
-                            mapped?.name ?? "an item"
-                        } via Archipelago`,
-                        type: NotificationConstants.NotificationOption.info,
-                    });
-                } catch (e) {
-                    console.warn(
-                        "[ArchipelagoBootstrap] Error handling item",
-                        e
-                    );
-                }
+                console.log("Received item: ", item);
+                // if this is a sync packet reset all our item addresses without changing anything else
+
+                Notifier.notify({
+                    message: `Archipelago: Received ${item.length} item(s)`,
+                    type: NotificationConstants.NotificationOption.success,
+                });
             };
 
             // Init the module (server/player can be customized later via UI)
@@ -151,14 +132,13 @@
                             ).__AP_INTEGRATION_DEBUG?.getLastError?.();
                         if (last) {
                             Notifier.notify({
-                                message: `Archipelago error: ${
-                                    last.message || last
-                                }`,
+                                message: `Archipelago error: ${last.message || last
+                                    }`,
                                 type: NotificationConstants.NotificationOption
                                     .danger,
                             });
                         }
-                    } catch (ignore) {}
+                    } catch (ignore) { }
                 }, 500);
             } catch (e) {
                 console.warn("[ArchipelagoBootstrap] init failed", e);
@@ -230,14 +210,14 @@
                                         if ((App as any).game?.player?.name)
                                             playerName = (App as any).game
                                                 .player.name;
-                                    } catch (e) {}
+                                    } catch (e) { }
                                     mod.init(
                                         "ws://localhost:38281",
                                         playerName,
                                         true
                                     );
                                 }
-                            } catch (e) {}
+                            } catch (e) { }
                             observer.disconnect();
                             return;
                         }
@@ -253,11 +233,12 @@
     try {
         (window as any).archipelagoConnect = async function (
             serverUrl?: string,
-            playerName?: string
+            playerName?: string,
+            gameName?: string
         ) {
             try {
                 var mod = (window as any).ArchipelagoIntegrationModule;
-                var player = playerName || "JH";
+                var player = playerName || "Player";
                 // try { if (window['App'] && (App as any).game && (App as any).game.player && (App as any).game.player.name) player = (App as any).game.player.name; } catch (e) {}
                 var url = serverUrl || "ws://localhost:38281";
                 if (mod && typeof mod.init === "function") {
@@ -266,8 +247,13 @@
                         type: NotificationConstants.NotificationOption.info,
                     });
                     console.log(`[ArchipelagoBootstrap] Connecting to ${url} with slot name '${player}'`);
-                    await mod.init(url, player, true);
-                    
+                    // Prefer the explicit login(host:port, player, game) if available
+                    if (typeof mod.login === 'function') {
+                        await mod.login(url, player, 'Pokeclicker');
+                    } else {
+                        await mod.init(url, player, true);
+                    }
+
                     // Wait a bit and check for errors
                     setTimeout(() => {
                         if (!mod.connected && mod.lastError) {
@@ -279,7 +265,7 @@
                             });
                         }
                     }, 3000);
-                    
+
                     return true;
                 }
                 try {
@@ -287,7 +273,7 @@
                         message: "Archipelago module not available",
                         type: NotificationConstants.NotificationOption.warning,
                     });
-                } catch (_) {}
+                } catch (_) { }
             } catch (e) {
                 try {
                     Notifier.notify({
@@ -296,7 +282,7 @@
                             (e && e.message ? e.message : e),
                         type: NotificationConstants.NotificationOption.danger,
                     });
-                } catch (_) {}
+                } catch (_) { }
             }
             return false;
         };
@@ -318,9 +304,9 @@
                 if ((window as any).archipelagoConnect) {
                     return (window as any).archipelagoConnect(url, s, "Pokeclicker");
                 }
-                try { Notifier.notify({ message: 'Archipelago module not available yet', type: NotificationConstants.NotificationOption.warning }); } catch (_) {}
+                try { Notifier.notify({ message: 'Archipelago module not available yet', type: NotificationConstants.NotificationOption.warning }); } catch (_) { }
             } catch (e) {
-                try { Notifier.notify({ message: 'Archipelago connect failed: ' + (e && (e as any).message ? (e as any).message : e), type: NotificationConstants.NotificationOption.danger }); } catch (_) {}
+                try { Notifier.notify({ message: 'Archipelago connect failed: ' + (e && (e as any).message ? (e as any).message : e), type: NotificationConstants.NotificationOption.danger }); } catch (_) { }
             }
             return false;
         };
