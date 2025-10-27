@@ -30,77 +30,68 @@
 
         try {
             // Wire handlers: delegate items received to App.game via a small adapter.
-            mod.onConnected = () => {
-                console.info("[ArchipelagoBootstrap] Module connected");
-                Notifier.notify({
-                    message: "Archipelago: Connected",
-                    type: NotificationConstants.NotificationOption.success,
-                });
+            // mod.onConnected = () => {
+            //     console.info("[ArchipelagoBootstrap] Module connected");
+            //     Notifier.notify({
+            //         message: "Archipelago: Connected",
+            //         type: NotificationConstants.NotificationOption.success,
+            //     });
 
-                // Access client after connection is established
-                const client = mod.client;
-                if (client) {
-                    try {
-                        // Wire up error handlers on the socket
-                        if (client.socket && typeof client.socket.on === 'function') {
-                            client.socket.on('error', (err: any) => {
-                                console.error("[ArchipelagoBootstrap] Socket error:", err);
-                                Notifier.notify({
-                                    message: `Archipelago error: ${err?.message || err}`,
-                                    type: NotificationConstants.NotificationOption.danger,
-                                });
-                            });
-                            client.socket.on('close', (code: any, reason: any) => {
-                                console.warn("[ArchipelagoBootstrap] Socket closed:", code, reason);
-                                if (code && code !== 1000) { // 1000 is normal closure
-                                    Notifier.notify({
-                                        message: `Archipelago disconnected: ${reason || code}`,
-                                        type: NotificationConstants.NotificationOption.warning,
-                                    });
-                                }
-                            });
-                        }
+            //     // Access client after connection is established
+            //     const client = mod.client;
+            //     if (client) {
+            //         try {
+            //             // Wire up error handlers on the socket
+            //             if (client.socket && typeof client.socket.on === 'function') {
+            //                 client.socket.on('error', (err: any) => {
+            //                     console.error("[ArchipelagoBootstrap] Socket error:", err);
+            //                     Notifier.notify({
+            //                         message: `Archipelago error: ${err?.message || err}`,
+            //                         type: NotificationConstants.NotificationOption.danger,
+            //                     });
+            //                 });
+            //                 client.socket.on('close', (code: any, reason: any) => {
+            //                     console.warn("[ArchipelagoBootstrap] Socket closed:", code, reason);
+            //                     if (code && code !== 1000) { // 1000 is normal closure
+            //                         Notifier.notify({
+            //                             message: `Archipelago disconnected: ${reason || code}`,
+            //                             type: NotificationConstants.NotificationOption.warning,
+            //                         });
+            //                     }
+            //                 });
+            //             }
 
-                        // Get all player slots if available
-                        thisPlayer = player.slot;
-                        const slots = client.players?.slots;
-                        if (slots) {
-                            Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
-                                const slotNumber: number = parseInt(key);
-                                const slotPlayer: Player = client.players?.findPlayer?.(slotNumber);
-                                players[slotNumber] = {
-                                    slot: slotNumber,
-                                    name: slot.name || '',
-                                    game: slot.game || '',
-                                    alias: slotPlayer?.alias || '',
-                                };
-                            });
-                        }
+            //             // Get all player slots if available
+            //             thisPlayer = player.slot;
+            //             const slots = client.players?.slots;
+            //             if (slots) {
+            //                 Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
+            //                     const slotNumber: number = parseInt(key);
+            //                     const slotPlayer: Player = client.players?.findPlayer?.(slotNumber);
+            //                     players[slotNumber] = {
+            //                         slot: slotNumber,
+            //                         name: slot.name || '',
+            //                         game: slot.game || '',
+            //                         alias: slotPlayer?.alias || '',
+            //                     };
+            //                 });
+            //             }
 
-                        // Request slot data and sync
-                        if (client.socket && typeof client.socket.send === 'function') {
-                            client.socket.send({ cmd: "Sync" });
-                        }
-                    } catch (e) {
-                        console.warn("[ArchipelagoBootstrap] Error processing connection info", e);
-                    }
-                }
-            };
+            //             // Request slot data and sync
+            //             if (client.socket && typeof client.socket.send === 'function') {
+            //                 client.socket.send({ cmd: "Sync" });
+            //             }
+            //         } catch (e) {
+            //             console.warn("[ArchipelagoBootstrap] Error processing connection info", e);
+            //         }
+            //     }
+            // };
 
             mod.onPrint = (m: string) => {
                 console.info("[ArchipelagoBootstrap]", m);
                 Notifier.notify({
                     message: `Archipelago: ${m}`,
                     type: NotificationConstants.NotificationOption.info,
-                });
-            };
-            mod.onItemReceived = (item) => {
-                console.log("Received item: ", item);
-                // if this is a sync packet reset all our item addresses without changing anything else
-
-                Notifier.notify({
-                    message: `Archipelago: Received ${item.length} item(s)`,
-                    type: NotificationConstants.NotificationOption.success,
                 });
             };
 
@@ -151,28 +142,7 @@
             console.warn("[ArchipelagoBootstrap] wiring failed", e);
         }
     }
-
-    // Very small mapping example. Extend as needed.
-    function mapReceivedItem(idOrName) {
-        const map = {
-            1: {
-                type: "badge",
-                name: "Boulder Badge",
-                value: BadgeEnums?.Boulder,
-            },
-            2: {
-                type: "badge",
-                name: "Cascade Badge",
-                value: BadgeEnums?.Cascade,
-            }
-        };
-        if (typeof idOrName === "number")
-            return (
-                map[idOrName] || { type: "unknown", name: `Item #${idOrName}` }
-            );
-        return { type: "unknown", name: idOrName };
-    }
-
+    
     // Attempt init periodically until module and App are available
     let attempts = 0;
     const interval = setInterval(() => {

@@ -18,6 +18,7 @@ export default class KeyItem {
         public unlockRewardOnClose = () => {},
         displayName?: string,
         public unlockRewardOnUnlock = () => {}) {
+            
         this.id = id;
         this.displayName = displayName ?? GameConstants.humanifyString(KeyItemType[this.id]);
         this.description = description;

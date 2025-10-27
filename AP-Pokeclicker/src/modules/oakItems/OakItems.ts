@@ -28,27 +28,27 @@ export default class OakItems implements Feature {
 
     // eslint-disable-next-line class-methods-use-this
     canAccess(): boolean {
-        return App.game.party.caughtPokemon.length >= 20;
+        return App.game.party.caughtPokemon.length >= 0;
     }
 
     initialize() {
         this.itemList = [
             new OakItem(OakItemType.Magic_Ball, 'Magic Ball', 'Gives a bonus to your catchrate',
-                true, [5, 6, 7, 8, 9, 10], 0, 20, 2, undefined, undefined, undefined, '%'),
+                true, [5, 6, 7, 8, 9, 10], 0, 20, 2, undefined, undefined, undefined, '%', 10),
             new OakItem(OakItemType.Amulet_Coin, 'Amulet Coin', 'Gain more Pokédollars from battling',
-                true, [1.25, 1.30, 1.35, 1.40, 1.45, 1.50], 1, 30, 1),
+                true, [1.25, 1.30, 1.35, 1.40, 1.45, 1.50], 1, 30, 1, undefined, undefined, undefined, undefined, 11),
             new OakItem(OakItemType.Rocky_Helmet, 'Rocky Helmet', 'Clicks do more damage',
-                true, [1.25, 1.30, 1.35, 1.40, 1.45, 1.50], 1, 40, 3),
+                true, [1.25, 1.30, 1.35, 1.40, 1.45, 1.50], 1, 40, 3, undefined, undefined, undefined, undefined, 12),
             new OakItem(OakItemType.Exp_Share, 'EXP Share', 'Gain more exp from battling',
-                true, [1.15, 1.18, 1.21, 1.24, 1.27, 1.30], 1, 50, 1),
+                true, [1.15, 1.18, 1.21, 1.24, 1.27, 1.30], 1, 50, 1, undefined, undefined, undefined, undefined, 13),
             new OakItem(OakItemType.Sprayduck, 'Sprayduck', 'Makes your berries grow faster',
-                false, [1.25, 1.30, 1.35, 1.40, 1.45, 1.50], 1, 60, 1),
+                false, [1.25, 1.30, 1.35, 1.40, 1.45, 1.50], 1, 60, 1, undefined, undefined, undefined, undefined, 14),
             new OakItem(OakItemType.Shiny_Charm, 'Shiny Charm', 'Encounter shinies more often',
-                true, [1.50, 1.60, 1.70, 1.80, 1.90, 2.00], 1, 70, 150),
+                true, [1.50, 1.60, 1.70, 1.80, 1.90, 2.00], 1, 70, 150, undefined, undefined, undefined, '%', 15),
             new OakItem(OakItemType.Magma_Stone, 'Magma Stone', 'Hatch eggs faster',
-                false, [1.50, 1.60, 1.70, 1.80, 1.90, 2.00], 1, 80, 10),
+                false, [1.50, 1.60, 1.70, 1.80, 1.90, 2.00], 1, 80, 10, undefined, undefined, undefined, undefined, 16),
             new OakItem(OakItemType.Cell_Battery, 'Cell Battery', 'Reduce the charges needed to discharge',
-                false, [-5, -10, -15, -20, -25, -30], 0, 90, 1, [5, 10, 30, 60, 150], undefined, undefined, ' Charges'),
+                false, [-5, -10, -15, -20, -25, -30], 0, 90, 1, [5, 10, 30, 60, 150], undefined, undefined, ' Charges', 17),
             new BoughtOakItem(OakItemType.Squirtbottle, 'Squirtbottle', 'Increases the chance of berry mutations', 'Johto Berry Master',
                 true, [1.25, 1.5, 1.75, 2, 2.25, 2.5], 1, 10, undefined, undefined, AmountFactory.createArray([2000, 5000, 10000, 20000, 50000], Currency.farmPoint)),
             new BoughtOakItem(OakItemType.Sprinklotad, 'Sprinklotad', 'Increases the duration of Mulch', 'Hoenn Berry Master',

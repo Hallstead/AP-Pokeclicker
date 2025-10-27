@@ -5,10 +5,14 @@ import { ShopOptions } from './types';
 
 export default class BuyKeyItem extends Item {
     item: KeyItemType;
+    locationId: number | null = null;
+    purchased: boolean;
 
-    constructor(item: KeyItemType, basePrice: number, currency: Currency = Currency.questPoint, options?: ShopOptions, displayName?: string) {
+    constructor(item: KeyItemType, basePrice: number, currency: Currency = Currency.questPoint, options?: ShopOptions, displayName?: string, locationId: number | null = null) {
         super(KeyItemType[item], basePrice, currency, { maxAmount: 1, ...options }, displayName);
         this.item = item;
+        this.locationId = locationId;
+        this.purchased = false;
     }
 
     totalPrice(amount: number) {
@@ -21,11 +25,17 @@ export default class BuyKeyItem extends Item {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     gain(amt: number) {
-        App.game.keyItems.gainKeyItem(this.item);
+        if (this.locationId !== null) {
+            (window as any).sendLocationCheck(this.locationId);
+            this.purchased = true;
+        } else {
+            App.game.keyItems.gainKeyItem(this.item);
+        }
+        // App.game.keyItems.gainKeyItem(this.item);
     }
 
-    isSoldOut(): boolean {
-        return App.game.keyItems.hasKeyItem(this.item);
+    isSoldOut(): boolean{
+        return this.purchased;
     }
 
     get image(): string {

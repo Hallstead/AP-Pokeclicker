@@ -30,6 +30,46 @@ function initCatchFilter() {
     const profileModal = document.getElementById('profileModal');
     filterState ? filterColor = true : filterColor = false;
 
+    // --- APFlags gate: start hidden and OFF; show when APFlags.catchFilterFantasia is true ---
+    // Helper to read APFlags value safely
+    function getAPCatchFilterFlag() {
+        try {
+            const flags = (window.APFlags ?? {});
+            if (typeof flags.get === 'function') {
+                const v = flags.get('catchFilterFantasia');
+                if (typeof v !== 'undefined') return !!v;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'catchFilterFantasia')) {
+                return !!flags.catchFilterFantasia;
+            }
+        } catch (_) { /* ignore */ }
+        return false;
+    }
+
+    // Apply visibility/state based on APFlags
+    function applyCatchFilterAccessFromFlag(force) {
+        const enabled = !!getAPCatchFilterFlag();
+        const accessBtn = document.getElementById('catch-filter-btn');
+        if (accessBtn) {
+            accessBtn.style.display = enabled ? '' : 'none';
+        }
+        // When disabled, make sure filter is OFF and UI reflects it
+        if (!enabled) {
+            try {
+                filterState = false;
+                filterColor = false;
+                localStorage.setItem('filterState', false);
+                const toggleBtn = document.getElementById('catch-filter');
+                if (toggleBtn) {
+                    toggleBtn.setAttribute('class', 'btn btn-danger');
+                    toggleBtn.innerText = 'Catch Filter [OFF]';
+                }
+                // Close modal if open
+                try { $('#filterModal').modal('hide'); } catch (_) { /* ignore if jQuery/modal not available */ }
+            } catch (_) { /* ignore */ }
+        }
+    }
+
     // Setting custon CSS styles
     addGlobalStyle('#catch-filter-btn { position: absolute; left: 0px; top: 0px; width: auto; height: 41px; }');
     addGlobalStyle('#catch-filter-cont { display: flex; flex-direction: column; justify-content: center; }');
@@ -52,6 +92,14 @@ function initCatchFilter() {
     btn.addEventListener('click', () => { $('#filterModal').modal('show') })
     frag.appendChild(btn);
     pokeballDisplay.appendChild(frag);
+
+    // Ensure button starts hidden and filter is OFF until AP flag enables it
+    try {
+        btn.style.display = 'none';
+        filterState = false;
+        filterColor = false;
+        localStorage.setItem('filterState', false);
+    } catch (_) { /* ignore */ }
 
     // Creating a modal for the catch filter
     const filterMod = document.createElement('div');
@@ -117,6 +165,17 @@ function initCatchFilter() {
 
     overloadPokeballMethod();
     loadFilteredList();
+
+    // Apply APFlags state now and subscribe to future changes
+    applyCatchFilterAccessFromFlag(true);
+    window.addEventListener('ap:flag-changed', (ev) => {
+        try {
+            const detail = ev && ev.detail;
+            if (detail && detail.key === 'catchFilterFantasia') {
+                applyCatchFilterAccessFromFlag(true);
+            }
+        } catch (_) { /* ignore */ }
+    });
 }
 
 function toggleTypeFilter(event) {

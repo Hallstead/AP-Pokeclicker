@@ -21,7 +21,7 @@
 class EnhancedAutoClicker {
     // Constants
     static ticksPerSecond = 20;
-    static maxClickMultiplier = 50;
+    static maxClickMultiplier = 1;
     // Auto Clicker
     static autoClickState = ko.observable(validateStorage('autoClickState', false));
     static autoClickMultiplier = validateStorage('autoClickMultiplier', 1, (v) => (Number.isInteger(v) && v >= 1));
@@ -84,7 +84,7 @@ class EnhancedAutoClicker {
         const battleView = document.getElementsByClassName('battle-view')[0];
 
         var elemAC = document.createElement("table");
-        elemAC.innerHTML = `<tbody>
+        elemAC.innerHTML = `<tbody id="enhanced-auto-clicker-tbody">
         <tr>
             <td colspan="4">
                 <button id="auto-click-start" class="btn btn-${this.autoClickState() ? 'success' : 'danger'} btn-block" style="font-size:8pt;">
@@ -208,7 +208,138 @@ class EnhancedAutoClicker {
 
         if (this.autoClickState()) {
             this.toggleAutoClickerLoop();
+            this.toggleAutoClick();
         }
+
+        // Start disabled; will be enabled by Archipelago APFlags when available
+        document.getElementById('enhanced-auto-clicker-tbody').style.display = 'none';
+        const btn = document.getElementById('auto-click-start');
+        if (btn) btn.title = 'Disabled: Not enabled by Archipelago yet.';
+        // Ensure observable is set to false (do not overwrite the observable itself)
+        // try { this.autoClickState(false); } catch (_) { /* ignore */ }
+
+        // Try enabling via APFlags if already present
+        EnhancedAutoClicker.applyAutoclickerEnableFromFlag();
+        // Also apply progressive max clicks if provided via APFlags
+        EnhancedAutoClicker.applyAutoclickerProgressiveFromFlag();
+        // Poll briefly in case APFlags appears slightly after init
+        (function pollAPFlagOnce(maxMs = 10000, intervalMs = 500) {
+            const start = Date.now();
+            const timer = setInterval(() => {
+                const v = EnhancedAutoClicker.getAPAutoclickerFlag();
+                if (typeof v === 'boolean') {
+                    clearInterval(timer);
+                    EnhancedAutoClicker.applyAutoclickerEnableFromFlag(v);
+                } else if (Date.now() - start > maxMs) {
+                    clearInterval(timer);
+                }
+            }, intervalMs);
+        })();
+        // Poll progressive value separately in case it arrives later than the flag
+        ;(function pollAPProgressiveOnce(maxMs = 10000, intervalMs = 500) {
+            const start = Date.now();
+            const timer = setInterval(() => {
+                const v = EnhancedAutoClicker.getAPAutoclickerProgressiveFlag();
+                if (typeof v === 'number') {
+                    clearInterval(timer);
+                    EnhancedAutoClicker.applyAutoclickerProgressiveFromFlag(v);
+                } else if (Date.now() - start > maxMs) {
+                    clearInterval(timer);
+                }
+            }, intervalMs);
+        })();
+    }
+
+    /**
+     * Read the Archipelago APFlags.autoclicker value if available.
+     * Returns true/false when known, or undefined if APFlags isn't ready.
+     */
+    static getAPAutoclickerFlag() {
+        try {
+            const w = (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window);
+            const flags = w && w.APFlags;
+            if (!flags) return undefined;
+            if (typeof flags.get === 'function') {
+                // Prefer canonical key 'autoclicker', fallback to legacy 'enhancedAutoClicker'
+                const v1 = flags.get('autoclicker');
+                if (typeof v1 === 'boolean') return v1;
+                const v2 = flags.get('enhancedAutoClicker');
+                return typeof v2 === 'boolean' ? v2 : undefined;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'autoclicker')) {
+                return !!flags.autoclicker;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'enhancedAutoClicker')) {
+                return !!flags.enhancedAutoClicker;
+            }
+        } catch (_) { /* ignore */ }
+        return undefined;
+    }
+
+    /**
+     * Read the Archipelago APFlags.enhancedAutoClickerProgressive value if available.
+     * Returns value for max clicks when known, or undefined if APFlags isn't ready.
+     */
+    static getAPAutoclickerProgressiveFlag() {
+        try {
+            const w = (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window);
+            const flags = w && w.APFlags;
+            if (!flags) return undefined;
+            if (typeof flags.get === 'function') {
+                const v = flags.get('enhancedAutoClickerProgressive');
+                return (typeof v === 'number' && Number.isFinite(v)) ? v : undefined;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'enhancedAutoClickerProgressive')) {
+                const v = flags.enhancedAutoClickerProgressive;
+                return (typeof v === 'number' && Number.isFinite(v)) ? v : undefined;
+            }
+        } catch (_) { /* ignore */ }
+        return undefined;
+    }
+
+    /**
+     * Enable/disable the Auto Click button based on APFlags.autoclicker value.
+     * - If true: enable the button (does not auto-start)
+     * - If false: keep it disabled
+     */
+    static applyAutoclickerEnableFromFlag(forceValue) {
+        const allowed = (typeof forceValue === 'boolean') ? forceValue : this.getAPAutoclickerFlag();
+        const element = document.getElementById('enhanced-auto-clicker-tbody');
+        if (!element || typeof allowed === 'undefined') return;
+        if (allowed) {
+            element.style.display = "table-row-group";
+            element.title = '';
+        } else {
+            element.title = 'Disabled: Not enabled by Archipelago yet.';
+        }
+    }
+
+    /**
+     * Apply progressive max clicks setting from AP flag.
+     * Sets both maxClickMultiplier and current autoClickMultiplier to the provided value, updates slider and rate label,
+     * persists the multiplier, and restarts the loop if running. Ignores if value is undefined.
+     */
+    static applyAutoclickerProgressiveFromFlag(forceValue) {
+        const raw = (typeof forceValue === 'number') ? forceValue : this.getAPAutoclickerProgressiveFlag();
+        if (typeof raw === 'undefined') return;
+        // Clamp to sane integer >= 1
+        const next = Math.max(1, Math.floor(raw));
+        this.maxClickMultiplier = next;
+        this.autoClickMultiplier = next;
+        try { localStorage.setItem('autoClickMultiplier', this.autoClickMultiplier); } catch (_) { /* ignore */ }
+
+        const slider = document.getElementById('auto-click-rate');
+        if (slider && slider instanceof HTMLInputElement) {
+            slider.max = String(next);
+            slider.value = String(next);
+        }
+        const info = document.getElementById('auto-click-rate-info');
+        if (info) {
+            const displayNum = (this.ticksPerSecond * this.autoClickMultiplier).toLocaleString('en-US', { maximumFractionDigits: 2 });
+            info.textContent = `Click Attack Rate: ${displayNum}/s`;
+        }
+        // If running, restart the loop to apply new multiplier immediately
+        try { if (this.autoClickState && this.autoClickState()) { this.toggleAutoClickerLoop(); } } catch (_) { /* ignore */ }
     }
 
     /**
@@ -1083,6 +1214,26 @@ class EnhancedAutoClicker {
         }
     }
 }
+
+// React to Archipelago APFlags changes at runtime
+(function registerAPAutoclickerListener() {
+    try {
+        window.addEventListener('ap:flag-changed', (e) => {
+            try {
+                const detail = e && e.detail;
+                if (!detail) return;
+                if (detail.key === 'autoclicker' || detail.key === 'enhancedAutoClicker') {
+                    EnhancedAutoClicker.applyAutoclickerEnableFromFlag(!!detail.value);
+                } else if (detail.key === 'enhancedAutoClickerProgressive') {
+                    // Expect numeric value; ignore otherwise
+                    if (typeof detail.value === 'number') {
+                        EnhancedAutoClicker.applyAutoclickerProgressiveFromFlag(detail.value);
+                    }
+                }
+            } catch (_) { /* ignore */ }
+        });
+    } catch (_) { /* ignore */ }
+})();
 
 /**
  * Loads variable from localStorage
