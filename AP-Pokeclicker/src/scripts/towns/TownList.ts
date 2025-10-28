@@ -236,6 +236,16 @@ const PinkanBerryMaster = new BerryMasterShop(GameConstants.BerryTraderLocations
 
 // Kanto NPCs
 
+const Hallstead1 = new GiftNPC('Hallstead', [
+    "I don't know what dark sorcery you invoked, but somehow — somehow — you defeated me! Take this miserable creature before I immolate the very concept of mercy itself!",
+], () => {
+    // Give Psyduck (Dark Mage) - id 54.01
+    App.game.party.gainPokemonById(54.01);
+}, 'assets/images/pokemon/54.01.png', {
+    image: 'assets/images/npcs/Black Mage.png',
+    requirement: new MultiRequirement([new ClearGymRequirement(10000, GameConstants.getGymIndex('Hallstead\'s Yacht')), new ObtainedPokemonRequirement('Psyduck (Dark Mage)', true)]),
+});
+
 const PalletProfOak = new ProfNPC('Prof. Oak',
     GameConstants.Region.kanto,
     'Congratulations on completing your Kanto Pokédex!',
@@ -902,7 +912,7 @@ TownList['Hallstead\'s Yacht'] = new Town(
     GameConstants.KantoSubRegions.Kanto,
     [],
     {
-        npcs: [],
+        npcs: [Hallstead1],
         ignoreAreaStatus: true,
     }
 );

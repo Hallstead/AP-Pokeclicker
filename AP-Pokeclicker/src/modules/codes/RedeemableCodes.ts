@@ -25,13 +25,16 @@ export default class RedeemableCodes implements Saveable {
 
     constructor() {
         this.codeList = [
-            new RedeemableCode('jh', GameHelper.hash('jh'), false, async () => {
-                // Example reward: give 1000 farm points
-                App.game.wallet.gainFarmPoints(1000);
+            new RedeemableCode('dev', GameHelper.hash('dev'), false, async () => {
+                // Give the player 10k of each currency
+                App.game.wallet.gainMoney(10000);
+                App.game.wallet.gainDungeonTokens(10000);
+                App.game.wallet.gainQuestPoints(10000);
+                App.game.wallet.gainFarmPoints(10000);
 
                 Notifier.notify({
                     title: 'Code activated!',
-                    message: 'You gained 1,000 Farm Points!',
+                    message: 'You gained currency!',
                     type: NotificationConstants.NotificationOption.success,
                     timeout: 1e4,
                 });

@@ -83,7 +83,9 @@ export default class KeyItems implements Feature {
                 // Using a Z-Crystal boosts the power of all your Pokémon of a shared type for a short while, after which some time is needed to recharge.'
                 'A gift from Melemele\'s kahuna that enables the use of Z-Crystals. What they do is still under development.',
                 undefined, undefined, undefined, 'Z-Power Ring'),*/
-        ];
+                
+            new KeyItem(KeyItemType.AP_logo, 'This is a proof of concept for including AP items in shops.', undefined, undefined, undefined, 'AP Item'),
+            ];
     }
 
     hasKeyItem(item: KeyItemType): boolean {

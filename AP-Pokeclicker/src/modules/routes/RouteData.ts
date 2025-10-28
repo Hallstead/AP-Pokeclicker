@@ -65,7 +65,7 @@ Routes.add(new RegionRoute(
         land: ['Pidgey', 'Spearow', 'Nidoran(F)', 'Nidoran(M)', 'Jigglypuff', 'Mankey'],
     }),
     [
-        new RouteKillRequirement(10, Region.kanto, 2),
+        // new RouteKillRequirement(10, Region.kanto, 2),
         new GymBadgeRequirement(BadgeEnums.Boulder),
     ],
     undefined,
