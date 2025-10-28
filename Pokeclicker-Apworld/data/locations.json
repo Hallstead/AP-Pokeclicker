@@ -163,15 +163,15 @@
         },
         {
             "name": "Misty",
+            "region": "Boulder Badge",
             "category": [
                 "Gyms"
             ],
-            "requires": [],
-            "region": "Kanto"
+            "requires": []
         },
         {
             "name": "Lt. Surge",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Gyms"
             ],
@@ -267,7 +267,7 @@
         },
         {
             "name": "Mt. Moon",
-            "region": "Kanto",
+            "region": "Boulder Badge",
             "category": [
                 "Dungeons"
             ],
@@ -275,7 +275,7 @@
         },
         {
             "name": "Diglett's Cave",
-            "region": "Kanto",
+            "region": "Boulder Badge",
             "category": [
                 "Dungeons"
             ],
@@ -283,7 +283,7 @@
         },
         {
             "name": "Rock Tunnel",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Dungeons"
             ],

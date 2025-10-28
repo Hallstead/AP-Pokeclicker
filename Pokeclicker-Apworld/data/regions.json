@@ -15,10 +15,50 @@
     },
     "Kanto": {
         "connects_to": [
+            "Boulder Badge",
+            "Cascade Badge",
+            "Thunder Badge",
+            "Rainbow Badge",
+            "Marsh Badge",
+            "Soul Badge",
+            "Volcano Badge",
+            "Earth Badge",
             "Sevii Islands 123",
             "Safari Zone"
         ],
         "requires": "|Dungeon Ticket|"
+    },
+    "Boulder Badge": {
+        "connects_to": [],
+        "requires": "|Boulder Badge|"
+    },
+    "Cascade Badge": {
+        "connects_to": [],
+        "requires": "|Cascade Badge|"
+    },
+    "Thunder Badge": {
+        "connects_to": [],
+        "requires": "|Thunder Badge|"
+    },
+    "Rainbow Badge": {
+        "connects_to": [],
+        "requires": "|Rainbow Badge|"
+    },
+    "Marsh Badge": {
+        "connects_to": [],
+        "requires": "|Marsh Badge|"
+    },
+    "Soul Badge": {
+        "connects_to": [],
+        "requires": "|Soul Badge|"
+    },
+    "Volcano Badge": {
+        "connects_to": [],
+        "requires": "|Volcano Badge|"
+    },
+    "Earth Badge": {
+        "connects_to": [],
+        "requires": "|Earth Badge|"
     },
     "Safari Zone": {
         "connects_to": [],

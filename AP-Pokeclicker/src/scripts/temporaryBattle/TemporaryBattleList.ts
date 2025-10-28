@@ -55,7 +55,7 @@ TemporaryBattleList['Blue 1'] = new TemporaryBattle(
     'I heard the Pokémon League is crawling with tough Trainers. I have to figure out how to get past them. You should quit dawdling and get a move on!',
     [
         new RouteKillRequirement(10, GameConstants.Region.kanto, 22),
-        new GymBadgeRequirement(BadgeEnums.Boulder, GameConstants.AchievementOption.less),
+        // new GymBadgeRequirement(BadgeEnums.Boulder, GameConstants.AchievementOption.less),
     ],
     undefined,
     {

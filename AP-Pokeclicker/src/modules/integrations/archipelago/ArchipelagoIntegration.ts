@@ -21,6 +21,8 @@ class ArchipelagoIntegrationModule {
     private client: any = null;
     public connected = false;
     public lastError: any = null;
+    // Queue outbound location checks until we're connected
+    private pendingLocationChecks: number[] = [];
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string } | null = null;
@@ -166,12 +168,33 @@ class ArchipelagoIntegrationModule {
         }
         
         w.sendLocationCheck = (locationNumber: number) => {
-            this.client.socket.send({ cmd: "LocationChecks", locations: [locationNumber] });
+            try {
+                if (typeof locationNumber !== 'number' || Number.isNaN(locationNumber)) {
+                    console.warn('[ArchipelagoModule] Ignoring invalid LocationCheck id:', locationNumber);
+                    return;
+                }
+                if (!this.client) {
+                    console.warn('[ArchipelagoModule] Client not initialized yet; queuing LocationCheck', locationNumber);
+                    this.pendingLocationChecks.push(locationNumber);
+                    return;
+                }
+                if (!this.connected) {
+                    // Don't throw during UI computations; queue to send after connection
+                    console.warn('[ArchipelagoModule] Not connected; queuing LocationCheck', locationNumber);
+                    this.pendingLocationChecks.push(locationNumber);
+                    return;
+                }
+                this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
+            } catch (e) {
+                this.lastError = e;
+                try { console.error('Unable to send packets to the server; not connected to a server.', e); } catch (_) { /* noop */ }
+            }
         }
 
         // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
         this.client.messages.on("connected", async (text: string, player: APPlayer, tags: string[], nodes: MessageNode[]) => {
             console.log("Connected to server: ", player);
+            this.connected = true;
             thisPlayer = player.slot;
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
@@ -188,6 +211,17 @@ class ArchipelagoIntegrationModule {
             options = await player.fetchSlotData().then(res => res as GameOptions);
 
             // this.client.socket.send({ cmd: "Sync" });
+            // Flush any queued location checks now that we're connected
+            try {
+                if (this.pendingLocationChecks.length) {
+                    const batch = [...this.pendingLocationChecks];
+                    this.pendingLocationChecks.length = 0;
+                    this.client.socket.send({ cmd: 'LocationChecks', locations: batch });
+                }
+            } catch (e) {
+                this.lastError = e;
+                console.error('Failed to flush queued LocationChecks:', e);
+            }
         });
 
         // add item handler
@@ -385,17 +419,17 @@ class ArchipelagoIntegrationModule {
         });
 
         //add location info listener to give game sent item text
-        this.client.socket.on("locationInfo", (packet: LocationInfoPacket) => {
-            console.log("Location Info: ", packet);
-            packet.locations.forEach(location => {
-                if (location.player !== thisPlayer) {
-                    const itemName = new APItem(
-                        this.client, location, this.client.players.self, this.client.players.findPlayer(location.player)
-                    ).name;
-                    console.log(`sent ${itemName} to ${players[location.player].alias}`.toLowerCase());
-                }
-            });
-        });
+        // this.client.socket.on("locationInfo", (packet: LocationInfoPacket) => {
+        //     console.log("Location Info: ", packet);
+        //     packet.locations.forEach(location => {
+        //         if (location.player !== thisPlayer) {
+        //             const itemName = new APItem(
+        //                 this.client, location, this.client.players.self, this.client.players.findPlayer(location.player)
+        //             ).name;
+        //             console.log(`sent ${itemName} to ${players[location.player].alias}`.toLowerCase());
+        //         }
+        //     });
+        // });
 
         // Ensure the game is initialized before logging in so that early item events
         // don't try to access App.game while undefined.
@@ -408,8 +442,11 @@ class ArchipelagoIntegrationModule {
             'Pokeclicker'
         ).then(() => {
             console.log("Connected to the server");
+            // login resolves once the socket is opened, but we mark connected in the event as well
         }).catch(error => {
             console.error("Failed to connect:", error);
+            this.lastError = error;
+            this.connected = false;
         });
     }
 
@@ -435,6 +472,7 @@ class ArchipelagoIntegrationModule {
     public disconnect() {
         if (this.client && typeof this.client.disconnect === 'function') {
             this.client.disconnect();
+            this.connected = false;
         }
     }
 }
