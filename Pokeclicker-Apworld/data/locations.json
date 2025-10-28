@@ -7,7 +7,7 @@
                 "Key Items"
             ],
             "requires": [],
-            "region": "Pallet Town"
+            "region": "Route 1"
         },
         {
             "name": "Purchase the Dungeon Ticket in Viridian City (Dungeon Ticket)",
@@ -26,7 +26,7 @@
             "requires": []
         },
         {
-            "name": "Defeat 10 Pokemon on Kanto Route 5 (Mystery Egg)",
+            "name": "Defeat 10 Pokemon on Kanto Route 3 (Mystery Egg)",
             "region": "Kanto",
             "category": [
                 "Key Items"
@@ -74,7 +74,7 @@
             "requires": []
         },
         {
-            "name": "Capture 20 unique Pokemon (Magic Ball)",
+            "name": "Obtain 20 unique Pokemon (Magic Ball)",
             "region": "Kanto",
             "category": [
                 "Oak Items"
@@ -82,7 +82,7 @@
             "requires": []
         },
         {
-            "name": "Capture 30 unique Pokemon (Amulet Coin)",
+            "name": "Obtain 30 unique Pokemon (Amulet Coin)",
             "region": "Kanto",
             "category": [
                 "Oak Items"
@@ -90,7 +90,7 @@
             "requires": []
         },
         {
-            "name": "Capture 40 unique Pokemon (Rocky Helmet)",
+            "name": "Obtain 40 unique Pokemon (Rocky Helmet)",
             "region": "Kanto",
             "category": [
                 "Oak Items"
@@ -98,7 +98,7 @@
             "requires": []
         },
         {
-            "name": "Capture 50 unique Pokemon (EXP Share)",
+            "name": "Obtain 50 unique Pokemon (EXP Share)",
             "region": "Kanto",
             "category": [
                 "Oak Items"
@@ -106,7 +106,7 @@
             "requires": []
         },
         {
-            "name": "Capture 60 unique Pokemon (Sprayduck)",
+            "name": "Obtain 60 unique Pokemon (Sprayduck)",
             "region": "Kanto",
             "category": [
                 "Oak Items"
@@ -114,7 +114,7 @@
             "requires": []
         },
         {
-            "name": "Capture 70 unique Pokemon (Shiny Charm)",
+            "name": "Obtain 70 unique Pokemon (Shiny Charm)",
             "region": "Kanto",
             "category": [
                 "Oak Items"
@@ -122,7 +122,7 @@
             "requires": []
         },
         {
-            "name": "Capture 80 unique Pokemon (Magma Stone)",
+            "name": "Obtain 80 unique Pokemon (Magma Stone)",
             "region": "Kanto",
             "category": [
                 "Oak Items"
@@ -130,7 +130,23 @@
             "requires": []
         },
         {
-            "name": "Capture 90 unique Pokemon (Cell Battery)",
+            "name": "Obtain 90 unique Pokemon (Cell Battery)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Purchase the Explosive Charge on Cinnabar Island (Explosive Charge)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Purchase the Treasure Scanner on Cinnabar Island (Treasure Scanner)",
             "region": "Kanto",
             "category": [
                 "Oak Items"

@@ -5,10 +5,12 @@ import Item from './Item';
 
 export default class BuyOakItem extends Item {
     item: OakItemType;
+    locationId: number | null = null;
 
-    constructor(item: OakItemType, basePrice: number, currency: Currency = Currency.questPoint) {
+    constructor(item: OakItemType, basePrice: number, currency: Currency = Currency.questPoint, locationId = null) {
         super(OakItemType[item], basePrice, currency, { maxAmount: 1 }, undefined, 'Purchase to unlock this Oak Item');
         this.item = item;
+        this.locationId = locationId;
     }
 
     totalPrice(amount: number) {
@@ -23,6 +25,7 @@ export default class BuyOakItem extends Item {
     gain(amt: number) {
         const oakItem = App.game.oakItems.itemList[this.item];
         if (oakItem instanceof BoughtOakItem) {
+            (window as any).sendLocationCheck(this.locationId);
             oakItem.purchased = true;
         }
     }

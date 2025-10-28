@@ -15,6 +15,9 @@ export default class OakItem extends ExpUpgrade {
     };
 
     private isActiveKO: KnockoutObservable<boolean>;
+    private receivedKO: KnockoutObservable<boolean>;
+    private locationID: number | null;
+    private locationSent: boolean;
 
     constructor(
         name: any,
@@ -29,9 +32,14 @@ export default class OakItem extends ExpUpgrade {
         maxLevel = 5,
         costList: Amount[] = AmountFactory.createArray([50000, 100000, 250000, 500000, 1000000], Currency.money),
         public bonusSymbol: string = '×',
+        locationID: number | null = null,
+        locationSent: boolean = false,
     ) {
         super(name, displayName, maxLevel, expList, costList, bonusList, increasing);
         this.isActiveKO = ko.observable(false);
+        this.receivedKO = ko.observable(false);
+        this.locationID = locationID;
+        this.locationSent = locationSent;
     }
 
     use(exp: number = this.expGain, scale = 1) {
@@ -45,6 +53,13 @@ export default class OakItem extends ExpUpgrade {
     }
 
     isUnlocked(): boolean {
+        if (App.game.party.caughtPokemon.length >= this.unlockReq && !this.locationSent) {
+            (window as any).sendLocationCheck(this.locationID)
+        }
+        return this.received;
+    }
+
+    isChecked(): boolean {
         return App.game.party.caughtPokemon.length >= this.unlockReq;
     }
 
@@ -104,5 +119,13 @@ export default class OakItem extends ExpUpgrade {
 
     get tooltip() {
         return ko.pureComputed(() => `<u>${this.displayName}</u><br/><p>${this.description}</p>Level: <strong>${this.level}/${this.maxLevel}</strong><br/>Bonus: <strong>${this.bonusText}</strong>`);
+    }
+
+    get received(): boolean {
+        return this.receivedKO();
+    }
+
+    set received(bool: boolean) {
+        this.receivedKO(bool);
     }
 }

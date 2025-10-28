@@ -22,7 +22,18 @@ class App {
 
             console.log(`[${GameConstants.formatDate(new Date())}] %cLoading Game Data..`, 'color:#8e44ad;font-weight:900;');
 
+            // Mark game as not ready yet for external listeners
+            try { (window as any).__AP_GAME_READY__ = false; } catch (e) {}
+
             App.game = new Game();
+
+            // Signal that App.game has been created for integrations that need to wait
+            try {
+                (window as any).__AP_GAME_READY__ = true;
+                if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
+                    window.dispatchEvent(new Event('ap:game-ready'));
+                }
+            } catch (e) {}
 
             console.log(`[${GameConstants.formatDate(new Date())}] %cGame loaded`, 'color:#2ecc71;font-weight:900;');
             Notifier.notify({ message: 'Game loaded', type: NotificationConstants.NotificationOption.info });

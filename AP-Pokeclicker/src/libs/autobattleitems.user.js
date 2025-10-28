@@ -29,6 +29,75 @@ function initAutoBattleItems() {
     </button>`
     document.getElementById('auto-battle-items').addEventListener('click', event => { switchABItems(event); });
 
+    // --- APFlags gate: start hidden and OFF; show when APFlags.autoBattleItems is true ---
+    const btn = document.getElementById('auto-battle-items');
+    // Force OFF if currently ON
+    try {
+        if (battleItemState) {
+            battleItemState = false;
+            clearInterval(itemABLoop);
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-danger');
+            btn.textContent = 'Auto Use [OFF]';
+            localStorage.setItem('autoBattleItems', JSON.stringify(false));
+        }
+    } catch (_) { /* ignore */ }
+    // Hide button until allowed by APFlags
+    btn.style.display = 'none';
+    btn.title = 'Disabled: Not enabled by Archipelago yet.';
+
+    function getAPAutoBattleFlag() {
+        try {
+            const w = (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window);
+            const flags = w && w.APFlags;
+            if (!flags) return undefined;
+            if (typeof flags.get === 'function') {
+                const v = flags.get('autoBattleItems');
+                return typeof v === 'boolean' ? v : undefined;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'autoBattleItems')) {
+                return !!flags.autoBattleItems;
+            }
+        } catch (_) { /* ignore */ }
+        return undefined;
+    }
+
+    function applyAutoBattleButtonFromFlag(forceValue) {
+        const allowed = (typeof forceValue === 'boolean') ? forceValue : getAPAutoBattleFlag();
+        if (typeof allowed === 'undefined') return;
+        if (allowed) {
+            btn.style.display = '';
+            btn.removeAttribute('title');
+        } else {
+            btn.style.display = 'none';
+            btn.title = 'Disabled: Not enabled by Archipelago yet.';
+            // Also ensure OFF if being turned off at runtime
+            try {
+                if (battleItemState) {
+                    battleItemState = false;
+                    clearInterval(itemABLoop);
+                    btn.classList.remove('btn-success');
+                    btn.classList.add('btn-danger');
+                    btn.textContent = 'Auto Use [OFF]';
+                    localStorage.setItem('autoBattleItems', JSON.stringify(false));
+                }
+            } catch (_) { /* ignore */ }
+        }
+    }
+
+    // Initial apply and listener for future changes
+    applyAutoBattleButtonFromFlag();
+    try {
+        window.addEventListener('ap:flag-changed', (e) => {
+            try {
+                const detail = e && e.detail;
+                if (detail && detail.key === 'autoBattleItems') {
+                    applyAutoBattleButtonFromFlag(!!detail.value);
+                }
+            } catch (_) { /* ignore */ }
+        });
+    } catch (_) { /* ignore */ }
+
     //Specific Battle Items Toggling
     const battleItemTop = battleItemDisplay.querySelectorAll('.amount.p-0');
     for (let i = 0; i < battleItemTop.length; i++) {

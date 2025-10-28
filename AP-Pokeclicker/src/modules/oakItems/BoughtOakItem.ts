@@ -28,7 +28,7 @@ export default class BoughtOakItem extends OakItem {
     }
 
     isUnlocked(): boolean {
-        return this.purchased;
+        return this.received;
     }
 
     get hint() {

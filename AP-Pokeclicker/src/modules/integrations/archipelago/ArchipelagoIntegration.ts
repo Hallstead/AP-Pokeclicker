@@ -1,3 +1,16 @@
+import BadgeEnums from '../../enums/Badges';
+import NotificationConstants from '../../notifications/NotificationConstants';
+import Notifier from '../../notifications/Notifier';
+import { ItemList } from '../../items/ItemList';
+
+import {
+    BouncedPacket, Client, Item as APItem, itemsHandlingFlags,
+    JSONRecord, LocationInfoPacket,
+    MessageNode, NetworkSlot, Player as APPlayer,
+} from "archipelago.js";
+import KeyItemType from '../../enums/KeyItemType';
+import OakItemType from '../../enums/OakItemType';
+
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
 // legacy scripts can call without importing TS modules.
@@ -8,229 +21,409 @@ class ArchipelagoIntegrationModule {
     private client: any = null;
     public connected = false;
     public lastError: any = null;
+    // If set by the public login() wrapper, prefer calling the package's
+    // login(host:port, player, game) with these arguments during init.
+    private preferLoginCall: { server: string; player: string; game: string } | null = null;
 
-    // Callbacks set by consumer (script bootstrap)
-    public onConnected: AnyFn | null = null;
-    public onPrint: ((msg: string) => void) | null = null;
-    public onItemReceived: ((item: any) => void) | null = null;
+    
+    // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
+    private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
+        const start = Date.now();
+        // Fast path: already ready via global flag or App.game present
+        try {
+            if (typeof window !== 'undefined') {
+                const w: any = window as any;
+                if ((w.__AP_GAME_READY__ === true) || (w.App && w.App.game)) return true;
+            }
+        } catch (_) { }
+
+        // Prefer event-based detection if available
+        const eventPromise = new Promise<boolean>((resolve) => {
+            try {
+                if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+                    const handler = () => {
+                        try { (window as any).removeEventListener?.('ap:game-ready', handler as any); } catch (_) { }
+                        resolve(true);
+                    };
+                    window.addEventListener('ap:game-ready', handler, { once: true } as any);
+                }
+            } catch (_) { }
+        });
+
+        // Poll as a fallback while also racing with the event and timeout
+        const pollPromise = (async () => {
+            while (Date.now() - start < timeoutMs) {
+                try {
+                    const w: any = window as any;
+                    if (w.__AP_GAME_READY__ === true || (w.App && w.App.game)) return true;
+                } catch (_) { }
+                await new Promise(r => setTimeout(r, intervalMs));
+            }
+            return false;
+        })();
+
+        const winner = await Promise.race([
+            eventPromise,
+            pollPromise,
+            new Promise<boolean>(r => setTimeout(() => r(false), timeoutMs))
+        ]);
+        if (!winner) { try { console.warn('[ArchipelagoModule] App.game not ready after wait; continuing to connect anyway'); } catch (_) { } }
+        return winner;
+    }
+
+    public displayItemReceived(item: any, article: string) {
+        const itemReceivedNotificationType = NotificationConstants.NotificationOption.success;
+
+        if (article == "a") {
+            if (item.name.match(/^[aeiou]/i)) {
+                article = "an";
+            } else {
+                article = "a";
+            }
+        }
+
+        let space = " ";
+        if (article == "") {
+            space = "";
+        }
+
+        if (item.sender && item.sender != item.receiver) {
+            Notifier.notify({
+                message: `You received ${article}${space}${item.name} from ${item.sender}!`,
+                type: itemReceivedNotificationType,
+                timeout: 5000,
+            });
+        } else {
+            Notifier.notify({
+                message: `You found ${article}${space}${item.name}!`,
+                type: itemReceivedNotificationType,
+                timeout: 5000,
+            });
+        }
+    }
 
     // Initialize and optionally auto-connect. We dynamically import the runtime
     // package so the modules bundle doesn't crash at build time if unavailable.
     public async init(serverUrl = 'ws://localhost:38281', playerName = 'Player', autoConnect = true) {
-        try {
-            // Try dynamic import (preferred) but fall back to require for environments
-            // where TypeScript/webpack resolve types differently.
-            let pkg: any;
-            try {
-                // @ts-ignore - dynamic import and missing types for archipelago.js; handled at runtime/bundle
-                pkg = await import('archipelago.js');
-            } catch (e) {
-                try {
-                    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
-                    // @ts-ignore
-                    pkg = require('archipelago.js');
-                } catch (err) {
-                    // preserve original import error
-                    this.lastError = e;
-                    throw e;
-                }
-            }
 
-            // The package may export the client under different shapes; try common ones
-            console.log('[ArchipelagoModule] imported package shape:', pkg);
-            let ArchipelagoClient: any = null;
-            const tryCandidates = [
-                pkg?.ArchipelagoClient,
-                pkg?.default?.ArchipelagoClient,
-                pkg?.default,
-                pkg,
-                pkg?.ArchipelagoWebsocketClient,
-                pkg?.ArchipelagoWebSocketClient,
-                pkg?.Client,
-                pkg?.default?.Client,
-            ];
-            for (const c of tryCandidates) {
-                if (typeof c === 'function') {
-                    ArchipelagoClient = c;
-                    break;
-                }
-            }
-            // If still not found, scan the exported values for a callable
-            if (!ArchipelagoClient) {
-                try {
-                    for (const v of Object.values(pkg || {})) {
-                        if (typeof v === 'function') { ArchipelagoClient = v; break; }
-                    }
-                } catch (e) {
-                    // ignore
-                }
-            }
+        this.client = new Client();
 
-            if (!ArchipelagoClient) {
-                this.lastError = new Error('Archipelago client constructor not found in package exports');
-                console.warn('[ArchipelagoModule] Unable to find a callable Archipelago client in package exports', pkg);
-                return;
-            }
+        let thisPlayer: number = 0;
+        type Players = Record<number, {
+            slot: number,
+            name: string,
+            game: string,
+            alias: string
+        }>;
+        let players: Players = {};
 
-            // Construct client instance (try new, then factory)
-            try {
-                this.client = new ArchipelagoClient({ serverUrl, game: 'Pokeclicker', playerName });
-            } catch (e) {
-                // Some shims expose a factory; try calling as function
-                try {
-                    this.client = ArchipelagoClient({ serverUrl, game: 'Pokeclicker', playerName });
-                } catch (err) {
-                    this.lastError = err;
-                    console.error('[ArchipelagoModule] Failed to construct client', err);
-                    return;
-                }
-            }
 
-            // Wire known hooks if present (client implementations differ slightly)
-            try {
-                if ('onConnected' in this.client) {
-                    this.client.onConnected = () => { this.connected = true; this.onConnected?.(); };
-                } else if (this.client.on) {
-                    this.client.on('connected', () => { this.connected = true; this.onConnected?.(); });
-                }
-                if ('onPrint' in this.client) {
-                    this.client.onPrint = (m: string) => this.onPrint?.(m);
-                } else if (this.client.on) {
-                    this.client.on('print', (m: string) => this.onPrint?.(m));
-                }
-                if ('onItemReceived' in this.client) {
-                    this.client.onItemReceived = (it: any) => this.onItemReceived?.(it);
-                } else if (this.client.on) {
-                    this.client.on('ItemReceived', (it: any) => this.onItemReceived?.(it));
-                }
-                // Also attach to socket-level events if available
-                try {
-                    const sock = this.client?.socket;
-                    if (sock && typeof sock.on === 'function') {
-                        const markConnected = () => { this.connected = true; this.onConnected?.(); };
-                        // listen for common socket events
-                        ['connected', 'connect', 'open', 'ready'].forEach((ev) => {
-                            try { sock.on(ev, markConnected); } catch (e) { /* ignore */ }
-                        });
-                        // some socket implementations expose an 'onConnected' property
-                        try { if ('onConnected' in sock) { (sock as any).onConnected = markConnected; } } catch (e) {}
-                    }
-                } catch (e) {
-                    // ignore socket hook failures
-                }
-            } catch (e) {
-                this.lastError = e;
-                console.warn('[ArchipelagoModule] Warning wiring client hooks', e);
-            }
+        type GameOptions = {
+            DeathLink?: number,
+            DeathLink_Amnesty?: number,
+            MedalHunt?: number,
+            ExtraCheckpoint?: number,
+            ExtraChecks?: number
+        };
+        let options: GameOptions = {}
+        let lastItemReceivedStartingIndex: number = -1;
 
-            if (autoConnect) {
-                // Ensure common option shapes include the requested server URL so
-                // different client implementations can find it.
-                try {
-                    // common: client.options.connectionOptions.url
-                    if (!this.client.options) { this.client.options = {}; }
-                    if (!this.client.options.connectionOptions) { this.client.options.connectionOptions = {}; }
-                    this.client.options.connectionOptions.url = serverUrl;
-                } catch (e) {
-                    // ignore
-                }
-                try {
-                    // some implementations use defaultConnectionOptions on instance
-                    if (typeof (this.client as any).defaultConnectionOptions === 'object') {
-                        (this.client as any).defaultConnectionOptions.url = serverUrl;
-                    }
-                } catch (e) {}
-                // Try several possible connect entry points. Different package versions
-                // expose connect on different objects (client.connect, client.socket.connect, etc.).
-                const connectCandidates: Array<{ obj: any; fn: string }> = [
-                    { obj: this.client, fn: 'connect' },
-                    { obj: this.client, fn: 'start' },
-                    { obj: this.client, fn: 'open' },
-                    { obj: this.client?.socket, fn: 'connect' },
-                    { obj: this.client?.socket, fn: 'open' },
-                    { obj: this.client?.socket, fn: 'connectTo' },
-                    { obj: this.client?.socket, fn: 'connectWS' },
-                    { obj: this.client?.socket, fn: 'create' },
-                ];
-
-                let connected = false;
-                for (const cand of connectCandidates) {
-                    try {
-                        if (cand.obj && typeof cand.obj[cand.fn] === 'function') {
-                            console.log(`[ArchipelagoModule] attempting connect via ${cand.fn} on`, cand.obj);
-                            // Try multiple common argument shapes
-                            let res: any;
-                            try {
-                                res = cand.obj[cand.fn](serverUrl);
-                            } catch (e) {
-                                try {
-                                    res = cand.obj[cand.fn]({ url: serverUrl });
-                                } catch (e2) {
-                                    try {
-                                        res = cand.obj[cand.fn]({ connectionOptions: { url: serverUrl } });
-                                    } catch (e3) {
-                                        // last-resort: call with no args
-                                        res = cand.obj[cand.fn]();
-                                    }
-                                }
-                            }
-                            if (res && typeof res.then === 'function') {
-                                // await promise-like results
-                                try {
-                                    await res;
-                                } catch (e) {
-                                    this.lastError = e;
-                                    console.warn(`[ArchipelagoModule] ${cand.fn} promise rejected`, e);
-                                    continue;
-                                }
-                            }
-                            connected = true;
-                            console.log(`[ArchipelagoModule] connect succeeded via ${cand.fn}`);
-                            break;
-                        }
-                    } catch (e) {
-                        this.lastError = e;
-                        console.warn(`[ArchipelagoModule] ${cand.fn} threw`, e);
-                    }
-                }
-                if (!connected) {
-                    console.warn('[ArchipelagoModule] No connect method succeeded; socket may be managed separately.');
-                }
-                // If none of the connect calls immediately signalled connected, poll the socket
-                // for a short period to detect when it becomes connected and fire onConnected.
-                (async () => {
-                    try {
-                        const maxChecks = 25; // ~5 seconds at 200ms
-                        for (let i = 0; i < maxChecks; i++) {
-                            const s = this.client?.socket as any;
-                            // check common public indicators
-                            if (!s) { /* wait */ }
-                            else if (s.connected === true || s.isConnected === true || s._connected === true) {
-                                this.connected = true; this.onConnected?.(); console.log('[ArchipelagoModule] marked connected via public flag'); break;
-                            }
-                            // try underscored/private fields
-                            try {
-                                if (s['#connected'] === true) { this.connected = true; this.onConnected?.(); console.log('[ArchipelagoModule] marked connected via #connected'); break; }
-                            } catch (e) {}
-                            try {
-                                if (s._isConnected === true) { this.connected = true; this.onConnected?.(); console.log('[ArchipelagoModule] marked connected via _isConnected'); break; }
-                            } catch (e) {}
-                            try {
-                                // reflect private field symbols
-                                const symNames = Object.getOwnPropertySymbols(s || {}).map(String);
-                                if (symNames.some(n => /connected/i.test(n))) { this.connected = true; this.onConnected?.(); console.log('[ArchipelagoModule] marked connected via symbol'); break; }
-                            } catch (e) {}
-                            await new Promise(r => setTimeout(r, 200));
-                        }
-                    } catch (e) {
-                        // ignore polling errors
-                    }
-                })();
-            }
-        } catch (e) {
-            this.lastError = e;
-            console.warn('[ArchipelagoModule] dynamic import failed', e);
+        // Ensure global runtime flag object exists and supports get/set with event dispatch
+        const w: any = window as any;
+        if (!w.APFlags) {
+            w.APFlags = Object.assign(Object.create(null), {
+                autoBattleItems: false,
+                catchFilterFantasia: false,
+                enhancedAutoClicker: false,
+                enhancedAutoClickerProgressive: 0,
+                enhancedAutoHatchery: false,
+                enhancedAutoMine: false,
+                simpleAutoFarmer: false,
+                autoQuestCompleter: false,
+                autoSafariZone: false,
+                autoSafariZoneProgressive: 0,
+                catchSpeedAdjuster: false,
+                infiniteSeasonalEvents: false,
+                oakItemsUnlimited: false,
+                omegaProteinGains: false,
+                overnightBerryGrowth: false,
+                simpleWeatherChanger: false,
+                starter1: 30,
+                starter2: 60,
+                starter3: 42
+            });
         }
+        if (typeof w.APFlags.set !== 'function') {
+            w.APFlags.set = (key: string, value: any) => {
+                try { w.APFlags[key] = value; } catch (_) { /* ignore */ }
+                try { window.dispatchEvent(new CustomEvent('ap:flag-changed', { detail: { key, value } })); } catch (_) { /* ignore */ }
+            };
+        }
+        if (typeof w.APFlags.get !== 'function') {
+            w.APFlags.get = (key: string) => {
+                try { return w.APFlags[key]; } catch (_) { return undefined; }
+            };
+        }
+        
+        w.sendLocationCheck = (locationNumber: number) => {
+            this.client.socket.send({ cmd: "LocationChecks", locations: [locationNumber] });
+        }
+
+        // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
+        this.client.messages.on("connected", async (text: string, player: APPlayer, tags: string[], nodes: MessageNode[]) => {
+            console.log("Connected to server: ", player);
+            thisPlayer = player.slot;
+            const slots: Record<number, NetworkSlot> = this.client.players.slots;
+            Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
+                const slotNumber: number = parseInt(key)
+                const slotPlayer: APPlayer = this.client.players.findPlayer(slotNumber);
+                players[slotNumber] = {
+                    slot: slotNumber,
+                    name: slot.name,
+                    game: slot.game,
+                    alias: slotPlayer.alias,
+                }
+            });
+
+            options = await player.fetchSlotData().then(res => res as GameOptions);
+
+            // this.client.socket.send({ cmd: "Sync" });
+        });
+
+        // add item handler
+        this.client.items.on("itemsReceived", async (items: APItem[], startingIndex: number) => {
+            // Set APFlags for each script item
+            const w: any = window as any;
+            const setFlag = (key: string, value: any) => {
+                if (w.APFlags?.set) {
+                    w.APFlags.set(key, value);
+                } else {
+                    w.APFlags = w.APFlags || Object.create(null);
+                    w.APFlags[key] = value;
+                    try { window.dispatchEvent(new CustomEvent('ap:flag-changed', { detail: { key, value } })); } catch (_) { /* ignore */ }
+                }
+            };
+
+            console.log("Received items: ", items);
+            // if this is a sync packet reset all our item addresses without changing anything else
+            if (startingIndex === 0) {
+                lastItemReceivedStartingIndex = -1;
+                setFlag('autoBattleItems', false);
+                setFlag('catchFilterFantasia', false);
+                setFlag('enhancedAutoClicker', false);
+                setFlag('enhancedAutoClickerProgressive', 0);
+                setFlag('enhancedAutoHatchery', false);
+                setFlag('enhancedAutoMine', false);
+                setFlag('simpleAutoFarmer', false);
+                setFlag('autoQuestCompleter', false);
+                setFlag('autoSafariZone', false);
+                setFlag('autoSafariZoneProgressive', 0);
+                setFlag('catchSpeedAdjuster', false);
+                setFlag('infiniteSeasonalEvents', false);
+                setFlag('oakItemsUnlimited', false);
+                setFlag('omegaProteinGains', false);
+                setFlag('overnightBerryGrowth', false);
+                setFlag('simpleWeatherChanger', false);
+            }
+
+            for (let i: number = 0; i < items.length; i++) {
+                let item: APItem = items[i];
+                console.log("Processing item: ", item);
+                console.log(item.id)
+                if (item.id >= 1 && item.id <= 9) {
+                    // Key items
+                    let index = item.id - 1;
+                    const key_items = [
+                        KeyItemType.Town_map,
+                        KeyItemType.Dungeon_ticket,
+                        KeyItemType.Mystery_egg,
+                        KeyItemType.Wailmer_pail,
+                        KeyItemType.Super_rod,
+                        KeyItemType.Safari_ticket,
+                        KeyItemType.Explorer_kit,
+                        KeyItemType.Gem_case,
+                        KeyItemType.Holo_caster
+                    ];
+                    if (!App.game.keyItems.hasKeyItem(key_items[index])) {
+                        App.game.keyItems.gainKeyItem(key_items[index], false);
+                        this.displayItemReceived(item, "the");
+                    }
+                } else if (item.id >= 10 && item.id <= 19) {
+                    // Oak items
+                    let index = item.id - 10;
+                    const oak_items = [
+                        OakItemType.Magic_Ball,
+                        OakItemType.Amulet_Coin,
+                        OakItemType.Rocky_Helmet,
+                        OakItemType.Exp_Share,
+                        OakItemType.Sprayduck,
+                        OakItemType.Shiny_Charm,
+                        OakItemType.Magma_Stone,
+                        OakItemType.Cell_Battery,
+                        OakItemType.Explosive_Charge,
+                        OakItemType.Treasure_Scanner
+                    ];
+                    // TODO: Establish global variables for oak items active state
+                    if (!App.game.oakItems.isUnlocked(oak_items[index])) {
+                        App.game.oakItems.itemList[oak_items[index]].received = true;
+                        this.displayItemReceived(item, "the");
+                    }
+                } else if (item.id >= 20 && item.id <= 35) {
+                    // scripts
+                    let index = item.id - 20;
+                    const oak_items = [
+                        "Auto Battle Items",
+                        "Catch Filter Fantasia",
+                        "Enhanced Auto Clicker",
+                        "Enhanced Auto Clicker (Progressive Clicks/Second)",
+                        "Enhanced Auto Hatchery",
+                        "Enhanced Auto Mine",
+                        "Simple Auto Farmer",
+                        "Auto Quest Completer",
+                        "Auto Safari Zone",
+                        "Auto Safari Zone (Progressive Fast Animations)",
+                        "Catch Speed Adjuster",
+                        "Infinite Seasonal Events",
+                        "Oak Items Unlimited",
+                        "Omega Protein Gains",
+                        "Overnight Berry Growth",
+                        "Simple Weather Changer"
+                    ];
+
+                    switch (index) {
+                        case 0: setFlag('autoBattleItems', true); break;
+                        case 1: setFlag('catchFilterFantasia', true); break;
+                        case 2:
+                            // Enhanced Auto Clicker (base)
+                            setFlag('enhancedAutoClicker', true);
+                            // Back-compat with older consumers
+                            setFlag('autoclicker', true);
+                            break;
+                        case 3:
+                            // Progressive clicks/second
+                            setFlag('enhancedAutoClicker', true);
+                            setFlag('autoclicker', true);
+                            {
+                                const cur = (w.APFlags?.get ? w.APFlags.get('enhancedAutoClickerProgressive') : w.APFlags?.enhancedAutoClickerProgressive) || 0;
+                                setFlag('enhancedAutoClickerProgressive', Number(cur) + 1);
+                            }
+                            break;
+                        case 4: setFlag('enhancedAutoHatchery', true); break;
+                        case 5: setFlag('enhancedAutoMine', true); break;
+                        case 6: setFlag('simpleAutoFarmer', true); break;
+                        case 7: setFlag('autoQuestCompleter', true); break;
+                        case 8: setFlag('autoSafariZone', true); break;
+                        case 9:
+                            setFlag('autoSafariZone', true);
+                            {
+                                const cur = (w.APFlags?.get ? w.APFlags.get('autoSafariZoneProgressive') : w.APFlags?.autoSafariZoneProgressive) || 0;
+                                setFlag('autoSafariZoneProgressive', Number(cur) + 1);
+                            }
+                            break;
+                        case 10: setFlag('catchSpeedAdjuster', true); break;
+                        case 11: setFlag('infiniteSeasonalEvents', true); break;
+                        case 12: setFlag('oakItemsUnlimited', true); break;
+                        case 13: setFlag('omegaProteinGains', true); break;
+                        case 14: setFlag('overnightBerryGrowth', true); break;
+                        case 15: setFlag('simpleWeatherChanger', true); break;
+                        default:
+                            break;
+                    }
+
+                    this.displayItemReceived(item, "the");
+                } else if (item.id == 36) {
+                    // progressive pokeballs
+                    // TODO: Establish global variable for progressive pokeball state
+                } else if (item.id >= 37 && item.id <= 45) {
+                    // Badges
+                    let index = item.id - 37;
+                    const badges = [
+                        BadgeEnums.Boulder,
+                        BadgeEnums.Cascade,
+                        BadgeEnums.Thunder,
+                        BadgeEnums.Rainbow,
+                        BadgeEnums.Marsh,
+                        BadgeEnums.Soul,
+                        BadgeEnums.Volcano,
+                        BadgeEnums.Earth,
+                        BadgeEnums.Elite_Lorelei,
+                        BadgeEnums.Elite_Bruno,
+                        BadgeEnums.Elite_Agatha,
+                        BadgeEnums.Elite_Lance,
+                        BadgeEnums.Elite_KantoChampion
+                    ];
+                    
+                    if (index < 8) {
+                        if (!App.game.badgeCase.hasBadge(badges[index])) {
+                            this.displayItemReceived(item, "the");
+                            App.game.badgeCase.gainBadge(badges[index]);
+                        }
+                    } else {
+                        for (let i = index; i < badges.length; i++) {
+                            if (!App.game.badgeCase.hasBadge(badges[index])) {
+                                App.game.badgeCase.gainBadge(badges[index]);
+                                this.displayItemReceived(item, "a");
+                                break;
+                            }
+                        }
+                    }
+
+                } else if (item.id >= 46 && item.id <= 196) {
+                    // Pokemon
+                    let id = item.id - 46;
+                    if (!App.game.party.alreadyCaughtPokemon(id)) {
+                        App.game.party.gainPokemonById(id, false, false);
+                        this.displayItemReceived(item, "");
+                    }
+                } else {
+                    // Filler
+                    player.gainItem('Protein', 1);
+                    this.displayItemReceived(item, "a");
+                }
+
+            }
+        });
+
+        //add location info listener to give game sent item text
+        this.client.socket.on("locationInfo", (packet: LocationInfoPacket) => {
+            console.log("Location Info: ", packet);
+            packet.locations.forEach(location => {
+                if (location.player !== thisPlayer) {
+                    const itemName = new APItem(
+                        this.client, location, this.client.players.self, this.client.players.findPlayer(location.player)
+                    ).name;
+                    console.log(`sent ${itemName} to ${players[location.player].alias}`.toLowerCase());
+                }
+            });
+        });
+
+        // Ensure the game is initialized before logging in so that early item events
+        // don't try to access App.game while undefined.
+        await this.waitForGameReady(15000, 100);
+        await this.client.login(
+            serverUrl.startsWith("ws") ?
+                `${serverUrl}` :
+                `wss://${serverUrl}`,
+            playerName,
+            'Pokeclicker'
+        ).then(() => {
+            console.log("Connected to the server");
+        }).catch(error => {
+            console.error("Failed to connect:", error);
+        });
+    }
+
+    // Public wrapper that prefers the archipelago.js login(host:port, player, game)
+    // signature. This will import/initialize the client and then use login.
+    public async login(serverOrHostPort: string, playerName: string, gameName = 'Pokeclicker') {
+        this.preferLoginCall = { server: serverOrHostPort, player: playerName, game: gameName };
+        try {
+            await this.init(serverOrHostPort, playerName, true);
+        } finally {
+            // clear preference regardless of success so future init() calls behave normally
+            this.preferLoginCall = null;
+        }
+        return this.connected;
     }
 
     public connect() {
