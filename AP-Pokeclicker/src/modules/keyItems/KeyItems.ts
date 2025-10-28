@@ -4,7 +4,7 @@ import Information from '../utilities/Information';
 import KeyItemController from './KeyItemController';
 import { Feature } from '../DataStore/common/Feature';
 import {
-    getDungeonIndex, Region, RegionalStarters, ROUTE_KILLS_NEEDED, Pokerus,
+    getDungeonIndex, Region, RegionalStarters, ROUTE_KILLS_NEEDED, Pokerus, getGymIndex,
 } from '../GameConstants';
 
 export default class KeyItems implements Feature {
@@ -25,8 +25,7 @@ export default class KeyItems implements Feature {
             new KeyItem(KeyItemType.Coin_case, 'A case for holding Pokédollars.', null, true, undefined, 'Coin Case'),
             new KeyItem(KeyItemType.Pokeball_bag, 'A small bag that can hold many different types of Poké Balls.', null, true, undefined, 'Poké Ball Bag'),
             new KeyItem(KeyItemType.Town_map, 'A very convenient map that can be viewed anytime. It even shows you your present location in the region.',
-                // () => App.game.statistics.routeKills[Region.kanto][1]() >= ROUTE_KILLS_NEEDED,
-                () => false,
+                () => App.game.statistics.routeKills[Region.kanto][1]() >= ROUTE_KILLS_NEEDED,
                 false,
                 () => {
                     Information.show({
@@ -37,22 +36,24 @@ export default class KeyItems implements Feature {
                             },
                         ],
                     });
-                }, 'Town Map'),
+                }, 'Town Map', undefined, 1),
             new KeyItem(KeyItemType.Dungeon_ticket, 'This ticket grants access to all dungeons in the Kanto region and beyond.<br/><strong>Tip:</strong> You gain Dungeon Tokens by capturing Pokémon.', undefined, undefined, undefined, 'Dungeon Ticket'),
             new KeyItem(KeyItemType.Super_rod, 'The best fishing rod for catching wild water Pokémon.',
-                () => false /*App.game.statistics.routeKills[Region.kanto][12]() >= ROUTE_KILLS_NEEDED*/, undefined, undefined, 'Super Rod'),
+                () => App.game.statistics.routeKills[Region.kanto][12]() >= ROUTE_KILLS_NEEDED, undefined, undefined, 'Super Rod', undefined, 3),
             new KeyItem(KeyItemType.Holo_caster, 'A device that allows users to see and track Achievements. Completing Achievements gives useful bonuses.',
-                () => App.game.statistics.dungeonsCleared[getDungeonIndex('Victory Road')]() > 0, undefined, undefined, 'Holo Caster'),
+                () => App.game.statistics.dungeonsCleared[getDungeonIndex('Victory Road')]() > 0, undefined, undefined, 'Holo Caster', undefined, 9),
             new KeyItem(KeyItemType.Mystery_egg, 'A mysterious Egg obtained from Mr. Pokémon. This allows you to use the Pokémon Day Care to help improve your Pokémon Attack. Some baby Pokémon can only be found through breeding, too!',
-                () => App.game.statistics.routeKills[Region.kanto][3]() >= ROUTE_KILLS_NEEDED, undefined, undefined, 'Mystery Egg'),
-            new KeyItem(KeyItemType.Safari_ticket, 'This ticket grants access to the Safari Zone right outside Fuchsia City.', undefined, undefined, undefined, 'Safari Ticket'),
+                () => App.game.statistics.routeKills[Region.kanto][3]() >= ROUTE_KILLS_NEEDED, undefined, undefined, 'Mystery Egg', undefined, 4),
+            new KeyItem(KeyItemType.Safari_ticket, 'This ticket grants access to the Safari Zone right outside Fuchsia City.',
+                () => App.game.statistics.gymsDefeated[getGymIndex('Fuchsia City')]() >= 1, undefined, undefined, 'Safari Ticket', undefined, 5),
             new KeyItem(KeyItemType.Wailmer_pail, 'This is a tool for watering Berries to allow you to operate the farm.',
-                () => MapHelper.accessToRoute(11, Region.kanto), undefined, undefined, 'Wailmer Pail'),
+                () => MapHelper.accessToRoute(11, Region.kanto), undefined, undefined, 'Wailmer Pail', undefined, 6),
 
             new KeyItem(KeyItemType.Explorer_kit, 'A bag filled with convenient tools for exploring. It provides access to the Underground.', undefined, undefined, undefined, 'Explorer Kit'),
             new KeyItem(KeyItemType.Eon_ticket, 'A limited edition ticket for a cruise to the Southern Island.', undefined, undefined, undefined, 'Eon Ticket'),
             new KeyItem(KeyItemType.Event_calendar, 'This calendar will keep you up to date on the latest events and let you start events early.', undefined, undefined, undefined, 'Event Calendar'),
-            new KeyItem(KeyItemType.Gem_case, 'A case specifically designed for holding gems.', undefined, undefined, undefined, 'Gem Case'),
+            new KeyItem(KeyItemType.Gem_case, 'A case specifically designed for holding gems.', 
+                () => App.game.statistics.gymsDefeated[getGymIndex('Viridian City')]() >= 1, undefined, undefined, 'Gem Case', undefined, 8),
             new KeyItem(KeyItemType.DNA_splicers, 'A splicer that fuses certain Pokémon.', undefined, undefined, undefined, 'DNA Splicers'),
             new KeyItem(KeyItemType.Reins_of_unity, 'Reins that people presented to the king. They enhance Calyrex’s power over bountiful harvests and unite Calyrex with its beloved steeds.', undefined, undefined, undefined, 'Reins of Unity'),
             new KeyItem(KeyItemType.Pokerus_virus,

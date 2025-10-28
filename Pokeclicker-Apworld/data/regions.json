@@ -1,11 +1,17 @@
 {
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
-    "Pallet Town": {
+    "Route 1": {
         "starting": true,
+        "connects_to": [
+            "Pallet Town"
+        ],
+        "requires": []
+    },
+    "Pallet Town": {
         "connects_to": [
             "Kanto"
         ],
-        "requires": []
+        "requires": "|Town Map|"
     },
     "Kanto": {
         "connects_to": [
