@@ -1604,7 +1604,10 @@ dungeonList['Victory Road'] = new Dungeon('Victory Road',
             hide: true,
         }),
     ],
-    2000, 23, () => (window as any).sendLocationCheck(45));
+    2000, 23, () => {
+        (window as any).sendLocationCheck(45);
+        (window as any).sendLocationCheck(9); // Holo Caster check
+    });
 
 dungeonList['Cerulean Cave'] = new Dungeon('Cerulean Cave',
     ['Golbat', 'Parasect', 'Psyduck', 'Golduck', 'Primeape', 'Poliwag', 'Machoke', 'Slowpoke', 'Slowbro', 'Magneton', 'Electrode', 'Goldeen', 'Magikarp', 'Ditto'],

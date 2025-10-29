@@ -394,8 +394,8 @@ class ArchipelagoIntegrationModule {
                         }
                     } else {
                         for (let i = index; i < badges.length; i++) {
-                            if (!App.game.badgeCase.hasBadge(badges[index])) {
-                                App.game.badgeCase.gainBadge(badges[index]);
+                            if (!App.game.badgeCase.hasBadge(badges[i])) {
+                                App.game.badgeCase.gainBadge(badges[i]);
                                 this.displayItemReceived(item, "a");
                                 break;
                             }

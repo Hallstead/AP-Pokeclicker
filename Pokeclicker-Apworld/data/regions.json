@@ -3,7 +3,8 @@
     "Route 1": {
         "starting": true,
         "connects_to": [
-            "Pallet Town"
+            "Pallet Town",
+            "Viridian City"
         ],
         "requires": []
     },
@@ -24,7 +25,8 @@
             "Volcano Badge",
             "Earth Badge",
             "Sevii Islands 123",
-            "Safari Zone"
+            "Safari Zone",
+            "Indigo Plateau"
         ],
         "requires": "|Dungeon Ticket|"
     },
@@ -52,10 +54,6 @@
         "connects_to": [],
         "requires": "|Soul Badge|"
     },
-    "Volcano Badge": {
-        "connects_to": [],
-        "requires": "|Volcano Badge|"
-    },
     "Earth Badge": {
         "connects_to": [],
         "requires": "|Earth Badge|"
@@ -65,9 +63,7 @@
         "requires": "|Safari Ticket|"
     },
     "Sevii Islands 123": {
-        "connects_to": [
-            "Indigo Plateau"
-        ],
+        "connects_to": [],
         "requires": "|Volcano Badge|"
     },
     "Indigo Plateau": {
