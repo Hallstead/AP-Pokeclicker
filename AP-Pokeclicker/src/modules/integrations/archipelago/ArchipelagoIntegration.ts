@@ -5,7 +5,7 @@ import { ItemList } from '../../items/ItemList';
 
 import {
     BouncedPacket, Client, Item as APItem, itemsHandlingFlags,
-    JSONRecord, LocationInfoPacket,
+    JSONRecord, LocationInfoPacket, clientStatuses,
     MessageNode, NetworkSlot, Player as APPlayer,
 } from "archipelago.js";
 import KeyItemType from '../../enums/KeyItemType';
@@ -191,6 +191,10 @@ class ArchipelagoIntegrationModule {
             }
         }
 
+        w.sendVictory = () => {
+            this.client.updateStatus(clientStatuses.goal);
+        }
+
         // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
         this.client.messages.on("connected", async (text: string, player: APPlayer, tags: string[], nodes: MessageNode[]) => {
             console.log("Connected to server: ", player);
@@ -264,7 +268,17 @@ class ArchipelagoIntegrationModule {
                 let item: APItem = items[i];
                 console.log("Processing item: ", item);
                 console.log(item.id)
-                if (item.id >= 1 && item.id <= 9) {
+
+                // Item Categories:
+                const keyItemsLastIndex = 9;
+                const oakItemsLastIndex = keyItemsLastIndex + 10;
+                const scriptsLastIndex = oakItemsLastIndex + 16;
+                const progressivePokeballsIndex = scriptsLastIndex + 1;
+                const badgesLastIndex = progressivePokeballsIndex + 9;
+                const breedingIndex = badgesLastIndex + 1;
+                const pokemonLastIndex = breedingIndex + 151;
+
+                if (item.id >= 1 && item.id <= keyItemsLastIndex) {
                     // Key items
                     let index = item.id - 1;
                     const key_items = [
@@ -282,9 +296,9 @@ class ArchipelagoIntegrationModule {
                         App.game.keyItems.gainKeyItem(key_items[index], false);
                         this.displayItemReceived(item, "the");
                     }
-                } else if (item.id >= 10 && item.id <= 19) {
+                } else if (item.id <= oakItemsLastIndex) {
                     // Oak items
-                    let index = item.id - 10;
+                    let index = item.id - keyItemsLastIndex - 1;
                     const oak_items = [
                         OakItemType.Magic_Ball,
                         OakItemType.Amulet_Coin,
@@ -302,9 +316,9 @@ class ArchipelagoIntegrationModule {
                         App.game.oakItems.itemList[oak_items[index]].received = true;
                         this.displayItemReceived(item, "the");
                     }
-                } else if (item.id >= 20 && item.id <= 35) {
+                } else if (item.id <= scriptsLastIndex) {
                     // scripts
-                    let index = item.id - 20;
+                    let index = item.id - oakItemsLastIndex - 1;
                     const oak_items = [
                         "Auto Battle Items",
                         "Catch Filter Fantasia",
@@ -365,12 +379,12 @@ class ArchipelagoIntegrationModule {
                     }
 
                     this.displayItemReceived(item, "the");
-                } else if (item.id == 36) {
+                } else if (item.id == progressivePokeballsIndex) {
                     // progressive pokeballs
                     // TODO: Establish global variable for progressive pokeball state
-                } else if (item.id >= 37 && item.id <= 45) {
+                } else if (item.id <= badgesLastIndex) {
                     // Badges
-                    let index = item.id - 37;
+                    let index = item.id - progressivePokeballsIndex - 1;
                     const badges = [
                         BadgeEnums.Boulder,
                         BadgeEnums.Cascade,
@@ -402,9 +416,13 @@ class ArchipelagoIntegrationModule {
                         }
                     }
 
-                } else if (item.id >= 46 && item.id <= 196) {
+                } else if (item.id == breedingIndex) {
+                    console.log(App.game.breeding.eggList);
+                    App.game.breeding.gainEggSlot();
+                    this.displayItemReceived(item, "a");
+                } else if (item.id <= pokemonLastIndex) {
                     // Pokemon
-                    let id = item.id - 46;
+                    let id = item.id - breedingIndex;
                     if (!App.game.party.alreadyCaughtPokemon(id)) {
                         App.game.party.gainPokemonById(id, false, false);
                         this.displayItemReceived(item, "");

@@ -367,6 +367,14 @@
             "progression": true
         },
         {
+            "count": 4,
+            "name": "Extra Egg Slot",
+            "category": [
+                "Extra Slots"
+            ],
+            "useful": true
+        },
+        {
             "count": 1,
             "name": "001 Bulbasaur",
             "category": [

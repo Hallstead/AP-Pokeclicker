@@ -3,8 +3,7 @@
     "Route 1": {
         "starting": true,
         "connects_to": [
-            "Pallet Town",
-            "Viridian City"
+            "Pallet Town"
         ],
         "requires": []
     },
@@ -22,10 +21,9 @@
             "Rainbow Badge",
             "Marsh Badge",
             "Soul Badge",
-            "Volcano Badge",
-            "Earth Badge",
-            "Sevii Islands 123",
             "Safari Zone",
+            "Sevii Islands 123",
+            "Earth Badge",
             "Indigo Plateau"
         ],
         "requires": "|Dungeon Ticket|"
