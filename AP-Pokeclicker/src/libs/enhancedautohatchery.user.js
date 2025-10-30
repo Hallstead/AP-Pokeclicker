@@ -32,6 +32,40 @@ function initAutoHatch() {
     const breedingDisplay = document.getElementById('breedingDisplay');
     const breedingModal = document.getElementById('breedingModal');
 
+    // --- APFlags gate: start hidden and OFF; show when APFlags.enhancedAutoHatchery is true ---
+    function getAPEnhancedAutoHatcheryFlag() {
+        try {
+            const flags = (window.APFlags ?? {});
+            if (typeof flags.get === 'function') {
+                const v = flags.get('enhancedAutoHatchery');
+                if (typeof v !== 'undefined') return !!v;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'enhancedAutoHatchery')) {
+                return !!flags.enhancedAutoHatchery;
+            }
+        } catch (_) { /* ignore */ }
+        return false;
+    }
+    function applyAutoHatchAccessFromFlag(force) {
+        const enabled = !!getAPEnhancedAutoHatcheryFlag();
+        const startBtn = document.getElementById('auto-hatch-start');
+        if (startBtn) {
+            startBtn.style.display = enabled ? '' : 'none';
+        }
+        if (!enabled) {
+            try {
+                // force OFF and update UI text/class
+                hatchState = false;
+                localStorage.setItem('autoHatchState', false);
+                if (startBtn) {
+                    startBtn.classList.remove('btn-success');
+                    if (!startBtn.classList.contains('btn-danger')) startBtn.classList.add('btn-danger');
+                    startBtn.textContent = 'Auto Hatch [OFF]';
+                }
+            } catch (_) { /* ignore */ }
+        }
+    }
+
     breedingDisplay.querySelector('.card-header').outerHTML += `<button id= "auto-hatch-start" class="btn btn-sm btn-${hatchState ? 'success' : 'danger'}" style="position: absolute;left: 0px;top: 0px;width: 65px;height: 41px;font-size: 7pt;">
     Auto Hatch [${hatchState ? 'ON' : 'OFF'}]
     </button>`
@@ -66,7 +100,19 @@ function initAutoHatch() {
         autoHatcheryCachedList = BreedingController.hatcherySortedFilteredList();
     }));
 
-    if (hatchState) {
+    // Apply APFlags gating now and subscribe for changes
+    // Ensure button hidden and feature OFF until flag is true
+    applyAutoHatchAccessFromFlag(true);
+    window.addEventListener('ap:flag-changed', (ev) => {
+        try {
+            const detail = ev && ev.detail;
+            if (detail && detail.key === 'enhancedAutoHatchery') {
+                applyAutoHatchAccessFromFlag(true);
+            }
+        } catch (_) { /* ignore */ }
+    });
+
+    if (hatchState && getAPEnhancedAutoHatcheryFlag()) {
         autoHatcher();
     }
 }
