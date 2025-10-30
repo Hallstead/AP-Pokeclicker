@@ -301,9 +301,9 @@ class Game implements TmpGameType {
         });
 
         // Kick player out of Client Island if they are not on the client
-        if (!App.isUsingClient && player._townName === 'Client Island') {
-            MapHelper.moveToTown('One Island');
-        }
+        // if (!App.isUsingClient && player._townName === 'Client Island') {
+        //     MapHelper.moveToTown('One Island');
+        // }
     }
 
     start() {

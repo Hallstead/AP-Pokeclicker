@@ -417,7 +417,7 @@ class ArchipelagoIntegrationModule {
                     }
 
                 } else if (item.id == breedingIndex) {
-                    console.log(App.game.breeding.eggList);
+                    App.game.breeding.gainAdditionalEggSlot();
                     App.game.breeding.gainEggSlot();
                     this.displayItemReceived(item, "a");
                 } else if (item.id <= pokemonLastIndex) {

@@ -321,7 +321,7 @@ class EnhancedAutoClicker {
      */
     static applyAutoclickerProgressiveFromFlag(forceValue) {
         const raw = (typeof forceValue === 'number') ? forceValue : this.getAPAutoclickerProgressiveFlag();
-        if (typeof raw === 'undefined') return;
+        if (typeof raw === 'undefined' || raw == 0) return;
         // Clamp to sane integer >= 1
         const next = Math.max(1, Math.floor(raw));
         this.maxClickMultiplier = next;

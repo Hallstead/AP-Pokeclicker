@@ -16,7 +16,8 @@ class Breeding implements Feature {
     };
     hatcheryHelpers = new HatcheryHelpers(this);
 
-    private _eggList: Array<KnockoutObservable<Egg>>;
+    private _eggList: KnockoutObservableArray<KnockoutObservable<Egg>>;
+    public get eggListKO(): KnockoutObservableArray<KnockoutObservable<Egg>> { return this._eggList; }
     private _eggSlots: KnockoutObservable<number>;
 
     private _queueList: KnockoutObservableArray<HatcheryQueueEntry>;
@@ -100,7 +101,7 @@ class Breeding implements Feature {
     };
 
     constructor(private multiplier: Multiplier) {
-        this._eggList = this.defaults.eggList;
+    this._eggList = ko.observableArray(this.defaults.eggList.slice());
         this._eggSlots = ko.observable(this.defaults.eggSlots);
         this._queueList = ko.observableArray(this.defaults.queueList);
         this.queueSlots = ko.observable(this.defaults.queueSlots);
@@ -128,15 +129,15 @@ class Breeding implements Feature {
 
         this.eggSlots = json.eggSlots ?? this.defaults.eggSlots;
 
-        this._eggList = this.defaults.eggList;
+    this._eggList(this.defaults.eggList.slice());
         if (json.eggList !== null) {
             const saveEggList: Record<string, any>[] = json.eggList;
 
-            for (let i = 0; i < this._eggList.length; i++) {
+            for (let i = 0; i < this._eggList().length; i++) {
                 if (saveEggList[i] != null) {
                     const egg: Egg = new Egg(null, null, null);
                     egg.fromJSON(saveEggList[i]);
-                    this._eggList[i](egg);
+                    this._eggList()[i](egg);
                 }
             }
         }
@@ -153,7 +154,7 @@ class Breeding implements Feature {
         // Compress queue data by saving regular pokemon as just their ID, with EggType.Pokemon implied
         const queueData = this._queueList().map(q => q[0] === EggType.Pokemon ? q[1] : q);
         return {
-            eggList: this.eggList.map(egg => egg() === null ? new Egg() : egg().toJSON()),
+            eggList: this._eggList().map(egg => egg() === null ? new Egg() : egg().toJSON()),
             eggSlots: this.eggSlots,
             queueList: queueData,
             queueSlots: this.queueSlots(),
@@ -167,8 +168,10 @@ class Breeding implements Feature {
 
     public hasFreeEggSlot(isHelper = false): boolean {
         let counter = 0;
-        for (let i = 0; i < this._eggList.length; i++) {
-            if (!this._eggList[i]().isNone() || (!isHelper && this.hatcheryHelpers.hired()[i])) {
+        for (let i = 0; i < this._eggList().length; i++) {
+            const eggObs = this.ensureEggObservable(i);
+            if (!eggObs) { continue; }
+            if (!eggObs().isNone() || (!isHelper && this.hatcheryHelpers.hired()[i])) {
                 counter++;
             }
         }
@@ -187,16 +190,18 @@ class Breeding implements Feature {
 
         if (eggSlot === -1) {
             // Throw egg in the first empty non-Helper slot
-            for (let i = 0; i < this._eggList.length; i++) {
-                if (this._eggList[i]().isNone() && !this.hatcheryHelpers.hired()[i]) {
-                    this._eggList[i](e);
+            for (let i = 0; i < this._eggList().length; i++) {
+                const eggObs = this.ensureEggObservable(i);
+                if (eggObs && eggObs().isNone() && !this.hatcheryHelpers.hired()[i]) {
+                    eggObs(e);
                     return true;
                 }
             }
         } else {
             // Throw egg in the Helper slot if it's empty
-            if (this._eggList[eggSlot]?.().isNone()) {
-                this._eggList[eggSlot](e);
+            const eggObs = this.ensureEggObservable(eggSlot);
+            if (eggObs && eggObs().isNone()) {
+                eggObs(e);
                 return true;
             }
         }
@@ -214,14 +219,19 @@ class Breeding implements Feature {
         amount *= this.getStepMultiplier();
 
         amount = Math.round(amount);
-        let index = this.eggList.length;
+        let index = this._eggList().length;
         let emptySlots = 0;
         while (index-- > 0) {
             const helper = this.hatcheryHelpers.hired()[index];
             if (helper) {
                 continue;
             }
-            const egg = this.eggList[index]();
+            const eggObs = this.ensureEggObservable(index);
+            if (!eggObs) {
+                // Slot is invalid, skip it
+                continue;
+            }
+            const egg = eggObs();
             if (egg.isNone() && index + 1 <= this._eggSlots()) {
                 emptySlots++;
                 continue;
@@ -242,9 +252,9 @@ class Breeding implements Feature {
         if (emptySlots) {
             // Check for any empty slots between incubating eggs, move them if a gap is found.
             // For example, if the first empty slot is index 2 but there are 3 slots with eggs then there is a gap.
-            const firstEmptySlot = this._eggList.findIndex((egg, i) => egg().isNone() && !this.hatcheryHelpers.hired()[i]);
+            const firstEmptySlot = this._eggList().findIndex((egg, i) => egg().isNone() && !this.hatcheryHelpers.hired()[i]);
             if (firstEmptySlot > -1) {
-                const slotsWithEggs = this._eggList.filter((egg, i) => !egg().isNone() && !this.hatcheryHelpers.hired()[i]).length;
+                const slotsWithEggs = this._eggList().filter((egg, i) => !egg().isNone() && !this.hatcheryHelpers.hired()[i]).length;
                 if (firstEmptySlot < slotsWithEggs) {
                     this.moveEggs();
                 }
@@ -259,6 +269,29 @@ class Breeding implements Feature {
 
     private getStepMultiplier() {
         return this.multiplier.getBonus('eggStep');
+    }
+
+    // Ensure the slot at index is a KnockoutObservable<Egg>.
+    // If a plain Egg slipped in, wrap it. If invalid/undefined, returns null.
+    private ensureEggObservable(index: number): KnockoutObservable<Egg> | null {
+        const slot: any = this._eggList()[index];
+        if (typeof slot === 'function') {
+            return slot as KnockoutObservable<Egg>;
+        }
+        if (slot instanceof Egg) {
+            const wrapped = ko.observable(slot);
+            // Replace via KO array method to notify bindings
+            this._eggList.splice(index, 1, wrapped);
+            return wrapped;
+        }
+        if (slot == null) {
+            // Initialize an empty egg observable to keep structure consistent
+            const wrapped = ko.observable(new Egg());
+            this._eggList.splice(index, 1, wrapped);
+            return wrapped;
+        }
+        console.warn('Breeding: Unexpected egg slot content at index', index, slot);
+        return null;
     }
 
     public addPokemonToHatchery(pokemon: PartyPokemon): boolean {
@@ -397,10 +430,14 @@ class Breeding implements Feature {
     }
 
     public hatchPokemonEgg(index: number, nextEgg = true): void {
-        const egg: Egg = this._eggList[index]();
+        const eggObs = this.ensureEggObservable(index);
+        if (!eggObs) {
+            return;
+        }
+        const egg: Egg = eggObs();
         const hatched = egg.hatch();
         if (hatched) {
-            this._eggList[index](new Egg());
+            eggObs(new Egg());
             if (nextEgg) {
                 this.moveEggs();
                 if (this._queueList().length) {
@@ -431,9 +468,9 @@ class Breeding implements Feature {
     }
 
     public moveEggs(): void {
-        const tempEggList = App.game.breeding._eggList.filter((egg, i) => egg().type != EggType.None && !this.hatcheryHelpers.hired()[i]);
+        const tempEggList = App.game.breeding._eggList().filter((egg, i) => egg().type != EggType.None && !this.hatcheryHelpers.hired()[i]);
         let tempEggIndex = 0;
-        this._eggList.forEach((egg, index) => {
+        this._eggList().forEach((egg, index) => {
             if (this.hatcheryHelpers.hired()[index]) {
                 return;
             }
@@ -510,11 +547,15 @@ class Breeding implements Feature {
     }
 
     public gainEggSlot(): void {
-        if (this.eggSlots === this.eggList.length) {
+        if (this.eggSlots === this._eggList().length) {
             console.error('Cannot gain another eggslot.');
             return;
         }
         this.eggSlots += 1;
+    }
+
+    public gainAdditionalEggSlot(amt = 1): void {
+        this._eggList.push(ko.observable(new Egg()));
     }
 
     public gainQueueSlot(amt = 1): void {
@@ -527,11 +568,11 @@ class Breeding implements Feature {
     }
 
     get eggList(): Array<KnockoutObservable<Egg>> {
-        return this._eggList;
+        return this._eggList();
     }
 
     set eggList(value: Array<KnockoutObservable<Egg>>) {
-        this._eggList = value;
+        this._eggList(value.slice());
     }
 
     getAllCaughtStatus(): CaughtStatus {
