@@ -1,0 +1,77 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
+    "Route 1": {
+        "starting": true,
+        "connects_to": [
+            "Pallet Town"
+        ],
+        "requires": []
+    },
+    "Pallet Town": {
+        "connects_to": [
+            "Kanto"
+        ],
+        "requires": "|Town Map|"
+    },
+    "Kanto": {
+        "connects_to": [
+            "Boulder Badge",
+            "Cascade Badge",
+            "Thunder Badge",
+            "Rainbow Badge",
+            "Marsh Badge",
+            "Soul Badge",
+            "Safari Zone",
+            "Sevii Islands 123",
+            "Earth Badge",
+            "Indigo Plateau"
+        ],
+        "requires": "|Dungeon Ticket|"
+    },
+    "Boulder Badge": {
+        "connects_to": [],
+        "requires": "|Boulder Badge|"
+    },
+    "Cascade Badge": {
+        "connects_to": [],
+        "requires": "|Cascade Badge|"
+    },
+    "Thunder Badge": {
+        "connects_to": [],
+        "requires": "|Thunder Badge|"
+    },
+    "Rainbow Badge": {
+        "connects_to": [],
+        "requires": "|Rainbow Badge|"
+    },
+    "Marsh Badge": {
+        "connects_to": [],
+        "requires": "|Marsh Badge|"
+    },
+    "Soul Badge": {
+        "connects_to": [],
+        "requires": "|Soul Badge|"
+    },
+    "Earth Badge": {
+        "connects_to": [],
+        "requires": "|Earth Badge|"
+    },
+    "Safari Zone": {
+        "connects_to": [],
+        "requires": "|Safari Ticket|"
+    },
+    "Sevii Islands 123": {
+        "connects_to": [],
+        "requires": "|Volcano Badge|"
+    },
+    "Indigo Plateau": {
+        "connects_to": [
+            "Kanto Champion"
+        ],
+        "requires": "|Boulder Badge| AND |Cascade Badge| AND |Thunder Badge| AND |Rainbow Badge| AND |Marsh Badge| AND |Soul Badge| AND |Volcano Badge| AND |Earth Badge|"
+    },
+    "Kanto Champion": {
+        "connects_to": [],
+        "requires": "|Progressive Elite Badge:5|"
+    }
+}

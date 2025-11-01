@@ -1,0 +1,1694 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.locations.schema.json",
+    "data": [
+        {
+            "name": "Defeat 10 Pokemon on Kanto Route 1 (Town Map)",
+            "category": [
+                "Key Items"
+            ],
+            "requires": [],
+            "region": "Route 1"
+        },
+        {
+            "name": "Purchase the Dungeon Ticket in Viridian City (Dungeon Ticket)",
+            "category": [
+                "Key Items"
+            ],
+            "requires": [],
+            "region": "Pallet Town"
+        },
+        {
+            "name": "Defeat 10 Pokemon on Kanto Route 12 (Super Rod)",
+            "region": "Cascade Badge",
+            "category": [
+                "Key Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Defeat 10 Pokemon on Kanto Route 3 (Mystery Egg)",
+            "region": "Boulder Badge",
+            "category": [
+                "Key Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Clear the Fuchsia City Gym in Kanto (Safari Ticket)",
+            "region": "Kanto",
+            "category": [
+                "Key Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Unlock Kanto Route 14 (Wailmer Pail)",
+            "region": "Kanto",
+            "category": [
+                "Key Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Purchase the Explorer Kit on Cinnabar Island (Explorer Kit)",
+            "region": "Kanto",
+            "category": [
+                "Key Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Clear the Viridian City Gym in Kanto (Gem Case)",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Key Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Clear the Victory Road dungeon in Kanto (Holo Caster)",
+            "region": "Indigo Plateau",
+            "category": [
+                "Key Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 20 unique Pokemon (Magic Ball)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 30 unique Pokemon (Amulet Coin)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 40 unique Pokemon (Rocky Helmet)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 50 unique Pokemon (EXP Share)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 60 unique Pokemon (Sprayduck)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 70 unique Pokemon (Shiny Charm)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 80 unique Pokemon (Magma Stone)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Obtain 90 unique Pokemon (Cell Battery)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Purchase the Explosive Charge on Cinnabar Island (Explosive Charge)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Purchase the Treasure Scanner on Cinnabar Island (Treasure Scanner)",
+            "region": "Kanto",
+            "category": [
+                "Oak Items"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Brock",
+            "region": "Kanto",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Misty",
+            "region": "Boulder Badge",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Lt. Surge",
+            "region": "Cascade Badge",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Erika",
+            "region": "Kanto",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Sabrina",
+            "region": "Kanto",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Koga",
+            "region": "Cascade Badge",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Blaine",
+            "region": "Soul Badge",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Giovanni",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Gyms"
+            ],
+            "requires": "|Thunder Badge| and |Rainbow Badge| and |Marsh Badge| and |Soul Badge|"
+        },
+        {
+            "name": "Lorelei",
+            "region": "Indigo Plateau",
+            "category": [
+                "Gyms"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Bruno",
+            "region": "Indigo Plateau",
+            "category": [
+                "Gyms"
+            ],
+            "requires": "|Progressive Elite Badge|"
+        },
+        {
+            "name": "Agatha",
+            "region": "Indigo Plateau",
+            "category": [
+                "Gyms"
+            ],
+            "requires": "|Progressive Elite Badge:2|"
+        },
+        {
+            "name": "Lance",
+            "region": "Indigo Plateau",
+            "category": [
+                "Gyms"
+            ],
+            "requires": "|Progressive Elite Badge:3|"
+        },
+        {
+            "name": "Champion Blue",
+            "region": "Indigo Plateau",
+            "category": [
+                "Gyms"
+            ],
+            "requires": "|Progressive Elite Badge:4|"
+        },
+        {
+            "name": "Viridian Forest",
+            "region": "Kanto",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Mt. Moon",
+            "region": "Boulder Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Diglett's Cave",
+            "region": "Boulder Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Rock Tunnel",
+            "region": "Cascade Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Rocket Game Corner",
+            "region": "Cascade Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Pokemon Tower",
+            "region": "Cascade Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Silph Co.",
+            "region": "Cascade Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Power Plant",
+            "region": "Cascade Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": "|Soul Badge|"
+        },
+        {
+            "name": "Seafoam Islands",
+            "region": "Soul Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": "|Rainbow Badge|"
+        },
+        {
+            "name": "Pokemon Mansion",
+            "region": "Soul Badge",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Mt. Ember Summit",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Berry Forest",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": "|Soul Badge|"
+        },
+        {
+            "name": "Victory Road",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": [],
+            "region": "Indigo Plateau"
+        },
+        {
+            "name": "Cerulean Cave",
+            "region": "Kanto Champion",
+            "category": [
+                "Dungeons"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Blue 1 (Near Viridian City)",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": [],
+            "region": "Pallet Town"
+        },
+        {
+            "name": "Blue 2 (Near Cerulean City)",
+            "region": "Boulder Badge",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Blue 3 (Near Vermillion City)",
+            "region": "Boulder Badge",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Blue 4 (Pokemon Tower)",
+            "region": "Cascade Badge",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Blue 5 (Silph Co.)",
+            "region": "Cascade Badge",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Blue 6 (Near Viridian City)",
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "|Earth Badge|"
+        },
+        {
+            "name": "Fighting Dojo",
+            "region": "Cascade Badge",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Snorlax (Route 12, Near Lavender Town)",
+            "region": "Cascade Badge",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Snorlax (Route 16, Near Celadon City)",
+            "region": "Cascade Badge",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Biker Goon 1 (Three Island)",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "|Soul Badge|"
+        },
+        {
+            "name": "Biker Goon 2 (Three Island)",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "|Soul Badge|"
+        },
+        {
+            "name": "Biker Goon 3 (Three Island)",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "|Soul Badge|"
+        },
+        {
+            "name": "Cueball Paxton (Three Island)",
+            "region": "Sevii Islands 123",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "|Soul Badge|"
+        },
+        {
+            "name": "001 Bulbasaur",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "002 Ivysaur",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "003 Venusaur",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "004 Charmander",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "005 Charmeleon",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "006 Charizard",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "007 Squirtle",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "008 Wartortle",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "009 Blastoise",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "010 Caterpie",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "011 Metapod",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "012 Butterfree",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "013 Weedle",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "014 Kakuna",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "015 Beedrill",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "016 Pidgey",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "017 Pidgeotto",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "018 Pidgeot",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "019 Rattata",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "020 Raticate",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "021 Spearow",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "022 Fearow",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "023 Ekans",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "024 Arbok",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "025 Pikachu",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "026 Raichu",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "027 Sandshrew",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "028 Sandslash",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "029 Nidoran (F)",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "030 Nidorina",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "031 Nidoqueen",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "032 Nidoran (M)",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "033 Nidorino",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "034 Nidoking",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "035 Clefairy",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "036 Clefable",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "037 Vulpix",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "038 Ninetails",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "039 Jigglypuff",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "040 Wigglytuff",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "041 Zubat",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "042 Golbat",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "043 Oddish",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "044 Gloom",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "045 Vileplume",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "046 Paras",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "047 Parasect",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "048 Venonat",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "049 Venomoth",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "050 Diglett",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "051 Dugtrio",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "052 Meowth",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "053 Persian",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "054 Psyduck",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "055 Golduck",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "056 Mankey",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "057 Primape",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "058 Growlithe",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "059 Arcanine",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "060 Poliwag",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "061 Poliwhirl",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "062 Poliwrath",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "063 Abra",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "064 Kadabra",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "065 Alakazam",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "066 Machop",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "067 Machoke",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "068 Machamp",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "069 Bellsprout",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "070 Weepinbell",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "071 Victreebel",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "072 Tentacool",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "073 Tentacruel",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "074 Geodude",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "075 Graveler",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "076 Golem",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "077 Ponyta",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "078 Rapidash",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "079 Slowpoke",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "080 Slowbro",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "081 Magnemite",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "082 Magneton",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "083 Farfetch'd",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "084 Doduo",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "085 Dodrio",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "086 Seel",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "087 Dewgong",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "088 Grimer",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "089 Muk",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "090 Shellder",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "091 Cloyster",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "092 Gastly",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "093 Haunter",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "094 Gengar",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "095 Onix",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "096 Drowzee",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "097 Hypno",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "098 Krabby",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "099 Kingler",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "100 Voltorb",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "101 Electrode",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "102 Exeggcute",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "103 Exeggutor",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "104 Cubone",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "105 Marowak",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:1|"
+        },
+        {
+            "name": "106 Hitmonlee",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "107 Hitmonchan",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "108 Lickitung",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "109 Koffing",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "110 Weezing",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "111 Rhyhorn",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "112 Rhydon",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:3|"
+        },
+        {
+            "name": "113 Chansey",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "114 Tangela",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "115 Kangaskhan",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "116 Horsea",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "117 Seadra",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "118 Goldeen",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "119 Seaking",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "120 Staryu",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "121 Starmie",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "122 Mr. Mime",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "123 Scyther",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "124 Jynx",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "125 Electabuzz",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "126 Magmar",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "127 Pinsir",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "128 Tauros",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "129 Magikarp",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "130 Gyarados",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "131 Lapras",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "132 Ditto",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "133 Eevee",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "134 Vaporeon",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "135 Jolteon",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "136 Flareon",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "137 Porygon",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "138 Omanyte",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "139 Omastar",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "140 Kabuto",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "141 Kabutops",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": "|@Badges:2|"
+        },
+        {
+            "name": "142 Aerodactyl",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "143 Snorlax",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "144 Articuno",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "145 Zapdos",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "146 Moltres",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "147 Dratini",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "148 Dragonair",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "149 Dragonite",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "150 Mewtwo",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "151 Mew",
+            "region": "Kanto",
+            "category": [
+                "Pokemon"
+            ],
+            "requires": []
+        },
+        {
+            "name": "Travel to Johto",
+            "region": "Kanto Champion",
+            "victory": true,
+            "category": [
+                "Victory"
+            ],
+            "requires": []
+        }
+    ]
+}
