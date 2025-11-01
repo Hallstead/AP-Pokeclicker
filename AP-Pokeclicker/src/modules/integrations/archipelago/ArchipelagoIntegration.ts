@@ -538,10 +538,15 @@ if (typeof window !== 'undefined') {
             const hostEl = document.getElementById('ap-host') as HTMLInputElement | null;
             const portEl = document.getElementById('ap-port') as HTMLInputElement | null;
             const slotEl = document.getElementById('ap-slot') as HTMLInputElement | null;
-            const h = hostEl?.value || 'localhost';
-            const p = portEl?.value || '38281';
-            const s = slotEl?.value || 'JH';
-            const url = `ws://${h}:${p}`;
+            const h = hostEl?.value;
+            const p = portEl?.value;
+            const s = slotEl?.value;
+            let url = '';
+            if (p == null || p.trim() === '') {
+                url = `wss://${h}`;
+            } else {
+                url = `wss://${h}:${p}`;
+            }
             if ((window as any).archipelagoConnect) {
                 (window as any).archipelagoConnect(url, s, 'Pokeclicker');
                 return true;

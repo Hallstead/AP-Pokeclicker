@@ -34,7 +34,7 @@
     },
     "Cascade Badge": {
         "connects_to": [],
-        "requires": "|Cascade Badge|"
+        "requires": "|Boulder Badge| and |Cascade Badge|"
     },
     "Thunder Badge": {
         "connects_to": [],
