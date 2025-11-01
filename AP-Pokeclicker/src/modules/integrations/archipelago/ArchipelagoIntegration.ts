@@ -3,9 +3,9 @@ import NotificationConstants from '../../notifications/NotificationConstants';
 import Notifier from '../../notifications/Notifier';
 
 import {
-    // BouncedPacket, JSONRecord, itemsHandlingFlags,LocationInfoPacket,
+    // BouncedPacket, JSONRecord, itemsHandlingFlags,LocationInfoPacket, MessageNode,
     Client, Item as APItem, clientStatuses,
-    MessageNode, NetworkSlot, Player as APPlayer,
+    NetworkSlot, Player as APPlayer,
 } from 'archipelago.js';
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
@@ -191,8 +191,8 @@ class ArchipelagoIntegrationModule {
         };
 
         // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
-        this.client.messages.on('connected', async (text: string, player: APPlayer, tags: string[], nodes: MessageNode[]) => {
-            console.log('Connected to server: ', player);
+        this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
+            // console.log('Connected to server: ', player);
             this.connected = true;
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
@@ -207,7 +207,9 @@ class ArchipelagoIntegrationModule {
             });
 
             options = await player.fetchSlotData().then(res => res as GameOptions);
-            console.log('Game options: ', options);
+            if (options) {
+                w.APFlags.set('options', options);
+            }
 
             // this.client.socket.send({ cmd: 'Sync' });
             // Flush any queued location checks now that we're connected
@@ -226,7 +228,6 @@ class ArchipelagoIntegrationModule {
         // add item handler
         this.client.items.on('itemsReceived', async (items: APItem[], startingIndex: number) => {
             // Set APFlags for each script item
-            const w: any = window as any;
             const setFlag = (key: string, value: any) => {
                 if (w.APFlags?.set) {
                     w.APFlags.set(key, value);
@@ -237,7 +238,7 @@ class ArchipelagoIntegrationModule {
                 }
             };
 
-            console.log('Received items: ', items);
+            // console.log('Received items: ', items);
             // if this is a sync packet reset all our item addresses without changing anything else
             if (startingIndex === 0) {
                 setFlag('autoBattleItems', false);
@@ -258,8 +259,8 @@ class ArchipelagoIntegrationModule {
 
             for (let i: number = 0; i < items.length; i++) {
                 let item: APItem = items[i];
-                console.log('Processing item: ', item);
-                console.log(item.id);
+                // console.log('Processing item: ', item);
+                // console.log(item.id);
 
                 // Item Categories:
                 const keyItemsLastIndex = 9;
@@ -273,7 +274,7 @@ class ArchipelagoIntegrationModule {
                 if (item.id >= 1 && item.id <= keyItemsLastIndex) {
                     // Key items
                     let index = item.id - 1;
-                    const key_items = [
+                    const keyItems = [
                         KeyItemType.Town_map,
                         KeyItemType.Dungeon_ticket,
                         KeyItemType.Mystery_egg,
@@ -284,14 +285,14 @@ class ArchipelagoIntegrationModule {
                         KeyItemType.Gem_case,
                         KeyItemType.Holo_caster,
                     ];
-                    if (!App.game.keyItems.hasKeyItem(key_items[index])) {
-                        App.game.keyItems.gainKeyItem(key_items[index], false);
+                    if (!App.game.keyItems.hasKeyItem(keyItems[index])) {
+                        App.game.keyItems.gainKeyItem(keyItems[index], false);
                         this.displayItemReceived(item, 'the');
                     }
                 } else if (item.id <= oakItemsLastIndex) {
                     // Oak items
                     let index = item.id - keyItemsLastIndex - 1;
-                    const oak_items = [
+                    const oakItems = [
                         OakItemType.Magic_Ball,
                         OakItemType.Amulet_Coin,
                         OakItemType.Rocky_Helmet,
@@ -304,29 +305,29 @@ class ArchipelagoIntegrationModule {
                         OakItemType.Treasure_Scanner,
                     ];
                     // TODO: Establish global variables for oak items active state
-                    if (!App.game.oakItems.isUnlocked(oak_items[index])) {
-                        App.game.oakItems.itemList[oak_items[index]].received = true;
+                    if (!App.game.oakItems.isUnlocked(oakItems[index])) {
+                        App.game.oakItems.itemList[oakItems[index]].received = true;
                         this.displayItemReceived(item, 'the');
                     }
                 } else if (item.id <= scriptsLastIndex) {
                     // scripts
                     let index = item.id - oakItemsLastIndex - 1;
-                    const scripts = [
-                        'Auto Battle Items',
-                        'Catch Filter Fantasia',
-                        'Enhanced Auto Clicker',
-                        'Enhanced Auto Clicker (Progressive Clicks/Second)',
-                        'Enhanced Auto Hatchery',
-                        'Enhanced Auto Mine',
-                        'Simple Auto Farmer',
-                        'Auto Quest Completer',
-                        'Auto Safari Zone',
-                        'Auto Safari Zone (Progressive Fast Animations)',
-                        'Catch Speed Adjuster',
-                        'Infinite Seasonal Events',
-                        'Oak Items Unlimited',
-                        'Simple Weather Changer',
-                    ];
+                    // const scripts = [
+                    //     'Auto Battle Items',
+                    //     'Catch Filter Fantasia',
+                    //     'Enhanced Auto Clicker',
+                    //     'Enhanced Auto Clicker (Progressive Clicks/Second)',
+                    //     'Enhanced Auto Hatchery',
+                    //     'Enhanced Auto Mine',
+                    //     'Simple Auto Farmer',
+                    //     'Auto Quest Completer',
+                    //     'Auto Safari Zone',
+                    //     'Auto Safari Zone (Progressive Fast Animations)',
+                    //     'Catch Speed Adjuster',
+                    //     'Infinite Seasonal Events',
+                    //     'Oak Items Unlimited',
+                    //     'Simple Weather Changer',
+                    // ];
 
                     switch (index) {
                         case 0: setFlag('autoBattleItems', true); break;
@@ -395,9 +396,9 @@ class ArchipelagoIntegrationModule {
                             App.game.badgeCase.gainBadge(badges[index]);
                         }
                     } else {
-                        for (let i = index; i < badges.length; i++) {
-                            if (!App.game.badgeCase.hasBadge(badges[i])) {
-                                App.game.badgeCase.gainBadge(badges[i]);
+                        for (let j = index; j < badges.length; j++) {
+                            if (!App.game.badgeCase.hasBadge(badges[j])) {
+                                App.game.badgeCase.gainBadge(badges[j]);
                                 this.displayItemReceived(item, 'a');
                                 break;
                             }
@@ -434,7 +435,11 @@ class ArchipelagoIntegrationModule {
             playerName,
             'Pokeclicker',
         ).then(() => {
-            console.log('Connected to the server');
+            Notifier.notify({
+                message: `Archipelago: connected to ${serverUrl} as '${playerName}'`,
+                type: NotificationConstants.NotificationOption.success,
+            });
+            // console.log('Connected to the server');
             // login resolves once the socket is opened, but we mark connected in the event as well
         }).catch(error => {
             console.error('Failed to connect:', error);
