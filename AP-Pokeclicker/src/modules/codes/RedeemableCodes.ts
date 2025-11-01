@@ -41,7 +41,7 @@ export default class RedeemableCodes implements Saveable {
 
                 // return true to mark redeemed (or return false to not mark)
                 return false;
-            }, /* optional requirement e.g. new MaxRegionRequirement(Region.johto) */),
+            } /* optional requirement e.g. new MaxRegionRequirement(Region.johto) */),
             new RedeemableCode('farming-quick-start', -83143881, false, async () => {
                 // Give the player 10k farming points, 100 Cheri berries
                 App.game.wallet.gainFarmPoints(10000);

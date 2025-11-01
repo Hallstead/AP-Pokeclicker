@@ -17,7 +17,9 @@ class Breeding implements Feature {
     hatcheryHelpers = new HatcheryHelpers(this);
 
     private _eggList: KnockoutObservableArray<KnockoutObservable<Egg>>;
-    public get eggListKO(): KnockoutObservableArray<KnockoutObservable<Egg>> { return this._eggList; }
+    public get eggListKO(): KnockoutObservableArray<KnockoutObservable<Egg>> {
+        return this._eggList;
+    }
     private _eggSlots: KnockoutObservable<number>;
 
     private _queueList: KnockoutObservableArray<HatcheryQueueEntry>;
@@ -101,7 +103,7 @@ class Breeding implements Feature {
     };
 
     constructor(private multiplier: Multiplier) {
-    this._eggList = ko.observableArray(this.defaults.eggList.slice());
+        this._eggList = ko.observableArray(this.defaults.eggList.slice());
         this._eggSlots = ko.observable(this.defaults.eggSlots);
         this._queueList = ko.observableArray(this.defaults.queueList);
         this.queueSlots = ko.observable(this.defaults.queueSlots);
@@ -129,7 +131,7 @@ class Breeding implements Feature {
 
         this.eggSlots = json.eggSlots ?? this.defaults.eggSlots;
 
-    this._eggList(this.defaults.eggList.slice());
+        this._eggList(this.defaults.eggList.slice());
         if (json.eggList !== null) {
             const saveEggList: Record<string, any>[] = json.eggList;
 
@@ -170,7 +172,9 @@ class Breeding implements Feature {
         let counter = 0;
         for (let i = 0; i < this._eggList().length; i++) {
             const eggObs = this.ensureEggObservable(i);
-            if (!eggObs) { continue; }
+            if (!eggObs) {
+                continue;
+            }
             if (!eggObs().isNone() || (!isHelper && this.hatcheryHelpers.hired()[i])) {
                 counter++;
             }

@@ -19,13 +19,56 @@
 // ==/UserScript==
 
 function initOakItems() {
-    var oakItems = App.game.oakItems
-    var oakMax = oakItems.itemList.length;
-    for (let i = 0; i < oakMax; i++) {
-        oakItems.unlockRequirements[i] = 0;
+    // APFlag-gated max slots: use default when false; use total item count when true
+    function getAPOakItemsFlag() {
+        try {
+            const w = window;
+            if (w.APFlags?.get) return !!w.APFlags.get('oakItemsUnlimited');
+            return !!w.APFlags?.oakItemsUnlimited;
+        } catch (_) { return false; }
     }
-    oakItems.maxActiveCount(oakMax);
-    document.getElementById('oakItemsModal').querySelector('h5').innerHTML = "Oak Items Equipped: " + oakItems.activeCount() + '/' + oakMax;
+
+    const oakItems = App.game.oakItems;
+    const defaultMax = (typeof oakItems.maxActiveCount === 'function')
+        ? oakItems.maxActiveCount()
+        : oakItems.maxActiveCount;
+
+    function updateHeader(currentMax) {
+        try {
+            const header = document.getElementById('oakItemsModal')?.querySelector('h5');
+            if (header) {
+                header.innerHTML = "Oak Items Equipped: " + oakItems.activeCount() + '/' + currentMax;
+            }
+        } catch (_) { /* ignore */ }
+    }
+
+    function setMaxActive(maxVal) {
+        if (typeof oakItems.maxActiveCount === 'function') {
+            oakItems.maxActiveCount(maxVal);
+        } else {
+            oakItems.maxActiveCount = maxVal;
+        }
+        updateHeader(maxVal);
+    }
+
+    function applyFromFlag() {
+        const enabled = getAPOakItemsFlag();
+        const maxWhenEnabled = oakItems.itemList.length;
+        setMaxActive(enabled ? maxWhenEnabled : defaultMax);
+    }
+
+    function onAPFlagChanged(ev) {
+        try {
+            const detail = ev?.detail || {};
+            if (!detail || detail.key === 'oakItemsUnlimited') {
+                applyFromFlag();
+            }
+        } catch (_) { /* ignore */ }
+    }
+
+    // Initial apply and listen for runtime changes
+    applyFromFlag();
+    window.addEventListener('ap:flag-changed', onAPFlagChanged);
 }
 
 function loadEpheniaScript(scriptName, initFunction, priorityFunction) {

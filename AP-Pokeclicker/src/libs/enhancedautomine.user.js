@@ -36,16 +36,81 @@
         }
 
         document.getElementById('auto-mine-start').addEventListener('click', toggleAutoMine);
+        
+        // --- APFlags gate: start hidden and OFF; show when APFlags.enhancedAutoMine is true ---
+        function getAPEnhancedAutoMineFlag() {
+            try {
+                const flags = (window.APFlags ?? {});
+                if (typeof flags.get === 'function') {
+                    const v = flags.get('enhancedAutoMine');
+                    if (typeof v !== 'undefined') return !!v;
+                }
+                if (Object.prototype.hasOwnProperty.call(flags, 'enhancedAutoMine')) {
+                    return !!flags.enhancedAutoMine;
+                }
+            } catch (_) { /* ignore */ }
+            return false;
+        }
+        function applyAutoMineAccessFromFlag(force) {
+            const enabled = !!getAPEnhancedAutoMineFlag();
+            const btn = document.getElementById('auto-mine-start');
+            if (btn) {
+                btn.style.display = enabled ? '' : 'none';
+            }
+            if (!enabled) {
+                // Ensure the feature is OFF when disabled
+                mineState = false;
+                try { clearInterval(autoMineTimer); } catch (_) { }
+                if (btn) {
+                    btn.classList.remove('btn-success');
+                    if (!btn.classList.contains('btn-danger')) btn.classList.add('btn-danger');
+                    btn.textContent = 'Auto Mine [OFF]';
+                }
+            } else {
+                // When enabled, reflect persisted preference and start if ON
+                if (btn) {
+                    btn.classList.toggle('btn-success', !!mineState);
+                    btn.classList.toggle('btn-danger', !mineState);
+                    btn.textContent = `Auto Mine [${mineState ? 'ON' : 'OFF'}]`;
+                }
+                if (mineState) {
+                    setTimeout(setAutoMineInterval, 100);
+                }
+            }
+        }
 
-        if (mineState) {
+        // Apply current APFlags state and subscribe for changes
+        try { applyAutoMineAccessFromFlag(true); } catch (_) { }
+        window.addEventListener('ap:flag-changed', (ev) => {
+            try {
+                const detail = ev && ev.detail;
+                if (detail && detail.key === 'enhancedAutoMine') {
+                    applyAutoMineAccessFromFlag(true);
+                }
+            } catch (_) { /* ignore */ }
+        });
+
+        if (mineState && getAPEnhancedAutoMineFlag()) {
             setTimeout(setAutoMineInterval, 1000);
         }
     }
 
     function toggleAutoMine(event) {
+        // Guard: don't allow enabling if AP flag is false
+        const flags = (window.APFlags ?? {});
+        const enabled = (typeof flags.get === 'function') ? !!flags.get('enhancedAutoMine') : !!flags.enhancedAutoMine;
+        const el = event.target;
+        if (!enabled) {
+            // Force OFF state and UI (do not change persisted preference)
+            mineState = false;
+            try { clearInterval(autoMineTimer); } catch (_) { }
+            el.classList.toggle('btn-success', false);
+            el.classList.toggle('btn-danger', true);
+            el.textContent = 'Auto Mine [OFF]';
+            return;
+        }
         mineState = !mineState;
         localStorage.setItem('autoMineState', mineState);
-        const el = event.target;
         el.classList.toggle('btn-success', mineState);
         el.classList.toggle('btn-danger', !mineState);
         el.textContent = `Auto Mine [${mineState ? 'ON' : 'OFF'}]`;

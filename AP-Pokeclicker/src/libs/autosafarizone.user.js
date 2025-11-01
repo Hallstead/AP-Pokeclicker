@@ -49,6 +49,124 @@ function initAutoSafari() {
   var skipTicks = 0;
   var awaiting = false;
 
+  // --- APFlags gate: hide UI and disable functionality until unlocked ---
+  function getAPAutoSafariFlag() {
+    try {
+      const w = window;
+      if (w.APFlags?.get) return !!w.APFlags.get('autoSafariZone');
+      return !!w.APFlags?.autoSafariZone;
+    } catch (_) { return false; }
+  }
+
+  function getAPAutoSafariProgressive() {
+    try {
+      const w = window;
+      const v = w.APFlags?.get ? w.APFlags.get('autoSafariZoneProgressive') : w.APFlags?.autoSafariZoneProgressive;
+      const n = Number(v);
+      return Number.isFinite(n) && n > 0 ? n : 0;
+    } catch (_) { return 0; }
+  }
+
+  function onAPFlagChanged(ev) {
+    try {
+      const detail = ev?.detail || {};
+      if (!detail || detail.key === 'autoSafariZone') {
+        applyAutoSafariAccessFromFlag();
+      } else if (detail.key === 'autoSafariZoneProgressive') {
+        // Recompute speeds if fast animations are enabled and feature unlocked
+        if (getAPAutoSafariFlag() && autoSafariFastAnimationsState) {
+          autoSafariFastAnimations();
+        }
+      }
+    } catch (_) { /* ignore */ }
+  }
+
+  let controlsContainerRef = null;
+
+  function revertFastAnimationSpeeds() {
+    try {
+      // Restore cached speeds without touching localStorage or state flags
+      Object.keys(CACHED_ANIM_SPEEDS).forEach((anim) => {
+        SafariBattle.Speed[anim] = CACHED_ANIM_SPEEDS[anim];
+      });
+      Safari.moveSpeed = CACHED_MOVE_SPEED;
+    } catch (_) { /* ignore */ }
+  }
+
+  function readSavedStates() {
+    // Update in-memory flags from localStorage without overwriting storage
+    try {
+      const savedAuto = JSON.parse(localStorage.getItem('autoSafariState') || 'false');
+      autoSafariState = !!savedAuto;
+    } catch (_) {
+      autoSafariState = false;
+    }
+    autoSafariPickItemsState = loadSetting('autoSafariPickItemsState', true);
+    autoSafariThrowBaitsState = loadSetting('autoSafariThrowBaitsState', false);
+    autoSafariSeekUncaught = loadSetting('autoSafariSeekUncaught', false);
+    autoSafariSeekContagious = loadSetting('autoSafariSeekContagious', false);
+    autoSafariFastAnimationsState = loadSetting('autoSafariFastAnimationsState', false);
+  }
+
+  function setButtonVisual(id, isOn, labelText, extraClassWhenWarning = null) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('btn-success', 'btn-danger', 'btn-warning');
+    if (extraClassWhenWarning && isOn === 'warning') {
+      el.classList.add('btn-warning');
+    } else {
+      el.classList.add(isOn ? 'btn-success' : 'btn-danger');
+    }
+    el.textContent = `${labelText} [${isOn === 'warning' ? 'WAIT' : (isOn ? 'ON' : 'OFF')}]`;
+  }
+
+  function syncUiFromState() {
+    setButtonVisual('auto-pick-items-toggle', autoSafariPickItemsState, 'Auto Pick Items');
+    setButtonVisual('auto-throw-baits-toggle', autoSafariThrowBaitsState, 'Auto Throw Bait');
+    setButtonVisual('auto-seek-uncaught-toggle', autoSafariSeekUncaught, 'Auto Seek New');
+    setButtonVisual('auto-seek-contagious-toggle', autoSafariSeekContagious, 'Auto Seek PKRS');
+    setButtonVisual('auto-fast-anim-toggle', autoSafariFastAnimationsState, 'Auto Fast Anim');
+    setButtonVisual('auto-safari-toggle', autoSafariState, 'Auto Safari');
+  }
+
+  function applyAutoSafariAccessFromFlag() {
+    const enabled = getAPAutoSafariFlag();
+    // Resolve container ref lazily
+    controlsContainerRef = controlsContainerRef || document.getElementById('auto-safari-controls');
+
+    if (!enabled) {
+      // Hide UI
+      if (controlsContainerRef) controlsContainerRef.style.display = 'none';
+      // Stop processing without changing saved prefs
+      if (autoSafariProcessId) {
+        clearInterval(autoSafariProcessId);
+        autoSafariProcessId = null;
+      }
+      autoSafariState = false; // in-memory only; do not write to localStorage
+      stopAfterGameOver = false;
+      // Ensure speeds are default while gated
+      revertFastAnimationSpeeds();
+      return;
+    }
+
+    // Enabled: show UI and restore behavior from saved states
+    if (controlsContainerRef) controlsContainerRef.style.display = 'flex';
+    readSavedStates();
+    syncUiFromState();
+
+    // Apply fast animations if saved ON
+    if (autoSafariFastAnimationsState) {
+      autoSafariFastAnimations();
+    } else {
+      revertFastAnimationSpeeds();
+    }
+    // Start loop if saved ON
+    if (autoSafariState) {
+      if (autoSafariProcessId) clearInterval(autoSafariProcessId);
+      startAutoSafari();
+    }
+  }
+
   const CACHED_ANIM_SPEEDS = Object.assign({}, SafariBattle.Speed);
   const CACHED_MOVE_SPEED = Safari.moveSpeed;
   // Faux enums
@@ -95,6 +213,10 @@ function initAutoSafari() {
   DisplayObservables.modalState.safariModal;
 
   createHTML();
+
+  // Apply AP gating after UI creation (so we can hide container) and listen for changes
+  applyAutoSafariAccessFromFlag();
+  window.addEventListener('ap:flag-changed', onAPFlagChanged);
 
   function startAutoSafari() {
     scriptState = SCRIPT_STATES.inactive;
@@ -498,10 +620,24 @@ function initAutoSafari() {
   }
 
   function autoSafariFastAnimations() {
+    // Base + Progressive scaling:
+    // - Base factors match original script (anim: /5, move: /10)
+    // - Each progressive tier t multiplies those bases by (1 + 1*t) for anim and (1 + 2*t) for move
+    //   => animFactor = 5 * (1 + t), moveFactor = 10 * (1 + 2t)
+    const baseAnim = 5;
+    const baseMove = 10;
+    const tiers = getAPAutoSafariProgressive();
+    const animFactor = tiers ? tiers : baseAnim; //baseAnim * Math.max(1, 1 + (tiers * 1));
+    const moveFactor = tiers ? tiers * 2 : baseMove; //baseMove * Math.max(1, 1 + (tiers * 2));
+
     for (const anim of Object.keys(SafariBattle.Speed)) {
-      SafariBattle.Speed[anim] = autoSafariFastAnimationsState ? CACHED_ANIM_SPEEDS[anim] / 5 : CACHED_ANIM_SPEEDS[anim];
+      SafariBattle.Speed[anim] = autoSafariFastAnimationsState
+        ? CACHED_ANIM_SPEEDS[anim] / animFactor
+        : CACHED_ANIM_SPEEDS[anim];
     }
-    Safari.moveSpeed = autoSafariFastAnimationsState ? CACHED_MOVE_SPEED / 10 : CACHED_MOVE_SPEED;
+    Safari.moveSpeed = autoSafariFastAnimationsState
+      ? CACHED_MOVE_SPEED / moveFactor
+      : CACHED_MOVE_SPEED;
 
     if (autoSafariState) {
       clearInterval(autoSafariProcessId);
@@ -514,6 +650,7 @@ function initAutoSafari() {
     const modalHeader = safariModal.querySelector('.modal-header');
 
     const buttonsContainer = document.createElement('div');
+    buttonsContainer.setAttribute('id', 'auto-safari-controls');
 
     const createButton = (name, text, state, func) => {
       var button = document.createElement('button');
@@ -533,8 +670,9 @@ function initAutoSafari() {
     createButton('seek-contagious', 'Seek PKRS', autoSafariSeekContagious, toggleSeekContagious);
     createButton('fast-anim', 'Fast Anim', autoSafariFastAnimationsState, toggleFastAnimations);
 
-    buttonsContainer.setAttribute('style', 'display: flex; height: 24px;');
-    buttonsContainer.style.display = 'flex';
+  buttonsContainer.setAttribute('style', 'display: flex; height: 24px;');
+  // Respect APFlags at creation time
+  buttonsContainer.style.display = getAPAutoSafariFlag() ? 'flex' : 'none';
     modalHeader.after(buttonsContainer);
 
     const safariQuitBtn = safariModal.querySelector('button[onclick="Safari.closeModal()"]');
@@ -544,12 +682,17 @@ function initAutoSafari() {
       }
     });
 
-    if (autoSafariFastAnimationsState) {
+    // Only apply fast animations when unlocked by AP flag
+    if (getAPAutoSafariFlag() && autoSafariFastAnimationsState) {
       autoSafariFastAnimations();
     }
   }
 
   function toggleAutoSafari(allowDelayedStop = false) {
+    if (!getAPAutoSafariFlag()) {
+      // Gated: ignore user input and do not overwrite saved prefs
+      return;
+    }
     const futureState = !autoSafariState;
     stopAfterGameOver = allowDelayedStop && !(futureState || stopAfterGameOver);
     autoSafariState = futureState || stopAfterGameOver;
@@ -568,6 +711,7 @@ function initAutoSafari() {
   }
 
   function toggleAutoPickItems() {
+    if (!getAPAutoSafariFlag()) return; // Gated
     autoSafariPickItemsState = !autoSafariPickItemsState;
     const toggleButton = document.getElementById('auto-pick-items-toggle');
     toggleButton.classList.toggle('btn-danger', !autoSafariPickItemsState);
@@ -577,6 +721,7 @@ function initAutoSafari() {
   }
 
   function toggleThrowBaits() {
+    if (!getAPAutoSafariFlag()) return; // Gated
     autoSafariThrowBaitsState = !autoSafariThrowBaitsState;
     const toggleButton = document.getElementById('auto-throw-baits-toggle');
     toggleButton.classList.toggle('btn-danger', !autoSafariThrowBaitsState);
@@ -586,6 +731,7 @@ function initAutoSafari() {
   }
 
   function toggleSeekUncaught() {
+    if (!getAPAutoSafariFlag()) return; // Gated
     autoSafariSeekUncaught = !autoSafariSeekUncaught;
     const toggleButton = document.getElementById('auto-seek-uncaught-toggle');
     toggleButton.classList.toggle('btn-danger', !autoSafariSeekUncaught);
@@ -599,6 +745,7 @@ function initAutoSafari() {
 
 
   function toggleSeekContagious() {
+    if (!getAPAutoSafariFlag()) return; // Gated
     autoSafariSeekContagious = !autoSafariSeekContagious;
     const toggleButton = document.getElementById('auto-seek-contagious-toggle');
     toggleButton.classList.toggle('btn-danger', !autoSafariSeekContagious);
@@ -611,6 +758,7 @@ function initAutoSafari() {
   }
 
   function toggleFastAnimations() {
+    if (!getAPAutoSafariFlag()) return; // Gated
     autoSafariFastAnimationsState = !autoSafariFastAnimationsState;
     const toggleButton = document.getElementById('auto-fast-anim-toggle');
     toggleButton.classList.toggle('btn-danger', !autoSafariFastAnimationsState);

@@ -22,6 +22,24 @@ var ballAdjuster;
 var defaultTime = [];
 
 function initBallAdjust() {
+    // --- APFlags helpers ---
+    function getAPCatchSpeedFlag() {
+        try {
+            const w = window;
+            if (w.APFlags?.get) return !!w.APFlags.get('catchSpeedAdjuster');
+            return !!w.APFlags?.catchSpeedAdjuster;
+        } catch (_) { return false; }
+    }
+
+    function onAPFlagChanged(ev) {
+        try {
+            const detail = ev?.detail || {};
+            if (!detail || detail.key === 'catchSpeedAdjuster') {
+                applyCatchSpeedAccessFromFlag();
+            }
+        } catch (_) { /* ignore */ }
+    }
+
     var getBalls = App.game.pokeballs.pokeballs;
     for (var i = 0; i < getBalls.length; i++) {
         defaultTime.push(getBalls[i].catchTime)
@@ -34,10 +52,19 @@ function initBallAdjust() {
 
     if (ballAdjuster) {
         document.getElementById('ball-adjust').checked = true;
-        catchDelay();
+        // Only apply the delay change if AP flag is enabled
+        if (getAPCatchSpeedFlag()) {
+            catchDelay();
+        }
     }
 
     function changeAdjust(ele) {
+        // Gated: ignore user input if feature is locked
+        if (!getAPCatchSpeedFlag()) {
+            // Revert checkbox UI to saved state
+            ele.checked = (localStorage.getItem('ballAdjuster') === 'true');
+            return;
+        }
         ballAdjuster = !ballAdjuster;
         localStorage.setItem("ballAdjuster", ballAdjuster);
         catchDelay();
@@ -45,13 +72,36 @@ function initBallAdjust() {
 
     function catchDelay() {
         for (var i = 0; i < getBalls.length; i++) {
-            if (ballAdjuster) {
+            if (ballAdjuster && getAPCatchSpeedFlag()) {
                 getBalls[i].catchTime = 0;
             } else {
                 getBalls[i].catchTime = defaultTime[i];
             }
         }
     }
+
+    function applyCatchSpeedAccessFromFlag() {
+        const enabled = getAPCatchSpeedFlag();
+        // Hide/show UI row
+        ballAdj.style.display = enabled ? '' : 'none';
+        // While disabled, ensure catch times are at their defaults regardless of saved setting
+        if (!enabled) {
+            for (var i = 0; i < getBalls.length; i++) {
+                getBalls[i].catchTime = defaultTime[i];
+            }
+        } else {
+            // When enabled, reflect saved state in checkbox and apply behavior
+            const saved = localStorage.getItem('ballAdjuster') === 'true';
+            const checkbox = document.getElementById('ball-adjust');
+            if (checkbox) checkbox.checked = saved;
+            ballAdjuster = saved;
+            catchDelay();
+        }
+    }
+
+    // Apply gating now and listen for future changes
+    applyCatchSpeedAccessFromFlag();
+    window.addEventListener('ap:flag-changed', onAPFlagChanged);
 }
 
 if (localStorage.getItem('ballAdjuster') == null) {

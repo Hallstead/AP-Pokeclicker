@@ -23,7 +23,9 @@ class App {
             console.log(`[${GameConstants.formatDate(new Date())}] %cLoading Game Data..`, 'color:#8e44ad;font-weight:900;');
 
             // Mark game as not ready yet for external listeners
-            try { (window as any).__AP_GAME_READY__ = false; } catch (e) {}
+            try {
+                (window as any).__AP_GAME_READY__ = false;
+            } catch (e) {}
 
             App.game = new Game();
 

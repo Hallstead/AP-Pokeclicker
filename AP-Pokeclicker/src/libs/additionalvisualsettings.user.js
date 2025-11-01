@@ -216,7 +216,14 @@ class AdditionalVisualSettings {
         gymsHead.textContent = `Gym Select (${GameConstants.camelCaseToString(GameConstants.Region[player.region])})`;
         gymsBtns.innerHTML = '';
         const fragment = new DocumentFragment();
-        const regionGyms = Object.values(GymList).filter((gym) => gym.parent?.region === player.region);
+        // Exclude "Hallstead" gym from the list
+        const regionGyms = Object.values(GymList)
+            .filter((gym) => gym.parent?.region === player.region)
+            .filter((gym) => {
+                const leader = (gym.leaderName || '').toString();
+                const parentName = gym.parent?.name || '';
+                return !/hallstead/i.test(leader) && parentName !== "Hallstead's Yacht";
+            });
         for (const gym of regionGyms) {
             const hasBadgeImage = !(BadgeEnums[gym.badgeReward].startsWith('Elite') || BadgeEnums[gym.badgeReward] == 'None');
             const badgeImage = (hasBadgeImage ? `assets/images/badges/${BadgeEnums[gym.badgeReward]}.svg` : '');

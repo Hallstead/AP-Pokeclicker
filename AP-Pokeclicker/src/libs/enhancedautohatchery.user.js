@@ -56,13 +56,23 @@ function initAutoHatch() {
             try {
                 // force OFF and update UI text/class
                 hatchState = false;
-                localStorage.setItem('autoHatchState', false);
                 if (startBtn) {
                     startBtn.classList.remove('btn-success');
                     if (!startBtn.classList.contains('btn-danger')) startBtn.classList.add('btn-danger');
                     startBtn.textContent = 'Auto Hatch [OFF]';
                 }
             } catch (_) { /* ignore */ }
+        } else {
+            // Reflect persisted preference and start if ON
+            if (startBtn) {
+                startBtn.classList.toggle('btn-success', !!hatchState);
+                startBtn.classList.toggle('btn-danger', !hatchState);
+                startBtn.textContent = `Auto Hatch [${hatchState ? 'ON' : 'OFF'}]`;
+            }
+            if (hatchState) {
+                // Schedule in case enabling occurs during UI updates
+                setTimeout(() => { try { autoHatcher(); } catch (_) { } }, 100);
+            }
         }
     }
 

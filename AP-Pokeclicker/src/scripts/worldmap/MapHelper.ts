@@ -417,12 +417,18 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('[data-random-group]').forEach(el => {
                 const group = el.getAttribute('data-random-group') || '';
                 const id = el.getAttribute('data-random-id') || '';
-                if (!groups[group]) groups[group] = [];
-                if (!groups[group].includes(id)) groups[group].push(id);
+                if (!groups[group]) {
+                    groups[group] = [];
+                }
+                if (!groups[group].includes(id)) {
+                    groups[group].push(id);
+                }
             });
 
             Object.entries(groups).forEach(([group, ids]) => {
-                if (!ids.length) return;
+                if (!ids.length) {
+                    return;
+                }
                 const chosenId = ids[Math.floor(Math.random() * ids.length)];
                 // For every element with this group's random-id, show if chosen, hide otherwise
                 ids.forEach(id => {
@@ -430,10 +436,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelectorAll(`[data-random-id="${id}"]`).forEach(el => {
                         if (show) {
                             // remove any forced hiding so KO can control visibility normally
-                            try { (el as HTMLElement).style.removeProperty('display'); } catch {}
+                            try {
+                                (el as HTMLElement).style.removeProperty('display');
+                            } catch {}
                         } else {
                             // remove the element from the DOM so KO won't bind/mirror it for the player sprite
-                            try { el.parentNode?.removeChild(el); } catch {}
+                            try {
+                                el.parentNode?.removeChild(el);
+                            } catch {}
                         }
                     });
                 });

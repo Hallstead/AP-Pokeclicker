@@ -21,7 +21,7 @@
 class EnhancedAutoClicker {
     // Constants
     static ticksPerSecond = 20;
-    static maxClickMultiplier = 5;
+    static maxClickMultiplier = 1;
     // Auto Clicker
     static autoClickState = ko.observable(validateStorage('autoClickState', false));
     static autoClickMultiplier = validateStorage('autoClickMultiplier', 1, (v) => (Number.isInteger(v) && v >= 1));
