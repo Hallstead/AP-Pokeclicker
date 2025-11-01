@@ -7,7 +7,7 @@ console.info('Starting publish..');
 ghpages.publish('docs', {
     src: ['./**/*', '../package.json'],
     remove: '!./preview/**/*',
-    branch: 'master',
+    branch: 'pages',
     dest: 'docs',
     message: `[v${version}] Live website`,
 }, (err) => {
