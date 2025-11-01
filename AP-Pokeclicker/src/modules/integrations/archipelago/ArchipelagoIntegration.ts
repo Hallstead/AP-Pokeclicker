@@ -103,7 +103,7 @@ class ArchipelagoIntegrationModule {
 
     // Initialize and optionally auto-connect. We dynamically import the runtime
     // package so the modules bundle doesn't crash at build time if unavailable.
-    public async init(serverUrl = 'wss://localhost:38281', playerName = 'Player') {
+    public async init(serverUrl = 'ws://localhost:38281', playerName = 'Player') {
 
         this.client = new Client();
 
@@ -492,7 +492,7 @@ if (typeof window !== 'undefined') {
         playerName?: string,
         gameName?: string,
     ): Promise<boolean> {
-        const url = serverUrl || 'wss://localhost:38281';
+        const url = serverUrl || 'ws://localhost:38281';
         let name = playerName;
         try {
             if (!name) {
@@ -540,8 +540,8 @@ if (typeof window !== 'undefined') {
             const slotEl = document.getElementById('ap-slot') as HTMLInputElement | null;
             const h = hostEl?.value || 'localhost';
             const p = portEl?.value || '38281';
-            const s = slotEl?.value || 'Player';
-            const url = `wss://${h}:${p}`;
+            const s = slotEl?.value || 'JH';
+            const url = `ws://${h}:${p}`;
             if ((window as any).archipelagoConnect) {
                 (window as any).archipelagoConnect(url, s, 'Pokeclicker');
                 return true;
