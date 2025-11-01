@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } catch (e) {}
     if (!App.isUsingClient) {
-        document.getElementById('use-our-client-message').style.display = 'block';
+        // document.getElementById('use-our-client-message').style.display = 'block';
     }
     // Load list of saves
     SaveSelector.loadSaves();

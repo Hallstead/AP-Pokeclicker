@@ -132,7 +132,7 @@ class Gym extends TownContent implements TmpGymType {
 
     public firstWinReward() {
         // Give the player this gyms badge
-        App.game.badgeCase.gainBadge(this.badgeReward);
+        // App.game.badgeCase.gainBadge(this.badgeReward);
         // Show the badge modal
         $('#receiveBadgeModal').modal('show');
         // Run the first time reward function

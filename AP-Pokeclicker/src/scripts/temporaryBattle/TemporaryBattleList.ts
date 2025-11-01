@@ -3,46 +3,44 @@
 const TemporaryBattleList: { [battleName: string]: TemporaryBattle } = {};
 
 //Kanto Temporary Battles
-TemporaryBattleList['Hallstead'] = new TemporaryBattle(
-    'Hallstead',
-    [
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Squirtle', 1040, 9),
-        new GymPokemon('Blastoise', 1040, 100)
-    ],
-    '...Urge...to destroy world...rising...',
-    [
-        new RouteKillRequirement(10, GameConstants.Region.kanto, 2)
-    ],
-    undefined,
-    {
-        displayName: 'Hallstead',
-        returnTown: 'Viridian City',
-        imageName: 'Black Mage',
-        battleBackground: 'Default',
-        rewardFunction: () => {
-            BagHandler.gainItem({type: ItemType.item, id: 'Fire_egg'}, 1);
-            BagHandler.gainItem({type: ItemType.item, id: 'Grass_egg'}, 1);
-            BagHandler.gainItem({type: ItemType.item, id: 'Water_egg'}, 1);
-            BagHandler.gainItem({type: ItemType.item, id: 'Fighting_egg'}, 1);
-            BagHandler.gainItem({type: ItemType.item, id: 'Electric_egg'}, 1);
-            BagHandler.gainItem({type: ItemType.item, id: 'Dragon_egg'}, 1);
-            BagHandler.gainItem({type: ItemType.item, id: 'Mystery_egg'}, 1);
-            App.game.pokeballs.gainPokeballs(GameConstants.Pokeball.Masterball, 1, false);
-            Notifier.notify({
-                message: 'You were awarded one of every Egg for defeating the Hallstead!',
-                type: NotificationConstants.NotificationOption.success,
-                setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
-            });
-        }
-    }
-);
+// TemporaryBattleList['Hallstead'] = new TemporaryBattle(
+//     'Hallstead',
+//     [
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Squirtle', 1040, 9),
+//         new GymPokemon('Blastoise', 1040, 100),
+//     ],
+//     '...Urge...to destroy world...rising...',
+//     [new RouteKillRequirement(10, GameConstants.Region.kanto, 2)],
+//     undefined,
+//     {
+//         displayName: 'Hallstead',
+//         returnTown: 'Viridian City',
+//         imageName: 'Black Mage',
+//         battleBackground: 'Default',
+//         rewardFunction: () => {
+//             BagHandler.gainItem({type: ItemType.item, id: 'Fire_egg'}, 1);
+//             BagHandler.gainItem({type: ItemType.item, id: 'Grass_egg'}, 1);
+//             BagHandler.gainItem({type: ItemType.item, id: 'Water_egg'}, 1);
+//             BagHandler.gainItem({type: ItemType.item, id: 'Fighting_egg'}, 1);
+//             BagHandler.gainItem({type: ItemType.item, id: 'Electric_egg'}, 1);
+//             BagHandler.gainItem({type: ItemType.item, id: 'Dragon_egg'}, 1);
+//             BagHandler.gainItem({type: ItemType.item, id: 'Mystery_egg'}, 1);
+//             App.game.pokeballs.gainPokeballs(GameConstants.Pokeball.Masterball, 1, false);
+//             Notifier.notify({
+//                 message: 'You were awarded one of every Egg for defeating the Hallstead!',
+//                 type: NotificationConstants.NotificationOption.success,
+//                 setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
+//             });
+//         },
+//     }
+// );
 TemporaryBattleList['Blue 1'] = new TemporaryBattle(
     'Blue 1',
     [
@@ -55,7 +53,7 @@ TemporaryBattleList['Blue 1'] = new TemporaryBattle(
     'I heard the Pokémon League is crawling with tough Trainers. I have to figure out how to get past them. You should quit dawdling and get a move on!',
     [
         new RouteKillRequirement(10, GameConstants.Region.kanto, 22),
-        new GymBadgeRequirement(BadgeEnums.Boulder, GameConstants.AchievementOption.less),
+        // new GymBadgeRequirement(BadgeEnums.Boulder, GameConstants.AchievementOption.less),
     ],
     undefined,
     {

@@ -29,19 +29,8 @@ function initAutoBattleItems() {
     </button>`
     document.getElementById('auto-battle-items').addEventListener('click', event => { switchABItems(event); });
 
-    // --- APFlags gate: start hidden and OFF; show when APFlags.autoBattleItems is true ---
+    // --- APFlags gate: start hidden; show when APFlags.autoBattleItems is true (preserve saved ON/OFF) ---
     const btn = document.getElementById('auto-battle-items');
-    // Force OFF if currently ON
-    try {
-        if (battleItemState) {
-            battleItemState = false;
-            clearInterval(itemABLoop);
-            btn.classList.remove('btn-success');
-            btn.classList.add('btn-danger');
-            btn.textContent = 'Auto Use [OFF]';
-            localStorage.setItem('autoBattleItems', JSON.stringify(false));
-        }
-    } catch (_) { /* ignore */ }
     // Hide button until allowed by APFlags
     btn.style.display = 'none';
     btn.title = 'Disabled: Not enabled by Archipelago yet.';
@@ -68,19 +57,22 @@ function initAutoBattleItems() {
         if (allowed) {
             btn.style.display = '';
             btn.removeAttribute('title');
+            // Reflect persisted preference and start loop if ON
+            btn.classList.toggle('btn-success', !!battleItemState);
+            btn.classList.toggle('btn-danger', !battleItemState);
+            btn.textContent = `Auto Use [${battleItemState ? 'ON' : 'OFF'}]`;
+            if (battleItemState) {
+                try { ABItems(); } catch (_) { /* ignore */ }
+            }
         } else {
             btn.style.display = 'none';
             btn.title = 'Disabled: Not enabled by Archipelago yet.';
-            // Also ensure OFF if being turned off at runtime
+            // Stop runtime while disabled without overwriting saved state
             try {
-                if (battleItemState) {
-                    battleItemState = false;
-                    clearInterval(itemABLoop);
-                    btn.classList.remove('btn-success');
-                    btn.classList.add('btn-danger');
-                    btn.textContent = 'Auto Use [OFF]';
-                    localStorage.setItem('autoBattleItems', JSON.stringify(false));
-                }
+                clearInterval(itemABLoop);
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-danger');
+                btn.textContent = 'Auto Use [OFF]';
             } catch (_) { /* ignore */ }
         }
     }

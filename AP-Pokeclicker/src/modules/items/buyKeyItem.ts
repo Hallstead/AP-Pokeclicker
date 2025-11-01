@@ -34,7 +34,7 @@ export default class BuyKeyItem extends Item {
         // App.game.keyItems.gainKeyItem(this.item);
     }
 
-    isSoldOut(): boolean{
+    isSoldOut(): boolean {
         return this.purchased;
     }
 

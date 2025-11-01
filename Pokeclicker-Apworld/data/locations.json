@@ -19,7 +19,7 @@
         },
         {
             "name": "Defeat 10 Pokemon on Kanto Route 12 (Super Rod)",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Key Items"
             ],
@@ -27,7 +27,7 @@
         },
         {
             "name": "Defeat 10 Pokemon on Kanto Route 3 (Mystery Egg)",
-            "region": "Kanto",
+            "region": "Boulder Badge",
             "category": [
                 "Key Items"
             ],
@@ -163,15 +163,15 @@
         },
         {
             "name": "Misty",
+            "region": "Boulder Badge",
             "category": [
                 "Gyms"
             ],
-            "requires": [],
-            "region": "Kanto"
+            "requires": []
         },
         {
             "name": "Lt. Surge",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Gyms"
             ],
@@ -195,7 +195,7 @@
         },
         {
             "name": "Koga",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Gyms"
             ],
@@ -203,7 +203,7 @@
         },
         {
             "name": "Blaine",
-            "region": "Kanto",
+            "region": "Soul Badge",
             "category": [
                 "Gyms"
             ],
@@ -215,7 +215,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "|Thunder Badge| and |Rainbow Badge| and |Marsh Badge| and |Soul Badge|"
         },
         {
             "name": "Lorelei",
@@ -267,7 +267,7 @@
         },
         {
             "name": "Mt. Moon",
-            "region": "Kanto",
+            "region": "Boulder Badge",
             "category": [
                 "Dungeons"
             ],
@@ -275,7 +275,7 @@
         },
         {
             "name": "Diglett's Cave",
-            "region": "Kanto",
+            "region": "Boulder Badge",
             "category": [
                 "Dungeons"
             ],
@@ -283,7 +283,7 @@
         },
         {
             "name": "Rock Tunnel",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Dungeons"
             ],
@@ -291,7 +291,7 @@
         },
         {
             "name": "Rocket Game Corner",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Dungeons"
             ],
@@ -299,7 +299,7 @@
         },
         {
             "name": "Pokemon Tower",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Dungeons"
             ],
@@ -307,7 +307,7 @@
         },
         {
             "name": "Silph Co.",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Dungeons"
             ],
@@ -315,23 +315,23 @@
         },
         {
             "name": "Power Plant",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "|Soul Badge|"
         },
         {
             "name": "Seafoam Islands",
-            "region": "Kanto",
+            "region": "Soul Badge",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "|Rainbow Badge|"
         },
         {
             "name": "Pokemon Mansion",
-            "region": "Kanto",
+            "region": "Soul Badge",
             "category": [
                 "Dungeons"
             ],
@@ -351,7 +351,7 @@
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "|Soul Badge|"
         },
         {
             "name": "Victory Road",
@@ -379,7 +379,7 @@
         },
         {
             "name": "Blue 2 (Near Cerulean City)",
-            "region": "Kanto",
+            "region": "Boulder Badge",
             "category": [
                 "Temporary Battles"
             ],
@@ -387,7 +387,7 @@
         },
         {
             "name": "Blue 3 (Near Vermillion City)",
-            "region": "Kanto",
+            "region": "Boulder Badge",
             "category": [
                 "Temporary Battles"
             ],
@@ -395,7 +395,7 @@
         },
         {
             "name": "Blue 4 (Pokemon Tower)",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Temporary Battles"
             ],
@@ -403,7 +403,7 @@
         },
         {
             "name": "Blue 5 (Silph Co.)",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Temporary Battles"
             ],
@@ -411,15 +411,15 @@
         },
         {
             "name": "Blue 6 (Near Viridian City)",
-            "region": "Indigo Plateau",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "|Earth Badge|"
         },
         {
             "name": "Fighting Dojo",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Temporary Battles"
             ],
@@ -427,7 +427,7 @@
         },
         {
             "name": "Snorlax (Route 12, Near Lavender Town)",
-            "region": "Kanto",
+            "region": "Cascade Badge",
             "category": [
                 "Temporary Battles"
             ],
@@ -435,11 +435,11 @@
         },
         {
             "name": "Snorlax (Route 16, Near Celadon City)",
+            "region": "Cascade Badge",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": [],
-            "region": "Kanto"
+            "requires": []
         },
         {
             "name": "Biker Goon 1 (Three Island)",
@@ -447,7 +447,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "|Soul Badge|"
         },
         {
             "name": "Biker Goon 2 (Three Island)",
@@ -455,7 +455,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "|Soul Badge|"
         },
         {
             "name": "Biker Goon 3 (Three Island)",
@@ -463,7 +463,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "|Soul Badge|"
         },
         {
             "name": "Cueball Paxton (Three Island)",
@@ -471,7 +471,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "|Soul Badge|"
         },
         {
             "name": "001 Bulbasaur",

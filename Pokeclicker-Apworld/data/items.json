@@ -264,22 +264,6 @@
         },
         {
             "count": 1,
-            "name": "Omega Protein Gains",
-            "category": [
-                "Scripts"
-            ],
-            "useful": true
-        },
-        {
-            "count": 1,
-            "name": "Overnight Berry Growth",
-            "category": [
-                "Scripts"
-            ],
-            "useful": true
-        },
-        {
-            "count": 1,
             "name": "Simple Weather Changer",
             "category": [
                 "Scripts"
@@ -365,6 +349,14 @@
                 "Badges"
             ],
             "progression": true
+        },
+        {
+            "count": 4,
+            "name": "Extra Egg Slot",
+            "category": [
+                "Extra Slots"
+            ],
+            "useful": true
         },
         {
             "count": 1,

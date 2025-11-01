@@ -36,6 +36,66 @@ function initAutoFarm() {
     FarmController.navigateIndex(Math.floor(plantSelected / FarmController.BERRIES_PER_PAGE));
 
     createMenu();
+    
+    // --- APFlags gate: hide/disable until APFlags.simpleAutoFarmer is true ---
+    function getAPSimpleAutoFarmerFlag() {
+        try {
+            const flags = (window.APFlags ?? {});
+            if (typeof flags.get === 'function') {
+                const v = flags.get('simpleAutoFarmer');
+                if (typeof v !== 'undefined') return !!v;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'simpleAutoFarmer')) {
+                return !!flags.simpleAutoFarmer;
+            }
+        } catch (_) { /* ignore */ }
+        return false;
+    }
+
+    function setButtonStateFromFlag() {
+        const enabled = !!getAPSimpleAutoFarmerFlag();
+        const ids = [
+            ['auto-plant-toggle',    !!plantState,   'Plant'],
+            ['auto-harvest-toggle',  !!harvestState, 'Harvest'],
+            ['auto-replant-toggle',  !!replantState, 'Replant'],
+            ['auto-mulch-toggle',    !!mulchState,   'Mulch']
+        ];
+        ids.forEach(([id, state, label]) => {
+            const btn = document.getElementById(id);
+            if (!btn) return;
+            btn.style.display = enabled ? '' : 'none';
+            btn.disabled = !enabled;
+            if (enabled) {
+                // Reflect persisted preference (do not modify localStorage here)
+                btn.innerText = `Auto ${label}\n[${state ? 'ON' : 'OFF'}]`;
+                btn.classList.toggle('btn-success', !!state);
+                btn.classList.toggle('btn-danger', !state);
+            } else {
+                // Show OFF appearance while disabled (state preserved in memory)
+                btn.innerText = `Auto ${label}\n[OFF]`;
+                btn.classList.toggle('btn-success', false);
+                btn.classList.toggle('btn-danger', true);
+            }
+        });
+        // Ensure the loop respects the flag
+        toggleFarmLoop();
+        // If disabled by flag, make sure loop is stopped
+        if (!enabled && autoFarmLoop) {
+            autoFarmLoop = clearInterval(autoFarmLoop);
+        }
+    }
+
+    // Apply once now, then subscribe to AP flag changes
+    setButtonStateFromFlag();
+    window.addEventListener('ap:flag-changed', (ev) => {
+        try {
+            const detail = ev && ev.detail;
+            if (detail && detail.key === 'simpleAutoFarmer') {
+                setButtonStateFromFlag();
+            }
+        } catch (_) { /* ignore */ }
+    });
+
     if (plantState || replantState || harvestState || mulchState) {
         toggleFarmLoop();
     }
@@ -80,9 +140,14 @@ function initAutoFarm() {
     }
 
     function toggleFarmLoop() {
+        const apEnabled = getAPSimpleAutoFarmerFlag();
         if (plantState || replantState || harvestState || mulchState) {
-            if (!autoFarmLoop) {
-                autoFarmLoop = setInterval(autoFarmTick, 1000);
+            if (apEnabled) {
+                if (!autoFarmLoop) {
+                    autoFarmLoop = setInterval(autoFarmTick, 1000);
+                }
+            } else {
+                autoFarmLoop = clearInterval(autoFarmLoop);
             }
         } else {
             autoFarmLoop = clearInterval(autoFarmLoop);

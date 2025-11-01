@@ -53,12 +53,9 @@ function initCatchFilter() {
         if (accessBtn) {
             accessBtn.style.display = enabled ? '' : 'none';
         }
-        // When disabled, make sure filter is OFF and UI reflects it
+        // When disabled, show OFF in UI without overwriting saved state
         if (!enabled) {
             try {
-                filterState = false;
-                filterColor = false;
-                localStorage.setItem('filterState', false);
                 const toggleBtn = document.getElementById('catch-filter');
                 if (toggleBtn) {
                     toggleBtn.setAttribute('class', 'btn btn-danger');
@@ -66,6 +63,16 @@ function initCatchFilter() {
                 }
                 // Close modal if open
                 try { $('#filterModal').modal('hide'); } catch (_) { /* ignore if jQuery/modal not available */ }
+            } catch (_) { /* ignore */ }
+        } else {
+            // Reflect persisted preference when enabled
+            try {
+                const toggleBtn = document.getElementById('catch-filter');
+                if (toggleBtn) {
+                    const on = !!filterState;
+                    toggleBtn.setAttribute('class', `btn btn-${on ? 'success' : 'danger'}`);
+                    toggleBtn.innerText = `Catch Filter ${on ? '[ON]' : '[OFF]'}`;
+                }
             } catch (_) { /* ignore */ }
         }
     }
@@ -93,12 +100,9 @@ function initCatchFilter() {
     frag.appendChild(btn);
     pokeballDisplay.appendChild(frag);
 
-    // Ensure button starts hidden and filter is OFF until AP flag enables it
+    // Ensure button starts hidden until AP flag enables it (do not overwrite saved state)
     try {
         btn.style.display = 'none';
-        filterState = false;
-        filterColor = false;
-        localStorage.setItem('filterState', false);
     } catch (_) { /* ignore */ }
 
     // Creating a modal for the catch filter

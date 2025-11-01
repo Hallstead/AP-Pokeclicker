@@ -85,7 +85,7 @@ export default class KeyItems implements Feature {
                 undefined, undefined, undefined, 'Z-Power Ring'),*/
                 
             new KeyItem(KeyItemType.AP_logo, 'This is a proof of concept for including AP items in shops.', undefined, undefined, undefined, 'AP Item'),
-            ];
+        ];
     }
 
     hasKeyItem(item: KeyItemType): boolean {

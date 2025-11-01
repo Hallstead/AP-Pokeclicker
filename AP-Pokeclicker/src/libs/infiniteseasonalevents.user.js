@@ -22,6 +22,24 @@ var activeSeasonalEvents = {};
 
 //Removed setTimeout, opted to make it load like the other scrips, also helps with notifications
 function initEvents() {
+    // --- APFlags helpers and gating ---
+    function getAPInfiniteFlag() {
+        try {
+            const w = window;
+            if (w.APFlags?.get) return !!w.APFlags.get('infiniteSeasonalEvents');
+            return !!w.APFlags?.infiniteSeasonalEvents;
+        } catch (_) { return false; }
+    }
+
+    function onAPFlagChanged(ev) {
+        try {
+            const detail = ev?.detail || {};
+            if (!detail || detail.key === 'infiniteSeasonalEvents') {
+                applyInfiniteEventsAccessFromFlag();
+            }
+        } catch (_) { /* ignore */ }
+    }
+
     const NUM_EVENTS = 10;
     const startDate = new Date(new Date().getFullYear(), -1);
     const endDate = new Date(new Date().getFullYear(), 10000);
@@ -49,22 +67,35 @@ function initEvents() {
         activeSeasonalEvents[event.title] = eventActive;
     }
 
-    for (const event of App.game.specialEvents.events) {
-        event.startTime = startDate;
-        event.endTime = endDate;
-
-        if (!event.hasStarted() && activeSeasonalEvents[event.title]) {
-            event.start();
+    // Apply time expansion and auto-start only when AP flag is enabled
+    function enableInfiniteWindowsAndStart() {
+        for (const event of App.game.specialEvents.events) {
+            event.startTime = startDate;
+            event.endTime = endDate;
+            if (!event.hasStarted() && activeSeasonalEvents[event.title]) {
+                event.start();
+            }
         }
     }
 
-    if (App.game.specialEvents.events.length != NUM_EVENTS) {
-        Notifier.notify({
-            title: '[Outdated] Infinite Seasonal Events',
-            message: `Please contact <a href="https://github.com/Ephenia/Pokeclicker-Scripts" target="_blank">Ephenia</a> so that this script can be updated!`,
-            type: NotificationConstants.NotificationOption.danger,
-            timeout: 1000000
-        });
+    function stopScriptManagedEvents() {
+        // Stop events that were enabled via this script's saved state; do not modify localStorage
+        for (const event of App.game.specialEvents.events) {
+            if (activeSeasonalEvents[event.title] && event.hasStarted()) {
+                event.end();
+            }
+        }
+    }
+
+    if (getAPInfiniteFlag()) {
+        if (App.game.specialEvents.events.length != NUM_EVENTS) {
+            Notifier.notify({
+                title: '[Outdated] Infinite Seasonal Events',
+                message: `Please contact <a href="https://github.com/Ephenia/Pokeclicker-Scripts" target="_blank">Ephenia</a> so that this script can be updated!`,
+                type: NotificationConstants.NotificationOption.danger,
+                timeout: 1000000
+            });
+        }
     }
 
     var eventLi = document.createElement('li');
@@ -214,9 +245,40 @@ function initEvents() {
 
     addGlobalStyle('.event-select { cursor: pointer; }');
     addGlobalStyle('.event-select:hover { background-color: rgba(48, 197, 255, 0.5); }');
+    function applyInfiniteEventsAccessFromFlag() {
+        const enabled = getAPInfiniteFlag();
+        // UI: hide/show menu link and modal
+        if (eventLi) eventLi.style.display = enabled ? '' : 'none';
+        if (eventMod) eventMod.style.display = enabled ? '' : 'none';
+
+        if (!enabled) {
+            // End any script-managed events at runtime, don't touch saved prefs
+            stopScriptManagedEvents();
+        } else {
+            // Expand windows and start saved-active events
+            enableInfiniteWindowsAndStart();
+            // Reflect saved states in UI backgrounds
+            for (const event of App.game.specialEvents.events) {
+                const el = document.getElementById('event-'+event.title);
+                if (el) {
+                    el.style = activeSeasonalEvents[event.title] ? "background-color: rgba(93, 226, 60, 0.5)" : "";
+                }
+            }
+        }
+    }
+
+    // Apply gating now and subscribe to changes
+    applyInfiniteEventsAccessFromFlag();
+    window.addEventListener('ap:flag-changed', onAPFlagChanged);
 }
 
 function toggleEvent() {
+    // Gated: ignore user interactions when feature is locked
+    try {
+        const w = window;
+        const gatedOff = !(w.APFlags?.get ? w.APFlags.get('infiniteSeasonalEvents') : w.APFlags?.infiniteSeasonalEvents);
+        if (gatedOff) return;
+    } catch (_) { /* ignore and continue */ }
     var title = this.getAttribute('data-value');
     activeSeasonalEvents[title] = !activeSeasonalEvents[title];
     localStorage.setItem(title, activeSeasonalEvents[title]);

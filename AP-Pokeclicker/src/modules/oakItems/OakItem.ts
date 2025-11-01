@@ -1,6 +1,4 @@
-import {
-    Observable as KnockoutObservable,
-} from 'knockout';
+// Note: avoid importing Knockout types here to prevent TS resolution issues; use `any` for internal observables
 import { Currency } from '../GameConstants';
 import GameHelper from '../GameHelper';
 import ExpUpgrade from '../upgrades/ExpUpgrade';
@@ -14,8 +12,8 @@ export default class OakItem extends ExpUpgrade {
         isActive: false,
     };
 
-    private isActiveKO: KnockoutObservable<boolean>;
-    private receivedKO: KnockoutObservable<boolean>;
+    private isActiveKO: any;
+    private receivedKO: any;
     private locationID: number | null;
     private locationSent: boolean;
 
@@ -53,8 +51,15 @@ export default class OakItem extends ExpUpgrade {
     }
 
     isUnlocked(): boolean {
-        if (App.game.party.caughtPokemon.length >= this.unlockReq && !this.locationSent) {
-            (window as any).sendLocationCheck(this.locationID)
+        try {
+            // Only attempt to send once, and only if we have a valid location id
+            if (!this.locationSent && this.locationID != null && App.game.party.caughtPokemon.length >= this.unlockReq) {
+                (window as any).sendLocationCheck?.(this.locationID);
+                this.locationSent = true;
+            }
+        } catch (e) {
+            // Don't let network issues break KO bindings; log and continue
+            try { console.warn('[OakItem] Failed to send LocationCheck for', this.name, e); } catch (_) { /* noop */ }
         }
         return this.received;
     }

@@ -21,6 +21,15 @@
 var weatherChangerWeather;
 
 function initWeatherChange() {
+    // AP flag helper
+    function getAPSimpleWeatherFlag() {
+        try {
+            const w = window;
+            if (w.APFlags?.get) return !!w.APFlags.get('simpleWeatherChanger');
+            return !!w.APFlags?.simpleWeatherChanger;
+        } catch (_) { return false; }
+    }
+
     // Load selected weather
     weatherChangerWeather = parseInt(localStorage.getItem('weatherChangerWeather'));
     if (isNaN(weatherChangerWeather)) {
@@ -39,9 +48,52 @@ function initWeatherChange() {
 
     overrideGenerateWeather();
     Weather.generateWeather(new Date());
+
+    // Apply AP gating on startup and listen for changes
+    applyWeatherAccessFromFlag();
+    window.addEventListener('ap:flag-changed', (ev) => {
+        try {
+            const detail = ev?.detail || {};
+            if (!detail || detail.key === 'simpleWeatherChanger') {
+                applyWeatherAccessFromFlag();
+            }
+        } catch (_) { /* ignore */ }
+    });
+
+    function applyWeatherAccessFromFlag() {
+        const enabled = getAPSimpleWeatherFlag();
+        const select = document.getElementById('change-weather-select');
+        if (!select) return;
+
+        if (!enabled) {
+            // Hide UI and revert to default weather (no forced override)
+            select.style.display = 'none';
+            weatherChangerWeather = -1; // default behavior path
+            Weather.generateWeather(new Date());
+        } else {
+            // Show UI and restore last saved selection, if any
+            select.style.display = '';
+            const saved = parseInt(localStorage.getItem('weatherChangerWeather'));
+            const val = isNaN(saved) ? -1 : saved;
+            weatherChangerWeather = val;
+            select.value = String(val);
+            Weather.generateWeather(new Date());
+        }
+    }
 }
 
 function changeWeather(event) {
+    // Block interactions while gated off
+    try {
+        const w = window;
+        const enabled = w.APFlags?.get ? !!w.APFlags.get('simpleWeatherChanger') : !!w.APFlags?.simpleWeatherChanger;
+        if (!enabled) {
+            const select = document.getElementById('change-weather-select');
+            if (select) select.value = '-1';
+            return;
+        }
+    } catch (_) { /* ignore and proceed */ }
+
     weatherChangerWeather = +event.target.value;
     Weather.generateWeather(new Date());
     localStorage.setItem('weatherChangerWeather', weatherChangerWeather);
