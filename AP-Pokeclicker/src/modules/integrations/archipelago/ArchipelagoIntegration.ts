@@ -371,6 +371,7 @@ class ArchipelagoIntegrationModule {
                 } else if (item.id == progressivePokeballsIndex) {
                     // progressive pokeballs
                     // TODO: Establish global variable for progressive pokeball state
+                    this.displayItemReceived(item, 'a');
                 } else if (item.id <= badgesLastIndex) {
                     // Badges
                     let index = item.id - progressivePokeballsIndex - 1;

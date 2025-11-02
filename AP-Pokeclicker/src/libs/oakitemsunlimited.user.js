@@ -19,19 +19,7 @@
 // ==/UserScript==
 
 function initOakItems() {
-    // APFlag-gated max slots: use default when false; use total item count when true
-    function getAPOakItemsFlag() {
-        try {
-            const w = window;
-            if (w.APFlags?.get) return !!w.APFlags.get('oakItemsUnlimited');
-            return !!w.APFlags?.oakItemsUnlimited;
-        } catch (_) { return false; }
-    }
-
     const oakItems = App.game.oakItems;
-    const defaultMax = (typeof oakItems.maxActiveCount === 'function')
-        ? oakItems.maxActiveCount()
-        : oakItems.maxActiveCount;
 
     function updateHeader(currentMax) {
         try {
@@ -42,19 +30,12 @@ function initOakItems() {
         } catch (_) { /* ignore */ }
     }
 
-    function setMaxActive(maxVal) {
-        if (typeof oakItems.maxActiveCount === 'function') {
-            oakItems.maxActiveCount(maxVal);
-        } else {
-            oakItems.maxActiveCount = maxVal;
-        }
-        updateHeader(maxVal);
-    }
-
     function applyFromFlag() {
-        const enabled = getAPOakItemsFlag();
-        const maxWhenEnabled = oakItems.itemList.length;
-        setMaxActive(enabled ? maxWhenEnabled : defaultMax);
+        // Core game now controls the max via AP flag; just update the header to reflect it
+        const currentMax = (typeof oakItems.maxActiveCount === 'function')
+            ? oakItems.maxActiveCount()
+            : oakItems.maxActiveCount;
+        updateHeader(currentMax);
     }
 
     function onAPFlagChanged(ev) {

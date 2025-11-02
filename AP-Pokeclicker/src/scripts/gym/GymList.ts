@@ -138,6 +138,7 @@ GymList['Fuchsia City'] = new Gym(
         // App.game.keyItems.gainKeyItem(KeyItemType.Safari_ticket, true);
         App.game.quests.getQuestLine('Mining Expedition').beginQuest(0, undefined, true);
         (window as any).sendLocationCheck(25);
+        (window as any).sendLocationCheck(5);
     }
 );
 GymList['Cinnabar Island'] = new Gym(
@@ -181,6 +182,8 @@ GymList['Viridian City'] = new Gym(
         // App.game.keyItems.gainKeyItem(KeyItemType.Gem_case, true);
         App.game.quests.getQuestLine('Persons of Interest').beginQuest(0, undefined, true);
         (window as any).sendLocationCheck(27);
+        (window as any).sendLocationCheck(8);
+
     },
     undefined,
     { imageName: 'Team Rocket Boss Giovanni' }

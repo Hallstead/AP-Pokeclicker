@@ -37,14 +37,14 @@ export default class KeyItem {
             if (this.unlockReq()) {
                 //App.game.keyItems.gainKeyItem(this.id);
                 (window as any).sendLocationCheck(this.locationId);
+                if (this.unlocker) {
+                    this.unlocker.dispose();
+                }
             }
         });
     }
 
     unlock() {
         this.isUnlocked(true);
-        if (this.unlocker) {
-            this.unlocker.dispose();
-        }
     }
 }

@@ -1,4 +1,6 @@
-import { Observable as KnockoutObservable } from 'knockout';
+// Knockout types are provided globally via @types/knockout
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+type KnockoutObservable<T> = globalThis.KnockoutObservable<T>;
 import { Feature } from '../DataStore/common/Feature';
 import OakItemType from '../enums/OakItemType';
 import { Currency } from '../GameConstants';
@@ -97,6 +99,18 @@ export default class OakItems implements Feature {
     }
 
     maxActiveCount() {
+        // Archipelago: Unlimited Oak Items override
+        // If the integration flag is enabled, allow selecting up to 12 Oak Items.
+        // Safe-guard: use window as any to avoid typing issues if APFlags isn't defined.
+        try {
+            const apFlags = (window as any)?.APFlags;
+            if (apFlags?.get?.('oakItemsUnlimited')) {
+                // Cap at available items length just in case
+                return Math.min(12, this.itemList?.length ?? 12);
+            }
+        } catch (e) {
+            // Ignore and fall back to default behavior
+        }
         for (let i = 0; i < this.unlockRequirements.length; i += 1) {
             if (App.game.party.caughtPokemon.length < this.unlockRequirements[i]) {
                 return i;
