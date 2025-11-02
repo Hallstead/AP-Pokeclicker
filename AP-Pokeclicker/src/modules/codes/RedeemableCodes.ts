@@ -15,7 +15,7 @@ import RedeemableCode from './RedeemableCode';
 import GameHelper from '../GameHelper';
 import Amount from '../wallet/Amount';
 import Item from '../items/Item';
-import QuestLineState from '../quests/QuestLineState';
+// import QuestLineState from '../quests/QuestLineState';
 
 export default class RedeemableCodes implements Saveable {
     defaults: Record<string, any>;
@@ -206,42 +206,42 @@ export default class RedeemableCodes implements Saveable {
 
                 return refund;
             }),
-            new RedeemableCode('tutorial-skip', -253994129, false, async () => {
-                const quest = App.game.quests.getQuestLine('Tutorial Quests');
-                if (quest.state() != QuestLineState.started) {
-                    Notifier.notify({
-                        title: 'Tutorial Skip',
-                        message: 'The Tutorial is already completed.',
-                        type: NotificationConstants.NotificationOption.warning,
-                        timeout: 1e4,
-                    });
-                    return false;
-                }
+            // new RedeemableCode('tutorial-skip', -253994129, false, async () => {
+            //     const quest = App.game.quests.getQuestLine('Tutorial Quests');
+            //     if (quest.state() != QuestLineState.started) {
+            //         Notifier.notify({
+            //             title: 'Tutorial Skip',
+            //             message: 'The Tutorial is already completed.',
+            //             type: NotificationConstants.NotificationOption.warning,
+            //             timeout: 1e4,
+            //         });
+            //         return false;
+            //     }
 
-                if (quest.curQuest() < 1) {
-                    Notifier.notify({
-                        title: 'Tutorial Skip',
-                        message: 'The first step of the Tutorial must first be completed.',
-                        type: NotificationConstants.NotificationOption.warning,
-                        timeout: 1e4,
-                    });
-                    return false;
-                }
+            //     if (quest.curQuest() < 1) {
+            //         Notifier.notify({
+            //             title: 'Tutorial Skip',
+            //             message: 'The first step of the Tutorial must first be completed.',
+            //             type: NotificationConstants.NotificationOption.warning,
+            //             timeout: 1e4,
+            //         });
+            //         return false;
+            //     }
 
-                while (quest.curQuest() < quest.totalQuests) {
-                    quest.curQuestObject().complete();
-                }
-                App.game.wallet.gainDungeonTokens(200);
-                App.game.keyItems.gainKeyItem(KeyItemType.Dungeon_ticket, true);
-                Notifier.notify({
-                    title: 'Tutorial Skip',
-                    message: 'You have skipped the tutorial, and found a stash of Dungeon Tokens with a Dungeon Ticket.',
-                    type: NotificationConstants.NotificationOption.warning,
-                    timeout: 1e4,
-                });
+            //     while (quest.curQuest() < quest.totalQuests) {
+            //         quest.curQuestObject().complete();
+            //     }
+            //     App.game.wallet.gainDungeonTokens(200);
+            //     App.game.keyItems.gainKeyItem(KeyItemType.Dungeon_ticket, true);
+            //     Notifier.notify({
+            //         title: 'Tutorial Skip',
+            //         message: 'You have skipped the tutorial, and found a stash of Dungeon Tokens with a Dungeon Ticket.',
+            //         type: NotificationConstants.NotificationOption.warning,
+            //         timeout: 1e4,
+            //     });
 
-                return true;
-            }),
+            //     return true;
+            // }),
             new RedeemableCode('Rare Candy', -296173205, false, async () => {
                 // Give the player a few Rare Candies
                 player.gainItem('Rare_Candy', 10);
