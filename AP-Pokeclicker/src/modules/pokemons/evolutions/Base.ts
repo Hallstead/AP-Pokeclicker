@@ -1,4 +1,6 @@
 import { AchievementOption, StoneType } from '../../GameConstants';
+import CaughtPokemonRequirement from '../../requirements/CaughtPokemonRequirement';
+import CustomRequirement from '../../requirements/CustomRequirement';
 import HoldingItemRequirement from '../../requirements/HoldingItemRequirement';
 import LazyRequirementWrapper from '../../requirements/LazyRequirementWrapper';
 import MaxRegionRequirement from '../../requirements/MaxRegionRequirement';
@@ -64,8 +66,9 @@ export const DummyEvolution = (basePokemon: PokemonNameType, evolvedPokemon: Pok
 export const LevelEvolution = (basePokemon: PokemonNameType, evolvedPokemon: PokemonNameType, level: number, ignoreECChange = false): LevelEvoData => restrict(
     { ...Evo(basePokemon, evolvedPokemon, EvoTrigger.LEVEL, ignoreECChange) },
     new PokemonLevelRequirement(basePokemon, level),
-    new ObtainedPokemonRequirement(evolvedPokemon, true),
+    // new ObtainedPokemonRequirement(evolvedPokemon, true),
     new HoldingItemRequirement(basePokemon, 'Everstone', AchievementOption.less),
+    new CustomRequirement(ko.pureComputed(() => !App.game.party.alreadyCaughtPokemonByName(evolvedPokemon)), true, ""),
 );
 
 export const StoneEvolution = (basePokemon: PokemonNameType, evolvedPokemon: PokemonNameType, stone: StoneType, ignoreECChange = false): StoneEvoData => restrict(

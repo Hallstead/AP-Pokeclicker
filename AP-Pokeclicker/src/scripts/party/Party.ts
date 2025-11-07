@@ -50,6 +50,12 @@ class Party implements Feature, TmpPartyType {
 
     }
 
+    // Whether a Pokémon has been received (visible party) by Name
+    alreadyReceivedByName(name: PokemonNameType): boolean {
+        const pokemon = pokemonMap[name];
+        return this.alreadyReceived(pokemon.id);
+    }
+
     // Whether a Pokémon has been received (visible party) by ID
     alreadyReceived(id: number): boolean {
         return this._caughtPokemon().some(p => p.id === id && p.received);
@@ -73,7 +79,7 @@ class Party implements Feature, TmpPartyType {
 
         PokemonHelper.incrementPokemonStatistics(id, GameConstants.PokemonStatisticsType.Captured, shiny, gender, shadow);
 
-        const newCatch = prevCaptured === 0;
+        const newCatch = !this.alreadyCaughtPokemon(id); //prevCaptured === 0;
         const newShiny = shiny && !this._caughtPokemon().some(p => p.id === id && p.shiny);
         const newShadow = isShadow && !this._caughtPokemon().some(p => p.id === id && p.shadow > GameConstants.ShadowStatus.None);
 
