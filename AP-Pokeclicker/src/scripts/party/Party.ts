@@ -32,12 +32,12 @@ class Party implements Feature, TmpPartyType {
         }).extend({rateLimit: 1000});
 
         // This will be completely rebuilt each time a pokemon is caught.
-        // Not ideal but still better than mutliple locations scanning through the list to find what they want
+        // Use the RAW list for lookup so callers like the Pokédex can access entries even if not yet received
         this._caughtPokemonLookup = ko.computed(() => {
-            return this.caughtPokemon.reduce((map, p) => {
+            return this._caughtPokemon().reduce((map, p) => {
                 map.set(p.id, p);
                 return map;
-            }, new Map());
+            }, new Map<number, PartyPokemon>());
         });
 
         this.calculateBaseClickAttack = ko.computed(() => {
@@ -48,6 +48,11 @@ class Party implements Feature, TmpPartyType {
             return Math.pow(partyClickBonus, 1.4);
         });
 
+    }
+
+    // Whether a Pokémon has been received (visible party) by ID
+    alreadyReceived(id: number): boolean {
+        return this._caughtPokemon().some(p => p.id === id && p.received);
     }
 
     gainPokemonByName(name: PokemonNameType, shiny?: boolean, suppressNotification?: boolean, gender?: GameConstants.BattlePokemonGender, shadow?: GameConstants.ShadowStatus) {
@@ -62,31 +67,40 @@ class Party implements Feature, TmpPartyType {
         shadow: GameConstants.ShadowStatus = GameConstants.ShadowStatus.None
     ) {
         const isShadow = shadow === GameConstants.ShadowStatus.Shadow;
+        // Capture pre-increment stats to determine first capture
+        const prevCaptured = +(App.game.statistics.pokemonCaptured[id]?.() ?? 0);
+        const dexsanity = (window as any)?.APFlags?.dexsanity === true;
+
         PokemonHelper.incrementPokemonStatistics(id, GameConstants.PokemonStatisticsType.Captured, shiny, gender, shadow);
 
-        const newCatch = !this.alreadyCaughtPokemon(id);
-        const newShiny = shiny && !this.alreadyCaughtPokemon(id, true);
-        const newShadow = isShadow && !this.alreadyCaughtPokemon(id, false, true);
+        const newCatch = prevCaptured === 0;
+        const newShiny = shiny && !this._caughtPokemon().some(p => p.id === id && p.shiny);
+        const newShadow = isShadow && !this._caughtPokemon().some(p => p.id === id && p.shadow > GameConstants.ShadowStatus.None);
 
-        if (newCatch) {
-            // Create new party pokemon
-            this._caughtPokemon.push(PokemonFactory.generatePartyPokemon(id, shiny, gender, shadow));
-
-            // Keep caughtPokemon array sorted by ID
+        const existing = this._caughtPokemon().find(p => p.id === id);
+        if (existing) {
+            // Update existing entry (handles receive-before-catch and prior entries)
+            existing.caught = true;
+            if (newShiny) existing.shiny = true;
+            if (newShadow) existing.shadow = GameConstants.ShadowStatus.Shadow;
+        } else {
+            // Create a new party entry
+            const created = PokemonFactory.generatePartyPokemon(id, shiny, gender, shadow);
+            created.received = dexsanity ? false : true;
+            created.caught = true;
+            this._caughtPokemon.push(created);
             this._caughtPokemon.sort((a, b) => a.id - b.id);
         }
 
-        // Update existing party pokemon
-        const partyPokemon = this.getPokemon(id);
-        if (newShiny) {
-            partyPokemon.shiny = true;
-        }
-        if (newShadow) {
-            partyPokemon.shadow = GameConstants.ShadowStatus.Shadow;
+        // Send location check on first capture under Dexsanity (applies to evolutions and normal captures)
+        if (dexsanity && newCatch) {
+            (window as any).sendLocationCheck(id, true);
         }
 
-        // Properties of the PartyPokemon used for notifications -- shininess, shadow status, etc. comes from this catch
-        const { name, displayName } = partyPokemon;
+        // Resolve name info without assuming partyPokemon exists
+        const dataMon = PokemonHelper.getPokemonById(id);
+        const name = dataMon?.name;
+        const displayName = name ? PokemonHelper.displayName(name)() : 'Pokemon';
 
         // Notifications
         if (newCatch && !suppressNewCatchNotification) {
@@ -118,17 +132,33 @@ class Party implements Feature, TmpPartyType {
         }
 
         // Logbook entries
-        if (newCatch) {
+        if (newCatch && name) {
             App.game.logbook.newLog(LogBookTypes.CAUGHT, createLogContent.captured({ pokemon: name }));
         }
         if (shiny) {
             // Both new and duplicate shinies get logged
             const shinyLogContent = newShiny ? createLogContent.capturedShiny : createLogContent.capturedShinyDupe;
-            App.game.logbook.newLog(LogBookTypes.CAUGHT, shinyLogContent({ pokemon: name }));
+            if (name) App.game.logbook.newLog(LogBookTypes.CAUGHT, shinyLogContent({ pokemon: name }));
         }
-        if (newShadow) {
+        if (newShadow && name) {
             App.game.logbook.newLog(LogBookTypes.CAUGHT, createLogContent.capturedShadow({ pokemon: name }));
         }
+    }
+
+    // Called when AP server grants a Pokémon (receive path)
+    receivePokemonById(id: number) {
+        const dexsanity = (window as any)?.APFlags?.dexsanity === true;
+        const existing = this._caughtPokemon().find(p => p.id === id);
+        if (existing) {
+            existing.received = true;
+            return;
+        }
+        const created = PokemonFactory.generatePartyPokemon(id);
+        created.received = true;
+
+        // If the player is receiving a Pokémon before it has been counted as caught (edge case), leave caught=false
+        this._caughtPokemon.push(created);
+        this._caughtPokemon.sort((a, b) => a.id - b.id);
     }
 
     public removePokemonByName(name: PokemonNameType) {
@@ -141,7 +171,11 @@ class Party implements Feature, TmpPartyType {
         const expTotal = Math.floor(exp * level * trainerBonus * multBonus / 9);
         let shadowExpGained = 0;
 
+        const dexsanity = (window as any)?.APFlags?.dexsanity === true;
         for (const pokemon of this.caughtPokemon) {
+            if (dexsanity && !pokemon.received) {
+                continue; // Unreceived should not gain EXP
+            }
             const exp = pokemon.gainExp(expTotal);
             if (pokemon.shadow >= GameConstants.ShadowStatus.Shadow) {
                 shadowExpGained += exp;
@@ -279,6 +313,7 @@ class Party implements Feature, TmpPartyType {
     }).extend({rateLimit: 1000});
 
     public getPokemon(id: number): PartyPokemon | undefined {
+        // Always return the entry if it exists; views like the Pokédex should gate with alreadyReceived(id)
         return this._caughtPokemonLookup().get(id);
     }
 
@@ -287,7 +322,7 @@ class Party implements Feature, TmpPartyType {
     }
 
     public partyPokemonActiveInSubRegion(region: GameConstants.Region, subregion: GameConstants.SubRegions): Array<PartyPokemon> {
-        let caughtPokemon = this.caughtPokemon as Array<PartyPokemon>;
+        let caughtPokemon = this.caughtPokemon.filter(p => p.received) as Array<PartyPokemon>;
         if (region == GameConstants.Region.alola && subregion == GameConstants.AlolaSubRegions.MagikarpJump) {
             // Only magikarps can attack in magikarp jump subregion
             caughtPokemon = caughtPokemon.filter((p) => Math.floor(p.id) == 129);
@@ -300,15 +335,15 @@ class Party implements Feature, TmpPartyType {
     }
 
     alreadyCaughtPokemon(id: number, shiny = false, shadow = false, purified = false) {
-        const pokemon = this.getPokemon(id);
-
-        if (pokemon) {
-            const shinyOkay = (!shiny || pokemon.shiny);
-            const shadowOkay = (!shadow || (pokemon.shadow > GameConstants.ShadowStatus.None));
-            const purifiedOkay = (!purified || (pokemon.shadow == GameConstants.ShadowStatus.Purified));
-            return shinyOkay && shadowOkay && purifiedOkay;
-        }
-        return false;
+        // Use the 'caught' flag to determine if this species has been caught before.
+        // Additionally, when Dexsanity is ON, only consider as caught if the Pokémon has been received (for Pokédex/UI).
+        const entry = this._caughtPokemon().find(p => p.id === id);
+        if (!entry || !entry.caught) return false;
+        // if ((window as any)?.APFlags?.dexsanity === true && !entry.received) return false;
+        const shinyOkay = (!shiny || entry.shiny);
+        const shadowOkay = (!shadow || (entry.shadow > GameConstants.ShadowStatus.None));
+        const purifiedOkay = (!purified || (entry.shadow == GameConstants.ShadowStatus.Purified));
+        return shinyOkay && shadowOkay && purifiedOkay;
     }
 
     calculateClickAttack(useItem = false): number {
@@ -375,7 +410,8 @@ class Party implements Feature, TmpPartyType {
     }
 
     get caughtPokemon(): ReadonlyArray<PartyPokemon> {
-        return this._caughtPokemon();
+        // Always gate list visibility on received; when Dexsanity is disabled, all new catches are received immediately.
+        return this._caughtPokemon().filter(p => p.received);
     }
 
     get activePartyPokemon(): ReadonlyArray<PartyPokemon> {
