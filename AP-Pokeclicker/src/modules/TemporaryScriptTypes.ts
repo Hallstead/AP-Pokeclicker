@@ -307,6 +307,9 @@ export type TmpPartyPokemonType = {
 };
 
 export type TmpPartyType = {
+    alreadyReceivedByName(pokemon: string): boolean;
+    receivePokemonById(id: number, arg1: boolean, arg2: boolean): void;
+    alreadyReceived(id: number): boolean;
     caughtPokemon: ReadonlyArray<TmpPartyPokemonType>;
     activePartyPokemon: ReadonlyArray<TmpPartyPokemonType>;
     gainPokemonByName: (name: PokemonNameType, shiny?: boolean, suppressNewCatchNotification?: boolean, gender?: GameConstants.BattlePokemonGender, shadow?: GameConstants.ShadowStatus) => void;

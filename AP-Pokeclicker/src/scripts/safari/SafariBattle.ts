@@ -185,18 +185,23 @@ class SafariBattle {
         const pokemonID = PokemonHelper.getPokemonByName(SafariBattle.enemy.name).id;
         App.game.party.gainPokemonById(pokemonID, SafariBattle.enemy.shiny);
         const partyPokemon = App.game.party.getPokemon(pokemonID);
-        partyPokemon.effortPoints += App.game.party.calculateEffortPoints(partyPokemon, SafariBattle.enemy.shiny, GameConstants.ShadowStatus.None, GameConstants.SAFARI_EP_YIELD);
+        if (partyPokemon) {
+            partyPokemon.effortPoints += App.game.party.calculateEffortPoints(partyPokemon, SafariBattle.enemy.shiny, GameConstants.ShadowStatus.None, GameConstants.SAFARI_EP_YIELD);
+        }
         switch (player.region) {
             case (GameConstants.Region.johto):
                 const shinyModifier = SafariBattle.enemy.shiny ? GameConstants.BUG_SAFARI_SHINY_MODIFIER : 1;
-                const bugReward = Math.floor(partyPokemon.baseAttack / 5) * shinyModifier;
-                App.game.wallet.gainContestTokens(bugReward);
-                Notifier.notify({
+                const baseAtk = partyPokemon ? partyPokemon.baseAttack : 0;
+                const bugReward = Math.floor(baseAtk / 5) * shinyModifier;
+                if (bugReward > 0) {
+                    App.game.wallet.gainContestTokens(bugReward);
+                    Notifier.notify({
                     title: 'Bug Catching Contest',
                     message: `<img src="assets/images/currency/contestToken.svg" height="24px"/> You earned ${bugReward} Contest Tokens!`,
                     type: NotificationConstants.NotificationOption.primary,
                     timeout: 5000,
-                });
+                    });
+                }
                 break;
         }
     }
@@ -205,7 +210,7 @@ class SafariBattle {
         if (Safari.inBattle() && !SafariBattle.busy()) {
             SafariBattle.busy(true);
             const bait = SafariBattle.selectedBait();
-            if (bait.amount() <= 0) {
+            if (+bait.amount() <= 0) {
                 SafariBattle.text(`You don't have enough ${bait.name}`);
                 SafariBattle.delay(SafariBattle.Speed.turnLength, false)
                     .then(() => {

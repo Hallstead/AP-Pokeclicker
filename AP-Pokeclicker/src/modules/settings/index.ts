@@ -37,6 +37,7 @@ import PokemonCategories from '../party/Category';
 import ShadowPokemonRequirement from '../requirements/ShadowPokemonRequirement';
 import OrderSetting from './OrderSetting';
 import areaStatus from '../enums/AreaStatus';
+import CustomRequirement from '../requirements/CustomRequirement';
 
 export default Settings;
 
@@ -405,6 +406,14 @@ Settings.add(new Setting<string>('pokedexCaughtFilter', 'Caught Status',
         new SettingOption('All', 'all'),
         new SettingOption('Uncaught', 'uncaught'),
         new SettingOption('Caught', 'caught'),
+        new SettingOption('Unreceived', 'unreceived'), /*, new CustomRequirement(
+            ko.pureComputed(() => (window as any).APFlags.dexsanity === true),
+            true, '',
+        )),*/
+        new SettingOption('Received', 'received'), /*, new CustomRequirement(
+            ko.pureComputed(() => (window as any).APFlags.dexsanity === true),
+            true, '',
+        )),*/
         new SettingOption('Caught Not Shiny', 'caught-not-shiny'),
         new SettingOption('Caught Shiny', 'caught-shiny'),
         new SettingOption('Caught Not Shadow', 'caught-not-shadow', new QuestLineStartedRequirement('Shadows in the Desert')),

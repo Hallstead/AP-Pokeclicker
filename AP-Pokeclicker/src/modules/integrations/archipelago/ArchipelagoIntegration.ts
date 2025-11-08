@@ -117,13 +117,19 @@ class ArchipelagoIntegrationModule {
 
 
         type GameOptions = {
-            DeathLink?: number,
-            DeathLink_Amnesty?: number,
-            MedalHunt?: number,
-            ExtraCheckpoint?: number,
-            ExtraChecks?: number
+            dexsanity: number,
+            include_scripts_as_items: number,
+            progressive_auto_safari_zone: number,
+            progressive_autoclicker: number,
+            use_scripts: number,
         };
-        let options: GameOptions = {};
+        let options: GameOptions = {
+            dexsanity: 0,
+            include_scripts_as_items: 0,
+            progressive_auto_safari_zone: 0,
+            progressive_autoclicker: 0,
+            use_scripts: 0
+        };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
         const w: any = window as any;
@@ -162,7 +168,7 @@ class ArchipelagoIntegrationModule {
             };
         }
         
-        w.sendLocationCheck = (locationNumber: number) => {
+        w.sendLocationCheck = (locationNumber: number, isPokemon: boolean = false) => {
             try {
                 if (typeof locationNumber !== 'number' || Number.isNaN(locationNumber)) {
                     console.warn('[ArchipelagoModule] Ignoring invalid LocationCheck id:', locationNumber);
@@ -178,6 +184,9 @@ class ArchipelagoIntegrationModule {
                     console.warn('[ArchipelagoModule] Not connected; queuing LocationCheck', locationNumber);
                     this.pendingLocationChecks.push(locationNumber);
                     return;
+                }
+                if (isPokemon) {
+                    locationNumber += 59
                 }
                 this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
             } catch (e) {
@@ -208,7 +217,12 @@ class ArchipelagoIntegrationModule {
 
             options = await player.fetchSlotData().then(res => res as GameOptions);
             if (options) {
+                console.log('Game options: ', options);
                 w.APFlags.set('options', options);
+                // Mirror explicit boolean for easy access
+                if (typeof options.dexsanity !== 'undefined') {
+                    w.APFlags.set('dexsanity', !!options.dexsanity);
+                }
             }
 
             // this.client.socket.send({ cmd: 'Sync' });
@@ -257,19 +271,19 @@ class ArchipelagoIntegrationModule {
                 setFlag('simpleWeatherChanger', false);
             }
 
+            // Item Categories:
+            const keyItemsLastIndex = 9;
+            const oakItemsLastIndex = keyItemsLastIndex + 10;
+            const scriptsLastIndex = oakItemsLastIndex + 14;
+            const progressivePokeballsIndex = scriptsLastIndex + 1;
+            const badgesLastIndex = progressivePokeballsIndex + 9;
+            const breedingIndex = badgesLastIndex + 1;
+            const pokemonLastIndex = breedingIndex + 151;
+
             for (let i: number = 0; i < items.length; i++) {
                 let item: APItem = items[i];
                 // console.log('Processing item: ', item);
                 // console.log(item.id);
-
-                // Item Categories:
-                const keyItemsLastIndex = 9;
-                const oakItemsLastIndex = keyItemsLastIndex + 10;
-                const scriptsLastIndex = oakItemsLastIndex + 14;
-                const progressivePokeballsIndex = scriptsLastIndex + 1;
-                const badgesLastIndex = progressivePokeballsIndex + 9;
-                const breedingIndex = badgesLastIndex + 1;
-                const pokemonLastIndex = breedingIndex + 151;
 
                 if (item.id >= 1 && item.id <= keyItemsLastIndex) {
                     // Key items
@@ -413,8 +427,8 @@ class ArchipelagoIntegrationModule {
                 } else if (item.id <= pokemonLastIndex) {
                     // Pokemon
                     let id = item.id - breedingIndex;
-                    if (!App.game.party.alreadyCaughtPokemon(id)) {
-                        App.game.party.gainPokemonById(id, false, false);
+                    if (!App.game.party.alreadyReceived(id)) {
+                        App.game.party.receivePokemonById(id, false, false);
                         this.displayItemReceived(item, '');
                     }
                 } else {
@@ -543,10 +557,18 @@ if (typeof window !== 'undefined') {
             const p = portEl?.value;
             const s = slotEl?.value;
             let url = '';
-            if (p == null || p.trim() === '') {
-                url = `wss://${h}`;
+            if (h.includes('localhost')) {
+                if (p == null || p.trim() === '') {
+                    url = `ws://${h}`;
+                } else {
+                    url = `ws://${h}:${p}`;
+                }
             } else {
-                url = `wss://${h}:${p}`;
+                if (p == null || p.trim() === '') {
+                    url = `wss://${h}`;
+                } else {
+                    url = `wss://${h}:${p}`;
+                }
             }
             if ((window as any).archipelagoConnect) {
                 (window as any).archipelagoConnect(url, s, 'Pokeclicker');
