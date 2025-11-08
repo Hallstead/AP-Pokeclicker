@@ -226,7 +226,7 @@ class Quests implements Saveable {
     }
 
     public isRefreshFree(): boolean {
-        return this.freeRefresh() || this.getRefreshCost().amount == 0;
+        return true; //this.freeRefresh() || this.getRefreshCost().amount == 0;
     }
 
     /**
