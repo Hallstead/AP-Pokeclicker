@@ -1135,7 +1135,7 @@ TownList['Client Island'] = new Town(
     GameConstants.KantoSubRegions.Sevii123,
     [ClientIslandShop],
     {
-        requirements: [new ClientRequirement(), new GymBadgeRequirement(BadgeEnums.Volcano)],
+        requirements: [/*new ClientRequirement(), */new GymBadgeRequirement(BadgeEnums.Volcano)],
         npcs: [ClientSignpost, RedSpearow],
     }
 );
