@@ -75,7 +75,10 @@ class Party implements Feature, TmpPartyType {
         const isShadow = shadow === GameConstants.ShadowStatus.Shadow;
         // Capture pre-increment stats to determine first capture
         const prevCaptured = +(App.game.statistics.pokemonCaptured[id]?.() ?? 0);
-        const dexsanity = (window as any)?.APFlags?.dexsanity === true;
+        let dexsanity = (window as any)?.APFlags?.dexsanity === true;
+        if (dexsanity && id % 1 !== 0) {
+            dexsanity = false; // Disable Dexsanity for forms
+        }
 
         PokemonHelper.incrementPokemonStatistics(id, GameConstants.PokemonStatisticsType.Captured, shiny, gender, shadow);
 
