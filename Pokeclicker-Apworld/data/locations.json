@@ -1688,7 +1688,7 @@
             "category": [
                 "Victory"
             ],
-            "requires": "|@Badges:all| and (dexsandity_disabled()} or ({dexsanity_enabled()} and |@Pokemon:all|))"
+            "requires": "|@Badges:all| and ({dexsanity_disabled()} or ({dexsanity_enabled()} and |@Pokemon:all|))"
         }
     ]
 }

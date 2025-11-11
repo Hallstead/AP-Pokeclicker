@@ -90,8 +90,12 @@ class Party implements Feature, TmpPartyType {
         if (existing) {
             // Update existing entry (handles receive-before-catch and prior entries)
             existing.caught = true;
-            if (newShiny) existing.shiny = true;
-            if (newShadow) existing.shadow = GameConstants.ShadowStatus.Shadow;
+            if (newShiny) {
+                existing.shiny = true;
+            }
+            if (newShadow) {
+                existing.shadow = GameConstants.ShadowStatus.Shadow;
+            }
         } else {
             // Create a new party entry
             const created = PokemonFactory.generatePartyPokemon(id, shiny, gender, shadow);
@@ -147,7 +151,9 @@ class Party implements Feature, TmpPartyType {
         if (shiny) {
             // Both new and duplicate shinies get logged
             const shinyLogContent = newShiny ? createLogContent.capturedShiny : createLogContent.capturedShinyDupe;
-            if (name) App.game.logbook.newLog(LogBookTypes.CAUGHT, shinyLogContent({ pokemon: name }));
+            if (name) {
+                App.game.logbook.newLog(LogBookTypes.CAUGHT, shinyLogContent({ pokemon: name }));
+            }
         }
         if (newShadow && name) {
             App.game.logbook.newLog(LogBookTypes.CAUGHT, createLogContent.capturedShadow({ pokemon: name }));
@@ -347,7 +353,9 @@ class Party implements Feature, TmpPartyType {
         // Use the 'caught' flag to determine if this species has been caught before.
         // Additionally, when Dexsanity is ON, only consider as caught if the Pokémon has been received (for Pokédex/UI).
         const entry = this._caughtPokemon().find(p => p.id === id);
-        if (!entry || !entry.caught) return false;
+        if (!entry || !entry.caught) {
+            return false;
+        }
         // if ((window as any)?.APFlags?.dexsanity === true && !entry.received) return false;
         const shinyOkay = (!shiny || entry.shiny);
         const shadowOkay = (!shadow || (entry.shadow > GameConstants.ShadowStatus.None));
