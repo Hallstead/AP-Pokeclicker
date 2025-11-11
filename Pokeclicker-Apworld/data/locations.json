@@ -6,7 +6,7 @@
             "category": [
                 "Key Items"
             ],
-            "requires": [],
+            "requires": "{kanto_route_1()}",
             "region": "Route 1"
         },
         {
@@ -14,56 +14,56 @@
             "category": [
                 "Key Items"
             ],
-            "requires": [],
-            "region": "Pallet Town"
+            "requires": "{viridian_city()}",
+            "region": "Kanto"
         },
         {
             "name": "Defeat 10 Pokemon on Kanto Route 12 (Super Rod)",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Key Items"
             ],
-            "requires": []
+            "requires": "{kanto_route_12()}"
         },
         {
             "name": "Defeat 10 Pokemon on Kanto Route 3 (Mystery Egg)",
-            "region": "Boulder Badge",
+            "region": "Kanto",
             "category": [
                 "Key Items"
             ],
-            "requires": []
+            "requires": "{kanto_route_3()}"
         },
         {
             "name": "Clear the Fuchsia City Gym in Kanto (Safari Ticket)",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Key Items"
             ],
-            "requires": []
+            "requires": "{fuchsia_city()}"
         },
         {
             "name": "Unlock Kanto Route 14 (Wailmer Pail)",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Key Items"
             ],
-            "requires": []
+            "requires": "{kanto_route_14()}"
         },
         {
             "name": "Purchase the Explorer Kit on Cinnabar Island (Explorer Kit)",
-            "region": "Soul Badge",
+            "region": "Kanto",
             "category": [
                 "Key Items"
             ],
-            "requires": []
+            "requires": "{cinnabar_island()}"
         },
         {
             "name": "Clear the Viridian City Gym in Kanto (Gem Case)",
-            "region": "Sevii Islands 123",
+            "region": "Kanto",
             "category": [
                 "Key Items"
             ],
-            "requires": "|Thunder Badge| and |Rainbow Badge| and |Marsh Badge| and |Soul Badge|"
+            "requires": "{viridian_city()} and |Thunder Badge| and |Rainbow Badge| and |Marsh Badge| and {completed_bills_errand()}"
         },
         {
             "name": "Clear the Victory Road dungeon in Kanto (Holo Caster)",
@@ -71,7 +71,7 @@
             "category": [
                 "Key Items"
             ],
-            "requires": []
+            "requires": "{victory_road()} and |Dungeon Ticket|"
         },
         {
             "name": "Obtain 20 unique Pokemon (Magic Ball)",
@@ -79,7 +79,7 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(20)}) or ({dexsanity_enabled()} and |@Pokemon:20|)"
         },
         {
             "name": "Obtain 30 unique Pokemon (Amulet Coin)",
@@ -87,7 +87,7 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(30)}) or ({dexsanity_enabled()} and |@Pokemon:30|)"
         },
         {
             "name": "Obtain 40 unique Pokemon (Rocky Helmet)",
@@ -95,7 +95,7 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:3|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(40)}) or ({dexsanity_enabled()} and |@Pokemon:40|)"
         },
         {
             "name": "Obtain 50 unique Pokemon (EXP Share)",
@@ -103,7 +103,7 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:4|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(50)}) or ({dexsanity_enabled()} and |@Pokemon:50|)"
         },
         {
             "name": "Obtain 60 unique Pokemon (Sprayduck)",
@@ -111,7 +111,7 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:5|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(60)}) or ({dexsanity_enabled()} and |@Pokemon:60|)"
         },
         {
             "name": "Obtain 70 unique Pokemon (Shiny Charm)",
@@ -119,7 +119,7 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:6|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(70)}) or ({dexsanity_enabled()} and |@Pokemon:70|)"
         },
         {
             "name": "Obtain 80 unique Pokemon (Magma Stone)",
@@ -127,7 +127,7 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:7|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(80)}) or ({dexsanity_enabled()} and |@Pokemon:80|)"
         },
         {
             "name": "Obtain 90 unique Pokemon (Cell Battery)",
@@ -135,23 +135,23 @@
             "category": [
                 "Oak Items"
             ],
-            "requires": "|@Badges:8|"
+            "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(90)}) or ({dexsanity_enabled()} and |@Pokemon:90|)"
         },
         {
             "name": "Purchase the Explosive Charge on Cinnabar Island (Explosive Charge)",
-            "region": "Soul Badge",
+            "region": "Kanto",
             "category": [
                 "Oak Items"
             ],
-            "requires": []
+            "requires": "{cinnabar_island()}"
         },
         {
             "name": "Purchase the Treasure Scanner on Cinnabar Island (Treasure Scanner)",
-            "region": "Soul Badge",
+            "region": "Kanto",
             "category": [
                 "Oak Items"
             ],
-            "requires": []
+            "requires": "{cinnabar_island()}"
         },
         {
             "name": "Brock",
@@ -159,63 +159,63 @@
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{pewter_city()}"
         },
         {
             "name": "Misty",
-            "region": "Boulder Badge",
+            "region": "Kanto",
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{cerulean_city()}"
         },
         {
             "name": "Lt. Surge",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{vermilion_city()} and |Cascade Badge|"
         },
         {
             "name": "Erika",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{celadon_city()}"
         },
         {
             "name": "Sabrina",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{saffron_city()} and {silph_co()}"
         },
         {
             "name": "Koga",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{fuchsia_city()}"
         },
         {
             "name": "Blaine",
-            "region": "Soul Badge",
+            "region": "Kanto",
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{cinnabar_island()} and {pokemon_mansion()}"
         },
         {
             "name": "Giovanni",
-            "region": "Sevii Islands 123",
+            "region": "Kanto",
             "category": [
                 "Gyms"
             ],
-            "requires": "|Thunder Badge| and |Rainbow Badge| and |Marsh Badge| and |Soul Badge|"
+            "requires": "{viridian_city()} and |Thunder Badge| and |Rainbow Badge| and |Marsh Badge| and {completed_bills_errand()}"
         },
         {
             "name": "Lorelei",
@@ -223,7 +223,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": []
+            "requires": "{indigo_plateau()}"
         },
         {
             "name": "Bruno",
@@ -231,7 +231,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "|Progressive Elite Badge|"
+            "requires": "{indigo_plateau()} and |Progressive Elite Badge|"
         },
         {
             "name": "Agatha",
@@ -239,7 +239,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "|Progressive Elite Badge:2|"
+            "requires": "{indigo_plateau()} and |Progressive Elite Badge:2|"
         },
         {
             "name": "Lance",
@@ -247,7 +247,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "|Progressive Elite Badge:3|"
+            "requires": "{indigo_plateau()} and |Progressive Elite Badge:3|"
         },
         {
             "name": "Champion Blue",
@@ -255,7 +255,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "|Progressive Elite Badge:4|"
+            "requires": "{indigo_plateau()} and |Progressive Elite Badge:4|"
         },
         {
             "name": "Viridian Forest",
@@ -263,79 +263,79 @@
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{viridian_forest()} and |Dungeon Ticket|"
         },
         {
             "name": "Mt. Moon",
-            "region": "Boulder Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{mt_moon()} and |Dungeon Ticket|"
         },
         {
             "name": "Diglett's Cave",
-            "region": "Boulder Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{digletts_cave()} and |Dungeon Ticket|"
         },
         {
             "name": "Rock Tunnel",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{rock_tunnel()} and |Dungeon Ticket|"
         },
         {
             "name": "Rocket Game Corner",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{rocket_game_corner()} and |Dungeon Ticket|"
         },
         {
             "name": "Pokemon Tower",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{pokemon_tower()} and |Dungeon Ticket|"
         },
         {
             "name": "Silph Co.",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{silph_co()} and |Dungeon Ticket|"
         },
         {
             "name": "Power Plant",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": "|Soul Badge|"
+            "requires": "{power_plant()} and |Dungeon Ticket|"
         },
         {
             "name": "Seafoam Islands",
-            "region": "Soul Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": "|Rainbow Badge|"
+            "requires": "{seafoam_islands()} and |Dungeon Ticket|"
         },
         {
             "name": "Pokemon Mansion",
-            "region": "Soul Badge",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{pokemon_mansion()} and |Dungeon Ticket|"
         },
         {
             "name": "Mt. Ember Summit",
@@ -343,7 +343,7 @@
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{mount_ember()} and |Volcano Badge|"
         },
         {
             "name": "Berry Forest",
@@ -351,15 +351,15 @@
             "category": [
                 "Dungeons"
             ],
-            "requires": "|Soul Badge|"
+            "requires": "{berry_forest()} and |Dungeon Ticket|"
         },
         {
             "name": "Victory Road",
+            "region": "Indigo Plateau",
             "category": [
                 "Dungeons"
             ],
-            "requires": [],
-            "region": "Indigo Plateau"
+            "requires": "{victory_road()} and |Dungeon Ticket|"
         },
         {
             "name": "Cerulean Cave",
@@ -367,47 +367,47 @@
             "category": [
                 "Dungeons"
             ],
-            "requires": []
+            "requires": "{cerulean_cave()} and |Dungeon Ticket|"
         },
         {
             "name": "Blue 1 (Near Viridian City)",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": [],
-            "region": "Pallet Town"
+            "requires": "{kanto_route_22()}"
         },
         {
             "name": "Blue 2 (Near Cerulean City)",
-            "region": "Boulder Badge",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "{kanto_route_4()}"
         },
         {
             "name": "Blue 3 (Near Vermillion City)",
-            "region": "Boulder Badge",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "{kanto_route_6()}"
         },
         {
             "name": "Blue 4 (Pokemon Tower)",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "{pokemon_tower()}"
         },
         {
             "name": "Blue 5 (Silph Co.)",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "{silph_co()} and |Dungeon Ticket|"
         },
         {
             "name": "Blue 6 (Near Viridian City)",
@@ -419,27 +419,27 @@
         },
         {
             "name": "Fighting Dojo",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "{saffron_city()}"
         },
         {
             "name": "Snorlax (Route 12, Near Lavender Town)",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "{kanto_route_12()} and {pokemon_tower()} and |Dungeon Ticket|"
         },
         {
             "name": "Snorlax (Route 16, Near Celadon City)",
-            "region": "Cascade Badge",
+            "region": "Kanto",
             "category": [
                 "Temporary Battles"
             ],
-            "requires": []
+            "requires": "{pokemon_tower()} and |Dungeon Ticket|"
         },
         {
             "name": "Biker Goon 1 (Three Island)",
@@ -447,7 +447,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": "|Soul Badge|"
+            "requires": "{three_island()}"
         },
         {
             "name": "Biker Goon 2 (Three Island)",
@@ -455,7 +455,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": "|Soul Badge|"
+            "requires": "{three_island()}"
         },
         {
             "name": "Biker Goon 3 (Three Island)",
@@ -463,7 +463,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": "|Soul Badge|"
+            "requires": "{three_island()}"
         },
         {
             "name": "Cueball Paxton (Three Island)",
@@ -471,1215 +471,1215 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": "|Soul Badge|"
+            "requires": "{three_island()}"
         },
         {
             "name": "001 Bulbasaur",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{can_get_grass_egg()} or {can_get_mystery_egg()} or (|Bulbasaur| and |@Badges:8|)"
         },
         {
             "name": "002 Ivysaur",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|001 Bulbasaur| or (|Ivysaur| and |@Badges:8|)"
         },
         {
             "name": "003 Venusaur",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |002 Ivysaur|) or (|Venusaur| and |@Badges:8|)"
         },
         {
             "name": "004 Charmander",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{can_get_fire_egg()} or {can_get_mystery_egg()} or (|Charmander| and |@Badges:8|)"
         },
         {
             "name": "005 Charmeleon",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|004 Charmander| or (|Charmeleon| and |@Badges:8|)"
         },
         {
             "name": "006 Charizard",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |005 Charmeleon|) or (|Charizard| and |@Badges:8|)"
         },
         {
             "name": "007 Squirtle",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{can_get_water_egg()} or {can_get_mystery_egg()} or (|Squirtle| and |@Badges:8|)"
         },
         {
             "name": "008 Wartortle",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|007 Squirtle| or (|Wartortle| and |@Badges:8|)"
         },
         {
             "name": "009 Blastoise",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |008 Wartortle|) or (|Blastoise| and |@Badges:8|)"
         },
         {
             "name": "010 Caterpie",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Caterpie| and |@Badges:8|)"
         },
         {
             "name": "011 Metapod",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|010 Caterpie| or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Metapod| and |@Badges:8|)"
         },
         {
             "name": "012 Butterfree",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|011 Metapod| or (|Butterfree| and |@Badges:8|)"
         },
         {
             "name": "013 Weedle",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Weedle| and |@Badges:8|)"
         },
         {
             "name": "014 Kakuna",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|013 Weedle| or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Kakuna| and |@Badges:8|)"
         },
         {
             "name": "015 Beedrill",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|014 Kakuna| or (|Beedrill| and |@Badges:8|)"
         },
         {
             "name": "016 Pidgey",
-            "region": "Kanto",
+            "region": "Route 1 Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgey| and |@Badges:8|)"
         },
         {
             "name": "017 Pidgeotto",
-            "region": "Kanto",
+            "region": "Route 1 Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|016 Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgeotto| and |@Badges:8|)"
         },
         {
             "name": "018 Pidgeot",
-            "region": "Kanto",
+            "region": "Route 1 Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |017 Pidgeotto|) or (|Pidgeot| and |@Badges:8|)"
         },
         {
             "name": "019 Rattata",
-            "region": "Kanto",
+            "region": "Route 1 Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (|Rattata| and |@Badges:8|)"
         },
         {
             "name": "020 Raticate",
-            "region": "Kanto",
+            "region": "Route 1 Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|019 Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (|Raticate| and |@Badges:8|)"
         },
         {
             "name": "021 Spearow",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Spearow| and |@Badges:8|)"
         },
         {
             "name": "022 Fearow",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|021 Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Fearow| and |@Badges:8|)"
         },
         {
             "name": "023 Ekans",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Ekans| and |@Badges:8|)"
         },
         {
             "name": "024 Arbok",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |023 Ekans|) or {kanto_route_23()} or ({victory_road()} and |Dungeon Ticket|) or (|Arbok| and |@Badges:8|)"
         },
         {
             "name": "025 Pikachu",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "(({viridian_forest()} or {power_plant()}) and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "026 Raichu",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|025 Pikachu| and {can_get_thunder_stone()}"
         },
         {
             "name": "027 Sandshrew",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()}"
         },
         {
             "name": "028 Sandslash",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |027 Sandshrew|) or {kanto_route_23()} or ({victory_road()} and |Dungeon Ticket|)"
         },
         {
             "name": "029 Nidoran (F)",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_3()}"
         },
         {
             "name": "030 Nidorina",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|029 Nidoran (F)| or {safari_zone()}"
         },
         {
             "name": "031 Nidoqueen",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|030 Nidorina| and {can_get_moon_stone()}"
         },
         {
             "name": "032 Nidoran (M)",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_3()} or {safari_zone()}"
         },
         {
             "name": "033 Nidorino",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|032 Nidoran (M)| or {safari_zone()}"
         },
         {
             "name": "034 Nidoking",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|033 Nidorino| and {can_get_moon_stone()}"
         },
         {
             "name": "035 Clefairy",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{mt_moon()} and |Dungeon Ticket|"
         },
         {
             "name": "036 Clefable",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|035 Clefairy| and {can_get_moon_stone()}"
         },
         {
             "name": "037 Vulpix",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or ({pokemon_mansion()} and |Dungeon Ticket|) or {can_get_fire_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "038 Ninetails",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|037 Vulpix| and {can_get_fire_stone()}"
         },
         {
             "name": "039 Jigglypuff",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_3()} or {can_get_mystery_egg()}"
         },
         {
             "name": "040 Wigglytuff",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|039 Jigglypuff| and {can_get_moon_stone()}"
         },
         {
             "name": "041 Zubat",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({mt_moon()} or {rock_tunnel()} or {seafoam_islands()} or {victory_road()}) and |Dungeon Ticket|"
         },
         {
             "name": "042 Golbat",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |041 Zubat|) or ({seafoam_islands()} or {victory_road()} or {cerulean_cave()}) and |Dungeon Ticket|"
         },
         {
             "name": "043 Oddish",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|) or {can_get_grass_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "044 Gloom",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |043 Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
         },
         {
             "name": "045 Vileplume",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "|044 Gloom| and {can_get_leaf_stone()}"
         },
         {
             "name": "046 Paras",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({mt_moon()} and |Dungeon Ticket|) or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()}"
         },
         {
             "name": "047 Parasect",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |046 Paras|) or ({cerulean_cave()} and |Dungeon Ticket|)"
         },
         {
             "name": "048 Venonat",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
         },
         {
             "name": "049 Venomoth",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |048 Venonat|) or ({berry_forest()} and |Dungeon Ticket|)"
         },
         {
             "name": "050 Diglett",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{digletts_cave()} and |Dungeon Ticket|"
         },
         {
             "name": "051 Dugtrio",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |050 Diglett|) or ({digletts_cave()} and |Dungeon Ticket|)"
         },
         {
             "name": "052 Meowth",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()}"
         },
         {
             "name": "053 Persian",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |052 Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()}"
         },
         {
             "name": "054 Psyduck",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()}"
         },
         {
             "name": "055 Golduck",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |054 Psyduck|) or {cape_brink()} or ({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|"
         },
         {
             "name": "056 Mankey",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel()} and |Dungeon Ticket|) or {can_get_fighting_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "057 Primape",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:1| and |056 Mankey|) or {kanto_route_23()} or (({victory_road()} or {cerulean_cave()}) and |Dungeon Ticket|)"
         },
         {
             "name": "058 Growlithe",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or ({pokemon_mansion()} and |Dungeon Ticket|) or {can_get_fire_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "059 Arcanine",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|058 Growlithe| and {can_get_fire_stone()}"
         },
         {
             "name": "060 Poliwag",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or (({berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()}"
         },
         {
             "name": "061 Poliwhirl",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |060 Poliwag|)"
         },
         {
             "name": "062 Poliwrath",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|061 Poliwhirl| and {can_get_water_stone()}"
         },
         {
             "name": "063 Abra",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_24()} or {kanto_route_25()}"
         },
         {
             "name": "064 Kadabra",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|063 Abra| or ({cerulean_cave()} and |Dungeon Ticket|)"
         },
         {
             "name": "065 Alakazam",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|064 Kadabra| and {can_get_linking_cord()}"
         },
         {
             "name": "066 Machop",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "(({rock_tunnel()} or {mount_ember()} or {victory_road()}) and |Dungeon Ticket|) or {can_get_fighting_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "067 Machoke",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |066 Machop|) or (({mount_ember()} or {cerulean_cave()} or {victory_road()}) and |Dungeon Ticket|)"
         },
         {
             "name": "068 Machamp",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|067 Machoke| and {can_get_linking_cord()}"
         },
         {
             "name": "069 Bellsprout",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
         },
         {
             "name": "070 Weepinbell",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |069 Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
         },
         {
             "name": "071 Victreebel",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "|070 Weepinbell| and {can_get_leaf_stone()}"
         },
         {
             "name": "072 Tentacool",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|)"
         },
         {
             "name": "073 Tentacruel",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |072 Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|)"
         },
         {
             "name": "074 Geodude",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kindle_road()} or (({mt_moon()} or {rock_tunnel()} or {mount_ember()} or {victory_road()}) and |Dungeon Ticket|) or {can_get_mystery_egg()}"
         },
         {
             "name": "075 Graveler",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |074 Geodude|) or (({mount_ember()} or {cerulean_cave()}) and |Dungeon Ticket|)"
         },
         {
             "name": "076 Golem",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "|075 Graveler| and {can_get_linking_cord()}"
         },
         {
             "name": "077 Ponyta",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kindle_road()} or ({mount_ember()} and |Dungeon Ticket|)"
         },
         {
             "name": "078 Rapidash",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |077 Ponyta|) or {kindle_road()} or ({mount_ember()} and |Dungeon Ticket|)"
         },
         {
             "name": "079 Slowpoke",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()} or {can_get_water_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "080 Slowbro",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |079 Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or ({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|"
         },
         {
             "name": "081 Magnemite",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({power_plant()} and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "082 Magneton",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |081 Magnemite|) or (({power_plant()} or {cerulean_cave()}) and |Dungeon Ticket|)"
         },
         {
             "name": "083 Farfetch'd",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_12()} or {kanto_route_13()}"
         },
         {
             "name": "084 Doduo",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {can_get_mystery_egg()}"
         },
         {
             "name": "085 Dodrio",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "|@Badges:2| and |084 Doduo|"
         },
         {
             "name": "086 Seel",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{seafoam_islands()} and |Dungeon Ticket|"
         },
         {
             "name": "087 Dewgong",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "|@Badges:2| and |086 Seel|"
         },
         {
             "name": "088 Grimer",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{pokemon_mansion()} and |Dungeon Ticket|"
         },
         {
             "name": "089 Muk",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |088 Grimer|) or ({pokemon_mansion()} and |Dungeon Ticket|)"
         },
         {
             "name": "090 Shellder",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|)"
         },
         {
             "name": "091 Cloyster",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|090 Shellder| and {can_get_water_stone()}"
         },
         {
             "name": "092 Gastly",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({pokemon_tower()} and |Dungeon Ticket|) or {can_get_mystery_egg()} or (|Infinite Seasonal Events| and {any_kanto_route()})"
         },
         {
             "name": "093 Haunter",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |092 Gastly|) or ({pokemon_tower()} and |Dungeon Ticket|)"
         },
         {
             "name": "094 Gengar",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "|093 Haunter| and {can_get_linking_cord()}"
         },
         {
             "name": "095 Onix",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({rock_tunnel()} or {victory_road()}) and |Dungeon Ticket|"
         },
         {
             "name": "096 Drowzee",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_11()} or ({berry_forest()} and |Dungeon Ticket|)"
         },
         {
             "name": "097 Hypno",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "|@Badges:1| and |096 Drowzee| or ({berry_forest()} and |Dungeon Ticket|)"
         },
         {
             "name": "098 Krabby",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or ({seafoam_islands()} and |Dungeon Ticket|)"
         },
         {
             "name": "099 Kingler",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "|@Badges:1| and |098 Krabby|"
         },
         {
             "name": "100 Voltorb",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_10()} or ({power_plant()} and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "101 Electrode",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |100 Voltorb|) or (({power_plant()} or {cerulean_cave()} or {silph_co()}) and |Dungeon Ticket|)"
         },
         {
             "name": "102 Exeggcute",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({berry_forest()} and |Dungeon Ticket|) or {safari_zone()}"
         },
         {
             "name": "103 Exeggutor",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|102 Exeggcute| and {can_get_leaf_stone()}"
         },
         {
             "name": "104 Cubone",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({pokemon_tower()} and |Dungeon Ticket|) or {safari_zone()}"
         },
         {
             "name": "105 Marowak",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1|"
+            "requires": "(|@Badges:1| and |104 Cubone|) or (({pokemon_tower()} or {victory_road()}) and |Dungeon Ticket|) or {safari_zone()}"
         },
         {
             "name": "106 Hitmonlee",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{can_get_fighting_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "107 Hitmonchan",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{can_get_fighting_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "108 Lickitung",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{celadon_city()}"
         },
         {
             "name": "109 Koffing",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{pokemon_mansion()} and |Dungeon Ticket|"
         },
         {
             "name": "110 Weezing",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |109 Koffing|) or ({pokemon_mansion()} and |Dungeon Ticket|)"
         },
         {
             "name": "111 Rhyhorn",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{safari_zone()}"
         },
         {
             "name": "112 Rhydon",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:3|"
+            "requires": "|@Badges:3| and |111 Rhyhorn|"
         },
         {
             "name": "113 Chansey",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{safari_zone()}"
         },
         {
             "name": "114 Tangela",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or |Wailmer Pail|"
         },
         {
             "name": "115 Kangaskhan",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{safari_zone()}"
         },
         {
             "name": "116 Horsea",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or ({seafoam_islands()} and |Dungeon Ticket|)"
         },
         {
             "name": "117 Seadra",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "|@Badges:2| and |116 Horsea|"
         },
         {
             "name": "118 Goldeen",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or (({berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()}"
         },
         {
             "name": "119 Seaking",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |118 Goldeen|) or {safari_zone()}"
         },
         {
             "name": "120 Staryu",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_get_water_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "121 Starmie",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|120 Staryu| and {can_get_water_stone()}"
         },
         {
             "name": "122 Mr. Mime",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{celadon_city()}"
         },
         {
             "name": "123 Scyther",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{safari_zone()} or |Wailmer Pail|"
         },
         {
             "name": "124 Jynx",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{celadon_city()}"
         },
         {
             "name": "125 Electabuzz",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({power_plant()} and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "126 Magmar",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "(({mount_ember()} or {pokemon_mansion()}) and |Dungeon Ticket|) or {can_get_fire_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "127 Pinsir",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{safari_zone()}"
         },
         {
             "name": "128 Tauros",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{safari_zone()}"
         },
         {
             "name": "129 Magikarp",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {kanto_route_4_pokecenter()} or {safari_zone()}"
         },
         {
             "name": "130 Gyarados",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|129 Magikarp|"
         },
         {
             "name": "131 Lapras",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "({silph_co()} and |Dungeon Ticket|) or {can_get_water_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "132 Ditto",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or (({pokemon_mansion()} or {cerulean_cave()}) and |Dungeon Ticket|)"
         },
         {
             "name": "133 Eevee",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{celadon_city()} or {completed_bills_grandpas_treasure_hunt()}"
         },
         {
             "name": "134 Vaporeon",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|133 Eevee| and {can_get_water_stone()}"
         },
         {
             "name": "135 Jolteon",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|133 Eevee| and {can_get_thunder_stone()}"
         },
         {
             "name": "136 Flareon",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "|133 Eevee| and {can_get_fire_stone()}"
         },
         {
             "name": "137 Porygon",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{celadon_city()}"
         },
         {
             "name": "138 Omanyte",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{cinnabar_island()} and |Explorer Kit|"
         },
         {
             "name": "139 Omastar",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |138 Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|)"
         },
         {
             "name": "140 Kabuto",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{cinnabar_island()} and |Explorer Kit|"
         },
         {
             "name": "141 Kabutops",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2|"
+            "requires": "(|@Badges:2| and |140 Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|)"
         },
         {
             "name": "142 Aerodactyl",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{cinnabar_island()} and |Explorer Kit|"
         },
         {
             "name": "143 Snorlax",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{pokemon_tower()} and |Dungeon Ticket|"
         },
         {
             "name": "144 Articuno",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{seafoam_islands()} and |Dungeon Ticket|"
         },
         {
             "name": "145 Zapdos",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{power_plant()} and |Dungeon Ticket|"
         },
         {
             "name": "146 Moltres",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{mount_ember()} and |Dungeon Ticket|"
         },
         {
             "name": "147 Dratini",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{can_get_dragon_egg()} or {can_get_mystery_egg()} or (|147 Dratini| and {safari_zone()})"
         },
         {
             "name": "148 Dragonair",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "(|@Badges:1| and |147 Dratini|) or {can_get_dragon_egg()} or {can_get_mystery_egg()} or (|148 Dragonair| and {safari_zone()})"
         },
         {
             "name": "149 Dragonite",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "(|@Badges:4| and |148 Dragonair|) or {can_get_dragon_egg()} or {can_get_mystery_egg()}"
         },
         {
             "name": "150 Mewtwo",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{cerulean_cave()} and |Dungeon Ticket|"
         },
         {
             "name": "151 Mew",
-            "region": "Kanto",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": []
+            "requires": "{any_kanto_route()}"
         },
         {
             "name": "Travel to Johto",
@@ -1688,7 +1688,7 @@
             "category": [
                 "Victory"
             ],
-            "requires": []
+            "requires": "|@Badges:all|"
         }
     ]
 }

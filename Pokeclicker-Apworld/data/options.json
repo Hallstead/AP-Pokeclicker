@@ -116,6 +116,14 @@
             ],
             "default": false,
             "group": "Game Options"
+        },
+        "mystery_egg": {
+            "type": "Toggle",
+            "description": [
+                "Are Mystery Eggs considdered in logic for obtaining pokemon?"
+            ],
+            "default": false,
+            "group": "Game Options"
         }
     }
 }

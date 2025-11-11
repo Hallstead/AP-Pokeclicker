@@ -202,7 +202,7 @@
             "category": [
                 "Scripts"
             ],
-            "useful": true
+            "progression": true
         },
         {
             "count": 1,
@@ -230,7 +230,7 @@
             "useful": true
         },
         {
-            "count": 6,
+            "count": 5,
             "name": "Auto Safari Zone (Progressive Fast Animations)",
             "category": [
                 "Scripts",
@@ -252,7 +252,7 @@
             "category": [
                 "Scripts"
             ],
-            "useful": true
+            "progression": true
         },
         {
             "count": 1,
