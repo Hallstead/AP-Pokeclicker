@@ -3,62 +3,26 @@
     "Route 1": {
         "starting": true,
         "connects_to": [
-            "Pallet Town"
+            "Route 1 Pokemon",
+            "Kanto"
         ],
         "requires": []
     },
-    "Pallet Town": {
-        "connects_to": [
-            "Kanto"
-        ],
-        "requires": "|Town Map|"
+    "Route 1 Pokemon": {
+        "connects_to": [],
+        "requires": []
     },
     "Kanto": {
         "connects_to": [
-            "Boulder Badge",
-            "Cascade Badge",
-            "Thunder Badge",
-            "Rainbow Badge",
-            "Marsh Badge",
-            "Soul Badge",
-            "Safari Zone",
+            "Kanto Pokemon",
             "Sevii Islands 123",
-            "Earth Badge",
             "Indigo Plateau"
         ],
-        "requires": "|Dungeon Ticket|"
+        "requires": "|Town Map|"
     },
-    "Boulder Badge": {
+    "Kanto Pokemon": {
         "connects_to": [],
-        "requires": "|Boulder Badge|"
-    },
-    "Cascade Badge": {
-        "connects_to": [],
-        "requires": "|Boulder Badge| and |Cascade Badge|"
-    },
-    "Thunder Badge": {
-        "connects_to": [],
-        "requires": "|Thunder Badge|"
-    },
-    "Rainbow Badge": {
-        "connects_to": [],
-        "requires": "|Rainbow Badge|"
-    },
-    "Marsh Badge": {
-        "connects_to": [],
-        "requires": "|Marsh Badge|"
-    },
-    "Soul Badge": {
-        "connects_to": [],
-        "requires": "|Soul Badge|"
-    },
-    "Earth Badge": {
-        "connects_to": [],
-        "requires": "|Earth Badge|"
-    },
-    "Safari Zone": {
-        "connects_to": [],
-        "requires": "|Safari Ticket|"
+        "requires": []
     },
     "Sevii Islands 123": {
         "connects_to": [],

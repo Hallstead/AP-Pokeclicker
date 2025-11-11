@@ -86,7 +86,7 @@ class ArchipelagoIntegrationModule {
             space = '';
         }
 
-        if (item.sender && item.sender != item.receiver) {
+        if (item.sender.alias && item.sender.alias != item.receiver.alias) {
             Notifier.notify({
                 message: `You received ${article}${space}${item.name} from ${item.sender}!`,
                 type: itemReceivedNotificationType,
