@@ -5923,14 +5923,14 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
     y="96"
     height="256"
     width="256"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano)"/>
+    data-bind="visible: true"/>
 <rect class="city"
     data-town="Client Island"
     x="1152"
     y="96"
     height="256"
     width="256"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano), style: {&#39;pointer-events&#39;: &#39;none&#39;},
+    data-bind="visible: true, style: {&#39;pointer-events&#39;: &#39;none&#39;},
         event: { mouseenter: () => GameController.showMapTooltip('Client Island'), mouseleave: GameController.hideMapTooltip }">
 </rect>
 
@@ -5944,14 +5944,14 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
     y="192"
     height="64"
     width="112"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano)"/>
+    data-bind="visible: true"/>
 <rect class="city"
     data-town="Client Island"
     x="1216"
     y="192"
     height="64"
     width="112"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano), click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
+    data-bind="visible: true, click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
         event: { mouseenter: () => GameController.showMapTooltip('Client Island'), mouseleave: GameController.hideMapTooltip }">
 </rect>
 
@@ -5959,7 +5959,7 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
     x="1248"
     y="200"
     class="iconLocation hide"
-    data-bind="visible: MapHelper.isTownCurrentLocation('Client Island') && App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano),
+    data-bind="visible: MapHelper.isTownCurrentLocation('Client Island') && true,
         attr: {href:`assets/images/profile/trainer-${App.game.profile.trainer() || 0}.png`},
         playerSpriteMove">
 
@@ -5973,14 +5973,14 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
     y="256"
     height="16"
     width="80"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano)"/>
+    data-bind="visible: true"/>
 <rect class="city"
     data-town="Client Island"
     x="1232"
     y="256"
     height="16"
     width="80"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano), click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
+    data-bind="visible: true, click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
         event: { mouseenter: () => GameController.showMapTooltip('Client Island'), mouseleave: GameController.hideMapTooltip }">
 </rect>
 
@@ -5994,14 +5994,14 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
     y="176"
     height="16"
     width="96"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano)"/>
+    data-bind="visible: true"/>
 <rect class="city"
     data-town="Client Island"
     x="1232"
     y="176"
     height="16"
     width="96"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano), click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
+    data-bind="visible: true, click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
         event: { mouseenter: () => GameController.showMapTooltip('Client Island'), mouseleave: GameController.hideMapTooltip }">
 </rect>
 
@@ -6015,14 +6015,14 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
     y="160"
     height="16"
     width="48"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano)"/>
+    data-bind="visible: true"/>
 <rect class="city"
     data-town="Client Island"
     x="1248"
     y="160"
     height="16"
     width="48"
-    data-bind="visible: App.isUsingClient &amp;&amp; App.game.badgeCase.hasBadge(BadgeEnums.Volcano), click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
+    data-bind="visible: true, click:function(){MapHelper.moveToTown(&#39;Client Island&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Client Island&#39;) },
         event: { mouseenter: () => GameController.showMapTooltip('Client Island'), mouseleave: GameController.hideMapTooltip }">
 </rect>
 
