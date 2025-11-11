@@ -479,7 +479,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{can_get_grass_egg()} or {can_get_mystery_egg()} or (|Bulbasaur| and |@Badges:8|)"
+            "requires": "(({can_get_grass_egg()} or {can_get_mystery_egg()} or (|001 Bulbasaur| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "002 Ivysaur",
@@ -487,7 +487,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|001 Bulbasaur| or (|Ivysaur| and |@Badges:8|)"
+            "requires": "|001 Bulbasaur| or (|002 Ivysaur| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "003 Venusaur",
@@ -495,7 +495,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |002 Ivysaur|) or (|Venusaur| and |@Badges:8|)"
+            "requires": "(|@Badges:2| and |002 Ivysaur|) or (|003 Venusaur| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "004 Charmander",
@@ -503,7 +503,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{can_get_fire_egg()} or {can_get_mystery_egg()} or (|Charmander| and |@Badges:8|)"
+            "requires": "(({can_get_fire_egg()} or {can_get_mystery_egg()} or (|004 Charmander| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "005 Charmeleon",
@@ -511,7 +511,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|004 Charmander| or (|Charmeleon| and |@Badges:8|)"
+            "requires": "|004 Charmander| or (|005 Charmeleon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "006 Charizard",
@@ -519,7 +519,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |005 Charmeleon|) or (|Charizard| and |@Badges:8|)"
+            "requires": "(|@Badges:2| and |005 Charmeleon|) or (|006 Charizard| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "007 Squirtle",
@@ -527,7 +527,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{can_get_water_egg()} or {can_get_mystery_egg()} or (|Squirtle| and |@Badges:8|)"
+            "requires": "(({can_get_water_egg()} or {can_get_mystery_egg()} or (|007 Squirtle| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "008 Wartortle",
@@ -535,7 +535,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|007 Squirtle| or (|Wartortle| and |@Badges:8|)"
+            "requires": "|007 Squirtle| or (|008 Wartortle| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "009 Blastoise",
@@ -543,7 +543,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |008 Wartortle|) or (|Blastoise| and |@Badges:8|)"
+            "requires": "(|@Badges:2| and |008 Wartortle|) or (|009 Blastoise| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "010 Caterpie",
@@ -551,7 +551,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Caterpie| and |@Badges:8|)"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|010 Caterpie| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "011 Metapod",
@@ -559,7 +559,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|010 Caterpie| or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Metapod| and |@Badges:8|)"
+            "requires": "|010 Caterpie| or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|011 Metapod| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "012 Butterfree",
@@ -567,7 +567,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|011 Metapod| or (|Butterfree| and |@Badges:8|)"
+            "requires": "|011 Metapod| or (|012 Butterfree| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "013 Weedle",
@@ -575,7 +575,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Weedle| and |@Badges:8|)"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|013 Weedle| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "014 Kakuna",
@@ -583,7 +583,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|013 Weedle| or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|Kakuna| and |@Badges:8|)"
+            "requires": "|013 Weedle| or {kanto_route_24()} or {kanto_route_25()} or ({viridian_forest()} and |Dungeon Ticket|) or (|014 Kakuna| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "015 Beedrill",
@@ -591,7 +591,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|014 Kakuna| or (|Beedrill| and |@Badges:8|)"
+            "requires": "|014 Kakuna| or (|015 Beedrill| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "016 Pidgey",
@@ -599,7 +599,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgey| and |@Badges:8|)"
+            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|016 Pidgey| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "017 Pidgeotto",
@@ -607,7 +607,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|016 Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgeotto| and |@Badges:8|)"
+            "requires": "|016 Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|017 Pidgeotto| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "018 Pidgeot",
@@ -615,7 +615,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |017 Pidgeotto|) or (|Pidgeot| and |@Badges:8|)"
+            "requires": "(|@Badges:2| and |017 Pidgeotto|) or (|018 Pidgeot| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "019 Rattata",
@@ -623,7 +623,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (|Rattata| and |@Badges:8|)"
+            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (|019 Rattata| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "020 Raticate",
@@ -631,7 +631,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|019 Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (|Raticate| and |@Badges:8|)"
+            "requires": "|019 Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (|020 Raticate| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "021 Spearow",
@@ -639,7 +639,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Spearow| and |@Badges:8|)"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|021 Spearow| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "022 Fearow",
@@ -647,7 +647,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|021 Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Fearow| and |@Badges:8|)"
+            "requires": "|021 Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|022 Fearow| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "023 Ekans",
@@ -655,7 +655,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Ekans| and |@Badges:8|)"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|023 Ekans| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "024 Arbok",
@@ -663,7 +663,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |023 Ekans|) or {kanto_route_23()} or ({victory_road()} and |Dungeon Ticket|) or (|Arbok| and |@Badges:8|)"
+            "requires": "(|@Badges:1| and |023 Ekans|) or {kanto_route_23()} or ({victory_road()} and |Dungeon Ticket|) or (|024 Arbok| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "025 Pikachu",
@@ -671,7 +671,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({viridian_forest()} or {power_plant()}) and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
+            "requires": "(({viridian_forest()} or {power_plant()}) and |Dungeon Ticket|) or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|025 Pikachu| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "026 Raichu",
@@ -679,7 +679,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|025 Pikachu| and {can_get_thunder_stone()}"
+            "requires": "|025 Pikachu| and {can_get_thunder_stone()} or (|026 Raichu| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "027 Sandshrew",
@@ -687,7 +687,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()}"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|027 Sandshrew| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "028 Sandslash",
@@ -695,7 +695,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |027 Sandshrew|) or {kanto_route_23()} or ({victory_road()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |027 Sandshrew|) or {kanto_route_23()} or ({victory_road()} and |Dungeon Ticket|) or (|028 Sandslash| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "029 Nidoran (F)",
@@ -703,7 +703,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_3()}"
+            "requires": "{kanto_route_3()} or {safari_zone()} or (|029 Nidoran (F)| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "030 Nidorina",
@@ -711,7 +711,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|029 Nidoran (F)| or {safari_zone()}"
+            "requires": "|029 Nidoran (F)| or {safari_zone()} or (|030 Nidorina| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "031 Nidoqueen",
@@ -719,7 +719,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|030 Nidorina| and {can_get_moon_stone()}"
+            "requires": "(|030 Nidorina| and {can_get_moon_stone()}) or (|031 Nidoqueen| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "032 Nidoran (M)",
@@ -727,7 +727,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_3()} or {safari_zone()}"
+            "requires": "{kanto_route_3()} or {safari_zone()} or (|032 Nidoran (M)| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "033 Nidorino",
@@ -735,7 +735,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|032 Nidoran (M)| or {safari_zone()}"
+            "requires": "|032 Nidoran (M)| or {safari_zone()} or (|033 Nidorino| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "034 Nidoking",
@@ -743,7 +743,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|033 Nidorino| and {can_get_moon_stone()}"
+            "requires": "(|033 Nidorino| and {can_get_moon_stone()}) or (|034 Nidoking| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "035 Clefairy",
@@ -751,7 +751,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{mt_moon()} and |Dungeon Ticket|"
+            "requires": "({mt_moon()} and |Dungeon Ticket|) or (|035 Clefairy| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "036 Clefable",
@@ -759,7 +759,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|035 Clefairy| and {can_get_moon_stone()}"
+            "requires": "(|035 Clefairy| and {can_get_moon_stone()}) or (|036 Clefable| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "037 Vulpix",
@@ -767,7 +767,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or ({pokemon_mansion()} and |Dungeon Ticket|) or {can_get_fire_egg()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|037 Vulpix| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "038 Ninetails",
@@ -775,7 +775,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|037 Vulpix| and {can_get_fire_stone()}"
+            "requires": "(|037 Vulpix| and {can_get_fire_stone()}) or (|038 Ninetails| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "039 Jigglypuff",
@@ -783,7 +783,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_3()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_3()} or (({can_get_mystery_egg()} or (|039 Jigglypuff| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "040 Wigglytuff",
@@ -791,7 +791,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|039 Jigglypuff| and {can_get_moon_stone()}"
+            "requires": "(|039 Jigglypuff| and {can_get_moon_stone()}) or (|040 Wigglytuff| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "041 Zubat",
@@ -799,7 +799,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({mt_moon()} or {rock_tunnel()} or {seafoam_islands()} or {victory_road()}) and |Dungeon Ticket|"
+            "requires": "(({mt_moon()} or {rock_tunnel()} or {seafoam_islands()} or {victory_road()}) and |Dungeon Ticket|) or (|041 Zubat| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "042 Golbat",
@@ -807,7 +807,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |041 Zubat|) or ({seafoam_islands()} or {victory_road()} or {cerulean_cave()}) and |Dungeon Ticket|"
+            "requires": "(|@Badges:1| and |041 Zubat|) or (({seafoam_islands()} or {victory_road()} or {cerulean_cave()}) and |Dungeon Ticket|) or (|042 Golbat| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "043 Oddish",
@@ -815,7 +815,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|) or {can_get_grass_egg()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|) or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|043 Oddish| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "044 Gloom",
@@ -823,7 +823,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |043 Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |043 Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|) or (|044 Gloom| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "045 Vileplume",
@@ -831,7 +831,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|044 Gloom| and {can_get_leaf_stone()}"
+            "requires": "|044 Gloom| and {can_get_leaf_stone()} or (|045 Vileplume| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "046 Paras",
@@ -839,7 +839,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({mt_moon()} and |Dungeon Ticket|) or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()}"
+            "requires": "({mt_moon()} and |Dungeon Ticket|) or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or (|046 Paras| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "047 Parasect",
@@ -847,7 +847,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |046 Paras|) or ({cerulean_cave()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |046 Paras|) or ({cerulean_cave()} and |Dungeon Ticket|) or (|047 Parasect| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "048 Venonat",
@@ -855,7 +855,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|) or (|048 Venonat| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "049 Venomoth",
@@ -863,7 +863,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |048 Venonat|) or ({berry_forest()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:2| and |048 Venonat|) or ({berry_forest()} and |Dungeon Ticket|) or (|049 Venomoth| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "050 Diglett",
@@ -871,7 +871,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{digletts_cave()} and |Dungeon Ticket|"
+            "requires": "({digletts_cave()} and |Dungeon Ticket|) or (|050 Diglett| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "051 Dugtrio",
@@ -879,7 +879,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |050 Diglett|) or ({digletts_cave()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |050 Diglett|) or ({digletts_cave()} and |Dungeon Ticket|) or (|051 Dugtrio| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "052 Meowth",
@@ -887,7 +887,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()}"
+            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|052 Meowth| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "053 Persian",
@@ -895,7 +895,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |052 Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()}"
+            "requires": "(|@Badges:1| and |052 Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|053 Persian| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "054 Psyduck",
@@ -903,7 +903,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()}"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()} or (|054 Psyduck| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "055 Golduck",
@@ -911,7 +911,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |054 Psyduck|) or {cape_brink()} or ({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|"
+            "requires": "(|@Badges:2| and |054 Psyduck|) or {cape_brink()} or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or (|055 Golduck| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "056 Mankey",
@@ -919,7 +919,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel()} and |Dungeon Ticket|) or {can_get_fighting_egg()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel()} and |Dungeon Ticket|) or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|056 Mankey| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "057 Primape",
@@ -927,7 +927,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |056 Mankey|) or {kanto_route_23()} or (({victory_road()} or {cerulean_cave()}) and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |056 Mankey|) or {kanto_route_23()} or (({victory_road()} or {cerulean_cave()}) and |Dungeon Ticket|) or (|057 Primape| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "058 Growlithe",
@@ -935,7 +935,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or ({pokemon_mansion()} and |Dungeon Ticket|) or {can_get_fire_egg()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or ({pokemon_mansion()} and |Dungeon Ticket|) or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|058 Growlithe| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "059 Arcanine",
@@ -943,7 +943,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|058 Growlithe| and {can_get_fire_stone()}"
+            "requires": "(|058 Growlithe| and {can_get_fire_stone()}) or (|059 Arcanine| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "060 Poliwag",
@@ -951,7 +951,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or (({berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()}"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or (({berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()} or (|060 Poliwag| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "061 Poliwhirl",
@@ -959,7 +959,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |060 Poliwag|)"
+            "requires": "(|@Badges:1| and |060 Poliwag|) or (|061 Poliwhirl| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "062 Poliwrath",
@@ -967,7 +967,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|061 Poliwhirl| and {can_get_water_stone()}"
+            "requires": "(|061 Poliwhirl| and {can_get_water_stone()}) or (|062 Poliwrath| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "063 Abra",
@@ -975,7 +975,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()}"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or (|063 Abra| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "064 Kadabra",
@@ -983,7 +983,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|063 Abra| or ({cerulean_cave()} and |Dungeon Ticket|)"
+            "requires": "|063 Abra| or ({cerulean_cave()} and |Dungeon Ticket|) or (|064 Kadabra| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "065 Alakazam",
@@ -991,7 +991,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|064 Kadabra| and {can_get_linking_cord()}"
+            "requires": "(|064 Kadabra| and {can_get_linking_cord()}) or (|065 Alakazam| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "066 Machop",
@@ -999,7 +999,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({rock_tunnel()} or {mount_ember()} or {victory_road()}) and |Dungeon Ticket|) or {can_get_fighting_egg()} or {can_get_mystery_egg()}"
+            "requires": "(({rock_tunnel()} or {mount_ember()} or {victory_road()}) and |Dungeon Ticket|) or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|066 Machop| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "067 Machoke",
@@ -1007,7 +1007,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |066 Machop|) or (({mount_ember()} or {cerulean_cave()} or {victory_road()}) and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |066 Machop|) or (({mount_ember()} or {cerulean_cave()} or {victory_road()}) and |Dungeon Ticket|) or (|067 Machoke| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "068 Machamp",
@@ -1015,7 +1015,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|067 Machoke| and {can_get_linking_cord()}"
+            "requires": "(|067 Machoke| and {can_get_linking_cord()}) or (|068 Machamp| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "069 Bellsprout",
@@ -1023,7 +1023,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|) or (|069 Bellsprout| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "070 Weepinbell",
@@ -1031,7 +1031,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |069 Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |069 Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or ({berry_forest()} and |Dungeon Ticket|) or (|070 Weepinbell| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "071 Victreebel",
@@ -1039,7 +1039,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|070 Weepinbell| and {can_get_leaf_stone()}"
+            "requires": "(|070 Weepinbell| and {can_get_leaf_stone()}) or (|071 Victreebel| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "072 Tentacool",
@@ -1047,7 +1047,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|072 Tentacool| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "073 Tentacruel",
@@ -1055,7 +1055,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |072 Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|)"
+            "requires": "(|@Badges:1| and |072 Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|073 Tentacruel| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "074 Geodude",
@@ -1063,7 +1063,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kindle_road()} or (({mt_moon()} or {rock_tunnel()} or {mount_ember()} or {victory_road()}) and |Dungeon Ticket|) or {can_get_mystery_egg()}"
+            "requires": "{kindle_road()} or (({mt_moon()} or {rock_tunnel()} or {mount_ember()} or {victory_road()}) and |Dungeon Ticket|) or (({can_get_mystery_egg()} or |074 Geodude| and |@Badges:8|) and |Mystery Egg|)"
         },
         {
             "name": "075 Graveler",
@@ -1071,7 +1071,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |074 Geodude|) or (({mount_ember()} or {cerulean_cave()}) and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |074 Geodude|) or (({mount_ember()} or {cerulean_cave()}) and |Dungeon Ticket|) or (|075 Graveler| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "076 Golem",
@@ -1079,7 +1079,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|075 Graveler| and {can_get_linking_cord()}"
+            "requires": "(|075 Graveler| and {can_get_linking_cord()}) or (|076 Golem| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "077 Ponyta",
@@ -1087,7 +1087,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kindle_road()} or ({mount_ember()} and |Dungeon Ticket|)"
+            "requires": "{kindle_road()} or ({mount_ember()} and |Dungeon Ticket|) or (|077 Ponyta| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "078 Rapidash",
@@ -1095,7 +1095,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |077 Ponyta|) or {kindle_road()} or ({mount_ember()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:2| and |077 Ponyta|) or {kindle_road()} or ({mount_ember()} and |Dungeon Ticket|) or (|078 Rapidash| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "079 Slowpoke",
@@ -1103,7 +1103,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()} or {can_get_water_egg()} or {can_get_mystery_egg()}"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|079 Slowpoke| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "080 Slowbro",
@@ -1111,7 +1111,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |079 Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or ({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|"
+            "requires": "(|@Badges:2| and |079 Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or (|080 Slowbro| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "081 Magnemite",
@@ -1119,7 +1119,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({power_plant()} and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
+            "requires": "({power_plant()} and |Dungeon Ticket|) or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|081 Magnemite| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "082 Magneton",
@@ -1127,7 +1127,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |081 Magnemite|) or (({power_plant()} or {cerulean_cave()}) and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |081 Magnemite|) or (({power_plant()} or {cerulean_cave()}) and |Dungeon Ticket|) or (|082 Magneton| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "083 Farfetch'd",
@@ -1135,7 +1135,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()}"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or (|083 Farfetch'd| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "084 Doduo",
@@ -1143,7 +1143,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or (({can_get_mystery_egg()} or (|084 Doduo| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "085 Dodrio",
@@ -1151,7 +1151,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2| and |084 Doduo|"
+            "requires": "(|@Badges:2| and |084 Doduo|) or (|085 Dodrio| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "086 Seel",
@@ -1159,7 +1159,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{seafoam_islands()} and |Dungeon Ticket|"
+            "requires": "({seafoam_islands()} and |Dungeon Ticket|) or (|086 Seel| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "087 Dewgong",
@@ -1167,7 +1167,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2| and |086 Seel|"
+            "requires": "(|@Badges:2| and |086 Seel|) or (|087 Dewgong| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "088 Grimer",
@@ -1175,7 +1175,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{pokemon_mansion()} and |Dungeon Ticket|"
+            "requires": "({pokemon_mansion()} and |Dungeon Ticket|) or {can_get_mystery_egg()}"
         },
         {
             "name": "089 Muk",
@@ -1183,7 +1183,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |088 Grimer|) or ({pokemon_mansion()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:2| and |088 Grimer|) or ({pokemon_mansion()} and |Dungeon Ticket|) or (|089 Muk| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "090 Shellder",
@@ -1191,7 +1191,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|)"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (|090 Shellder| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "091 Cloyster",
@@ -1199,7 +1199,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|090 Shellder| and {can_get_water_stone()}"
+            "requires": "(|090 Shellder| and {can_get_water_stone()}) or (|091 Cloyster| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "092 Gastly",
@@ -1207,7 +1207,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({pokemon_tower()} and |Dungeon Ticket|) or {can_get_mystery_egg()} or (|Infinite Seasonal Events| and {any_kanto_route()})"
+            "requires": "({pokemon_tower()} and |Dungeon Ticket|) or ({can_get_mystery_egg()} or (|092 Gastly| and |@Badges:8|) and |Mystery Egg|) or (|Infinite Seasonal Events| and {any_kanto_route()})"
         },
         {
             "name": "093 Haunter",
@@ -1215,7 +1215,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |092 Gastly|) or ({pokemon_tower()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |092 Gastly|) or ({pokemon_tower()} and |Dungeon Ticket|) or (|093 Haunter| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "094 Gengar",
@@ -1223,7 +1223,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|093 Haunter| and {can_get_linking_cord()}"
+            "requires": "(|093 Haunter| and {can_get_linking_cord()} or (|094 Gengar| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "095 Onix",
@@ -1231,7 +1231,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({rock_tunnel()} or {victory_road()}) and |Dungeon Ticket|"
+            "requires": "(({rock_tunnel()} or {victory_road()}) and |Dungeon Ticket|) or (|095 Onix| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "096 Drowzee",
@@ -1239,7 +1239,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_11()} or ({berry_forest()} and |Dungeon Ticket|)"
+            "requires": "{kanto_route_11()} or ({berry_forest()} and |Dungeon Ticket|) or (|096 Drowzee| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "097 Hypno",
@@ -1247,7 +1247,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1| and |096 Drowzee| or ({berry_forest()} and |Dungeon Ticket|)"
+            "requires": "|@Badges:1| and |096 Drowzee| or ({berry_forest()} and |Dungeon Ticket|) or (|097 Hypno| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "098 Krabby",
@@ -1255,7 +1255,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or ({seafoam_islands()} and |Dungeon Ticket|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or ({seafoam_islands()} and |Dungeon Ticket|) or (|098 Krabby| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "099 Kingler",
@@ -1263,7 +1263,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1| and |098 Krabby|"
+            "requires": "(|@Badges:1| and |098 Krabby|) or (|099 Kingler| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "100 Voltorb",
@@ -1271,7 +1271,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_10()} or ({power_plant()} and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_10()} or ({power_plant()} and |Dungeon Ticket|) or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|100 Voltorb| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "101 Electrode",
@@ -1279,7 +1279,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |100 Voltorb|) or (({power_plant()} or {cerulean_cave()} or {silph_co()}) and |Dungeon Ticket|)"
+            "requires": "(|@Badges:1| and |100 Voltorb|) or (({power_plant()} or {cerulean_cave()} or {silph_co()}) and |Dungeon Ticket|) or (|101 Electrode| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "102 Exeggcute",
@@ -1287,7 +1287,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({berry_forest()} and |Dungeon Ticket|) or {safari_zone()}"
+            "requires": "({berry_forest()} and |Dungeon Ticket|) or {safari_zone()} or (|102 Exeggcute| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "103 Exeggutor",
@@ -1295,7 +1295,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|102 Exeggcute| and {can_get_leaf_stone()}"
+            "requires": "(|102 Exeggcute| and {can_get_leaf_stone()}) or (|103 Exeggutor| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "104 Cubone",
@@ -1303,7 +1303,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({pokemon_tower()} and |Dungeon Ticket|) or {safari_zone()}"
+            "requires": "({pokemon_tower()} and |Dungeon Ticket|) or {safari_zone()} or (|104 Cubone| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "105 Marowak",
@@ -1311,7 +1311,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |104 Cubone|) or (({pokemon_tower()} or {victory_road()}) and |Dungeon Ticket|) or {safari_zone()}"
+            "requires": "(|@Badges:1| and |104 Cubone|) or (({pokemon_tower()} or {victory_road()}) and |Dungeon Ticket|) or {safari_zone()} or (|105 Marowak| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "106 Hitmonlee",
@@ -1319,7 +1319,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{can_get_fighting_egg()} or {can_get_mystery_egg()}"
+            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|106 Hitmonlee| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "107 Hitmonchan",
@@ -1327,7 +1327,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{can_get_fighting_egg()} or {can_get_mystery_egg()}"
+            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|107 Hitmonchan| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "108 Lickitung",
@@ -1335,7 +1335,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()}"
+            "requires": "{celadon_city()} or (|108 Lickitung| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "109 Koffing",
@@ -1343,7 +1343,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{pokemon_mansion()} and |Dungeon Ticket|"
+            "requires": "({pokemon_mansion()} and |Dungeon Ticket|) or (|109 Koffing| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "110 Weezing",
@@ -1351,7 +1351,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |109 Koffing|) or ({pokemon_mansion()} and |Dungeon Ticket|)"
+            "requires": "(|@Badges:2| and |109 Koffing|) or ({pokemon_mansion()} and |Dungeon Ticket|) or (|110 Weezing| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "111 Rhyhorn",
@@ -1359,7 +1359,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()}"
+            "requires": "{safari_zone()} or (|111 Rhyhorn| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "112 Rhydon",
@@ -1367,7 +1367,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:3| and |111 Rhyhorn|"
+            "requires": "(|@Badges:3| and |111 Rhyhorn|) or (|112 Rhydon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "113 Chansey",
@@ -1375,7 +1375,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()}"
+            "requires": "{safari_zone()} or (|113 Chansey| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "114 Tangela",
@@ -1383,7 +1383,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or |Wailmer Pail|"
+            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or |Wailmer Pail| or (|114 Tangela| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "115 Kangaskhan",
@@ -1391,7 +1391,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()}"
+            "requires": "{safari_zone()} or (|115 Kangaskhan| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "116 Horsea",
@@ -1399,7 +1399,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or ({seafoam_islands()} and |Dungeon Ticket|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or ({seafoam_islands()} and |Dungeon Ticket|) or (|116 Horsea| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "117 Seadra",
@@ -1407,7 +1407,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:2| and |116 Horsea|"
+            "requires": "(|@Badges:2| and |116 Horsea|) or (|117 Seadra| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "118 Goldeen",
@@ -1415,7 +1415,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or (({berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()}"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or (({berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {safari_zone()} or (|118 Goldeen| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "119 Seaking",
@@ -1423,7 +1423,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |118 Goldeen|) or {safari_zone()}"
+            "requires": "(|@Badges:2| and |118 Goldeen|) or {safari_zone()} or (|119 Seaking| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "120 Staryu",
@@ -1431,7 +1431,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_get_water_egg()} or {can_get_mystery_egg()}"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|120 Staryu| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "121 Starmie",
@@ -1439,7 +1439,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|120 Staryu| and {can_get_water_stone()}"
+            "requires": "|120 Staryu| and {can_get_water_stone()} or (|121 Starmie| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "122 Mr. Mime",
@@ -1447,7 +1447,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()}"
+            "requires": "{celadon_city()} or (|122 Mr. Mime| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "123 Scyther",
@@ -1455,7 +1455,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()} or |Wailmer Pail|"
+            "requires": "{safari_zone()} or |Wailmer Pail| or (|123 Scyther| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "124 Jynx",
@@ -1463,7 +1463,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()}"
+            "requires": "{celadon_city()} or (|124 Jynx| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "125 Electabuzz",
@@ -1471,7 +1471,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({power_plant()} and |Dungeon Ticket|) or {can_get_electric_egg()} or {can_get_mystery_egg()}"
+            "requires": "({power_plant()} and |Dungeon Ticket|) or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|125 Electabuzz| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "126 Magmar",
@@ -1479,7 +1479,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({mount_ember()} or {pokemon_mansion()}) and |Dungeon Ticket|) or {can_get_fire_egg()} or {can_get_mystery_egg()}"
+            "requires": "(({mount_ember()} or {pokemon_mansion()}) and |Dungeon Ticket|) or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|126 Magmar| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "127 Pinsir",
@@ -1487,7 +1487,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()}"
+            "requires": "{safari_zone()} or (|127 Pinsir| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "128 Tauros",
@@ -1495,7 +1495,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()}"
+            "requires": "{safari_zone()} or (|128 Tauros| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "129 Magikarp",
@@ -1503,7 +1503,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {kanto_route_4_pokecenter()} or {safari_zone()}"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or (({seafoam_islands()} or {berry_forest()} or {cerulean_cave()}) and |Dungeon Ticket|) or {kanto_route_4_pokecenter()} or {safari_zone()} or (|129 Magikarp| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "130 Gyarados",
@@ -1511,7 +1511,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|129 Magikarp|"
+            "requires": "|129 Magikarp| or (|130 Gyarados| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "131 Lapras",
@@ -1519,7 +1519,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({silph_co()} and |Dungeon Ticket|) or {can_get_water_egg()} or {can_get_mystery_egg()}"
+            "requires": "({silph_co()} and |Dungeon Ticket|) or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|131 Lapras| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "132 Ditto",
@@ -1527,7 +1527,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or (({pokemon_mansion()} or {cerulean_cave()}) and |Dungeon Ticket|)"
+            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or (({pokemon_mansion()} or {cerulean_cave()}) and |Dungeon Ticket|) or (|132 Ditto| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "133 Eevee",
@@ -1535,7 +1535,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()} or {completed_bills_grandpas_treasure_hunt()}"
+            "requires": "{celadon_city()} or {completed_bills_grandpas_treasure_hunt()} or (|133 Eevee| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "134 Vaporeon",
@@ -1543,7 +1543,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|133 Eevee| and {can_get_water_stone()}"
+            "requires": "|133 Eevee| and {can_get_water_stone()} or (|134 Vaporeon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "135 Jolteon",
@@ -1551,7 +1551,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|133 Eevee| and {can_get_thunder_stone()}"
+            "requires": "|133 Eevee| and {can_get_thunder_stone()} or (|135 Jolteon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "136 Flareon",
@@ -1559,7 +1559,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "|133 Eevee| and {can_get_fire_stone()}"
+            "requires": "|133 Eevee| and {can_get_fire_stone()} or (|136 Flareon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "137 Porygon",
@@ -1567,7 +1567,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()}"
+            "requires": "{celadon_city()} or (|137 Porygon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "138 Omanyte",
@@ -1575,7 +1575,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{cinnabar_island()} and |Explorer Kit|"
+            "requires": "({cinnabar_island()} and |Explorer Kit|) or (|138 Omanyte| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "139 Omastar",
@@ -1583,7 +1583,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |138 Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|)"
+            "requires": "(|@Badges:2| and |138 Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|) or (|139 Omastar| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "140 Kabuto",
@@ -1591,7 +1591,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{cinnabar_island()} and |Explorer Kit|"
+            "requires": "({cinnabar_island()} and |Explorer Kit|) or (|140 Kabuto| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "141 Kabutops",
@@ -1599,7 +1599,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |140 Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|)"
+            "requires": "(|@Badges:2| and |140 Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|) or (|141 Kabutops| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "142 Aerodactyl",
@@ -1607,7 +1607,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{cinnabar_island()} and |Explorer Kit|"
+            "requires": "({cinnabar_island()} and |Explorer Kit|) or (|142 Aerodactyl| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "143 Snorlax",
@@ -1615,7 +1615,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{pokemon_tower()} and |Dungeon Ticket|"
+            "requires": "({pokemon_tower()} and |Dungeon Ticket|) or (|143 Snorlax| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "144 Articuno",
@@ -1623,7 +1623,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{seafoam_islands()} and |Dungeon Ticket|"
+            "requires": "({seafoam_islands()} and |Dungeon Ticket|) or (|144 Articuno| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "145 Zapdos",
@@ -1631,7 +1631,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{power_plant()} and |Dungeon Ticket|"
+            "requires": "({power_plant()} and |Dungeon Ticket|) or (|145 Zapdos| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "146 Moltres",
@@ -1639,7 +1639,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{mount_ember()} and |Dungeon Ticket|"
+            "requires": "({mount_ember()} and |Dungeon Ticket|) or (|146 Moltres| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "147 Dratini",
@@ -1647,7 +1647,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{can_get_dragon_egg()} or {can_get_mystery_egg()} or (|147 Dratini| and {safari_zone()})"
+            "requires": "(|147 Dratini| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|147 Dratini| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "148 Dragonair",
@@ -1655,7 +1655,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |147 Dratini|) or {can_get_dragon_egg()} or {can_get_mystery_egg()} or (|148 Dragonair| and {safari_zone()})"
+            "requires": "(|@Badges:1| and |147 Dratini|) or (|148 Dragonair| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|148 Dragonair| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "149 Dragonite",
@@ -1663,7 +1663,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:4| and |148 Dragonair|) or {can_get_dragon_egg()} or {can_get_mystery_egg()}"
+            "requires": "(|@Badges:4| and |148 Dragonair|) or ({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|149 Dragonite| and |@Badges:8|)) and |Mystery Egg|"
         },
         {
             "name": "150 Mewtwo",
@@ -1671,7 +1671,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{cerulean_cave()} and |Dungeon Ticket|"
+            "requires": "({cerulean_cave()} and |Dungeon Ticket|) or (|150 Mewtwo| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "151 Mew",
@@ -1679,7 +1679,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{any_kanto_route()}"
+            "requires": "{any_kanto_route()} or (|151 Mew| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "Travel to Johto",
@@ -1688,7 +1688,7 @@
             "category": [
                 "Victory"
             ],
-            "requires": "|@Badges:all|"
+            "requires": "|@Badges:all| and (dexsandity_disabled()} or ({dexsanity_enabled()} and |@Pokemon:all|))"
         }
     ]
 }
