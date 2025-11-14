@@ -10,7 +10,7 @@ class GainMoneyQuest extends Quest implements QuestInterface {
     public static generateData(): any[] {
         const highestRegion = player.highestRegion();
         const gymAmount = Object.values(GymList).reduce((max, gym) => {
-            if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)]()) {
+            if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)]() && gym.moneyReward > 0) {
                 // 1.3 raised to variable power so we account for gyms from early regions being easier and better for money.
                 return Math.max(max, (gym.moneyReward) * 1.3 ** (highestRegion - GameConstants.getGymRegion(gym.town)));
             }
