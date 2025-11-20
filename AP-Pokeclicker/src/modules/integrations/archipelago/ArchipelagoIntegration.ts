@@ -186,7 +186,10 @@ class ArchipelagoIntegrationModule {
                     return;
                 }
                 if (isPokemon) {
-                    locationNumber += 59;
+                    if (locationNumber % 1 !== 0) {
+                        locationNumber = locationNumber * 100 + 8000;
+                    }
+                    locationNumber += 2000;
                 }
                 this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
             } catch (e) {

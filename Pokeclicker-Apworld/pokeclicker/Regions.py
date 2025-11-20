@@ -34,6 +34,8 @@ def create_regions(world: World, multiworld: MultiWorld, player: int):
 
         locations = []
         for location in world.location_table:
+            if "Pokemon" in location["category"]:
+                location["id"] = None
             if "region" in location and location["region"] == region:
                 if is_location_enabled(multiworld, player, location):
                     locations.append(location["name"])
@@ -59,10 +61,16 @@ def create_region(world: World, multiworld: MultiWorld, player: int, name: str, 
     if locations:
         for location in locations:
             loc_id = world.location_name_to_id.get(location, 0)
+            if world.options.dexsanity.value == 0:
+                if "Pokemon" in location_name_to_location[location]["category"]:
+                    loc_id = None
+            if location == "Complete the Tutorial":
+                loc_id = None
             locationObj = ManualLocation(player, location, loc_id, ret)
             if location_name_to_location[location].get('prehint'):
                 world.options.start_location_hints.value.add(location)
             ret.locations.append(locationObj)
+    
     if exits:
         for exit in exits:
             ret.exits.append(Entrance(player, getConnectionName(name, exit), ret))
