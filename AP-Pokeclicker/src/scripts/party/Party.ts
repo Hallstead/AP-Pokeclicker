@@ -77,7 +77,7 @@ class Party implements Feature, TmpPartyType {
         const prevCaptured = +(App.game.statistics.pokemonCaptured[id]?.() ?? 0);
         let dexsanity = (window as any)?.APFlags?.dexsanity === true;
         if (dexsanity && id % 1 !== 0) {
-            dexsanity = false; // Disable Dexsanity for forms
+            dexsanity = false; // Disable Dexsanity for alt forms
         }
 
         PokemonHelper.incrementPokemonStatistics(id, GameConstants.PokemonStatisticsType.Captured, shiny, gender, shadow);

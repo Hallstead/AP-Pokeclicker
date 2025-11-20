@@ -128,7 +128,7 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: 0,
             progressive_auto_safari_zone: 0,
             progressive_autoclicker: 0,
-            use_scripts: 0
+            use_scripts: 0,
         };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
@@ -186,7 +186,10 @@ class ArchipelagoIntegrationModule {
                     return;
                 }
                 if (isPokemon) {
-                    locationNumber += 59
+                    if (locationNumber % 1 !== 0) {
+                        locationNumber = locationNumber * 100 + 8000;
+                    }
+                    locationNumber += 2000;
                 }
                 this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
             } catch (e) {
@@ -217,7 +220,7 @@ class ArchipelagoIntegrationModule {
 
             options = await player.fetchSlotData().then(res => res as GameOptions);
             if (options) {
-                console.log('Game options: ', options);
+                // console.log('Game options: ', options);
                 w.APFlags.set('options', options);
                 // Mirror explicit boolean for easy access
                 if (typeof options.dexsanity !== 'undefined') {

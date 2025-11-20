@@ -1565,6 +1565,14 @@
                 "Pokemon"
             ],
             "progression": true
+        },
+        {
+            "count": "1",
+            "name": "Tutorial Complete",
+            "category": [
+                "Event"
+            ],
+            "progression": true
         }
     ]
 }

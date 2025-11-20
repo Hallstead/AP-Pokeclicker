@@ -124,6 +124,36 @@
             ],
             "default": false,
             "group": "Game Options"
+        },
+        "clicks_per_second": {
+            "type": "Range",
+            "description": [
+                "Sets the assumed clicks per second for the player.",
+                "This affects the logic for attack needed for the player to be expected to defeat dungeons and gym leaders.",
+                "Higher values make the game easier.",
+                "It is recommended to check your clicks per second rate with an online CPS tester."
+            ],
+            "range_start": 1,
+            "default": 5,
+            "range_end": 20,
+            "group": "Game Options"
+        },
+        "dungeon_logic": {
+            "type": "Choice",
+            "description": [
+                "This option determines how much attack power is needed to reliably find and catch a dungeon pokemon.",
+                "Early: Dungeons and their pokemon are brought into logic if you can clear only one or two dungeon spaces for the event that the pokemon/boss is one of them. This option is much more RNG dependant.",
+                "Half: Dungeons and their pokemon are brought into logic if you can clear about half the dungeon spaces for the event that the pokemon/boss is one of them.",
+                "All: Dungeons and their pokemon assume you must be able to fully clear the dungeon to be in logic."
+            ],
+            "values": {
+                "early": 0,
+                "half": 1,
+                "all": 2
+            },
+            "default": 1,
+            "allow_custom_value": false,
+            "group": "Game Options"
         }
     }
 }

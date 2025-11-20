@@ -19,18 +19,24 @@ for key, _ in enumerate(location_table):
         item_id = location_table[key]["id"]
         if item_id >= count:
             count = item_id
+        elif item_id == -1:
+            pass # allow -1 as a placeholder for "assign automatically"
         else:
             raise ValueError(f"{location_table[key]['name']} has an invalid ID. ID must be at least {count + 1}")
 
-    location_table[key]["id"] = count
+    if "id" in location_table[key] and location_table[key]["id"] == -1:
+        # event location
+        location_table[key]["id"] = None
+    else:
+        location_table[key]["id"] = count
+        count += 1
+    
 
     if "region" not in location_table[key]:
         location_table[key]["region"] = "Manual" # all locations are in the same region for Manual
 
     if isinstance(location_table[key].get("category", []), str):
         location_table[key]["category"] = [location_table[key]["category"]]
-
-    count += 1
 
 if not victory_names:
     # Add the game completion location, which will have the Victory item assigned to it automatically
