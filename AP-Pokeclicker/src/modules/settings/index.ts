@@ -37,7 +37,6 @@ import PokemonCategories from '../party/Category';
 import ShadowPokemonRequirement from '../requirements/ShadowPokemonRequirement';
 import OrderSetting from './OrderSetting';
 import areaStatus from '../enums/AreaStatus';
-import CustomRequirement from '../requirements/CustomRequirement';
 
 export default Settings;
 

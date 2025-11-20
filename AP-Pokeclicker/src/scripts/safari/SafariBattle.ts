@@ -196,10 +196,10 @@ class SafariBattle {
                 if (bugReward > 0) {
                     App.game.wallet.gainContestTokens(bugReward);
                     Notifier.notify({
-                    title: 'Bug Catching Contest',
-                    message: `<img src="assets/images/currency/contestToken.svg" height="24px"/> You earned ${bugReward} Contest Tokens!`,
-                    type: NotificationConstants.NotificationOption.primary,
-                    timeout: 5000,
+                        title: 'Bug Catching Contest',
+                        message: `<img src="assets/images/currency/contestToken.svg" height="24px"/> You earned ${bugReward} Contest Tokens!`,
+                        type: NotificationConstants.NotificationOption.primary,
+                        timeout: 5000,
                     });
                 }
                 break;

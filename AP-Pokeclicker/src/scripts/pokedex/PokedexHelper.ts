@@ -195,7 +195,7 @@ class PokedexHelper {
             // Only received
             if (caughtStatus == 'received' && !alreadyReceived) {
                 return false;
-            }  
+            }
 
             //Only unreceived
             if (caughtStatus == 'unreceived' && alreadyReceived) {
