@@ -120,7 +120,7 @@
         "mystery_egg": {
             "type": "Toggle",
             "description": [
-                "Are Mystery Eggs considdered in logic for obtaining pokemon?"
+                "Are Mystery Eggs considered in logic for obtaining pokemon?"
             ],
             "default": false,
             "group": "Game Options"
