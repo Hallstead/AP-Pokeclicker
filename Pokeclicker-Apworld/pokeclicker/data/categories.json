@@ -1,7 +1,7 @@
 {
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.categories.schema.json",
     "scripts": {
-        "yaml_option": ["include_scripts_as_items"]
+        
     },
     "Not Progressive Auto Clicker": {
         "yaml_option": ["!progressive_autoclicker"]
