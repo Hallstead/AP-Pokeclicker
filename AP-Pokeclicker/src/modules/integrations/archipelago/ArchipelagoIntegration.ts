@@ -226,6 +226,22 @@ class ArchipelagoIntegrationModule {
                 if (typeof options.dexsanity !== 'undefined') {
                     w.APFlags.set('dexsanity', !!options.dexsanity);
                 }
+                if (typeof options.use_scripts !== 'undefined' && typeof options.include_scripts_as_items !== 'undefined') {
+                    if (options.use_scripts && !options.include_scripts_as_items) {
+                        w.APFlags.set('autoBattleItems', !!options.use_scripts);
+                        w.APFlags.set('catchFilterFantasia', !!options.use_scripts);
+                        w.APFlags.set('enhancedAutoClicker', !!options.use_scripts);
+                        w.APFlags.set('enhancedAutoHatchery', !!options.use_scripts);
+                        w.APFlags.set('enhancedAutoMine', !!options.use_scripts);
+                        w.APFlags.set('simpleAutoFarmer', !!options.use_scripts);
+                        w.APFlags.set('autoQuestCompleter', !!options.use_scripts);
+                        w.APFlags.set('autoSafariZone', !!options.use_scripts);
+                        w.APFlags.set('catchSpeedAdjuster', !!options.use_scripts);
+                        w.APFlags.set('infiniteSeasonalEvents', !!options.use_scripts);
+                        w.APFlags.set('oakItemsUnlimited', !!options.use_scripts);
+                        w.APFlags.set('simpleWeatherChanger', !!options.use_scripts);
+                    }
+                }
             }
 
             // this.client.socket.send({ cmd: 'Sync' });

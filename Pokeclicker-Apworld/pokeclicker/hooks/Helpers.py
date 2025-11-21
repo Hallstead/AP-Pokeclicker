@@ -5,9 +5,17 @@ if TYPE_CHECKING:
     from ..Items import ManualItem
     from ..Locations import ManualLocation
 
+from .. import Helpers
+
 # Use this if you want to override the default behavior of is_option_enabled
 # Return True to enable the category, False to disable it, or None to use the default behavior
 def before_is_category_enabled(multiworld: MultiWorld, player: int, category_name: str) -> Optional[bool]:
+    if category_name == "Scripts":
+        return Helpers.is_option_enabled(multiworld, player, "use_scripts") and Helpers.is_option_enabled(multiworld, player, "include_scripts_as_items")
+    
+    if category_name == "Shop":
+        return False
+    
     return None
 
 # Use this if you want to override the default behavior of is_option_enabled
