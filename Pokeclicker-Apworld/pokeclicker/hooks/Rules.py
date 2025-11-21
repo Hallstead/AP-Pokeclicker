@@ -214,6 +214,7 @@ def fuchsia_city(world: World, state: CollectionState, player: int):
 def safari_zone(world: World, state: CollectionState, player: int):
     """Checks if the player can access the Safari Zone."""
     has_safari_ticket = state.count("Safari Ticket", player) > 0
+    # completed_tutorial = state.count("Tutorial Complete", player) > 0
     return has_safari_ticket
 
 def kanto_route_19(world: World, state: CollectionState, player: int):
@@ -250,7 +251,7 @@ def pokemon_mansion(world: World, state: CollectionState, player: int, complete_
 def kanto_route_23(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 23."""
     has_earth_badge = state.count("Earth Badge", player) > 0
-    return kanto_route_22(world, state, player) and has_earth_badge
+    return kanto_route_22(world, state, player) and has_earth_badge and attack_needed(world, state, player, 426771)
 
 def victory_road(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access Victory Road."""
