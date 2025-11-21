@@ -97,18 +97,18 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     #
     # Because multiple copies of an item can exist, you need to add an item name
     # to the list multiple times if you want to remove multiple copies of it.
-
-    for key, _ in enumerate(location_table):
-        if "Pokemon" in location_table[key]["category"]:
-            pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == location_table[key]["name"])
-            # pokemon_location.id = None
-            # print(pokemon_location.name, "-", pokemon_location.id)
-            # print(list(pokemon_location.keys()))
-            # pokemon_location.id = None
-            pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name)
-            pokemon_item.id = None
-            item_pool.remove(pokemon_item)
-            pokemon_location.place_locked_item(pokemon_item)
+    if not world.options.dexsanity.value:
+        for key, _ in enumerate(location_table):
+            if "Pokemon" in location_table[key]["category"]:
+                pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == location_table[key]["name"])
+                # pokemon_location.id = None
+                # print(pokemon_location.name, "-", pokemon_location.id)
+                # print(list(pokemon_location.keys()))
+                # pokemon_location.id = None
+                pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name)
+                pokemon_item.id = None
+                item_pool.remove(pokemon_item)
+                pokemon_location.place_locked_item(pokemon_item)
 
     for itemName in itemNamesToRemove:
         item = next(i for i in item_pool if i.name == itemName)
