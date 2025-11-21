@@ -214,7 +214,8 @@ def fuchsia_city(world: World, state: CollectionState, player: int):
 def safari_zone(world: World, state: CollectionState, player: int):
     """Checks if the player can access the Safari Zone."""
     has_safari_ticket = state.count("Safari Ticket", player) > 0
-    return has_safari_ticket
+    completed_tutorial = state.count("Tutorial Complete", player) > 0
+    return has_safari_ticket and completed_tutorial
 
 def kanto_route_19(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 19."""
