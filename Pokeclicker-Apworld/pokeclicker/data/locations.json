@@ -243,7 +243,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{cinnabar_island()} and {pokemon_mansion()} and {attack_needed(175290)}"
+            "requires": "{pokemon_mansion()} and {attack_needed(175290)}"
         },
         {
             "name": "Giovanni",
@@ -689,7 +689,7 @@
         {
             "name": "017 Pidgeotto",
             "id": 2017,
-            "region": "Route 1 Pokemon",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
@@ -698,7 +698,7 @@
         {
             "name": "018 Pidgeot",
             "id": 2018,
-            "region": "Route 1 Pokemon",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
@@ -716,7 +716,7 @@
         {
             "name": "020 Raticate",
             "id": 2020,
-            "region": "Route 1 Pokemon",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],

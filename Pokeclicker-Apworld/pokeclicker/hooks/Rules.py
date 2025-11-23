@@ -295,16 +295,14 @@ def mount_ember(world: World, state: CollectionState, player: int, complete_dung
 
 def two_island(world: World, state: CollectionState, player: int):
     """Checks if the player can access Sevii Two Island."""
-    return cinnabar_island(world, state, player) and one_island(world, state, player)
+    return started_bills_errand(world, state, player) and one_island(world, state, player)
 
 def cape_brink(world: World, state: CollectionState, player: int):
-    """Checks if the player can access Cape Brink on Sevii Two Island."""
-    has_volcano_badge = state.count("Volcano Badge", player) > 0
-    return cinnabar_island(world, state, player) and has_volcano_badge
+    return two_island(world, state, player)
 
 def three_island(world: World, state: CollectionState, player: int):
     """Checks if the player can access Sevii Three Island."""
-    return two_island(world, state, player)
+    return started_bills_errand(world, state, player) and two_island(world, state, player)
 
 def bond_bridge(world: World, state: CollectionState, player: int):
     """Checks if the player can access Bond Bridge on Sevii Three Island."""
@@ -386,9 +384,13 @@ def can_get_linking_cord(world: World, state: CollectionState, player: int) -> b
 
 
 # Questlines
+def started_bills_errand(world: World, state: CollectionState, player: int):
+    """Checks if the player has started Bill's Errand questline."""
+    return pokemon_mansion(world, state, player) and {attack_needed(world, state, player, 175290)} # Beat Blaine
+
 def completed_bills_errand(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Errand questline."""
-    return cinnabar_island(world, state, player) and pokemon_mansion(world, state, player) and one_island(world, state, player) and two_island(world, state, player) and three_island(world, state, player)
+    return started_bills_errand(world, state, player) and one_island(world, state, player) and two_island(world, state, player) and three_island(world, state, player)
 
 def completed_bills_grandpas_treasure_hunt(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Grandpa's Treasure Hunt questline."""
