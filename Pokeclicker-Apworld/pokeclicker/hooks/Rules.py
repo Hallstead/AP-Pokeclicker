@@ -306,7 +306,7 @@ def three_island(world: World, state: CollectionState, player: int):
 
 def bond_bridge(world: World, state: CollectionState, player: int):
     """Checks if the player can access Bond Bridge on Sevii Three Island."""
-    return three_island(world, state, player)
+    return three_island(world, state, player) and {world, state, player, attack_needed(443328)}
 
 def berry_forest(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access Berry Forest on Sevii Three Island."""
