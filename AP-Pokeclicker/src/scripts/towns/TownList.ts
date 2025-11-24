@@ -243,7 +243,7 @@ const Hallstead1 = new GiftNPC('Hallstead', [
     App.game.party.gainPokemonById(54.01);
 }, 'assets/images/pokemon/54.01.png', {
     image: 'assets/images/npcs/Black Mage.png',
-    requirement: new MultiRequirement([new ClearGymRequirement(10000, GameConstants.getGymIndex('Hallstead\'s Yacht')), new ObtainedPokemonRequirement('Psyduck (Dark Mage)', true)]),
+    requirement: new MultiRequirement([new ClearGymRequirement(1, GameConstants.getGymIndex('Hallstead\'s Yacht')), new ObtainedPokemonRequirement('Psyduck (Dark Mage)', true)]),
 });
 
 const PalletProfOak = new ProfNPC('Prof. Oak',
