@@ -41,7 +41,7 @@ export default class Profile implements Saveable {
     });
 
     constructor(
-        name = 'Trainer',
+        name = (window as any).APFlags.get('name') || 'Trainer',
         trainer = Rand.floor(Profile.MAX_TRAINER),
         pokemon = 0,
         background = Rand.floor(Profile.MAX_BACKGROUND),

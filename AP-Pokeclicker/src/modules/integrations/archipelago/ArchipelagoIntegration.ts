@@ -9,6 +9,7 @@ import {
 } from 'archipelago.js';
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
+import Rand from '../../utilities/Rand';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -18,8 +19,12 @@ class ArchipelagoIntegrationModule {
     private client: any = null;
     public connected = false;
     public lastError: any = null;
+    // Track when App.game is initialized
+    private gameReady = false;
     // Queue outbound location checks until we're connected
     private pendingLocationChecks: number[] = [];
+    // Queue inbound item packets until the game is ready
+    private pendingItemPackets: { items: APItem[]; startingIndex: number }[] = [];
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string } | null = null;
@@ -179,9 +184,9 @@ class ArchipelagoIntegrationModule {
                     this.pendingLocationChecks.push(locationNumber);
                     return;
                 }
-                if (!this.connected) {
-                    // Don't throw during UI computations; queue to send after connection
-                    console.warn('[ArchipelagoModule] Not connected; queuing LocationCheck', locationNumber);
+                if (!this.connected || !this.gameReady) {
+                    // Wait for both connection and game init
+                    console.warn('[ArchipelagoModule] Not ready (connection/game); queuing LocationCheck', locationNumber);
                     this.pendingLocationChecks.push(locationNumber);
                     return;
                 }
@@ -202,10 +207,31 @@ class ArchipelagoIntegrationModule {
             this.client.updateStatus(clientStatuses.goal);
         };
 
+        w.setItem = (key: string, value: string) => {
+            this.client.storage.prepare(key, value).commit();
+        };
+
+        w.getItem = async (key: string): Promise<string | null> => {
+            const data = await this.client.storage.fetch(key);
+            // console.log(data);
+            return data || null;
+        };
+
         // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
         this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
             // console.log('Connected to server: ', player);
             this.connected = true;
+            
+            //set save key
+            Save.key = (await w.getItem(player + 'save key', true)) || Rand.string(6);
+            await w.setItem(player + 'save key', Save.key);
+            // console.log('Using save key: ', Save.key);
+
+
+
+
+            //w.getItem(`save${Save.key}`).then(async (saveData: string | null) => {Save.key = 
+
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
                 const slotNumber: number = parseInt(key);
@@ -222,6 +248,7 @@ class ArchipelagoIntegrationModule {
             if (options) {
                 // console.log('Game options: ', options);
                 w.APFlags.set('options', options);
+                w.APFlags.set('name', player.name);
                 // Mirror explicit boolean for easy access
                 if (typeof options.dexsanity !== 'undefined') {
                     w.APFlags.set('dexsanity', !!options.dexsanity);
@@ -244,22 +271,28 @@ class ArchipelagoIntegrationModule {
                 }
             }
 
-            // this.client.socket.send({ cmd: 'Sync' });
-            // Flush any queued location checks now that we're connected
-            try {
-                if (this.pendingLocationChecks.length) {
-                    const batch = [...this.pendingLocationChecks];
-                    this.pendingLocationChecks.length = 0;
-                    this.client.socket.send({ cmd: 'LocationChecks', locations: batch });
+            // Only flush queued location checks if game is ready; otherwise they will be flushed later.
+            if (this.gameReady) {
+                try {
+                    if (this.pendingLocationChecks.length) {
+                        const batch = [...this.pendingLocationChecks];
+                        this.pendingLocationChecks.length = 0;
+                        this.client.socket.send({ cmd: 'LocationChecks', locations: batch });
+                    }
+                } catch (e) {
+                    this.lastError = e;
+                    console.error('Failed to flush queued LocationChecks:', e);
                 }
-            } catch (e) {
-                this.lastError = e;
-                console.error('Failed to flush queued LocationChecks:', e);
             }
         });
 
         // add item handler
         this.client.items.on('itemsReceived', async (items: APItem[], startingIndex: number) => {
+            // Defer processing until game is ready
+            if (!this.gameReady) {
+                this.pendingItemPackets.push({ items, startingIndex });
+                return;
+            }
             // Set APFlags for each script item
             const setFlag = (key: string, value: any) => {
                 if (w.APFlags?.set) {
@@ -459,9 +492,7 @@ class ArchipelagoIntegrationModule {
             }
         });
 
-        // Ensure the game is initialized before logging in so that early item events
-        // don't try to access App.game while undefined.
-        await this.waitForGameReady(15000, 100);
+        // Connect immediately; we now gate item/check handling on game readiness.
         await this.client.login(
             serverUrl.startsWith('ws') ?
                 `${serverUrl}` :
@@ -480,6 +511,8 @@ class ArchipelagoIntegrationModule {
             this.lastError = error;
             this.connected = false;
         });
+        // Start async wait for App.game; when ready flush queued items & checks.
+        this.ensureGameReady().catch(() => { /* ignore */ });
     }
 
     // Public wrapper that prefers the archipelago.js login(host:port, player, game)
@@ -507,6 +540,66 @@ class ArchipelagoIntegrationModule {
             this.connected = false;
         }
     }
+
+    // Wait for App.game, mark ready, then flush queued packets.
+    private async ensureGameReady(timeoutMs = 15000) {
+        if (this.gameReady) return;
+        const ready = await this.waitForGameReady(timeoutMs, 100);
+        if (!ready) {
+            try { console.warn('[ArchipelagoModule] Proceeding without confirmed App.game readiness after timeout'); } catch (_) { }
+        }
+        this.gameReady = true; // Treat timeout as ready to avoid indefinite queue
+        this.flushQueuedItems();
+        this.flushQueuedLocationChecks();
+    }
+
+    private flushQueuedItems() {
+        if (!this.gameReady || !this.pendingItemPackets.length) return;
+        const packets = [...this.pendingItemPackets];
+        this.pendingItemPackets.length = 0;
+        for (const pkt of packets) {
+            try {
+                // Re-dispatch through emitter if available (avoids duplicating logic)
+                if (this.client?.items?.emit) {
+                    this.client.items.emit('itemsReceived', pkt.items, pkt.startingIndex);
+                } else {
+                    // If emit not available, minimal fallback: only run reset logic when startingIndex === 0
+                    if (pkt.startingIndex === 0 && (window as any).APFlags?.set) {
+                        const set = (window as any).APFlags.set;
+                        set('autoBattleItems', false);
+                        set('catchFilterFantasia', false);
+                        set('enhancedAutoClicker', false);
+                        set('enhancedAutoClickerProgressive', 0);
+                        set('enhancedAutoHatchery', false);
+                        set('enhancedAutoMine', false);
+                        set('simpleAutoFarmer', false);
+                        set('autoQuestCompleter', false);
+                        set('autoSafariZone', false);
+                        set('autoSafariZoneProgressive', 0);
+                        set('catchSpeedAdjuster', false);
+                        set('infiniteSeasonalEvents', false);
+                        set('oakItemsUnlimited', false);
+                        set('simpleWeatherChanger', false);
+                    }
+                }
+            } catch (e) {
+                this.lastError = e;
+                try { console.error('[ArchipelagoModule] Failed flushing queued item packet:', e); } catch (_) { }
+            }
+        }
+    }
+
+    private flushQueuedLocationChecks() {
+        if (!this.gameReady || !this.connected || !this.pendingLocationChecks.length) return;
+        try {
+            const batch = [...this.pendingLocationChecks];
+            this.pendingLocationChecks.length = 0;
+            this.client.socket.send({ cmd: 'LocationChecks', locations: batch });
+        } catch (e) {
+            this.lastError = e;
+            try { console.error('Failed to flush queued LocationChecks after game ready:', e); } catch (_) { }
+        }
+    }
 }
 
 const instance = new ArchipelagoIntegrationModule();
@@ -531,9 +624,9 @@ if (typeof window !== 'undefined') {
         try {
             if (!name) {
                 name = (window as any).App?.game?.player?.name || 'Player';
-                if (!name || name === 'Player') name = 'JH';
+                if (!name) name = 'Player';
             }
-        } catch (_) { name = name || 'JH'; }
+        } catch (_) { name = name || 'Player'; }
 
         try {
             Notifier.notify({
