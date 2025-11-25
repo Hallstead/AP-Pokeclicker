@@ -8,9 +8,13 @@ class Save {
     static key = '';
 
     public static store(player: Player) {
+        const w = (window as any);
         localStorage.setItem(`player${Save.key}`, JSON.stringify(player));
+        //w.setItem(`player${Save.key}`, JSON.stringify(player));
         localStorage.setItem(`save${Save.key}`, JSON.stringify(this.getSaveObject()));
+        //w.setItem(`save${Save.key}`, JSON.stringify(this.getSaveObject()));
         localStorage.setItem(`settings${Save.key}`, JSON.stringify(Settings.toJSON()));
+        //w.setItem(`settings${Save.key}`, JSON.stringify(Settings.toJSON()));
 
         this.counter = 0;
         //console.log('%cGame saved', 'color:#3498db;font-weight:900;');
@@ -28,10 +32,14 @@ class Save {
     }
 
     public static load(): Player {
+        const w = (window as any);
         const saved = localStorage.getItem(`player${Save.key}`);
+        //const saved = w.getItem(`player${Save.key}`);
 
         // Load our settings, or the saved default settings, or no settings
         const settings = localStorage.getItem(`settings${Save.key}`) || localStorage.getItem('settings') || '{}';
+        //const settings = w.getItem(`settings${Save.key}`) || w.getItem('settings') || '{}';
+
         Settings.fromJSON(JSON.parse(settings));
 
         // Sort modules now, save settings, load settings
