@@ -549,7 +549,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({can_get_grass_egg()} or {can_get_mystery_egg()} or (|001 Bulbasaur| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{starter()} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|001 Bulbasaur| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "002 Ivysaur",
@@ -576,7 +576,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({can_get_fire_egg()} or {can_get_mystery_egg()} or (|004 Charmander| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{starter()} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|004 Charmander| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "005 Charmeleon",
@@ -603,7 +603,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({can_get_water_egg()} or {can_get_mystery_egg()} or (|007 Squirtle| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_starter()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|007 Squirtle| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
             "name": "008 Wartortle",
@@ -1513,7 +1513,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()} or (|108 Lickitung| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or (|108 Lickitung| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "109 Koffing",
@@ -1639,7 +1639,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()} or (|122 Mr. Mime| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or (|122 Mr. Mime| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "123 Scyther",
@@ -1657,7 +1657,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()} or (|124 Jynx| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or (|124 Jynx| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "125 Electabuzz",
@@ -1738,7 +1738,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()} or {completed_bills_grandpas_treasure_hunt()} or (|133 Eevee| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or (|133 Eevee| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "134 Vaporeon",
@@ -1774,7 +1774,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "{celadon_city()} or (|137 Porygon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or (|137 Porygon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "138 Omanyte",

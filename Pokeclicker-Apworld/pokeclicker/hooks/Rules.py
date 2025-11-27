@@ -214,8 +214,12 @@ def fuchsia_city(world: World, state: CollectionState, player: int):
 def safari_zone(world: World, state: CollectionState, player: int):
     """Checks if the player can access the Safari Zone."""
     has_safari_ticket = state.count("Safari Ticket", player) > 0
-    # completed_tutorial = state.count("Tutorial Complete", player) > 0
-    return has_safari_ticket
+    completed_tutorial = state.count("Tutorial Complete", player) > 0
+    
+    if world.options.safari_zone_logic.value and world.options.use_scripts.value and world.options.include_scripts_as_items.value:
+        return has_safari_ticket and completed_tutorial and (state.count("Auto Safari Zone", player) > 0 or state.count("Auto Safari Zone (Progressive Fast Animations", player) > 0)
+    else:
+        return has_safari_ticket and completed_tutorial
 
 def kanto_route_19(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 19."""
@@ -349,7 +353,7 @@ def can_get_dragon_egg(world: World, state: CollectionState, player: int) -> boo
 def can_get_mystery_egg(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain a Mystery Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
-    enabled = world.options.mystery_egg.value
+    enabled = world.options.mystery_egg_in_logic.value
     return enabled and pewter_city(world, state, player) and tutorial_complete
 
 def can_get_moon_stone(world: World, state: CollectionState, player: int) -> bool:
@@ -774,3 +778,12 @@ def dexsanity_enabled(world: World, state: CollectionState, player: int):
 def dexsanity_disabled(world: World, state: CollectionState, player: int):
     """Checks if Dexsanity is disabled."""
     return not world.options.dexsanity.value
+
+def starter(world: World, state: CollectionState, player: int):
+    """Checks if the starters are in logic."""
+    return world.options.starter_logic.value
+
+def kanto_starter(world: World, state: CollectionState, player: int):
+    """Checks if the Kanto starters are in logic."""
+    # To be implemented later
+    return starter(world, state, player)

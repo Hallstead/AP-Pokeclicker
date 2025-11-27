@@ -117,13 +117,23 @@
             "default": false,
             "group": "Game Options"
         },
-        "mystery_egg": {
+        "starter_logic": {
+            "type": "Toggle",
+            "description": [
+                "Are starter Pokemon considered in logic at the beginning of the region?",
+                "With this enabled, you would be expected to reset the game to obtain all the starters."
+            ],
+            "default": false,
+            "group": "Logic Options"
+            
+        },
+        "mystery_egg_in_logic": {
             "type": "Toggle",
             "description": [
                 "Are Mystery Eggs considered in logic for obtaining pokemon?"
             ],
             "default": false,
-            "group": "Game Options"
+            "group": "Logic Options"
         },
         "clicks_per_second": {
             "type": "Range",
@@ -136,7 +146,7 @@
             "range_start": 1,
             "default": 5,
             "range_end": 20,
-            "group": "Game Options"
+            "group": "Logic Options"
         },
         "dungeon_logic": {
             "type": "Choice",
@@ -153,7 +163,16 @@
             },
             "default": 1,
             "allow_custom_value": false,
-            "group": "Game Options"
+            "group": "Logic Options"
+        },
+        "safari_zone_logic": {
+            "type": "Toggle",
+            "description": [
+                "Is the Auto Safari Zone script logically required to obtain pokemon in the Safari Zone?",
+                "This does nothing if use_scripts or include_scripts_as_items are false."
+            ],
+            "default": false,
+            "group": "Logic Options"
         }
     }
 }
