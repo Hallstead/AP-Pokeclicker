@@ -53247,6 +53247,10 @@ aria-labelledby="badgeCaseModalLabel">
                     <i>If this does not work, you can copy the contents of the save and paste it into a '.txt' file</i>
                     <button class="btn btn-primary btn-block" onclick="Save.copySaveToClipboard()">Copy to Clipboard</button>
                     <hr>
+                    
+                    <button class="btn btn-primary btn-block" onclick="Save.copySaveToAP()">Copy to AP Data Storage</button>
+                    <button class="btn btn-primary btn-block" onclick="Save.importSaveFromAP()">Import from AP Data Storage</button>
+                    <hr>
 
                     <input type="file" id="import-save" accept=".txt" style="display:none;"
                             onchange=Save.loadFromFile(this.files[0])>
