@@ -375,20 +375,21 @@ class ArchipelagoIntegrationModule {
         }
 
         // Item Categories:
-        const keyItemsLastIndex = 9;
-        const oakItemsLastIndex = keyItemsLastIndex + 10;
-        const scriptsLastIndex = oakItemsLastIndex + 14;
-        const progressivePokeballsIndex = scriptsLastIndex + 1;
-        const badgesLastIndex = progressivePokeballsIndex + 9;
-        const breedingIndex = badgesLastIndex + 1;
-        const pokemonLastIndex = breedingIndex + 151;
+        const keyItemsOffset = 1;
+        const oakItemsOffset = 101;
+        const scriptsOffset = 201;
+        const badgesOffset = 301;
+        const otherItemsOffset = 501;
+        const eventItemsOffset = 1001;
+        const pokemonOffset = 2001;
+        const pokemonLastIndex = 2151;
 
         for (let i: number = 0; i < items.length; i++) {
             let item: APItem = items[i];
             // console.log('Processing item: ', item);
             // console.log(item.id);
 
-            if (item.id >= 1 && item.id <= keyItemsLastIndex) {
+            if (item.id >= keyItemsOffset && item.id < oakItemsOffset) {
                 // Key items
                 let index = item.id - 1;
                 const keyItems = [
@@ -406,9 +407,9 @@ class ArchipelagoIntegrationModule {
                     App.game.keyItems.gainKeyItem(keyItems[index], false);
                     this.displayItemReceived(item, 'the');
                 }
-            } else if (item.id <= oakItemsLastIndex) {
+            } else if (item.id >= oakItemsOffset && item.id < scriptsOffset) {
                 // Oak items
-                let index = item.id - keyItemsLastIndex - 1;
+                let index = item.id - oakItemsOffset;
                 const oakItems = [
                     OakItemType.Magic_Ball,
                     OakItemType.Amulet_Coin,
@@ -426,26 +427,9 @@ class ArchipelagoIntegrationModule {
                     App.game.oakItems.itemList[oakItems[index]].received = true;
                     this.displayItemReceived(item, 'the');
                 }
-            } else if (item.id <= scriptsLastIndex) {
+            } else if (item.id >= scriptsOffset && item.id < badgesOffset) {
                 // scripts
-                let index = item.id - oakItemsLastIndex - 1;
-                // const scripts = [
-                //     'Auto Battle Items',
-                //     'Catch Filter Fantasia',
-                //     'Enhanced Auto Clicker',
-                //     'Enhanced Auto Clicker (Progressive Clicks/Second)',
-                //     'Enhanced Auto Hatchery',
-                //     'Enhanced Auto Mine',
-                //     'Simple Auto Farmer',
-                //     'Auto Quest Completer',
-                //     'Auto Safari Zone',
-                //     'Auto Safari Zone (Progressive Fast Animations)',
-                //     'Catch Speed Adjuster',
-                //     'Infinite Seasonal Events',
-                //     'Oak Items Unlimited',
-                //     'Simple Weather Changer',
-                // ];
-
+                let index = item.id - scriptsOffset;
                 switch (index) {
                     case 0: setFlag('autoBattleItems', true); break;
                     case 1: setFlag('catchFilterFantasia', true); break;
@@ -485,13 +469,9 @@ class ArchipelagoIntegrationModule {
                 }
 
                 this.displayItemReceived(item, 'the');
-            } else if (item.id == progressivePokeballsIndex) {
-                // progressive pokeballs
-                // TODO: Establish global variable for progressive pokeball state
-                this.displayItemReceived(item, 'a');
-            } else if (item.id <= badgesLastIndex) {
+            } else if (item.id >= badgesOffset && item.id < otherItemsOffset) {
                 // Badges
-                let index = item.id - progressivePokeballsIndex - 1;
+                let index = item.id - badgesOffset;
                 const badges = [
                     BadgeEnums.Boulder,
                     BadgeEnums.Cascade,
@@ -526,18 +506,32 @@ class ArchipelagoIntegrationModule {
                     
                 }
 
-            } else if (item.id == breedingIndex) {
-                // Breeding slot
-                const currentExtraEggSlots = w.APFlags.get('extraEggSlots') + 1 || 1;
-                w.APFlags.set('extraEggSlots', currentExtraEggSlots);
-                if (currentExtraEggSlots > App.game.breeding._eggList().length - 4) {
-                    App.game.breeding.gainAdditionalEggSlot();
-                    App.game.breeding.gainEggSlot();
+            } else if (item.id >= otherItemsOffset && item.id < eventItemsOffset) {
+                // Other items
+                let index = item.id - otherItemsOffset;
+                if (index == 0) {
+                    // Progressive Pokeballs
+                    // TODO: Establish global variable for progressive pokeball state
                     this.displayItemReceived(item, 'a');
+                } else if (index == 1) {
+                    // Extra Egg Slot
+                    const currentExtraEggSlots = w.APFlags.get('extraEggSlots') + 1 || 1;
+                    w.APFlags.set('extraEggSlots', currentExtraEggSlots);
+                    if (currentExtraEggSlots > App.game.breeding._eggList().length - 4) {
+                        App.game.breeding.gainAdditionalEggSlot();
+                        App.game.breeding.gainEggSlot();
+                        this.displayItemReceived(item, 'a');
+                    }
                 }
-            } else if (item.id <= pokemonLastIndex) {
+            } else if (item.id >= eventItemsOffset && item.id < pokemonOffset) {
+                // Event items
+                Notifier.notify({
+                    message: 'You received an AP event item. This should not happen. Please report the issue on the AP Pokeclicker Github repo.',
+                    type: NotificationConstants.NotificationOption.danger,
+                });
+            } else if (item.id >= pokemonOffset && item.id <= pokemonLastIndex) {
                 // Pokemon
-                let id = item.id - breedingIndex;
+                let id = item.id - pokemonOffset + 1;
                 if (!App.game.party.alreadyReceived(id)) {
                     App.game.party.receivePokemonById(id, false, false);
                     this.displayItemReceived(item, '');
@@ -547,7 +541,6 @@ class ArchipelagoIntegrationModule {
                 player.gainItem('Protein', 1);
                 this.displayItemReceived(item, 'a');
             }
-
         }
     }
 

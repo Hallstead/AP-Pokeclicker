@@ -26,7 +26,7 @@ for key, val in enumerate(item_table):
     if "id" in item_table[key]:
         item_id = item_table[key]["id"]
         if item_id >= count:
-            count = item_idzz
+            count = item_id
         else:
             raise ValueError(f"{item_table[key]['name']} has an invalid ID. ID must be at least {count + 1}")
 
