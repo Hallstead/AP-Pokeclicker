@@ -62,14 +62,17 @@ ItemList.SmallRestore    = new EnergyRestore(EnergyRestoreSize.SmallRestore, 300
 ItemList.MediumRestore   = new EnergyRestore(EnergyRestoreSize.MediumRestore, 75000, undefined, 'Medium Restore');
 ItemList.LargeRestore    = new EnergyRestore(EnergyRestoreSize.LargeRestore, 200000, undefined, 'Large Restore');
 
-ItemList.AP_logo = new BuyKeyItem(KeyItemType.AP_logo, 100, undefined, undefined, 'AP Item');
+ItemList.AP_logo_Dungeon_ticket = new BuyKeyItem(KeyItemType.AP_logo, 100, undefined, undefined, 'AP Item', 2);
 ItemList.Dungeon_ticket = new BuyKeyItem(KeyItemType.Dungeon_ticket, 100, undefined, undefined, 'Dungeon Ticket', 2);
+ItemList.AP_logo_Explorer_kit = new BuyKeyItem(KeyItemType.AP_logo, 5000, undefined, undefined, 'AP Item', 7);
 ItemList.Explorer_kit = new BuyKeyItem(KeyItemType.Explorer_kit, 5000, undefined, undefined, 'Explorer Kit', 7);
 ItemList.Event_calendar = new BuyKeyItem(KeyItemType.Event_calendar, 100000, undefined, undefined, 'Event Calendar');
 
 ItemList.Squirtbottle = new BuyOakItem(OakItemType.Squirtbottle, 5000, Currency.farmPoint);
 ItemList.Sprinklotad = new BuyOakItem(OakItemType.Sprinklotad, 10000, Currency.farmPoint);
+ItemList.AP_logo_Explosive_Charge = new BuyKeyItem(KeyItemType.AP_logo, 5000, undefined, undefined, 'AP Item', 109);
 ItemList.Explosive_Charge = new BuyOakItem(OakItemType.Explosive_Charge, 5000, Currency.questPoint, 109);
+ItemList.AP_logo_Treasure_Scanner = new BuyKeyItem(KeyItemType.AP_logo, 10000, undefined, undefined, 'AP Item', 110);
 ItemList.Treasure_Scanner = new BuyOakItem(OakItemType.Treasure_Scanner, 10000, Currency.questPoint, 110);
 
 ItemList.Yellow_Flute = new FluteItem(FluteItemType.Yellow_Flute, 'Pokémon Attack', ['Grass', 'Flying', 'Electric'], 'pokemonAttack', 1.02);

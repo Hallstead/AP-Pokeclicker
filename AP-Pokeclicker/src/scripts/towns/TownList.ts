@@ -58,7 +58,7 @@ const ViridianCityShop = new Shop([
     ItemList.Pokeball,
     ItemList.xAttack,
     ItemList.xClick,
-    ItemList.Dungeon_ticket,
+    ItemList.AP_logo_Dungeon_ticket,
 ]);
 const PewterCityShop = new Shop([
     ItemList.Pokeball,
@@ -129,9 +129,9 @@ const CinnabarIslandShop = new Shop([
     ItemList.SmallRestore,
     ItemList.Fire_egg,
     ItemList.Fire_stone,
-    ItemList.Explorer_kit,
-    ItemList.Explosive_Charge,
-    ItemList.Treasure_Scanner,
+    ItemList.AP_logo_Explorer_kit,
+    ItemList.AP_logo_Explosive_Charge,
+    ItemList.AP_logo_Treasure_Scanner,
     ItemList.HatcheryHelperKris,
 ]);
 const OneIslandShop = new Shop([
