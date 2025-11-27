@@ -10,7 +10,6 @@ import {
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
 import Rand from '../../utilities/Rand';
-import { event } from 'jquery';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
