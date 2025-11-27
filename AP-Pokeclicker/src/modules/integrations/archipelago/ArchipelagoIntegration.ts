@@ -207,12 +207,12 @@ class ArchipelagoIntegrationModule {
         };
 
         w.setItem = (key: string, value: string) => {
-            this.client.storage.prepare(key, value).commit();
+            this.client.storage.prepare(key, value).replace(value).commit();
         };
 
         w.getItem = async (key: string): Promise<string | null> => {
             const data = await this.client.storage.fetch(key);
-            // console.log(data);
+            //console.log(data);
             return data || null;
         };
 
@@ -222,9 +222,9 @@ class ArchipelagoIntegrationModule {
             this.connected = true;
             
             //set save key
-            Save.key = (await w.getItem(player + 'save key', true)) || Rand.string(6);
-            await w.setItem(player + 'save key', Save.key);
-            // console.log('Using save key: ', Save.key);
+            Save.key = (await w.getItem(player.name + 'save key', true)) || Rand.string(6);
+            await w.setItem(player.name + 'save key', Save.key);
+            //console.log('Using save key: ', Save.key);
 
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
