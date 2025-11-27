@@ -121,23 +121,24 @@ class ArchipelagoIntegrationModule {
 
         type GameOptions = {
             dexsanity: number,
-            include_scripts_as_items: number,
-            progressive_auto_safari_zone: number,
-            progressive_autoclicker: number,
             use_scripts: number,
+            include_scripts_as_items: number,
+            progressive_autoclicker: number,
+            progressive_auto_safari_zone: number,
         };
         let options: GameOptions = {
             dexsanity: 0,
-            include_scripts_as_items: 0,
-            progressive_auto_safari_zone: 0,
-            progressive_autoclicker: 0,
             use_scripts: 0,
+            include_scripts_as_items: 0,
+            progressive_autoclicker: 0,
+            progressive_auto_safari_zone: 0,
         };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
         const w: any = window as any;
         if (!w.APFlags) {
             w.APFlags = Object.assign(Object.create(null), {
+                gameReady: false,
                 autoBattleItems: false,
                 catchFilterFantasia: false,
                 enhancedAutoClicker: false,
@@ -154,10 +155,12 @@ class ArchipelagoIntegrationModule {
                 omegaProteinGains: false,
                 overnightBerryGrowth: false,
                 simpleWeatherChanger: false,
+                progressivePokeballs: 0,
+                progressiveEliteBadges: 0,
+                extraEggSlots: 0,
                 starter1: 30,
                 starter2: 60,
                 starter3: 42,
-                gameReady: false,
             });
         }
         if (typeof w.APFlags.set !== 'function') {
@@ -498,6 +501,8 @@ class ArchipelagoIntegrationModule {
                     BadgeEnums.Soul,
                     BadgeEnums.Volcano,
                     BadgeEnums.Earth,
+                ];
+                const eliteBadges = [
                     BadgeEnums.Elite_Lorelei,
                     BadgeEnums.Elite_Bruno,
                     BadgeEnums.Elite_Agatha,
@@ -511,19 +516,25 @@ class ArchipelagoIntegrationModule {
                         App.game.badgeCase.gainBadge(badges[index]);
                     }
                 } else {
-                    for (let j = index; j < badges.length; j++) {
-                        if (!App.game.badgeCase.hasBadge(badges[j])) {
-                            App.game.badgeCase.gainBadge(badges[j]);
-                            this.displayItemReceived(item, 'a');
-                            break;
-                        }
+                    const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
+                    if (!App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
+                        App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
+                        this.displayItemReceived(item, 'a');
+                        break;
                     }
+                    w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
+                    
                 }
 
             } else if (item.id == breedingIndex) {
-                App.game.breeding.gainAdditionalEggSlot();
-                App.game.breeding.gainEggSlot();
-                this.displayItemReceived(item, 'a');
+                // Breeding slot
+                const currentExtraEggSlots = w.APFlags.get('extraEggSlots') + 1 || 1;
+                w.APFlags.set('extraEggSlots', currentExtraEggSlots);
+                if (currentExtraEggSlots > App.game.breeding._eggList().length - 4) {
+                    App.game.breeding.gainAdditionalEggSlot();
+                    App.game.breeding.gainEggSlot();
+                    this.displayItemReceived(item, 'a');
+                }
             } else if (item.id <= pokemonLastIndex) {
                 // Pokemon
                 let id = item.id - breedingIndex;
