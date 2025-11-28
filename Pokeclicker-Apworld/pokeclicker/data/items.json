@@ -254,7 +254,7 @@
                 "Scripts",
                 "Not Progressive Safari Zone"
             ],
-            "useful": true
+            "progression": true
         },
         {
             "id": 210,
@@ -264,7 +264,7 @@
                 "Scripts",
                 "Progressive Safari Zone"
             ],
-            "useful": true
+            "progression": true
         },
         {
             "id": 211,
