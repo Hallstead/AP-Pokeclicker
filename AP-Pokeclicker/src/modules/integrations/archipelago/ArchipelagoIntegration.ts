@@ -357,22 +357,22 @@ class ArchipelagoIntegrationModule {
 
         // console.log('Received items: ', items);
         // if this is a sync packet reset all our item addresses without changing anything else
-        if (startingIndex === 0) {
-            setFlag('autoBattleItems', false);
-            setFlag('catchFilterFantasia', false);
-            setFlag('enhancedAutoClicker', false);
-            setFlag('enhancedAutoClickerProgressive', 0);
-            setFlag('enhancedAutoHatchery', false);
-            setFlag('enhancedAutoMine', false);
-            setFlag('simpleAutoFarmer', false);
-            setFlag('autoQuestCompleter', false);
-            setFlag('autoSafariZone', false);
-            setFlag('autoSafariZoneProgressive', 0);
-            setFlag('catchSpeedAdjuster', false);
-            setFlag('infiniteSeasonalEvents', false);
-            setFlag('oakItemsUnlimited', false);
-            setFlag('simpleWeatherChanger', false);
-        }
+        if (startingIndex === 0) {}
+        //     setFlag('autoBattleItems', false);
+        //     setFlag('catchFilterFantasia', false);
+        //     setFlag('enhancedAutoClicker', false);
+        //     setFlag('enhancedAutoClickerProgressive', 0);
+        //     setFlag('enhancedAutoHatchery', false);
+        //     setFlag('enhancedAutoMine', false);
+        //     setFlag('simpleAutoFarmer', false);
+        //     setFlag('autoQuestCompleter', false);
+        //     setFlag('autoSafariZone', false);
+        //     setFlag('autoSafariZoneProgressive', 0);
+        //     setFlag('catchSpeedAdjuster', false);
+        //     setFlag('infiniteSeasonalEvents', false);
+        //     setFlag('oakItemsUnlimited', false);
+        //     setFlag('simpleWeatherChanger', false);
+        // }
 
         // Item Categories:
         const keyItemsOffset = 1;

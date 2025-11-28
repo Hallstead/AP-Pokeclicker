@@ -217,7 +217,7 @@ def safari_zone(world: World, state: CollectionState, player: int):
     completed_tutorial = state.count("Tutorial Complete", player) > 0
     
     if world.options.safari_zone_logic.value and world.options.use_scripts.value and world.options.include_scripts_as_items.value:
-        return has_safari_ticket and completed_tutorial and (state.count("Auto Safari Zone", player) > 0 or state.count("Auto Safari Zone (Progressive Fast Animations", player) > 0)
+        return has_safari_ticket and completed_tutorial and (state.count("Auto Safari Zone", player) > 0 or state.count("Auto Safari Zone (Progressive Fast Animations)", player) > 0)
     else:
         return has_safari_ticket and completed_tutorial
 
