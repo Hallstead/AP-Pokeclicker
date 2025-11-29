@@ -30,7 +30,8 @@ class Gym extends TownContent implements TmpGymType {
     buttonText: string;
     public tooltip = 'Battle Gym Leaders to earn badges';
     public cssClass() {
-        if (App.game.badgeCase.hasBadge(this.badgeReward)) {
+        //if (App.game.badgeCase.hasBadge(this.badgeReward)) {
+        if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(this.town)]() > 0) {
             return 'btn btn-success';
         }
         return 'btn btn-secondary';
