@@ -500,7 +500,6 @@ class ArchipelagoIntegrationModule {
                     if (!App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
                         App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
                         this.displayItemReceived(item, 'a');
-                        break;
                     }
                     w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
                     
