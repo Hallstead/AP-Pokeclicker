@@ -62,7 +62,8 @@ class Gym extends TownContent implements TmpGymType {
         if (!this.isUnlocked()) {
             return [areaStatus.locked];
         }
-        if (!App.game.badgeCase.hasBadge(this.badgeReward)) {
+        //if (!App.game.badgeCase.hasBadge(this.badgeReward)) {
+        if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(this.town)]() == 0) {
             states.push(areaStatus.incomplete);
         }
         if (this.isThereQuestAtLocation()) {
