@@ -125,6 +125,8 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: number,
             progressive_autoclicker: number,
             progressive_auto_safari_zone: number,
+            roaming_encounter_multiplier: number,
+            roaming_encounter_multiplier_route: boolean,
         };
         let options: GameOptions = {
             dexsanity: 0,
@@ -132,6 +134,8 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: 0,
             progressive_autoclicker: 0,
             progressive_auto_safari_zone: 0,
+            roaming_encounter_multiplier: 1,
+            roaming_encounter_multiplier_route: true,
         };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
@@ -266,6 +270,14 @@ class ArchipelagoIntegrationModule {
                         w.APFlags.set('simpleWeatherChanger', !!options.use_scripts);
                     }
                 }
+                if (typeof options.roaming_encounter_multiplier !== 'undefined') {
+                    w.APFlags.set('roaming_encounter_multiplier', options.roaming_encounter_multiplier);
+                }
+                if (typeof options.roaming_encounter_multiplier_route !== 'undefined') {
+                    w.APFlags.set('roaming_encounter_multiplier_route', options.roaming_encounter_multiplier_route);
+                }
+                w.APFlags.set('kanto_roamer_rate', 1);
+                //if (typeof options.)
             }
 
             // Only flush queued location checks if game is ready; otherwise they will be flushed later.
@@ -497,7 +509,7 @@ class ArchipelagoIntegrationModule {
                     }
                 } else {
                     const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
-                    if (!App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
+                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
                         App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
                         this.displayItemReceived(item, 'a');
                     }
@@ -561,38 +573,6 @@ class ArchipelagoIntegrationModule {
             this.processItemPacket(packet.items, packet.startingIndex);
         }
         this.pendingItemPackets.length = 0;
-        // const packets = [...this.pendingItemPackets];
-        // this.pendingItemPackets.length = 0;
-        // for (const pkt of packets) {
-        //     try {
-        //         // Re-dispatch through emitter if available (avoids duplicating logic)
-        //         if (this.client?.items?.emit) {
-        //             this.client.items.emit('itemsReceived', pkt.items, pkt.startingIndex);
-        //         } else {
-        //             // If emit not available, minimal fallback: only run reset logic when startingIndex === 0
-        //             if (pkt.startingIndex === 0 && (window as any).APFlags?.set) {
-        //                 const set = (window as any).APFlags.set;
-        //                 set('autoBattleItems', false);
-        //                 set('catchFilterFantasia', false);
-        //                 set('enhancedAutoClicker', false);
-        //                 set('enhancedAutoClickerProgressive', 0);
-        //                 set('enhancedAutoHatchery', false);
-        //                 set('enhancedAutoMine', false);
-        //                 set('simpleAutoFarmer', false);
-        //                 set('autoQuestCompleter', false);
-        //                 set('autoSafariZone', false);
-        //                 set('autoSafariZoneProgressive', 0);
-        //                 set('catchSpeedAdjuster', false);
-        //                 set('infiniteSeasonalEvents', false);
-        //                 set('oakItemsUnlimited', false);
-        //                 set('simpleWeatherChanger', false);
-        //             }
-        //         }
-        //     } catch (e) {
-        //         this.lastError = e;
-        //         try { console.error('[ArchipelagoModule] Failed flushing queued item packet:', e); } catch (_) { }
-        //     }
-        // }
     }
 
     private flushQueuedLocationChecks() {

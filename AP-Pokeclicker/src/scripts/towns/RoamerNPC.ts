@@ -30,6 +30,14 @@ class RoamerNPC extends NPC {
 
         const roamersHTML = roamers.map(r => `<img class="npc-roamer-image" src="assets/images/pokemon/${r.pokemon.id}.png" />`).join('');
 
+        // only set the roamer rate flag if the region champion has been defeated
+        const regionName = GameConstants.Region[this.region];
+        const gymsList = `${GameConstants.camelCaseToString(regionName)}Gyms`;
+        const champion = GameConstants[gymsList].findIndex(item => item.includes('Champion'));
+        if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(GameConstants[gymsList][champion])]() > 0) {
+            (window as any).APFlags.set(`${regionName}_roamer_rate`, (window as any).APFlags.get('roaming_encounter_multiplier') || 1);
+        }
+
         return super.dialogHTML.replace(/{ROUTE_NAME}/g, route()?.routeName) + roamersHTML;
     }
 }

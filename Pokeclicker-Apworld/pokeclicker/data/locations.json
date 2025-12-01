@@ -2,7 +2,7 @@
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.locations.schema.json",
     "data": [
         {
-            "name": "Complete the Tutorial",
+            "name": "Complete the Tutorial (Event)",
             "id": -1,
             "category": [
                 "Key Items"
@@ -298,6 +298,16 @@
                 "Gyms"
             ],
             "requires": "{indigo_plateau()} and |Progressive Elite Badge:4| and {attack_needed(359860)}"
+        },
+        {
+            "name": "Beat Champion Blue (Event)",
+            "id": -1,
+            "region": "Indigo Plateau",
+            "category": [
+                "Events"
+            ],
+            "requires": "{indigo_plateau()} and |Progressive Elite Badge:4| and {attack_needed(359860)}",
+            "place_item": ["Beat Champion Blue"]
         },
         {
             "name": "Viridian Forest",
@@ -1896,11 +1906,11 @@
         {
             "name": "151 Mew",
             "id": 2151,
-            "region": "Kanto Pokemon",
+            "region": "Kanto Champion",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{any_kanto_route()} or (|151 Mew| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({fuchsia_city()} and |Beat Champion Blue|) or (|151 Mew| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "Travel to Johto",

@@ -1378,7 +1378,17 @@ TownList['Victory Road'] = new DungeonTown(
     'Victory Road',
     GameConstants.Region.kanto,
     GameConstants.KantoSubRegions.Kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 23)]
+    [
+        new RouteKillRequirement(10, GameConstants.Region.kanto, 23),
+        new GymBadgeRequirement(BadgeEnums.Boulder),
+        new GymBadgeRequirement(BadgeEnums.Cascade),
+        new GymBadgeRequirement(BadgeEnums.Thunder),
+        new GymBadgeRequirement(BadgeEnums.Rainbow),
+        new GymBadgeRequirement(BadgeEnums.Soul),
+        new GymBadgeRequirement(BadgeEnums.Marsh),
+        new GymBadgeRequirement(BadgeEnums.Volcano),
+        new GymBadgeRequirement(BadgeEnums.Earth),
+    ]
 );
 TownList['Cerulean Cave'] = new DungeonTown(
     'Cerulean Cave',
