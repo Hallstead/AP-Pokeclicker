@@ -233,6 +233,12 @@ class ArchipelagoIntegrationModule {
             await w.setItem(player.name + 'save key', Save.key);
             //console.log('Using save key: ', Save.key);
 
+            // Start the game if not already started
+            if (!App.game) {
+                document.querySelector('#saveSelector').remove();
+                App.start();
+            }
+
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
                 const slotNumber: number = parseInt(key);
