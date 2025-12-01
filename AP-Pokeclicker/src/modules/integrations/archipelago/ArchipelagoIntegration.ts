@@ -295,6 +295,15 @@ class ArchipelagoIntegrationModule {
             }
         });
 
+        this.client.messages.on('disconnected', async () => {
+            this.connected = false;
+            Notifier.notify({
+                message: 'Archipelago: disconnected from server.',
+                type: NotificationConstants.NotificationOption.warning,
+            });
+            (window as any).apLoginFromSaveSelector();
+        });
+
         // add item handler
         this.client.items.on('itemsReceived', async (items: APItem[], startingIndex: number) => {
             // Defer processing until game is ready
