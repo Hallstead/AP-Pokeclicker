@@ -6,10 +6,12 @@ import {
     // BouncedPacket, JSONRecord, itemsHandlingFlags,LocationInfoPacket, MessageNode,
     Client, Item as APItem, clientStatuses,
     NetworkSlot, Player as APPlayer,
+    Item,
 } from 'archipelago.js';
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
 import Rand from '../../utilities/Rand';
+import BuyKeyItem from '../../items/buyKeyItem';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -222,6 +224,19 @@ class ArchipelagoIntegrationModule {
             //console.log(data);
             return data || null;
         };
+
+        w.scout = (locationID: number) => {
+            return this.client.scout([locationID], 0).then((data: any) => data[0]);
+        };
+
+
+        w.scoutShopItem = (item: Item): Promise<string | undefined> => {
+            if (item instanceof BuyKeyItem && item.locationId !== null) {
+                return w.scout(item.locationId).then(result => `${result.sender.alias}'s ${result.name}`);
+            }
+            return Promise.resolve(undefined);
+        };
+
 
         // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
         this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
