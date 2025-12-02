@@ -490,7 +490,7 @@ const SaffronBreeder = new NPC('Breeder', [
 const LaprasGift = new PokemonGiftNPC('Silph Co. Employee', [
     'Oh! Hi! You\'re not a member of Team Rocket! You came to save us? Why thank you!',
     'I want you to have this Pokémon for saving us.',
-], 'Lapras', 'assets/images/pokemon/131.png', { saveKey: 'laprasgift', image: 'assets/images/npcs/Office Worker (male).png', requirement: new MultiRequirement([new TemporaryBattleRequirement('Blue 5'), new ObtainedPokemonRequirement('Lapras', true)]) });
+], 'Lapras', 'assets/images/pokemon/131.png', { saveKey: 'laprasgift', image: 'assets/images/npcs/Office Worker (male).png', requirement: new MultiRequirement([new TemporaryBattleRequirement('Blue 5'), new ObtainedPokemonRequirement('Lapras', false)]) });
 
 const FuchsiaKantoRoamerNPC = new RoamerNPC('Youngster Wendy', [
     'There\'s been some recent sightings of roaming Pokémon on {ROUTE_NAME}!',
@@ -1378,7 +1378,17 @@ TownList['Victory Road'] = new DungeonTown(
     'Victory Road',
     GameConstants.Region.kanto,
     GameConstants.KantoSubRegions.Kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 23)]
+    [
+        new RouteKillRequirement(10, GameConstants.Region.kanto, 23),
+        new GymBadgeRequirement(BadgeEnums.Boulder),
+        new GymBadgeRequirement(BadgeEnums.Cascade),
+        new GymBadgeRequirement(BadgeEnums.Thunder),
+        new GymBadgeRequirement(BadgeEnums.Rainbow),
+        new GymBadgeRequirement(BadgeEnums.Soul),
+        new GymBadgeRequirement(BadgeEnums.Marsh),
+        new GymBadgeRequirement(BadgeEnums.Volcano),
+        new GymBadgeRequirement(BadgeEnums.Earth),
+    ]
 );
 TownList['Cerulean Cave'] = new DungeonTown(
     'Cerulean Cave',

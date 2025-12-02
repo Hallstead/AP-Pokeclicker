@@ -117,6 +117,27 @@
             "default": false,
             "group": "Game Options"
         },
+        "roaming_encounter_multiplier": {
+            "type": "Range",
+            "description": [
+                "Sets the multiplier for roaming encounter rates on the boosted route.",
+                "Higher values make roaming Pokemon appear more frequently on that route."
+            ],
+            "range_start": 1,
+            "default": 2,
+            "range_end": 100,
+            "group": "Game Options"
+        },
+        "roaming_encounter_multiplier_route": {
+            "type": "Toggle",
+            "description": [
+                "Should the roaming encounter rate multiplier apply to the boosted route only?",
+                "With this enabled, only the boosted route will have increased roaming encounter rates.",
+                "With this disabled, all routes will have increased roaming encounter rates."
+            ],
+            "default": true,
+            "group": "Game Options"
+        },
         "starter_logic": {
             "type": "Toggle",
             "description": [

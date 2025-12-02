@@ -6,10 +6,12 @@ import {
     // BouncedPacket, JSONRecord, itemsHandlingFlags,LocationInfoPacket, MessageNode,
     Client, Item as APItem, clientStatuses,
     NetworkSlot, Player as APPlayer,
+    Item,
 } from 'archipelago.js';
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
 import Rand from '../../utilities/Rand';
+import BuyKeyItem from '../../items/buyKeyItem';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -125,6 +127,8 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: number,
             progressive_autoclicker: number,
             progressive_auto_safari_zone: number,
+            roaming_encounter_multiplier: number,
+            roaming_encounter_multiplier_route: boolean,
         };
         let options: GameOptions = {
             dexsanity: 0,
@@ -132,6 +136,8 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: 0,
             progressive_autoclicker: 0,
             progressive_auto_safari_zone: 0,
+            roaming_encounter_multiplier: 1,
+            roaming_encounter_multiplier_route: true,
         };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
@@ -219,6 +225,19 @@ class ArchipelagoIntegrationModule {
             return data || null;
         };
 
+        w.scout = (locationID: number) => {
+            return this.client.scout([locationID], 0).then((data: any) => data[0]);
+        };
+
+
+        w.scoutShopItem = (item: Item): Promise<string | undefined> => {
+            if (item instanceof BuyKeyItem && item.locationId !== null) {
+                return w.scout(item.locationId).then(result => `${result.sender.alias}'s ${result.name}`);
+            }
+            return Promise.resolve(undefined);
+        };
+
+
         // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
         this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
             // console.log('Connected to server: ', player);
@@ -228,6 +247,12 @@ class ArchipelagoIntegrationModule {
             Save.key = (await w.getItem(player.name + 'save key', true)) || Rand.string(6);
             await w.setItem(player.name + 'save key', Save.key);
             //console.log('Using save key: ', Save.key);
+
+            // Start the game if not already started
+            if (!App.game) {
+                document.querySelector('#saveSelector').remove();
+                App.start();
+            }
 
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
@@ -266,6 +291,14 @@ class ArchipelagoIntegrationModule {
                         w.APFlags.set('simpleWeatherChanger', !!options.use_scripts);
                     }
                 }
+                if (typeof options.roaming_encounter_multiplier !== 'undefined') {
+                    w.APFlags.set('roaming_encounter_multiplier', options.roaming_encounter_multiplier);
+                }
+                if (typeof options.roaming_encounter_multiplier_route !== 'undefined') {
+                    w.APFlags.set('roaming_encounter_multiplier_route', options.roaming_encounter_multiplier_route);
+                }
+                w.APFlags.set('kanto_roamer_rate', 1);
+                //if (typeof options.)
             }
 
             // Only flush queued location checks if game is ready; otherwise they will be flushed later.
@@ -281,6 +314,15 @@ class ArchipelagoIntegrationModule {
                     console.error('Failed to flush queued LocationChecks:', e);
                 }
             }
+        });
+
+        this.client.messages.on('disconnected', async () => {
+            this.connected = false;
+            Notifier.notify({
+                message: 'Archipelago: disconnected from server.',
+                type: NotificationConstants.NotificationOption.warning,
+            });
+            (window as any).apLoginFromSaveSelector();
         });
 
         // add item handler
@@ -497,10 +539,9 @@ class ArchipelagoIntegrationModule {
                     }
                 } else {
                     const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
-                    if (!App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
+                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
                         App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
                         this.displayItemReceived(item, 'a');
-                        break;
                     }
                     w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
                     
@@ -562,38 +603,6 @@ class ArchipelagoIntegrationModule {
             this.processItemPacket(packet.items, packet.startingIndex);
         }
         this.pendingItemPackets.length = 0;
-        // const packets = [...this.pendingItemPackets];
-        // this.pendingItemPackets.length = 0;
-        // for (const pkt of packets) {
-        //     try {
-        //         // Re-dispatch through emitter if available (avoids duplicating logic)
-        //         if (this.client?.items?.emit) {
-        //             this.client.items.emit('itemsReceived', pkt.items, pkt.startingIndex);
-        //         } else {
-        //             // If emit not available, minimal fallback: only run reset logic when startingIndex === 0
-        //             if (pkt.startingIndex === 0 && (window as any).APFlags?.set) {
-        //                 const set = (window as any).APFlags.set;
-        //                 set('autoBattleItems', false);
-        //                 set('catchFilterFantasia', false);
-        //                 set('enhancedAutoClicker', false);
-        //                 set('enhancedAutoClickerProgressive', 0);
-        //                 set('enhancedAutoHatchery', false);
-        //                 set('enhancedAutoMine', false);
-        //                 set('simpleAutoFarmer', false);
-        //                 set('autoQuestCompleter', false);
-        //                 set('autoSafariZone', false);
-        //                 set('autoSafariZoneProgressive', 0);
-        //                 set('catchSpeedAdjuster', false);
-        //                 set('infiniteSeasonalEvents', false);
-        //                 set('oakItemsUnlimited', false);
-        //                 set('simpleWeatherChanger', false);
-        //             }
-        //         }
-        //     } catch (e) {
-        //         this.lastError = e;
-        //         try { console.error('[ArchipelagoModule] Failed flushing queued item packet:', e); } catch (_) { }
-        //     }
-        // }
     }
 
     private flushQueuedLocationChecks() {
