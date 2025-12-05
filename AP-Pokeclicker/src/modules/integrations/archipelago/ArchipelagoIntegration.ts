@@ -28,7 +28,6 @@ class ArchipelagoIntegrationModule {
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string } | null = null;
-
     
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
     private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
@@ -232,7 +231,12 @@ class ArchipelagoIntegrationModule {
 
         w.scoutShopItem = (item: Item): Promise<string | undefined> => {
             if (item instanceof BuyKeyItem && item.locationId !== null) {
-                return w.scout(item.locationId).then(result => `${result.receiver.alias}'s ${result.name}`);
+                return w.scout(item.locationId).then(result => {
+                    if (this.client.room.checkedLocations.includes(item.locationId)) {
+                        item.isPurchased(true);
+                    }
+                    return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
+                });
             }
             return Promise.resolve(undefined);
         };
