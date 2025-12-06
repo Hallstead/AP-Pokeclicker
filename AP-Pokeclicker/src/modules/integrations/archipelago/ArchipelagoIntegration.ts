@@ -12,6 +12,7 @@ import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
 import Rand from '../../utilities/Rand';
 import BuyKeyItem from '../../items/buyKeyItem';
+import PokemonItem from '../../items/PokemonItem';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -28,7 +29,6 @@ class ArchipelagoIntegrationModule {
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string } | null = null;
-
     
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
     private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
@@ -232,7 +232,20 @@ class ArchipelagoIntegrationModule {
 
         w.scoutShopItem = (item: Item): Promise<string | undefined> => {
             if (item instanceof BuyKeyItem && item.locationId !== null) {
-                return w.scout(item.locationId).then(result => `${result.sender.alias}'s ${result.name}`);
+                return w.scout(item.locationId).then(result => {
+                    if (this.client.room.checkedLocations.includes(item.locationId)) {
+                        item.isPurchased(true);
+                    }
+                    return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
+                });
+            }
+            if (item instanceof PokemonItem && item.locationId !== null) {
+                return w.scout(item.locationId).then(result => {
+                    if (result) {
+                        return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
+                    }
+                    return Promise.resolve(undefined);
+                });
             }
             return Promise.resolve(undefined);
         };
@@ -243,13 +256,13 @@ class ArchipelagoIntegrationModule {
             // console.log('Connected to server: ', player);
             this.connected = true;
             
-            //set save key
-            Save.key = (await w.getItem(player.name + 'save key', true)) || Rand.string(6);
-            await w.setItem(player.name + 'save key', Save.key);
-            //console.log('Using save key: ', Save.key);
 
             // Start the game if not already started
             if (!App.game) {
+                //set save key
+                Save.key = (await w.getItem(player.name + 'save key', true)) || Rand.string(6);
+                await w.setItem(player.name + 'save key', Save.key);
+                //console.log('Using save key: ', Save.key);
                 document.querySelector('#saveSelector').remove();
                 App.start();
             }
@@ -399,22 +412,11 @@ class ArchipelagoIntegrationModule {
 
         // console.log('Received items: ', items);
         // if this is a sync packet reset all our item addresses without changing anything else
-        if (startingIndex === 0) {}
-        //     setFlag('autoBattleItems', false);
-        //     setFlag('catchFilterFantasia', false);
-        //     setFlag('enhancedAutoClicker', false);
-        //     setFlag('enhancedAutoClickerProgressive', 0);
-        //     setFlag('enhancedAutoHatchery', false);
-        //     setFlag('enhancedAutoMine', false);
-        //     setFlag('simpleAutoFarmer', false);
-        //     setFlag('autoQuestCompleter', false);
-        //     setFlag('autoSafariZone', false);
-        //     setFlag('autoSafariZoneProgressive', 0);
-        //     setFlag('catchSpeedAdjuster', false);
-        //     setFlag('infiniteSeasonalEvents', false);
-        //     setFlag('oakItemsUnlimited', false);
-        //     setFlag('simpleWeatherChanger', false);
-        // }
+        if (startingIndex === 0) {
+            setFlag('progressivePokeballs', 0);
+            setFlag('progressiveEliteBadges', 0);
+            setFlag('extraEggSlots', 0);
+        }
 
         // Item Categories:
         const keyItemsOffset = 1;

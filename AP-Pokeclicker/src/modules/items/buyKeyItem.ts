@@ -6,13 +6,13 @@ import { ShopOptions } from './types';
 export default class BuyKeyItem extends Item {
     item: KeyItemType;
     locationId: number | null = null;
-    purchased: boolean;
+    isPurchased: KnockoutObservable<boolean>;
 
     constructor(item: KeyItemType, basePrice: number, currency: Currency = Currency.questPoint, options?: ShopOptions, displayName?: string, locationId: number | null = null) {
         super(KeyItemType[item], basePrice, currency, { maxAmount: 1, ...options }, displayName);
         this.item = item;
         this.locationId = locationId;
-        this.purchased = false;
+        this.isPurchased =  ko.observable(false);
     }
 
     totalPrice(amount: number) {
@@ -27,7 +27,7 @@ export default class BuyKeyItem extends Item {
     gain(amt: number) {
         if (this.locationId !== null) {
             (window as any).sendLocationCheck(this.locationId);
-            this.purchased = true;
+            this.isPurchased(true);
         } else {
             App.game.keyItems.gainKeyItem(this.item);
         }
@@ -35,7 +35,7 @@ export default class BuyKeyItem extends Item {
     }
 
     isSoldOut(): boolean {
-        return this.purchased;
+        return this.isPurchased();
     }
 
     get image(): string {
