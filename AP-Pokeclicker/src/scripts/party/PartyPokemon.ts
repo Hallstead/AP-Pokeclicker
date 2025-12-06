@@ -17,6 +17,8 @@ enum PartyPokemonSaveKeys {
     nickname,
     shadow,
     showShadowImage,
+    received,
+    caught,
 }
 
 class PartyPokemon implements Saveable, TmpPartyPokemonType {
@@ -42,6 +44,8 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         nickname: '',
         shadow: GameConstants.ShadowStatus.None,
         showShadowImage: false,
+        received: true,
+        caught: false,
     };
 
     // Saveable observables
@@ -63,6 +67,8 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
     hideShinyImage: KnockoutObservable<boolean>;
     _shadow: KnockoutObservable<GameConstants.ShadowStatus>;
     _showShadowImage: KnockoutObservable<boolean>;
+    _received: KnockoutObservable<boolean>;
+    _caught: KnockoutObservable<boolean>;
 
     constructor(
         public id: number,
@@ -121,6 +127,8 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         this._displayName = ko.pureComputed(() => this._nickname() ? this._nickname() : this._translatedName());
         this._shadow = ko.observable(shadow);
         this._showShadowImage = ko.observable(false);
+        this._received = ko.observable(this.defaults.received).extend({ boolean: null });
+        this._caught = ko.observable(this.defaults.caught).extend({ boolean: null });
         this._attack = ko.computed(() => this.calculateAttack());
         this._canUseHeldItem = ko.pureComputed(() => this.heldItem()?.canUse(this));
         this._canUseHeldItem.subscribe((canUse) => {
@@ -664,6 +672,21 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
         this._nickname(json[PartyPokemonSaveKeys.nickname] || this.defaults.nickname);
         this.shadow = json[PartyPokemonSaveKeys.shadow] ?? this.defaults.shadow;
         this._showShadowImage(json[PartyPokemonSaveKeys.showShadowImage] ?? this.defaults.showShadowImage);
+        this.received = json[PartyPokemonSaveKeys.received] ?? this.defaults.received;
+        // Migration for old saves: if 'caught' is missing, infer from statistics
+        if (Object.prototype.hasOwnProperty.call(json, PartyPokemonSaveKeys.caught as unknown as PropertyKey)) {
+            this.caught = json[PartyPokemonSaveKeys.caught] ?? this.defaults.caught;
+        } else {
+            // Prefer statistics: mark as caught if we've captured this species before
+            try {
+                const capturedObs = (App as any)?.game?.statistics?.pokemonCaptured?.[this.id];
+                const capturedCount = typeof capturedObs === 'function' ? capturedObs() : (capturedObs ?? 0);
+                this.caught = (capturedCount || 0) > 0;
+            } catch {
+                // Fallback: assume caught for legacy saves if stats unavailable
+                this.caught = true;
+            }
+        }
     }
 
     public toJSON() {
@@ -684,6 +707,8 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
             [PartyPokemonSaveKeys.nickname]: this.nickname || undefined,
             [PartyPokemonSaveKeys.shadow]: this.shadow,
             [PartyPokemonSaveKeys.showShadowImage]: this._showShadowImage(),
+            [PartyPokemonSaveKeys.received]: this.received,
+            [PartyPokemonSaveKeys.caught]: this.caught,
         };
 
         // Don't save anything that is the default option
@@ -797,5 +822,21 @@ class PartyPokemon implements Saveable, TmpPartyPokemonType {
 
     set showShadowImage(value: boolean) {
         this._showShadowImage(value);
+    }
+
+    get received(): boolean {
+        return this._received();
+    }
+
+    set received(value: boolean) {
+        this._received(value);
+    }
+
+    get caught(): boolean {
+        return this._caught();
+    }
+
+    set caught(value: boolean) {
+        this._caught(value);
     }
 }

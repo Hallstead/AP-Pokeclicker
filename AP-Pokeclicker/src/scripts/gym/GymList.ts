@@ -6,19 +6,20 @@ GymList['Hallstead\'s Yacht'] = new Gym(
     'Hallstead',
     'Hallstead\'s Yacht',
     [
-        new GymPokemon('Blastoise', 1040000, 100),
-        new GymPokemon('Feraligatr', 1040000, 100),
-        new GymPokemon('Swampert', 1040000, 100),
-        new GymPokemon('Empoleon', 1040000, 100),
-        new GymPokemon('Samurott', 1040000, 100),
-        new GymPokemon('Greninja', 1040000, 100),
-        new GymPokemon('Primarina', 1040000, 100),
-        new GymPokemon('Inteleon', 1040000, 100),
-        new GymPokemon('Quaquaval', 1040000, 100),
-        new GymPokemon('Psyduck (Dark Mage)', 1040000, 100),
+        // 2000000
+        new GymPokemon('Blastoise', 264633, 100),
+        new GymPokemon('Feraligatr', 264633, 100),
+        new GymPokemon('Swampert', 264633, 100),
+        new GymPokemon('Empoleon', 264633, 100),
+        new GymPokemon('Samurott', 264633, 100),
+        new GymPokemon('Greninja', 264633, 100),
+        new GymPokemon('Primarina', 264633, 100),
+        new GymPokemon('Inteleon', 264633, 100),
+        new GymPokemon('Quaquaval', 264633, 100),
+        new GymPokemon('Psyduck (Dark Mage)', 264633, 100),
     ],
     BadgeEnums.None,
-    0,
+    100000,
     '...Urge...to destroy world...rising...',
     [new RouteKillRequirement(1, GameConstants.Region.kanto, 1)],
     () => {
@@ -45,7 +46,7 @@ GymList['Pewter City'] = new Gym(
     'I took you for granted, and so I lost. As proof of your victory, I confer on you this... the official Pokémon League BoulderBadge.',
     [new RouteKillRequirement(10, GameConstants.Region.kanto, 2)],
     () => {
-        (window as any).sendLocationCheck(20);
+        (window as any).sendLocationCheck(201);
     }
 );
 GymList['Cerulean City'] = new Gym(
@@ -61,7 +62,7 @@ GymList['Cerulean City'] = new Gym(
     [new RouteKillRequirement(10, GameConstants.Region.kanto, 4)],
     () => {
         App.game.quests.getQuestLine('Team Rocket').beginQuest(0, undefined, true);
-        (window as any).sendLocationCheck(21);
+        (window as any).sendLocationCheck(202);
     }
 );
 GymList['Vermilion City'] = new Gym(
@@ -80,7 +81,7 @@ GymList['Vermilion City'] = new Gym(
         new GymBadgeRequirement(BadgeEnums.Cascade),
     ],
     () => {
-        (window as any).sendLocationCheck(22);
+        (window as any).sendLocationCheck(203);
     }
 );
 GymList['Celadon City'] = new Gym(
@@ -96,7 +97,7 @@ GymList['Celadon City'] = new Gym(
     'Oh! I concede defeat. You are remarkably strong. I must confer on you the RainbowBadge.',
     [new RouteKillRequirement(10, GameConstants.Region.kanto, 7)],
     () => {
-        (window as any).sendLocationCheck(23);
+        (window as any).sendLocationCheck(204);
     }
 );
 GymList['Saffron City'] = new Gym(
@@ -113,7 +114,7 @@ GymList['Saffron City'] = new Gym(
     'This loss shocks me! But a loss is a loss. I admit I didn\'t work hard enough to win. You earned the MarshBadge.',
     [new QuestLineStepCompletedRequirement('Team Rocket', 3)],
     () => {
-        (window as any).sendLocationCheck(24);
+        (window as any).sendLocationCheck(205);
     }
 );
 GymList['Fuchsia City'] = new Gym(
@@ -137,7 +138,7 @@ GymList['Fuchsia City'] = new Gym(
     () => {
         // App.game.keyItems.gainKeyItem(KeyItemType.Safari_ticket, true);
         App.game.quests.getQuestLine('Mining Expedition').beginQuest(0, undefined, true);
-        (window as any).sendLocationCheck(25);
+        (window as any).sendLocationCheck(206);
         (window as any).sendLocationCheck(5);
     }
 );
@@ -156,7 +157,7 @@ GymList['Cinnabar Island'] = new Gym(
     [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Pokémon Mansion'))],
     () => {
         App.game.quests.getQuestLine('Bill\'s Errand').beginQuest(0, undefined, true);
-        (window as any).sendLocationCheck(26);
+        (window as any).sendLocationCheck(207);
     }
 );
 GymList['Viridian City'] = new Gym(
@@ -181,7 +182,7 @@ GymList['Viridian City'] = new Gym(
     () => {
         // App.game.keyItems.gainKeyItem(KeyItemType.Gem_case, true);
         App.game.quests.getQuestLine('Persons of Interest').beginQuest(0, undefined, true);
-        (window as any).sendLocationCheck(27);
+        (window as any).sendLocationCheck(208);
         (window as any).sendLocationCheck(8);
 
     },
@@ -205,7 +206,7 @@ GymList['Elite Lorelei'] = new Gym(
     '...Things shouldn\'t be this way!',
     [new GymBadgeRequirement(BadgeEnums.Earth)],
     () => {
-        (window as any).sendLocationCheck(28);
+        (window as any).sendLocationCheck(209);
     },
     undefined,
     { battleBackground: 'Ice' }
@@ -225,7 +226,7 @@ GymList['Elite Bruno'] = new Gym(
     'Why? How could I lose?',
     [new GymBadgeRequirement(BadgeEnums.Elite_Lorelei)],
     () => {
-        (window as any).sendLocationCheck(29);
+        (window as any).sendLocationCheck(210);
     },
     undefined,
     { battleBackground: 'Cave' }
@@ -245,7 +246,7 @@ GymList['Elite Agatha'] = new Gym(
     'Oh, my! You\'re something special, child!',
     [new GymBadgeRequirement(BadgeEnums.Elite_Bruno)],
     () => {
-        (window as any).sendLocationCheck(30);
+        (window as any).sendLocationCheck(211);
     },
     undefined,
     { battleBackground: 'Graveyard' }
@@ -265,7 +266,7 @@ GymList['Elite Lance'] = new Gym(
     'That\'s it! I hate to admit it, but you are a Pokémon master!',
     [new GymBadgeRequirement(BadgeEnums.Elite_Agatha)],
     () => {
-        (window as any).sendLocationCheck(31);
+        (window as any).sendLocationCheck(212);
     },
     undefined,
     { battleBackground: 'GemCave' }
@@ -296,7 +297,7 @@ GymList['Champion Blue'] = new Gym(
     'NO! That can\'t be! You beat me at my best! After all that work to become the League Champ? My reign is over already? It\'s not fair!',
     [new GymBadgeRequirement(BadgeEnums.Elite_Lance)],
     () => {
-        (window as any).sendLocationCheck(32);
+        (window as any).sendLocationCheck(213);
     },
     { champion: true },
     { battleBackground: 'GemCave' }

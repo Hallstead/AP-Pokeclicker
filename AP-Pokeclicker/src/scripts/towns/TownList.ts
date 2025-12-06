@@ -58,7 +58,7 @@ const ViridianCityShop = new Shop([
     ItemList.Pokeball,
     ItemList.xAttack,
     ItemList.xClick,
-    ItemList.Dungeon_ticket,
+    ItemList.AP_logo_Dungeon_ticket,
 ]);
 const PewterCityShop = new Shop([
     ItemList.Pokeball,
@@ -129,9 +129,9 @@ const CinnabarIslandShop = new Shop([
     ItemList.SmallRestore,
     ItemList.Fire_egg,
     ItemList.Fire_stone,
-    ItemList.Explorer_kit,
-    ItemList.Explosive_Charge,
-    ItemList.Treasure_Scanner,
+    ItemList.AP_logo_Explorer_kit,
+    ItemList.AP_logo_Explosive_Charge,
+    ItemList.AP_logo_Treasure_Scanner,
     ItemList.HatcheryHelperKris,
 ]);
 const OneIslandShop = new Shop([
@@ -243,7 +243,7 @@ const Hallstead1 = new GiftNPC('Hallstead', [
     App.game.party.gainPokemonById(54.01);
 }, 'assets/images/pokemon/54.01.png', {
     image: 'assets/images/npcs/Black Mage.png',
-    requirement: new MultiRequirement([new ClearGymRequirement(10000, GameConstants.getGymIndex('Hallstead\'s Yacht')), new ObtainedPokemonRequirement('Psyduck (Dark Mage)', true)]),
+    requirement: new MultiRequirement([new ClearGymRequirement(1, GameConstants.getGymIndex('Hallstead\'s Yacht')), new ObtainedPokemonRequirement('Psyduck (Dark Mage)', true)]),
 });
 
 const PalletProfOak = new ProfNPC('Prof. Oak',
@@ -490,7 +490,7 @@ const SaffronBreeder = new NPC('Breeder', [
 const LaprasGift = new PokemonGiftNPC('Silph Co. Employee', [
     'Oh! Hi! You\'re not a member of Team Rocket! You came to save us? Why thank you!',
     'I want you to have this Pokémon for saving us.',
-], 'Lapras', 'assets/images/pokemon/131.png', { saveKey: 'laprasgift', image: 'assets/images/npcs/Office Worker (male).png', requirement: new MultiRequirement([new TemporaryBattleRequirement('Blue 5'), new ObtainedPokemonRequirement('Lapras', true)]) });
+], 'Lapras', 'assets/images/pokemon/131.png', { saveKey: 'laprasgift', image: 'assets/images/npcs/Office Worker (male).png', requirement: new MultiRequirement([new TemporaryBattleRequirement('Blue 5'), new ObtainedPokemonRequirement('Lapras', false)]) });
 
 const FuchsiaKantoRoamerNPC = new RoamerNPC('Youngster Wendy', [
     'There\'s been some recent sightings of roaming Pokémon on {ROUTE_NAME}!',
@@ -1135,7 +1135,7 @@ TownList['Client Island'] = new Town(
     GameConstants.KantoSubRegions.Sevii123,
     [ClientIslandShop],
     {
-        requirements: [new ClientRequirement(), new GymBadgeRequirement(BadgeEnums.Volcano)],
+        requirements: [/*new ClientRequirement(), */new GymBadgeRequirement(BadgeEnums.Volcano)],
         npcs: [ClientSignpost, RedSpearow],
     }
 );
@@ -1378,7 +1378,17 @@ TownList['Victory Road'] = new DungeonTown(
     'Victory Road',
     GameConstants.Region.kanto,
     GameConstants.KantoSubRegions.Kanto,
-    [new RouteKillRequirement(10, GameConstants.Region.kanto, 23)]
+    [
+        new RouteKillRequirement(10, GameConstants.Region.kanto, 23),
+        new GymBadgeRequirement(BadgeEnums.Boulder),
+        new GymBadgeRequirement(BadgeEnums.Cascade),
+        new GymBadgeRequirement(BadgeEnums.Thunder),
+        new GymBadgeRequirement(BadgeEnums.Rainbow),
+        new GymBadgeRequirement(BadgeEnums.Soul),
+        new GymBadgeRequirement(BadgeEnums.Marsh),
+        new GymBadgeRequirement(BadgeEnums.Volcano),
+        new GymBadgeRequirement(BadgeEnums.Earth),
+    ]
 );
 TownList['Cerulean Cave'] = new DungeonTown(
     'Cerulean Cave',

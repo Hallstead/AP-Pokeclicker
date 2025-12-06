@@ -344,6 +344,9 @@ export type TmpPartyType = {
     alreadyCaughtPokemonByName: (name: PokemonNameType, shiny?: boolean) => boolean;
     alreadyCaughtPokemon: (id: number, shiny?: boolean, shadow?: boolean, purified?: boolean) => boolean;
     calculateClickAttack: (useItem?: boolean) => number;
+    alreadyReceivedByName(pokemon: string): boolean;
+    receivePokemonById(id: number, arg1: boolean, arg2: boolean): void;
+    alreadyReceived(id: number): boolean;
 };
 
 export type TmpPartyControllerType = {

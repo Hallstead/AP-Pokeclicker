@@ -36,7 +36,7 @@ class PokedexHelper {
     public static pokemonSeen(id: number): KnockoutComputed<boolean> {
         return ko.pureComputed(() => {
             try {
-                return App.game.statistics.pokemonEncountered[id]() > 0 || App.game.statistics.pokemonDefeated[id]() > 0 || App.game.statistics.pokemonCaptured[id]() > 0 || App.game.party.alreadyCaughtPokemon(id) || App.game.statistics.pokemonSeen[id]() > 0;
+                return App.game.statistics.pokemonEncountered[id]() > 0 || App.game.statistics.pokemonDefeated[id]() > 0 || App.game.statistics.pokemonCaptured[id]() > 0 || App.game.party.alreadyCaughtPokemon(id) || App.game.statistics.pokemonSeen[id]() > 0 || App.game.party.alreadyReceived(id);
             } catch (error) {
                 return false;
             }
@@ -91,10 +91,14 @@ class PokedexHelper {
             const alreadyCaughtShiny = App.game.party.alreadyCaughtPokemon(pokemon.id, true);
             const alreadyCaughtShadow = App.game.party.alreadyCaughtPokemon(pokemon.id, false, true);
             const alreadyCaughtPurified = App.game.party.alreadyCaughtPokemon(pokemon.id, false, true, true);
+            const alreadyReceived = App.game.party.alreadyReceived(pokemon.id);
+            const caughtStatus = Settings.getSetting('pokedexCaughtFilter').observableValue();
+            const dexsanity = (window as any)?.APFlags?.dexsanity === true;
+            const allowReceivedAll = dexsanity && caughtStatus === 'all' && alreadyReceived;
 
             // If the Pokemon shouldn't be unlocked yet
             const nativeRegion = PokemonHelper.calcNativeRegion(pokemon.name);
-            if (nativeRegion > player.highestRegion() || nativeRegion == GameConstants.Region.none && !alreadyCaught) {
+            if ((nativeRegion > player.highestRegion() || (nativeRegion == GameConstants.Region.none && !alreadyCaught)) && !allowReceivedAll) {
                 return false;
             }
 
@@ -105,12 +109,12 @@ class PokedexHelper {
             }
 
             // Event Pokemon
-            if (pokemon.id <= 0 && !alreadyCaught) {
+            if (pokemon.id <= 0 && !alreadyCaught && !allowReceivedAll) {
                 return false;
             }
 
             // If we haven't seen a pokemon this high yet
-            if (pokemon.id > highestDex) {
+            if (pokemon.id > highestDex && !alreadyReceived && !allowReceivedAll) {
                 return false;
             }
 
@@ -144,13 +148,14 @@ class PokedexHelper {
                 return false;
             }
             // Hide uncaught base forms if alternate non-regional form is caught
+            // Only consider alternate forms (non-integer ids), not the base form itself
             if (!alreadyCaught && pokemon.id == Math.floor(pokemon.id) &&
-                App.game.party.caughtPokemon.some((p) => Math.floor(p.id) == pokemon.id && PokemonHelper.calcNativeRegion(p.name) == nativeRegion)
+                App.game.party.caughtPokemon.some((p) => Math.floor(p.id) == pokemon.id && p.id != Math.floor(p.id) && PokemonHelper.calcNativeRegion(p.name) == nativeRegion)
             ) {
                 return false;
             }
 
-            const caughtStatus = Settings.getSetting('pokedexCaughtFilter').observableValue();
+            // caughtStatus already read above
 
             // Only uncaught
             if (caughtStatus == 'uncaught' && alreadyCaught) {
@@ -184,6 +189,16 @@ class PokedexHelper {
 
             // Only caught purified
             if (caughtStatus == 'caught-purified' && !alreadyCaughtPurified) {
+                return false;
+            }
+
+            // Only received
+            if (caughtStatus == 'received' && !alreadyReceived) {
+                return false;
+            }
+
+            //Only unreceived
+            if (caughtStatus == 'unreceived' && alreadyReceived) {
                 return false;
             }
 

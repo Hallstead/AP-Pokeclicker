@@ -6,9 +6,13 @@ import {
     // BouncedPacket, JSONRecord, itemsHandlingFlags,LocationInfoPacket, MessageNode,
     Client, Item as APItem, clientStatuses,
     NetworkSlot, Player as APPlayer,
+    Item,
 } from 'archipelago.js';
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
+import Rand from '../../utilities/Rand';
+import BuyKeyItem from '../../items/buyKeyItem';
+import PokemonItem from '../../items/PokemonItem';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -20,10 +24,11 @@ class ArchipelagoIntegrationModule {
     public lastError: any = null;
     // Queue outbound location checks until we're connected
     private pendingLocationChecks: number[] = [];
+    // Queue inbound item packets until the game is ready
+    private pendingItemPackets: { items: APItem[]; startingIndex: number }[] = [];
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string } | null = null;
-
     
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
     private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
@@ -86,7 +91,7 @@ class ArchipelagoIntegrationModule {
             space = '';
         }
 
-        if (item.sender && item.sender != item.receiver) {
+        if (item.sender.alias && item.sender.alias != item.receiver.alias) {
             Notifier.notify({
                 message: `You received ${article}${space}${item.name} from ${item.sender}!`,
                 type: itemReceivedNotificationType,
@@ -118,23 +123,28 @@ class ArchipelagoIntegrationModule {
 
         type GameOptions = {
             dexsanity: number,
-            include_scripts_as_items: number,
-            progressive_auto_safari_zone: number,
-            progressive_autoclicker: number,
             use_scripts: number,
+            include_scripts_as_items: number,
+            progressive_autoclicker: number,
+            progressive_auto_safari_zone: number,
+            roaming_encounter_multiplier: number,
+            roaming_encounter_multiplier_route: boolean,
         };
         let options: GameOptions = {
             dexsanity: 0,
+            use_scripts: 0,
             include_scripts_as_items: 0,
-            progressive_auto_safari_zone: 0,
             progressive_autoclicker: 0,
-            use_scripts: 0
+            progressive_auto_safari_zone: 0,
+            roaming_encounter_multiplier: 1,
+            roaming_encounter_multiplier_route: true,
         };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
         const w: any = window as any;
         if (!w.APFlags) {
             w.APFlags = Object.assign(Object.create(null), {
+                gameReady: false,
                 autoBattleItems: false,
                 catchFilterFantasia: false,
                 enhancedAutoClicker: false,
@@ -151,6 +161,9 @@ class ArchipelagoIntegrationModule {
                 omegaProteinGains: false,
                 overnightBerryGrowth: false,
                 simpleWeatherChanger: false,
+                progressivePokeballs: 0,
+                progressiveEliteBadges: 0,
+                extraEggSlots: 0,
                 starter1: 30,
                 starter2: 60,
                 starter3: 42,
@@ -179,14 +192,17 @@ class ArchipelagoIntegrationModule {
                     this.pendingLocationChecks.push(locationNumber);
                     return;
                 }
-                if (!this.connected) {
-                    // Don't throw during UI computations; queue to send after connection
-                    console.warn('[ArchipelagoModule] Not connected; queuing LocationCheck', locationNumber);
+                if (!this.connected || !this.isGameReady()) {
+                    // Wait for both connection and game init
+                    console.warn('[ArchipelagoModule] Not ready (connection/game); queuing LocationCheck', locationNumber);
                     this.pendingLocationChecks.push(locationNumber);
                     return;
                 }
                 if (isPokemon) {
-                    locationNumber += 59
+                    if (locationNumber % 1 !== 0) {
+                        locationNumber = locationNumber * 100 + 8000;
+                    }
+                    locationNumber += 2000;
                 }
                 this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
             } catch (e) {
@@ -199,10 +215,58 @@ class ArchipelagoIntegrationModule {
             this.client.updateStatus(clientStatuses.goal);
         };
 
+        w.setItem = (key: string, value: string) => {
+            this.client.storage.prepare(key, value).replace(value).commit();
+        };
+
+        w.getItem = async (key: string): Promise<string | null> => {
+            const data = await this.client.storage.fetch(key);
+            //console.log(data);
+            return data || null;
+        };
+
+        w.scout = (locationID: number) => {
+            return this.client.scout([locationID], 0).then((data: any) => data[0]);
+        };
+
+
+        w.scoutShopItem = (item: Item): Promise<string | undefined> => {
+            if (item instanceof BuyKeyItem && item.locationId !== null) {
+                return w.scout(item.locationId).then(result => {
+                    if (this.client.room.checkedLocations.includes(item.locationId)) {
+                        item.isPurchased(true);
+                    }
+                    return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
+                });
+            }
+            if (item instanceof PokemonItem && item.locationId !== null) {
+                return w.scout(item.locationId).then(result => {
+                    if (result) {
+                        return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
+                    }
+                    return Promise.resolve(undefined);
+                });
+            }
+            return Promise.resolve(undefined);
+        };
+
+
         // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
         this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
             // console.log('Connected to server: ', player);
             this.connected = true;
+            
+
+            // Start the game if not already started
+            if (!App.game) {
+                //set save key
+                Save.key = (await w.getItem(player.name + 'save key', true)) || Rand.string(6);
+                await w.setItem(player.name + 'save key', Save.key);
+                //console.log('Using save key: ', Save.key);
+                document.querySelector('#saveSelector').remove();
+                App.start();
+            }
+
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
                 const slotNumber: number = parseInt(key);
@@ -217,232 +281,74 @@ class ArchipelagoIntegrationModule {
 
             options = await player.fetchSlotData().then(res => res as GameOptions);
             if (options) {
-                console.log('Game options: ', options);
+                // console.log('Game options: ', options);
                 w.APFlags.set('options', options);
+                w.APFlags.set('name', player.name);
                 // Mirror explicit boolean for easy access
                 if (typeof options.dexsanity !== 'undefined') {
                     w.APFlags.set('dexsanity', !!options.dexsanity);
                 }
+                if (typeof options.use_scripts !== 'undefined' && typeof options.include_scripts_as_items !== 'undefined') {
+                    if (options.use_scripts && !options.include_scripts_as_items) {
+                        w.APFlags.set('autoBattleItems', !!options.use_scripts);
+                        w.APFlags.set('catchFilterFantasia', !!options.use_scripts);
+                        w.APFlags.set('enhancedAutoClicker', !!options.use_scripts);
+                        w.APFlags.set('enhancedAutoHatchery', !!options.use_scripts);
+                        w.APFlags.set('enhancedAutoMine', !!options.use_scripts);
+                        w.APFlags.set('simpleAutoFarmer', !!options.use_scripts);
+                        w.APFlags.set('autoQuestCompleter', !!options.use_scripts);
+                        w.APFlags.set('autoSafariZone', !!options.use_scripts);
+                        w.APFlags.set('catchSpeedAdjuster', !!options.use_scripts);
+                        w.APFlags.set('infiniteSeasonalEvents', !!options.use_scripts);
+                        w.APFlags.set('oakItemsUnlimited', !!options.use_scripts);
+                        w.APFlags.set('simpleWeatherChanger', !!options.use_scripts);
+                    }
+                }
+                if (typeof options.roaming_encounter_multiplier !== 'undefined') {
+                    w.APFlags.set('roaming_encounter_multiplier', options.roaming_encounter_multiplier);
+                }
+                if (typeof options.roaming_encounter_multiplier_route !== 'undefined') {
+                    w.APFlags.set('roaming_encounter_multiplier_route', options.roaming_encounter_multiplier_route);
+                }
+                w.APFlags.set('kanto_roamer_rate', 1);
+                //if (typeof options.)
             }
 
-            // this.client.socket.send({ cmd: 'Sync' });
-            // Flush any queued location checks now that we're connected
-            try {
-                if (this.pendingLocationChecks.length) {
-                    const batch = [...this.pendingLocationChecks];
-                    this.pendingLocationChecks.length = 0;
-                    this.client.socket.send({ cmd: 'LocationChecks', locations: batch });
+            // Only flush queued location checks if game is ready; otherwise they will be flushed later.
+            if (this.isGameReady()) {
+                try {
+                    if (this.pendingLocationChecks.length) {
+                        const batch = [...this.pendingLocationChecks];
+                        this.pendingLocationChecks.length = 0;
+                        this.client.socket.send({ cmd: 'LocationChecks', locations: batch });
+                    }
+                } catch (e) {
+                    this.lastError = e;
+                    console.error('Failed to flush queued LocationChecks:', e);
                 }
-            } catch (e) {
-                this.lastError = e;
-                console.error('Failed to flush queued LocationChecks:', e);
             }
+        });
+
+        this.client.messages.on('disconnected', async () => {
+            this.connected = false;
+            Notifier.notify({
+                message: 'Archipelago: disconnected from server.',
+                type: NotificationConstants.NotificationOption.warning,
+            });
+            (window as any).apLoginFromSaveSelector();
         });
 
         // add item handler
         this.client.items.on('itemsReceived', async (items: APItem[], startingIndex: number) => {
-            // Set APFlags for each script item
-            const setFlag = (key: string, value: any) => {
-                if (w.APFlags?.set) {
-                    w.APFlags.set(key, value);
-                } else {
-                    w.APFlags = w.APFlags || Object.create(null);
-                    w.APFlags[key] = value;
-                    try { window.dispatchEvent(new CustomEvent('ap:flag-changed', { detail: { key, value } })); } catch (_) { /* ignore */ }
-                }
-            };
-
-            // console.log('Received items: ', items);
-            // if this is a sync packet reset all our item addresses without changing anything else
-            if (startingIndex === 0) {
-                setFlag('autoBattleItems', false);
-                setFlag('catchFilterFantasia', false);
-                setFlag('enhancedAutoClicker', false);
-                setFlag('enhancedAutoClickerProgressive', 0);
-                setFlag('enhancedAutoHatchery', false);
-                setFlag('enhancedAutoMine', false);
-                setFlag('simpleAutoFarmer', false);
-                setFlag('autoQuestCompleter', false);
-                setFlag('autoSafariZone', false);
-                setFlag('autoSafariZoneProgressive', 0);
-                setFlag('catchSpeedAdjuster', false);
-                setFlag('infiniteSeasonalEvents', false);
-                setFlag('oakItemsUnlimited', false);
-                setFlag('simpleWeatherChanger', false);
+            // Defer processing until game is ready
+            if (!this.isGameReady()) {
+                this.pendingItemPackets.push({ items, startingIndex });
+                return;
             }
-
-            // Item Categories:
-            const keyItemsLastIndex = 9;
-            const oakItemsLastIndex = keyItemsLastIndex + 10;
-            const scriptsLastIndex = oakItemsLastIndex + 14;
-            const progressivePokeballsIndex = scriptsLastIndex + 1;
-            const badgesLastIndex = progressivePokeballsIndex + 9;
-            const breedingIndex = badgesLastIndex + 1;
-            const pokemonLastIndex = breedingIndex + 151;
-
-            for (let i: number = 0; i < items.length; i++) {
-                let item: APItem = items[i];
-                // console.log('Processing item: ', item);
-                // console.log(item.id);
-
-                if (item.id >= 1 && item.id <= keyItemsLastIndex) {
-                    // Key items
-                    let index = item.id - 1;
-                    const keyItems = [
-                        KeyItemType.Town_map,
-                        KeyItemType.Dungeon_ticket,
-                        KeyItemType.Mystery_egg,
-                        KeyItemType.Wailmer_pail,
-                        KeyItemType.Super_rod,
-                        KeyItemType.Safari_ticket,
-                        KeyItemType.Explorer_kit,
-                        KeyItemType.Gem_case,
-                        KeyItemType.Holo_caster,
-                    ];
-                    if (!App.game.keyItems.hasKeyItem(keyItems[index])) {
-                        App.game.keyItems.gainKeyItem(keyItems[index], false);
-                        this.displayItemReceived(item, 'the');
-                    }
-                } else if (item.id <= oakItemsLastIndex) {
-                    // Oak items
-                    let index = item.id - keyItemsLastIndex - 1;
-                    const oakItems = [
-                        OakItemType.Magic_Ball,
-                        OakItemType.Amulet_Coin,
-                        OakItemType.Rocky_Helmet,
-                        OakItemType.Exp_Share,
-                        OakItemType.Sprayduck,
-                        OakItemType.Shiny_Charm,
-                        OakItemType.Magma_Stone,
-                        OakItemType.Cell_Battery,
-                        OakItemType.Explosive_Charge,
-                        OakItemType.Treasure_Scanner,
-                    ];
-                    // TODO: Establish global variables for oak items active state
-                    if (!App.game.oakItems.isUnlocked(oakItems[index])) {
-                        App.game.oakItems.itemList[oakItems[index]].received = true;
-                        this.displayItemReceived(item, 'the');
-                    }
-                } else if (item.id <= scriptsLastIndex) {
-                    // scripts
-                    let index = item.id - oakItemsLastIndex - 1;
-                    // const scripts = [
-                    //     'Auto Battle Items',
-                    //     'Catch Filter Fantasia',
-                    //     'Enhanced Auto Clicker',
-                    //     'Enhanced Auto Clicker (Progressive Clicks/Second)',
-                    //     'Enhanced Auto Hatchery',
-                    //     'Enhanced Auto Mine',
-                    //     'Simple Auto Farmer',
-                    //     'Auto Quest Completer',
-                    //     'Auto Safari Zone',
-                    //     'Auto Safari Zone (Progressive Fast Animations)',
-                    //     'Catch Speed Adjuster',
-                    //     'Infinite Seasonal Events',
-                    //     'Oak Items Unlimited',
-                    //     'Simple Weather Changer',
-                    // ];
-
-                    switch (index) {
-                        case 0: setFlag('autoBattleItems', true); break;
-                        case 1: setFlag('catchFilterFantasia', true); break;
-                        case 2:
-                            // Enhanced Auto Clicker (base)
-                            setFlag('enhancedAutoClicker', true);
-                            // Back-compat with older consumers
-                            setFlag('autoclicker', true);
-                            break;
-                        case 3:
-                            // Progressive clicks/second
-                            setFlag('enhancedAutoClicker', true);
-                            setFlag('autoclicker', true);
-                            {
-                                const cur = (w.APFlags?.get ? w.APFlags.get('enhancedAutoClickerProgressive') : w.APFlags?.enhancedAutoClickerProgressive) || 0;
-                                setFlag('enhancedAutoClickerProgressive', Number(cur) + 1);
-                            }
-                            break;
-                        case 4: setFlag('enhancedAutoHatchery', true); break;
-                        case 5: setFlag('enhancedAutoMine', true); break;
-                        case 6: setFlag('simpleAutoFarmer', true); break;
-                        case 7: setFlag('autoQuestCompleter', true); break;
-                        case 8: setFlag('autoSafariZone', true); break;
-                        case 9:
-                            setFlag('autoSafariZone', true);
-                            {
-                                const cur = (w.APFlags?.get ? w.APFlags.get('autoSafariZoneProgressive') : w.APFlags?.autoSafariZoneProgressive) || 0;
-                                setFlag('autoSafariZoneProgressive', Number(cur) + 1);
-                            }
-                            break;
-                        case 10: setFlag('catchSpeedAdjuster', true); break;
-                        case 11: setFlag('infiniteSeasonalEvents', true); break;
-                        case 12: setFlag('oakItemsUnlimited', true); break;
-                        case 13: setFlag('simpleWeatherChanger', true); break;
-                        default:
-                            break;
-                    }
-
-                    this.displayItemReceived(item, 'the');
-                } else if (item.id == progressivePokeballsIndex) {
-                    // progressive pokeballs
-                    // TODO: Establish global variable for progressive pokeball state
-                    this.displayItemReceived(item, 'a');
-                } else if (item.id <= badgesLastIndex) {
-                    // Badges
-                    let index = item.id - progressivePokeballsIndex - 1;
-                    const badges = [
-                        BadgeEnums.Boulder,
-                        BadgeEnums.Cascade,
-                        BadgeEnums.Thunder,
-                        BadgeEnums.Rainbow,
-                        BadgeEnums.Marsh,
-                        BadgeEnums.Soul,
-                        BadgeEnums.Volcano,
-                        BadgeEnums.Earth,
-                        BadgeEnums.Elite_Lorelei,
-                        BadgeEnums.Elite_Bruno,
-                        BadgeEnums.Elite_Agatha,
-                        BadgeEnums.Elite_Lance,
-                        BadgeEnums.Elite_KantoChampion,
-                    ];
-                    
-                    if (index < 8) {
-                        if (!App.game.badgeCase.hasBadge(badges[index])) {
-                            this.displayItemReceived(item, 'the');
-                            App.game.badgeCase.gainBadge(badges[index]);
-                        }
-                    } else {
-                        for (let j = index; j < badges.length; j++) {
-                            if (!App.game.badgeCase.hasBadge(badges[j])) {
-                                App.game.badgeCase.gainBadge(badges[j]);
-                                this.displayItemReceived(item, 'a');
-                                break;
-                            }
-                        }
-                    }
-
-                } else if (item.id == breedingIndex) {
-                    App.game.breeding.gainAdditionalEggSlot();
-                    App.game.breeding.gainEggSlot();
-                    this.displayItemReceived(item, 'a');
-                } else if (item.id <= pokemonLastIndex) {
-                    // Pokemon
-                    let id = item.id - breedingIndex;
-                    if (!App.game.party.alreadyReceived(id)) {
-                        App.game.party.receivePokemonById(id, false, false);
-                        this.displayItemReceived(item, '');
-                    }
-                } else {
-                    // Filler
-                    player.gainItem('Protein', 1);
-                    this.displayItemReceived(item, 'a');
-                }
-
-            }
+            this.processItemPacket(items, startingIndex);
         });
 
-        // Ensure the game is initialized before logging in so that early item events
-        // don't try to access App.game while undefined.
-        await this.waitForGameReady(15000, 100);
+        // Connect immediately; we now gate item/check handling on game readiness.
         await this.client.login(
             serverUrl.startsWith('ws') ?
                 `${serverUrl}` :
@@ -461,6 +367,8 @@ class ArchipelagoIntegrationModule {
             this.lastError = error;
             this.connected = false;
         });
+        // Start async wait for App.game; when ready flush queued items & checks.
+        this.ensureGameReady().catch(() => { /* ignore */ });
     }
 
     // Public wrapper that prefers the archipelago.js login(host:port, player, game)
@@ -488,6 +396,238 @@ class ArchipelagoIntegrationModule {
             this.connected = false;
         }
     }
+
+    public processItemPacket(items: APItem[], startingIndex: number) {
+        const w: any = window as any;
+        // Set APFlags for each script item
+        const setFlag = (key: string, value: any) => {
+            if (w.APFlags?.set) {
+                w.APFlags.set(key, value);
+            } else {
+                w.APFlags = w.APFlags || Object.create(null);
+                w.APFlags[key] = value;
+                try { window.dispatchEvent(new CustomEvent('ap:flag-changed', { detail: { key, value } })); } catch (_) { /* ignore */ }
+            }
+        };
+
+        // console.log('Received items: ', items);
+        // if this is a sync packet reset all our item addresses without changing anything else
+        if (startingIndex === 0) {
+            setFlag('progressivePokeballs', 0);
+            setFlag('progressiveEliteBadges', 0);
+            setFlag('extraEggSlots', 0);
+        }
+
+        // Item Categories:
+        const keyItemsOffset = 1;
+        const oakItemsOffset = 101;
+        const scriptsOffset = 201;
+        const badgesOffset = 301;
+        const otherItemsOffset = 501;
+        const eventItemsOffset = 1001;
+        const pokemonOffset = 2001;
+        const pokemonLastIndex = 2151;
+
+        for (let i: number = 0; i < items.length; i++) {
+            let item: APItem = items[i];
+            // console.log('Processing item: ', item);
+            // console.log(item.id);
+
+            if (item.id >= keyItemsOffset && item.id < oakItemsOffset) {
+                // Key items
+                let index = item.id - 1;
+                const keyItems = [
+                    KeyItemType.Town_map,
+                    KeyItemType.Dungeon_ticket,
+                    KeyItemType.Mystery_egg,
+                    KeyItemType.Wailmer_pail,
+                    KeyItemType.Super_rod,
+                    KeyItemType.Safari_ticket,
+                    KeyItemType.Explorer_kit,
+                    KeyItemType.Gem_case,
+                    KeyItemType.Holo_caster,
+                ];
+                if (!App.game.keyItems.hasKeyItem(keyItems[index])) {
+                    App.game.keyItems.gainKeyItem(keyItems[index], false);
+                    this.displayItemReceived(item, 'the');
+                }
+            } else if (item.id >= oakItemsOffset && item.id < scriptsOffset) {
+                // Oak items
+                let index = item.id - oakItemsOffset;
+                const oakItems = [
+                    OakItemType.Magic_Ball,
+                    OakItemType.Amulet_Coin,
+                    OakItemType.Rocky_Helmet,
+                    OakItemType.Exp_Share,
+                    OakItemType.Sprayduck,
+                    OakItemType.Shiny_Charm,
+                    OakItemType.Magma_Stone,
+                    OakItemType.Cell_Battery,
+                    OakItemType.Explosive_Charge,
+                    OakItemType.Treasure_Scanner,
+                ];
+                // TODO: Establish global variables for oak items active state
+                if (!App.game.oakItems.isUnlocked(oakItems[index])) {
+                    App.game.oakItems.itemList[oakItems[index]].received = true;
+                    this.displayItemReceived(item, 'the');
+                }
+            } else if (item.id >= scriptsOffset && item.id < badgesOffset) {
+                // scripts
+                let index = item.id - scriptsOffset;
+                switch (index) {
+                    case 0: setFlag('autoBattleItems', true); break;
+                    case 1: setFlag('catchFilterFantasia', true); break;
+                    case 2:
+                        // Enhanced Auto Clicker (base)
+                        setFlag('enhancedAutoClicker', true);
+                        // Back-compat with older consumers
+                        setFlag('autoclicker', true);
+                        break;
+                    case 3:
+                        // Progressive clicks/second
+                        setFlag('enhancedAutoClicker', true);
+                        setFlag('autoclicker', true);
+                        {
+                            const cur = (w.APFlags?.get ? w.APFlags.get('enhancedAutoClickerProgressive') : w.APFlags?.enhancedAutoClickerProgressive) || 0;
+                            setFlag('enhancedAutoClickerProgressive', Number(cur) + 1);
+                        }
+                        break;
+                    case 4: setFlag('enhancedAutoHatchery', true); break;
+                    case 5: setFlag('enhancedAutoMine', true); break;
+                    case 6: setFlag('simpleAutoFarmer', true); break;
+                    case 7: setFlag('autoQuestCompleter', true); break;
+                    case 8: setFlag('autoSafariZone', true); break;
+                    case 9:
+                        setFlag('autoSafariZone', true);
+                        {
+                            const cur = (w.APFlags?.get ? w.APFlags.get('autoSafariZoneProgressive') : w.APFlags?.autoSafariZoneProgressive) || 0;
+                            setFlag('autoSafariZoneProgressive', Number(cur) + 1);
+                        }
+                        break;
+                    case 10: setFlag('catchSpeedAdjuster', true); break;
+                    case 11: setFlag('infiniteSeasonalEvents', true); break;
+                    case 12: setFlag('oakItemsUnlimited', true); break;
+                    case 13: setFlag('simpleWeatherChanger', true); break;
+                    default:
+                        break;
+                }
+
+                this.displayItemReceived(item, 'the');
+            } else if (item.id >= badgesOffset && item.id < otherItemsOffset) {
+                // Badges
+                let index = item.id - badgesOffset;
+                const badges = [
+                    BadgeEnums.Boulder,
+                    BadgeEnums.Cascade,
+                    BadgeEnums.Thunder,
+                    BadgeEnums.Rainbow,
+                    BadgeEnums.Marsh,
+                    BadgeEnums.Soul,
+                    BadgeEnums.Volcano,
+                    BadgeEnums.Earth,
+                ];
+                const eliteBadges = [
+                    BadgeEnums.Elite_Lorelei,
+                    BadgeEnums.Elite_Bruno,
+                    BadgeEnums.Elite_Agatha,
+                    BadgeEnums.Elite_Lance,
+                    BadgeEnums.Elite_KantoChampion,
+                ];
+                
+                if (index < 8) {
+                    if (!App.game.badgeCase.hasBadge(badges[index])) {
+                        this.displayItemReceived(item, 'the');
+                        App.game.badgeCase.gainBadge(badges[index]);
+                    }
+                } else {
+                    const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
+                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
+                        App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
+                        this.displayItemReceived(item, 'a');
+                    }
+                    w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
+                    
+                }
+
+            } else if (item.id >= otherItemsOffset && item.id < eventItemsOffset) {
+                // Other items
+                let index = item.id - otherItemsOffset;
+                if (index == 0) {
+                    // Progressive Pokeballs
+                    // TODO: Establish global variable for progressive pokeball state
+                    this.displayItemReceived(item, 'a');
+                } else if (index == 1) {
+                    // Extra Egg Slot
+                    const currentExtraEggSlots = w.APFlags.get('extraEggSlots') + 1 || 1;
+                    w.APFlags.set('extraEggSlots', currentExtraEggSlots);
+                    if (currentExtraEggSlots > App.game.breeding._eggList().length - 4) {
+                        App.game.breeding.gainAdditionalEggSlot();
+                        App.game.breeding.gainEggSlot();
+                        this.displayItemReceived(item, 'a');
+                    }
+                }
+            } else if (item.id >= eventItemsOffset && item.id < pokemonOffset) {
+                // Event items
+                Notifier.notify({
+                    message: 'You received an AP event item. This should not happen. Please report the issue on the AP Pokeclicker Github repo.',
+                    type: NotificationConstants.NotificationOption.danger,
+                });
+            } else if (item.id >= pokemonOffset && item.id <= pokemonLastIndex) {
+                // Pokemon
+                let id = item.id - pokemonOffset + 1;
+                if (!App.game.party.alreadyReceived(id)) {
+                    App.game.party.receivePokemonById(id, false, false);
+                    this.displayItemReceived(item, '');
+                }
+            } else {
+                // Filler
+                player.gainItem('Protein', 1);
+                this.displayItemReceived(item, 'a');
+            }
+        }
+    }
+
+    // Wait for App.game, mark ready, then flush queued packets.
+    private async ensureGameReady(timeoutMs = 15000) {
+        if (this.isGameReady()) return;
+        const ready = await this.waitForGameReady(timeoutMs, 100);
+        if (!ready) {
+            try { console.warn('[ArchipelagoModule] Proceeding without confirmed App.game readiness after timeout'); } catch (_) { }
+        }
+        (window as any).APFlags.set('gameReady', true); // Treat timeout as ready to avoid indefinite queue
+        this.flushQueuedItems();
+        this.flushQueuedLocationChecks();
+    }
+
+    private flushQueuedItems() {
+        if (!this.isGameReady() || !this.pendingItemPackets.length) return;
+        for (const packet of this.pendingItemPackets) {
+            this.processItemPacket(packet.items, packet.startingIndex);
+        }
+        this.pendingItemPackets.length = 0;
+    }
+
+    private flushQueuedLocationChecks() {
+        if (!this.isGameReady() || !this.connected || !this.pendingLocationChecks.length) return;
+        try {
+            const batch = [...this.pendingLocationChecks];
+            this.pendingLocationChecks.length = 0;
+            this.client.socket.send({ cmd: 'LocationChecks', locations: batch });
+        } catch (e) {
+            this.lastError = e;
+            try { console.error('Failed to flush queued LocationChecks after game ready:', e); } catch (_) { }
+        }
+    }
+
+    private isGameReady(): boolean {
+        try {
+            const w: any = window as any;
+            if (w?.APFlags) {
+                return !!w.APFlags.get('gameReady');
+            }
+        } catch (_) { }
+        return false;
+    }
 }
 
 const instance = new ArchipelagoIntegrationModule();
@@ -512,9 +652,9 @@ if (typeof window !== 'undefined') {
         try {
             if (!name) {
                 name = (window as any).App?.game?.player?.name || 'Player';
-                if (!name || name === 'Player') name = 'JH';
+                if (!name) name = 'Player';
             }
-        } catch (_) { name = name || 'JH'; }
+        } catch (_) { name = name || 'Player'; }
 
         try {
             Notifier.notify({

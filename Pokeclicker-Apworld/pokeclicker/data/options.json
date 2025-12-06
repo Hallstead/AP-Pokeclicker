@@ -116,6 +116,84 @@
             ],
             "default": false,
             "group": "Game Options"
+        },
+        "roaming_encounter_multiplier": {
+            "type": "Range",
+            "description": [
+                "Sets the multiplier for roaming encounter rates on the boosted route.",
+                "Higher values make roaming Pokemon appear more frequently on that route."
+            ],
+            "range_start": 1,
+            "default": 2,
+            "range_end": 100,
+            "group": "Game Options"
+        },
+        "roaming_encounter_multiplier_route": {
+            "type": "Toggle",
+            "description": [
+                "Should the roaming encounter rate multiplier apply to the boosted route only?",
+                "With this enabled, only the boosted route will have increased roaming encounter rates.",
+                "With this disabled, all routes will have increased roaming encounter rates."
+            ],
+            "default": true,
+            "group": "Game Options"
+        },
+        "starter_logic": {
+            "type": "Toggle",
+            "description": [
+                "Are starter Pokemon considered in logic at the beginning of the region?",
+                "With this enabled, you would be expected to reset the game to obtain all the starters."
+            ],
+            "default": false,
+            "group": "Logic Options"
+            
+        },
+        "mystery_egg_in_logic": {
+            "type": "Toggle",
+            "description": [
+                "Are Mystery Eggs considered in logic for obtaining pokemon?"
+            ],
+            "default": false,
+            "group": "Logic Options"
+        },
+        "clicks_per_second": {
+            "type": "Range",
+            "description": [
+                "Sets the assumed clicks per second for the player.",
+                "This affects the logic for attack needed for the player to be expected to defeat dungeons and gym leaders.",
+                "Higher values make the game easier.",
+                "It is recommended to check your clicks per second rate with an online CPS tester."
+            ],
+            "range_start": 1,
+            "default": 5,
+            "range_end": 20,
+            "group": "Logic Options"
+        },
+        "dungeon_logic": {
+            "type": "Choice",
+            "description": [
+                "This option determines how much attack power is needed to reliably find and catch a dungeon pokemon.",
+                "Early: Dungeons and their pokemon are brought into logic if you can clear only one or two dungeon spaces for the event that the pokemon/boss is one of them. This option is much more RNG dependant.",
+                "Half: Dungeons and their pokemon are brought into logic if you can clear about half the dungeon spaces for the event that the pokemon/boss is one of them.",
+                "All: Dungeons and their pokemon assume you must be able to fully clear the dungeon to be in logic."
+            ],
+            "values": {
+                "early": 0,
+                "half": 1,
+                "all": 2
+            },
+            "default": 1,
+            "allow_custom_value": false,
+            "group": "Logic Options"
+        },
+        "safari_zone_logic": {
+            "type": "Toggle",
+            "description": [
+                "Is the Auto Safari Zone script logically required to obtain pokemon in the Safari Zone?",
+                "This does nothing if use_scripts or include_scripts_as_items are false."
+            ],
+            "default": false,
+            "group": "Logic Options"
         }
     }
 }
