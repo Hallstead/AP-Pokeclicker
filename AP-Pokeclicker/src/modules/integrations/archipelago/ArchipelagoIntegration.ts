@@ -12,6 +12,7 @@ import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
 import Rand from '../../utilities/Rand';
 import BuyKeyItem from '../../items/buyKeyItem';
+import PokemonItem from '../../items/PokemonItem';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -236,6 +237,14 @@ class ArchipelagoIntegrationModule {
                         item.isPurchased(true);
                     }
                     return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
+                });
+            }
+            if (item instanceof PokemonItem && item.locationId !== null) {
+                return w.scout(item.locationId).then(result => {
+                    if (result) {
+                        return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
+                    }
+                    return Promise.resolve(undefined);
                 });
             }
             return Promise.resolve(undefined);

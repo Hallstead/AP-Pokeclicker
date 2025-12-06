@@ -17,20 +17,16 @@ class Shop extends TownContent {
         let chain = Promise.resolve();    // Start empty chain
 
         for (const item of this.items) {
-            if (item.displayName === 'AP Item') {
-
-                // extend the chain — each step waits for the previous one
-                chain = chain.then(() =>
-                    (window as any).scoutShopItem(item)
-                        .then((name: string) => {
-                            if (name) {
-                                console.log('Changing name');
-                                item.displayName = name;
-                                console.log(item.displayName);
-                            }
-                        })
-                );
-            }
+            chain = chain.then(() =>
+                (window as any).scoutShopItem(item)
+                    .then((name: string) => {
+                        if (name) {
+                            //console.log('Changing name');
+                            item.displayName = name;
+                            //console.log(item.displayName);
+                        }
+                    })
+            );
         }
 
         // After ALL async renames:
