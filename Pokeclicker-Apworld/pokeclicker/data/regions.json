@@ -1,0 +1,41 @@
+{
+    "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.regions.schema.json",
+    "Route 1": {
+        "starting": true,
+        "connects_to": [
+            "Route 1 Pokemon",
+            "Kanto"
+        ],
+        "requires": []
+    },
+    "Route 1 Pokemon": {
+        "connects_to": [],
+        "requires": []
+    },
+    "Kanto": {
+        "connects_to": [
+            "Kanto Pokemon",
+            "Sevii Islands 123",
+            "Indigo Plateau"
+        ],
+        "requires": "|Town Map|"
+    },
+    "Kanto Pokemon": {
+        "connects_to": [],
+        "requires": []
+    },
+    "Sevii Islands 123": {
+        "connects_to": [],
+        "requires": "|Volcano Badge|"
+    },
+    "Indigo Plateau": {
+        "connects_to": [
+            "Kanto Champion"
+        ],
+        "requires": "|Boulder Badge| AND |Cascade Badge| AND |Thunder Badge| AND |Rainbow Badge| AND |Marsh Badge| AND |Soul Badge| AND |Volcano Badge| AND |Earth Badge|"
+    },
+    "Kanto Champion": {
+        "connects_to": [],
+        "requires": "|Progressive Elite Badge:5|"
+    }
+}

@@ -62,7 +62,7 @@ TemporaryBattleList['Blue 1'] = new TemporaryBattle(
         imageName: 'Blue1',
         battleBackground: 'Default',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(47);
+            (window as any).sendLocationCheck(701);
         },
     }
 );
@@ -85,7 +85,7 @@ TemporaryBattleList['Blue 2'] = new TemporaryBattle(
         returnTown: 'Cerulean City',
         imageName: 'Blue1',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(48);
+            (window as any).sendLocationCheck(702);
         },
     }
 );
@@ -108,7 +108,7 @@ TemporaryBattleList['Blue 3'] = new TemporaryBattle(
         returnTown: 'Vermilion City',
         imageName: 'Blue2',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(49);
+            (window as any).sendLocationCheck(703);
         },
     }
 );
@@ -137,7 +137,7 @@ TemporaryBattleList['Blue 4'] = new TemporaryBattle(
         displayName: 'Rival Blue',
         imageName: 'Blue2',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(50);
+            (window as any).sendLocationCheck(704);
         },
     }
 );
@@ -157,7 +157,7 @@ TemporaryBattleList['Fighting Dojo'] = new TemporaryBattle(
     undefined,
     {
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(53);
+            (window as any).sendLocationCheck(707);
             BagHandler.gainItem({type: ItemType.item, id: 'Fighting_egg'}, 1);
             Notifier.notify({
                 message: 'You were awarded a Fighting Egg for defeating the Fighting Dojo!',
@@ -184,7 +184,7 @@ TemporaryBattleList['Snorlax route 12'] = new TemporaryBattle(
         hideTrainer: true,
         visibleRequirement: new OneFromManyRequirement([new RouteKillRequirement(10, GameConstants.Region.kanto, 11), new RouteKillRequirement(5, GameConstants.Region.kanto, 12)]),
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(54);
+            (window as any).sendLocationCheck(708);
         },
     }
 );
@@ -201,7 +201,7 @@ TemporaryBattleList['Snorlax route 16'] = new TemporaryBattle(
         hideTrainer: true,
         visibleRequirement: new RouteKillRequirement(10, GameConstants.Region.kanto, 7),
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(55);
+            (window as any).sendLocationCheck(709);
         },
     }
 );
@@ -230,7 +230,7 @@ TemporaryBattleList['Blue 5'] = new TemporaryBattle(
         displayName: 'Rival Blue',
         imageName: 'Blue2',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(51);
+            (window as any).sendLocationCheck(705);
         },
     }
 );
@@ -247,7 +247,7 @@ TemporaryBattleList['Biker Goon 1'] = new TemporaryBattle(
         displayName: 'Biker Goon',
         imageName: 'Biker Goon',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(56);
+            (window as any).sendLocationCheck(710);
         },
     }
 );
@@ -261,7 +261,7 @@ TemporaryBattleList['Biker Goon 2'] = new TemporaryBattle(
         displayName: 'Biker Goon',
         imageName: 'Biker Goon',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(57);
+            (window as any).sendLocationCheck(711);
         },
     }
 );
@@ -275,7 +275,7 @@ TemporaryBattleList['Biker Goon 3'] = new TemporaryBattle(
         displayName: 'Biker Goon',
         imageName: 'Biker Goon',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(58);
+            (window as any).sendLocationCheck(712);
         },
     }
 );
@@ -294,7 +294,7 @@ TemporaryBattleList['Cue Ball Paxton'] = new TemporaryBattle(
     undefined,
     {
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(59);
+            (window as any).sendLocationCheck(713);
         },
     }
 );
@@ -358,7 +358,7 @@ TemporaryBattleList['Blue 6'] = new TemporaryBattle(
         returnTown: 'Viridian City',
         imageName: 'Blue2',
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(52);
+            (window as any).sendLocationCheck(706);
         },
     }
 );

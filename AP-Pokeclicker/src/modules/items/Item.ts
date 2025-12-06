@@ -210,6 +210,10 @@ export default class Item {
         return this._displayName ?? camelCaseToString(humanifyString(this.name));
     }
 
+    set displayName(value: string) {
+        this._displayName = value;
+    }
+
     get image() {
         const subDirectory = this.imageDirectory ? `${this.imageDirectory}/` : '';
         return `assets/images/items/${subDirectory}${this.name}.png`;

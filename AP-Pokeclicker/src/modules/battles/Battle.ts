@@ -187,8 +187,10 @@ export default class Battle {
         App.game.oakItems.use(OakItemType.Magic_Ball);
         App.game.party.gainPokemonById(enemyPokemon.id, enemyPokemon.shiny, undefined, enemyPokemon.gender, enemyPokemon.shadow);
         const partyPokemon = App.game.party.getPokemon(enemyPokemon.id);
-        const epBonus = App.game.pokeballs.getEPBonus(this.pokeball());
-        partyPokemon.effortPoints += App.game.party.calculateEffortPoints(partyPokemon, enemyPokemon.shiny, enemyPokemon.shadow, enemyPokemon.ep * epBonus);
+        if (partyPokemon) {
+            const epBonus = App.game.pokeballs.getEPBonus(this.pokeball());
+            partyPokemon.effortPoints += App.game.party.calculateEffortPoints(partyPokemon, enemyPokemon.shiny, enemyPokemon.shadow, enemyPokemon.ep * epBonus);
+        }
     }
 
     public static gainTokens(route: number, region: GameConstants.Region, pokeball = this.pokeball()): Amount {

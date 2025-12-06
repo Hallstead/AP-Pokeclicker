@@ -14,9 +14,28 @@ class Shop extends TownContent {
         return !(this.hideBeforeUnlocked && !this.isUnlocked());
     }
     public onclick(): void {
-        ShopHandler.showShop(this);
-        $('#shopModal').modal('show');
+        let chain = Promise.resolve();    // Start empty chain
+
+        for (const item of this.items) {
+            chain = chain.then(() =>
+                (window as any).scoutShopItem(item)
+                    .then((name: string) => {
+                        if (name) {
+                            //console.log('Changing name');
+                            item.displayName = name;
+                            //console.log(item.displayName);
+                        }
+                    })
+            );
+        }
+
+        // After ALL async renames:
+        chain.then(() => {
+            ShopHandler.showShop(this);
+            $('#shopModal').modal('show');
+        });
     }
+
     public tooltip = 'Visit shops to buy items.';
     constructor(
         public items: Item[],

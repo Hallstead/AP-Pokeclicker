@@ -18,11 +18,12 @@
             Play offline & improve performance by downloading our desktop client <b><a href="https://github.com/RedSparr0w/Pokeclicker-desktop/releases/latest" target="_blank">here</a></b>.
             You can even find a Pokémon exclusive to the client when you reach the Sevii Islands!<br/><br/>
         </div>
-        <div class="save-container justify-content-center container row"></div>
+        <div class="save-container justify-content-center container row" hidden></div>
 
         <div class="new-import-buttons justify-content-center container row">
-            <label class="btn btn-success col-md-4 col-xs-12 mx-1" onclick="Save.key = Rand.string(6); document.querySelector('#saveSelector').remove(); App.start();">New Save</label>
-            <label for="import-save" class="btn btn-warning col-md-4 col-xs-12 mx-1" onclick="Save.key = Rand.string(6);">Import Save</label>
+            <!-- <label class="btn btn-success col-md-4 col-xs-12 mx-1" onclick="
+                ; document.querySelector('#saveSelector').remove(); App.start();">New Save</label>
+            <label for="import-save" class="btn btn-warning col-md-4 col-xs-12 mx-1" onclick="Save.key = Rand.string(6);">Import Save</label> -->
             <div class="col-12 mb-2 text-center">
                 <div class="form-row justify-content-center">
                     <div class="col-auto mb-1">
@@ -36,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <label id="archipelago-connect-btn" class="btn btn-primary col-md-4 col-xs-12 mx-1" onclick="window.apLoginFromSaveSelector()">Connect (Archipelago)</label>
+            <label id="archipelago-connect-btn" class="btn btn-primary col-md-4 col-xs-12 mx-1" onclick="window.apLoginFromSaveSelector();">Connect (Archipelago)</label>
         </div>
 
     </div>

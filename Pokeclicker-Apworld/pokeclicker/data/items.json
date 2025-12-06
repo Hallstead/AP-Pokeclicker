@@ -2,15 +2,16 @@
     "$schema": "https://github.com/ManualForArchipelago/Manual/raw/main/schemas/Manual.items.schema.json",
     "data": [
         {
+            "id": 1,
             "count": "1",
             "name": "Town Map",
             "category": [
-                "Key Items",
-                "Town Map"
+                "Key Items"
             ],
             "progression": true
         },
         {
+            "id": 2,
             "count": "1",
             "name": "Dungeon Ticket",
             "category": [
@@ -19,6 +20,7 @@
             "progression": true
         },
         {
+            "id": 3,
             "count": 1,
             "name": "Mystery Egg",
             "category": [
@@ -27,6 +29,7 @@
             "progression": true
         },
         {
+            "id": 4,
             "count": 1,
             "name": "Wailmer Pail",
             "category": [
@@ -35,6 +38,7 @@
             "progression": true
         },
         {
+            "id": 5,
             "count": 1,
             "name": "Super Rod",
             "category": [
@@ -43,6 +47,7 @@
             "progression": true
         },
         {
+            "id": 6,
             "count": 1,
             "name": "Safari Ticket",
             "category": [
@@ -51,6 +56,7 @@
             "progression": true
         },
         {
+            "id": 7,
             "count": 1,
             "name": "Explorer Kit",
             "category": [
@@ -59,6 +65,7 @@
             "progression": true
         },
         {
+            "id": 8,
             "count": 1,
             "name": "Gem Case",
             "category": [
@@ -67,6 +74,7 @@
             "useful": true
         },
         {
+            "id": 9,
             "count": 1,
             "name": "Holo Caster",
             "category": [
@@ -75,6 +83,7 @@
             "useful": true
         },
         {
+            "id": 101,
             "count": 1,
             "name": "Magic Ball",
             "category": [
@@ -83,6 +92,7 @@
             "useful": true
         },
         {
+            "id": 102,
             "count": 1,
             "name": "Amulet Coin",
             "category": [
@@ -91,6 +101,7 @@
             "useful": true
         },
         {
+            "id": 103,
             "count": 1,
             "name": "Rocky Helmet",
             "category": [
@@ -99,6 +110,7 @@
             "useful": true
         },
         {
+            "id": 104,
             "count": 1,
             "name": "EXP Share",
             "category": [
@@ -107,6 +119,7 @@
             "useful": true
         },
         {
+            "id": 105,
             "count": 1,
             "name": "Sprayduck",
             "category": [
@@ -115,6 +128,7 @@
             "useful": true
         },
         {
+            "id": 106,
             "count": 1,
             "name": "Shiny Charm",
             "category": [
@@ -123,6 +137,7 @@
             "useful": true
         },
         {
+            "id": 107,
             "count": 1,
             "name": "Magma Stone",
             "category": [
@@ -131,6 +146,7 @@
             "useful": true
         },
         {
+            "id": 108,
             "count": 1,
             "name": "Cell Battery",
             "category": [
@@ -139,6 +155,7 @@
             "useful": true
         },
         {
+            "id": 109,
             "count": 1,
             "name": "Explosive Charge",
             "category": [
@@ -147,6 +164,7 @@
             "useful": true
         },
         {
+            "id": 110,
             "count": 1,
             "name": "Treasure Scanner",
             "category": [
@@ -155,6 +173,7 @@
             "useful": true
         },
         {
+            "id": 201,
             "count": 1,
             "name": "Auto Battle Items",
             "category": [
@@ -163,6 +182,7 @@
             "useful": true
         },
         {
+            "id": 202,
             "count": 1,
             "name": "Catch Filter Fantasia",
             "category": [
@@ -171,6 +191,7 @@
             "useful": true
         },
         {
+            "id": 203,
             "count": 1,
             "name": "Enhanced Auto Clicker",
             "category": [
@@ -180,6 +201,7 @@
             "useful": true
         },
         {
+            "id": 204,
             "count": 5,
             "name": "Enhanced Auto Clicker (Progressive Clicks/Second)",
             "category": [
@@ -189,6 +211,7 @@
             "useful": true
         },
         {
+            "id": 205,
             "count": 1,
             "name": "Enhanced Auto Hatchery",
             "category": [
@@ -197,14 +220,16 @@
             "useful": true
         },
         {
+            "id": 206,
             "count": 1,
             "name": "Enhanced Auto Mine",
             "category": [
                 "Scripts"
             ],
-            "useful": true
+            "progression": true
         },
         {
+            "id": 207,
             "count": 1,
             "name": "Simple Auto Farmer",
             "category": [
@@ -213,6 +238,7 @@
             "useful": true
         },
         {
+            "id": 208,
             "count": 1,
             "name": "Auto Quest Completer",
             "category": [
@@ -221,24 +247,27 @@
             "useful": true
         },
         {
+            "id": 209,
             "count": 1,
             "name": "Auto Safari Zone",
             "category": [
                 "Scripts",
                 "Not Progressive Safari Zone"
             ],
-            "useful": true
+            "progression": true
         },
         {
-            "count": 6,
+            "id": 210,
+            "count": 5,
             "name": "Auto Safari Zone (Progressive Fast Animations)",
             "category": [
                 "Scripts",
                 "Progressive Safari Zone"
             ],
-            "useful": true
+            "progression": true
         },
         {
+            "id": 211,
             "count": 1,
             "name": "Catch Speed Adjuster",
             "category": [
@@ -247,14 +276,16 @@
             "useful": true
         },
         {
+            "id": 212,
             "count": 1,
             "name": "Infinite Seasonal Events",
             "category": [
                 "Scripts"
             ],
-            "useful": true
+            "progression": true
         },
         {
+            "id": 213,
             "count": 1,
             "name": "Oak Items Unlimited",
             "category": [
@@ -263,6 +294,7 @@
             "useful": true
         },
         {
+            "id": 214,
             "count": 1,
             "name": "Simple Weather Changer",
             "category": [
@@ -271,14 +303,7 @@
             "useful": true
         },
         {
-            "count": "3",
-            "name": "Progressive Pokeball",
-            "category": [
-                "Shop"
-            ],
-            "progression": true
-        },
-        {
+            "id": 301,
             "count": 1,
             "name": "Boulder Badge",
             "category": [
@@ -287,6 +312,7 @@
             "progression": true
         },
         {
+            "id": 302,
             "count": 1,
             "name": "Cascade Badge",
             "category": [
@@ -295,6 +321,7 @@
             "progression": true
         },
         {
+            "id": 303,
             "count": 1,
             "name": "Thunder Badge",
             "category": [
@@ -303,6 +330,7 @@
             "progression": true
         },
         {
+            "id": 304,
             "count": 1,
             "name": "Rainbow Badge",
             "category": [
@@ -311,6 +339,7 @@
             "progression": true
         },
         {
+            "id": 305,
             "count": 1,
             "name": "Marsh Badge",
             "category": [
@@ -319,6 +348,7 @@
             "progression": true
         },
         {
+            "id": 306,
             "count": 1,
             "name": "Soul Badge",
             "category": [
@@ -327,6 +357,7 @@
             "progression": true
         },
         {
+            "id": 307,
             "count": 1,
             "name": "Volcano Badge",
             "category": [
@@ -335,6 +366,7 @@
             "progression": true
         },
         {
+            "id": 308,
             "count": 1,
             "name": "Earth Badge",
             "category": [
@@ -343,6 +375,7 @@
             "progression": true
         },
         {
+            "id": 309,
             "count": "5",
             "name": "Progressive Elite Badge",
             "category": [
@@ -351,6 +384,16 @@
             "progression": true
         },
         {
+            "id": 501,
+            "count": "3",
+            "name": "Progressive Pokeball",
+            "category": [
+                "Shop"
+            ],
+            "progression": true
+        },
+        {
+            "id": 502,
             "count": 4,
             "name": "Extra Egg Slot",
             "category": [
@@ -359,6 +402,25 @@
             "useful": true
         },
         {
+            "id": 1001,
+            "count": "1",
+            "name": "Tutorial Complete",
+            "category": [
+                "Event"
+            ],
+            "progression": true
+        },
+        {
+            "id": 1002,
+            "count": 1,
+            "name": "Beat Champion Blue",
+            "category": [
+                "Event"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2001,
             "count": 1,
             "name": "001 Bulbasaur",
             "category": [
@@ -367,6 +429,7 @@
             "progression": true
         },
         {
+            "id": 2002,
             "count": 1,
             "name": "002 Ivysaur",
             "category": [
@@ -375,6 +438,7 @@
             "progression": true
         },
         {
+            "id": 2003,
             "count": 1,
             "name": "003 Venusaur",
             "category": [
@@ -383,6 +447,7 @@
             "progression": true
         },
         {
+            "id": 2004,
             "count": 1,
             "name": "004 Charmander",
             "category": [
@@ -391,6 +456,7 @@
             "progression": true
         },
         {
+            "id": 2005,
             "count": 1,
             "name": "005 Charmeleon",
             "category": [
@@ -399,6 +465,7 @@
             "progression": true
         },
         {
+            "id": 2006,
             "count": 1,
             "name": "006 Charizard",
             "category": [
@@ -407,6 +474,7 @@
             "progression": true
         },
         {
+            "id": 2007,
             "count": 1,
             "name": "007 Squirtle",
             "category": [
@@ -415,6 +483,7 @@
             "progression": true
         },
         {
+            "id": 2008,
             "count": 1,
             "name": "008 Wartortle",
             "category": [
@@ -423,6 +492,7 @@
             "progression": true
         },
         {
+            "id": 2009,
             "count": 1,
             "name": "009 Blastoise",
             "category": [
@@ -431,6 +501,7 @@
             "progression": true
         },
         {
+            "id": 2010,
             "count": 1,
             "name": "010 Caterpie",
             "category": [
@@ -439,6 +510,7 @@
             "progression": true
         },
         {
+            "id": 2011,
             "count": 1,
             "name": "011 Metapod",
             "category": [
@@ -447,6 +519,7 @@
             "progression": true
         },
         {
+            "id": 2012,
             "count": 1,
             "name": "012 Butterfree",
             "category": [
@@ -455,6 +528,7 @@
             "progression": true
         },
         {
+            "id": 2013,
             "count": 1,
             "name": "013 Weedle",
             "category": [
@@ -463,6 +537,7 @@
             "progression": true
         },
         {
+            "id": 2014,
             "count": 1,
             "name": "014 Kakuna",
             "category": [
@@ -471,6 +546,7 @@
             "progression": true
         },
         {
+            "id": 2015,
             "count": 1,
             "name": "015 Beedrill",
             "category": [
@@ -479,6 +555,7 @@
             "progression": true
         },
         {
+            "id": 2016,
             "count": 1,
             "name": "016 Pidgey",
             "category": [
@@ -487,6 +564,7 @@
             "progression": true
         },
         {
+            "id": 2017,
             "count": 1,
             "name": "017 Pidgeotto",
             "category": [
@@ -495,6 +573,7 @@
             "progression": true
         },
         {
+            "id": 2018,
             "count": 1,
             "name": "018 Pidgeot",
             "category": [
@@ -503,6 +582,7 @@
             "progression": true
         },
         {
+            "id": 2019,
             "count": 1,
             "name": "019 Rattata",
             "category": [
@@ -511,6 +591,7 @@
             "progression": true
         },
         {
+            "id": 2020,
             "count": 1,
             "name": "020 Raticate",
             "category": [
@@ -519,6 +600,7 @@
             "progression": true
         },
         {
+            "id": 2021,
             "count": 1,
             "name": "021 Spearow",
             "category": [
@@ -527,6 +609,7 @@
             "progression": true
         },
         {
+            "id": 2022,
             "count": 1,
             "name": "022 Fearow",
             "category": [
@@ -535,6 +618,7 @@
             "progression": true
         },
         {
+            "id": 2023,
             "count": 1,
             "name": "023 Ekans",
             "category": [
@@ -543,6 +627,7 @@
             "progression": true
         },
         {
+            "id": 2024,
             "count": 1,
             "name": "024 Arbok",
             "category": [
@@ -551,6 +636,7 @@
             "progression": true
         },
         {
+            "id": 2025,
             "count": 1,
             "name": "025 Pikachu",
             "category": [
@@ -559,6 +645,7 @@
             "progression": true
         },
         {
+            "id": 2026,
             "count": 1,
             "name": "026 Raichu",
             "category": [
@@ -567,6 +654,7 @@
             "progression": true
         },
         {
+            "id": 2027,
             "count": 1,
             "name": "027 Sandshrew",
             "category": [
@@ -575,6 +663,7 @@
             "progression": true
         },
         {
+            "id": 2028,
             "count": 1,
             "name": "028 Sandslash",
             "category": [
@@ -583,6 +672,7 @@
             "progression": true
         },
         {
+            "id": 2029,
             "count": 1,
             "name": "029 Nidoran (F)",
             "category": [
@@ -591,6 +681,7 @@
             "progression": true
         },
         {
+            "id": 2030,
             "count": 1,
             "name": "030 Nidorina",
             "category": [
@@ -599,6 +690,7 @@
             "progression": true
         },
         {
+            "id": 2031,
             "count": 1,
             "name": "031 Nidoqueen",
             "category": [
@@ -607,6 +699,7 @@
             "progression": true
         },
         {
+            "id": 2032,
             "count": 1,
             "name": "032 Nidoran (M)",
             "category": [
@@ -615,6 +708,7 @@
             "progression": true
         },
         {
+            "id": 2033,
             "count": 1,
             "name": "033 Nidorino",
             "category": [
@@ -623,6 +717,7 @@
             "progression": true
         },
         {
+            "id": 2034,
             "count": 1,
             "name": "034 Nidoking",
             "category": [
@@ -631,6 +726,7 @@
             "progression": true
         },
         {
+            "id": 2035,
             "count": 1,
             "name": "035 Clefairy",
             "category": [
@@ -639,6 +735,7 @@
             "progression": true
         },
         {
+            "id": 2036,
             "count": 1,
             "name": "036 Clefable",
             "category": [
@@ -647,6 +744,7 @@
             "progression": true
         },
         {
+            "id": 2037,
             "count": 1,
             "name": "037 Vulpix",
             "category": [
@@ -655,6 +753,7 @@
             "progression": true
         },
         {
+            "id": 2038,
             "count": 1,
             "name": "038 Ninetails",
             "category": [
@@ -663,6 +762,7 @@
             "progression": true
         },
         {
+            "id": 2039,
             "count": 1,
             "name": "039 Jigglypuff",
             "category": [
@@ -671,6 +771,7 @@
             "progression": true
         },
         {
+            "id": 2040,
             "count": 1,
             "name": "040 Wigglytuff",
             "category": [
@@ -679,6 +780,7 @@
             "progression": true
         },
         {
+            "id": 2041,
             "count": 1,
             "name": "041 Zubat",
             "category": [
@@ -687,6 +789,7 @@
             "progression": true
         },
         {
+            "id": 2042,
             "count": 1,
             "name": "042 Golbat",
             "category": [
@@ -695,6 +798,7 @@
             "progression": true
         },
         {
+            "id": 2043,
             "count": 1,
             "name": "043 Oddish",
             "category": [
@@ -703,6 +807,7 @@
             "progression": true
         },
         {
+            "id": 2044,
             "count": 1,
             "name": "044 Gloom",
             "category": [
@@ -711,6 +816,7 @@
             "progression": true
         },
         {
+            "id": 2045,
             "count": 1,
             "name": "045 Vileplume",
             "category": [
@@ -719,6 +825,7 @@
             "progression": true
         },
         {
+            "id": 2046,
             "count": 1,
             "name": "046 Paras",
             "category": [
@@ -727,6 +834,7 @@
             "progression": true
         },
         {
+            "id": 2047,
             "count": 1,
             "name": "047 Parasect",
             "category": [
@@ -735,6 +843,7 @@
             "progression": true
         },
         {
+            "id": 2048,
             "count": 1,
             "name": "048 Venonat",
             "category": [
@@ -743,6 +852,7 @@
             "progression": true
         },
         {
+            "id": 2049,
             "count": 1,
             "name": "049 Venomoth",
             "category": [
@@ -751,6 +861,7 @@
             "progression": true
         },
         {
+            "id": 2050,
             "count": 1,
             "name": "050 Diglett",
             "category": [
@@ -759,6 +870,7 @@
             "progression": true
         },
         {
+            "id": 2051,
             "count": 1,
             "name": "051 Dugtrio",
             "category": [
@@ -767,6 +879,7 @@
             "progression": true
         },
         {
+            "id": 2052,
             "count": 1,
             "name": "052 Meowth",
             "category": [
@@ -775,6 +888,7 @@
             "progression": true
         },
         {
+            "id": 2053,
             "count": 1,
             "name": "053 Persian",
             "category": [
@@ -783,6 +897,7 @@
             "progression": true
         },
         {
+            "id": 2054,
             "count": 1,
             "name": "054 Psyduck",
             "category": [
@@ -791,6 +906,7 @@
             "progression": true
         },
         {
+            "id": 2055,
             "count": 1,
             "name": "055 Golduck",
             "category": [
@@ -799,6 +915,7 @@
             "progression": true
         },
         {
+            "id": 2056,
             "count": 1,
             "name": "056 Mankey",
             "category": [
@@ -807,6 +924,7 @@
             "progression": true
         },
         {
+            "id": 2057,
             "count": 1,
             "name": "057 Primape",
             "category": [
@@ -815,6 +933,7 @@
             "progression": true
         },
         {
+            "id": 2058,
             "count": 1,
             "name": "058 Growlithe",
             "category": [
@@ -823,6 +942,7 @@
             "progression": true
         },
         {
+            "id": 2059,
             "count": 1,
             "name": "059 Arcanine",
             "category": [
@@ -831,6 +951,7 @@
             "progression": true
         },
         {
+            "id": 2060,
             "count": 1,
             "name": "060 Poliwag",
             "category": [
@@ -839,6 +960,7 @@
             "progression": true
         },
         {
+            "id": 2061,
             "count": 1,
             "name": "061 Poliwhirl",
             "category": [
@@ -847,6 +969,7 @@
             "progression": true
         },
         {
+            "id": 2062,
             "count": 1,
             "name": "062 Poliwrath",
             "category": [
@@ -855,6 +978,7 @@
             "progression": true
         },
         {
+            "id": 2063,
             "count": 1,
             "name": "063 Abra",
             "category": [
@@ -863,6 +987,7 @@
             "progression": true
         },
         {
+            "id": 2064,
             "count": 1,
             "name": "064 Kadabra",
             "category": [
@@ -871,6 +996,7 @@
             "progression": true
         },
         {
+            "id": 2065,
             "count": 1,
             "name": "065 Alakazam",
             "category": [
@@ -879,6 +1005,7 @@
             "progression": true
         },
         {
+            "id": 2066,
             "count": 1,
             "name": "066 Machop",
             "category": [
@@ -887,6 +1014,7 @@
             "progression": true
         },
         {
+            "id": 2067,
             "count": 1,
             "name": "067 Machoke",
             "category": [
@@ -895,6 +1023,7 @@
             "progression": true
         },
         {
+            "id": 2068,
             "count": 1,
             "name": "068 Machamp",
             "category": [
@@ -903,6 +1032,7 @@
             "progression": true
         },
         {
+            "id": 2069,
             "count": 1,
             "name": "069 Bellsprout",
             "category": [
@@ -911,6 +1041,7 @@
             "progression": true
         },
         {
+            "id": 2070,
             "count": 1,
             "name": "070 Weepinbell",
             "category": [
@@ -919,6 +1050,7 @@
             "progression": true
         },
         {
+            "id": 2071,
             "count": 1,
             "name": "071 Victreebel",
             "category": [
@@ -927,6 +1059,7 @@
             "progression": true
         },
         {
+            "id": 2072,
             "count": 1,
             "name": "072 Tentacool",
             "category": [
@@ -935,6 +1068,7 @@
             "progression": true
         },
         {
+            "id": 2073,
             "count": 1,
             "name": "073 Tentacruel",
             "category": [
@@ -943,6 +1077,7 @@
             "progression": true
         },
         {
+            "id": 2074,
             "count": 1,
             "name": "074 Geodude",
             "category": [
@@ -951,6 +1086,7 @@
             "progression": true
         },
         {
+            "id": 2075,
             "count": 1,
             "name": "075 Graveler",
             "category": [
@@ -959,6 +1095,7 @@
             "progression": true
         },
         {
+            "id": 2076,
             "count": 1,
             "name": "076 Golem",
             "category": [
@@ -967,6 +1104,7 @@
             "progression": true
         },
         {
+            "id": 2077,
             "count": 1,
             "name": "077 Ponyta",
             "category": [
@@ -975,6 +1113,7 @@
             "progression": true
         },
         {
+            "id": 2078,
             "count": 1,
             "name": "078 Rapidash",
             "category": [
@@ -983,6 +1122,7 @@
             "progression": true
         },
         {
+            "id": 2079,
             "count": 1,
             "name": "079 Slowpoke",
             "category": [
@@ -991,6 +1131,7 @@
             "progression": true
         },
         {
+            "id": 2080,
             "count": 1,
             "name": "080 Slowbro",
             "category": [
@@ -999,6 +1140,7 @@
             "progression": true
         },
         {
+            "id": 2081,
             "count": 1,
             "name": "081 Magnemite",
             "category": [
@@ -1007,6 +1149,7 @@
             "progression": true
         },
         {
+            "id": 2082,
             "count": 1,
             "name": "082 Magneton",
             "category": [
@@ -1015,6 +1158,7 @@
             "progression": true
         },
         {
+            "id": 2083,
             "count": 1,
             "name": "083 Farfetch'd",
             "category": [
@@ -1023,6 +1167,7 @@
             "progression": true
         },
         {
+            "id": 2084,
             "count": 1,
             "name": "084 Doduo",
             "category": [
@@ -1031,6 +1176,7 @@
             "progression": true
         },
         {
+            "id": 2085,
             "count": 1,
             "name": "085 Dodrio",
             "category": [
@@ -1039,6 +1185,7 @@
             "progression": true
         },
         {
+            "id": 2086,
             "count": 1,
             "name": "086 Seel",
             "category": [
@@ -1047,6 +1194,7 @@
             "progression": true
         },
         {
+            "id": 2087,
             "count": 1,
             "name": "087 Dewgong",
             "category": [
@@ -1055,6 +1203,7 @@
             "progression": true
         },
         {
+            "id": 2088,
             "count": 1,
             "name": "088 Grimer",
             "category": [
@@ -1063,6 +1212,7 @@
             "progression": true
         },
         {
+            "id": 2089,
             "count": 1,
             "name": "089 Muk",
             "category": [
@@ -1071,6 +1221,7 @@
             "progression": true
         },
         {
+            "id": 2090,
             "count": 1,
             "name": "090 Shellder",
             "category": [
@@ -1079,6 +1230,7 @@
             "progression": true
         },
         {
+            "id": 2091,
             "count": 1,
             "name": "091 Cloyster",
             "category": [
@@ -1087,6 +1239,7 @@
             "progression": true
         },
         {
+            "id": 2092,
             "count": 1,
             "name": "092 Gastly",
             "category": [
@@ -1095,6 +1248,7 @@
             "progression": true
         },
         {
+            "id": 2093,
             "count": 1,
             "name": "093 Haunter",
             "category": [
@@ -1103,6 +1257,7 @@
             "progression": true
         },
         {
+            "id": 2094,
             "count": 1,
             "name": "094 Gengar",
             "category": [
@@ -1111,6 +1266,7 @@
             "progression": true
         },
         {
+            "id": 2095,
             "count": 1,
             "name": "095 Onix",
             "category": [
@@ -1119,6 +1275,7 @@
             "progression": true
         },
         {
+            "id": 2096,
             "count": 1,
             "name": "096 Drowzee",
             "category": [
@@ -1127,6 +1284,7 @@
             "progression": true
         },
         {
+            "id": 2097,
             "count": 1,
             "name": "097 Hypno",
             "category": [
@@ -1135,6 +1293,7 @@
             "progression": true
         },
         {
+            "id": 2098,
             "count": 1,
             "name": "098 Krabby",
             "category": [
@@ -1143,6 +1302,7 @@
             "progression": true
         },
         {
+            "id": 2099,
             "count": 1,
             "name": "099 Kingler",
             "category": [
@@ -1151,6 +1311,7 @@
             "progression": true
         },
         {
+            "id": 2100,
             "count": 1,
             "name": "100 Voltorb",
             "category": [
@@ -1159,6 +1320,7 @@
             "progression": true
         },
         {
+            "id": 2101,
             "count": 1,
             "name": "101 Electrode",
             "category": [
@@ -1167,6 +1329,7 @@
             "progression": true
         },
         {
+            "id": 2102,
             "count": 1,
             "name": "102 Exeggcute",
             "category": [
@@ -1175,6 +1338,7 @@
             "progression": true
         },
         {
+            "id": 2103,
             "count": 1,
             "name": "103 Exeggutor",
             "category": [
@@ -1183,6 +1347,7 @@
             "progression": true
         },
         {
+            "id": 2104,
             "count": 1,
             "name": "104 Cubone",
             "category": [
@@ -1191,6 +1356,7 @@
             "progression": true
         },
         {
+            "id": 2105,
             "count": 1,
             "name": "105 Marowak",
             "category": [
@@ -1199,6 +1365,7 @@
             "progression": true
         },
         {
+            "id": 2106,
             "count": 1,
             "name": "106 Hitmonlee",
             "category": [
@@ -1207,6 +1374,7 @@
             "progression": true
         },
         {
+            "id": 2107,
             "count": 1,
             "name": "107 Hitmonchan",
             "category": [
@@ -1215,6 +1383,7 @@
             "progression": true
         },
         {
+            "id": 2108,
             "count": 1,
             "name": "108 Lickitung",
             "category": [
@@ -1223,6 +1392,7 @@
             "progression": true
         },
         {
+            "id": 2109,
             "count": 1,
             "name": "109 Koffing",
             "category": [
@@ -1231,6 +1401,7 @@
             "progression": true
         },
         {
+            "id": 2110,
             "count": 1,
             "name": "110 Weezing",
             "category": [
@@ -1239,6 +1410,7 @@
             "progression": true
         },
         {
+            "id": 2111,
             "count": 1,
             "name": "111 Rhyhorn",
             "category": [
@@ -1247,6 +1419,7 @@
             "progression": true
         },
         {
+            "id": 2112,
             "count": 1,
             "name": "112 Rhydon",
             "category": [
@@ -1255,6 +1428,7 @@
             "progression": true
         },
         {
+            "id": 2113,
             "count": 1,
             "name": "113 Chansey",
             "category": [
@@ -1263,6 +1437,7 @@
             "progression": true
         },
         {
+            "id": 2114,
             "count": 1,
             "name": "114 Tangela",
             "category": [
@@ -1271,6 +1446,7 @@
             "progression": true
         },
         {
+            "id": 2115,
             "count": 1,
             "name": "115 Kangaskhan",
             "category": [
@@ -1279,6 +1455,7 @@
             "progression": true
         },
         {
+            "id": 2116,
             "count": 1,
             "name": "116 Horsea",
             "category": [
@@ -1287,6 +1464,7 @@
             "progression": true
         },
         {
+            "id": 2117,
             "count": 1,
             "name": "117 Seadra",
             "category": [
@@ -1295,6 +1473,7 @@
             "progression": true
         },
         {
+            "id": 2118,
             "count": 1,
             "name": "118 Goldeen",
             "category": [
@@ -1303,6 +1482,7 @@
             "progression": true
         },
         {
+            "id": 2119,
             "count": 1,
             "name": "119 Seaking",
             "category": [
@@ -1311,6 +1491,7 @@
             "progression": true
         },
         {
+            "id": 2120,
             "count": 1,
             "name": "120 Staryu",
             "category": [
@@ -1319,6 +1500,7 @@
             "progression": true
         },
         {
+            "id": 2121,
             "count": 1,
             "name": "121 Starmie",
             "category": [
@@ -1327,6 +1509,7 @@
             "progression": true
         },
         {
+            "id": 2122,
             "count": 1,
             "name": "122 Mr. Mime",
             "category": [
@@ -1335,6 +1518,7 @@
             "progression": true
         },
         {
+            "id": 2123,
             "count": 1,
             "name": "123 Scyther",
             "category": [
@@ -1343,6 +1527,7 @@
             "progression": true
         },
         {
+            "id": 2124,
             "count": 1,
             "name": "124 Jynx",
             "category": [
@@ -1351,6 +1536,7 @@
             "progression": true
         },
         {
+            "id": 2125,
             "count": 1,
             "name": "125 Electabuzz",
             "category": [
@@ -1359,6 +1545,7 @@
             "progression": true
         },
         {
+            "id": 2126,
             "count": 1,
             "name": "126 Magmar",
             "category": [
@@ -1367,6 +1554,7 @@
             "progression": true
         },
         {
+            "id": 2127,
             "count": 1,
             "name": "127 Pinsir",
             "category": [
@@ -1375,6 +1563,7 @@
             "progression": true
         },
         {
+            "id": 2128,
             "count": 1,
             "name": "128 Tauros",
             "category": [
@@ -1383,6 +1572,7 @@
             "progression": true
         },
         {
+            "id": 2129,
             "count": 1,
             "name": "129 Magikarp",
             "category": [
@@ -1391,6 +1581,7 @@
             "progression": true
         },
         {
+            "id": 2130,
             "count": 1,
             "name": "130 Gyarados",
             "category": [
@@ -1399,6 +1590,7 @@
             "progression": true
         },
         {
+            "id": 2131,
             "count": 1,
             "name": "131 Lapras",
             "category": [
@@ -1407,6 +1599,7 @@
             "progression": true
         },
         {
+            "id": 2132,
             "count": 1,
             "name": "132 Ditto",
             "category": [
@@ -1415,6 +1608,7 @@
             "progression": true
         },
         {
+            "id": 2133,
             "count": 1,
             "name": "133 Eevee",
             "category": [
@@ -1423,6 +1617,7 @@
             "progression": true
         },
         {
+            "id": 2134,
             "count": 1,
             "name": "134 Vaporeon",
             "category": [
@@ -1431,6 +1626,7 @@
             "progression": true
         },
         {
+            "id": 2135,
             "count": 1,
             "name": "135 Jolteon",
             "category": [
@@ -1439,6 +1635,7 @@
             "progression": true
         },
         {
+            "id": 2136,
             "count": 1,
             "name": "136 Flareon",
             "category": [
@@ -1447,6 +1644,7 @@
             "progression": true
         },
         {
+            "id": 2137,
             "count": 1,
             "name": "137 Porygon",
             "category": [
@@ -1455,6 +1653,7 @@
             "progression": true
         },
         {
+            "id": 2138,
             "count": 1,
             "name": "138 Omanyte",
             "category": [
@@ -1463,6 +1662,7 @@
             "progression": true
         },
         {
+            "id": 2139,
             "count": 1,
             "name": "139 Omastar",
             "category": [
@@ -1471,6 +1671,7 @@
             "progression": true
         },
         {
+            "id": 2140,
             "count": 1,
             "name": "140 Kabuto",
             "category": [
@@ -1479,6 +1680,7 @@
             "progression": true
         },
         {
+            "id": 2141,
             "count": 1,
             "name": "141 Kabutops",
             "category": [
@@ -1487,6 +1689,7 @@
             "progression": true
         },
         {
+            "id": 2142,
             "count": 1,
             "name": "142 Aerodactyl",
             "category": [
@@ -1495,6 +1698,7 @@
             "progression": true
         },
         {
+            "id": 2143,
             "count": 1,
             "name": "143 Snorlax",
             "category": [
@@ -1503,6 +1707,7 @@
             "progression": true
         },
         {
+            "id": 2144,
             "count": 1,
             "name": "144 Articuno",
             "category": [
@@ -1511,6 +1716,7 @@
             "progression": true
         },
         {
+            "id": 2145,
             "count": 1,
             "name": "145 Zapdos",
             "category": [
@@ -1519,6 +1725,7 @@
             "progression": true
         },
         {
+            "id": 2146,
             "count": 1,
             "name": "146 Moltres",
             "category": [
@@ -1527,6 +1734,7 @@
             "progression": true
         },
         {
+            "id": 2147,
             "count": 1,
             "name": "147 Dratini",
             "category": [
@@ -1535,6 +1743,7 @@
             "progression": true
         },
         {
+            "id": 2148,
             "count": 1,
             "name": "148 Dragonair",
             "category": [
@@ -1543,6 +1752,7 @@
             "progression": true
         },
         {
+            "id": 2149,
             "count": 1,
             "name": "149 Dragonite",
             "category": [
@@ -1551,6 +1761,7 @@
             "progression": true
         },
         {
+            "id": 2150,
             "count": 1,
             "name": "150 Mewtwo",
             "category": [
@@ -1559,6 +1770,7 @@
             "progression": true
         },
         {
+            "id": 2151,
             "count": 1,
             "name": "151 Mew",
             "category": [

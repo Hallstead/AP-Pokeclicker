@@ -65,7 +65,7 @@ export default class SaveSelector {
         // Sort our saves
         SortSaves();
 
-        $(document).on('keydown', SaveSelector.LoadSaveOnKeydown);
+        // $(document).on('keydown', SaveSelector.LoadSaveOnKeydown);
     }
 
     static LoadSaveOnKeydown(e: JQuery.KeyDownEvent) {

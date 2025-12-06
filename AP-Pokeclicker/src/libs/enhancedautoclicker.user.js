@@ -21,7 +21,7 @@
 class EnhancedAutoClicker {
     // Constants
     static ticksPerSecond = 20;
-    static maxClickMultiplier = 1;
+    static maxClickMultiplier = 5;
     // Auto Clicker
     static autoClickState = ko.observable(validateStorage('autoClickState', false));
     static autoClickMultiplier = validateStorage('autoClickMultiplier', 1, (v) => (Number.isInteger(v) && v >= 1));
@@ -326,7 +326,7 @@ class EnhancedAutoClicker {
         const next = Math.max(1, Math.floor(raw));
         this.maxClickMultiplier = next;
         this.autoClickMultiplier = next;
-        try { localStorage.setItem('autoClickMultiplier', this.autoClickMultiplier); } catch (_) { /* ignore */ }
+        // try { localStorage.setItem('autoClickMultiplier', this.autoClickMultiplier); } catch (_) { /* ignore */ }
 
         const slider = document.getElementById('auto-click-rate');
         if (slider && slider instanceof HTMLInputElement) {
@@ -653,7 +653,7 @@ class EnhancedAutoClicker {
             if (GymRunner.running()) {
                 GymRunner.running(false);
                 // First time defeating this gym
-                if (!App.game.badgeCase.hasBadge(gym.badgeReward)) {
+                if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)] === 0) {
                     gym.firstWinReward();
                 }
                 GameHelper.incrementObservable(App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)]);

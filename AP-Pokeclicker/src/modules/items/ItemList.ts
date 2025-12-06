@@ -62,15 +62,18 @@ ItemList.SmallRestore    = new EnergyRestore(EnergyRestoreSize.SmallRestore, 300
 ItemList.MediumRestore   = new EnergyRestore(EnergyRestoreSize.MediumRestore, 75000, undefined, 'Medium Restore');
 ItemList.LargeRestore    = new EnergyRestore(EnergyRestoreSize.LargeRestore, 200000, undefined, 'Large Restore');
 
-ItemList.AP_logo = new BuyKeyItem(KeyItemType.AP_logo, 100, undefined, undefined, 'AP Item');
+ItemList.AP_logo_Dungeon_ticket = new BuyKeyItem(KeyItemType.AP_logo, 100, undefined, undefined, 'AP Item', 2);
 ItemList.Dungeon_ticket = new BuyKeyItem(KeyItemType.Dungeon_ticket, 100, undefined, undefined, 'Dungeon Ticket', 2);
+ItemList.AP_logo_Explorer_kit = new BuyKeyItem(KeyItemType.AP_logo, 5000, undefined, undefined, 'AP Item', 7);
 ItemList.Explorer_kit = new BuyKeyItem(KeyItemType.Explorer_kit, 5000, undefined, undefined, 'Explorer Kit', 7);
 ItemList.Event_calendar = new BuyKeyItem(KeyItemType.Event_calendar, 100000, undefined, undefined, 'Event Calendar');
 
 ItemList.Squirtbottle = new BuyOakItem(OakItemType.Squirtbottle, 5000, Currency.farmPoint);
 ItemList.Sprinklotad = new BuyOakItem(OakItemType.Sprinklotad, 10000, Currency.farmPoint);
-ItemList.Explosive_Charge = new BuyOakItem(OakItemType.Explosive_Charge, 5000, Currency.questPoint, 18);
-ItemList.Treasure_Scanner = new BuyOakItem(OakItemType.Treasure_Scanner, 10000, Currency.questPoint, 19);
+ItemList.AP_logo_Explosive_Charge = new BuyKeyItem(KeyItemType.AP_logo, 5000, undefined, undefined, 'AP Item', 109);
+ItemList.Explosive_Charge = new BuyOakItem(OakItemType.Explosive_Charge, 5000, Currency.questPoint, 109);
+ItemList.AP_logo_Treasure_Scanner = new BuyKeyItem(KeyItemType.AP_logo, 10000, undefined, undefined, 'AP Item', 110);
+ItemList.Treasure_Scanner = new BuyOakItem(OakItemType.Treasure_Scanner, 10000, Currency.questPoint, 110);
 
 ItemList.Yellow_Flute = new FluteItem(FluteItemType.Yellow_Flute, 'Pokémon Attack', ['Grass', 'Flying', 'Electric'], 'pokemonAttack', 1.02);
 ItemList.Black_Flute  = new FluteItem(FluteItemType.Black_Flute, 'Click Attack', ['Dark', 'Psychic', 'Fighting'], 'clickAttack', 1.02);
@@ -352,19 +355,19 @@ ItemList['Pinkan Geodude']  = new PokemonItem('Pinkan Geodude');
 ItemList['Pinkan Dodrio']  = new PokemonItem('Pinkan Dodrio', 50000);
 ItemList['Charity Chansey']   = new PokemonItem('Charity Chansey', 5000);
 ItemList['Exeggcute (Single)'] = new PokemonItem('Exeggcute (Single)');
-ItemList.Lickitung            = new PokemonItem('Lickitung', 1000);
+ItemList.Lickitung            = new PokemonItem('Lickitung', 1000, Currency.questPoint, false, undefined, {}, 'Lickitung', 2108);
 ItemList['Pinkan Weezing']  = new PokemonItem('Pinkan Weezing');
 ItemList['Pinkan Scyther']  = new PokemonItem('Pinkan Scyther');
-ItemList['Mr. Mime']             = new PokemonItem('Mr. Mime', 1000);
+ItemList['Mr. Mime']             = new PokemonItem('Mr. Mime', 1000, Currency.questPoint, false, undefined, {}, 'Mr. Mime', 2122);
 ItemList['Pinkan Electabuzz']  = new PokemonItem('Pinkan Electabuzz');
-ItemList.Jynx                 = new PokemonItem('Jynx', 2000);
-ItemList.Magikarp             = new PokemonItem('Magikarp', 50000, Currency.money, true);
+ItemList.Jynx                 = new PokemonItem('Jynx', 2000, Currency.questPoint, false, undefined, {}, 'Jynx', 2124);
+ItemList.Magikarp             = new PokemonItem('Magikarp', 50000, Currency.money, true, undefined, {}, 'Magikarp', 2129);
 ItemList['Magikarp Brown Stripes'] = new PokemonItem('Magikarp Brown Stripes', 100);
 ItemList['Magikarp Blue Raindrops'] = new PokemonItem('Magikarp Blue Raindrops', 200000, Currency.diamond);
 ItemList['Magikarp Saucy Violet'] = new PokemonItem('Magikarp Saucy Violet', 7500000000, Currency.money);
 ItemList['Probably Feebas']   = new PokemonItem('Magikarp (Feebas)', 5999, Currency.battlePoint, false, 'Probably Feebas');
-ItemList.Eevee                = new PokemonItem('Eevee', 4000);
-ItemList.Porygon              = new PokemonItem('Porygon', 2000);
+ItemList.Eevee                = new PokemonItem('Eevee', 4000, Currency.questPoint, false, undefined, {}, 'Eevee', 2133);
+ItemList.Porygon              = new PokemonItem('Porygon', 2000, Currency.questPoint, false, undefined, {}, 'Porygon', 2137);
 ItemList.Togepi               = new PokemonItem('Togepi', 15000);
 ItemList['Pikachu (Palaeontologist)'] = new PokemonItem('Pikachu (Palaeontologist)');
 

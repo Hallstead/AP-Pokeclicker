@@ -43,6 +43,7 @@ class Pokeclicker(World):
     web = world_webworld
 
     options_dataclass = manual_options_data
+    1
     data_version = 2
     required_client_version = (0, 3, 4)
 

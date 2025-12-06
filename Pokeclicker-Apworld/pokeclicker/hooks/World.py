@@ -6,6 +6,9 @@ from BaseClasses import MultiWorld, CollectionState, Item
 from ..Items import ManualItem
 from ..Locations import ManualLocation
 
+#location_name_to_location
+from ..Locations import location_name_to_location
+
 # Raw JSON data from the Manual apworld, respectively:
 #          data/game.json, data/items.json, data/locations.json, data/regions.json
 #
@@ -38,6 +41,7 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
+    # if not is_option_enabled(multiworld, player, "dexsanity"): 
     pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
@@ -46,6 +50,22 @@ def after_create_regions(world: World, multiworld: MultiWorld, player: int):
     locationNamesToRemove: list[str] = [] # List of location names
 
     # Add your code here to calculate which locations to remove
+    # for key, _ in enumerate(location_table):
+    #     if "Pokemon" in location_table[key]["category"]:
+    #         location_table[key]["id"] = None
+
+    # pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if "Pidgey" in l.name)
+    # pokemon_location.id = None
+    # print(pokemon_location)
+    # input(pokemon_location.name + " has been assigned ID None")
+    # pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name)
+    # item_pool.remove(pokemon_item)
+    # for key, _ in enumerate(location_table):
+    #     if "Pokemon" in location_table[key]["category"]:
+    #         loc = world.get_location(location_table[key]["name"])
+    #         loc["id"] = None
+    #         print(loc["name"] + " has been assigned ID None")
+    
 
     for region in multiworld.regions:
         if region.player == player:
@@ -77,6 +97,18 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     #
     # Because multiple copies of an item can exist, you need to add an item name
     # to the list multiple times if you want to remove multiple copies of it.
+    if not world.options.dexsanity.value:
+        for key, _ in enumerate(location_table):
+            if "Pokemon" in location_table[key]["category"]:
+                pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == location_table[key]["name"])
+                # pokemon_location.id = None
+                # print(pokemon_location.name, "-", pokemon_location.id)
+                # print(list(pokemon_location.keys()))
+                # pokemon_location.id = None
+                pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name)
+                pokemon_item.id = None
+                item_pool.remove(pokemon_item)
+                pokemon_location.place_locked_item(pokemon_item)
 
     for itemName in itemNamesToRemove:
         item = next(i for i in item_pool if i.name == itemName)
