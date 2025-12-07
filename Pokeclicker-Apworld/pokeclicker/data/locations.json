@@ -1914,7 +1914,17 @@
         },
         {
             "name": "Travel to Johto",
-            "id": 3000,
+            "id": 1000000,
+            "region": "Kanto Champion",
+            "category": [
+                "Victory"
+            ],
+            "requires": "|@Badges:all| and ({dexsanity_disabled()} or ({dexsanity_enabled()} and |@Pokemon:all|))",
+            "place_item": ["Victory!"]
+        },
+        {
+            "name": "Travel to Johto - Victory",
+            "id": 1000001,
             "region": "Kanto Champion",
             "victory": true,
             "category": [

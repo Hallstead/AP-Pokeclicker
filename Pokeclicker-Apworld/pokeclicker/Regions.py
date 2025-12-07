@@ -64,7 +64,7 @@ def create_region(world: World, multiworld: MultiWorld, player: int, name: str, 
             if world.options.dexsanity.value == 0:
                 if "Pokemon" in location_name_to_location[location]["category"]:
                     loc_id = None
-            if location in ["Complete the Tutorial (Event)", "Beat Champion Blue (Event)"]:
+            if "(Event)" in location:
                 loc_id = None
             locationObj = ManualLocation(player, location, loc_id, ret)
             if location_name_to_location[location].get('prehint'):

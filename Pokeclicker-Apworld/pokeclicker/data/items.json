@@ -1777,6 +1777,60 @@
                 "Pokemon"
             ],
             "progression": true
+        },
+        {
+            "id": 1000000,
+            "count": 1,
+            "name": "Victory!",
+            "category": [
+                "Victory"
+            ],
+            "progression": true
+        },
+        {
+            "id": 1000001,
+            "count": 3,
+            "name": "100000 Pokedollars",
+            "category": [
+                "Filler"
+            ],
+            "filler": true
+        },
+        {
+            "id": 1000002,
+            "count": 3,
+            "name": "10000 Dungeon Tokens",
+            "category": [
+                "Filler"
+            ],
+            "filler": true
+        },
+        {
+            "id": 1000003,
+            "count": 3,
+            "name": "1000 Quest Points",
+            "category": [
+                "Filler"
+            ],
+            "filler": true
+        },
+        {
+            "id": 1000004,
+            "count": 3,
+            "name": "100 Diamonds",
+            "category": [
+                "Filler"
+            ],
+            "filler": true
+        },
+        {
+            "id": 1000005,
+            "count": 3,
+            "name": "1000 Farm Points",
+            "category": [
+                "Filler"
+            ],
+            "filler": true
         }
     ]
 }
