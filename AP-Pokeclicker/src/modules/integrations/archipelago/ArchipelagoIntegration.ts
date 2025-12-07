@@ -200,7 +200,7 @@ class ArchipelagoIntegrationModule {
                 }
                 if (isPokemon) {
                     if (locationNumber % 1 !== 0) {
-                        locationNumber = locationNumber * 100 + 8000;
+                        locationNumber = locationNumber * 100 + 3000;
                     }
                     locationNumber += 2000;
                 }
@@ -425,8 +425,11 @@ class ArchipelagoIntegrationModule {
         const badgesOffset = 301;
         const otherItemsOffset = 501;
         const eventItemsOffset = 1001;
-        const pokemonOffset = 2001;
-        const pokemonLastIndex = 2151;
+        const pokemonOffset = 2001; // 2001 - 3025
+        const altPokemonOffset = 5001; // 5101 - 107500
+        const mapsanityOffset = 110001; // 110001 - 110578
+        const splitDungeonTicketsOffset = 111001; // 111001 - 111222
+        const fillerOffset = 1000001;
 
         for (let i: number = 0; i < items.length; i++) {
             let item: APItem = items[i];
@@ -466,7 +469,6 @@ class ArchipelagoIntegrationModule {
                     OakItemType.Explosive_Charge,
                     OakItemType.Treasure_Scanner,
                 ];
-                // TODO: Establish global variables for oak items active state
                 if (!App.game.oakItems.isUnlocked(oakItems[index])) {
                     App.game.oakItems.itemList[oakItems[index]].received = true;
                     this.displayItemReceived(item, 'the');
@@ -572,17 +574,47 @@ class ArchipelagoIntegrationModule {
                     message: 'You received an AP event item. This should not happen. Please report the issue on the AP Pokeclicker Github repo.',
                     type: NotificationConstants.NotificationOption.danger,
                 });
-            } else if (item.id >= pokemonOffset && item.id <= pokemonLastIndex) {
+            } else if (item.id >= pokemonOffset && item.id < 2152) {
                 // Pokemon
                 let id = item.id - pokemonOffset + 1;
                 if (!App.game.party.alreadyReceived(id)) {
                     App.game.party.receivePokemonById(id, false, false);
                     this.displayItemReceived(item, '');
                 }
+            } else if (item.id > altPokemonOffset && item.id < mapsanityOffset) {
+                // Alternate Form Pokemon 
+                let id = (item.id - altPokemonOffset + 1) / 100;
+                if (!App.game.party.alreadyReceived(id)) {
+                    App.game.party.receivePokemonById(id, false, false);
+                    this.displayItemReceived(item, '');
+                }
+            } else if (item.id >= mapsanityOffset && item.id < splitDungeonTicketsOffset) {
+            } else if (item.id >= splitDungeonTicketsOffset && item.id < fillerOffset - 1) {
             } else {
                 // Filler
-                player.gainItem('Protein', 1);
-                this.displayItemReceived(item, 'a');
+                let id = item.id - fillerOffset;
+                if (id == -1) {
+                    this.client.updateStatus(clientStatuses.goal);
+                }
+                if (id == 0) {
+                    App.game.wallet.gainMoney(100000);
+                    this.displayItemReceived(item, '');
+                } else if (id == 1) {
+                    App.game.wallet.gainDungeonTokens(10000);
+                    this.displayItemReceived(item, '');
+                } else if (id == 2) {
+                    App.game.wallet.gainQuestPoints(1000);
+                    this.displayItemReceived(item, '');
+                } else if (id == 3) {
+                    App.game.wallet.gainDiamonds(100);
+                    this.displayItemReceived(item, '');
+                } else if (id == 4) {
+                    App.game.wallet.gainFarmPoints(1000);
+                    this.displayItemReceived(item, '');
+                } else {
+                    player.gainItem('Protein', 1);
+                    this.displayItemReceived(item, 'a');
+                }
             }
         }
     }

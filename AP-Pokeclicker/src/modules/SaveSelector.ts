@@ -20,8 +20,8 @@ export default class SaveSelector {
         });
 
         if (saves.length >= SaveSelector.MAX_SAVES) {
-            const newImportButton: HTMLDivElement = document.querySelector('#saveSelector .new-import-buttons');
-            newImportButton.style.display = 'none';
+            // const newImportButton: HTMLDivElement = document.querySelector('#saveSelector .new-import-buttons');
+            // newImportButton.style.display = 'none';
         }
 
         $('[data-toggle="tooltip"]').tooltip();
