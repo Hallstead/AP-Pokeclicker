@@ -5237,18 +5237,18 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
 
         
 
-<image href="assets/images/map/transparent.png" xlink:href="assets/images/map/transparent.png"
-    x="640"
-    y="160"
-    height="16"
-    width="16"
+<image href="assets/images/map/buildings/pokecenter_small.png" xlink:href="assets/images/map/buildings/pokecenter_small.png"
+    x="624"
+    y="144"
+    height="32"
+    width="32"
     data-bind="visible: App.game.statistics.routeKills[&#39;kanto&#39;][3]() &gt;= 10"/>
 <rect class="city"
     data-town="Route 4 Pokémon Center"
-    x="640"
-    y="160"
-    height="16"
-    width="16"
+    x="624"
+    y="144"
+    height="32"
+    width="32"
     data-bind="visible: App.game.statistics.routeKills[&#39;kanto&#39;][3]() &gt;= 10, click:function(){MapHelper.moveToTown(&#39;Route 4 Pokémon Center&#39;)}, attr:{ class: MapHelper.calculateTownCssClass(&#39;Route 4 Pokémon Center&#39;) },
         event: { mouseenter: () => GameController.showMapTooltip('Route 4 Pokémon Center'), mouseleave: GameController.hideMapTooltip }">
 </rect>
