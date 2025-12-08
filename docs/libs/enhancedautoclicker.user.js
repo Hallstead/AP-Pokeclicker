@@ -656,6 +656,12 @@ class EnhancedAutoClicker {
                 if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)] === 0) {
                     gym.firstWinReward();
                 }
+                // send location checks
+                if (gym.locationIdList.length > 0) {
+                    for (const id of gym.locationIdList) {
+                        window.sendLocationCheck(id);
+                    }
+                }
                 GameHelper.incrementObservable(App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)]);
                 // Award money for defeating gym as we're auto clicking
                 App.game.wallet.gainMoney(gym.moneyReward);
