@@ -204,7 +204,9 @@ class ArchipelagoIntegrationModule {
                     }
                     locationNumber += 2000;
                 }
-                this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
+                if (!this.client.room.checkedLocations.includes(locationNumber)) {
+                    this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
+                }
             } catch (e) {
                 this.lastError = e;
                 try { console.error('Unable to send packets to the server; not connected to a server.', e); } catch (_) { /* noop */ }

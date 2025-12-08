@@ -113,6 +113,11 @@ class GymRunner {
             if (gymClears === 0) {
                 gym.firstWinReward();
             }
+            if (gym.locationIdList.length > 0) {
+                for (const id of gym.locationIdList) {
+                    (window as any).sendLocationCheck(id);
+                }
+            }
             GameHelper.incrementObservable(App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)]);
 
             // Auto restart gym battle
