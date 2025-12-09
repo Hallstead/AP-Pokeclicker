@@ -746,6 +746,9 @@ if (typeof window !== 'undefined') {
             }
             if ((window as any).archipelagoConnect) {
                 (window as any).archipelagoConnect(url, s, 'Pokeclicker');
+                localStorage.setItem('ap-last-host', h);
+                localStorage.setItem('ap-last-port', p);
+                localStorage.setItem('ap-last-slot', s);
                 return true;
             }
             Notifier.notify({ message: 'Archipelago module not available yet', type: NotificationConstants.NotificationOption.warning });
