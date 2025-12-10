@@ -20,6 +20,7 @@ import PokemonItem from '../../items/PokemonItem';
 
 class ArchipelagoIntegrationModule {
     private client: any = null;
+    private player: APPlayer = null;
     public connected = false;
     public lastError: any = null;
     // Queue outbound location checks until we're connected
@@ -180,6 +181,7 @@ class ArchipelagoIntegrationModule {
                 try { return w.APFlags[key]; } catch (_) { return undefined; }
             };
         }
+        w.APFlags.set('recievedItems', {});
         
         w.sendLocationCheck = (locationNumber: number, isPokemon: boolean = false) => {
             try {
@@ -218,11 +220,13 @@ class ArchipelagoIntegrationModule {
         };
 
         w.setItem = (key: string, value: string) => {
-            this.client.storage.prepare(key, value).replace(value).commit();
+            let dataKey = `pokeclicker:${this.player.team}:${this.player.slot}:${key}`;
+            this.client.storage.prepare(dataKey, value).replace(value).commit();
         };
 
         w.getItem = async (key: string): Promise<string | null> => {
-            const data = await this.client.storage.fetch(key);
+            let dataKey = `pokeclicker:${this.player.team}:${this.player.slot}:${key}`;
+            const data = await this.client.storage.fetch(dataKey);
             //console.log(data);
             return data || null;
         };
@@ -257,13 +261,14 @@ class ArchipelagoIntegrationModule {
         this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
             // console.log('Connected to server: ', player);
             this.connected = true;
+            this.player = player;
             
 
             // Start the game if not already started
             if (!App.game) {
                 //set save key
-                Save.key = (await w.getItem(player.name + 'save key', true)) || Rand.string(6);
-                await w.setItem(player.name + 'save key', Save.key);
+                Save.key = (await w.getItem('saveKey', true)) || Rand.string(6);
+                await w.setItem('saveKey', Save.key);
                 //console.log('Using save key: ', Save.key);
                 document.querySelector('#saveSelector').remove();
                 App.start();
@@ -399,8 +404,9 @@ class ArchipelagoIntegrationModule {
         }
     }
 
-    public processItemPacket(items: APItem[], startingIndex: number) {
+    public async processItemPacket(items: APItem[], startingIndex: number) {
         const w: any = window as any;
+        let nowItems = {};
         // Set APFlags for each script item
         const setFlag = (key: string, value: any) => {
             if (w.APFlags?.set) {
@@ -418,6 +424,8 @@ class ArchipelagoIntegrationModule {
             setFlag('progressivePokeballs', 0);
             setFlag('progressiveEliteBadges', 0);
             setFlag('extraEggSlots', 0);
+
+            w.APFlags.receivedItems = await w.getItem('receivedItems') || {};
         }
 
         // Item Categories:
@@ -435,6 +443,7 @@ class ArchipelagoIntegrationModule {
 
         for (let i: number = 0; i < items.length; i++) {
             let item: APItem = items[i];
+            
             // console.log('Processing item: ', item);
             // console.log(item.id);
 
@@ -594,6 +603,15 @@ class ArchipelagoIntegrationModule {
             } else if (item.id >= splitDungeonTicketsOffset && item.id < fillerOffset - 1) {
             } else {
                 // Filler
+                if (!nowItems[item.id]) {
+                    nowItems[item.id] = 0;
+                }
+                nowItems[item.id] += 1;
+
+                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= nowItems[item.id]) {
+                    // Already received this item in a previous sync packet
+                    continue;
+                }
                 let id = item.id - fillerOffset;
                 if (id == -1) {
                     this.client.updateStatus(clientStatuses.goal);
@@ -619,6 +637,8 @@ class ArchipelagoIntegrationModule {
                 }
             }
         }
+        // Save received items state
+        await w.setItem('receivedItems', nowItems);
     }
 
     // Wait for App.game, mark ready, then flush queued packets.
