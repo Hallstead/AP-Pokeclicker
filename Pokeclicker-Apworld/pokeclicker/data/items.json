@@ -376,10 +376,51 @@
         },
         {
             "id": 309,
-            "count": "5",
-            "name": "Progressive Elite Badge",
+            "count": "1",
+            "name": "Kanto Elite Lorelei Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Elite Badges"
+            ],
+            "progression": true
+        },
+        {
+            "id": 310,
+            "count": "1",
+            "name": "Kanto Elite Bruno's Badge",
+            "category": [
+                "Badges",
+                "Kanto Elite Badges"
+            ],
+            "progression": true
+        },
+        {
+            "id": 311,
+            "count": "1",
+            "name": "Kanto Elite Agatha's Badge",
+            "category": [
+                "Badges",
+                "Kanto Elite Badges"
+            ],
+            "progression": true
+        },
+        {
+            "id": 312,
+            "count": "1",
+            "name": "Kanto Elite Lance's Badge",
+            "category": [
+                "Badges",
+                "Kanto Elite Badges"
+            ],
+            "progression": true
+        },
+        {
+            "id": 313,
+            "count": "1",
+            "name": "Kanto Elite Champion Badge",
+            "category": [
+                "Badges",
+                "Kanto Elite Badges"
             ],
             "progression": true
         },
