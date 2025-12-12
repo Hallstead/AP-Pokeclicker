@@ -452,15 +452,6 @@
             "progression": true
         },
         {
-            "id": 1002,
-            "count": 1,
-            "name": "Beat Champion Blue",
-            "category": [
-                "Event"
-            ],
-            "progression": true
-        },
-        {
             "id": 2001,
             "count": 1,
             "name": "Bulbasaur",

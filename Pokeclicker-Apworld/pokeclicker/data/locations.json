@@ -297,17 +297,8 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:4| and {attack_needed(359860)}"
-        },
-        {
-            "name": "Beat Champion Blue (Event)",
-            "id": -1,
-            "region": "Indigo Plateau",
-            "category": [
-                "Events"
-            ],
             "requires": "{indigo_plateau()} and |Progressive Elite Badge:4| and {attack_needed(359860)}",
-            "place_item": ["Beat Champion Blue"]
+            "place_item": ["Kanto Elite Champion Badge"]
         },
         {
             "name": "Viridian Forest",
@@ -551,6 +542,15 @@
                 "Temporary Battles"
             ],
             "requires": "{three_island()} and {attack_needed(443328)}"
+        },
+        {
+            "name": "Ash Ketchum Kanto",
+            "id": 714,
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "|Kanto Elite Champion Badge| and {attack_needed(737710)}"
         },
         {
             "name": "Capture Bulbasaur",
@@ -1910,7 +1910,7 @@
             "category": [
                 "Pokemon"
             ],
-            "requires": "({fuchsia_city()} and |Beat Champion Blue|) or (|Mew| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({fuchsia_city()} and |Kanto Elite Champion Badge|) or (|Mew| and |@Badges:8| and |Mystery Egg|)"
         },
         {
             "name": "Travel to Johto",
