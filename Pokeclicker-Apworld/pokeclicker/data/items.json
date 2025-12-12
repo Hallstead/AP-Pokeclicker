@@ -422,7 +422,7 @@
         {
             "id": 2001,
             "count": 1,
-            "name": "001 Bulbasaur",
+            "name": "Bulbasaur",
             "category": [
                 "Pokemon"
             ],
@@ -431,7 +431,7 @@
         {
             "id": 2002,
             "count": 1,
-            "name": "002 Ivysaur",
+            "name": "Ivysaur",
             "category": [
                 "Pokemon"
             ],
@@ -440,7 +440,7 @@
         {
             "id": 2003,
             "count": 1,
-            "name": "003 Venusaur",
+            "name": "Venusaur",
             "category": [
                 "Pokemon"
             ],
@@ -449,7 +449,7 @@
         {
             "id": 2004,
             "count": 1,
-            "name": "004 Charmander",
+            "name": "Charmander",
             "category": [
                 "Pokemon"
             ],
@@ -458,7 +458,7 @@
         {
             "id": 2005,
             "count": 1,
-            "name": "005 Charmeleon",
+            "name": "Charmeleon",
             "category": [
                 "Pokemon"
             ],
@@ -467,7 +467,7 @@
         {
             "id": 2006,
             "count": 1,
-            "name": "006 Charizard",
+            "name": "Charizard",
             "category": [
                 "Pokemon"
             ],
@@ -476,7 +476,7 @@
         {
             "id": 2007,
             "count": 1,
-            "name": "007 Squirtle",
+            "name": "Squirtle",
             "category": [
                 "Pokemon"
             ],
@@ -485,7 +485,7 @@
         {
             "id": 2008,
             "count": 1,
-            "name": "008 Wartortle",
+            "name": "Wartortle",
             "category": [
                 "Pokemon"
             ],
@@ -494,7 +494,7 @@
         {
             "id": 2009,
             "count": 1,
-            "name": "009 Blastoise",
+            "name": "Blastoise",
             "category": [
                 "Pokemon"
             ],
@@ -503,7 +503,7 @@
         {
             "id": 2010,
             "count": 1,
-            "name": "010 Caterpie",
+            "name": "Caterpie",
             "category": [
                 "Pokemon"
             ],
@@ -512,7 +512,7 @@
         {
             "id": 2011,
             "count": 1,
-            "name": "011 Metapod",
+            "name": "Metapod",
             "category": [
                 "Pokemon"
             ],
@@ -521,7 +521,7 @@
         {
             "id": 2012,
             "count": 1,
-            "name": "012 Butterfree",
+            "name": "Butterfree",
             "category": [
                 "Pokemon"
             ],
@@ -530,7 +530,7 @@
         {
             "id": 2013,
             "count": 1,
-            "name": "013 Weedle",
+            "name": "Weedle",
             "category": [
                 "Pokemon"
             ],
@@ -539,7 +539,7 @@
         {
             "id": 2014,
             "count": 1,
-            "name": "014 Kakuna",
+            "name": "Kakuna",
             "category": [
                 "Pokemon"
             ],
@@ -548,7 +548,7 @@
         {
             "id": 2015,
             "count": 1,
-            "name": "015 Beedrill",
+            "name": "Beedrill",
             "category": [
                 "Pokemon"
             ],
@@ -557,7 +557,7 @@
         {
             "id": 2016,
             "count": 1,
-            "name": "016 Pidgey",
+            "name": "Pidgey",
             "category": [
                 "Pokemon"
             ],
@@ -566,7 +566,7 @@
         {
             "id": 2017,
             "count": 1,
-            "name": "017 Pidgeotto",
+            "name": "Pidgeotto",
             "category": [
                 "Pokemon"
             ],
@@ -575,7 +575,7 @@
         {
             "id": 2018,
             "count": 1,
-            "name": "018 Pidgeot",
+            "name": "Pidgeot",
             "category": [
                 "Pokemon"
             ],
@@ -584,7 +584,7 @@
         {
             "id": 2019,
             "count": 1,
-            "name": "019 Rattata",
+            "name": "Rattata",
             "category": [
                 "Pokemon"
             ],
@@ -593,7 +593,7 @@
         {
             "id": 2020,
             "count": 1,
-            "name": "020 Raticate",
+            "name": "Raticate",
             "category": [
                 "Pokemon"
             ],
@@ -602,7 +602,7 @@
         {
             "id": 2021,
             "count": 1,
-            "name": "021 Spearow",
+            "name": "Spearow",
             "category": [
                 "Pokemon"
             ],
@@ -611,7 +611,7 @@
         {
             "id": 2022,
             "count": 1,
-            "name": "022 Fearow",
+            "name": "Fearow",
             "category": [
                 "Pokemon"
             ],
@@ -620,7 +620,7 @@
         {
             "id": 2023,
             "count": 1,
-            "name": "023 Ekans",
+            "name": "Ekans",
             "category": [
                 "Pokemon"
             ],
@@ -629,7 +629,7 @@
         {
             "id": 2024,
             "count": 1,
-            "name": "024 Arbok",
+            "name": "Arbok",
             "category": [
                 "Pokemon"
             ],
@@ -638,7 +638,7 @@
         {
             "id": 2025,
             "count": 1,
-            "name": "025 Pikachu",
+            "name": "Pikachu",
             "category": [
                 "Pokemon"
             ],
@@ -647,7 +647,7 @@
         {
             "id": 2026,
             "count": 1,
-            "name": "026 Raichu",
+            "name": "Raichu",
             "category": [
                 "Pokemon"
             ],
@@ -656,7 +656,7 @@
         {
             "id": 2027,
             "count": 1,
-            "name": "027 Sandshrew",
+            "name": "Sandshrew",
             "category": [
                 "Pokemon"
             ],
@@ -665,7 +665,7 @@
         {
             "id": 2028,
             "count": 1,
-            "name": "028 Sandslash",
+            "name": "Sandslash",
             "category": [
                 "Pokemon"
             ],
@@ -674,7 +674,7 @@
         {
             "id": 2029,
             "count": 1,
-            "name": "029 Nidoran (F)",
+            "name": "Nidoran (F)",
             "category": [
                 "Pokemon"
             ],
@@ -683,7 +683,7 @@
         {
             "id": 2030,
             "count": 1,
-            "name": "030 Nidorina",
+            "name": "Nidorina",
             "category": [
                 "Pokemon"
             ],
@@ -692,7 +692,7 @@
         {
             "id": 2031,
             "count": 1,
-            "name": "031 Nidoqueen",
+            "name": "Nidoqueen",
             "category": [
                 "Pokemon"
             ],
@@ -701,7 +701,7 @@
         {
             "id": 2032,
             "count": 1,
-            "name": "032 Nidoran (M)",
+            "name": "Nidoran (M)",
             "category": [
                 "Pokemon"
             ],
@@ -710,7 +710,7 @@
         {
             "id": 2033,
             "count": 1,
-            "name": "033 Nidorino",
+            "name": "Nidorino",
             "category": [
                 "Pokemon"
             ],
@@ -719,7 +719,7 @@
         {
             "id": 2034,
             "count": 1,
-            "name": "034 Nidoking",
+            "name": "Nidoking",
             "category": [
                 "Pokemon"
             ],
@@ -728,7 +728,7 @@
         {
             "id": 2035,
             "count": 1,
-            "name": "035 Clefairy",
+            "name": "Clefairy",
             "category": [
                 "Pokemon"
             ],
@@ -737,7 +737,7 @@
         {
             "id": 2036,
             "count": 1,
-            "name": "036 Clefable",
+            "name": "Clefable",
             "category": [
                 "Pokemon"
             ],
@@ -746,7 +746,7 @@
         {
             "id": 2037,
             "count": 1,
-            "name": "037 Vulpix",
+            "name": "Vulpix",
             "category": [
                 "Pokemon"
             ],
@@ -755,7 +755,7 @@
         {
             "id": 2038,
             "count": 1,
-            "name": "038 Ninetails",
+            "name": "Ninetails",
             "category": [
                 "Pokemon"
             ],
@@ -764,7 +764,7 @@
         {
             "id": 2039,
             "count": 1,
-            "name": "039 Jigglypuff",
+            "name": "Jigglypuff",
             "category": [
                 "Pokemon"
             ],
@@ -773,7 +773,7 @@
         {
             "id": 2040,
             "count": 1,
-            "name": "040 Wigglytuff",
+            "name": "Wigglytuff",
             "category": [
                 "Pokemon"
             ],
@@ -782,7 +782,7 @@
         {
             "id": 2041,
             "count": 1,
-            "name": "041 Zubat",
+            "name": "Zubat",
             "category": [
                 "Pokemon"
             ],
@@ -791,7 +791,7 @@
         {
             "id": 2042,
             "count": 1,
-            "name": "042 Golbat",
+            "name": "Golbat",
             "category": [
                 "Pokemon"
             ],
@@ -800,7 +800,7 @@
         {
             "id": 2043,
             "count": 1,
-            "name": "043 Oddish",
+            "name": "Oddish",
             "category": [
                 "Pokemon"
             ],
@@ -809,7 +809,7 @@
         {
             "id": 2044,
             "count": 1,
-            "name": "044 Gloom",
+            "name": "Gloom",
             "category": [
                 "Pokemon"
             ],
@@ -818,7 +818,7 @@
         {
             "id": 2045,
             "count": 1,
-            "name": "045 Vileplume",
+            "name": "Vileplume",
             "category": [
                 "Pokemon"
             ],
@@ -827,7 +827,7 @@
         {
             "id": 2046,
             "count": 1,
-            "name": "046 Paras",
+            "name": "Paras",
             "category": [
                 "Pokemon"
             ],
@@ -836,7 +836,7 @@
         {
             "id": 2047,
             "count": 1,
-            "name": "047 Parasect",
+            "name": "Parasect",
             "category": [
                 "Pokemon"
             ],
@@ -845,7 +845,7 @@
         {
             "id": 2048,
             "count": 1,
-            "name": "048 Venonat",
+            "name": "Venonat",
             "category": [
                 "Pokemon"
             ],
@@ -854,7 +854,7 @@
         {
             "id": 2049,
             "count": 1,
-            "name": "049 Venomoth",
+            "name": "Venomoth",
             "category": [
                 "Pokemon"
             ],
@@ -863,7 +863,7 @@
         {
             "id": 2050,
             "count": 1,
-            "name": "050 Diglett",
+            "name": "Diglett",
             "category": [
                 "Pokemon"
             ],
@@ -872,7 +872,7 @@
         {
             "id": 2051,
             "count": 1,
-            "name": "051 Dugtrio",
+            "name": "Dugtrio",
             "category": [
                 "Pokemon"
             ],
@@ -881,7 +881,7 @@
         {
             "id": 2052,
             "count": 1,
-            "name": "052 Meowth",
+            "name": "Meowth",
             "category": [
                 "Pokemon"
             ],
@@ -890,7 +890,7 @@
         {
             "id": 2053,
             "count": 1,
-            "name": "053 Persian",
+            "name": "Persian",
             "category": [
                 "Pokemon"
             ],
@@ -899,7 +899,7 @@
         {
             "id": 2054,
             "count": 1,
-            "name": "054 Psyduck",
+            "name": "Psyduck",
             "category": [
                 "Pokemon"
             ],
@@ -908,7 +908,7 @@
         {
             "id": 2055,
             "count": 1,
-            "name": "055 Golduck",
+            "name": "Golduck",
             "category": [
                 "Pokemon"
             ],
@@ -917,7 +917,7 @@
         {
             "id": 2056,
             "count": 1,
-            "name": "056 Mankey",
+            "name": "Mankey",
             "category": [
                 "Pokemon"
             ],
@@ -926,7 +926,7 @@
         {
             "id": 2057,
             "count": 1,
-            "name": "057 Primape",
+            "name": "Primape",
             "category": [
                 "Pokemon"
             ],
@@ -935,7 +935,7 @@
         {
             "id": 2058,
             "count": 1,
-            "name": "058 Growlithe",
+            "name": "Growlithe",
             "category": [
                 "Pokemon"
             ],
@@ -944,7 +944,7 @@
         {
             "id": 2059,
             "count": 1,
-            "name": "059 Arcanine",
+            "name": "Arcanine",
             "category": [
                 "Pokemon"
             ],
@@ -953,7 +953,7 @@
         {
             "id": 2060,
             "count": 1,
-            "name": "060 Poliwag",
+            "name": "Poliwag",
             "category": [
                 "Pokemon"
             ],
@@ -962,7 +962,7 @@
         {
             "id": 2061,
             "count": 1,
-            "name": "061 Poliwhirl",
+            "name": "Poliwhirl",
             "category": [
                 "Pokemon"
             ],
@@ -971,7 +971,7 @@
         {
             "id": 2062,
             "count": 1,
-            "name": "062 Poliwrath",
+            "name": "Poliwrath",
             "category": [
                 "Pokemon"
             ],
@@ -980,7 +980,7 @@
         {
             "id": 2063,
             "count": 1,
-            "name": "063 Abra",
+            "name": "Abra",
             "category": [
                 "Pokemon"
             ],
@@ -989,7 +989,7 @@
         {
             "id": 2064,
             "count": 1,
-            "name": "064 Kadabra",
+            "name": "Kadabra",
             "category": [
                 "Pokemon"
             ],
@@ -998,7 +998,7 @@
         {
             "id": 2065,
             "count": 1,
-            "name": "065 Alakazam",
+            "name": "Alakazam",
             "category": [
                 "Pokemon"
             ],
@@ -1007,7 +1007,7 @@
         {
             "id": 2066,
             "count": 1,
-            "name": "066 Machop",
+            "name": "Machop",
             "category": [
                 "Pokemon"
             ],
@@ -1016,7 +1016,7 @@
         {
             "id": 2067,
             "count": 1,
-            "name": "067 Machoke",
+            "name": "Machoke",
             "category": [
                 "Pokemon"
             ],
@@ -1025,7 +1025,7 @@
         {
             "id": 2068,
             "count": 1,
-            "name": "068 Machamp",
+            "name": "Machamp",
             "category": [
                 "Pokemon"
             ],
@@ -1034,7 +1034,7 @@
         {
             "id": 2069,
             "count": 1,
-            "name": "069 Bellsprout",
+            "name": "Bellsprout",
             "category": [
                 "Pokemon"
             ],
@@ -1043,7 +1043,7 @@
         {
             "id": 2070,
             "count": 1,
-            "name": "070 Weepinbell",
+            "name": "Weepinbell",
             "category": [
                 "Pokemon"
             ],
@@ -1052,7 +1052,7 @@
         {
             "id": 2071,
             "count": 1,
-            "name": "071 Victreebel",
+            "name": "Victreebel",
             "category": [
                 "Pokemon"
             ],
@@ -1061,7 +1061,7 @@
         {
             "id": 2072,
             "count": 1,
-            "name": "072 Tentacool",
+            "name": "Tentacool",
             "category": [
                 "Pokemon"
             ],
@@ -1070,7 +1070,7 @@
         {
             "id": 2073,
             "count": 1,
-            "name": "073 Tentacruel",
+            "name": "Tentacruel",
             "category": [
                 "Pokemon"
             ],
@@ -1079,7 +1079,7 @@
         {
             "id": 2074,
             "count": 1,
-            "name": "074 Geodude",
+            "name": "Geodude",
             "category": [
                 "Pokemon"
             ],
@@ -1088,7 +1088,7 @@
         {
             "id": 2075,
             "count": 1,
-            "name": "075 Graveler",
+            "name": "Graveler",
             "category": [
                 "Pokemon"
             ],
@@ -1097,7 +1097,7 @@
         {
             "id": 2076,
             "count": 1,
-            "name": "076 Golem",
+            "name": "Golem",
             "category": [
                 "Pokemon"
             ],
@@ -1106,7 +1106,7 @@
         {
             "id": 2077,
             "count": 1,
-            "name": "077 Ponyta",
+            "name": "Ponyta",
             "category": [
                 "Pokemon"
             ],
@@ -1115,7 +1115,7 @@
         {
             "id": 2078,
             "count": 1,
-            "name": "078 Rapidash",
+            "name": "Rapidash",
             "category": [
                 "Pokemon"
             ],
@@ -1124,7 +1124,7 @@
         {
             "id": 2079,
             "count": 1,
-            "name": "079 Slowpoke",
+            "name": "Slowpoke",
             "category": [
                 "Pokemon"
             ],
@@ -1133,7 +1133,7 @@
         {
             "id": 2080,
             "count": 1,
-            "name": "080 Slowbro",
+            "name": "Slowbro",
             "category": [
                 "Pokemon"
             ],
@@ -1142,7 +1142,7 @@
         {
             "id": 2081,
             "count": 1,
-            "name": "081 Magnemite",
+            "name": "Magnemite",
             "category": [
                 "Pokemon"
             ],
@@ -1151,7 +1151,7 @@
         {
             "id": 2082,
             "count": 1,
-            "name": "082 Magneton",
+            "name": "Magneton",
             "category": [
                 "Pokemon"
             ],
@@ -1160,7 +1160,7 @@
         {
             "id": 2083,
             "count": 1,
-            "name": "083 Farfetch'd",
+            "name": "Farfetch'd",
             "category": [
                 "Pokemon"
             ],
@@ -1169,7 +1169,7 @@
         {
             "id": 2084,
             "count": 1,
-            "name": "084 Doduo",
+            "name": "Doduo",
             "category": [
                 "Pokemon"
             ],
@@ -1178,7 +1178,7 @@
         {
             "id": 2085,
             "count": 1,
-            "name": "085 Dodrio",
+            "name": "Dodrio",
             "category": [
                 "Pokemon"
             ],
@@ -1187,7 +1187,7 @@
         {
             "id": 2086,
             "count": 1,
-            "name": "086 Seel",
+            "name": "Seel",
             "category": [
                 "Pokemon"
             ],
@@ -1196,7 +1196,7 @@
         {
             "id": 2087,
             "count": 1,
-            "name": "087 Dewgong",
+            "name": "Dewgong",
             "category": [
                 "Pokemon"
             ],
@@ -1205,7 +1205,7 @@
         {
             "id": 2088,
             "count": 1,
-            "name": "088 Grimer",
+            "name": "Grimer",
             "category": [
                 "Pokemon"
             ],
@@ -1214,7 +1214,7 @@
         {
             "id": 2089,
             "count": 1,
-            "name": "089 Muk",
+            "name": "Muk",
             "category": [
                 "Pokemon"
             ],
@@ -1223,7 +1223,7 @@
         {
             "id": 2090,
             "count": 1,
-            "name": "090 Shellder",
+            "name": "Shellder",
             "category": [
                 "Pokemon"
             ],
@@ -1232,7 +1232,7 @@
         {
             "id": 2091,
             "count": 1,
-            "name": "091 Cloyster",
+            "name": "Cloyster",
             "category": [
                 "Pokemon"
             ],
@@ -1241,7 +1241,7 @@
         {
             "id": 2092,
             "count": 1,
-            "name": "092 Gastly",
+            "name": "Gastly",
             "category": [
                 "Pokemon"
             ],
@@ -1250,7 +1250,7 @@
         {
             "id": 2093,
             "count": 1,
-            "name": "093 Haunter",
+            "name": "Haunter",
             "category": [
                 "Pokemon"
             ],
@@ -1259,7 +1259,7 @@
         {
             "id": 2094,
             "count": 1,
-            "name": "094 Gengar",
+            "name": "Gengar",
             "category": [
                 "Pokemon"
             ],
@@ -1268,7 +1268,7 @@
         {
             "id": 2095,
             "count": 1,
-            "name": "095 Onix",
+            "name": "Onix",
             "category": [
                 "Pokemon"
             ],
@@ -1277,7 +1277,7 @@
         {
             "id": 2096,
             "count": 1,
-            "name": "096 Drowzee",
+            "name": "Drowzee",
             "category": [
                 "Pokemon"
             ],
@@ -1286,7 +1286,7 @@
         {
             "id": 2097,
             "count": 1,
-            "name": "097 Hypno",
+            "name": "Hypno",
             "category": [
                 "Pokemon"
             ],
@@ -1295,7 +1295,7 @@
         {
             "id": 2098,
             "count": 1,
-            "name": "098 Krabby",
+            "name": "Krabby",
             "category": [
                 "Pokemon"
             ],
@@ -1304,7 +1304,7 @@
         {
             "id": 2099,
             "count": 1,
-            "name": "099 Kingler",
+            "name": "Kingler",
             "category": [
                 "Pokemon"
             ],
@@ -1313,7 +1313,7 @@
         {
             "id": 2100,
             "count": 1,
-            "name": "100 Voltorb",
+            "name": "Voltorb",
             "category": [
                 "Pokemon"
             ],
@@ -1322,7 +1322,7 @@
         {
             "id": 2101,
             "count": 1,
-            "name": "101 Electrode",
+            "name": "Electrode",
             "category": [
                 "Pokemon"
             ],
@@ -1331,7 +1331,7 @@
         {
             "id": 2102,
             "count": 1,
-            "name": "102 Exeggcute",
+            "name": "Exeggcute",
             "category": [
                 "Pokemon"
             ],
@@ -1340,7 +1340,7 @@
         {
             "id": 2103,
             "count": 1,
-            "name": "103 Exeggutor",
+            "name": "Exeggutor",
             "category": [
                 "Pokemon"
             ],
@@ -1349,7 +1349,7 @@
         {
             "id": 2104,
             "count": 1,
-            "name": "104 Cubone",
+            "name": "Cubone",
             "category": [
                 "Pokemon"
             ],
@@ -1358,7 +1358,7 @@
         {
             "id": 2105,
             "count": 1,
-            "name": "105 Marowak",
+            "name": "Marowak",
             "category": [
                 "Pokemon"
             ],
@@ -1367,7 +1367,7 @@
         {
             "id": 2106,
             "count": 1,
-            "name": "106 Hitmonlee",
+            "name": "Hitmonlee",
             "category": [
                 "Pokemon"
             ],
@@ -1376,7 +1376,7 @@
         {
             "id": 2107,
             "count": 1,
-            "name": "107 Hitmonchan",
+            "name": "Hitmonchan",
             "category": [
                 "Pokemon"
             ],
@@ -1385,7 +1385,7 @@
         {
             "id": 2108,
             "count": 1,
-            "name": "108 Lickitung",
+            "name": "Lickitung",
             "category": [
                 "Pokemon"
             ],
@@ -1394,7 +1394,7 @@
         {
             "id": 2109,
             "count": 1,
-            "name": "109 Koffing",
+            "name": "Koffing",
             "category": [
                 "Pokemon"
             ],
@@ -1403,7 +1403,7 @@
         {
             "id": 2110,
             "count": 1,
-            "name": "110 Weezing",
+            "name": "Weezing",
             "category": [
                 "Pokemon"
             ],
@@ -1412,7 +1412,7 @@
         {
             "id": 2111,
             "count": 1,
-            "name": "111 Rhyhorn",
+            "name": "Rhyhorn",
             "category": [
                 "Pokemon"
             ],
@@ -1421,7 +1421,7 @@
         {
             "id": 2112,
             "count": 1,
-            "name": "112 Rhydon",
+            "name": "Rhydon",
             "category": [
                 "Pokemon"
             ],
@@ -1430,7 +1430,7 @@
         {
             "id": 2113,
             "count": 1,
-            "name": "113 Chansey",
+            "name": "Chansey",
             "category": [
                 "Pokemon"
             ],
@@ -1439,7 +1439,7 @@
         {
             "id": 2114,
             "count": 1,
-            "name": "114 Tangela",
+            "name": "Tangela",
             "category": [
                 "Pokemon"
             ],
@@ -1448,7 +1448,7 @@
         {
             "id": 2115,
             "count": 1,
-            "name": "115 Kangaskhan",
+            "name": "Kangaskhan",
             "category": [
                 "Pokemon"
             ],
@@ -1457,7 +1457,7 @@
         {
             "id": 2116,
             "count": 1,
-            "name": "116 Horsea",
+            "name": "Horsea",
             "category": [
                 "Pokemon"
             ],
@@ -1466,7 +1466,7 @@
         {
             "id": 2117,
             "count": 1,
-            "name": "117 Seadra",
+            "name": "Seadra",
             "category": [
                 "Pokemon"
             ],
@@ -1475,7 +1475,7 @@
         {
             "id": 2118,
             "count": 1,
-            "name": "118 Goldeen",
+            "name": "Goldeen",
             "category": [
                 "Pokemon"
             ],
@@ -1484,7 +1484,7 @@
         {
             "id": 2119,
             "count": 1,
-            "name": "119 Seaking",
+            "name": "Seaking",
             "category": [
                 "Pokemon"
             ],
@@ -1493,7 +1493,7 @@
         {
             "id": 2120,
             "count": 1,
-            "name": "120 Staryu",
+            "name": "Staryu",
             "category": [
                 "Pokemon"
             ],
@@ -1502,7 +1502,7 @@
         {
             "id": 2121,
             "count": 1,
-            "name": "121 Starmie",
+            "name": "Starmie",
             "category": [
                 "Pokemon"
             ],
@@ -1511,7 +1511,7 @@
         {
             "id": 2122,
             "count": 1,
-            "name": "122 Mr. Mime",
+            "name": "Mr. Mime",
             "category": [
                 "Pokemon"
             ],
@@ -1520,7 +1520,7 @@
         {
             "id": 2123,
             "count": 1,
-            "name": "123 Scyther",
+            "name": "Scyther",
             "category": [
                 "Pokemon"
             ],
@@ -1529,7 +1529,7 @@
         {
             "id": 2124,
             "count": 1,
-            "name": "124 Jynx",
+            "name": "Jynx",
             "category": [
                 "Pokemon"
             ],
@@ -1538,7 +1538,7 @@
         {
             "id": 2125,
             "count": 1,
-            "name": "125 Electabuzz",
+            "name": "Electabuzz",
             "category": [
                 "Pokemon"
             ],
@@ -1547,7 +1547,7 @@
         {
             "id": 2126,
             "count": 1,
-            "name": "126 Magmar",
+            "name": "Magmar",
             "category": [
                 "Pokemon"
             ],
@@ -1556,7 +1556,7 @@
         {
             "id": 2127,
             "count": 1,
-            "name": "127 Pinsir",
+            "name": "Pinsir",
             "category": [
                 "Pokemon"
             ],
@@ -1565,7 +1565,7 @@
         {
             "id": 2128,
             "count": 1,
-            "name": "128 Tauros",
+            "name": "Tauros",
             "category": [
                 "Pokemon"
             ],
@@ -1574,7 +1574,7 @@
         {
             "id": 2129,
             "count": 1,
-            "name": "129 Magikarp",
+            "name": "Magikarp",
             "category": [
                 "Pokemon"
             ],
@@ -1583,7 +1583,7 @@
         {
             "id": 2130,
             "count": 1,
-            "name": "130 Gyarados",
+            "name": "Gyarados",
             "category": [
                 "Pokemon"
             ],
@@ -1592,7 +1592,7 @@
         {
             "id": 2131,
             "count": 1,
-            "name": "131 Lapras",
+            "name": "Lapras",
             "category": [
                 "Pokemon"
             ],
@@ -1601,7 +1601,7 @@
         {
             "id": 2132,
             "count": 1,
-            "name": "132 Ditto",
+            "name": "Ditto",
             "category": [
                 "Pokemon"
             ],
@@ -1610,7 +1610,7 @@
         {
             "id": 2133,
             "count": 1,
-            "name": "133 Eevee",
+            "name": "Eevee",
             "category": [
                 "Pokemon"
             ],
@@ -1619,7 +1619,7 @@
         {
             "id": 2134,
             "count": 1,
-            "name": "134 Vaporeon",
+            "name": "Vaporeon",
             "category": [
                 "Pokemon"
             ],
@@ -1628,7 +1628,7 @@
         {
             "id": 2135,
             "count": 1,
-            "name": "135 Jolteon",
+            "name": "Jolteon",
             "category": [
                 "Pokemon"
             ],
@@ -1637,7 +1637,7 @@
         {
             "id": 2136,
             "count": 1,
-            "name": "136 Flareon",
+            "name": "Flareon",
             "category": [
                 "Pokemon"
             ],
@@ -1646,7 +1646,7 @@
         {
             "id": 2137,
             "count": 1,
-            "name": "137 Porygon",
+            "name": "Porygon",
             "category": [
                 "Pokemon"
             ],
@@ -1655,7 +1655,7 @@
         {
             "id": 2138,
             "count": 1,
-            "name": "138 Omanyte",
+            "name": "Omanyte",
             "category": [
                 "Pokemon"
             ],
@@ -1664,7 +1664,7 @@
         {
             "id": 2139,
             "count": 1,
-            "name": "139 Omastar",
+            "name": "Omastar",
             "category": [
                 "Pokemon"
             ],
@@ -1673,7 +1673,7 @@
         {
             "id": 2140,
             "count": 1,
-            "name": "140 Kabuto",
+            "name": "Kabuto",
             "category": [
                 "Pokemon"
             ],
@@ -1682,7 +1682,7 @@
         {
             "id": 2141,
             "count": 1,
-            "name": "141 Kabutops",
+            "name": "Kabutops",
             "category": [
                 "Pokemon"
             ],
@@ -1691,7 +1691,7 @@
         {
             "id": 2142,
             "count": 1,
-            "name": "142 Aerodactyl",
+            "name": "Aerodactyl",
             "category": [
                 "Pokemon"
             ],
@@ -1700,7 +1700,7 @@
         {
             "id": 2143,
             "count": 1,
-            "name": "143 Snorlax",
+            "name": "Snorlax",
             "category": [
                 "Pokemon"
             ],
@@ -1709,7 +1709,7 @@
         {
             "id": 2144,
             "count": 1,
-            "name": "144 Articuno",
+            "name": "Articuno",
             "category": [
                 "Pokemon"
             ],
@@ -1718,7 +1718,7 @@
         {
             "id": 2145,
             "count": 1,
-            "name": "145 Zapdos",
+            "name": "Zapdos",
             "category": [
                 "Pokemon"
             ],
@@ -1727,7 +1727,7 @@
         {
             "id": 2146,
             "count": 1,
-            "name": "146 Moltres",
+            "name": "Moltres",
             "category": [
                 "Pokemon"
             ],
@@ -1736,7 +1736,7 @@
         {
             "id": 2147,
             "count": 1,
-            "name": "147 Dratini",
+            "name": "Dratini",
             "category": [
                 "Pokemon"
             ],
@@ -1745,7 +1745,7 @@
         {
             "id": 2148,
             "count": 1,
-            "name": "148 Dragonair",
+            "name": "Dragonair",
             "category": [
                 "Pokemon"
             ],
@@ -1754,7 +1754,7 @@
         {
             "id": 2149,
             "count": 1,
-            "name": "149 Dragonite",
+            "name": "Dragonite",
             "category": [
                 "Pokemon"
             ],
@@ -1763,7 +1763,7 @@
         {
             "id": 2150,
             "count": 1,
-            "name": "150 Mewtwo",
+            "name": "Mewtwo",
             "category": [
                 "Pokemon"
             ],
@@ -1772,7 +1772,7 @@
         {
             "id": 2151,
             "count": 1,
-            "name": "151 Mew",
+            "name": "Mew",
             "category": [
                 "Pokemon"
             ],
