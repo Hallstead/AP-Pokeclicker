@@ -20,6 +20,7 @@ import PokemonItem from '../../items/PokemonItem';
 
 class ArchipelagoIntegrationModule {
     private client: any = null;
+    private player: APPlayer = null;
     public connected = false;
     public lastError: any = null;
     // Queue outbound location checks until we're connected
@@ -29,6 +30,7 @@ class ArchipelagoIntegrationModule {
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string } | null = null;
+    nowItems: {};
     
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
     private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
@@ -129,6 +131,14 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: number,
             roaming_encounter_multiplier: number,
             roaming_encounter_multiplier_route: boolean,
+            pokedollar_multiplier: number,
+            dungeon_token_multiplier: number,
+            quest_point_multiplier: number,
+            diamond_multiplier: number,
+            farm_point_multiplier: number,
+            battle_point_multiplier: number,
+            conquest_token_multiplier: number,
+            exp_multiplier: number
         };
         let options: GameOptions = {
             dexsanity: 0,
@@ -138,6 +148,14 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: 0,
             roaming_encounter_multiplier: 1,
             roaming_encounter_multiplier_route: true,
+            pokedollar_multiplier: 1,
+            dungeon_token_multiplier: 1,
+            quest_point_multiplier: 1,
+            diamond_multiplier: 1,
+            farm_point_multiplier: 1,
+            battle_point_multiplier: 1,
+            conquest_token_multiplier: 1,
+            exp_multiplier: 1,
         };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
@@ -180,6 +198,7 @@ class ArchipelagoIntegrationModule {
                 try { return w.APFlags[key]; } catch (_) { return undefined; }
             };
         }
+        w.APFlags.set('recievedItems', {});
         
         w.sendLocationCheck = (locationNumber: number, isPokemon: boolean = false) => {
             try {
@@ -204,7 +223,9 @@ class ArchipelagoIntegrationModule {
                     }
                     locationNumber += 2000;
                 }
-                this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
+                if (!this.client.room.checkedLocations.includes(locationNumber)) {
+                    this.client.socket.send({ cmd: 'LocationChecks', locations: [locationNumber] });
+                }
             } catch (e) {
                 this.lastError = e;
                 try { console.error('Unable to send packets to the server; not connected to a server.', e); } catch (_) { /* noop */ }
@@ -216,10 +237,18 @@ class ArchipelagoIntegrationModule {
         };
 
         w.setItem = (key: string, value: string) => {
-            this.client.storage.prepare(key, value).replace(value).commit();
+            let dataKey = `pokeclicker:${this.player.team}:${this.player.slot}:${key}`;
+            this.client.storage.prepare(dataKey, value).replace(value).commit();
         };
 
         w.getItem = async (key: string): Promise<string | null> => {
+            let dataKey = `pokeclicker:${this.player.team}:${this.player.slot}:${key}`;
+            const data = await this.client.storage.fetch(dataKey);
+            //console.log(data);
+            return data || null;
+        };
+
+        w.getItemOld = async (key: string): Promise<string | null> => {
             const data = await this.client.storage.fetch(key);
             //console.log(data);
             return data || null;
@@ -251,17 +280,18 @@ class ArchipelagoIntegrationModule {
         };
 
 
-        // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
-        this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
+        this.client.messages.on('connected', async (text: string, player: APPlayer) => { 
             // console.log('Connected to server: ', player);
             this.connected = true;
+            this.player = player;
+            this.nowItems = {};
             
 
             // Start the game if not already started
             if (!App.game) {
                 //set save key
-                Save.key = (await w.getItem(player.name + 'save key', true)) || Rand.string(6);
-                await w.setItem(player.name + 'save key', Save.key);
+                Save.key = (await w.getItem('saveKey', true)) || (await w.getItemOld(player.name + 'save key', true)) || Rand.string(6);
+                await w.setItem('saveKey', Save.key);
                 //console.log('Using save key: ', Save.key);
                 document.querySelector('#saveSelector').remove();
                 App.start();
@@ -397,7 +427,7 @@ class ArchipelagoIntegrationModule {
         }
     }
 
-    public processItemPacket(items: APItem[], startingIndex: number) {
+    public async processItemPacket(items: APItem[], startingIndex: number) {
         const w: any = window as any;
         // Set APFlags for each script item
         const setFlag = (key: string, value: any) => {
@@ -416,6 +446,8 @@ class ArchipelagoIntegrationModule {
             setFlag('progressivePokeballs', 0);
             setFlag('progressiveEliteBadges', 0);
             setFlag('extraEggSlots', 0);
+
+            w.APFlags.receivedItems = await w.getItem('receivedItems') || {};
         }
 
         // Item Categories:
@@ -433,6 +465,7 @@ class ArchipelagoIntegrationModule {
 
         for (let i: number = 0; i < items.length; i++) {
             let item: APItem = items[i];
+            
             // console.log('Processing item: ', item);
             // console.log(item.id);
 
@@ -527,6 +560,11 @@ class ArchipelagoIntegrationModule {
                     BadgeEnums.Soul,
                     BadgeEnums.Volcano,
                     BadgeEnums.Earth,
+                    BadgeEnums.Elite_Lorelei,
+                    BadgeEnums.Elite_Bruno,
+                    BadgeEnums.Elite_Agatha,
+                    BadgeEnums.Elite_Lance,
+                    BadgeEnums.Elite_KantoChampion,
                 ];
                 const eliteBadges = [
                     BadgeEnums.Elite_Lorelei,
@@ -536,19 +574,23 @@ class ArchipelagoIntegrationModule {
                     BadgeEnums.Elite_KantoChampion,
                 ];
                 
-                if (index < 8) {
+                if (index == 8) {
+                    const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
+                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
+                        App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
+                        if (item.name.includes('Progressive')) {
+                            this.displayItemReceived(item, 'a');
+                        } else {
+                            this.displayItemReceived(item, 'the');
+                        }
+                        
+                    }
+                    w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
+                } else {
                     if (!App.game.badgeCase.hasBadge(badges[index])) {
                         this.displayItemReceived(item, 'the');
                         App.game.badgeCase.gainBadge(badges[index]);
                     }
-                } else {
-                    const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
-                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
-                        App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
-                        this.displayItemReceived(item, 'a');
-                    }
-                    w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
-                    
                 }
 
             } else if (item.id >= otherItemsOffset && item.id < eventItemsOffset) {
@@ -592,24 +634,33 @@ class ArchipelagoIntegrationModule {
             } else if (item.id >= splitDungeonTicketsOffset && item.id < fillerOffset - 1) {
             } else {
                 // Filler
+                if (!this.nowItems[item.id]) {
+                    this.nowItems[item.id] = 0;
+                }
+                this.nowItems[item.id] += 1;
+
+                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
+                    // Already received this item in a previous sync packet
+                    continue;
+                }
                 let id = item.id - fillerOffset;
                 if (id == -1) {
                     this.client.updateStatus(clientStatuses.goal);
                 }
                 if (id == 0) {
-                    App.game.wallet.gainMoney(100000);
+                    App.game.wallet.gainMoney(100000 / ((window as any).APFlags.options.pokedollar_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else if (id == 1) {
-                    App.game.wallet.gainDungeonTokens(10000);
+                    App.game.wallet.gainDungeonTokens(10000 / ((window as any).APFlags.options.dungeon_token_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else if (id == 2) {
-                    App.game.wallet.gainQuestPoints(1000);
+                    App.game.wallet.gainQuestPoints(1000, true);
                     this.displayItemReceived(item, '');
                 } else if (id == 3) {
-                    App.game.wallet.gainDiamonds(100);
+                    App.game.wallet.gainDiamonds(100, true);
                     this.displayItemReceived(item, '');
                 } else if (id == 4) {
-                    App.game.wallet.gainFarmPoints(1000);
+                    App.game.wallet.gainFarmPoints(1000, true);
                     this.displayItemReceived(item, '');
                 } else {
                     player.gainItem('Protein', 1);
@@ -617,6 +668,8 @@ class ArchipelagoIntegrationModule {
                 }
             }
         }
+        // Save received items state
+        await w.setItem('receivedItems', this.nowItems);
     }
 
     // Wait for App.game, mark ready, then flush queued packets.
@@ -744,6 +797,9 @@ if (typeof window !== 'undefined') {
             }
             if ((window as any).archipelagoConnect) {
                 (window as any).archipelagoConnect(url, s, 'Pokeclicker');
+                localStorage.setItem('ap-last-host', h);
+                localStorage.setItem('ap-last-port', p);
+                localStorage.setItem('ap-last-slot', s);
                 return true;
             }
             Notifier.notify({ message: 'Archipelago module not available yet', type: NotificationConstants.NotificationOption.warning });

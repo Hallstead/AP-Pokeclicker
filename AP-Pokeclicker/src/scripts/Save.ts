@@ -85,19 +85,27 @@ class Save {
     }
 
     public static copySaveToAP() {
-        const apPlayer = (window as any).APFlags.name;
         const backupSaveData = {player, save: this.getSaveObject(), settings: Settings.toJSON()};
-        (window as any).setItem(`${apPlayer}save`, SaveSelector.btoa(JSON.stringify(backupSaveData)));
+        const apSave = {
+            save: '',
+            receivedItems: {},
+        };
+        apSave.save = SaveSelector.btoa(JSON.stringify(backupSaveData));
+        apSave.receivedItems = (window as any).APFlags.receivedItems || {};
+        console.log('Copying save to AP data storage:', apSave);
+        (window as any).setItem('save', apSave);
         Notifier.notify({
             title: 'Save stored',
             message: 'Save stored in AP data storage.',
             type: NotificationConstants.NotificationOption.info,
         });
+        Save.printAPSave();
     }
 
     public static async printAPSave() {
-        const data = await (window as any).getItem(`${player}save`);
-        console.log('AP Save Data:', data);
+        const data = await (window as any).getItem('save');
+        console.log('AP Save Data:', data.save);
+        console.log('AP Received Items:', data.receivedItems);
         Notifier.notify({
             title: 'Save printed',
             message: 'Save data printed to console.',
@@ -117,6 +125,9 @@ class Save {
             localStorage.removeItem(`player${Save.key}`);
             localStorage.removeItem(`save${Save.key}`);
             localStorage.removeItem(`settings${Save.key}`);
+
+            (window as any).setItem('receivedItems', {});
+
             // Prevent the old save from being saved again
             window.onbeforeunload = () => {};
             location.reload();
@@ -240,11 +251,14 @@ class Save {
 
     public static async importSaveFromAP() {
         const apPlayer = (window as any).APFlags.name;
-        const data = await (window as any).getItem(`${apPlayer}save`);
+        const data = await (window as any).getItem('save');
+        const save = data.save;
+        const receivedItems = data.receivedItems;
 
         setTimeout(() => {
             try {
-                const decoded = SaveSelector.atob(data);
+                (window as any).setItem('receivedItems', receivedItems);
+                const decoded = SaveSelector.atob(save);
                 console.debug('decoded:', decoded);
                 const json = JSON.parse(decoded);
                 console.debug('json:', json);

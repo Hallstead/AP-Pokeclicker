@@ -269,10 +269,10 @@ def indigo_plateau(world: World, state: CollectionState, player: int):
 
 def cerulean_cave(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access Cerulean Cave."""
-    has_elite_badge_5 = state.count("Progressive Elite Badge", player) >= 5
+    has_elite_champion_badge = state.count("Kanto Elite Lance Badge", player) > 0
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
     minion_attack = 28735
-    return has_elite_badge_5 and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return has_elite_champion_badge and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 
 # Kanto - Sevii Islands 123

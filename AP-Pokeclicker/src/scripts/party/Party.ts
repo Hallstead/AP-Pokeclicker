@@ -183,7 +183,7 @@ class Party implements Feature, TmpPartyType {
     public gainExp(exp = 0, level = 1, trainer = false) {
         const multBonus = this.multiplier.getBonus('exp', true);
         const trainerBonus = trainer ? 1.5 : 1;
-        const expTotal = Math.floor(exp * level * trainerBonus * multBonus / 9);
+        const expTotal = Math.floor(exp * level * trainerBonus * multBonus / 9) * ((window as any).APFlags.options.exp_multiplier || 1);
         let shadowExpGained = 0;
 
         const dexsanity = (window as any)?.APFlags?.dexsanity === true;

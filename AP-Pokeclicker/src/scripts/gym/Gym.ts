@@ -29,6 +29,7 @@ class Gym extends TownContent implements TmpGymType {
     public town: string;
     buttonText: string;
     public tooltip = 'Battle Gym Leaders to earn badges';
+    public locationIdList: number[];
     public cssClass() {
         //if (App.game.badgeCase.hasBadge(this.badgeReward)) {
         if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(this.town)]() > 0) {
@@ -93,7 +94,8 @@ class Gym extends TownContent implements TmpGymType {
             achievement = true,
             champion = false,
         }: gymFlags = {},
-        public optionalArgs: optionalGymArgs = {}
+        public optionalArgs: optionalGymArgs = {},
+        locationIdList: number[] = []
     ) {
         super(requirements);
         this.town = town;
@@ -107,6 +109,7 @@ class Gym extends TownContent implements TmpGymType {
         } else {
             this.buttonText = town;
         }
+        this.locationIdList = locationIdList;
     }
 
     private isAchievementsComplete() {

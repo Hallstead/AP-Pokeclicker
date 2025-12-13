@@ -93,7 +93,7 @@
             "requires": "{victory_road()}"
         },
         {
-            "name": "Obtain 20 unique Pokemon (Magic Ball)",
+            "name": "Capture 20 unique Pokemon (Magic Ball)",
             "id": 101,
             "region": "Kanto",
             "category": [
@@ -102,7 +102,7 @@
             "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(20)}) or ({dexsanity_enabled()} and |@Pokemon:20|)"
         },
         {
-            "name": "Obtain 30 unique Pokemon (Amulet Coin)",
+            "name": "Capture 30 unique Pokemon (Amulet Coin)",
             "id": 102,
             "region": "Kanto",
             "category": [
@@ -111,7 +111,7 @@
             "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(30)}) or ({dexsanity_enabled()} and |@Pokemon:30|)"
         },
         {
-            "name": "Obtain 40 unique Pokemon (Rocky Helmet)",
+            "name": "Capture 40 unique Pokemon (Rocky Helmet)",
             "id": 103,
             "region": "Kanto",
             "category": [
@@ -120,7 +120,7 @@
             "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(40)}) or ({dexsanity_enabled()} and |@Pokemon:40|)"
         },
         {
-            "name": "Obtain 50 unique Pokemon (EXP Share)",
+            "name": "Capture 50 unique Pokemon (EXP Share)",
             "id": 104,
             "region": "Kanto",
             "category": [
@@ -129,7 +129,7 @@
             "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(50)}) or ({dexsanity_enabled()} and |@Pokemon:50|)"
         },
         {
-            "name": "Obtain 60 unique Pokemon (Sprayduck)",
+            "name": "Capture 60 unique Pokemon (Sprayduck)",
             "id": 105,
             "region": "Kanto",
             "category": [
@@ -138,7 +138,7 @@
             "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(60)}) or ({dexsanity_enabled()} and |@Pokemon:60|)"
         },
         {
-            "name": "Obtain 70 unique Pokemon (Shiny Charm)",
+            "name": "Capture 70 unique Pokemon (Shiny Charm)",
             "id": 106,
             "region": "Kanto",
             "category": [
@@ -147,7 +147,7 @@
             "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(70)}) or ({dexsanity_enabled()} and |@Pokemon:70|)"
         },
         {
-            "name": "Obtain 80 unique Pokemon (Magma Stone)",
+            "name": "Capture 80 unique Pokemon (Magma Stone)",
             "id": 107,
             "region": "Kanto",
             "category": [
@@ -156,7 +156,7 @@
             "requires": "({dexsanity_disabled()} and {can_catch_x_pokemon(80)}) or ({dexsanity_enabled()} and |@Pokemon:80|)"
         },
         {
-            "name": "Obtain 90 unique Pokemon (Cell Battery)",
+            "name": "Capture 90 unique Pokemon (Cell Battery)",
             "id": 108,
             "region": "Kanto",
             "category": [
@@ -270,7 +270,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge| and {attack_needed(262880)}"
+            "requires": "{indigo_plateau()} and |Kanto Elite Lorelei Badge| and {attack_needed(262880)}"
         },
         {
             "name": "Agatha",
@@ -279,7 +279,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:2| and {attack_needed(262880)}"
+            "requires": "{indigo_plateau()} and |Kanto Elite Bruno Badge| and {attack_needed(262880)}"
         },
         {
             "name": "Lance",
@@ -288,7 +288,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:3| and {attack_needed(283550)}"
+            "requires": "{indigo_plateau()} and |Kanto Elite Agatha Badge| and {attack_needed(283550)}"
         },
         {
             "name": "Champion Blue",
@@ -297,17 +297,8 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:4| and {attack_needed(359860)}"
-        },
-        {
-            "name": "Beat Champion Blue (Event)",
-            "id": -1,
-            "region": "Indigo Plateau",
-            "category": [
-                "Events"
-            ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:4| and {attack_needed(359860)}",
-            "place_item": ["Beat Champion Blue"]
+            "requires": "{indigo_plateau()} and |Kanto Elite Lance Badge| and {attack_needed(359860)}",
+            "place_item": ["Kanto Elite Champion Badge"]
         },
         {
             "name": "Viridian Forest",
@@ -553,1367 +544,1367 @@
             "requires": "{three_island()} and {attack_needed(443328)}"
         },
         {
-            "name": "001 Bulbasaur",
+            "name": "Capture Bulbasaur",
             "id": 2001,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{starter()} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|001 Bulbasaur| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{starter()} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|Bulbasaur| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "002 Ivysaur",
+            "name": "Capture Ivysaur",
             "id": 2002,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|001 Bulbasaur| or (|002 Ivysaur| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Bulbasaur| or (|Ivysaur| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "003 Venusaur",
+            "name": "Capture Venusaur",
             "id": 2003,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |002 Ivysaur|) or (|003 Venusaur| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Ivysaur|) or (|Venusaur| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "004 Charmander",
+            "name": "Capture Charmander",
             "id": 2004,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{starter()} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|004 Charmander| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{starter()} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Charmander| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "005 Charmeleon",
+            "name": "Capture Charmeleon",
             "id": 2005,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|004 Charmander| or (|005 Charmeleon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Charmander| or (|Charmeleon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "006 Charizard",
+            "name": "Capture Charizard",
             "id": 2006,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |005 Charmeleon|) or (|006 Charizard| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Charmeleon|) or (|Charizard| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "007 Squirtle",
+            "name": "Capture Squirtle",
             "id": 2007,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_starter()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|007 Squirtle| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_starter()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Squirtle| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "008 Wartortle",
+            "name": "Capture Wartortle",
             "id": 2008,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|007 Squirtle| or (|008 Wartortle| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Squirtle| or (|Wartortle| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "009 Blastoise",
+            "name": "Capture Blastoise",
             "id": 2009,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |008 Wartortle|) or (|009 Blastoise| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Wartortle|) or (|Blastoise| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "010 Caterpie",
+            "name": "Capture Caterpie",
             "id": 2010,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|010 Caterpie| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Caterpie| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "011 Metapod",
+            "name": "Capture Metapod",
             "id": 2011,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|010 Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|011 Metapod| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Metapod| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "012 Butterfree",
+            "name": "Capture Butterfree",
             "id": 2012,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|011 Metapod| or (|012 Butterfree| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Metapod| or (|Butterfree| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "013 Weedle",
+            "name": "Capture Weedle",
             "id": 2013,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|013 Weedle| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Weedle| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "014 Kakuna",
+            "name": "Capture Kakuna",
             "id": 2014,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|013 Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|014 Kakuna| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Kakuna| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "015 Beedrill",
+            "name": "Capture Beedrill",
             "id": 2015,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|014 Kakuna| or (|015 Beedrill| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Kakuna| or (|Beedrill| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "016 Pidgey",
+            "name": "Capture Pidgey",
             "id": 2016,
             "region": "Route 1 Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|016 Pidgey| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgey| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "017 Pidgeotto",
+            "name": "Capture Pidgeotto",
             "id": 2017,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|016 Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|017 Pidgeotto| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgeotto| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "018 Pidgeot",
+            "name": "Capture Pidgeot",
             "id": 2018,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |017 Pidgeotto|) or (|018 Pidgeot| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Pidgeotto|) or (|Pidgeot| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "019 Rattata",
+            "name": "Capture Rattata",
             "id": 2019,
             "region": "Route 1 Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or (|019 Rattata| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or (|Rattata| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "020 Raticate",
+            "name": "Capture Raticate",
             "id": 2020,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|019 Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or (|020 Raticate| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or (|Raticate| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "021 Spearow",
+            "name": "Capture Spearow",
             "id": 2021,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|021 Spearow| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Spearow| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "022 Fearow",
+            "name": "Capture Fearow",
             "id": 2022,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|021 Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|022 Fearow| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Fearow| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "023 Ekans",
+            "name": "Capture Ekans",
             "id": 2023,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|023 Ekans| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Ekans| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "024 Arbok",
+            "name": "Capture Arbok",
             "id": 2024,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |023 Ekans|) or {kanto_route_23()} or {victory_road()} or (|024 Arbok| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Ekans|) or {kanto_route_23()} or {victory_road()} or (|Arbok| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "025 Pikachu",
+            "name": "Capture Pikachu",
             "id": 2025,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{viridian_forest(True)} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|025 Pikachu| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{viridian_forest(True)} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Pikachu| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "026 Raichu",
+            "name": "Capture Raichu",
             "id": 2026,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|025 Pikachu| and {can_get_thunder_stone()} or (|026 Raichu| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Pikachu| and {can_get_thunder_stone()} or (|Raichu| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "027 Sandshrew",
+            "name": "Capture Sandshrew",
             "id": 2027,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|027 Sandshrew| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Sandshrew| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "028 Sandslash",
+            "name": "Capture Sandslash",
             "id": 2028,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |027 Sandshrew|) or {kanto_route_23()} or {victory_road()} or (|028 Sandslash| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Sandshrew|) or {kanto_route_23()} or {victory_road()} or (|Sandslash| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "029 Nidoran (F)",
+            "name": "Capture Nidoran (F)",
             "id": 2029,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_3()} or {safari_zone()} or (|029 Nidoran (F)| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_3()} or {safari_zone()} or (|Nidoran (F)| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "030 Nidorina",
+            "name": "Capture Nidorina",
             "id": 2030,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|029 Nidoran (F)| or {safari_zone()} or (|030 Nidorina| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Nidoran (F)| or {safari_zone()} or (|Nidorina| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "031 Nidoqueen",
+            "name": "Capture Nidoqueen",
             "id": 2031,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|030 Nidorina| and {can_get_moon_stone()}) or (|031 Nidoqueen| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Nidorina| and {can_get_moon_stone()}) or (|Nidoqueen| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "032 Nidoran (M)",
+            "name": "Capture Nidoran (M)",
             "id": 2032,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_3()} or {safari_zone()} or (|032 Nidoran (M)| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_3()} or {safari_zone()} or (|Nidoran (M)| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "033 Nidorino",
+            "name": "Capture Nidorino",
             "id": 2033,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|032 Nidoran (M)| or {safari_zone()} or (|033 Nidorino| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Nidoran (M)| or {safari_zone()} or (|Nidorino| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "034 Nidoking",
+            "name": "Capture Nidoking",
             "id": 2034,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|033 Nidorino| and {can_get_moon_stone()}) or (|034 Nidoking| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Nidorino| and {can_get_moon_stone()}) or (|Nidoking| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "035 Clefairy",
+            "name": "Capture Clefairy",
             "id": 2035,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{mt_moon(False)} or (|035 Clefairy| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{mt_moon(False)} or (|Clefairy| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "036 Clefable",
+            "name": "Capture Clefable",
             "id": 2036,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|035 Clefairy| and {can_get_moon_stone()}) or (|036 Clefable| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Clefairy| and {can_get_moon_stone()}) or (|Clefable| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "037 Vulpix",
+            "name": "Capture Vulpix",
             "id": 2037,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|037 Vulpix| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Vulpix| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "038 Ninetails",
+            "name": "Capture Ninetails",
             "id": 2038,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|037 Vulpix| and {can_get_fire_stone()}) or (|038 Ninetails| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Vulpix| and {can_get_fire_stone()}) or (|Ninetails| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "039 Jigglypuff",
+            "name": "Capture Jigglypuff",
             "id": 2039,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_3()} or (({can_get_mystery_egg()} or (|039 Jigglypuff| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_3()} or (({can_get_mystery_egg()} or (|Jigglypuff| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "040 Wigglytuff",
+            "name": "Capture Wigglytuff",
             "id": 2040,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|039 Jigglypuff| and {can_get_moon_stone()}) or (|040 Wigglytuff| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Jigglypuff| and {can_get_moon_stone()}) or (|Wigglytuff| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "041 Zubat",
+            "name": "Capture Zubat",
             "id": 2041,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or (|041 Zubat| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or (|Zubat| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "042 Golbat",
+            "name": "Capture Golbat",
             "id": 2042,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |041 Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or (|042 Golbat| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or (|Golbat| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "043 Oddish",
+            "name": "Capture Oddish",
             "id": 2043,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|043 Oddish| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|Oddish| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "044 Gloom",
+            "name": "Capture Gloom",
             "id": 2044,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |043 Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|044 Gloom| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Gloom| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "045 Vileplume",
+            "name": "Capture Vileplume",
             "id": 2045,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|044 Gloom| and {can_get_leaf_stone()} or (|045 Vileplume| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Gloom| and {can_get_leaf_stone()} or (|Vileplume| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "046 Paras",
+            "name": "Capture Paras",
             "id": 2046,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or (|046 Paras| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or (|Paras| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "047 Parasect",
+            "name": "Capture Parasect",
             "id": 2047,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |046 Paras|) or {cerulean_cave()} or (|047 Parasect| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Paras|) or {cerulean_cave()} or (|Parasect| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "048 Venonat",
+            "name": "Capture Venonat",
             "id": 2048,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or (|048 Venonat| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or (|Venonat| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "049 Venomoth",
+            "name": "Capture Venomoth",
             "id": 2049,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |048 Venonat|) or {berry_forest(True)} or (|049 Venomoth| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Venonat|) or {berry_forest(True)} or (|Venomoth| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "050 Diglett",
+            "name": "Capture Diglett",
             "id": 2050,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{digletts_cave(False)} or (|050 Diglett| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{digletts_cave(False)} or (|Diglett| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "051 Dugtrio",
+            "name": "Capture Dugtrio",
             "id": 2051,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |050 Diglett|) or {digletts_cave(True)} or (|051 Dugtrio| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Diglett|) or {digletts_cave(True)} or (|Dugtrio| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "052 Meowth",
+            "name": "Capture Meowth",
             "id": 2052,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|052 Meowth| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|Meowth| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "053 Persian",
+            "name": "Capture Persian",
             "id": 2053,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |052 Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|053 Persian| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|Persian| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "054 Psyduck",
+            "name": "Capture Psyduck",
             "id": 2054,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|054 Psyduck| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Psyduck| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "055 Golduck",
+            "name": "Capture Golduck",
             "id": 2055,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |054 Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|055 Golduck| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|Golduck| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "056 Mankey",
+            "name": "Capture Mankey",
             "id": 2056,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|056 Mankey| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Mankey| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "057 Primape",
+            "name": "Capture Primape",
             "id": 2057,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |056 Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or (|057 Primape| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or (|Primape| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "058 Growlithe",
+            "name": "Capture Growlithe",
             "id": 2058,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|058 Growlithe| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Growlithe| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "059 Arcanine",
+            "name": "Capture Arcanine",
             "id": 2059,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|058 Growlithe| and {can_get_fire_stone()}) or (|059 Arcanine| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Growlithe| and {can_get_fire_stone()}) or (|Arcanine| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "060 Poliwag",
+            "name": "Capture Poliwag",
             "id": 2060,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|060 Poliwag| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Poliwag| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "061 Poliwhirl",
+            "name": "Capture Poliwhirl",
             "id": 2061,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |060 Poliwag|) or (|061 Poliwhirl| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Poliwag|) or (|Poliwhirl| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "062 Poliwrath",
+            "name": "Capture Poliwrath",
             "id": 2062,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|061 Poliwhirl| and {can_get_water_stone()}) or (|062 Poliwrath| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Poliwhirl| and {can_get_water_stone()}) or (|Poliwrath| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "063 Abra",
+            "name": "Capture Abra",
             "id": 2063,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or (|063 Abra| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or (|Abra| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "064 Kadabra",
+            "name": "Capture Kadabra",
             "id": 2064,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|063 Abra| or {cerulean_cave()} or (|064 Kadabra| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Abra| or {cerulean_cave()} or (|Kadabra| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "065 Alakazam",
+            "name": "Capture Alakazam",
             "id": 2065,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|064 Kadabra| and {can_get_linking_cord()}) or (|065 Alakazam| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Kadabra| and {can_get_linking_cord()}) or (|Alakazam| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "066 Machop",
+            "name": "Capture Machop",
             "id": 2066,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|066 Machop| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Machop| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "067 Machoke",
+            "name": "Capture Machoke",
             "id": 2067,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |066 Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or (|067 Machoke| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or (|Machoke| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "068 Machamp",
+            "name": "Capture Machamp",
             "id": 2068,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|067 Machoke| and {can_get_linking_cord()}) or (|068 Machamp| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Machoke| and {can_get_linking_cord()}) or (|Machamp| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "069 Bellsprout",
+            "name": "Capture Bellsprout",
             "id": 2069,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|069 Bellsprout| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Bellsprout| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "070 Weepinbell",
+            "name": "Capture Weepinbell",
             "id": 2070,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |069 Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|070 Weepinbell| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Weepinbell| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "071 Victreebel",
+            "name": "Capture Victreebel",
             "id": 2071,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|070 Weepinbell| and {can_get_leaf_stone()}) or (|071 Victreebel| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Weepinbell| and {can_get_leaf_stone()}) or (|Victreebel| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "072 Tentacool",
+            "name": "Capture Tentacool",
             "id": 2072,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|072 Tentacool| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|Tentacool| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "073 Tentacruel",
+            "name": "Capture Tentacruel",
             "id": 2073,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |072 Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|073 Tentacruel| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|Tentacruel| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "074 Geodude",
+            "name": "Capture Geodude",
             "id": 2074,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_mystery_egg()} or |074 Geodude| and |@Badges:8|) and |Mystery Egg|)"
+            "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_mystery_egg()} or |Geodude| and |@Badges:8|) and |Mystery Egg|)"
         },
         {
-            "name": "075 Graveler",
+            "name": "Capture Graveler",
             "id": 2075,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |074 Geodude|) or {mount_ember(False)} or {cerulean_cave()} or (|075 Graveler| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Geodude|) or {mount_ember(False)} or {cerulean_cave()} or (|Graveler| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "076 Golem",
+            "name": "Capture Golem",
             "id": 2076,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|075 Graveler| and {can_get_linking_cord()}) or (|076 Golem| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Graveler| and {can_get_linking_cord()}) or (|Golem| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "077 Ponyta",
+            "name": "Capture Ponyta",
             "id": 2077,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kindle_road()} or {mount_ember(False)} or (|077 Ponyta| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kindle_road()} or {mount_ember(False)} or (|Ponyta| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "078 Rapidash",
+            "name": "Capture Rapidash",
             "id": 2078,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |077 Ponyta|) or {kindle_road()} or {mount_ember(False)} or (|078 Rapidash| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Ponyta|) or {kindle_road()} or {mount_ember(False)} or (|Rapidash| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "079 Slowpoke",
+            "name": "Capture Slowpoke",
             "id": 2079,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|079 Slowpoke| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Slowpoke| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "080 Slowbro",
+            "name": "Capture Slowbro",
             "id": 2080,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |079 Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|080 Slowbro| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|Slowbro| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "081 Magnemite",
+            "name": "Capture Magnemite",
             "id": 2081,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|081 Magnemite| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Magnemite| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "082 Magneton",
+            "name": "Capture Magneton",
             "id": 2082,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |081 Magnemite|) or {power_plant(False)} or {cerulean_cave()} or (|082 Magneton| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Magnemite|) or {power_plant(False)} or {cerulean_cave()} or (|Magneton| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "083 Farfetch'd",
+            "name": "Capture Farfetch'd",
             "id": 2083,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()} or (|083 Farfetch'd| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or (|Farfetch'd| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "084 Doduo",
+            "name": "Capture Doduo",
             
             "id": 2084,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or (({can_get_mystery_egg()} or (|084 Doduo| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or (({can_get_mystery_egg()} or (|Doduo| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "085 Dodrio",
+            "name": "Capture Dodrio",
             "id": 2085,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |084 Doduo|) or (|085 Dodrio| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Doduo|) or (|Dodrio| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "086 Seel",
+            "name": "Capture Seel",
             "id": 2086,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{seafoam_islands(True)} or (|086 Seel| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{seafoam_islands(True)} or (|Seel| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "087 Dewgong",
+            "name": "Capture Dewgong",
             "id": 2087,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |086 Seel|) or (|087 Dewgong| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Seel|) or (|Dewgong| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "088 Grimer",
+            "name": "Capture Grimer",
             "id": 2088,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{pokemon_mansion(False)} or (({can_get_mystery_egg()} or (|088 Grimer| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{pokemon_mansion(False)} or (({can_get_mystery_egg()} or (|Grimer| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "089 Muk",
+            "name": "Capture Muk",
             "id": 2089,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |088 Grimer|) or {pokemon_mansion(False)} or (|089 Muk| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Grimer|) or {pokemon_mansion(False)} or (|Muk| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "090 Shellder",
+            "name": "Capture Shellder",
             "id": 2090,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (|090 Shellder| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (|Shellder| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "091 Cloyster",
+            "name": "Capture Cloyster",
             "id": 2091,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|090 Shellder| and {can_get_water_stone()}) or (|091 Cloyster| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Shellder| and {can_get_water_stone()}) or (|Cloyster| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "092 Gastly",
+            "name": "Capture Gastly",
             "id": 2092,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{pokemon_tower(False)} or ({can_get_mystery_egg()} or (|092 Gastly| and |@Badges:8|) and |Mystery Egg|) or (|Infinite Seasonal Events| and {any_kanto_route()})"
+            "requires": "{pokemon_tower(False)} or ({can_get_mystery_egg()} or (|Gastly| and |@Badges:8|) and |Mystery Egg|) or (|Infinite Seasonal Events| and {any_kanto_route()})"
         },
         {
-            "name": "093 Haunter",
+            "name": "Capture Haunter",
             "id": 2093,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |092 Gastly|) or {pokemon_tower(False)} or (|093 Haunter| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Gastly|) or {pokemon_tower(False)} or (|Haunter| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "094 Gengar",
+            "name": "Capture Gengar",
             "id": 2094,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|093 Haunter| and {can_get_linking_cord()} or (|094 Gengar| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Haunter| and {can_get_linking_cord()} or (|Gengar| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "095 Onix",
+            "name": "Capture Onix",
             "id": 2095,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{rock_tunnel(True)} or {victory_road()} or (|095 Onix| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{rock_tunnel(True)} or {victory_road()} or (|Onix| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "096 Drowzee",
+            "name": "Capture Drowzee",
             "id": 2096,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_11()} or {berry_forest(False)} or (|096 Drowzee| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_11()} or {berry_forest(False)} or (|Drowzee| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "097 Hypno",
+            "name": "Capture Hypno",
             "id": 2097,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|@Badges:1| and |096 Drowzee| or {berry_forest(True)} or (|097 Hypno| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|@Badges:1| and |Drowzee| or {berry_forest(True)} or (|Hypno| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "098 Krabby",
+            "name": "Capture Krabby",
             "id": 2098,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|098 Krabby| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|Krabby| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "099 Kingler",
+            "name": "Capture Kingler",
             "id": 2099,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |098 Krabby|) or (|099 Kingler| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Krabby|) or (|Kingler| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "100 Voltorb",
+            "name": "Capture Voltorb",
             "id": 2100,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_10()} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|100 Voltorb| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_10()} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Voltorb| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "101 Electrode",
+            "name": "Capture Electrode",
             "id": 2101,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |100 Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or (|101 Electrode| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or (|Electrode| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "102 Exeggcute",
+            "name": "Capture Exeggcute",
             "id": 2102,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{berry_forest(False)} or {safari_zone()} or (|102 Exeggcute| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{berry_forest(False)} or {safari_zone()} or (|Exeggcute| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "103 Exeggutor",
+            "name": "Capture Exeggutor",
             "id": 2103,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|102 Exeggcute| and {can_get_leaf_stone()}) or (|103 Exeggutor| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Exeggcute| and {can_get_leaf_stone()}) or (|Exeggutor| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "104 Cubone",
+            "name": "Capture Cubone",
             "id": 2104,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{pokemon_tower(False)} or {safari_zone()} or (|104 Cubone| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{pokemon_tower(False)} or {safari_zone()} or (|Cubone| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "105 Marowak",
+            "name": "Capture Marowak",
             "id": 2105,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |104 Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or (|105 Marowak| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or (|Marowak| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "106 Hitmonlee",
+            "name": "Capture Hitmonlee",
             "id": 2106,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|106 Hitmonlee| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Hitmonlee| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "107 Hitmonchan",
+            "name": "Capture Hitmonchan",
             "id": 2107,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|107 Hitmonchan| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Hitmonchan| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "108 Lickitung",
+            "name": "Capture Lickitung",
             "id": 2108,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or (|108 Lickitung| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or (|Lickitung| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "109 Koffing",
+            "name": "Capture Koffing",
             "id": 2109,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{pokemon_mansion()} or (|109 Koffing| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{pokemon_mansion()} or (|Koffing| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "110 Weezing",
+            "name": "Capture Weezing",
             "id": 2110,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |109 Koffing|) or {pokemon_mansion(False)} or (|110 Weezing| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Koffing|) or {pokemon_mansion(False)} or (|Weezing| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "111 Rhyhorn",
+            "name": "Capture Rhyhorn",
             "id": 2111,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()} or (|111 Rhyhorn| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or (|Rhyhorn| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "112 Rhydon",
+            "name": "Capture Rhydon",
             "id": 2112,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:3| and |111 Rhyhorn|) or (|112 Rhydon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:3| and |Rhyhorn|) or (|Rhydon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "113 Chansey",
+            "name": "Capture Chansey",
             "id": 2113,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()} or (|113 Chansey| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or (|Chansey| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "114 Tangela",
+            "name": "Capture Tangela",
             "id": 2114,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or |Wailmer Pail| or (|114 Tangela| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or |Wailmer Pail| or (|Tangela| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "115 Kangaskhan",
+            "name": "Capture Kangaskhan",
             "id": 2115,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()} or (|115 Kangaskhan| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or (|Kangaskhan| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "116 Horsea",
+            "name": "Capture Horsea",
             "id": 2116,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|116 Horsea| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|Horsea| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "117 Seadra",
+            "name": "Capture Seadra",
             "id": 2117,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |116 Horsea|) or (|117 Seadra| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Horsea|) or (|Seadra| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "118 Goldeen",
+            "name": "Capture Goldeen",
             "id": 2118,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|118 Goldeen| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Goldeen| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "119 Seaking",
+            "name": "Capture Seaking",
             "id": 2119,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |118 Goldeen|) or {safari_zone()} or (|119 Seaking| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Goldeen|) or {safari_zone()} or (|Seaking| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "120 Staryu",
+            "name": "Capture Staryu",
             "id": 2120,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|120 Staryu| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Staryu| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "121 Starmie",
+            "name": "Capture Starmie",
             "id": 2121,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|120 Staryu| and {can_get_water_stone()} or (|121 Starmie| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Staryu| and {can_get_water_stone()} or (|Starmie| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "122 Mr. Mime",
+            "name": "Capture Mr. Mime",
             "id": 2122,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({celadon_city()}  and |Tutorial Complete|) or (|122 Mr. Mime| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or (|Mr. Mime| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "123 Scyther",
+            "name": "Capture Scyther",
             "id": 2123,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()} or |Wailmer Pail| or (|123 Scyther| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or |Wailmer Pail| or (|Scyther| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "124 Jynx",
+            "name": "Capture Jynx",
             "id": 2124,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or (|124 Jynx| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or (|Jynx| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "125 Electabuzz",
+            "name": "Capture Electabuzz",
             "id": 2125,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{power_plant(True)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|125 Electabuzz| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{power_plant(True)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Electabuzz| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "126 Magmar",
+            "name": "Capture Magmar",
             "id": 2126,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|126 Magmar| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Magmar| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "127 Pinsir",
+            "name": "Capture Pinsir",
             "id": 2127,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()} or (|127 Pinsir| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or (|Pinsir| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "128 Tauros",
+            "name": "Capture Tauros",
             "id": 2128,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{safari_zone()} or (|128 Tauros| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or (|Tauros| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "129 Magikarp",
+            "name": "Capture Magikarp",
             "id": 2129,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or (|129 Magikarp| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or (|Magikarp| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "130 Gyarados",
+            "name": "Capture Gyarados",
             "id": 2130,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|129 Magikarp| or (|130 Gyarados| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Magikarp| or (|Gyarados| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "131 Lapras",
+            "name": "Capture Lapras",
             "id": 2131,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{silph_co()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|131 Lapras| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{silph_co()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Lapras| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "132 Ditto",
+            "name": "Capture Ditto",
             "id": 2132,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or (|132 Ditto| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or (|Ditto| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "133 Eevee",
+            "name": "Capture Eevee",
             "id": 2133,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or (|133 Eevee| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or (|Eevee| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "134 Vaporeon",
+            "name": "Capture Vaporeon",
             "id": 2134,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|133 Eevee| and {can_get_water_stone()} or (|134 Vaporeon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Eevee| and {can_get_water_stone()} or (|Vaporeon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "135 Jolteon",
+            "name": "Capture Jolteon",
             "id": 2135,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|133 Eevee| and {can_get_thunder_stone()} or (|135 Jolteon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Eevee| and {can_get_thunder_stone()} or (|Jolteon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "136 Flareon",
+            "name": "Capture Flareon",
             "id": 2136,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "|133 Eevee| and {can_get_fire_stone()} or (|136 Flareon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Eevee| and {can_get_fire_stone()} or (|Flareon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "137 Porygon",
+            "name": "Capture Porygon",
             "id": 2137,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or (|137 Porygon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or (|Porygon| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "138 Omanyte",
+            "name": "Capture Omanyte",
             "id": 2138,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit|) or (|138 Omanyte| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Omanyte| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "139 Omastar",
+            "name": "Capture Omastar",
             "id": 2139,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |138 Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|) or (|139 Omastar| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or (|Omastar| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "140 Kabuto",
+            "name": "Capture Kabuto",
             "id": 2140,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit|) or (|140 Kabuto| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Kabuto| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "141 Kabutops",
+            "name": "Capture Kabutops",
             "id": 2141,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:2| and |140 Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and |Enhanced Auto Mine|) or (|141 Kabutops| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or (|Kabutops| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "142 Aerodactyl",
+            "name": "Capture Aerodactyl",
             "id": 2142,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit|) or (|142 Aerodactyl| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Aerodactyl| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "143 Snorlax",
+            "name": "Capture Snorlax",
             "id": 2143,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({pokemon_tower()} and {attack_needed(189990)}) or (|143 Snorlax| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({pokemon_tower()} and {attack_needed(189990)}) or (|Snorlax| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "144 Articuno",
+            "name": "Capture Articuno",
             "id": 2144,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{seafoam_islands(True, 129195)} or (|144 Articuno| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{seafoam_islands(True, 129195)} or (|Articuno| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "145 Zapdos",
+            "name": "Capture Zapdos",
             "id": 2145,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{power_plant(True, 101302)} or (|145 Zapdos| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{power_plant(True, 101302)} or (|Zapdos| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "146 Moltres",
+            "name": "Capture Moltres",
             "id": 2146,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{mount_ember(True, 184462)} or (|146 Moltres| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{mount_ember(True, 184462)} or (|Moltres| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "147 Dratini",
+            "name": "Capture Dratini",
             "id": 2147,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|147 Dratini| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|147 Dratini| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "(|Dratini| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dratini| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "148 Dragonair",
+            "name": "Capture Dragonair",
             "id": 2148,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:1| and |147 Dratini|) or (|148 Dragonair| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|148 Dragonair| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Dratini|) or (|Dragonair| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dragonair| and |@Badges:8|)) and |Mystery Egg|)"
         },
         {
-            "name": "149 Dragonite",
+            "name": "Capture Dragonite",
             "id": 2149,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "(|@Badges:4| and |148 Dragonair|) or ({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|149 Dragonite| and |@Badges:8|)) and |Mystery Egg|"
+            "requires": "(|@Badges:4| and |Dragonair|) or ({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dragonite| and |@Badges:8|)) and |Mystery Egg|"
         },
         {
-            "name": "150 Mewtwo",
+            "name": "Capture Mewtwo",
             "id": 2150,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon"
             ],
-            "requires": "{cerulean_cave()} or (|150 Mewtwo| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{cerulean_cave()} or (|Mewtwo| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "151 Mew",
+            "name": "Capture Mew",
             "id": 2151,
             "region": "Kanto Champion",
             "category": [
                 "Pokemon"
             ],
-            "requires": "({fuchsia_city()} and |Beat Champion Blue|) or (|151 Mew| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({fuchsia_city()} and |Kanto Elite Champion Badge|) or (|Mew| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "Travel to Johto",
+            "name": "Travel to Johto [Goal]",
             "id": 1000000,
             "region": "Kanto Champion",
             "category": [
