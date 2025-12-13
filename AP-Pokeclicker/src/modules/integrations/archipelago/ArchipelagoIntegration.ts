@@ -231,6 +231,12 @@ class ArchipelagoIntegrationModule {
             return data || null;
         };
 
+        w.getItemOld = async (key: string): Promise<string | null> => {
+            const data = await this.client.storage.fetch(key);
+            //console.log(data);
+            return data || null;
+        };
+
         w.scout = (locationID: number) => {
             return this.client.scout([locationID], 0).then((data: any) => data[0]);
         };
@@ -257,8 +263,7 @@ class ArchipelagoIntegrationModule {
         };
 
 
-        // Expose constructor and instance on window for legacy bootstrap/legacy scripts.  
-        this.client.messages.on('connected', async (text: string, player: APPlayer) => { //, tags: string[], nodes: MessageNode[]) => {
+        this.client.messages.on('connected', async (text: string, player: APPlayer) => { 
             // console.log('Connected to server: ', player);
             this.connected = true;
             this.player = player;
@@ -267,7 +272,7 @@ class ArchipelagoIntegrationModule {
             // Start the game if not already started
             if (!App.game) {
                 //set save key
-                Save.key = (await w.getItem('saveKey', true)) || Rand.string(6);
+                Save.key = (await w.getItem('saveKey', true)) || (await w.getItemOld(player.name + 'save key', true)) || Rand.string(6);
                 await w.setItem('saveKey', Save.key);
                 //console.log('Using save key: ', Save.key);
                 document.querySelector('#saveSelector').remove();
