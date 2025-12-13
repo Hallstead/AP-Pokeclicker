@@ -3547,7 +3547,7 @@ TemporaryBattleList['Ash Ketchum Kanto'] = new TemporaryBattle(
         returnTown: 'Pallet Town',
         imageName: 'Ash Ketchum',
     },
-    [714]
+    []
 );
 TemporaryBattleList['Ash Ketchum Johto'] = new TemporaryBattle(
     'Ash Ketchum Johto',

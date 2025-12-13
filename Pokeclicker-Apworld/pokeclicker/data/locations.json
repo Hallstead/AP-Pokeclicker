@@ -270,7 +270,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge| and {attack_needed(262880)}"
+            "requires": "{indigo_plateau()} and |Kanto Elite Lorelei Badge| and {attack_needed(262880)}"
         },
         {
             "name": "Agatha",
@@ -279,7 +279,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:2| and {attack_needed(262880)}"
+            "requires": "{indigo_plateau()} and |Kanto Elite Bruno Badge| and {attack_needed(262880)}"
         },
         {
             "name": "Lance",
@@ -288,7 +288,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:3| and {attack_needed(283550)}"
+            "requires": "{indigo_plateau()} and |Kanto Elite Agatha Badge| and {attack_needed(283550)}"
         },
         {
             "name": "Champion Blue",
@@ -297,7 +297,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{indigo_plateau()} and |Progressive Elite Badge:4| and {attack_needed(359860)}",
+            "requires": "{indigo_plateau()} and |Kanto Elite Lance Badge| and {attack_needed(359860)}",
             "place_item": ["Kanto Elite Champion Badge"]
         },
         {
@@ -542,15 +542,6 @@
                 "Temporary Battles"
             ],
             "requires": "{three_island()} and {attack_needed(443328)}"
-        },
-        {
-            "name": "Ash Ketchum Kanto",
-            "id": 714,
-            "region": "Kanto",
-            "category": [
-                "Temporary Battles"
-            ],
-            "requires": "|Kanto Elite Champion Badge| and {attack_needed(737710)}"
         },
         {
             "name": "Capture Bulbasaur",
