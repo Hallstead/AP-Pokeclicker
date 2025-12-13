@@ -98,6 +98,9 @@ class TemporaryBattleRunner {
                 }
             }
             battle.optionalArgs.rewardFunction?.();
+            for (const id of battle.locationIds) {
+                (window as any).sendLocationCheck(id);
+            }
             GameHelper.incrementObservable(App.game.statistics.temporaryBattleDefeated[GameConstants.getTemporaryBattlesIndex(battle.name)]);
             player.town = battle.getTown() ?? TownList[GameConstants.StartingTowns[player.region]];
             App.game.gameState = GameConstants.GameState.town;
