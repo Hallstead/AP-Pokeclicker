@@ -538,6 +538,11 @@ class ArchipelagoIntegrationModule {
                     BadgeEnums.Soul,
                     BadgeEnums.Volcano,
                     BadgeEnums.Earth,
+                    BadgeEnums.Elite_Lorelei,
+                    BadgeEnums.Elite_Bruno,
+                    BadgeEnums.Elite_Agatha,
+                    BadgeEnums.Elite_Lance,
+                    BadgeEnums.Elite_KantoChampion,
                 ];
                 const eliteBadges = [
                     BadgeEnums.Elite_Lorelei,
@@ -547,19 +552,23 @@ class ArchipelagoIntegrationModule {
                     BadgeEnums.Elite_KantoChampion,
                 ];
                 
-                if (index < 8) {
+                if (index == 8) {
+                    const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
+                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
+                        App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
+                        if (item.name.includes('Progressive')) {
+                            this.displayItemReceived(item, 'a');
+                        } else {
+                            this.displayItemReceived(item, 'the');
+                        }
+                        
+                    }
+                    w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
+                } else {
                     if (!App.game.badgeCase.hasBadge(badges[index])) {
                         this.displayItemReceived(item, 'the');
                         App.game.badgeCase.gainBadge(badges[index]);
                     }
-                } else {
-                    const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
-                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
-                        App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
-                        this.displayItemReceived(item, 'a');
-                    }
-                    w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
-                    
                 }
 
             } else if (item.id >= otherItemsOffset && item.id < eventItemsOffset) {
