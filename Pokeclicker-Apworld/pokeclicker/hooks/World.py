@@ -105,7 +105,7 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
                 # print(pokemon_location.name, "-", pokemon_location.id)
                 # print(list(pokemon_location.keys()))
                 # pokemon_location.id = None
-                pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name)
+                pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name.replace("Capture ", ""))
                 pokemon_item.id = None
                 item_pool.remove(pokemon_item)
                 pokemon_location.place_locked_item(pokemon_item)
