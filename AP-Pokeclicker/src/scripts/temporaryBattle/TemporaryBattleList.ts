@@ -335,7 +335,7 @@ TemporaryBattleList['Blue 6'] = new TemporaryBattle(
         returnTown: 'Viridian City',
         imageName: 'Blue2',
     },
-    706
+    [706]
 );
 // Kanto Christmas Temporary Battles, based on Blue 2
 TemporaryBattleList['Santa Jynx 1'] = new TemporaryBattle(
