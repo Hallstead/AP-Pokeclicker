@@ -126,7 +126,7 @@
             "range_start": 1,
             "default": 2,
             "range_end": 100,
-            "group": "Game Options"
+            "group": "Multiplier Options"
         },
         "roaming_encounter_multiplier_route": {
             "type": "Toggle",
@@ -136,7 +136,87 @@
                 "With this disabled, all routes will have increased roaming encounter rates."
             ],
             "default": true,
-            "group": "Game Options"
+            "group": "Multiplier Options"
+        },
+        "pokedollar_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Pokedollars earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "dungeon_token_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Dungion Tokens earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "quest_point_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Quest Points earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "diamond_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Diamonds earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "farm_point_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Farm Points earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "_battle_point_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Battle Points earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "_conquest_token_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Conquest Tokens earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "exp_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of exp earned from battles."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
         },
         "starter_logic": {
             "type": "Toggle",

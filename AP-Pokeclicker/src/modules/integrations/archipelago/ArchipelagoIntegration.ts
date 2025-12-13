@@ -30,6 +30,7 @@ class ArchipelagoIntegrationModule {
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string } | null = null;
+    nowItems: {};
     
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
     private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
@@ -130,6 +131,14 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: number,
             roaming_encounter_multiplier: number,
             roaming_encounter_multiplier_route: boolean,
+            pokedollar_multiplier: number,
+            dungeon_token_multiplier: number,
+            quest_point_multiplier: number,
+            diamond_multiplier: number,
+            farm_point_multiplier: number,
+            battle_point_multiplier: number,
+            conquest_token_multiplier: number,
+            exp_multiplier: number
         };
         let options: GameOptions = {
             dexsanity: 0,
@@ -139,6 +148,14 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: 0,
             roaming_encounter_multiplier: 1,
             roaming_encounter_multiplier_route: true,
+            pokedollar_multiplier: 1,
+            dungeon_token_multiplier: 1,
+            quest_point_multiplier: 1,
+            diamond_multiplier: 1,
+            farm_point_multiplier: 1,
+            battle_point_multiplier: 1,
+            conquest_token_multiplier: 1,
+            exp_multiplier: 1,
         };
         
         // Ensure global runtime flag object exists and supports get/set with event dispatch
@@ -267,6 +284,7 @@ class ArchipelagoIntegrationModule {
             // console.log('Connected to server: ', player);
             this.connected = true;
             this.player = player;
+            this.nowItems = {};
             
 
             // Start the game if not already started
@@ -411,7 +429,6 @@ class ArchipelagoIntegrationModule {
 
     public async processItemPacket(items: APItem[], startingIndex: number) {
         const w: any = window as any;
-        let nowItems = {};
         // Set APFlags for each script item
         const setFlag = (key: string, value: any) => {
             if (w.APFlags?.set) {
@@ -617,12 +634,12 @@ class ArchipelagoIntegrationModule {
             } else if (item.id >= splitDungeonTicketsOffset && item.id < fillerOffset - 1) {
             } else {
                 // Filler
-                if (!nowItems[item.id]) {
-                    nowItems[item.id] = 0;
+                if (!this.nowItems[item.id]) {
+                    this.nowItems[item.id] = 0;
                 }
-                nowItems[item.id] += 1;
+                this.nowItems[item.id] += 1;
 
-                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= nowItems[item.id]) {
+                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
                     // Already received this item in a previous sync packet
                     continue;
                 }
@@ -631,19 +648,19 @@ class ArchipelagoIntegrationModule {
                     this.client.updateStatus(clientStatuses.goal);
                 }
                 if (id == 0) {
-                    App.game.wallet.gainMoney(100000);
+                    App.game.wallet.gainMoney(100000 / ((window as any).APFlags.options.pokedollar_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else if (id == 1) {
-                    App.game.wallet.gainDungeonTokens(10000);
+                    App.game.wallet.gainDungeonTokens(10000 / ((window as any).APFlags.options.dungeon_token_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else if (id == 2) {
-                    App.game.wallet.gainQuestPoints(1000);
+                    App.game.wallet.gainQuestPoints(1000, true);
                     this.displayItemReceived(item, '');
                 } else if (id == 3) {
-                    App.game.wallet.gainDiamonds(100);
+                    App.game.wallet.gainDiamonds(100, true);
                     this.displayItemReceived(item, '');
                 } else if (id == 4) {
-                    App.game.wallet.gainFarmPoints(1000);
+                    App.game.wallet.gainFarmPoints(1000, true);
                     this.displayItemReceived(item, '');
                 } else {
                     player.gainItem('Protein', 1);
@@ -652,7 +669,7 @@ class ArchipelagoIntegrationModule {
             }
         }
         // Save received items state
-        await w.setItem('receivedItems', nowItems);
+        await w.setItem('receivedItems', this.nowItems);
     }
 
     // Wait for App.game, mark ready, then flush queued packets.

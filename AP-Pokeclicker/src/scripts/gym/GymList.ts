@@ -18,7 +18,7 @@ GymList['Hallstead\'s Yacht'] = new Gym(
         new GymPokemon('Psyduck (Dark Mage)', 264633, 100),
     ],
     BadgeEnums.None,
-    100000,
+    1000000,
     '...Urge...to destroy world...rising...',
     [new RouteKillRequirement(1, GameConstants.Region.kanto, 1)],
     () => {

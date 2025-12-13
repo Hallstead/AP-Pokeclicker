@@ -1904,7 +1904,7 @@
             "requires": "({fuchsia_city()} and |Kanto Elite Champion Badge|) or (|Mew| and |@Badges:8| and |Mystery Egg|)"
         },
         {
-            "name": "Travel to Johto",
+            "name": "Travel to Johto [Goal]",
             "id": 1000000,
             "region": "Kanto Champion",
             "category": [
