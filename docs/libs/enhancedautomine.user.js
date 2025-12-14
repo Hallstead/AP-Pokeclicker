@@ -52,7 +52,7 @@
             return false;
         }
         function applyAutoMineAccessFromFlag(force) {
-            const enabled = !!getAPEnhancedAutoMineFlag();
+            const enabled = !!getAPEnhancedAutoMineFlag() && App.game.underground.canAccess();
             const btn = document.getElementById('auto-mine-start');
             if (btn) {
                 btn.style.display = enabled ? '' : 'none';
