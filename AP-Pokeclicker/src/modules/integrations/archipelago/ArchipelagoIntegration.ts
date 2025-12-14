@@ -654,13 +654,13 @@ class ArchipelagoIntegrationModule {
                     App.game.wallet.gainDungeonTokens(10000 / ((window as any).APFlags.options.dungeon_token_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else if (id == 2) {
-                    App.game.wallet.gainQuestPoints(1000, true);
+                    App.game.wallet.gainQuestPoints(1000 / ((window as any).APFlags.options.quest_point_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else if (id == 3) {
-                    App.game.wallet.gainDiamonds(100, true);
+                    App.game.wallet.gainDiamonds(100 / ((window as any).APFlags.options.diamond_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else if (id == 4) {
-                    App.game.wallet.gainFarmPoints(1000, true);
+                    App.game.wallet.gainFarmPoints(1000 / ((window as any).APFlags.options.farm_point_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else {
                     player.gainItem('Protein', 1);
