@@ -162,7 +162,32 @@ def after_create_item(item: ManualItem, world: World, multiworld: MultiWorld, pl
 
 # This method is run towards the end of pre-generation, before the place_item options have been handled and before AP generation occurs
 def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
-    pass
+    if world.options.badge_randomization.value == 0:
+        world.location_name_to_location["Brock"]["place_item"] = ["Soul Badge"]
+        world.location_name_to_location["Misty"]["place_item"] = ["Cascade Badge"]
+        world.location_name_to_location["Lt. Surge"]["place_item"] = ["Thunder Badge"]
+        world.location_name_to_location["Erika"]["place_item"] = ["Rainbow Badge"]
+        world.location_name_to_location["Koga"]["place_item"] = ["Volcano Badge"]
+        world.location_name_to_location["Sabrina"]["place_item"] = ["Marsh Badge"]
+        world.location_name_to_location["Blaine"]["place_item"] = ["Boulder Badge"]
+        world.location_name_to_location["Giovanni"]["place_item"] = ["Earth Badge"]
+        world.location_name_to_location["Lorelei"]["place_item"] = ["Kanto Elite Lorelei Badge"]
+        world.location_name_to_location["Bruno"]["place_item"] = ["Kanto Elite Bruno Badge"]
+        world.location_name_to_location["Agatha"]["place_item"] = ["Kanto Elite Agatha Badge"]
+        world.location_name_to_location["Lance"]["place_item"] = ["Kanto Elite Lance Badge"]
+    # elif world.options.badge_randomization.value == 1:
+    #     world.location_name_to_location["Brock"]["place_item"] = ["Boulder Badge"]
+    #     world.location_name_to_location["Misty"]["place_item_category"] = ["Badges"]
+    #     world.location_name_to_location["Lt. Surge"]["place_item_category"] = ["Badges"]
+    #     world.location_name_to_location["Erika"]["place_item_category"] = ["Badges"]
+    #     world.location_name_to_location["Koga"]["place_item_category"] = ["Badges"]
+    #     world.location_name_to_location["Sabrina"]["place_item_category"] = ["Badges"]
+    #     world.location_name_to_location["Blaine"]["place_item_category"] = ["Badges"]
+    #     world.location_name_to_location["Giovanni"]["place_item_category"] = ["Badges"]
+    #     world.location_name_to_location["Lorelei"]["place_item"] = ["Kanto Elite Lorelei Badge"]
+    #     world.location_name_to_location["Bruno"]["place_item"] = ["Kanto Elite Bruno Badge"]
+    #     world.location_name_to_location["Agatha"]["place_item"] = ["Kanto Elite Agatha Badge"]
+    #     world.location_name_to_location["Lance"]["place_item"] = ["Kanto Elite Lance Badge"]
 
 # This method is run at the very end of pre-generation, once the place_item options have been handled and before AP generation occurs
 def after_generate_basic(world: World, multiworld: MultiWorld, player: int):

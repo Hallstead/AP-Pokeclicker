@@ -76,6 +76,22 @@
             "default": false,
             "group": "Game Options"
         },
+        "badge_randomization": {
+            "type": "Choice",
+            "description": [
+                "This option sets how badges are randomized.",
+                "None: Badges are placed in their vanilla locations.",
+                "Shuffled: Badges are shuffled among themselves in gym locations. (not yet implemented)",
+                "Full: Badges are put into the item pool with everything else."
+            ],
+            "values": {
+                "none": 0,
+                "full": 2
+            },
+            "default": 0,
+            "allow_custom_value": false,
+            "group": "Game Options"
+        },
         "use_scripts": {
             "type": "Toggle",
             "description": [
