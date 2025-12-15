@@ -548,7 +548,7 @@
             "id": 2001,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{starter()} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|Bulbasaur| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -557,7 +557,7 @@
             "id": 2002,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Bulbasaur| or (|Ivysaur| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -566,7 +566,7 @@
             "id": 2003,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Ivysaur|) or (|Venusaur| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -575,7 +575,7 @@
             "id": 2004,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{starter()} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Charmander| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -584,7 +584,7 @@
             "id": 2005,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Charmander| or (|Charmeleon| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -593,7 +593,7 @@
             "id": 2006,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Charmeleon|) or (|Charizard| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -602,7 +602,7 @@
             "id": 2007,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_starter()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Squirtle| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -611,7 +611,7 @@
             "id": 2008,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Squirtle| or (|Wartortle| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -620,7 +620,7 @@
             "id": 2009,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Wartortle|) or (|Blastoise| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -629,7 +629,7 @@
             "id": 2010,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Caterpie| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -638,7 +638,7 @@
             "id": 2011,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Metapod| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -647,7 +647,7 @@
             "id": 2012,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Metapod| or (|Butterfree| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -656,7 +656,7 @@
             "id": 2013,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Weedle| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -665,7 +665,7 @@
             "id": 2014,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Kakuna| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -674,7 +674,7 @@
             "id": 2015,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Kakuna| or (|Beedrill| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -683,7 +683,7 @@
             "id": 2016,
             "region": "Route 1 Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgey| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -692,7 +692,7 @@
             "id": 2017,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgeotto| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -701,7 +701,7 @@
             "id": 2018,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Pidgeotto|) or (|Pidgeot| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -710,7 +710,7 @@
             "id": 2019,
             "region": "Route 1 Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or (|Rattata| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -719,7 +719,7 @@
             "id": 2020,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or (|Raticate| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -728,7 +728,7 @@
             "id": 2021,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Spearow| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -737,7 +737,7 @@
             "id": 2022,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Fearow| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -746,7 +746,7 @@
             "id": 2023,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Ekans| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -755,7 +755,7 @@
             "id": 2024,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Ekans|) or {kanto_route_23()} or {victory_road()} or (|Arbok| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -764,7 +764,7 @@
             "id": 2025,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{viridian_forest(True)} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Pikachu| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -773,7 +773,7 @@
             "id": 2026,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Pikachu| and {can_get_thunder_stone()} or (|Raichu| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -782,7 +782,7 @@
             "id": 2027,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Sandshrew| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -791,7 +791,7 @@
             "id": 2028,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Sandshrew|) or {kanto_route_23()} or {victory_road()} or (|Sandslash| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -800,7 +800,7 @@
             "id": 2029,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_3()} or {safari_zone()} or (|Nidoran (F)| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -809,7 +809,7 @@
             "id": 2030,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Nidoran (F)| or {safari_zone()} or (|Nidorina| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -818,7 +818,7 @@
             "id": 2031,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Nidorina| and {can_get_moon_stone()}) or (|Nidoqueen| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -827,7 +827,7 @@
             "id": 2032,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_3()} or {safari_zone()} or (|Nidoran (M)| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -836,7 +836,7 @@
             "id": 2033,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Nidoran (M)| or {safari_zone()} or (|Nidorino| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -845,7 +845,7 @@
             "id": 2034,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Nidorino| and {can_get_moon_stone()}) or (|Nidoking| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -854,7 +854,7 @@
             "id": 2035,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{mt_moon(False)} or (|Clefairy| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -863,7 +863,7 @@
             "id": 2036,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Clefairy| and {can_get_moon_stone()}) or (|Clefable| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -872,7 +872,7 @@
             "id": 2037,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Vulpix| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -881,7 +881,7 @@
             "id": 2038,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Vulpix| and {can_get_fire_stone()}) or (|Ninetails| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -890,7 +890,7 @@
             "id": 2039,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_3()} or (({can_get_mystery_egg()} or (|Jigglypuff| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -899,7 +899,7 @@
             "id": 2040,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Jigglypuff| and {can_get_moon_stone()}) or (|Wigglytuff| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -908,7 +908,7 @@
             "id": 2041,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or (|Zubat| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -917,7 +917,7 @@
             "id": 2042,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or (|Golbat| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -926,7 +926,7 @@
             "id": 2043,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|Oddish| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -935,7 +935,7 @@
             "id": 2044,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Gloom| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -944,7 +944,7 @@
             "id": 2045,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Gloom| and {can_get_leaf_stone()} or (|Vileplume| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -953,7 +953,7 @@
             "id": 2046,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or (|Paras| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -962,7 +962,7 @@
             "id": 2047,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Paras|) or {cerulean_cave()} or (|Parasect| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -971,7 +971,7 @@
             "id": 2048,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or (|Venonat| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -980,7 +980,7 @@
             "id": 2049,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Venonat|) or {berry_forest(True)} or (|Venomoth| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -989,7 +989,7 @@
             "id": 2050,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{digletts_cave(False)} or (|Diglett| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -998,7 +998,7 @@
             "id": 2051,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Diglett|) or {digletts_cave(True)} or (|Dugtrio| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1007,7 +1007,7 @@
             "id": 2052,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|Meowth| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1016,7 +1016,7 @@
             "id": 2053,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|Persian| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1025,7 +1025,7 @@
             "id": 2054,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Psyduck| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1034,7 +1034,7 @@
             "id": 2055,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|Golduck| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1043,7 +1043,7 @@
             "id": 2056,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Mankey| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1052,7 +1052,7 @@
             "id": 2057,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or (|Primape| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1061,7 +1061,7 @@
             "id": 2058,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Growlithe| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1070,7 +1070,7 @@
             "id": 2059,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Growlithe| and {can_get_fire_stone()}) or (|Arcanine| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1079,7 +1079,7 @@
             "id": 2060,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Poliwag| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1088,7 +1088,7 @@
             "id": 2061,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Poliwag|) or (|Poliwhirl| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1097,7 +1097,7 @@
             "id": 2062,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Poliwhirl| and {can_get_water_stone()}) or (|Poliwrath| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1106,7 +1106,7 @@
             "id": 2063,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_24()} or {kanto_route_25()} or (|Abra| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1115,7 +1115,7 @@
             "id": 2064,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Abra| or {cerulean_cave()} or (|Kadabra| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1124,7 +1124,7 @@
             "id": 2065,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Kadabra| and {can_get_linking_cord()}) or (|Alakazam| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1133,7 +1133,7 @@
             "id": 2066,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Machop| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1142,7 +1142,7 @@
             "id": 2067,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or (|Machoke| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1151,7 +1151,7 @@
             "id": 2068,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Machoke| and {can_get_linking_cord()}) or (|Machamp| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1160,7 +1160,7 @@
             "id": 2069,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Bellsprout| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1169,7 +1169,7 @@
             "id": 2070,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Weepinbell| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1178,7 +1178,7 @@
             "id": 2071,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Weepinbell| and {can_get_leaf_stone()}) or (|Victreebel| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1187,7 +1187,7 @@
             "id": 2072,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|Tentacool| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1196,7 +1196,7 @@
             "id": 2073,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|Tentacruel| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1205,7 +1205,7 @@
             "id": 2074,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_mystery_egg()} or |Geodude| and |@Badges:8|) and |Mystery Egg|)"
         },
@@ -1214,7 +1214,7 @@
             "id": 2075,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Geodude|) or {mount_ember(False)} or {cerulean_cave()} or (|Graveler| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1223,7 +1223,7 @@
             "id": 2076,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Graveler| and {can_get_linking_cord()}) or (|Golem| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1232,7 +1232,7 @@
             "id": 2077,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kindle_road()} or {mount_ember(False)} or (|Ponyta| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1241,7 +1241,7 @@
             "id": 2078,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Ponyta|) or {kindle_road()} or {mount_ember(False)} or (|Rapidash| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1250,7 +1250,7 @@
             "id": 2079,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Slowpoke| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1259,7 +1259,7 @@
             "id": 2080,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|Slowbro| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1268,7 +1268,7 @@
             "id": 2081,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Magnemite| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1277,7 +1277,7 @@
             "id": 2082,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Magnemite|) or {power_plant(False)} or {cerulean_cave()} or (|Magneton| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1286,7 +1286,7 @@
             "id": 2083,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_12()} or {kanto_route_13()} or (|Farfetch'd| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1296,7 +1296,7 @@
             "id": 2084,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or (({can_get_mystery_egg()} or (|Doduo| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1305,7 +1305,7 @@
             "id": 2085,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Doduo|) or (|Dodrio| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1314,7 +1314,7 @@
             "id": 2086,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{seafoam_islands(True)} or (|Seel| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1323,7 +1323,7 @@
             "id": 2087,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Seel|) or (|Dewgong| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1332,7 +1332,7 @@
             "id": 2088,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{pokemon_mansion(False)} or (({can_get_mystery_egg()} or (|Grimer| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1341,7 +1341,7 @@
             "id": 2089,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Grimer|) or {pokemon_mansion(False)} or (|Muk| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1350,7 +1350,7 @@
             "id": 2090,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (|Shellder| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1359,7 +1359,7 @@
             "id": 2091,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Shellder| and {can_get_water_stone()}) or (|Cloyster| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1368,7 +1368,7 @@
             "id": 2092,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{pokemon_tower(False)} or ({can_get_mystery_egg()} or (|Gastly| and |@Badges:8|) and |Mystery Egg|) or (|Infinite Seasonal Events| and {any_kanto_route()})"
         },
@@ -1377,7 +1377,7 @@
             "id": 2093,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Gastly|) or {pokemon_tower(False)} or (|Haunter| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1386,7 +1386,7 @@
             "id": 2094,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Haunter| and {can_get_linking_cord()} or (|Gengar| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1395,7 +1395,7 @@
             "id": 2095,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{rock_tunnel(True)} or {victory_road()} or (|Onix| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1404,7 +1404,7 @@
             "id": 2096,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_11()} or {berry_forest(False)} or (|Drowzee| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1413,7 +1413,7 @@
             "id": 2097,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|@Badges:1| and |Drowzee| or {berry_forest(True)} or (|Hypno| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1422,7 +1422,7 @@
             "id": 2098,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|Krabby| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1431,7 +1431,7 @@
             "id": 2099,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Krabby|) or (|Kingler| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1440,7 +1440,7 @@
             "id": 2100,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_10()} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Voltorb| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1449,7 +1449,7 @@
             "id": 2101,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or (|Electrode| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1458,7 +1458,7 @@
             "id": 2102,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{berry_forest(False)} or {safari_zone()} or (|Exeggcute| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1467,7 +1467,7 @@
             "id": 2103,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Exeggcute| and {can_get_leaf_stone()}) or (|Exeggutor| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1476,7 +1476,7 @@
             "id": 2104,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{pokemon_tower(False)} or {safari_zone()} or (|Cubone| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1485,7 +1485,7 @@
             "id": 2105,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or (|Marowak| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1494,7 +1494,7 @@
             "id": 2106,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Hitmonlee| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1503,7 +1503,7 @@
             "id": 2107,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Hitmonchan| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1512,7 +1512,7 @@
             "id": 2108,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({celadon_city()} and |Tutorial Complete|) or (|Lickitung| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1521,7 +1521,7 @@
             "id": 2109,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{pokemon_mansion()} or (|Koffing| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1530,7 +1530,7 @@
             "id": 2110,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Koffing|) or {pokemon_mansion(False)} or (|Weezing| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1539,7 +1539,7 @@
             "id": 2111,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{safari_zone()} or (|Rhyhorn| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1548,7 +1548,7 @@
             "id": 2112,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:3| and |Rhyhorn|) or (|Rhydon| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1557,7 +1557,7 @@
             "id": 2113,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{safari_zone()} or (|Chansey| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1566,7 +1566,7 @@
             "id": 2114,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or |Wailmer Pail| or (|Tangela| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1575,7 +1575,7 @@
             "id": 2115,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{safari_zone()} or (|Kangaskhan| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1584,7 +1584,7 @@
             "id": 2116,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|Horsea| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1593,7 +1593,7 @@
             "id": 2117,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Horsea|) or (|Seadra| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1602,7 +1602,7 @@
             "id": 2118,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Goldeen| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1611,7 +1611,7 @@
             "id": 2119,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Goldeen|) or {safari_zone()} or (|Seaking| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1620,7 +1620,7 @@
             "id": 2120,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Staryu| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1629,7 +1629,7 @@
             "id": 2121,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Staryu| and {can_get_water_stone()} or (|Starmie| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1638,7 +1638,7 @@
             "id": 2122,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({celadon_city()}  and |Tutorial Complete|) or (|Mr. Mime| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1647,7 +1647,7 @@
             "id": 2123,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{safari_zone()} or |Wailmer Pail| or (|Scyther| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1656,7 +1656,7 @@
             "id": 2124,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({celadon_city()} and |Tutorial Complete|) or (|Jynx| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1665,7 +1665,7 @@
             "id": 2125,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{power_plant(True)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Electabuzz| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1674,7 +1674,7 @@
             "id": 2126,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Magmar| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1683,7 +1683,7 @@
             "id": 2127,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{safari_zone()} or (|Pinsir| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1692,7 +1692,7 @@
             "id": 2128,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{safari_zone()} or (|Tauros| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1701,7 +1701,7 @@
             "id": 2129,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or (|Magikarp| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1710,7 +1710,7 @@
             "id": 2130,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Magikarp| or (|Gyarados| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1719,7 +1719,7 @@
             "id": 2131,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{silph_co()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Lapras| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1728,7 +1728,7 @@
             "id": 2132,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or (|Ditto| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1737,7 +1737,7 @@
             "id": 2133,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or (|Eevee| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1746,7 +1746,7 @@
             "id": 2134,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Eevee| and {can_get_water_stone()} or (|Vaporeon| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1755,7 +1755,7 @@
             "id": 2135,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Eevee| and {can_get_thunder_stone()} or (|Jolteon| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1764,7 +1764,7 @@
             "id": 2136,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "|Eevee| and {can_get_fire_stone()} or (|Flareon| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1773,7 +1773,7 @@
             "id": 2137,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({celadon_city()} and |Tutorial Complete|) or (|Porygon| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1782,7 +1782,7 @@
             "id": 2138,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Omanyte| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1791,7 +1791,7 @@
             "id": 2139,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or (|Omastar| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1800,7 +1800,7 @@
             "id": 2140,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Kabuto| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1809,7 +1809,7 @@
             "id": 2141,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or (|Kabutops| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1818,7 +1818,7 @@
             "id": 2142,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Aerodactyl| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1827,7 +1827,7 @@
             "id": 2143,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({pokemon_tower()} and {attack_needed(189990)}) or (|Snorlax| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1836,7 +1836,7 @@
             "id": 2144,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{seafoam_islands(True, 129195)} or (|Articuno| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1845,7 +1845,7 @@
             "id": 2145,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{power_plant(True, 101302)} or (|Zapdos| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1854,7 +1854,7 @@
             "id": 2146,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{mount_ember(True, 184462)} or (|Moltres| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1863,7 +1863,7 @@
             "id": 2147,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|Dratini| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dratini| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1872,7 +1872,7 @@
             "id": 2148,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:1| and |Dratini|) or (|Dragonair| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dragonair| and |@Badges:8|)) and |Mystery Egg|)"
         },
@@ -1881,7 +1881,7 @@
             "id": 2149,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "(|@Badges:4| and |Dragonair|) or ({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dragonite| and |@Badges:8|)) and |Mystery Egg|"
         },
@@ -1890,7 +1890,7 @@
             "id": 2150,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "{cerulean_cave()} or (|Mewtwo| and |@Badges:8| and |Mystery Egg|)"
         },
@@ -1899,7 +1899,7 @@
             "id": 2151,
             "region": "Kanto Champion",
             "category": [
-                "Pokemon"
+                "Pokemon Locations"
             ],
             "requires": "({fuchsia_city()} and |Kanto Elite Champion Badge|) or (|Mew| and |@Badges:8| and |Mystery Egg|)"
         },

@@ -42,7 +42,12 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # if not is_option_enabled(multiworld, player, "dexsanity"): 
-    pass
+    for location in world.location_name_to_location.keys():
+        if world.options.dexsanity.value == 0:
+            if "Pokemon Locations" in location_name_to_location[location]["category"]:
+                world.location_name_to_id[location] = None
+        if "(Event)" in location:
+            world.location_name_to_id[location] = None
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
@@ -97,14 +102,11 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     #
     # Because multiple copies of an item can exist, you need to add an item name
     # to the list multiple times if you want to remove multiple copies of it.
-    if not world.options.dexsanity.value:
+    if world.options.dexsanity.value == 0:
+        print("\nNot Dexsanity\n")
         for key, _ in enumerate(location_table):
-            if "Pokemon" in location_table[key]["category"]:
+            if "Pokemon Locations" in location_table[key]["category"]:
                 pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == location_table[key]["name"])
-                # pokemon_location.id = None
-                # print(pokemon_location.name, "-", pokemon_location.id)
-                # print(list(pokemon_location.keys()))
-                # pokemon_location.id = None
                 pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name.replace("Capture ", ""))
                 pokemon_item.id = None
                 item_pool.remove(pokemon_item)
@@ -162,21 +164,27 @@ def after_create_item(item: ManualItem, world: World, multiworld: MultiWorld, pl
 
 # This method is run towards the end of pre-generation, before the place_item options have been handled and before AP generation occurs
 def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
+
+    if world.options.dexsanity.value == 2:
+        for location in location_name_to_location.keys():
+            if "Pokemon Locations" in location_name_to_location[location]["category"]:
+                world.location_name_to_location[location]["place_item_category"] = ["Pokemon"]
+    
     if world.options.badge_randomization.value == 0:
-        world.location_name_to_location["Brock"]["place_item"] = ["Soul Badge"]
+        world.location_name_to_location["Brock"]["place_item"] = ["Boulder Badge"]
         world.location_name_to_location["Misty"]["place_item"] = ["Cascade Badge"]
         world.location_name_to_location["Lt. Surge"]["place_item"] = ["Thunder Badge"]
         world.location_name_to_location["Erika"]["place_item"] = ["Rainbow Badge"]
-        world.location_name_to_location["Koga"]["place_item"] = ["Volcano Badge"]
+        world.location_name_to_location["Koga"]["place_item"] = ["Soul Badge"]
         world.location_name_to_location["Sabrina"]["place_item"] = ["Marsh Badge"]
-        world.location_name_to_location["Blaine"]["place_item"] = ["Boulder Badge"]
+        world.location_name_to_location["Blaine"]["place_item"] = ["Volcano Badge"]
         world.location_name_to_location["Giovanni"]["place_item"] = ["Earth Badge"]
         world.location_name_to_location["Lorelei"]["place_item"] = ["Kanto Elite Lorelei Badge"]
         world.location_name_to_location["Bruno"]["place_item"] = ["Kanto Elite Bruno Badge"]
         world.location_name_to_location["Agatha"]["place_item"] = ["Kanto Elite Agatha Badge"]
         world.location_name_to_location["Lance"]["place_item"] = ["Kanto Elite Lance Badge"]
     # elif world.options.badge_randomization.value == 1:
-    #     world.location_name_to_location["Brock"]["place_item"] = ["Boulder Badge"]
+    #     world.location_name_to_location["Brock"]["place_item_category"] = ["Badges"]
     #     world.location_name_to_location["Misty"]["place_item_category"] = ["Badges"]
     #     world.location_name_to_location["Lt. Surge"]["place_item_category"] = ["Badges"]
     #     world.location_name_to_location["Erika"]["place_item_category"] = ["Badges"]

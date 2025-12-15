@@ -773,11 +773,11 @@ def dungeon_attack_needed(world: World, state: CollectionState, player: int, min
 
 def dexsanity_enabled(world: World, state: CollectionState, player: int):
     """Checks if Dexsanity is enabled."""
-    return world.options.dexsanity.value
+    return world.options.dexsanity.value > 0
 
 def dexsanity_disabled(world: World, state: CollectionState, player: int):
     """Checks if Dexsanity is disabled."""
-    return not world.options.dexsanity.value
+    return world.options.dexsanity.value == 0
 
 def starter(world: World, state: CollectionState, player: int):
     """Checks if the starters are in logic."""

@@ -66,22 +66,29 @@
             "group": "Example Options"
         },
         "dexsanity": {
-            "type": "Toggle",
+            "type": "Choice",
             "description": [
-                "Include all pokemon in the Pokedex as locations?",
-                "Pokemon will be randomized into the item pool, and when you catch/evolve/hatch",
-                "a new pokemon, instead of obtaining that pokemon it sends a check.",
-                "This option forces obtaining all pokemon before traveling to Johto."
+                "Pokemon join the pool of locations and items.",
+                "With this enabled, capturing all pokemon before traveling to the next region is logically required.",
+                "",
+                "None: Pokemon are not locations, and catching a pokemon gives that pokemon.",
+                "Shuffled: Pokemon locations only contain Pokemon",
+                "Full: All Pokemon are randomized into the item pool."
             ],
-            "default": false,
+            "values": {
+                "none": 0,
+                "shuffled": 2,
+                "full": 3
+            },
+            "default": 0,
+            "allow_custom_value": false,
             "group": "Game Options"
         },
         "badge_randomization": {
             "type": "Choice",
             "description": [
                 "This option sets how badges are randomized.",
-                "None: Badges are placed in their vanilla locations.",
-                "Shuffled: Badges are shuffled among themselves in gym locations. (not yet implemented)",
+                "None: Badges are placed in their vanilla locations. This option leads to more vanilla progression.",
                 "Full: Badges are put into the item pool with everything else."
             ],
             "values": {
