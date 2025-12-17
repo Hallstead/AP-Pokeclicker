@@ -11,8 +11,25 @@ class GenericTraderShop extends Shop {
     }
 
     public onclick() {
-        ShopHandler.showShop(this);
-        $('#genericTraderModal').modal('show');
+        let chain = Promise.resolve();    // Start empty chain
+
+        for (const item of this.items) {
+            chain = chain.then(() =>
+                (window as any).scoutShopItem(item)
+                    .then((name: string) => {
+                        if (name) {
+                            //console.log('Changing name');
+                            item.displayName = name;
+                            //console.log(item.displayName);
+                        }
+                    })
+            );
+        }
+
+        chain.then(() => {
+            ShopHandler.showShop(this);
+            $('#genericTraderModal').modal('show');
+        });
     }
 
     public areaStatus() {
