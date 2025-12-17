@@ -323,6 +323,7 @@ class ArchipelagoIntegrationModule {
                 // Mirror explicit boolean for easy access
                 if (typeof options.dexsanity !== 'undefined') {
                     w.APFlags.set('dexsanity', !!options.dexsanity);
+                    App.game.challenges.list.requireCompletePokedex.active(!!options.dexsanity);
                 }
                 if (typeof options.use_scripts !== 'undefined' && typeof options.include_scripts_as_items !== 'undefined') {
                     if (options.use_scripts && !options.include_scripts_as_items) {
