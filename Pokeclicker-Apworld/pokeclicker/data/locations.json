@@ -3441,9 +3441,10 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Not Implemented"
+                "Seasonal Events",
+                "Christmas"
             ],
-            "requires": ""
+            "requires": "(|Infinite Seasonal Events| and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}) or can_breed(Santa Jynx)"
         },
         {
             "name": "Capture Pinkan Electabuzz",
