@@ -1793,7 +1793,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or {can_breed(Omastar)}"
+            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Omastar)}"
         },
         {
             "name": "Capture Kabuto",
@@ -1811,7 +1811,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or {can_breed(Kabutops)}"
+            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Kabutops)}"
         },
         {
             "name": "Capture Aerodactyl",
@@ -1914,7 +1914,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "({kanto_roamer()} and |Infinite Seasonal Events| and {new_island(True, 131500)}) or {can_breed(Bulbasaur (Clone))}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed(Bulbasaur (Clone))}"
         },
         {
             "name": "Capture Spooky Bulbasaur",
@@ -1926,7 +1926,7 @@
                 "Holiday Events",
                 "Halloween"
             ],
-            "requires": "(|Infinite Seasonal Events| and {any_kanto_route()}) or {can_breed(Spooky Bulbasaur)}"
+            "requires": "({has_script(Infinite Seasonal Events)} and {any_kanto_route()}) or {can_breed(Spooky Bulbasaur)}"
         },
         {
             "name": "Capture Bulbasaur (Rose)",
@@ -1939,7 +1939,7 @@
                 "Golden Week",
                 "Not Implemented"
             ],
-            "requires": "(|Infinite Seasonal Events|) or {can_breed(Bulbasaur (Rose))}"
+            "requires": "({has_script(Infinite Seasonal Events)}) or {can_breed(Bulbasaur (Rose))}"
         },
         {
             "name": "Capture Ivysaur (Clone)",
@@ -2047,7 +2047,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "({kanto_roamer()} and |Infinite Seasonal Events| and {new_island(True, 131500)}) or {can_breed(Charmander (Clone))}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed(Charmander (Clone))}"
         },
         {
             "name": "Capture Charmeleon (Clone)",
@@ -2116,7 +2116,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "({kanto_roamer()} and |Infinite Seasonal Events| and {new_island(True, 131500)}) or {can_breed(Squirtle (Clone))}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed(Squirtle (Clone))}"
         },
         {
             "name": "Capture Squad Leader Squirtle",
@@ -2474,7 +2474,7 @@
                 "Seasonal Events",
                 "Flying Pikachu"
             ],
-            "requires": "({kanto_roamer()} and |Infinite Seasonal Events|) or {can_breed(Flying Pikachu)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Flying Pikachu)}"
         },
         {
             "name": "Capture Surfing Pikachu",
@@ -2509,7 +2509,7 @@
                 "Seasonal Events",
                 "Let's Go"
             ],
-            "requires": "({kanto_roamer()} and |Infinite Seasonal Events|) or {can_breed(Let's Go Pikachu)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Let's Go Pikachu)}"
         },
         {
             "name": "Capture Pinkan Pikachu",
@@ -2543,7 +2543,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "(|Infinite Seasonal Events| and {new_island(True, 131500)} and {attack_needed(137100)}) or {can_breed(Pikachu (Clone))}"
+            "requires": "({has_script(Infinite Seasonal Events)} and {new_island(True, 131500)} and {attack_needed(137100)}) or {can_breed(Pikachu (Clone))}"
         },
         {
             "name": "Capture Pikachu (Rock Star)",
@@ -2619,7 +2619,7 @@
                 "Pokemon Locations",
                 "Alt Pokemon"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|)"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Pikachu (Palaeontologist))}"
         },
         {
             "name": "Capture Alolan Raichu",
@@ -3444,7 +3444,7 @@
                 "Seasonal Events",
                 "Christmas"
             ],
-            "requires": "(|Infinite Seasonal Events| and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}) or can_breed(Santa Jynx)"
+            "requires": "({has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}) or can_breed(Santa Jynx)"
         },
         {
             "name": "Capture Pinkan Electabuzz",
@@ -3908,7 +3908,7 @@
                 "Seasonal Events",
                 "Let's Go"
             ],
-            "requires": "({kanto_roamer()} and |Infinite Seasonal Events|) or {can_breed(Let's Go Eevee)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Let's Go Eevee)}"
         },
         {
             "name": "Capture Mega Aerodactyl",
@@ -3943,7 +3943,7 @@
                 "Seasonal Events",
                 "Christmas"
             ],
-            "requires": "({kanto_roamer()} and |Infinite Seasonal Events|) or {can_breed(Christmas Snorlax)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Christmas Snorlax)}"
         },
         {
             "name": "Capture Snorlax (Snowman)",
@@ -3955,7 +3955,7 @@
                 "Seasonal Events",
                 "Christmas"
             ],
-            "requires": "({seafoam_islands()} and |Infinite Seasonal Events|) or {can_breed(Christmas Snorlax)}"
+            "requires": "({seafoam_islands()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Christmas Snorlax)}"
         },
         {
             "name": "Capture Galarian Articuno",

@@ -507,3 +507,12 @@ def kanto_roamer(world: World, state: CollectionState, player: int):
     """Checks if the Kanto roamers are in logic."""
     has_champion_badge = state.count("Kanto Elite Champion Badge", player) > 0
     return has_champion_badge and fuchsia_city(world, state, player)
+
+def has_script(world: World, state: CollectionState, player: int, script_name: str):
+    """Checks if the player needs a specific script."""
+    if not world.options.use_scripts.value or not world.options.include_scripts_as_items.value:
+        return True
+    script_item = get_items_with_value(world, f"Script: {script_name}")
+    if state.count(script_item, player) > 0:
+        return True
+    return False
