@@ -16,6 +16,9 @@ def before_is_category_enabled(multiworld: MultiWorld, player: int, category_nam
     if category_name == "Shop":
         return False
     
+    if category_name == "Not Implemented":
+        return False
+    
     return None
 
 # Use this if you want to override the default behavior of is_option_enabled
