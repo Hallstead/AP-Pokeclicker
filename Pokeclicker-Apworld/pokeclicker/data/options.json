@@ -157,7 +157,7 @@
             ],
             "default": false,
             "group": "Game Options"
-        }
+        },
         "roaming_encounter_multiplier": {
             "type": "Range",
             "description": [
