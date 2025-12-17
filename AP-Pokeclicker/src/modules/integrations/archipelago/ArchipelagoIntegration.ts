@@ -13,6 +13,7 @@ import OakItemType from '../../enums/OakItemType';
 import Rand from '../../utilities/Rand';
 import BuyKeyItem from '../../items/buyKeyItem';
 import PokemonItem from '../../items/PokemonItem';
+import { getPokemonByName } from '../../pokemons/PokemonHelper';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -268,8 +269,13 @@ class ArchipelagoIntegrationModule {
                     return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
                 });
             }
-            if (item instanceof PokemonItem && item.locationId !== null) {
-                return w.scout(item.locationId).then(result => {
+            if (item instanceof PokemonItem) {
+                let id = getPokemonByName(item.type).id;
+                if (id % 1 != 0) {
+                    id = id * 100 + 3000;
+                }
+                id += 2000;
+                return w.scout(id).then(result => {
                     if (result) {
                         return Promise.resolve(`${result.receiver.alias}'s ${result.name}`);
                     }
