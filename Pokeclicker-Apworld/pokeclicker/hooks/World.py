@@ -91,6 +91,13 @@ def before_create_items_all(item_config: dict[str, int|dict], world: World, mult
 
 # The item pool before starting items are processed, in case you want to see the raw item pool at that stage
 def before_create_items_starting(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
+    if world.options.use_scripts.value == 1 and world.options.include_scripts_as_items.value == 0:
+        # Remove all scripts from the item pool and add them to starting items.
+        scripts_to_remove = [item for item in item_pool if "Scripts" in item.category]
+        for item in scripts_to_remove:
+            item_pool.remove(item)
+            multiworld.push_precollected(item)
+    
     return item_pool
 
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
