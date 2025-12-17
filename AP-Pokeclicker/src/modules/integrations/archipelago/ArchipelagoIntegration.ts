@@ -616,6 +616,11 @@ class ArchipelagoIntegrationModule {
                         App.game.breeding.gainEggSlot();
                         this.displayItemReceived(item, 'a');
                     }
+                } else if (index == 2) {
+                    // Primary Egg Slot
+                } else if (index == 3) {
+                    // Palaeontologist Token
+                    player.gainItem('Palaeontologist Token', 1);
                 }
             } else if (item.id >= eventItemsOffset && item.id < pokemonOffset) {
                 // Event items

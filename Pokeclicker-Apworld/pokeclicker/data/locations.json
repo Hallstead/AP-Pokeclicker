@@ -2619,7 +2619,7 @@
                 "Pokemon Locations",
                 "Alt Pokemon"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Pikachu (Palaeontologist))}"
+            "requires": "({cinnabar_island()} and ((|Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or |Palaeontologist Token|)) or {can_breed(Pikachu (Palaeontologist))}"
         },
         {
             "name": "Capture Alolan Raichu",

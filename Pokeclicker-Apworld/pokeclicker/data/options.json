@@ -149,6 +149,15 @@
             "default": false,
             "group": "Game Options"
         },
+        "include_palaeontologist_token": {
+            "type": "Toggle",
+            "description": [
+                "Should a Palaeontologist Token be included in the item pool?",
+                "With this enabled, a Palaeontologist Token will be available to trade for Pikachu (Palaeontologist) on Cinnabar Island."
+            ],
+            "default": false,
+            "group": "Game Options"
+        }
         "roaming_encounter_multiplier": {
             "type": "Range",
             "description": [

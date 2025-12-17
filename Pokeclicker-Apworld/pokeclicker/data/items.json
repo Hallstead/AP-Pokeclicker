@@ -443,13 +443,23 @@
             "useful": true
         },
         {
-            "id": 502,
+            "id": 503,
             "count": 1,
-            "name": "Extra Egg Slot",
+            "name": "Primary Egg Slot",
             "category": [
-                "Extra Slots"
+                "Extra Slots",
+                "Not Implemented"
             ],
             "useful": true
+        },
+        {
+            "id": 504,
+            "count": 1,
+            "name": "Palaeontologist Token",
+            "category": [
+                "Palaeontologist"
+            ],
+            "progression": true
         },
         {
             "id": 1001,
