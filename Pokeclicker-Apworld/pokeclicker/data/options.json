@@ -84,6 +84,15 @@
             "allow_custom_value": false,
             "group": "Game Options"
         },
+        "include_alt_pokemon": {
+            "type": "Toggle",
+            "description": [
+                "With this enabled, alternate forms of Pokemon will be included in the randomization pool.",
+                "This does nothing if dexsanity is set to none."
+            ],
+            "default": false,
+            "group": "Game Options"
+        },
         "badge_randomization": {
             "type": "Choice",
             "description": [
