@@ -9,7 +9,9 @@
             ],
             "requires": "{pewter_city()}",
             "region": "Kanto",
-            "place_item": ["Tutorial Complete"]
+            "place_item": [
+                "Tutorial Complete"
+            ]
         },
         {
             "name": "Defeat 10 Pokemon on Kanto Route 1 (Town Map)",
@@ -298,7 +300,9 @@
                 "Gyms"
             ],
             "requires": "{indigo_plateau()} and |Kanto Elite Lance Badge| and {attack_needed(359860)}",
-            "place_item": ["Kanto Elite Champion Badge"]
+            "place_item": [
+                "Kanto Elite Champion Badge"
+            ]
         },
         {
             "name": "Viridian Forest",
@@ -550,7 +554,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{starter()} or {can_get_grass_egg()} or {can_breed(Bulbasaur)}"
+            "requires": "{starter()} or {can_get_grass_egg()} or {can_breed('Bulbasaur')}"
         },
         {
             "name": "Capture Ivysaur",
@@ -559,7 +563,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Bulbasaur| or {can_breed(Ivysaur)}"
+            "requires": "|Bulbasaur| or {can_breed('Ivysaur')}"
         },
         {
             "name": "Capture Venusaur",
@@ -568,7 +572,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Ivysaur|) or {can_breed(Venusaur)}"
+            "requires": "(|@Badges:2| and |Ivysaur|) or {can_breed('Venusaur')}"
         },
         {
             "name": "Capture Charmander",
@@ -577,7 +581,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{starter()} or {can_get_fire_egg()} or {can_breed(Charmander)}"
+            "requires": "{starter()} or {can_get_fire_egg()} or {can_breed('Charmander')}"
         },
         {
             "name": "Capture Charmeleon",
@@ -586,7 +590,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Charmander| or {can_breed(Charmeleon)}"
+            "requires": "|Charmander| or {can_breed('Charmeleon')}"
         },
         {
             "name": "Capture Charizard",
@@ -595,7 +599,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Charmeleon|) or {can_breed(Charizard)}"
+            "requires": "(|@Badges:2| and |Charmeleon|) or {can_breed('Charizard')}"
         },
         {
             "name": "Capture Squirtle",
@@ -604,7 +608,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_starter()} or {can_get_water_egg()} or {can_breed(Squirtle)}"
+            "requires": "{kanto_starter()} or {can_get_water_egg()} or {can_breed('Squirtle')}"
         },
         {
             "name": "Capture Wartortle",
@@ -613,7 +617,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Squirtle| or {can_breed(Wartortle)}"
+            "requires": "|Squirtle| or {can_breed('Wartortle')}"
         },
         {
             "name": "Capture Blastoise",
@@ -622,7 +626,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Wartortle|) or {can_breed(Blastoise)}"
+            "requires": "(|@Badges:2| and |Wartortle|) or {can_breed('Blastoise')}"
         },
         {
             "name": "Capture Caterpie",
@@ -631,7 +635,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Caterpie)}"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed('Caterpie')}"
         },
         {
             "name": "Capture Metapod",
@@ -640,7 +644,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Metapod)}"
+            "requires": "|Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed('Metapod')}"
         },
         {
             "name": "Capture Butterfree",
@@ -649,7 +653,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Metapod| or {can_breed(Butterfree)}"
+            "requires": "|Metapod| or {can_breed('Butterfree')}"
         },
         {
             "name": "Capture Weedle",
@@ -658,7 +662,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Weedle)}"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed('Weedle')}"
         },
         {
             "name": "Capture Kakuna",
@@ -667,7 +671,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Kakuna)}"
+            "requires": "|Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed('Kakuna')}"
         },
         {
             "name": "Capture Beedrill",
@@ -676,7 +680,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Kakuna| or {can_breed(Beedrill)}"
+            "requires": "|Kakuna| or {can_breed('Beedrill')}"
         },
         {
             "name": "Capture Pidgey",
@@ -685,7 +689,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed(Pidgey)}"
+            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed('Pidgey')}"
         },
         {
             "name": "Capture Pidgeotto",
@@ -694,7 +698,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed(Pidgeotto)}"
+            "requires": "|Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed('Pidgeotto')}"
         },
         {
             "name": "Capture Pidgeot",
@@ -703,7 +707,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Pidgeotto|) or {can_breed(Pidgeot)}"
+            "requires": "(|@Badges:2| and |Pidgeotto|) or {can_breed('Pidgeot')}"
         },
         {
             "name": "Capture Rattata",
@@ -712,7 +716,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or {can_breed(Rattata)}"
+            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or {can_breed('Rattata')}"
         },
         {
             "name": "Capture Raticate",
@@ -721,7 +725,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or {can_breed(Raticate)}"
+            "requires": "|Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or {can_breed('Raticate')}"
         },
         {
             "name": "Capture Spearow",
@@ -730,7 +734,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed(Spearow)}"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed('Spearow')}"
         },
         {
             "name": "Capture Fearow",
@@ -739,7 +743,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed(Fearow)}"
+            "requires": "|Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed('Fearow')}"
         },
         {
             "name": "Capture Ekans",
@@ -748,7 +752,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed(Ekans)}"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed('Ekans')}"
         },
         {
             "name": "Capture Arbok",
@@ -757,7 +761,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Ekans|) or {kanto_route_23()} or {victory_road()} or {can_breed(Arbok)}"
+            "requires": "(|@Badges:1| and |Ekans|) or {kanto_route_23()} or {victory_road()} or {can_breed('Arbok')}"
         },
         {
             "name": "Capture Pikachu",
@@ -766,7 +770,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{viridian_forest(True)} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed(Pikachu)}"
+            "requires": "{viridian_forest(True)} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed('Pikachu')}"
         },
         {
             "name": "Capture Raichu",
@@ -775,7 +779,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Pikachu| and {can_get_thunder_stone()} or {can_breed(Raichu)}"
+            "requires": "|Pikachu| and {can_get_thunder_stone()} or {can_breed('Raichu')}"
         },
         {
             "name": "Capture Sandshrew",
@@ -784,7 +788,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed(Sandshrew)}"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed('Sandshrew')}"
         },
         {
             "name": "Capture Sandslash",
@@ -793,7 +797,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Sandshrew|) or {kanto_route_23()} or {victory_road()} or {can_breed(Sandslash)}"
+            "requires": "(|@Badges:1| and |Sandshrew|) or {kanto_route_23()} or {victory_road()} or {can_breed('Sandslash')}"
         },
         {
             "name": "Capture Nidoran (F)",
@@ -802,7 +806,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed(Nidoran (F))}"
+            "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed('Nidoran (F)')}"
         },
         {
             "name": "Capture Nidorina",
@@ -811,7 +815,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Nidoran (F)| or {safari_zone()} or {can_breed(Nidorina)}"
+            "requires": "|Nidoran (F)| or {safari_zone()} or {can_breed('Nidorina')}"
         },
         {
             "name": "Capture Nidoqueen",
@@ -820,7 +824,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Nidorina| and {can_get_moon_stone()}) or {can_breed(Nidoqueen)}"
+            "requires": "(|Nidorina| and {can_get_moon_stone()}) or {can_breed('Nidoqueen')}"
         },
         {
             "name": "Capture Nidoran (M)",
@@ -829,7 +833,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed(Nidoran (M))}"
+            "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed('Nidoran (M)')}"
         },
         {
             "name": "Capture Nidorino",
@@ -838,7 +842,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Nidoran (M)| or {safari_zone()} or {can_breed(Nidorino)}"
+            "requires": "|Nidoran (M)| or {safari_zone()} or {can_breed('Nidorino')}"
         },
         {
             "name": "Capture Nidoking",
@@ -847,7 +851,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Nidorino| and {can_get_moon_stone()}) or {can_breed(Nidoking)}"
+            "requires": "(|Nidorino| and {can_get_moon_stone()}) or {can_breed('Nidoking')}"
         },
         {
             "name": "Capture Clefairy",
@@ -856,7 +860,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mt_moon(False)} or {can_breed(Clefairy)}"
+            "requires": "{mt_moon(False)} or {can_breed('Clefairy')}"
         },
         {
             "name": "Capture Clefable",
@@ -865,7 +869,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Clefairy| and {can_get_moon_stone()}) or {can_breed(Clefable)}"
+            "requires": "(|Clefairy| and {can_get_moon_stone()}) or {can_breed('Clefable')}"
         },
         {
             "name": "Capture Vulpix",
@@ -874,7 +878,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed(Vulpix)}"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed('Vulpix')}"
         },
         {
             "name": "Capture Ninetails",
@@ -883,7 +887,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Vulpix| and {can_get_fire_stone()}) or {can_breed(Ninetails)}"
+            "requires": "(|Vulpix| and {can_get_fire_stone()}) or {can_breed('Ninetails')}"
         },
         {
             "name": "Capture Jigglypuff",
@@ -892,7 +896,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_3()} or {can_get_mystery_egg()} or {can_breed(Jigglypuff)}"
+            "requires": "{kanto_route_3()} or {can_get_mystery_egg()} or {can_breed('Jigglypuff')}"
         },
         {
             "name": "Capture Wigglytuff",
@@ -901,7 +905,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Jigglypuff| and {can_get_moon_stone()}) or {can_breed(Wigglytuff)}"
+            "requires": "(|Jigglypuff| and {can_get_moon_stone()}) or {can_breed('Wigglytuff')}"
         },
         {
             "name": "Capture Zubat",
@@ -910,7 +914,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or {can_breed(Zubat)}"
+            "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or {can_breed('Zubat')}"
         },
         {
             "name": "Capture Golbat",
@@ -919,7 +923,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or {can_breed(Golbat)}"
+            "requires": "(|@Badges:1| and |Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or {can_breed('Golbat')}"
         },
         {
             "name": "Capture Oddish",
@@ -928,7 +932,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_get_grass_egg()} or {can_breed(Oddish)}"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_get_grass_egg()} or {can_breed('Oddish')}"
         },
         {
             "name": "Capture Gloom",
@@ -937,7 +941,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Gloom)}"
+            "requires": "(|@Badges:1| and |Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed('Gloom')}"
         },
         {
             "name": "Capture Vileplume",
@@ -946,7 +950,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Gloom| and {can_get_leaf_stone()} or {can_breed(Vileplume)}"
+            "requires": "|Gloom| and {can_get_leaf_stone()} or {can_breed('Vileplume')}"
         },
         {
             "name": "Capture Paras",
@@ -955,7 +959,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {safari_zone()} or {can_breed(Paras)}"
+            "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {safari_zone()} or {can_breed('Paras')}"
         },
         {
             "name": "Capture Parasect",
@@ -964,7 +968,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Paras|) or {cerulean_cave()} or {can_breed(Parasect)}"
+            "requires": "(|@Badges:1| and |Paras|) or {cerulean_cave()} or {can_breed('Parasect')}"
         },
         {
             "name": "Capture Venonat",
@@ -973,7 +977,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Venonat)}"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or {can_breed('Venonat')}"
         },
         {
             "name": "Capture Venomoth",
@@ -982,7 +986,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Venonat|) or {berry_forest(True)} or {can_breed(Venomoth)}"
+            "requires": "(|@Badges:2| and |Venonat|) or {berry_forest(True)} or {can_breed('Venomoth')}"
         },
         {
             "name": "Capture Diglett",
@@ -991,7 +995,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{digletts_cave(False)} or {can_breed(Diglett)}"
+            "requires": "{digletts_cave(False)} or {can_breed('Diglett')}"
         },
         {
             "name": "Capture Dugtrio",
@@ -1000,7 +1004,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Diglett|) or {digletts_cave(True)} or {can_breed(Dugtrio)}"
+            "requires": "(|@Badges:1| and |Diglett|) or {digletts_cave(True)} or {can_breed('Dugtrio')}"
         },
         {
             "name": "Capture Meowth",
@@ -1009,7 +1013,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed(Meowth)}"
+            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed('Meowth')}"
         },
         {
             "name": "Capture Persian",
@@ -1018,7 +1022,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed(Persian)}"
+            "requires": "(|@Badges:1| and |Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed('Persian')}"
         },
         {
             "name": "Capture Psyduck",
@@ -1027,7 +1031,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Psyduck)}"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed('Psyduck')}"
         },
         {
             "name": "Capture Golduck",
@@ -1036,7 +1040,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed(Golduck)}"
+            "requires": "(|@Badges:2| and |Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed('Golduck')}"
         },
         {
             "name": "Capture Mankey",
@@ -1045,7 +1049,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or {can_get_fighting_egg()} or {can_breed(Mankey)}"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or {can_get_fighting_egg()} or {can_breed('Mankey')}"
         },
         {
             "name": "Capture Primape",
@@ -1054,7 +1058,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or {can_breed(Primape)}"
+            "requires": "(|@Badges:1| and |Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or {can_breed('Primape')}"
         },
         {
             "name": "Capture Growlithe",
@@ -1063,7 +1067,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed(Growlithe)}"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed('Growlithe')}"
         },
         {
             "name": "Capture Arcanine",
@@ -1072,7 +1076,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Growlithe| and {can_get_fire_stone()}) or {can_breed(Arcanine)}"
+            "requires": "(|Growlithe| and {can_get_fire_stone()}) or {can_breed('Arcanine')}"
         },
         {
             "name": "Capture Poliwag",
@@ -1081,7 +1085,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Poliwag)}"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed('Poliwag')}"
         },
         {
             "name": "Capture Poliwhirl",
@@ -1090,7 +1094,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Poliwag|) or {can_breed(Poliwhirl)}"
+            "requires": "(|@Badges:1| and |Poliwag|) or {can_breed('Poliwhirl')}"
         },
         {
             "name": "Capture Poliwrath",
@@ -1099,7 +1103,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Poliwhirl| and {can_get_water_stone()}) or {can_breed(Poliwrath)}"
+            "requires": "(|Poliwhirl| and {can_get_water_stone()}) or {can_breed('Poliwrath')}"
         },
         {
             "name": "Capture Abra",
@@ -1108,7 +1112,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {can_breed(Abra)}"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {can_breed('Abra')}"
         },
         {
             "name": "Capture Kadabra",
@@ -1117,7 +1121,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Abra| or {cerulean_cave()} or {can_breed(Kadabra)}"
+            "requires": "|Abra| or {cerulean_cave()} or {can_breed('Kadabra')}"
         },
         {
             "name": "Capture Alakazam",
@@ -1126,7 +1130,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Kadabra| and {can_get_linking_cord()}) or {can_breed(Alakazam)}"
+            "requires": "(|Kadabra| and {can_get_linking_cord()}) or {can_breed('Alakazam')}"
         },
         {
             "name": "Capture Machop",
@@ -1135,7 +1139,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_fighting_egg()} or {can_breed(Machop)}"
+            "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_fighting_egg()} or {can_breed('Machop')}"
         },
         {
             "name": "Capture Machoke",
@@ -1144,7 +1148,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or {can_breed(Machoke)}"
+            "requires": "(|@Badges:1| and |Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or {can_breed('Machoke')}"
         },
         {
             "name": "Capture Machamp",
@@ -1153,7 +1157,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Machoke| and {can_get_linking_cord()}) or {can_breed(Machamp)}"
+            "requires": "(|Machoke| and {can_get_linking_cord()}) or {can_breed('Machamp')}"
         },
         {
             "name": "Capture Bellsprout",
@@ -1162,7 +1166,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Bellsprout)}"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed('Bellsprout')}"
         },
         {
             "name": "Capture Weepinbell",
@@ -1171,7 +1175,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Weepinbell)}"
+            "requires": "(|@Badges:1| and |Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed('Weepinbell')}"
         },
         {
             "name": "Capture Victreebel",
@@ -1180,7 +1184,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Weepinbell| and {can_get_leaf_stone()}) or {can_breed(Victreebel)}"
+            "requires": "(|Weepinbell| and {can_get_leaf_stone()}) or {can_breed('Victreebel')}"
         },
         {
             "name": "Capture Tentacool",
@@ -1189,7 +1193,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed(Tentacool)}"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed('Tentacool')}"
         },
         {
             "name": "Capture Tentacruel",
@@ -1198,7 +1202,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed(Tentacruel)}"
+            "requires": "(|@Badges:1| and |Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed('Tentacruel')}"
         },
         {
             "name": "Capture Geodude",
@@ -1207,7 +1211,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_mystery_egg()} or {can_breed(Geodude)}"
+            "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_mystery_egg()} or {can_breed('Geodude')}"
         },
         {
             "name": "Capture Graveler",
@@ -1216,7 +1220,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Geodude|) or {mount_ember(False)} or {cerulean_cave()} or {can_breed(Graveler)}"
+            "requires": "(|@Badges:1| and |Geodude|) or {mount_ember(False)} or {cerulean_cave()} or {can_breed('Graveler')}"
         },
         {
             "name": "Capture Golem",
@@ -1225,7 +1229,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Graveler| and {can_get_linking_cord()}) or {can_breed(Golem)}"
+            "requires": "(|Graveler| and {can_get_linking_cord()}) or {can_breed('Golem')}"
         },
         {
             "name": "Capture Ponyta",
@@ -1234,7 +1238,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kindle_road()} or {mount_ember(False)} or {can_breed(Ponyta)}"
+            "requires": "{kindle_road()} or {mount_ember(False)} or {can_breed('Ponyta')}"
         },
         {
             "name": "Capture Rapidash",
@@ -1243,7 +1247,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Ponyta|) or {kindle_road()} or {mount_ember(False)} or {can_breed(Rapidash)}"
+            "requires": "(|@Badges:2| and |Ponyta|) or {kindle_road()} or {mount_ember(False)} or {can_breed('Rapidash')}"
         },
         {
             "name": "Capture Slowpoke",
@@ -1252,7 +1256,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_get_water_egg()} or {can_breed(Slowpoke)}"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_get_water_egg()} or {can_breed('Slowpoke')}"
         },
         {
             "name": "Capture Slowbro",
@@ -1261,7 +1265,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed(Slowbro)}"
+            "requires": "(|@Badges:2| and |Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed('Slowbro')}"
         },
         {
             "name": "Capture Magnemite",
@@ -1270,7 +1274,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{power_plant(False)} or {can_get_electric_egg()} or {can_breed(Magnemite)}"
+            "requires": "{power_plant(False)} or {can_get_electric_egg()} or {can_breed('Magnemite')}"
         },
         {
             "name": "Capture Magneton",
@@ -1279,7 +1283,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Magnemite|) or {power_plant(False)} or {cerulean_cave()} or {can_breed(Magneton)}"
+            "requires": "(|@Badges:1| and |Magnemite|) or {power_plant(False)} or {cerulean_cave()} or {can_breed('Magneton')}"
         },
         {
             "name": "Capture Farfetch'd",
@@ -1288,17 +1292,16 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()} or {can_breed(Farfetch'd)}"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or {can_breed('Farfetch'd')}"
         },
         {
             "name": "Capture Doduo",
-            
             "id": 2084,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {can_get_mystery_egg()} or {can_breed(Doduo)}"
+            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {can_get_mystery_egg()} or {can_breed('Doduo')}"
         },
         {
             "name": "Capture Dodrio",
@@ -1307,7 +1310,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Doduo|) or {can_breed(Dodrio)}"
+            "requires": "(|@Badges:2| and |Doduo|) or {can_breed('Dodrio')}"
         },
         {
             "name": "Capture Seel",
@@ -1316,7 +1319,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{seafoam_islands(True)} or {can_breed(Seel)}"
+            "requires": "{seafoam_islands(True)} or {can_breed('Seel')}"
         },
         {
             "name": "Capture Dewgong",
@@ -1325,7 +1328,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Seel|) or {can_breed(Dewgong)}"
+            "requires": "(|@Badges:2| and |Seel|) or {can_breed('Dewgong')}"
         },
         {
             "name": "Capture Grimer",
@@ -1334,7 +1337,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_mansion(False)} or {can_breed(Grimer)}"
+            "requires": "{pokemon_mansion(False)} or {can_breed('Grimer')}"
         },
         {
             "name": "Capture Muk",
@@ -1343,7 +1346,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Grimer|) or {pokemon_mansion(False)} or {can_breed(Muk)}"
+            "requires": "(|@Badges:2| and |Grimer|) or {pokemon_mansion(False)} or {can_breed('Muk')}"
         },
         {
             "name": "Capture Shellder",
@@ -1352,7 +1355,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_breed(Shellder)}"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_breed('Shellder')}"
         },
         {
             "name": "Capture Cloyster",
@@ -1361,7 +1364,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Shellder| and {can_get_water_stone()}) or {can_breed(Cloyster)}"
+            "requires": "(|Shellder| and {can_get_water_stone()}) or {can_breed('Cloyster')}"
         },
         {
             "name": "Capture Gastly",
@@ -1370,7 +1373,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_tower(False)} or {can_get_mystery_egg()} or {can_breed(Gastly)} or (|Infinite Seasonal Events| and {any_kanto_route()})"
+            "requires": "{pokemon_tower(False)} or {can_get_mystery_egg()} or {can_breed('Gastly)} or (|Infinite Seasonal Events| and {any_kanto_route()')}"
         },
         {
             "name": "Capture Haunter",
@@ -1379,7 +1382,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Gastly|) or {pokemon_tower(False)} or {can_breed(Haunter)}"
+            "requires": "(|@Badges:1| and |Gastly|) or {pokemon_tower(False)} or {can_breed('Haunter')}"
         },
         {
             "name": "Capture Gengar",
@@ -1388,7 +1391,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Haunter| and {can_get_linking_cord()} or {can_breed(Gengar)}"
+            "requires": "(|Haunter| and {can_get_linking_cord()} or {can_breed('Gengar')}"
         },
         {
             "name": "Capture Onix",
@@ -1397,7 +1400,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{rock_tunnel(True)} or {victory_road()} or {can_breed(Onix)}"
+            "requires": "{rock_tunnel(True)} or {victory_road()} or {can_breed('Onix')}"
         },
         {
             "name": "Capture Drowzee",
@@ -1406,7 +1409,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_11()} or {berry_forest(False)} or {can_breed(Drowzee)}"
+            "requires": "{kanto_route_11()} or {berry_forest(False)} or {can_breed('Drowzee')}"
         },
         {
             "name": "Capture Hypno",
@@ -1415,7 +1418,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|@Badges:1| and |Drowzee| or {berry_forest(True)} or {can_breed(Hypno)}"
+            "requires": "|@Badges:1| and |Drowzee| or {berry_forest(True)} or {can_breed('Hypno')}"
         },
         {
             "name": "Capture Krabby",
@@ -1424,7 +1427,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed(Krabby)}"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed('Krabby')}"
         },
         {
             "name": "Capture Kingler",
@@ -1433,7 +1436,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Krabby|) or {can_breed(Kingler)}"
+            "requires": "(|@Badges:1| and |Krabby|) or {can_breed('Kingler')}"
         },
         {
             "name": "Capture Voltorb",
@@ -1442,7 +1445,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_10()} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed(Voltorb)}"
+            "requires": "{kanto_route_10()} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed('Voltorb')}"
         },
         {
             "name": "Capture Electrode",
@@ -1451,7 +1454,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or {can_breed(Electrode)}"
+            "requires": "(|@Badges:1| and |Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or {can_breed('Electrode')}"
         },
         {
             "name": "Capture Exeggcute",
@@ -1460,7 +1463,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{berry_forest(False)} or {safari_zone()} or {can_breed(Exeggcute)}"
+            "requires": "{berry_forest(False)} or {safari_zone()} or {can_breed('Exeggcute')}"
         },
         {
             "name": "Capture Exeggutor",
@@ -1469,7 +1472,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Exeggcute| and {can_get_leaf_stone()}) or {can_breed(Exeggutor)}"
+            "requires": "(|Exeggcute| and {can_get_leaf_stone()}) or {can_breed('Exeggutor')}"
         },
         {
             "name": "Capture Cubone",
@@ -1478,7 +1481,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_tower(False)} or {safari_zone()} or {can_breed(Cubone)}"
+            "requires": "{pokemon_tower(False)} or {safari_zone()} or {can_breed('Cubone')}"
         },
         {
             "name": "Capture Marowak",
@@ -1487,7 +1490,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or {can_breed(Marowak)}"
+            "requires": "(|@Badges:1| and |Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or {can_breed('Marowak')}"
         },
         {
             "name": "Capture Hitmonlee",
@@ -1496,7 +1499,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{can_get_fighting_egg()} or {can_breed(Hitmonlee)}"
+            "requires": "{can_get_fighting_egg()} or {can_breed('Hitmonlee')}"
         },
         {
             "name": "Capture Hitmonchan",
@@ -1505,7 +1508,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{can_get_fighting_egg()} or {can_breed(Hitmonchan)}"
+            "requires": "{can_get_fighting_egg()} or {can_breed('Hitmonchan')}"
         },
         {
             "name": "Capture Lickitung",
@@ -1514,7 +1517,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Lickitung)}"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed('Lickitung')}"
         },
         {
             "name": "Capture Koffing",
@@ -1523,7 +1526,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_mansion(False)} or {can_breed(Koffing)}"
+            "requires": "{pokemon_mansion(False)} or {can_breed('Koffing')}"
         },
         {
             "name": "Capture Weezing",
@@ -1532,7 +1535,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Koffing|) or {pokemon_mansion(False)} or {can_breed(Weezing)}"
+            "requires": "(|@Badges:2| and |Koffing|) or {pokemon_mansion(False)} or {can_breed('Weezing')}"
         },
         {
             "name": "Capture Rhyhorn",
@@ -1541,7 +1544,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or {can_breed(Rhyhorn)}"
+            "requires": "{safari_zone()} or {can_breed('Rhyhorn')}"
         },
         {
             "name": "Capture Rhydon",
@@ -1550,7 +1553,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:3| and |Rhyhorn|) or {can_breed(Rhydon)}"
+            "requires": "(|@Badges:3| and |Rhyhorn|) or {can_breed('Rhydon')}"
         },
         {
             "name": "Capture Chansey",
@@ -1559,7 +1562,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or {can_breed(Chansey)}"
+            "requires": "{safari_zone()} or {can_breed('Chansey')}"
         },
         {
             "name": "Capture Tangela",
@@ -1568,7 +1571,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or |Wailmer Pail| or {can_breed(Tangela)}"
+            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or |Wailmer Pail| or {can_breed('Tangela')}"
         },
         {
             "name": "Capture Kangaskhan",
@@ -1577,7 +1580,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or {can_breed(Kangaskhan)}"
+            "requires": "{safari_zone()} or {can_breed('Kangaskhan')}"
         },
         {
             "name": "Capture Horsea",
@@ -1586,7 +1589,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed(Horsea)}"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed('Horsea')}"
         },
         {
             "name": "Capture Seadra",
@@ -1595,7 +1598,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Horsea|) or {can_breed(Seadra)}"
+            "requires": "(|@Badges:2| and |Horsea|) or {can_breed('Seadra')}"
         },
         {
             "name": "Capture Goldeen",
@@ -1604,7 +1607,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Goldeen)}"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed('Goldeen')}"
         },
         {
             "name": "Capture Seaking",
@@ -1613,7 +1616,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Goldeen|) or {safari_zone()} or {can_breed(Seaking)}"
+            "requires": "(|@Badges:2| and |Goldeen|) or {safari_zone()} or {can_breed('Seaking')}"
         },
         {
             "name": "Capture Staryu",
@@ -1622,7 +1625,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_get_water_egg()} or {can_breed(Staryu)}"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_get_water_egg()} or {can_breed('Staryu')}"
         },
         {
             "name": "Capture Starmie",
@@ -1631,7 +1634,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Staryu| and {can_get_water_stone()} or {can_breed(Starmie)}"
+            "requires": "|Staryu| and {can_get_water_stone()} or {can_breed('Starmie')}"
         },
         {
             "name": "Capture Mr. Mime",
@@ -1640,7 +1643,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()}  and |Tutorial Complete|) or {can_breed(Mr. Mime)}"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or {can_breed('Mr. Mime')}"
         },
         {
             "name": "Capture Scyther",
@@ -1649,7 +1652,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or |Wailmer Pail| or {can_breed(Scyther)}"
+            "requires": "{safari_zone()} or |Wailmer Pail| or {can_breed('Scyther')}"
         },
         {
             "name": "Capture Jynx",
@@ -1658,7 +1661,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Jynx)}"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed('Jynx')}"
         },
         {
             "name": "Capture Electabuzz",
@@ -1667,7 +1670,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{power_plant(True)} or {can_get_electric_egg()} or {can_breed(Electabuzz)}"
+            "requires": "{power_plant(True)} or {can_get_electric_egg()} or {can_breed('Electabuzz')}"
         },
         {
             "name": "Capture Magmar",
@@ -1676,7 +1679,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or {can_get_fire_egg()} or {can_breed(Magmar)}"
+            "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or {can_get_fire_egg()} or {can_breed('Magmar')}"
         },
         {
             "name": "Capture Pinsir",
@@ -1685,7 +1688,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or {can_breed(Pinsir)}"
+            "requires": "{safari_zone()} or {can_breed('Pinsir')}"
         },
         {
             "name": "Capture Tauros",
@@ -1694,7 +1697,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or {can_breed(Tauros)}"
+            "requires": "{safari_zone()} or {can_breed('Tauros')}"
         },
         {
             "name": "Capture Magikarp",
@@ -1703,7 +1706,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or {can_breed(Magikarp)}"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or {can_breed('Magikarp')}"
         },
         {
             "name": "Capture Gyarados",
@@ -1712,7 +1715,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Magikarp| or {can_breed(Gyarados)}"
+            "requires": "|Magikarp| or {can_breed('Gyarados')}"
         },
         {
             "name": "Capture Lapras",
@@ -1721,7 +1724,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{silph_co()} or {can_get_water_egg()} or {can_breed(Lapras)}"
+            "requires": "{silph_co()} or {can_get_water_egg()} or {can_breed('Lapras')}"
         },
         {
             "name": "Capture Ditto",
@@ -1730,7 +1733,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or {can_breed(Ditto)}"
+            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or {can_breed('Ditto')}"
         },
         {
             "name": "Capture Eevee",
@@ -1739,7 +1742,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or {can_breed(Eevee)}"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or {can_breed('Eevee')}"
         },
         {
             "name": "Capture Vaporeon",
@@ -1748,7 +1751,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Eevee| and {can_get_water_stone()} or {can_breed(Vaporeon)}"
+            "requires": "|Eevee| and {can_get_water_stone()} or {can_breed('Vaporeon')}"
         },
         {
             "name": "Capture Jolteon",
@@ -1757,7 +1760,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Eevee| and {can_get_thunder_stone()} or {can_breed(Jolteon)}"
+            "requires": "|Eevee| and {can_get_thunder_stone()} or {can_breed('Jolteon')}"
         },
         {
             "name": "Capture Flareon",
@@ -1766,7 +1769,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Eevee| and {can_get_fire_stone()} or {can_breed(Flareon)}"
+            "requires": "|Eevee| and {can_get_fire_stone()} or {can_breed('Flareon')}"
         },
         {
             "name": "Capture Porygon",
@@ -1775,7 +1778,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Porygon)}"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed('Porygon')}"
         },
         {
             "name": "Capture Omanyte",
@@ -1784,7 +1787,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Omanyte)}"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed('Omanyte')}"
         },
         {
             "name": "Capture Omastar",
@@ -1793,7 +1796,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Omastar)}"
+            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed('Omastar')}"
         },
         {
             "name": "Capture Kabuto",
@@ -1802,7 +1805,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Kabuto)}"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed('Kabuto')}"
         },
         {
             "name": "Capture Kabutops",
@@ -1811,7 +1814,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Kabutops)}"
+            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed('Kabutops')}"
         },
         {
             "name": "Capture Aerodactyl",
@@ -1820,7 +1823,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Aerodactyl)}"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed('Aerodactyl')}"
         },
         {
             "name": "Capture Snorlax",
@@ -1829,7 +1832,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({pokemon_tower()} and {attack_needed(189990)}) or {can_breed(Snorlax)}"
+            "requires": "({pokemon_tower()} and {attack_needed(189990)}) or {can_breed('Snorlax')}"
         },
         {
             "name": "Capture Articuno",
@@ -1838,7 +1841,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{seafoam_islands(True, 129195)} or {can_breed(Articuno)}"
+            "requires": "{seafoam_islands(True, 129195)} or {can_breed('Articuno')}"
         },
         {
             "name": "Capture Zapdos",
@@ -1847,7 +1850,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{power_plant(True, 101302)} or {can_breed(Zapdos)}"
+            "requires": "{power_plant(True, 101302)} or {can_breed('Zapdos')}"
         },
         {
             "name": "Capture Moltres",
@@ -1856,7 +1859,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mount_ember(True, 184462)} or {can_breed(Moltres)}"
+            "requires": "{mount_ember(True, 184462)} or {can_breed('Moltres')}"
         },
         {
             "name": "Capture Dratini",
@@ -1865,7 +1868,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Dratini| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed(Dratini)}"
+            "requires": "(|Dratini| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed('Dratini')}"
         },
         {
             "name": "Capture Dragonair",
@@ -1874,7 +1877,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Dratini|) or (|Dragonair| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed(Dragonair)}"
+            "requires": "(|@Badges:1| and |Dratini|) or (|Dragonair| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed('Dragonair')}"
         },
         {
             "name": "Capture Dragonite",
@@ -1883,7 +1886,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:4| and |Dragonair|) or {can_get_dragon_egg()} or {can_breed(Dragonite)}"
+            "requires": "(|@Badges:4| and |Dragonair|) or {can_get_dragon_egg()} or {can_breed('Dragonite')}"
         },
         {
             "name": "Capture Mewtwo",
@@ -1892,7 +1895,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{cerulean_cave()} or {can_breed(Mewtwo)}"
+            "requires": "{cerulean_cave()} or {can_breed('Mewtwo')}"
         },
         {
             "name": "Capture Mew",
@@ -1902,7 +1905,7 @@
                 "Pokemon Locations",
                 "Roaming Pokemon"
             ],
-            "requires": "{kanto_roamer()} or {can_breed(Mew)}"
+            "requires": "{kanto_roamer()} or {can_breed('Mew')}"
         },
         {
             "name": "Capture Bulbasaur (Clone)",
@@ -1914,7 +1917,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed(Bulbasaur (Clone))}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed('Bulbasaur (Clone)')}"
         },
         {
             "name": "Capture Spooky Bulbasaur",
@@ -1926,7 +1929,7 @@
                 "Holiday Events",
                 "Halloween"
             ],
-            "requires": "({has_script(Infinite Seasonal Events)} and {any_kanto_route()}) or {can_breed(Spooky Bulbasaur)}"
+            "requires": "({has_script(Infinite Seasonal Events)} and {any_kanto_route()}) or {can_breed('Spooky Bulbasaur')}"
         },
         {
             "name": "Capture Bulbasaur (Rose)",
@@ -1939,7 +1942,7 @@
                 "Golden Week",
                 "Not Implemented"
             ],
-            "requires": "({has_script(Infinite Seasonal Events)}) or {can_breed(Bulbasaur (Rose))}"
+            "requires": "({has_script(Infinite Seasonal Events)}) or {can_breed('Bulbasaur (Rose)')}"
         },
         {
             "name": "Capture Ivysaur (Clone)",
@@ -1951,7 +1954,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "|Bulbasaur (Clone)| or {can_breed(Ivysaur (Clone))}"
+            "requires": "|Bulbasaur (Clone)| or {can_breed('Ivysaur (Clone)')}"
         },
         {
             "name": "Capture Spooky Ivysaur",
@@ -1963,7 +1966,7 @@
                 "Holiday Events",
                 "Halloween"
             ],
-            "requires": "|Spooky Bulbasaur| or {can_breed(Spooky Ivysaur)}"
+            "requires": "|Spooky Bulbasaur| or {can_breed('Spooky Ivysaur')}"
         },
         {
             "name": "Capture Ivysaur (Rose)",
@@ -1976,7 +1979,7 @@
                 "Golden Week",
                 "Not Implemented"
             ],
-            "requires": "|Bulbasaur (Rose)| or {can_breed(Ivysaur (Rose))}"
+            "requires": "|Bulbasaur (Rose)| or {can_breed('Ivysaur (Rose)')}"
         },
         {
             "name": "Capture Mega Venusaur",
@@ -2010,7 +2013,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "(|@Badges:2| and |Ivysaur (Clone)|) or {can_breed(Venusaur (Clone))}"
+            "requires": "(|@Badges:2| and |Ivysaur (Clone)|) or {can_breed('Venusaur (Clone)')}"
         },
         {
             "name": "Capture Spooky Venusaur",
@@ -2022,7 +2025,7 @@
                 "Holiday Events",
                 "Halloween"
             ],
-            "requires": "(|@Badges:2| and |Spooky Ivysaur|) or {can_breed(Spooky Venusaur)}"
+            "requires": "(|@Badges:2| and |Spooky Ivysaur|) or {can_breed('Spooky Venusaur')}"
         },
         {
             "name": "Capture Venusaur (Rose)",
@@ -2035,7 +2038,7 @@
                 "Golden Week",
                 "Not Implemented"
             ],
-            "requires": "(|@Badges:2| and |Ivysaur (Rose)|) or {can_breed(Venusaur (Rose))}"
+            "requires": "(|@Badges:2| and |Ivysaur (Rose)|) or {can_breed('Venusaur (Rose)')}"
         },
         {
             "name": "Capture Charmander (Clone)",
@@ -2047,7 +2050,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed(Charmander (Clone))}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed('Charmander (Clone)')}"
         },
         {
             "name": "Capture Charmeleon (Clone)",
@@ -2059,7 +2062,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "|Charmander (Clone)| or {can_breed(Charmeleon (Clone))}"
+            "requires": "|Charmander (Clone)| or {can_breed('Charmeleon (Clone)')}"
         },
         {
             "name": "Capture Mega Charizard X",
@@ -2104,7 +2107,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "(|@Badges:2| and |Charmeleon (Clone)|) or {can_breed(Charizard (Clone))}"
+            "requires": "(|@Badges:2| and |Charmeleon (Clone)|) or {can_breed('Charizard (Clone)')}"
         },
         {
             "name": "Capture Squirtle (Clone)",
@@ -2116,7 +2119,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed(Squirtle (Clone))}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)} and {new_island(True, 131500)}) or {can_breed('Squirtle (Clone)')}"
         },
         {
             "name": "Capture Squad Leader Squirtle",
@@ -2139,7 +2142,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "|Squirtle (Clone)| or {can_breed(Wartortle (Clone))}"
+            "requires": "|Squirtle (Clone)| or {can_breed('Wartortle (Clone)')}"
         },
         {
             "name": "Capture Mega Blastoise",
@@ -2173,7 +2176,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "|Wartortle (Clone)| or {can_breed(Blastoise (Clone))}"
+            "requires": "|Wartortle (Clone)| or {can_breed('Blastoise (Clone)')}"
         },
         {
             "name": "Capture Pinkan Caterpie",
@@ -2474,7 +2477,7 @@
                 "Seasonal Events",
                 "Flying Pikachu"
             ],
-            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Flying Pikachu)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed('Flying Pikachu')}"
         },
         {
             "name": "Capture Surfing Pikachu",
@@ -2483,9 +2486,9 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Not Implemented"
+                "Discord Code"
             ],
-            "requires": ""
+            "requires": "{can_breed(''Surfing Pikachu'')}"
         },
         {
             "name": "Capture Pikachu (Gengar)",
@@ -2509,7 +2512,7 @@
                 "Seasonal Events",
                 "Let's Go"
             ],
-            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Let's Go Pikachu)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed('Let's Go Pikachu')}"
         },
         {
             "name": "Capture Pinkan Pikachu",
@@ -2543,7 +2546,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "({has_script(Infinite Seasonal Events)} and {new_island(True, 131500)} and {attack_needed(137100)}) or {can_breed(Pikachu (Clone))}"
+            "requires": "({has_script(Infinite Seasonal Events)} and {new_island(True, 131500)} and {attack_needed(137100)}) or {can_breed('Pikachu (Clone)')}"
         },
         {
             "name": "Capture Pikachu (Rock Star)",
@@ -2619,7 +2622,7 @@
                 "Pokemon Locations",
                 "Alt Pokemon"
             ],
-            "requires": "({cinnabar_island()} and ((|Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or |Palaeontologist Token|)) or {can_breed(Pikachu (Palaeontologist))}"
+            "requires": "({cinnabar_island()} and ((|Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or |Palaeontologist Token|)) or {can_breed('Pikachu (Palaeontologist)')}"
         },
         {
             "name": "Capture Alolan Raichu",
@@ -3444,7 +3447,7 @@
                 "Seasonal Events",
                 "Christmas"
             ],
-            "requires": "({has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}) or can_breed(Santa Jynx)"
+            "requires": "({has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}) or can_breed('Santa Jyn')}"
         },
         {
             "name": "Capture Pinkan Electabuzz",
@@ -3908,7 +3911,7 @@
                 "Seasonal Events",
                 "Let's Go"
             ],
-            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Let's Go Eevee)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed('Let's Go Eevee')}"
         },
         {
             "name": "Capture Mega Aerodactyl",
@@ -3943,7 +3946,7 @@
                 "Seasonal Events",
                 "Christmas"
             ],
-            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Christmas Snorlax)}"
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed('Christmas Snorlax')}"
         },
         {
             "name": "Capture Snorlax (Snowman)",
@@ -3955,7 +3958,7 @@
                 "Seasonal Events",
                 "Christmas"
             ],
-            "requires": "({seafoam_islands()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Christmas Snorlax)}"
+            "requires": "({seafoam_islands()} and {has_script(Infinite Seasonal Events)}) or {can_breed('Christmas Snorlax')}"
         },
         {
             "name": "Capture Galarian Articuno",
@@ -4019,9 +4022,10 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Not Implemented"
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
             ],
-            "requires": ""
+            "requires": "{new_island(true, 131500)} and {can_breed('Armored Mewtwo')}"
         },
         {
             "name": "Travel to Johto [Goal]",
@@ -4031,7 +4035,9 @@
                 "Victory"
             ],
             "requires": "|@Badges:all| and ({dexsanity_disabled()} or ({dexsanity_enabled()} and |@Pokemon:all|))",
-            "place_item": ["Victory!"]
+            "place_item": [
+                "Victory!"
+            ]
         },
         {
             "name": "Travel to Johto - Victory",
