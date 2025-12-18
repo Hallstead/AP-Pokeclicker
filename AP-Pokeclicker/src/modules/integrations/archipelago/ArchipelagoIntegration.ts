@@ -183,9 +183,7 @@ class ArchipelagoIntegrationModule {
                 progressivePokeballs: 0,
                 progressiveEliteBadges: 0,
                 extraEggSlots: 0,
-                starter1: 30,
-                starter2: 60,
-                starter3: 42,
+                starters: ko.observableArray([1, 4, 7]),
             });
         }
         if (typeof w.APFlags.set !== 'function') {
@@ -292,7 +290,6 @@ class ArchipelagoIntegrationModule {
             this.player = player;
             this.nowItems = {};
 
-
             // Start the game if not already started
             if (!App.game) {
                 //set save key
@@ -323,7 +320,7 @@ class ArchipelagoIntegrationModule {
                 // Mirror explicit boolean for easy access
                 if (typeof options.dexsanity !== 'undefined') {
                     w.APFlags.set('dexsanity', !!options.dexsanity);
-                    App.game.challenges.list.requireCompletePokedex.active(!!options.dexsanity);
+                    //App.game.challenges.list.requireCompletePokedex.active(!!options.dexsanity);
                 }
                 if (typeof options.use_scripts !== 'undefined' && typeof options.include_scripts_as_items !== 'undefined') {
                     if (options.use_scripts && !options.include_scripts_as_items) {
@@ -348,7 +345,8 @@ class ArchipelagoIntegrationModule {
                     w.APFlags.set('roaming_encounter_multiplier_route', options.roaming_encounter_multiplier_route);
                 }
                 w.APFlags.set('kanto_roamer_rate', 1);
-                //if (typeof options.)
+                
+                w.APFlags.set('starters', [30, 60, 90]);
             }
 
             // Only flush queued location checks if game is ready; otherwise they will be flushed later.
@@ -366,7 +364,7 @@ class ArchipelagoIntegrationModule {
             }
         });
 
-        this.client.messages.on('disconnected', async () => {
+        this.client.socket.on('disconnected', async () => {
             this.connected = false;
             Notifier.notify({
                 message: 'Archipelago: disconnected from server.',
@@ -694,6 +692,8 @@ class ArchipelagoIntegrationModule {
         (window as any).APFlags.set('gameReady', true); // Treat timeout as ready to avoid indefinite queue
         this.flushQueuedItems();
         this.flushQueuedLocationChecks();
+        App.game.challenges.list.requireCompletePokedex.active(!!(window as any).APFlags.get('dexsanity'));
+
     }
 
     private flushQueuedItems() {
