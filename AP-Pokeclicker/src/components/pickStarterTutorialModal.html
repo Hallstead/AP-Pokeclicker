@@ -13,7 +13,7 @@ aria-labelledby="pickStarterTutorialModalLabel" aria-hidden="true">
                I can only hold off two! Pick the one you want to fight!</p>
             <div class="row justify-content-center">
                <div class="col-lg-8">
-                   <div id="starterSelection" class="row" data-bind="foreach: window.APFlags.starters">
+                   <div id="starterSelection" class="row" data-bind="foreach: window.APFlags.starters.slice(0, 3)">
                        <div class="col">
                            <input class="image-starter" type="image"
                                   data-bind="

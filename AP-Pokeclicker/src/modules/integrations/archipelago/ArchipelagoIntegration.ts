@@ -183,7 +183,7 @@ class ArchipelagoIntegrationModule {
                 progressivePokeballs: 0,
                 progressiveEliteBadges: 0,
                 extraEggSlots: 0,
-                starters: ko.observableArray([1, 4, 7]),
+                starters: [1, 4, 7, 25],
             });
         }
         if (typeof w.APFlags.set !== 'function') {
@@ -290,16 +290,6 @@ class ArchipelagoIntegrationModule {
             this.player = player;
             this.nowItems = {};
 
-            // Start the game if not already started
-            if (!App.game) {
-                //set save key
-                Save.key = (await w.getItem('saveKey', true)) || (await w.getItemOld(player.name + 'save key', true)) || Rand.string(6);
-                await w.setItem('saveKey', Save.key);
-                //console.log('Using save key: ', Save.key);
-                document.querySelector('#saveSelector').remove();
-                App.start();
-            }
-
             const slots: Record<number, NetworkSlot> = this.client.players.slots;
             Object.entries(slots).forEach(([key, slot]: [string, NetworkSlot]) => {
                 const slotNumber: number = parseInt(key);
@@ -346,7 +336,7 @@ class ArchipelagoIntegrationModule {
                 }
                 w.APFlags.set('kanto_roamer_rate', 1);
                 
-                w.APFlags.set('starters', [30, 60, 90]);
+                // w.APFlags.set('starters', [2, 5, 8, 26]);
             }
 
             // Only flush queued location checks if game is ready; otherwise they will be flushed later.
@@ -362,6 +352,17 @@ class ArchipelagoIntegrationModule {
                     console.error('Failed to flush queued LocationChecks:', e);
                 }
             }
+
+            // Start the game if not already started
+            if (!App.game) {
+                //set save key
+                Save.key = (await w.getItem('saveKey', true)) || (await w.getItemOld(player.name + 'save key', true)) || Rand.string(6);
+                await w.setItem('saveKey', Save.key);
+                //console.log('Using save key: ', Save.key);
+                document.querySelector('#saveSelector').remove();
+                App.start();
+            }
+
         });
 
         this.client.socket.on('disconnected', async () => {
