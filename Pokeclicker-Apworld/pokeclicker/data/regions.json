@@ -37,5 +37,8 @@
     "Kanto Champion": {
         "connects_to": [],
         "requires": "|Kanto Elite Champion Badge|"
+    },
+    "": {
+        "starting": true
     }
 }

@@ -86,7 +86,7 @@ def cerulean_city(world: World, state: CollectionState, player: int):
 
 def kanto_route_24(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 24."""
-    return kanto_route_4(world, state, player)
+    return kanto_route_4(world, state, player) and {attack_needed(14041)}
 
 def kanto_route_25(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 25."""
@@ -121,7 +121,7 @@ def digletts_cave(world: World, state: CollectionState, player: int, complete_du
 def kanto_route_9(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 9."""
     has_cascade_badge = state.count("Cascade Badge", player) > 0
-    return vermilion_city(world, state, player) and has_cascade_badge
+    return vermilion_city(world, state, player) and {attack_needed(50431)} and has_cascade_badge
 
 def power_plant(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access the Power Plant."""
@@ -167,7 +167,7 @@ def silph_co(world: World, state: CollectionState, player: int, complete_dungeon
     """Checks if the player can access the Sylph Co. building."""
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
     minion_attack = 10515
-    return saffron_city(world, state, player) and pokemon_tower(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return saffron_city(world, state, player) and pokemon_tower(world, state, player) and {attack_needed(151990)} and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 def kanto_route_7(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 7."""
@@ -321,8 +321,8 @@ def berry_forest(world: World, state: CollectionState, player: int, complete_dun
 def new_island(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access New Island dungeon in Kanto."""
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
-    has_infinite_seasonal_events = state.count("Infinite Seasonal Events", player) > 0
-    minion_attack = 18500,
+    has_infinite_seasonal_events = has_script(world, state, player, "Infinite Seasonal Events")
+    minion_attack = 18500
     return has_dungeon_ticket and has_infinite_seasonal_events and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 # Eggs and Stones
@@ -512,7 +512,5 @@ def has_script(world: World, state: CollectionState, player: int, script_name: s
     """Checks if the player needs a specific script."""
     if not world.options.use_scripts.value or not world.options.include_scripts_as_items.value:
         return True
-    script_item = get_items_with_value(world, f"Script: {script_name}")
-    if state.count(script_item, player) > 0:
-        return True
-    return False
+    # script_item = get_items_with_value(world, f"Script: {script_name}")
+    return state.count(script_name, player) > 0
