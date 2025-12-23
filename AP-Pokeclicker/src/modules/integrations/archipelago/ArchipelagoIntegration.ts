@@ -14,6 +14,10 @@ import Rand from '../../utilities/Rand';
 import BuyKeyItem from '../../items/buyKeyItem';
 import PokemonItem from '../../items/PokemonItem';
 import { getPokemonByName } from '../../pokemons/PokemonHelper';
+import BerryType from '../../enums/BerryType';
+import { pokemonMap } from '../../pokemons/PokemonList';
+import { Pokeball } from '../../GameConstants';
+import RedeemableCodes from '../../codes/RedeemableCodes';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -467,6 +471,8 @@ class ArchipelagoIntegrationModule {
         const altPokemonOffset = 5001; // 5101 - 107500
         const mapsanityOffset = 110001; // 110001 - 110578
         const splitDungeonTicketsOffset = 111001; // 111001 - 111222
+        const codeOffset = 112001; // 112001 - 112009
+        const discordCodeOffset = 112101; // 112101 - 112108
         const fillerOffset = 1000001;
 
         for (let i: number = 0; i < items.length; i++) {
@@ -474,6 +480,11 @@ class ArchipelagoIntegrationModule {
 
             // console.log('Processing item: ', item);
             // console.log(item.id);
+
+            if (!this.nowItems[item.id]) {
+                this.nowItems[item.id] = 0;
+            }
+            this.nowItems[item.id] += 1;
 
             if (item.id >= keyItemsOffset && item.id < oakItemsOffset) {
                 // Key items
@@ -601,6 +612,11 @@ class ArchipelagoIntegrationModule {
 
             } else if (item.id >= otherItemsOffset && item.id < eventItemsOffset) {
                 // Other items
+                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
+                    // Already received this item in a previous sync packet
+                    continue;
+                }
+
                 let index = item.id - otherItemsOffset;
                 if (index == 0) {
                     // Progressive Pokeballs
@@ -642,14 +658,25 @@ class ArchipelagoIntegrationModule {
                     this.displayItemReceived(item, '');
                 }
             } else if (item.id >= mapsanityOffset && item.id < splitDungeonTicketsOffset) {
-            } else if (item.id >= splitDungeonTicketsOffset && item.id < fillerOffset - 1) {
+            } else if (item.id >= splitDungeonTicketsOffset && item.id < codeOffset) {
+            } else if (item.id >= codeOffset && item.id < discordCodeOffset) {
+                // Redeemable Codes
+                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
+                    // Already received this item in a previous sync packet
+                    continue;
+                }
+                let id = item.id - codeOffset + 1;
+                App.game.redeemableCodes.codeList[id].redeem();
+            } else if (item.id >= discordCodeOffset && item.id < fillerOffset - 1) {
+                // Discord Codes
+                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
+                    // Already received this item in a previous sync packet
+                    continue;
+                }
+                let id = item.id - discordCodeOffset;
+                App.game.discord.codes[id].claim();
             } else {
                 // Filler
-                if (!this.nowItems[item.id]) {
-                    this.nowItems[item.id] = 0;
-                }
-                this.nowItems[item.id] += 1;
-
                 if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
                     // Already received this item in a previous sync packet
                     continue;

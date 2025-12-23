@@ -2499,7 +2499,7 @@
                 "Alt Pokemon",
                 "Redeemable Code"
             ],
-            "requires": "{can_breed(Surfing Pikachu)}"
+            "requires": "|Surfing Pikachu Code| or {can_breed(Surfing Pikachu)}"
         },
         {
             "name": "Capture Pikachu (Gengar)",
@@ -4035,7 +4035,7 @@
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
-            "requires": "{new_island(True, 131500)} and {can_breed(Armored Mewtwo)}"
+            "requires": "{new_island(True, 131500)} or {can_breed(Armored Mewtwo)}"
         },
         {
             "name": "Travel to Johto [Goal]",

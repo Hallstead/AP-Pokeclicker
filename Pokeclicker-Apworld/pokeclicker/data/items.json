@@ -4104,6 +4104,160 @@
             "progression": true
         },
         {
+            "id": 112001,
+            "count": 1,
+            "name": "Farming-Quick-Start Code",
+            "category": [
+                "Codes"
+            ],
+            "filler": true
+        },
+        {
+            "id": 112002,
+            "count": 1,
+            "name": "Shiny-Charmer Code",
+            "category": [
+                "Codes"
+            ],
+            "useful": true
+        },
+        {
+            "id": 112003,
+            "count": 1,
+            "name": "Great-Balls Code",
+            "category": [
+                "Codes"
+            ],
+            "filler": true
+        },
+        {
+            "id": 112004,
+            "count": 1,
+            "name": "Everstone Code",
+            "category": [
+                "Codes"
+            ],
+            "useful": true
+        },
+        {
+            "id": 112005,
+            "count": 1,
+            "name": "Typed-Held-Item Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "useful": true
+        },
+        {
+            "id": 112006,
+            "count": 1,
+            "name": "Eon-Ticket Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112007,
+            "count": 1,
+            "name": "Ampharosite Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112009,
+            "count": 1,
+            "name": "Rare-Candy Code",
+            "category": [
+                "Codes"
+            ],
+            "filler": true
+        },
+        {
+            "id": 112101,
+            "count": 1,
+            "name": "Surfing Pikachu Code",
+            "category": [
+                "Codes"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112102,
+            "count": 1,
+            "name": "Rotom (Discord) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112103,
+            "count": 1,
+            "name": "Unown (D) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112104,
+            "count": 1,
+            "name": "Unown (I) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112105,
+            "count": 1,
+            "name": "Unown (S) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112106,
+            "count": 1,
+            "name": "Unown (C) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112107,
+            "count": 1,
+            "name": "Unown (O) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112108,
+            "count": 1,
+            "name": "Unown (R) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
             "id": 1000000,
             "count": 1,
             "name": "Victory!",

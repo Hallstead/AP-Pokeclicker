@@ -97,7 +97,6 @@ def before_create_items_starting(item_pool: list, world: World, multiworld: Mult
         for item in item_table:
             if item.get("category") and "Scripts" in item["category"]:
                 script_list.append(item["name"])
-        print(script_list)
         scripts_to_remove = [item for item in item_pool if item.name in script_list]
         for item in scripts_to_remove:
             item_pool.remove(item)
@@ -116,7 +115,6 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # to the list multiple times if you want to remove multiple copies of it.
     if world.options.dexsanity.value == 0:
         for location in multiworld.get_unfilled_locations(player=player):
-            print(location_name_to_location[location.name])
             if "Pokemon Locations" in location_name_to_location[location.name]["category"]:
                 #pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == location_table[key]["name"])
                 pokemon_item = next(i for i in item_pool if i.name == location.name.replace("Capture ", ""))

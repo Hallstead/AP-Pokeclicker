@@ -86,7 +86,7 @@ def cerulean_city(world: World, state: CollectionState, player: int):
 
 def kanto_route_24(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 24."""
-    return kanto_route_4(world, state, player) and {attack_needed(14041)}
+    return kanto_route_4(world, state, player) and attack_needed(world, state, player, 14041)
 
 def kanto_route_25(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 25."""
@@ -121,7 +121,7 @@ def digletts_cave(world: World, state: CollectionState, player: int, complete_du
 def kanto_route_9(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 9."""
     has_cascade_badge = state.count("Cascade Badge", player) > 0
-    return vermilion_city(world, state, player) and {attack_needed(50431)} and has_cascade_badge
+    return vermilion_city(world, state, player) and attack_needed(world, state, player, 50431) and has_cascade_badge
 
 def power_plant(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access the Power Plant."""
@@ -167,7 +167,7 @@ def silph_co(world: World, state: CollectionState, player: int, complete_dungeon
     """Checks if the player can access the Sylph Co. building."""
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
     minion_attack = 10515
-    return saffron_city(world, state, player) and pokemon_tower(world, state, player) and {attack_needed(151990)} and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return saffron_city(world, state, player) and pokemon_tower(world, state, player) and attack_needed(world, state, player, 151990) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 def kanto_route_7(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 7."""
@@ -403,7 +403,7 @@ def can_get_linking_cord(world: World, state: CollectionState, player: int) -> b
 # Questlines
 def started_bills_errand(world: World, state: CollectionState, player: int):
     """Checks if the player has started Bill's Errand questline."""
-    return pokemon_mansion(world, state, player) and {attack_needed(world, state, player, 175290)} # Beat Blaine
+    return pokemon_mansion(world, state, player) and attack_needed(world, state, player, 175290) # Beat Blaine
 
 def completed_bills_errand(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Errand questline."""
@@ -457,6 +457,8 @@ def attack_needed(world: World, state: CollectionState, player: int, attack: int
     """Checks if the player's expected current party attack is at least X."""
     num_pokemon = state.count_group("Pokemon", player) #len(get_catchable_pokemon(world, state, player))
     auto_clicker_count = state.count("Enhanced Auto Clicker", player)
+    if world.options.use_scripts.value and not world.options.include_scripts_as_items.value:
+        auto_clicker_count = 1
     progressive_auto_clicker_count = state.count("Enhanced Auto Clicker (Progressive Clicks/Second)", player)
     if progressive_auto_clicker_count > 0:
         auto_clicker_count = 0
