@@ -209,7 +209,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{vermilion_city()} and |Cascade Badge| and {attack_needed(39995)}"
+            "requires": "{vermilion_city()} and |Cascade Badge| and {attack_needed(39995)} and {attack_needed(50431)}"
         },
         {
             "name": "Erika",
@@ -227,7 +227,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{saffron_city()} and {silph_co()} and {attack_needed(112420)}"
+            "requires": "{saffron_city()} and {silph_co(True, 52576)} and {attack_needed(203971)} and {attack_needed(112420)}"
         },
         {
             "name": "Koga",
@@ -435,7 +435,9 @@
             "id": 415,
             "region": "Kanto",
             "category": [
-                "Dungeons"
+                "Dungeons",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
             ],
             "requires": "{new_island(True, 131500)}"
         },
@@ -1733,7 +1735,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{silph_co()} or {can_get_water_egg()} or {can_breed(Lapras)}"
+            "requires": "({silph_co()} and {attack_needed(203971)}) or {can_get_water_egg()} or {can_breed(Lapras)}"
         },
         {
             "name": "Capture Ditto",
