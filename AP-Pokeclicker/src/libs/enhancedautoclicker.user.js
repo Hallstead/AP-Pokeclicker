@@ -1009,6 +1009,13 @@ class EnhancedAutoClicker {
                     DungeonRunner.dungeon.rewardFunction();
                 }
                 GameHelper.incrementObservable(App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex(DungeonRunner.dungeon.name)]);
+                
+                // send location checks if any
+                if (DungeonRunner.dungeon.locationIds.length > 0) {
+                    for (const locationId of DungeonRunner.dungeon.locationIds) {
+                        window.sendLocationCheck(locationId);
+                    }
+                }
 
                 if (EnhancedAutoClicker.autoDungeonTracker.stopAfterFinishing) {
                     EnhancedAutoClicker.toggleAutoDungeon();
