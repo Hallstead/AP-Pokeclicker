@@ -1807,7 +1807,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Omastar)}"
+            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)} and |Omastar|) or {can_breed(Omastar)}"
         },
         {
             "name": "Capture Kabuto",
@@ -1825,7 +1825,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or {can_breed(Kabutops)}"
+            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)} and |Kabutops|) or {can_breed(Kabutops)}"
         },
         {
             "name": "Capture Aerodactyl",
