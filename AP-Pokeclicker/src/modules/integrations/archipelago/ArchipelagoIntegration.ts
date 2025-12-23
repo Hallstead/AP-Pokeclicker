@@ -14,10 +14,8 @@ import Rand from '../../utilities/Rand';
 import BuyKeyItem from '../../items/buyKeyItem';
 import PokemonItem from '../../items/PokemonItem';
 import { getPokemonByName } from '../../pokemons/PokemonHelper';
-import BerryType from '../../enums/BerryType';
-import { pokemonMap } from '../../pokemons/PokemonList';
-import { Pokeball } from '../../GameConstants';
-import RedeemableCodes from '../../codes/RedeemableCodes';
+import { UndergroundController } from '../../underground/UndergroundController';
+import UndergroundItems from '../../underground/UndergroundItems';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -134,6 +132,7 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: number,
             progressive_autoclicker: number,
             progressive_auto_safari_zone: number,
+            include_codes_as_items: boolean,
             roaming_encounter_multiplier: number,
             roaming_encounter_multiplier_route: boolean,
             pokedollar_multiplier: number,
@@ -151,6 +150,7 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: 0,
             progressive_autoclicker: 0,
             progressive_auto_safari_zone: 0,
+            include_codes_as_items: false,
             roaming_encounter_multiplier: 1,
             roaming_encounter_multiplier_route: true,
             pokedollar_multiplier: 1,
@@ -458,6 +458,7 @@ class ArchipelagoIntegrationModule {
             setFlag('extraEggSlots', 0);
 
             w.APFlags.receivedItems = await w.getItem('receivedItems') || {};
+            this.nowItems = {};
         }
 
         // Item Categories:
@@ -635,7 +636,8 @@ class ArchipelagoIntegrationModule {
                     // Primary Egg Slot
                 } else if (index == 3) {
                     // Palaeontologist Token
-                    player.gainItem('Palaeontologist Token', 1);
+                    UndergroundController.gainMineItem(UndergroundItems.getByName('Palaeontologist Token').id, 1);
+                    this.displayItemReceived(item, 'a');
                 }
             } else if (item.id >= eventItemsOffset && item.id < pokemonOffset) {
                 // Event items
