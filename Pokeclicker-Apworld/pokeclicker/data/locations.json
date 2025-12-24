@@ -2499,7 +2499,8 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Redeemable Code"
+                "Redeemable Code",
+                "Codes"
             ],
             "requires": "|Surfing Pikachu Code| or {can_breed(Surfing Pikachu)}"
         },

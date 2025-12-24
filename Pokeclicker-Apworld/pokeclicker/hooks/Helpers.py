@@ -23,10 +23,13 @@ def before_is_category_enabled(multiworld: MultiWorld, player: int, category_nam
         return Helpers.is_option_enabled(multiworld, player, "include_alt_pokemon")
     
     if category_name == "Seasonal Events":
-        return Helpers.is_option_enabled(multiworld, player, "use_scripts")
+        return Helpers.is_option_enabled(multiworld, player, "include_seasonal_events")
     
     if category_name == "Palaeontologist":
         return Helpers.is_option_enabled(multiworld, player, "include_palaeontologist_token")
+    
+    if category_name == "Codes":
+        return Helpers.is_option_enabled(multiworld, player, "include_codes_as_items")
     
     return None
 

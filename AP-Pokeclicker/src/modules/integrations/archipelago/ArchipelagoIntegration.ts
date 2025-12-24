@@ -132,6 +132,7 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: number,
             progressive_autoclicker: number,
             progressive_auto_safari_zone: number,
+            include_seasonal_events: boolean,
             include_codes_as_items: boolean,
             roaming_encounter_multiplier: number,
             roaming_encounter_multiplier_route: boolean,
@@ -150,6 +151,7 @@ class ArchipelagoIntegrationModule {
             include_scripts_as_items: 0,
             progressive_autoclicker: 0,
             progressive_auto_safari_zone: 0,
+            include_seasonal_events: true,
             include_codes_as_items: false,
             roaming_encounter_multiplier: 1,
             roaming_encounter_multiplier_route: true,
@@ -331,6 +333,9 @@ class ArchipelagoIntegrationModule {
                         w.APFlags.set('oakItemsUnlimited', !!options.use_scripts);
                         w.APFlags.set('simpleWeatherChanger', !!options.use_scripts);
                     }
+                }
+                if (typeof options.include_seasonal_events !== 'undefined') {
+                    w.APFlags.set('infiniteSeasonalEvents', !!options.include_seasonal_events);
                 }
                 if (typeof options.roaming_encounter_multiplier !== 'undefined') {
                     w.APFlags.set('roaming_encounter_multiplier', options.roaming_encounter_multiplier);

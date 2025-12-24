@@ -407,7 +407,7 @@ def started_bills_errand(world: World, state: CollectionState, player: int):
 
 def completed_bills_errand(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Errand questline."""
-    return started_bills_errand(world, state, player) and one_island(world, state, player) and two_island(world, state, player) and three_island(world, state, player)
+    return started_bills_errand(world, state, player) and one_island(world, state, player) and two_island(world, state, player) and three_island(world, state, player) and berry_forest(world, state, player)
 
 def completed_bills_grandpas_treasure_hunt(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Grandpa's Treasure Hunt questline."""
@@ -451,7 +451,14 @@ def get_party_attack(world: World, state: CollectionState, player: int, num_poke
 
 def get_click_attack(world: World, state: CollectionState, player: int, num_pokemon: int) -> set:
     """Returns the attack value of the player's expected clicker attack."""
-    return (1 + num_pokemon) ** 1.4
+    has_shiny_code = state.count("Shiny-Charmer Code", player) > 0
+    has_rocky_helmet = state.count("Rocky Helmet", player) > 0
+    if has_shiny_code:
+        num_pokemon += 1
+    attack = (1 + num_pokemon) ** 1.4
+    if has_rocky_helmet:
+        attack *= 1.4
+    return attack
     
 def attack_needed(world: World, state: CollectionState, player: int, attack: int):
     """Checks if the player's expected current party attack is at least X."""

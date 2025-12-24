@@ -280,7 +280,8 @@
             "count": 1,
             "name": "Infinite Seasonal Events",
             "category": [
-                "Scripts"
+                "Scripts",
+                "Seasonal Events"
             ],
             "progression": true
         },
@@ -2563,7 +2564,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Redeemable Code"
+                "Redeemable Code",
+                "Codes"
             ],
             "progression": true
         },
