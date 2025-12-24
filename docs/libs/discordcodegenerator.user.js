@@ -24,7 +24,7 @@ var validPoke = [];
 function initCodeGen() {
     App.game.discord.codes.forEach(e => validPoke.push(e.name));
     genCodes();
-    const saveTab = document.getElementById('saveTab');
+    const saveTab = document.getElementById('codeEntry');
     var fragment = new DocumentFragment();
     for (let i = 0; i < validPoke.length; i++) {
         var codeHTML = document.createElement("div");
@@ -37,6 +37,9 @@ function initCodeGen() {
     saveTab.prepend(fragment)
     for (let ii = 0; ii < validPoke.length; ii++) {
        document.getElementById('disc-'+ii).addEventListener('click', submitCode, false);
+    }
+    if (window.APFlags.options.include_codes_as_items == true) {
+        saveTab.style.display = "none"
     }
 }
 

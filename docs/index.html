@@ -49915,7 +49915,20 @@ aria-labelledby="pickStarterTutorialModalLabel" aria-hidden="true">
        <div class="modal-body">
            <p id="pickStarterTutorialModalText">Oh No! We got ambushed by these Pokémon!<br>
                I can only hold off two! Pick the one you want to fight!</p>
-           <div class="row justify-content-center">
+            <div class="row justify-content-center">
+               <div class="col-lg-8">
+                   <div id="starterSelection" class="row" data-bind="foreach: window.APFlags.starters.slice(0, 3)">
+                       <div class="col">
+                           <input class="image-starter" type="image"
+                                  data-bind="
+                                    attr: { src: 'assets/images/pokemon/' + $data + '.png' },
+                                    click: () => { StartSequenceRunner.pickStarter($index());}
+                                    ">
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- <div class="row justify-content-center">
                <div class="col-lg-8">
                    <div id="starterSelection" class="row">
                        <div class="col">
@@ -49935,7 +49948,7 @@ aria-labelledby="pickStarterTutorialModalLabel" aria-hidden="true">
                        </div>
                    </div>
                </div>
-           </div>
+           </div> -->
            <p>You can click on it to inflict damage</p>
        </div>
    </div>
@@ -53270,12 +53283,14 @@ aria-labelledby="badgeCaseModalLabel">
 
             <div class="modal-body">
                 <div id="saveTab">
-                    <form class="form-inline input-group">
-                        <input class="outline-dark form-control" placeholder="Enter code..." id="redeemable-code-input" type="text" />
-                        <div class="input-group-append">
-                            <button class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
-                        </div>
-                    </form>
+                    <div id="codeEntry">
+                        <form class="form-inline input-group">
+                            <input class="outline-dark form-control" placeholder="Enter code..." id="redeemable-code-input" type="text" />
+                            <div class="input-group-append">
+                                <button class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
+                            </div>
+                        </form>
+                    </div>
                     <hr>
                     <!-- ko if: App.game.discord.enabled -->
                     <button class="btn btn-primary btn-block" onClick="App.game.discord.login()" data-bind="visible: !App.game.discord.ID()">Link Discord</button>
