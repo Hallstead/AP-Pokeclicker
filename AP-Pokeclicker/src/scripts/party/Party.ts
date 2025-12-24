@@ -76,8 +76,10 @@ class Party implements Feature, TmpPartyType {
         // Capture pre-increment stats to determine first capture
         const prevCaptured = +(App.game.statistics.pokemonCaptured[id]?.() ?? 0);
         let dexsanity = (window as any)?.APFlags?.dexsanity === true;
-        if (dexsanity && id % 1 !== 0) {
-            dexsanity = false; // Disable Dexsanity for alt forms
+        if (dexsanity && id % 1 !== 0 &&
+                (!(window as any)?.APFlags?.options.include_alt_pokemon ||
+                !(window as any)?.APFlags?.infiniteSeasonalEvents)) {
+            dexsanity = false; // Disable Dexsanity for alt forms and seasonal event pokemon
         }
 
         PokemonHelper.incrementPokemonStatistics(id, GameConstants.PokemonStatisticsType.Captured, shiny, gender, shadow);

@@ -280,7 +280,8 @@
             "count": 1,
             "name": "Infinite Seasonal Events",
             "category": [
-                "Scripts"
+                "Scripts",
+                "Seasonal Events"
             ],
             "progression": true
         },
@@ -379,6 +380,7 @@
             "count": "1",
             "name": "Kanto Elite Lorelei Badge",
             "category": [
+                "Badges",
                 "Kanto Elite Badges"
             ],
             "progression": true
@@ -388,6 +390,7 @@
             "count": "1",
             "name": "Kanto Elite Bruno Badge",
             "category": [
+                "Badges",
                 "Kanto Elite Badges"
             ],
             "progression": true
@@ -397,6 +400,7 @@
             "count": "1",
             "name": "Kanto Elite Agatha Badge",
             "category": [
+                "Badges",
                 "Kanto Elite Badges"
             ],
             "progression": true
@@ -406,6 +410,7 @@
             "count": "1",
             "name": "Kanto Elite Lance Badge",
             "category": [
+                "Badges",
                 "Kanto Elite Badges"
             ],
             "progression": true
@@ -415,6 +420,7 @@
             "count": "1",
             "name": "Kanto Elite Champion Badge",
             "category": [
+                "Badges",
                 "Kanto Elite Badges"
             ],
             "progression": true
@@ -438,6 +444,25 @@
             "useful": true
         },
         {
+            "id": 503,
+            "count": 1,
+            "name": "Primary Egg Slot",
+            "category": [
+                "Extra Slots",
+                "Not Implemented"
+            ],
+            "useful": true
+        },
+        {
+            "id": 504,
+            "count": 1,
+            "name": "Palaeontologist Token",
+            "category": [
+                "Palaeontologist"
+            ],
+            "progression": true
+        },
+        {
             "id": 1001,
             "count": "1",
             "name": "Tutorial Complete",
@@ -451,7 +476,8 @@
             "count": 1,
             "name": "Bulbasaur",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -460,7 +486,8 @@
             "count": 1,
             "name": "Ivysaur",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -469,7 +496,8 @@
             "count": 1,
             "name": "Venusaur",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -478,7 +506,8 @@
             "count": 1,
             "name": "Charmander",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -487,7 +516,8 @@
             "count": 1,
             "name": "Charmeleon",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -496,7 +526,8 @@
             "count": 1,
             "name": "Charizard",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -505,7 +536,8 @@
             "count": 1,
             "name": "Squirtle",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -514,7 +546,8 @@
             "count": 1,
             "name": "Wartortle",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -523,7 +556,8 @@
             "count": 1,
             "name": "Blastoise",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -532,7 +566,8 @@
             "count": 1,
             "name": "Caterpie",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -541,7 +576,8 @@
             "count": 1,
             "name": "Metapod",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -550,7 +586,8 @@
             "count": 1,
             "name": "Butterfree",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -559,7 +596,8 @@
             "count": 1,
             "name": "Weedle",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -568,7 +606,8 @@
             "count": 1,
             "name": "Kakuna",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -577,7 +616,8 @@
             "count": 1,
             "name": "Beedrill",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -586,7 +626,8 @@
             "count": 1,
             "name": "Pidgey",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -595,7 +636,8 @@
             "count": 1,
             "name": "Pidgeotto",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -604,7 +646,8 @@
             "count": 1,
             "name": "Pidgeot",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -613,7 +656,8 @@
             "count": 1,
             "name": "Rattata",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -622,7 +666,8 @@
             "count": 1,
             "name": "Raticate",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -631,7 +676,8 @@
             "count": 1,
             "name": "Spearow",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -640,7 +686,8 @@
             "count": 1,
             "name": "Fearow",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -649,7 +696,8 @@
             "count": 1,
             "name": "Ekans",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -658,7 +706,8 @@
             "count": 1,
             "name": "Arbok",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -667,7 +716,8 @@
             "count": 1,
             "name": "Pikachu",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -676,7 +726,8 @@
             "count": 1,
             "name": "Raichu",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -685,7 +736,8 @@
             "count": 1,
             "name": "Sandshrew",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -694,7 +746,8 @@
             "count": 1,
             "name": "Sandslash",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -703,7 +756,8 @@
             "count": 1,
             "name": "Nidoran (F)",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -712,7 +766,8 @@
             "count": 1,
             "name": "Nidorina",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -721,7 +776,8 @@
             "count": 1,
             "name": "Nidoqueen",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -730,7 +786,8 @@
             "count": 1,
             "name": "Nidoran (M)",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -739,7 +796,8 @@
             "count": 1,
             "name": "Nidorino",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -748,7 +806,8 @@
             "count": 1,
             "name": "Nidoking",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -757,7 +816,8 @@
             "count": 1,
             "name": "Clefairy",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -766,7 +826,8 @@
             "count": 1,
             "name": "Clefable",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -775,7 +836,8 @@
             "count": 1,
             "name": "Vulpix",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -784,7 +846,8 @@
             "count": 1,
             "name": "Ninetails",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -793,7 +856,8 @@
             "count": 1,
             "name": "Jigglypuff",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -802,7 +866,8 @@
             "count": 1,
             "name": "Wigglytuff",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -811,7 +876,8 @@
             "count": 1,
             "name": "Zubat",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -820,7 +886,8 @@
             "count": 1,
             "name": "Golbat",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -829,7 +896,8 @@
             "count": 1,
             "name": "Oddish",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -838,7 +906,8 @@
             "count": 1,
             "name": "Gloom",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -847,7 +916,8 @@
             "count": 1,
             "name": "Vileplume",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -856,7 +926,8 @@
             "count": 1,
             "name": "Paras",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -865,7 +936,8 @@
             "count": 1,
             "name": "Parasect",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -874,7 +946,8 @@
             "count": 1,
             "name": "Venonat",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -883,7 +956,8 @@
             "count": 1,
             "name": "Venomoth",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -892,7 +966,8 @@
             "count": 1,
             "name": "Diglett",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -901,7 +976,8 @@
             "count": 1,
             "name": "Dugtrio",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -910,7 +986,8 @@
             "count": 1,
             "name": "Meowth",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -919,7 +996,8 @@
             "count": 1,
             "name": "Persian",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -928,7 +1006,8 @@
             "count": 1,
             "name": "Psyduck",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -937,7 +1016,8 @@
             "count": 1,
             "name": "Golduck",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -946,7 +1026,8 @@
             "count": 1,
             "name": "Mankey",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -955,7 +1036,8 @@
             "count": 1,
             "name": "Primape",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -964,7 +1046,8 @@
             "count": 1,
             "name": "Growlithe",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -973,7 +1056,8 @@
             "count": 1,
             "name": "Arcanine",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -982,7 +1066,8 @@
             "count": 1,
             "name": "Poliwag",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -991,7 +1076,8 @@
             "count": 1,
             "name": "Poliwhirl",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1000,7 +1086,8 @@
             "count": 1,
             "name": "Poliwrath",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1009,7 +1096,8 @@
             "count": 1,
             "name": "Abra",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1018,7 +1106,8 @@
             "count": 1,
             "name": "Kadabra",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1027,7 +1116,8 @@
             "count": 1,
             "name": "Alakazam",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1036,7 +1126,8 @@
             "count": 1,
             "name": "Machop",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1045,7 +1136,8 @@
             "count": 1,
             "name": "Machoke",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1054,7 +1146,8 @@
             "count": 1,
             "name": "Machamp",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1063,7 +1156,8 @@
             "count": 1,
             "name": "Bellsprout",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1072,7 +1166,8 @@
             "count": 1,
             "name": "Weepinbell",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1081,7 +1176,8 @@
             "count": 1,
             "name": "Victreebel",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1090,7 +1186,8 @@
             "count": 1,
             "name": "Tentacool",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1099,7 +1196,8 @@
             "count": 1,
             "name": "Tentacruel",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1108,7 +1206,8 @@
             "count": 1,
             "name": "Geodude",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1117,7 +1216,8 @@
             "count": 1,
             "name": "Graveler",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1126,7 +1226,8 @@
             "count": 1,
             "name": "Golem",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1135,7 +1236,8 @@
             "count": 1,
             "name": "Ponyta",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1144,7 +1246,8 @@
             "count": 1,
             "name": "Rapidash",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1153,7 +1256,8 @@
             "count": 1,
             "name": "Slowpoke",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1162,7 +1266,8 @@
             "count": 1,
             "name": "Slowbro",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1171,7 +1276,8 @@
             "count": 1,
             "name": "Magnemite",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1180,7 +1286,8 @@
             "count": 1,
             "name": "Magneton",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1189,7 +1296,8 @@
             "count": 1,
             "name": "Farfetch'd",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1198,7 +1306,8 @@
             "count": 1,
             "name": "Doduo",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1207,7 +1316,8 @@
             "count": 1,
             "name": "Dodrio",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1216,7 +1326,8 @@
             "count": 1,
             "name": "Seel",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1225,7 +1336,8 @@
             "count": 1,
             "name": "Dewgong",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1234,7 +1346,8 @@
             "count": 1,
             "name": "Grimer",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1243,7 +1356,8 @@
             "count": 1,
             "name": "Muk",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1252,7 +1366,8 @@
             "count": 1,
             "name": "Shellder",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1261,7 +1376,8 @@
             "count": 1,
             "name": "Cloyster",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1270,7 +1386,8 @@
             "count": 1,
             "name": "Gastly",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1279,7 +1396,8 @@
             "count": 1,
             "name": "Haunter",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1288,7 +1406,8 @@
             "count": 1,
             "name": "Gengar",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1297,7 +1416,8 @@
             "count": 1,
             "name": "Onix",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1306,7 +1426,8 @@
             "count": 1,
             "name": "Drowzee",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1315,7 +1436,8 @@
             "count": 1,
             "name": "Hypno",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1324,7 +1446,8 @@
             "count": 1,
             "name": "Krabby",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1333,7 +1456,8 @@
             "count": 1,
             "name": "Kingler",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1342,7 +1466,8 @@
             "count": 1,
             "name": "Voltorb",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1351,7 +1476,8 @@
             "count": 1,
             "name": "Electrode",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1360,7 +1486,8 @@
             "count": 1,
             "name": "Exeggcute",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1369,7 +1496,8 @@
             "count": 1,
             "name": "Exeggutor",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1378,7 +1506,8 @@
             "count": 1,
             "name": "Cubone",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1387,7 +1516,8 @@
             "count": 1,
             "name": "Marowak",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1396,7 +1526,8 @@
             "count": 1,
             "name": "Hitmonlee",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1405,7 +1536,8 @@
             "count": 1,
             "name": "Hitmonchan",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1414,7 +1546,8 @@
             "count": 1,
             "name": "Lickitung",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1423,7 +1556,8 @@
             "count": 1,
             "name": "Koffing",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1432,7 +1566,8 @@
             "count": 1,
             "name": "Weezing",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1441,7 +1576,8 @@
             "count": 1,
             "name": "Rhyhorn",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1450,7 +1586,8 @@
             "count": 1,
             "name": "Rhydon",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1459,7 +1596,8 @@
             "count": 1,
             "name": "Chansey",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1468,7 +1606,8 @@
             "count": 1,
             "name": "Tangela",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1477,7 +1616,8 @@
             "count": 1,
             "name": "Kangaskhan",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1486,7 +1626,8 @@
             "count": 1,
             "name": "Horsea",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1495,7 +1636,8 @@
             "count": 1,
             "name": "Seadra",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1504,7 +1646,8 @@
             "count": 1,
             "name": "Goldeen",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1513,7 +1656,8 @@
             "count": 1,
             "name": "Seaking",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1522,7 +1666,8 @@
             "count": 1,
             "name": "Staryu",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1531,7 +1676,8 @@
             "count": 1,
             "name": "Starmie",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1540,7 +1686,8 @@
             "count": 1,
             "name": "Mr. Mime",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1549,7 +1696,8 @@
             "count": 1,
             "name": "Scyther",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1558,7 +1706,8 @@
             "count": 1,
             "name": "Jynx",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1567,7 +1716,8 @@
             "count": 1,
             "name": "Electabuzz",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1576,7 +1726,8 @@
             "count": 1,
             "name": "Magmar",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1585,7 +1736,8 @@
             "count": 1,
             "name": "Pinsir",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1594,7 +1746,8 @@
             "count": 1,
             "name": "Tauros",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1603,7 +1756,8 @@
             "count": 1,
             "name": "Magikarp",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1612,7 +1766,8 @@
             "count": 1,
             "name": "Gyarados",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1621,7 +1776,8 @@
             "count": 1,
             "name": "Lapras",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1630,7 +1786,8 @@
             "count": 1,
             "name": "Ditto",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1639,7 +1796,8 @@
             "count": 1,
             "name": "Eevee",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1648,7 +1806,8 @@
             "count": 1,
             "name": "Vaporeon",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1657,7 +1816,8 @@
             "count": 1,
             "name": "Jolteon",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1666,7 +1826,8 @@
             "count": 1,
             "name": "Flareon",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1675,7 +1836,8 @@
             "count": 1,
             "name": "Porygon",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1684,7 +1846,8 @@
             "count": 1,
             "name": "Omanyte",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1693,7 +1856,8 @@
             "count": 1,
             "name": "Omastar",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1702,7 +1866,8 @@
             "count": 1,
             "name": "Kabuto",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1711,7 +1876,8 @@
             "count": 1,
             "name": "Kabutops",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1720,7 +1886,8 @@
             "count": 1,
             "name": "Aerodactyl",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1729,7 +1896,8 @@
             "count": 1,
             "name": "Snorlax",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1738,7 +1906,8 @@
             "count": 1,
             "name": "Articuno",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1747,7 +1916,8 @@
             "count": 1,
             "name": "Zapdos",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1756,7 +1926,8 @@
             "count": 1,
             "name": "Moltres",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1765,7 +1936,8 @@
             "count": 1,
             "name": "Dratini",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1774,7 +1946,8 @@
             "count": 1,
             "name": "Dragonair",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1783,7 +1956,8 @@
             "count": 1,
             "name": "Dragonite",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1792,7 +1966,8 @@
             "count": 1,
             "name": "Mewtwo",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon"
             ],
             "progression": true
         },
@@ -1801,7 +1976,2286 @@
             "count": 1,
             "name": "Mew",
             "category": [
-                "Pokemon"
+                "Pokemon",
+                "Base Pokemon",
+                "Roaming Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5101,
+            "count": 1,
+            "name": "Bulbasaur (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5102,
+            "count": 1,
+            "name": "Spooky Bulbasaur",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Halloween"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5103,
+            "count": 1,
+            "name": "Bulbasaur (Rose)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Golden Week",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5201,
+            "count": 1,
+            "name": "Ivysaur (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5202,
+            "count": 1,
+            "name": "Spooky Ivysaur",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Halloween"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5203,
+            "count": 1,
+            "name": "Ivysaur (Rose)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Golden Week",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5301,
+            "count": 1,
+            "name": "Mega Venusaur",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5302,
+            "count": 1,
+            "name": "Gigantamax Venusaur",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5303,
+            "count": 1,
+            "name": "Venusaur (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5304,
+            "count": 1,
+            "name": "Spooky Venusaur",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Halloween"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5305,
+            "count": 1,
+            "name": "Venusaur (Rose)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Golden Week",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5401,
+            "count": 1,
+            "name": "Charmander (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5501,
+            "count": 1,
+            "name": "Charmeleon (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5601,
+            "count": 1,
+            "name": "Mega Charizard X",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5602,
+            "count": 1,
+            "name": "Mega Charizard Y",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5603,
+            "count": 1,
+            "name": "Gigantamax Charizard",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5604,
+            "count": 1,
+            "name": "Charizard (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5701,
+            "count": 1,
+            "name": "Squirtle (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5702,
+            "count": 1,
+            "name": "Squad Leader Squirtle",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5801,
+            "count": 1,
+            "name": "Wartortle (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5901,
+            "count": 1,
+            "name": "Mega Blastoise",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5902,
+            "count": 1,
+            "name": "Gigantamax Blastoise",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 5903,
+            "count": 1,
+            "name": "Blastoise (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6001,
+            "count": 1,
+            "name": "Pinkan Caterpie",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6201,
+            "count": 1,
+            "name": "Gigantamax Butterfree",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6202,
+            "count": 1,
+            "name": "Valencian Butterfree",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6203,
+            "count": 1,
+            "name": "Pink Butterfree",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6204,
+            "count": 1,
+            "name": "Ash\"s Butterfree",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6301,
+            "count": 1,
+            "name": "Pinkan Weedle",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6501,
+            "count": 1,
+            "name": "Mega Beedrill",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6601,
+            "count": 1,
+            "name": "Pinkan Pidgey",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6701,
+            "count": 1,
+            "name": "Pinkan Pidgeotto",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6801,
+            "count": 1,
+            "name": "Mega Pidgeot",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6901,
+            "count": 1,
+            "name": "Alolan Rattata",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 6902,
+            "count": 1,
+            "name": "Pinkan Rattata",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7001,
+            "count": 1,
+            "name": "Alolan Raticate",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7002,
+            "count": 1,
+            "name": "Totem Raticate",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7003,
+            "count": 1,
+            "name": "Valencian Raticate",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7101,
+            "count": 1,
+            "name": "Red Spearow",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Flying Pikachu"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7401,
+            "count": 1,
+            "name": "Pinkan Arbok",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7501,
+            "count": 1,
+            "name": "Pikachu (Original Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7502,
+            "count": 1,
+            "name": "Pikachu (Hoenn Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7503,
+            "count": 1,
+            "name": "Pikachu (Sinnoh Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7504,
+            "count": 1,
+            "name": "Pikachu (Unova Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7505,
+            "count": 1,
+            "name": "Pikachu (Kalos Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7506,
+            "count": 1,
+            "name": "Pikachu (Alola Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7507,
+            "count": 1,
+            "name": "Pikachu (World Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7508,
+            "count": 1,
+            "name": "Pikachu (Partner Cap)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7509,
+            "count": 1,
+            "name": "Gigantamax Pikachu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7510,
+            "count": 1,
+            "name": "Flying Pikachu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Flying Pikachu"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7511,
+            "count": 1,
+            "name": "Surfing Pikachu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Redeemable Code",
+                "Codes"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7512,
+            "count": 1,
+            "name": "Pikachu (Gengar)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7513,
+            "count": 1,
+            "name": "Let's Go Pikachu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Let's Go"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7514,
+            "count": 1,
+            "name": "Pinkan Pikachu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7515,
+            "count": 1,
+            "name": "Detective Pikachu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7516,
+            "count": 1,
+            "name": "Pikachu (Clone)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7517,
+            "count": 1,
+            "name": "Pikachu (Rock Star)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7518,
+            "count": 1,
+            "name": "Pikachu (Belle)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7519,
+            "count": 1,
+            "name": "Pikachu (Pop Star)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7520,
+            "count": 1,
+            "name": "Pikachu (Ph. D.)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7521,
+            "count": 1,
+            "name": "Pikachu (Libre)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7522,
+            "count": 1,
+            "name": "Pikachu (Easter)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7523,
+            "count": 1,
+            "name": "Pikachu (Palaeontologist)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7601,
+            "count": 1,
+            "name": "Alolan Raichu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7602,
+            "count": 1,
+            "name": "Detective Raichu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7701,
+            "count": 1,
+            "name": "Alolan Sandshrew",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7801,
+            "count": 1,
+            "name": "Alolan Sandslash",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 7901,
+            "count": 1,
+            "name": "Pinkan Nidoran(F)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 8201,
+            "count": 1,
+            "name": "Pinkan Nidoran(M)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 8401,
+            "count": 1,
+            "name": "Pinkan Nidoking",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 8701,
+            "count": 1,
+            "name": "Alolan Vulpix",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 8801,
+            "count": 1,
+            "name": "Alolan Ninetales",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 9301,
+            "count": 1,
+            "name": "Pinkan Oddish",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 9501,
+            "count": 1,
+            "name": "Valencian Vileplume",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 9502,
+            "count": 1,
+            "name": "Pinkan Vileplume",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 9601,
+            "count": 1,
+            "name": "Valencian Paras",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 9602,
+            "count": 1,
+            "name": "Pinkan Paras",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 9801,
+            "count": 1,
+            "name": "Pinkan Venonat",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10001,
+            "count": 1,
+            "name": "Alolan Diglett",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10002,
+            "count": 1,
+            "name": "Pinkan Diglett",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10101,
+            "count": 1,
+            "name": "Alolan Dugtrio",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10102,
+            "count": 1,
+            "name": "Dugtrio (Punk)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10201,
+            "count": 1,
+            "name": "Gigantamax Meowth",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10202,
+            "count": 1,
+            "name": "Alolan Meowth",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10203,
+            "count": 1,
+            "name": "Galarian Meowth",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10204,
+            "count": 1,
+            "name": "Meowth (Phanpy)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10301,
+            "count": 1,
+            "name": "Alolan Persian",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10401,
+            "count": 1,
+            "name": "Psyduck (Dark Mage)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10601,
+            "count": 1,
+            "name": "Pinkan Mankey",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10701,
+            "count": 1,
+            "name": "Pinkan Primeape",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10801,
+            "count": 1,
+            "name": "Hisuian Growlithe",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10901,
+            "count": 1,
+            "name": "Hisuian Arcanine",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 10902,
+            "count": 1,
+            "name": "Noble Arcanine",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 11101,
+            "count": 1,
+            "name": "Pinkan Poliwhirl",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 11501,
+            "count": 1,
+            "name": "Mega Alakazam",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 11801,
+            "count": 1,
+            "name": "Gigantamax Machamp",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 11901,
+            "count": 1,
+            "name": "Pinkan Bellsprout",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12001,
+            "count": 1,
+            "name": "Valencian Weepinbell",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12002,
+            "count": 1,
+            "name": "Weepinbell (Fancy)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12401,
+            "count": 1,
+            "name": "Alolan Geodude",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12402,
+            "count": 1,
+            "name": "Pinkan Geodude",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12501,
+            "count": 1,
+            "name": "Alolan Graveler",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12601,
+            "count": 1,
+            "name": "Alolan Golem",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12701,
+            "count": 1,
+            "name": "Galarian Ponyta",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12801,
+            "count": 1,
+            "name": "Galarian Rapidash",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 12901,
+            "count": 1,
+            "name": "Galarian Slowpoke",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 13001,
+            "count": 1,
+            "name": "Mega Slowbro",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 13002,
+            "count": 1,
+            "name": "Galarian Slowbro",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 13301,
+            "count": 1,
+            "name": "Galarian Farfetch\"d",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 13501,
+            "count": 1,
+            "name": "Pinkan Dodrio",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 13801,
+            "count": 1,
+            "name": "Alolan Grimer",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 13901,
+            "count": 1,
+            "name": "Alolan Muk",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 14401,
+            "count": 1,
+            "name": "Mega Gengar",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 14402,
+            "count": 1,
+            "name": "Gigantamax Gengar",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 14403,
+            "count": 1,
+            "name": "Gengar (Punk)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 14501,
+            "count": 1,
+            "name": "Crystal Onix",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 14502,
+            "count": 1,
+            "name": "Onix (Rocker)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 14901,
+            "count": 1,
+            "name": "Gigantamax Kingler",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15001,
+            "count": 1,
+            "name": "Hisuian Voltorb",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15101,
+            "count": 1,
+            "name": "Hisuian Electrode",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15102,
+            "count": 1,
+            "name": "Noble Electrode",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15201,
+            "count": 1,
+            "name": "Exeggcute (Single)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15301,
+            "count": 1,
+            "name": "Alolan Exeggutor",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15302,
+            "count": 1,
+            "name": "Pinkan Exeggutor",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15501,
+            "count": 1,
+            "name": "Alolan Marowak",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 15502,
+            "count": 1,
+            "name": "Totem Marowak",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16001,
+            "count": 1,
+            "name": "Galarian Weezing",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16002,
+            "count": 1,
+            "name": "Pinkan Weezing",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16101,
+            "count": 1,
+            "name": "Pinkan Rhyhorn",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16201,
+            "count": 1,
+            "name": "Pinkan Rhydon",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16301,
+            "count": 1,
+            "name": "Charity Chansey",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16401,
+            "count": 1,
+            "name": "Tangela (Pom-pom)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16501,
+            "count": 1,
+            "name": "Mega Kangaskhan",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16502,
+            "count": 1,
+            "name": "Baby Kangaskhan",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 16801,
+            "count": 1,
+            "name": "Goldeen (Diva)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17201,
+            "count": 1,
+            "name": "Galarian Mr. Mime",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17301,
+            "count": 1,
+            "name": "Pinkan Scyther",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17401,
+            "count": 1,
+            "name": "Santa Jynx",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17501,
+            "count": 1,
+            "name": "Pinkan Electabuzz",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17701,
+            "count": 1,
+            "name": "Mega Pinsir",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17801,
+            "count": 1,
+            "name": "Paldean Tauros (Combat)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17802,
+            "count": 1,
+            "name": "Paldean Tauros (Blaze)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17803,
+            "count": 1,
+            "name": "Paldean Tauros (Aqua)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17901,
+            "count": 1,
+            "name": "Magikarp Skelly",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17902,
+            "count": 1,
+            "name": "Magikarp Calico (Orange, White)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17903,
+            "count": 1,
+            "name": "Magikarp Calico (Orange, White, Black)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17904,
+            "count": 1,
+            "name": "Magikarp Calico (White, Orange)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17905,
+            "count": 1,
+            "name": "Magikarp Calico (Orange, Gold)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17906,
+            "count": 1,
+            "name": "Magikarp Orange Two-Tone",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17907,
+            "count": 1,
+            "name": "Magikarp Orange Orca",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17908,
+            "count": 1,
+            "name": "Magikarp Orange Dapples",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17909,
+            "count": 1,
+            "name": "Magikarp Pink Two-Tone",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17910,
+            "count": 1,
+            "name": "Magikarp Pink Orca",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17911,
+            "count": 1,
+            "name": "Magikarp Pink Dapples",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17912,
+            "count": 1,
+            "name": "Magikarp Grey Bubbles",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17913,
+            "count": 1,
+            "name": "Magikarp Grey Diamonds",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17914,
+            "count": 1,
+            "name": "Magikarp Grey Patches",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17915,
+            "count": 1,
+            "name": "Magikarp Purple Bubbles",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17916,
+            "count": 1,
+            "name": "Magikarp Purple Diamonds",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17917,
+            "count": 1,
+            "name": "Magikarp Purple Patches",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17918,
+            "count": 1,
+            "name": "Magikarp Apricot Tiger",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17919,
+            "count": 1,
+            "name": "Magikarp Apricot Zebra",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17920,
+            "count": 1,
+            "name": "Magikarp Apricot Stripes",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17921,
+            "count": 1,
+            "name": "Magikarp Brown Tiger",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17922,
+            "count": 1,
+            "name": "Magikarp Brown Zebra",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17923,
+            "count": 1,
+            "name": "Magikarp Brown Stripes",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17924,
+            "count": 1,
+            "name": "Magikarp Orange Forehead",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17925,
+            "count": 1,
+            "name": "Magikarp Orange Mask",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17926,
+            "count": 1,
+            "name": "Magikarp Black Forehead",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17927,
+            "count": 1,
+            "name": "Magikarp Black Mask",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17928,
+            "count": 1,
+            "name": "Magikarp Blue Raindrops",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17929,
+            "count": 1,
+            "name": "Magikarp Saucy Blue",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17930,
+            "count": 1,
+            "name": "Magikarp Violet Raindrops",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17931,
+            "count": 1,
+            "name": "Magikarp Saucy Violet",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 17932,
+            "count": 1,
+            "name": "Magikarp (Feebas)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 18001,
+            "count": 1,
+            "name": "Mega Gyarados",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 18101,
+            "count": 1,
+            "name": "Gigantamax Lapras",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 18201,
+            "count": 1,
+            "name": "Ditto (Magikarp)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 18301,
+            "count": 1,
+            "name": "Gigantamax Eevee",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 18302,
+            "count": 1,
+            "name": "Let's Go Eevee",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Let's Go"
+            ],
+            "progression": true
+        },
+        {
+            "id": 19201,
+            "count": 1,
+            "name": "Mega Aerodactyl",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 19301,
+            "count": 1,
+            "name": "Gigantamax Snorlax",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 19302,
+            "count": 1,
+            "name": "Santa Snorlax",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "progression": true
+        },
+        {
+            "id": 19303,
+            "count": 1,
+            "name": "Snorlax (Snowman)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "progression": true
+        },
+        {
+            "id": 19401,
+            "count": 1,
+            "name": "Galarian Articuno",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 19501,
+            "count": 1,
+            "name": "Galarian Zapdos",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 19601,
+            "count": 1,
+            "name": "Galarian Moltres",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 20001,
+            "count": 1,
+            "name": "Mega Mewtwo X",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 20002,
+            "count": 1,
+            "name": "Mega Mewtwo Y",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 20003,
+            "count": 1,
+            "name": "Armored Mewtwo",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112001,
+            "count": 1,
+            "name": "Farming-Quick-Start Code",
+            "category": [
+                "Codes"
+            ],
+            "filler": true
+        },
+        {
+            "id": 112002,
+            "count": 1,
+            "name": "Shiny-Charmer Code",
+            "category": [
+                "Codes"
+            ],
+            "useful": true
+        },
+        {
+            "id": 112003,
+            "count": 1,
+            "name": "Great-Balls Code",
+            "category": [
+                "Codes"
+            ],
+            "filler": true
+        },
+        {
+            "id": 112004,
+            "count": 1,
+            "name": "Everstone Code",
+            "category": [
+                "Codes"
+            ],
+            "useful": true
+        },
+        {
+            "id": 112005,
+            "count": 1,
+            "name": "Typed-Held-Item Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "useful": true
+        },
+        {
+            "id": 112006,
+            "count": 1,
+            "name": "Eon-Ticket Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112007,
+            "count": 1,
+            "name": "Ampharosite Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112009,
+            "count": 1,
+            "name": "Rare-Candy Code",
+            "category": [
+                "Codes"
+            ],
+            "filler": true
+        },
+        {
+            "id": 112101,
+            "count": 1,
+            "name": "Surfing Pikachu Code",
+            "category": [
+                "Codes"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112102,
+            "count": 1,
+            "name": "Rotom (Discord) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112103,
+            "count": 1,
+            "name": "Unown (D) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112104,
+            "count": 1,
+            "name": "Unown (I) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112105,
+            "count": 1,
+            "name": "Unown (S) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112106,
+            "count": 1,
+            "name": "Unown (C) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112107,
+            "count": 1,
+            "name": "Unown (O) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 112108,
+            "count": 1,
+            "name": "Unown (R) Code",
+            "category": [
+                "Codes",
+                "Not Implemented"
             ],
             "progression": true
         },

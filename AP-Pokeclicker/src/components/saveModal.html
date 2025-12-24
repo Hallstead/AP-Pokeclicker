@@ -11,12 +11,14 @@
 
             <div class="modal-body">
                 <div id="saveTab">
-                    <form class="form-inline input-group">
-                        <input class="outline-dark form-control" placeholder="Enter code..." id="redeemable-code-input" type="text" />
-                        <div class="input-group-append">
-                            <button class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
-                        </div>
-                    </form>
+                    <div id="codeEntry">
+                        <form class="form-inline input-group">
+                            <input class="outline-dark form-control" placeholder="Enter code..." id="redeemable-code-input" type="text" />
+                            <div class="input-group-append">
+                                <button class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
+                            </div>
+                        </form>
+                    </div>
                     <hr>
                     <!-- ko if: App.game.discord.enabled -->
                     <button class="btn btn-primary btn-block" onClick="App.game.discord.login()" data-bind="visible: !App.game.discord.ID()">Link Discord</button>

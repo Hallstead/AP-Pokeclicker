@@ -9,7 +9,9 @@
             ],
             "requires": "{pewter_city()}",
             "region": "Kanto",
-            "place_item": ["Tutorial Complete"]
+            "place_item": [
+                "Tutorial Complete"
+            ]
         },
         {
             "name": "Defeat 10 Pokemon on Kanto Route 1 (Town Map)",
@@ -207,7 +209,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{vermilion_city()} and |Cascade Badge| and {attack_needed(39995)}"
+            "requires": "{vermilion_city()} and |Cascade Badge| and {attack_needed(39995)} and {attack_needed(50431)}"
         },
         {
             "name": "Erika",
@@ -225,7 +227,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{saffron_city()} and {silph_co()} and {attack_needed(112420)}"
+            "requires": "{saffron_city()} and {silph_co(True, 52576)} and {attack_needed(203971)} and {attack_needed(112420)}"
         },
         {
             "name": "Koga",
@@ -298,7 +300,9 @@
                 "Gyms"
             ],
             "requires": "{indigo_plateau()} and |Kanto Elite Lance Badge| and {attack_needed(359860)}",
-            "place_item": ["Kanto Elite Champion Badge"]
+            "place_item": [
+                "Kanto Elite Champion Badge"
+            ]
         },
         {
             "name": "Viridian Forest",
@@ -427,6 +431,17 @@
             "requires": "{cerulean_cave()}"
         },
         {
+            "name": "New Island",
+            "id": 415,
+            "region": "Kanto",
+            "category": [
+                "Dungeons",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "{new_island(True, 131500)}"
+        },
+        {
             "name": "Blue 1 (Near Viridian City)",
             "id": 701,
             "region": "Kanto",
@@ -550,7 +565,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{starter()} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|Bulbasaur| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{starter()} or {can_get_grass_egg()} or {can_breed(Bulbasaur)}"
         },
         {
             "name": "Capture Ivysaur",
@@ -559,7 +574,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Bulbasaur| or (|Ivysaur| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Bulbasaur| or {can_breed(Ivysaur)}"
         },
         {
             "name": "Capture Venusaur",
@@ -568,7 +583,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Ivysaur|) or (|Venusaur| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Ivysaur|) or {can_breed(Venusaur)}"
         },
         {
             "name": "Capture Charmander",
@@ -577,7 +592,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{starter()} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Charmander| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{starter()} or {can_get_fire_egg()} or {can_breed(Charmander)}"
         },
         {
             "name": "Capture Charmeleon",
@@ -586,7 +601,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Charmander| or (|Charmeleon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Charmander| or {can_breed(Charmeleon)}"
         },
         {
             "name": "Capture Charizard",
@@ -595,7 +610,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Charmeleon|) or (|Charizard| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Charmeleon|) or {can_breed(Charizard)}"
         },
         {
             "name": "Capture Squirtle",
@@ -604,7 +619,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_starter()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Squirtle| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_starter()} or {can_get_water_egg()} or {can_breed(Squirtle)}"
         },
         {
             "name": "Capture Wartortle",
@@ -613,7 +628,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Squirtle| or (|Wartortle| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Squirtle| or {can_breed(Wartortle)}"
         },
         {
             "name": "Capture Blastoise",
@@ -622,7 +637,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Wartortle|) or (|Blastoise| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Wartortle|) or {can_breed(Blastoise)}"
         },
         {
             "name": "Capture Caterpie",
@@ -631,7 +646,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Caterpie| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Caterpie)}"
         },
         {
             "name": "Capture Metapod",
@@ -640,7 +655,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Metapod| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Metapod)}"
         },
         {
             "name": "Capture Butterfree",
@@ -649,7 +664,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Metapod| or (|Butterfree| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Metapod| or {can_breed(Butterfree)}"
         },
         {
             "name": "Capture Weedle",
@@ -658,7 +673,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Weedle| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Weedle)}"
         },
         {
             "name": "Capture Kakuna",
@@ -667,7 +682,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or (|Kakuna| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Kakuna)}"
         },
         {
             "name": "Capture Beedrill",
@@ -676,7 +691,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Kakuna| or (|Beedrill| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Kakuna| or {can_breed(Beedrill)}"
         },
         {
             "name": "Capture Pidgey",
@@ -685,7 +700,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgey| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed(Pidgey)}"
         },
         {
             "name": "Capture Pidgeotto",
@@ -694,7 +709,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or (|Pidgeotto| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed(Pidgeotto)}"
         },
         {
             "name": "Capture Pidgeot",
@@ -703,7 +718,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Pidgeotto|) or (|Pidgeot| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Pidgeotto|) or {can_breed(Pidgeot)}"
         },
         {
             "name": "Capture Rattata",
@@ -712,7 +727,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or (|Rattata| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or {can_breed(Rattata)}"
         },
         {
             "name": "Capture Raticate",
@@ -721,7 +736,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or (|Raticate| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or {can_breed(Raticate)}"
         },
         {
             "name": "Capture Spearow",
@@ -730,7 +745,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Spearow| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed(Spearow)}"
         },
         {
             "name": "Capture Fearow",
@@ -739,7 +754,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or (|Fearow| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed(Fearow)}"
         },
         {
             "name": "Capture Ekans",
@@ -748,7 +763,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Ekans| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed(Ekans)}"
         },
         {
             "name": "Capture Arbok",
@@ -757,7 +772,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Ekans|) or {kanto_route_23()} or {victory_road()} or (|Arbok| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Ekans|) or {kanto_route_23()} or {victory_road()} or {can_breed(Arbok)}"
         },
         {
             "name": "Capture Pikachu",
@@ -766,7 +781,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{viridian_forest(True)} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Pikachu| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{viridian_forest(True)} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed(Pikachu)}"
         },
         {
             "name": "Capture Raichu",
@@ -775,7 +790,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Pikachu| and {can_get_thunder_stone()} or (|Raichu| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Pikachu| and {can_get_thunder_stone()} or {can_breed(Raichu)}"
         },
         {
             "name": "Capture Sandshrew",
@@ -784,7 +799,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or (|Sandshrew| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed(Sandshrew)}"
         },
         {
             "name": "Capture Sandslash",
@@ -793,7 +808,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Sandshrew|) or {kanto_route_23()} or {victory_road()} or (|Sandslash| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Sandshrew|) or {kanto_route_23()} or {victory_road()} or {can_breed(Sandslash)}"
         },
         {
             "name": "Capture Nidoran (F)",
@@ -802,7 +817,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_3()} or {safari_zone()} or (|Nidoran (F)| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed(Nidoran (F))}"
         },
         {
             "name": "Capture Nidorina",
@@ -811,7 +826,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Nidoran (F)| or {safari_zone()} or (|Nidorina| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Nidoran (F)| or {safari_zone()} or {can_breed(Nidorina)}"
         },
         {
             "name": "Capture Nidoqueen",
@@ -820,7 +835,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Nidorina| and {can_get_moon_stone()}) or (|Nidoqueen| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Nidorina| and {can_get_moon_stone()}) or {can_breed(Nidoqueen)}"
         },
         {
             "name": "Capture Nidoran (M)",
@@ -829,7 +844,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_3()} or {safari_zone()} or (|Nidoran (M)| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed(Nidoran (M))}"
         },
         {
             "name": "Capture Nidorino",
@@ -838,7 +853,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Nidoran (M)| or {safari_zone()} or (|Nidorino| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Nidoran (M)| or {safari_zone()} or {can_breed(Nidorino)}"
         },
         {
             "name": "Capture Nidoking",
@@ -847,7 +862,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Nidorino| and {can_get_moon_stone()}) or (|Nidoking| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Nidorino| and {can_get_moon_stone()}) or {can_breed(Nidoking)}"
         },
         {
             "name": "Capture Clefairy",
@@ -856,7 +871,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mt_moon(False)} or (|Clefairy| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{mt_moon(False)} or {can_breed(Clefairy)}"
         },
         {
             "name": "Capture Clefable",
@@ -865,7 +880,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Clefairy| and {can_get_moon_stone()}) or (|Clefable| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Clefairy| and {can_get_moon_stone()}) or {can_breed(Clefable)}"
         },
         {
             "name": "Capture Vulpix",
@@ -874,7 +889,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Vulpix| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed(Vulpix)}"
         },
         {
             "name": "Capture Ninetails",
@@ -883,7 +898,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Vulpix| and {can_get_fire_stone()}) or (|Ninetails| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Vulpix| and {can_get_fire_stone()}) or {can_breed(Ninetails)}"
         },
         {
             "name": "Capture Jigglypuff",
@@ -892,7 +907,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_3()} or (({can_get_mystery_egg()} or (|Jigglypuff| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_3()} or {can_get_mystery_egg()} or {can_breed(Jigglypuff)}"
         },
         {
             "name": "Capture Wigglytuff",
@@ -901,7 +916,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Jigglypuff| and {can_get_moon_stone()}) or (|Wigglytuff| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Jigglypuff| and {can_get_moon_stone()}) or {can_breed(Wigglytuff)}"
         },
         {
             "name": "Capture Zubat",
@@ -910,7 +925,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or (|Zubat| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or {can_breed(Zubat)}"
         },
         {
             "name": "Capture Golbat",
@@ -919,7 +934,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or (|Golbat| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or {can_breed(Golbat)}"
         },
         {
             "name": "Capture Oddish",
@@ -928,7 +943,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (({can_get_grass_egg()} or {can_get_mystery_egg()} or (|Oddish| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_get_grass_egg()} or {can_breed(Oddish)}"
         },
         {
             "name": "Capture Gloom",
@@ -937,7 +952,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Gloom| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Gloom)}"
         },
         {
             "name": "Capture Vileplume",
@@ -946,7 +961,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Gloom| and {can_get_leaf_stone()} or (|Vileplume| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Gloom| and {can_get_leaf_stone()} or {can_breed(Vileplume)}"
         },
         {
             "name": "Capture Paras",
@@ -955,7 +970,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or (|Paras| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {safari_zone()} or {can_breed(Paras)}"
         },
         {
             "name": "Capture Parasect",
@@ -964,7 +979,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Paras|) or {cerulean_cave()} or (|Parasect| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Paras|) or {cerulean_cave()} or {can_breed(Parasect)}"
         },
         {
             "name": "Capture Venonat",
@@ -973,7 +988,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or (|Venonat| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Venonat)}"
         },
         {
             "name": "Capture Venomoth",
@@ -982,7 +997,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Venonat|) or {berry_forest(True)} or (|Venomoth| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Venonat|) or {berry_forest(True)} or {can_breed(Venomoth)}"
         },
         {
             "name": "Capture Diglett",
@@ -991,7 +1006,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{digletts_cave(False)} or (|Diglett| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{digletts_cave(False)} or {can_breed(Diglett)}"
         },
         {
             "name": "Capture Dugtrio",
@@ -1000,7 +1015,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Diglett|) or {digletts_cave(True)} or (|Dugtrio| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Diglett|) or {digletts_cave(True)} or {can_breed(Dugtrio)}"
         },
         {
             "name": "Capture Meowth",
@@ -1009,7 +1024,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|Meowth| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed(Meowth)}"
         },
         {
             "name": "Capture Persian",
@@ -1018,7 +1033,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (|Persian| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed(Persian)}"
         },
         {
             "name": "Capture Psyduck",
@@ -1027,7 +1042,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Psyduck| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Psyduck)}"
         },
         {
             "name": "Capture Golduck",
@@ -1036,7 +1051,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|Golduck| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed(Golduck)}"
         },
         {
             "name": "Capture Mankey",
@@ -1045,7 +1060,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Mankey| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or {can_get_fighting_egg()} or {can_breed(Mankey)}"
         },
         {
             "name": "Capture Primape",
@@ -1054,7 +1069,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or (|Primape| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or {can_breed(Primape)}"
         },
         {
             "name": "Capture Growlithe",
@@ -1063,7 +1078,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Growlithe| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed(Growlithe)}"
         },
         {
             "name": "Capture Arcanine",
@@ -1072,7 +1087,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Growlithe| and {can_get_fire_stone()}) or (|Arcanine| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Growlithe| and {can_get_fire_stone()}) or {can_breed(Arcanine)}"
         },
         {
             "name": "Capture Poliwag",
@@ -1081,7 +1096,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Poliwag| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Poliwag)}"
         },
         {
             "name": "Capture Poliwhirl",
@@ -1090,7 +1105,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Poliwag|) or (|Poliwhirl| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Poliwag|) or {can_breed(Poliwhirl)}"
         },
         {
             "name": "Capture Poliwrath",
@@ -1099,7 +1114,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Poliwhirl| and {can_get_water_stone()}) or (|Poliwrath| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Poliwhirl| and {can_get_water_stone()}) or {can_breed(Poliwrath)}"
         },
         {
             "name": "Capture Abra",
@@ -1108,7 +1123,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or (|Abra| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {can_breed(Abra)}"
         },
         {
             "name": "Capture Kadabra",
@@ -1117,7 +1132,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Abra| or {cerulean_cave()} or (|Kadabra| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Abra| or {cerulean_cave()} or {can_breed(Kadabra)}"
         },
         {
             "name": "Capture Alakazam",
@@ -1126,7 +1141,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Kadabra| and {can_get_linking_cord()}) or (|Alakazam| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Kadabra| and {can_get_linking_cord()}) or {can_breed(Alakazam)}"
         },
         {
             "name": "Capture Machop",
@@ -1135,7 +1150,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Machop| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_fighting_egg()} or {can_breed(Machop)}"
         },
         {
             "name": "Capture Machoke",
@@ -1144,7 +1159,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or (|Machoke| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or {can_breed(Machoke)}"
         },
         {
             "name": "Capture Machamp",
@@ -1153,7 +1168,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Machoke| and {can_get_linking_cord()}) or (|Machamp| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Machoke| and {can_get_linking_cord()}) or {can_breed(Machamp)}"
         },
         {
             "name": "Capture Bellsprout",
@@ -1162,7 +1177,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Bellsprout| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Bellsprout)}"
         },
         {
             "name": "Capture Weepinbell",
@@ -1171,7 +1186,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or (|Weepinbell| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Weepinbell)}"
         },
         {
             "name": "Capture Victreebel",
@@ -1180,7 +1195,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Weepinbell| and {can_get_leaf_stone()}) or (|Victreebel| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Weepinbell| and {can_get_leaf_stone()}) or {can_breed(Victreebel)}"
         },
         {
             "name": "Capture Tentacool",
@@ -1189,7 +1204,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|Tentacool| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed(Tentacool)}"
         },
         {
             "name": "Capture Tentacruel",
@@ -1198,7 +1213,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or (|Tentacruel| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed(Tentacruel)}"
         },
         {
             "name": "Capture Geodude",
@@ -1207,7 +1222,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or (({can_get_mystery_egg()} or |Geodude| and |@Badges:8|) and |Mystery Egg|)"
+            "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_mystery_egg()} or {can_breed(Geodude)}"
         },
         {
             "name": "Capture Graveler",
@@ -1216,7 +1231,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Geodude|) or {mount_ember(False)} or {cerulean_cave()} or (|Graveler| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Geodude|) or {mount_ember(False)} or {cerulean_cave()} or {can_breed(Graveler)}"
         },
         {
             "name": "Capture Golem",
@@ -1225,7 +1240,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Graveler| and {can_get_linking_cord()}) or (|Golem| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Graveler| and {can_get_linking_cord()}) or {can_breed(Golem)}"
         },
         {
             "name": "Capture Ponyta",
@@ -1234,7 +1249,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kindle_road()} or {mount_ember(False)} or (|Ponyta| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kindle_road()} or {mount_ember(False)} or {can_breed(Ponyta)}"
         },
         {
             "name": "Capture Rapidash",
@@ -1243,7 +1258,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Ponyta|) or {kindle_road()} or {mount_ember(False)} or (|Rapidash| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Ponyta|) or {kindle_road()} or {mount_ember(False)} or {can_breed(Rapidash)}"
         },
         {
             "name": "Capture Slowpoke",
@@ -1252,7 +1267,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Slowpoke| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_get_water_egg()} or {can_breed(Slowpoke)}"
         },
         {
             "name": "Capture Slowbro",
@@ -1261,7 +1276,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or (|Slowbro| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed(Slowbro)}"
         },
         {
             "name": "Capture Magnemite",
@@ -1270,7 +1285,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Magnemite| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{power_plant(False)} or {can_get_electric_egg()} or {can_breed(Magnemite)}"
         },
         {
             "name": "Capture Magneton",
@@ -1279,7 +1294,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Magnemite|) or {power_plant(False)} or {cerulean_cave()} or (|Magneton| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Magnemite|) or {power_plant(False)} or {cerulean_cave()} or {can_breed(Magneton)}"
         },
         {
             "name": "Capture Farfetch'd",
@@ -1288,17 +1303,16 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_12()} or {kanto_route_13()} or (|Farfetch'd| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_12()} or {kanto_route_13()} or {can_breed(Farfetch'd)}"
         },
         {
             "name": "Capture Doduo",
-            
             "id": 2084,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or (({can_get_mystery_egg()} or (|Doduo| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {can_get_mystery_egg()} or {can_breed(Doduo)}"
         },
         {
             "name": "Capture Dodrio",
@@ -1307,7 +1321,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Doduo|) or (|Dodrio| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Doduo|) or {can_breed(Dodrio)}"
         },
         {
             "name": "Capture Seel",
@@ -1316,7 +1330,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{seafoam_islands(True)} or (|Seel| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{seafoam_islands(True)} or {can_breed(Seel)}"
         },
         {
             "name": "Capture Dewgong",
@@ -1325,7 +1339,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Seel|) or (|Dewgong| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Seel|) or {can_breed(Dewgong)}"
         },
         {
             "name": "Capture Grimer",
@@ -1334,7 +1348,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_mansion(False)} or (({can_get_mystery_egg()} or (|Grimer| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{pokemon_mansion(False)} or {can_breed(Grimer)}"
         },
         {
             "name": "Capture Muk",
@@ -1343,7 +1357,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Grimer|) or {pokemon_mansion(False)} or (|Muk| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Grimer|) or {pokemon_mansion(False)} or {can_breed(Muk)}"
         },
         {
             "name": "Capture Shellder",
@@ -1352,7 +1366,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (|Shellder| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_breed(Shellder)}"
         },
         {
             "name": "Capture Cloyster",
@@ -1361,7 +1375,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Shellder| and {can_get_water_stone()}) or (|Cloyster| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Shellder| and {can_get_water_stone()}) or {can_breed(Cloyster)}"
         },
         {
             "name": "Capture Gastly",
@@ -1370,7 +1384,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_tower(False)} or ({can_get_mystery_egg()} or (|Gastly| and |@Badges:8|) and |Mystery Egg|) or (|Infinite Seasonal Events| and {any_kanto_route()})"
+            "requires": "{pokemon_tower(False)} or {can_get_mystery_egg()} or {can_breed(Gastly)} or (|Infinite Seasonal Events| and {any_kanto_route()})"
         },
         {
             "name": "Capture Haunter",
@@ -1379,7 +1393,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Gastly|) or {pokemon_tower(False)} or (|Haunter| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Gastly|) or {pokemon_tower(False)} or {can_breed(Haunter)}"
         },
         {
             "name": "Capture Gengar",
@@ -1388,7 +1402,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Haunter| and {can_get_linking_cord()} or (|Gengar| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Haunter| and {can_get_linking_cord()} or {can_breed(Gengar)}"
         },
         {
             "name": "Capture Onix",
@@ -1397,7 +1411,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{rock_tunnel(True)} or {victory_road()} or (|Onix| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{rock_tunnel(True)} or {victory_road()} or {can_breed(Onix)}"
         },
         {
             "name": "Capture Drowzee",
@@ -1406,7 +1420,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_11()} or {berry_forest(False)} or (|Drowzee| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_11()} or {berry_forest(False)} or {can_breed(Drowzee)}"
         },
         {
             "name": "Capture Hypno",
@@ -1415,7 +1429,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|@Badges:1| and |Drowzee| or {berry_forest(True)} or (|Hypno| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|@Badges:1| and |Drowzee| or {berry_forest(True)} or {can_breed(Hypno)}"
         },
         {
             "name": "Capture Krabby",
@@ -1424,7 +1438,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|Krabby| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed(Krabby)}"
         },
         {
             "name": "Capture Kingler",
@@ -1433,7 +1447,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Krabby|) or (|Kingler| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Krabby|) or {can_breed(Kingler)}"
         },
         {
             "name": "Capture Voltorb",
@@ -1442,7 +1456,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_10()} or {power_plant(False)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Voltorb| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_10()} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed(Voltorb)}"
         },
         {
             "name": "Capture Electrode",
@@ -1451,7 +1465,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or (|Electrode| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or {can_breed(Electrode)}"
         },
         {
             "name": "Capture Exeggcute",
@@ -1460,7 +1474,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{berry_forest(False)} or {safari_zone()} or (|Exeggcute| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{berry_forest(False)} or {safari_zone()} or {can_breed(Exeggcute)}"
         },
         {
             "name": "Capture Exeggutor",
@@ -1469,7 +1483,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Exeggcute| and {can_get_leaf_stone()}) or (|Exeggutor| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|Exeggcute| and {can_get_leaf_stone()}) or {can_breed(Exeggutor)}"
         },
         {
             "name": "Capture Cubone",
@@ -1478,7 +1492,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_tower(False)} or {safari_zone()} or (|Cubone| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{pokemon_tower(False)} or {safari_zone()} or {can_breed(Cubone)}"
         },
         {
             "name": "Capture Marowak",
@@ -1487,7 +1501,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or (|Marowak| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or {can_breed(Marowak)}"
         },
         {
             "name": "Capture Hitmonlee",
@@ -1496,7 +1510,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Hitmonlee| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{can_get_fighting_egg()} or {can_breed(Hitmonlee)}"
         },
         {
             "name": "Capture Hitmonchan",
@@ -1505,7 +1519,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(({can_get_fighting_egg()} or {can_get_mystery_egg()} or (|Hitmonchan| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{can_get_fighting_egg()} or {can_breed(Hitmonchan)}"
         },
         {
             "name": "Capture Lickitung",
@@ -1514,7 +1528,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or (|Lickitung| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Lickitung)}"
         },
         {
             "name": "Capture Koffing",
@@ -1523,7 +1537,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{pokemon_mansion()} or (|Koffing| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{pokemon_mansion(False)} or {can_breed(Koffing)}"
         },
         {
             "name": "Capture Weezing",
@@ -1532,7 +1546,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Koffing|) or {pokemon_mansion(False)} or (|Weezing| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Koffing|) or {pokemon_mansion(False)} or {can_breed(Weezing)}"
         },
         {
             "name": "Capture Rhyhorn",
@@ -1541,7 +1555,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or (|Rhyhorn| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or {can_breed(Rhyhorn)}"
         },
         {
             "name": "Capture Rhydon",
@@ -1550,7 +1564,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:3| and |Rhyhorn|) or (|Rhydon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:3| and |Rhyhorn|) or {can_breed(Rhydon)}"
         },
         {
             "name": "Capture Chansey",
@@ -1559,7 +1573,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or (|Chansey| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or {can_breed(Chansey)}"
         },
         {
             "name": "Capture Tangela",
@@ -1568,7 +1582,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {can_get_mystery_egg()} or {safari_zone()} or |Wailmer Pail| or (|Tangela| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or |Wailmer Pail| or {can_breed(Tangela)}"
         },
         {
             "name": "Capture Kangaskhan",
@@ -1577,7 +1591,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or (|Kangaskhan| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or {can_breed(Kangaskhan)}"
         },
         {
             "name": "Capture Horsea",
@@ -1586,7 +1600,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or (|Horsea| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed(Horsea)}"
         },
         {
             "name": "Capture Seadra",
@@ -1595,7 +1609,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Horsea|) or (|Seadra| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Horsea|) or {can_breed(Seadra)}"
         },
         {
             "name": "Capture Goldeen",
@@ -1604,7 +1618,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or (|Goldeen| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Goldeen)}"
         },
         {
             "name": "Capture Seaking",
@@ -1613,7 +1627,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Goldeen|) or {safari_zone()} or (|Seaking| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Goldeen|) or {safari_zone()} or {can_breed(Seaking)}"
         },
         {
             "name": "Capture Staryu",
@@ -1622,7 +1636,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Staryu| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_get_water_egg()} or {can_breed(Staryu)}"
         },
         {
             "name": "Capture Starmie",
@@ -1631,7 +1645,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Staryu| and {can_get_water_stone()} or (|Starmie| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Staryu| and {can_get_water_stone()} or {can_breed(Starmie)}"
         },
         {
             "name": "Capture Mr. Mime",
@@ -1640,7 +1654,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()}  and |Tutorial Complete|) or (|Mr. Mime| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or {can_breed(Mr. Mime)}"
         },
         {
             "name": "Capture Scyther",
@@ -1649,7 +1663,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or |Wailmer Pail| or (|Scyther| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or |Wailmer Pail| or {can_breed(Scyther)}"
         },
         {
             "name": "Capture Jynx",
@@ -1658,7 +1672,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or (|Jynx| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Jynx)}"
         },
         {
             "name": "Capture Electabuzz",
@@ -1667,7 +1681,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{power_plant(True)} or (({can_get_electric_egg()} or {can_get_mystery_egg()} or (|Electabuzz| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{power_plant(True)} or {can_get_electric_egg()} or {can_breed(Electabuzz)}"
         },
         {
             "name": "Capture Magmar",
@@ -1676,7 +1690,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or (({can_get_fire_egg()} or {can_get_mystery_egg()} or (|Magmar| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or {can_get_fire_egg()} or {can_breed(Magmar)}"
         },
         {
             "name": "Capture Pinsir",
@@ -1685,7 +1699,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or (|Pinsir| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or {can_breed(Pinsir)}"
         },
         {
             "name": "Capture Tauros",
@@ -1694,7 +1708,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or (|Tauros| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{safari_zone()} or {can_breed(Tauros)}"
         },
         {
             "name": "Capture Magikarp",
@@ -1703,7 +1717,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or (|Magikarp| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or {can_breed(Magikarp)}"
         },
         {
             "name": "Capture Gyarados",
@@ -1712,7 +1726,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Magikarp| or (|Gyarados| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Magikarp| or {can_breed(Gyarados)}"
         },
         {
             "name": "Capture Lapras",
@@ -1721,7 +1735,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{silph_co()} or (({can_get_water_egg()} or {can_get_mystery_egg()} or (|Lapras| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "({silph_co()} and {attack_needed(203971)}) or {can_get_water_egg()} or {can_breed(Lapras)}"
         },
         {
             "name": "Capture Ditto",
@@ -1730,7 +1744,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or (|Ditto| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or {can_breed(Ditto)}"
         },
         {
             "name": "Capture Eevee",
@@ -1739,7 +1753,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or (|Eevee| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or {can_breed(Eevee)}"
         },
         {
             "name": "Capture Vaporeon",
@@ -1748,7 +1762,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Eevee| and {can_get_water_stone()} or (|Vaporeon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Eevee| and {can_get_water_stone()} or {can_breed(Vaporeon)}"
         },
         {
             "name": "Capture Jolteon",
@@ -1757,7 +1771,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Eevee| and {can_get_thunder_stone()} or (|Jolteon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Eevee| and {can_get_thunder_stone()} or {can_breed(Jolteon)}"
         },
         {
             "name": "Capture Flareon",
@@ -1766,7 +1780,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "|Eevee| and {can_get_fire_stone()} or (|Flareon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "|Eevee| and {can_get_fire_stone()} or {can_breed(Flareon)}"
         },
         {
             "name": "Capture Porygon",
@@ -1775,7 +1789,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({celadon_city()} and |Tutorial Complete|) or (|Porygon| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Porygon)}"
         },
         {
             "name": "Capture Omanyte",
@@ -1784,7 +1798,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Omanyte| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Omanyte)}"
         },
         {
             "name": "Capture Omastar",
@@ -1793,7 +1807,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or (|Omastar| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)} and |Omastar|) or {can_breed(Omastar)}"
         },
         {
             "name": "Capture Kabuto",
@@ -1802,7 +1816,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Kabuto| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Kabuto)}"
         },
         {
             "name": "Capture Kabutops",
@@ -1811,7 +1825,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and |Enhanced Auto Mine|) or (|Kabutops| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)} and |Kabutops|) or {can_breed(Kabutops)}"
         },
         {
             "name": "Capture Aerodactyl",
@@ -1820,7 +1834,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or (|Aerodactyl| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Aerodactyl)}"
         },
         {
             "name": "Capture Snorlax",
@@ -1829,7 +1843,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "({pokemon_tower()} and {attack_needed(189990)}) or (|Snorlax| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "({pokemon_tower()} and {attack_needed(189990)}) or {can_breed(Snorlax)}"
         },
         {
             "name": "Capture Articuno",
@@ -1838,7 +1852,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{seafoam_islands(True, 129195)} or (|Articuno| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{seafoam_islands(True, 129195)} or {can_breed(Articuno)}"
         },
         {
             "name": "Capture Zapdos",
@@ -1847,7 +1861,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{power_plant(True, 101302)} or (|Zapdos| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{power_plant(True, 101302)} or {can_breed(Zapdos)}"
         },
         {
             "name": "Capture Moltres",
@@ -1856,7 +1870,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{mount_ember(True, 184462)} or (|Moltres| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{mount_ember(True, 184462)} or {can_breed(Moltres)}"
         },
         {
             "name": "Capture Dratini",
@@ -1865,7 +1879,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Dratini| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dratini| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "(|Dratini| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed(Dratini)}"
         },
         {
             "name": "Capture Dragonair",
@@ -1874,7 +1888,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:1| and |Dratini|) or (|Dragonair| and {safari_zone()}) or (({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dragonair| and |@Badges:8|)) and |Mystery Egg|)"
+            "requires": "(|@Badges:1| and |Dratini|) or (|Dragonair| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed(Dragonair)}"
         },
         {
             "name": "Capture Dragonite",
@@ -1883,7 +1897,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|@Badges:4| and |Dragonair|) or ({can_get_dragon_egg()} or {can_get_mystery_egg()} or (|Dragonite| and |@Badges:8|)) and |Mystery Egg|"
+            "requires": "(|@Badges:4| and |Dragonair|) or {can_get_dragon_egg()} or {can_breed(Dragonite)}"
         },
         {
             "name": "Capture Mewtwo",
@@ -1892,16 +1906,2139 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{cerulean_cave()} or (|Mewtwo| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{cerulean_cave()} or {can_breed(Mewtwo)}"
         },
         {
             "name": "Capture Mew",
             "id": 2151,
-            "region": "Kanto Champion",
+            "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Roaming Pokemon"
             ],
-            "requires": "({fuchsia_city()} and |Kanto Elite Champion Badge|) or (|Mew| and |@Badges:8| and |Mystery Egg|)"
+            "requires": "{kanto_roamer()} or {can_breed(Mew)}"
+        },
+        {
+            "name": "Capture Bulbasaur (Clone)",
+            "id": 5101,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "({kanto_roamer()} and {new_island(True, 131500)}) or {can_breed(Bulbasaur (Clone))}"
+        },
+        {
+            "name": "Capture Spooky Bulbasaur",
+            "id": 5102,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Halloween"
+            ],
+            "requires": "({has_script(Infinite Seasonal Events)} and {any_kanto_route()}) or {can_breed(Spooky Bulbasaur)}"
+        },
+        {
+            "name": "Capture Bulbasaur (Rose)",
+            "id": 5103,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Golden Week",
+                "Not Implemented"
+            ],
+            "requires": "({has_script(Infinite Seasonal Events)}) or {can_breed(Bulbasaur (Rose))}"
+        },
+        {
+            "name": "Capture Ivysaur (Clone)",
+            "id": 5201,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "|Bulbasaur (Clone)| or {can_breed(Ivysaur (Clone))}"
+        },
+        {
+            "name": "Capture Spooky Ivysaur",
+            "id": 5202,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Halloween"
+            ],
+            "requires": "|Spooky Bulbasaur| or {can_breed(Spooky Ivysaur)}"
+        },
+        {
+            "name": "Capture Ivysaur (Rose)",
+            "id": 5203,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Golden Week",
+                "Not Implemented"
+            ],
+            "requires": "|Bulbasaur (Rose)| or {can_breed(Ivysaur (Rose))}"
+        },
+        {
+            "name": "Capture Mega Venusaur",
+            "id": 5301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Venusaur",
+            "id": 5302,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Venusaur (Clone)",
+            "id": 5303,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "(|@Badges:2| and |Ivysaur (Clone)|) or {can_breed(Venusaur (Clone))}"
+        },
+        {
+            "name": "Capture Spooky Venusaur",
+            "id": 5304,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Halloween"
+            ],
+            "requires": "(|@Badges:2| and |Spooky Ivysaur|) or {can_breed(Spooky Venusaur)}"
+        },
+        {
+            "name": "Capture Venusaur (Rose)",
+            "id": 5305,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Holiday Events",
+                "Golden Week",
+                "Not Implemented"
+            ],
+            "requires": "(|@Badges:2| and |Ivysaur (Rose)|) or {can_breed(Venusaur (Rose))}"
+        },
+        {
+            "name": "Capture Charmander (Clone)",
+            "id": 5401,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "({kanto_roamer()} and {new_island(True, 131500)}) or {can_breed(Charmander (Clone))}"
+        },
+        {
+            "name": "Capture Charmeleon (Clone)",
+            "id": 5501,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "|Charmander (Clone)| or {can_breed(Charmeleon (Clone))}"
+        },
+        {
+            "name": "Capture Mega Charizard X",
+            "id": 5601,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Charizard Y",
+            "id": 5602,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Charizard",
+            "id": 5603,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Charizard (Clone)",
+            "id": 5604,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "(|@Badges:2| and |Charmeleon (Clone)|) or {can_breed(Charizard (Clone))}"
+        },
+        {
+            "name": "Capture Squirtle (Clone)",
+            "id": 5701,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "({kanto_roamer()} and {new_island(True, 131500)}) or {can_breed(Squirtle (Clone))}"
+        },
+        {
+            "name": "Capture Squad Leader Squirtle",
+            "id": 5702,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Wartortle (Clone)",
+            "id": 5801,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "|Squirtle (Clone)| or {can_breed(Wartortle (Clone))}"
+        },
+        {
+            "name": "Capture Mega Blastoise",
+            "id": 5901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Blastoise",
+            "id": 5902,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Blastoise (Clone)",
+            "id": 5903,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "(|@Badges:2| and |Wartortle (Clone)|) or {can_breed(Blastoise (Clone))}"
+        },
+        {
+            "name": "Capture Pinkan Caterpie",
+            "id": 6001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Butterfree",
+            "id": 6201,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Valencian Butterfree",
+            "id": 6202,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pink Butterfree",
+            "id": 6203,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ash\"s Butterfree",
+            "id": 6204,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Weedle",
+            "id": 6301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Beedrill",
+            "id": 6501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Pidgey",
+            "id": 6601,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Pidgeotto",
+            "id": 6701,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Pidgeot",
+            "id": 6801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Rattata",
+            "id": 6901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Rattata",
+            "id": 6902,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Raticate",
+            "id": 7001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Totem Raticate",
+            "id": 7002,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Valencian Raticate",
+            "id": 7003,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Red Spearow",
+            "id": 7101,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Flying Pikachu"
+            ],
+            "requires": "{kanto_roamer()} or {can_breed(Red Spearow)}"
+        },
+        {
+            "name": "Capture Pinkan Arbok",
+            "id": 7401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Original Cap)",
+            "id": 7501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Hoenn Cap)",
+            "id": 7502,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Sinnoh Cap)",
+            "id": 7503,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Unova Cap)",
+            "id": 7504,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Kalos Cap)",
+            "id": 7505,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Alola Cap)",
+            "id": 7506,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (World Cap)",
+            "id": 7507,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Partner Cap)",
+            "id": 7508,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Pikachu",
+            "id": 7509,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Flying Pikachu",
+            "id": 7510,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Flying Pikachu"
+            ],
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Flying Pikachu)}"
+        },
+        {
+            "name": "Capture Surfing Pikachu",
+            "id": 7511,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Redeemable Code",
+                "Codes"
+            ],
+            "requires": "|Surfing Pikachu Code| or {can_breed(Surfing Pikachu)}"
+        },
+        {
+            "name": "Capture Pikachu (Gengar)",
+            "id": 7512,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Let's Go Pikachu",
+            "id": 7513,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Let's Go"
+            ],
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Let's Go Pikachu)}"
+        },
+        {
+            "name": "Capture Pinkan Pikachu",
+            "id": 7514,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Detective Pikachu",
+            "id": 7515,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Clone)",
+            "id": 7516,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "({new_island(True, 131500)} and {attack_needed(137100)}) or {can_breed(Pikachu (Clone))}"
+        },
+        {
+            "name": "Capture Pikachu (Rock Star)",
+            "id": 7517,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Belle)",
+            "id": 7518,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Pop Star)",
+            "id": 7519,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Ph. D.)",
+            "id": 7520,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Libre)",
+            "id": 7521,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Easter)",
+            "id": 7522,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pikachu (Palaeontologist)",
+            "id": 7523,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon"
+            ],
+            "requires": "({cinnabar_island()} and ((|Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or |Palaeontologist Token|)) or {can_breed(Pikachu (Palaeontologist))}"
+        },
+        {
+            "name": "Capture Alolan Raichu",
+            "id": 7601,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Detective Raichu",
+            "id": 7602,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Sandshrew",
+            "id": 7701,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Sandslash",
+            "id": 7801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Nidoran(F)",
+            "id": 7901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Nidoran(M)",
+            "id": 8201,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Nidoking",
+            "id": 8401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Vulpix",
+            "id": 8701,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Ninetales",
+            "id": 8801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Oddish",
+            "id": 9301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Valencian Vileplume",
+            "id": 9501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Vileplume",
+            "id": 9502,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Valencian Paras",
+            "id": 9601,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Paras",
+            "id": 9602,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Venonat",
+            "id": 9801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Diglett",
+            "id": 10001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Diglett",
+            "id": 10002,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Dugtrio",
+            "id": 10101,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Dugtrio (Punk)",
+            "id": 10102,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Meowth",
+            "id": 10201,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Meowth",
+            "id": 10202,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Meowth",
+            "id": 10203,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Meowth (Phanpy)",
+            "id": 10204,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Persian",
+            "id": 10301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Psyduck (Dark Mage)",
+            "id": 10401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Mankey",
+            "id": 10601,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Primeape",
+            "id": 10701,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hisuian Growlithe",
+            "id": 10801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hisuian Arcanine",
+            "id": 10901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Noble Arcanine",
+            "id": 10902,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Poliwhirl",
+            "id": 11101,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Alakazam",
+            "id": 11501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Machamp",
+            "id": 11801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Bellsprout",
+            "id": 11901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Valencian Weepinbell",
+            "id": 12001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Weepinbell (Fancy)",
+            "id": 12002,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Geodude",
+            "id": 12401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Geodude",
+            "id": 12402,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Graveler",
+            "id": 12501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Golem",
+            "id": 12601,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Ponyta",
+            "id": 12701,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Rapidash",
+            "id": 12801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Slowpoke",
+            "id": 12901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Slowbro",
+            "id": 13001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Slowbro",
+            "id": 13002,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Farfetch\"d",
+            "id": 13301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Dodrio",
+            "id": 13501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Grimer",
+            "id": 13801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Muk",
+            "id": 13901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Gengar",
+            "id": 14401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Gengar",
+            "id": 14402,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gengar (Punk)",
+            "id": 14403,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Crystal Onix",
+            "id": 14501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Onix (Rocker)",
+            "id": 14502,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Kingler",
+            "id": 14901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hisuian Voltorb",
+            "id": 15001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hisuian Electrode",
+            "id": 15101,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Noble Electrode",
+            "id": 15102,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Exeggcute (Single)",
+            "id": 15201,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon"
+            ],
+            "requires": "|Safari Ticket| or {can_breed(Exeggcute (Single))}"
+        },
+        {
+            "name": "Capture Alolan Exeggutor",
+            "id": 15301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Exeggutor",
+            "id": 15302,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Alolan Marowak",
+            "id": 15501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Totem Marowak",
+            "id": 15502,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Weezing",
+            "id": 16001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Weezing",
+            "id": 16002,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Rhyhorn",
+            "id": 16101,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Rhydon",
+            "id": 16201,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Charity Chansey",
+            "id": 16301,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon"
+            ],
+            "requires": "(|Tutorial Complete| and {one_island()}) or {can_breed(Charity Chansey)}"
+        },
+        {
+            "name": "Capture Tangela (Pom-pom)",
+            "id": 16401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Kangaskhan",
+            "id": 16501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Baby Kangaskhan",
+            "id": 16502,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Goldeen (Diva)",
+            "id": 16801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Mr. Mime",
+            "id": 17201,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pinkan Scyther",
+            "id": 17301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Santa Jynx",
+            "id": 17401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "requires": "({has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}) or {can_breed(Santa Jynx)}"
+        },
+        {
+            "name": "Capture Pinkan Electabuzz",
+            "id": 17501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Pinsir",
+            "id": 17701,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Paldean Tauros (Combat)",
+            "id": 17801,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Paldean Tauros (Blaze)",
+            "id": 17802,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Paldean Tauros (Aqua)",
+            "id": 17803,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Skelly",
+            "id": 17901,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Calico (Orange, White)",
+            "id": 17902,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Calico (Orange, White, Black)",
+            "id": 17903,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Calico (White, Orange)",
+            "id": 17904,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Calico (Orange, Gold)",
+            "id": 17905,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Orange Two-Tone",
+            "id": 17906,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Orange Orca",
+            "id": 17907,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Orange Dapples",
+            "id": 17908,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Pink Two-Tone",
+            "id": 17909,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Pink Orca",
+            "id": 17910,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Pink Dapples",
+            "id": 17911,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Grey Bubbles",
+            "id": 17912,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Grey Diamonds",
+            "id": 17913,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Grey Patches",
+            "id": 17914,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Purple Bubbles",
+            "id": 17915,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Purple Diamonds",
+            "id": 17916,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Purple Patches",
+            "id": 17917,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Apricot Tiger",
+            "id": 17918,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Apricot Zebra",
+            "id": 17919,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Apricot Stripes",
+            "id": 17920,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Brown Tiger",
+            "id": 17921,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Brown Zebra",
+            "id": 17922,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Brown Stripes",
+            "id": 17923,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Orange Forehead",
+            "id": 17924,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Orange Mask",
+            "id": 17925,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Black Forehead",
+            "id": 17926,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Black Mask",
+            "id": 17927,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Blue Raindrops",
+            "id": 17928,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Saucy Blue",
+            "id": 17929,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Violet Raindrops",
+            "id": 17930,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp Saucy Violet",
+            "id": 17931,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magikarp (Feebas)",
+            "id": 17932,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Gyarados",
+            "id": 18001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Lapras",
+            "id": 18101,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ditto (Magikarp)",
+            "id": 18201,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Eevee",
+            "id": 18301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Let's Go Eevee",
+            "id": 18302,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Let's Go"
+            ],
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Let's Go Eevee)}"
+        },
+        {
+            "name": "Capture Mega Aerodactyl",
+            "id": 19201,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gigantamax Snorlax",
+            "id": 19301,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Santa Snorlax",
+            "id": 19302,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Roaming Pokemon",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "requires": "({kanto_roamer()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Christmas Snorlax)}"
+        },
+        {
+            "name": "Capture Snorlax (Snowman)",
+            "id": 19303,
+            "region": "Kanto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "requires": "({seafoam_islands()} and {has_script(Infinite Seasonal Events)}) or {can_breed(Christmas Snorlax)}"
+        },
+        {
+            "name": "Capture Galarian Articuno",
+            "id": 19401,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Zapdos",
+            "id": 19501,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Moltres",
+            "id": 19601,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Mewtwo X",
+            "id": 20001,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Mewtwo Y",
+            "id": 20002,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Armored Mewtwo",
+            "id": 20003,
+            "region": "",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "{new_island(True, 131500)} or {can_breed(Armored Mewtwo)}"
         },
         {
             "name": "Travel to Johto [Goal]",
@@ -1910,8 +4047,10 @@
             "category": [
                 "Victory"
             ],
-            "requires": "|@Badges:all| and ({dexsanity_disabled()} or ({dexsanity_enabled()} and |@Pokemon:all|))",
-            "place_item": ["Victory!"]
+            "requires": "|@Badges:all| and ({dexsanity_disabled()} or ({dexsanity_enabled()} and |@Base Pokemon:all|))",
+            "place_item": [
+                "Victory!"
+            ]
         },
         {
             "name": "Travel to Johto - Victory",
@@ -1921,7 +4060,7 @@
             "category": [
                 "Victory"
             ],
-            "requires": "|@Badges:all| and ({dexsanity_disabled()} or ({dexsanity_enabled()} and |@Pokemon:all|))"
+            "requires": "|@Badges:all| and ({dexsanity_disabled()} or ({dexsanity_enabled()} and |@Base Pokemon:all|))"
         }
     ]
 }

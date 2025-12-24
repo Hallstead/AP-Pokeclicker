@@ -84,6 +84,15 @@
             "allow_custom_value": false,
             "group": "Game Options"
         },
+        "include_alt_pokemon": {
+            "type": "Toggle",
+            "description": [
+                "With this enabled, alternate forms of Pokemon will be included in the randomization pool.",
+                "This does nothing if dexsanity is set to none."
+            ],
+            "default": false,
+            "group": "Game Options"
+        },
         "badge_randomization": {
             "type": "Choice",
             "description": [
@@ -136,6 +145,33 @@
                 "With this enabled, The first Enhanced Auto Safari Zone unlocks the Auto Safari Zone,",
                 "and each Enhanced Auto Safari Zone you find after will increase your Animation speed a bit.",
                 "This does nothing if use_scripts is false."
+            ],
+            "default": false,
+            "group": "Game Options"
+        },
+        "include_seasonal_events": {
+            "type": "Toggle",
+            "description": [
+                "Are Seasonal Event locations and pokemon included in the pool?",
+                "This option overrides the use_scripts option."
+            ],
+            "default": true,
+            "group": "Game Options"
+        },
+        "include_codes_as_items": {
+            "type": "Toggle",
+            "description": [
+                "Should the codes be included as items in the item pool?",
+                "With this enabled, the input to enter codes manually will be disabled."
+            ],
+            "default": false,
+            "group": "Game Options"
+        },
+        "include_palaeontologist_token": {
+            "type": "Toggle",
+            "description": [
+                "Should a Palaeontologist Token be included in the item pool?",
+                "With this enabled, a Palaeontologist Token will be available to trade for Pikachu (Palaeontologist) on Cinnabar Island."
             ],
             "default": false,
             "group": "Game Options"
@@ -264,8 +300,7 @@
             "description": [
                 "Sets the assumed clicks per second for the player.",
                 "This affects the logic for attack needed for the player to be expected to defeat dungeons and gym leaders.",
-                "Higher values make the game easier.",
-                "It is recommended to check your clicks per second rate with an online CPS tester."
+                "It is recommended to check your clicks per second rate with an online CPS tester to ensure you can click as fast as your setting."
             ],
             "range_start": 1,
             "default": 5,

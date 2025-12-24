@@ -4229,8 +4229,8 @@ Routes.add(new RegionRoute(
 SeededRand.seed(new Date().getFullYear());
 Routes.getRoutesByRegion(Region.kanto).forEach((route) => {
     route.pokemon.special.push(
-        new SpecialRoutePokemon(['Spooky Bulbasaur'], new SpecialEventRandomRequirement('Halloween!')),
-        new SpecialRoutePokemon(['Gastly'], new SpecialEventRandomRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Spooky Bulbasaur'], new SpecialEventRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Gastly'], new SpecialEventRequirement('Halloween!')),
     );
 });
 Routes.getRoutesByRegion(Region.johto).forEach(route => {

@@ -86,7 +86,7 @@ def cerulean_city(world: World, state: CollectionState, player: int):
 
 def kanto_route_24(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 24."""
-    return kanto_route_4(world, state, player)
+    return kanto_route_4(world, state, player) and attack_needed(world, state, player, 14041)
 
 def kanto_route_25(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 25."""
@@ -121,7 +121,7 @@ def digletts_cave(world: World, state: CollectionState, player: int, complete_du
 def kanto_route_9(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 9."""
     has_cascade_badge = state.count("Cascade Badge", player) > 0
-    return vermilion_city(world, state, player) and has_cascade_badge
+    return vermilion_city(world, state, player) and attack_needed(world, state, player, 50431) and has_cascade_badge
 
 def power_plant(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access the Power Plant."""
@@ -167,7 +167,7 @@ def silph_co(world: World, state: CollectionState, player: int, complete_dungeon
     """Checks if the player can access the Sylph Co. building."""
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
     minion_attack = 10515
-    return saffron_city(world, state, player) and pokemon_tower(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return saffron_city(world, state, player) and pokemon_tower(world, state, player) and attack_needed(world, state, player, 151990) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 def kanto_route_7(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 7."""
@@ -318,43 +318,56 @@ def berry_forest(world: World, state: CollectionState, player: int, complete_dun
     minion_attack = 18120
     return bond_bridge(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
+def new_island(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access New Island dungeon in Kanto."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    has_infinite_seasonal_events = has_script(world, state, player, "Infinite Seasonal Events")
+    minion_attack = 18500
+    return has_dungeon_ticket and has_infinite_seasonal_events and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 # Eggs and Stones
 def can_get_grass_egg(world: World, state: CollectionState, player: int):
     """Checks if the player can obtain a Grass Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
-    return lavender_town(world, state, player) and tutorial_complete
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (lavender_town(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
 
 def can_get_fire_egg(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain a Fire Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
-    return cinnabar_island(world, state, player) and tutorial_complete
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (cinnabar_island(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
 
 def can_get_water_egg(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain a Water Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
-    return cerulean_city(world, state, player) and tutorial_complete
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (cerulean_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
 
 def can_get_electric_egg(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain an Electric Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
-    return vermilion_city(world, state, player) and tutorial_complete
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (vermilion_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
 
 def can_get_fighting_egg(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain a Fighting Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
-    return saffron_city(world, state, player) and tutorial_complete
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (saffron_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
 
 def can_get_dragon_egg(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain a Dragon Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
-    return fuchsia_city(world, state, player) and tutorial_complete
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (fuchsia_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
 
 def can_get_mystery_egg(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain a Mystery Egg."""
     tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
     enabled = world.options.mystery_egg_in_logic.value
-    return enabled and pewter_city(world, state, player) and tutorial_complete
+    return enabled and pewter_city(world, state, player) and tutorial_complete and has_hatchery
 
 def can_get_moon_stone(world: World, state: CollectionState, player: int) -> bool:
     """Checks if the player can obtain a Moon Stone."""
@@ -390,11 +403,11 @@ def can_get_linking_cord(world: World, state: CollectionState, player: int) -> b
 # Questlines
 def started_bills_errand(world: World, state: CollectionState, player: int):
     """Checks if the player has started Bill's Errand questline."""
-    return pokemon_mansion(world, state, player) and {attack_needed(world, state, player, 175290)} # Beat Blaine
+    return pokemon_mansion(world, state, player) and attack_needed(world, state, player, 175290) # Beat Blaine
 
 def completed_bills_errand(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Errand questline."""
-    return started_bills_errand(world, state, player) and one_island(world, state, player) and two_island(world, state, player) and three_island(world, state, player)
+    return started_bills_errand(world, state, player) and one_island(world, state, player) and two_island(world, state, player) and three_island(world, state, player) and berry_forest(world, state, player)
 
 def completed_bills_grandpas_treasure_hunt(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Grandpa's Treasure Hunt questline."""
@@ -421,321 +434,16 @@ def any_kanto_route(world: World, state: CollectionState, player: int):
             kanto_route_22(world, state, player) or kanto_route_23(world, state, player) or kanto_route_24(world, state, player) or
             kanto_route_25(world, state, player))
 
-# def get_catchable_pokemon(world: World, state: CollectionState, player: int) -> int:
-#     """Returns the number of different Pokemon the player can catch in Kanto routes."""
-#     catch_set = set()
-#     has_super_rod = state.count("Super Rod", player) > 0
-#     if kanto_route_1(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Rattata']))
-#     if kanto_route_22(world, state, player):
-#         catch_set.union(set(['Rattata', 'Spearow', 'Mankey']))
-#         if has_super_rod:
-#             catch_set.union(set(['Psyduck', 'Poliwag', 'Slowpoke', 'Goldeen', 'Magikarp']))
-#     if kanto_route_2(world, state, player):
-#         catch_set.union(set(['Caterpie', 'Weedle', 'Pidgey', 'Rattata']))
-#     if kanto_route_3(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Spearow', 'Nidoran(F)', 'Nidoran(M)', 'Jigglypuff', 'Mankey']))
-#     if kanto_route_4(world, state, player):
-#         catch_set.union(set(['Rattata', 'Spearow', 'Ekans', 'Sandshrew', 'Mankey']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Magikarp']))
-#     if kanto_route_24(world, state, player):
-#         catch_set.union(set(['Caterpie', 'Metapod', 'Weedle', 'Kakuna', 'Pidgey', 'Oddish', 'Abra', 'Bellsprout']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Magikarp']))
-#     if kanto_route_25(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Rattata', 'Spearow', 'Ekans', 'Sandshrew', 'Oddish', 'Abra', 'Bellsprout']))
-#         if has_super_rod:
-#             catch_set.union(set(['Psyduck', 'Poliwag', 'Tentacool', 'Slowpoke', 'Goldeen', 'Magikarp']))
-#     if kanto_route_5(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Meowth', 'Oddish', 'Bellsprout']))
-#     if kanto_route_6(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Meowth', 'Oddish', 'Bellsprout']))
-#         if has_super_rod:
-#             catch_set.union(set(['Psyduck', 'Poliwag', 'Slowpoke', 'Goldeen', 'Magikarp']))
-#     if kanto_route_11(world, state, player):
-#         catch_set.union(set(['Spearow', 'Ekans', 'Sandshrew', 'Drowzee']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Magikarp']))
-#     if kanto_route_9(world, state, player):
-#         catch_set.union(set(['Rattata', 'Spearow', 'Ekans', 'Sandshrew']))
-#     if kanto_route_10(world, state, player):
-#         catch_set.union(set(['Spearow', 'Ekans', 'Sandshrew', 'Voltorb']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Magikarp']))
-#     if kanto_route_8(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Ekans', 'Sandshrew', 'Vulpix', 'Meowth', 'Growlithe']))
-#     if kanto_route_7(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Vulpix', 'Oddish', 'Meowth', 'Growlithe', 'Bellsprout']))
-#     if kanto_route_12(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Farfetch\'d']))
-#         if has_super_rod:
-#             catch_set.union(set(['Poliwag', 'Slowpoke', 'Slowbro', 'Goldeen', 'Magikarp']))
-#     if kanto_route_13(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Farfetch\'d', 'Ditto']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Magikarp']))
-#     if kanto_route_14(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Ditto']))
-#     if kanto_route_15(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Bellsprout', 'Weepinbell', 'Ditto']))
-#     if kanto_route_16(world, state, player):
-#         catch_set.union(set(['Rattata', 'Raticate', 'Spearow', 'Doduo']))
-#     if kanto_route_17(world, state, player):
-#         catch_set.union(set(['Rattata', 'Raticate', 'Spearow', 'Fearow', 'Doduo']))
-#     if kanto_route_18(world, state, player):
-#         catch_set.union(set(['Rattata', 'Raticate', 'Spearow', 'Fearow', 'Doduo']))
-#     if kanto_route_19(world, state, player):
-#         catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Magikarp']))
-#     if kanto_route_20(world, state, player):
-#         catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Shellder', 'Staryu', 'Magikarp']))
-#     if kanto_route_21(world, state, player):
-#         catch_set.union(set(['Tangela']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Krabby', 'Horsea', 'Shellder', 'Staryu', 'Magikarp']))
-    
-#     if len(catch_set) > 0:
-#         catch_set.union(set(['Mew'])) # Mew is available at any Kanto Route
-    
-#     if kanto_route_23(world, state, player):
-#         catch_set.union(set(['Spearow', 'Fearow', 'Ekans', 'Arbok', 'Sandshrew', 'Sandslash', 'Mankey', 'Primeape']))
-#         if has_super_rod:
-#             catch_set.union(set(['Psyduck', 'Poliwag', 'Slowpoke', 'Goldeen', 'Magikarp']))
-#     if treasure_beach(world, state, player):
-#         catch_set.union(set(['Spearow', 'Fearow', 'Meowth', 'Persian', 'Psyduck', 'Slowpoke', 'Tangela']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Tentacruel', 'Krabby', 'Horsea', 'Magikarp']))
-#     if kindle_road(world, state, player):
-#         catch_set.union(set(['Spearow', 'Fearow', 'Meowth', 'Persian', 'Psyduck', 'Geodude', 'Ponyta', 'Rapidash', 'Slowpoke']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Tentacruel', 'Krabby', 'Horsea', 'Magikarp']))
-#     if cape_brink(world, state, player):
-#         catch_set.union(set(['Spearow', 'Fearow', 'Oddish', 'Gloom', 'Meowth', 'Persian', 'Psyduck', 'Golduck', 'Bellsprout', 'Weepinbell', 'Slowpoke', 'Slowbro']))
-#         if has_super_rod:
-#             catch_set.union(set(['Poliwag', 'Goldeen', 'Magikarp']))
-#     if bond_bridge(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Meowth', 'Persian', 'Psyduck', 'Bellsprout', 'Weepinbell', 'Slowpoke']))
-#         if has_super_rod:
-#             catch_set.union(set(['Tentacool', 'Tentacruel', 'Krabby', 'Horsea', 'Magikarp'])) 
-
-#     if viridian_forest(world, state, player):
-#         catch_set.union(set(['Pikachu', 'Caterpie', 'Metapod', 'Weedle', 'Kakuna']))
-#     if mt_moon(world, state, player):
-#         catch_set.union(set(['Clefairy', 'Zubat', 'Paras', 'Geodude']))
-#     if digletts_cave(world, state, player):
-#         catch_set.union(set(['Diglett', 'Dugtrio']))
-#     if rock_tunnel(world, state, player):
-#         catch_set.union(set(['Zubat', 'Mankey', 'Geodude', 'Machop', 'Onix']))
-#     if pokemon_tower(world, state, player):
-#         catch_set.union(set(['Gastly', 'Haunter', 'Cubone', 'Marowak']))
-#     if power_plant(world, state, player):
-#         catch_set.union(set(['Pikachu', 'Magnemite', 'Magneton', 'Voltorb', 'Electrode', 'Electabuzz', 'Zapdos']))
-#     if seafoam_islands(world, state, player):
-#         catch_set.union(set(['Zubat', 'Golbat', 'Psyduck', 'Golduck', 'Slowpoke', 'Slowbro', 'Krabby', 'Horsea', 'Magikarp', 'Seel', 'Articuno']))
-#     if pokemon_mansion(world, state, player):
-#         catch_set.union(set(['Rattata', 'Raticate', 'Vulpix', 'Growlithe', 'Grimer', 'Muk', 'Koffing', 'Weezing', 'Ditto', 'Magmar']))
-#     if mount_ember(world, state, player):
-#         catch_set.union(set(['Spearow', 'Fearow', 'Machop', 'Machoke', 'Geodude', 'Graveler', 'Ponyta', 'Rapidash', 'Magmar', 'Moltres']))
-#     if berry_forest(world, state, player):
-#         catch_set.union(set(['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Psyduck', 'Golduck', 'Poliwag', 'Bellsprout', 'Weepinbell', 'Slowpoke', 'Slowbro', 'Drowzee', 'Exeggcute', 'Goldeen', 'Magikarp']))
-#     if victory_road(world, state, player):
-#         catch_set.union(set(['Arbok', 'Sandslash', 'Zubat', 'Golbat', 'Primeape', 'Machop', 'Geodude', 'Onix', 'Marowak', 'Machoke']))
-#     if cerulean_cave(world, state, player):
-#         catch_set.union(set(['Golbat', 'Parasect', 'Psyduck', 'Golduck', 'Primeape', 'Poliwag', 'Machoke', 'Slowpoke', 'Slowbro', 'Magneton', 'Electrode', 'Goldeen', 'Magikarp', 'Ditto', 'Kadabra', 'MewTwo']))
-    
-#     if safari_zone(world, state, player):
-#         catch_set.union(set(['Nidoran(F)', 'Nidorina', 'Nidoran(M)', 'Nidorino', 'Exeggcute', 'Paras', 'Parasect', 'Rhyhorn', 'Chansey', 'Scyther', 'Pinsir', 'Kangaskhan', 'Tauros', 'Cubone', 'Marowak', 'Tangela',
-#                              'Magikarp', 'Psyduck', 'Slowpoke', 'Poliwag', 'Goldeen', 'Seaking']))
-    
-#     mystery = can_get_mystery_egg(world, state, player)
-#     if can_get_fire_egg(world, state, player) or mystery:
-#         catch_set.union(set(['Charmander', 'Vulpix', 'Growlithe', 'Magmar']))
-#     if can_get_water_egg(world, state, player) or mystery:
-#         catch_set.union(set(['Squirtle', 'Lapras', 'Staryu', 'Slowpoke']))
-#     if can_get_grass_egg(world, state, player) or mystery:
-#         catch_set.union(set(['Bulbasaur', 'Oddish', 'Tangela', 'Paras']))
-#     if can_get_electric_egg(world, state, player) or mystery:
-#         catch_set.union(set(['Magnemite', 'Pikachu', 'Voltorb', 'Electabuzz']))
-#     if can_get_fighting_egg(world, state, player) or mystery:
-#         catch_set.union(set(['Hitmonlee', 'Hitmonchan', 'Machop', 'Mankey']))
-#     if can_get_dragon_egg(world, state, player) or mystery:
-#         catch_set.union(set(['Dratini', 'Dragonair', 'Dragonite']))
-#     if mystery:
-#         catch_set.union(set(['Gastly', 'Jigglypuff', 'Geodude', 'Doduo']))
-
-#     num_badges = 0
-#     badge_list = ["Boulder Badge", "Cascade Badge", "Thunder Badge", "Rainbow Badge", "Soul Badge", "Marsh Badge", "Volcano Badge", "Earth Badge", "Progressive Elite Badge"]
-#     for badge in badge_list:
-#         num_badges += state.count(badge, player)
-#     if num_badges >= 0:
-#         if "Bulbasaur" in catch_set:
-#             catch_set.add('Ivysaur')
-#         if "Charmander" in catch_set:
-#             catch_set.add('Charmeleon')
-#         if "Squirtle" in catch_set:
-#             catch_set.add('Wartortle')
-#         if "Caterpie" in catch_set:
-#             catch_set.union(set(['Metapod', 'Butterfree']))
-#         if "Weedle" in catch_set:
-#             catch_set.union(set(['Kakuna', 'Beedrill']))
-#         if "Pidgey" in catch_set:
-#             catch_set.add('Pidgeotto')
-#         if "Rattata" in catch_set:
-#             catch_set.add('Raticate')
-#         if "Spearow" in catch_set:
-#             catch_set.add('Fearow')
-#         if "Nidoran(F)" in catch_set:
-#             catch_set.add('Nidorina')
-#         if "Nidoran(M)" in catch_set:
-#             catch_set.add('Nidorino')
-#         if "Abra" in catch_set:
-#             catch_set.add('Kadabra')
-#         if "Magikarp" in catch_set:
-#             catch_set.add('Gyarados')
-#     if num_badges >= 1:
-#         if "Ekans" in catch_set:
-#             catch_set.add('Arbok')
-#         if "Sandshrew" in catch_set:
-#             catch_set.add('Sandslash')
-#         if "Zubat" in catch_set:
-#             catch_set.add('Golbat')
-#         if "Oddish" in catch_set:
-#             catch_set.add('Gloom')
-#         if "Paras" in catch_set:
-#             catch_set.add('Parasect')
-#         if "Diglett" in catch_set:
-#             catch_set.add('Dugtrio')
-#         if "Meowth" in catch_set:
-#             catch_set.add('Persian')
-#         if "Mankey" in catch_set:
-#             catch_set.add('Primeape')
-#         if "Poliwag" in catch_set:
-#             catch_set.add('Poliwhirl')
-#         if "Machop" in catch_set:
-#             catch_set.add('Machoke')
-#         if "Bellsprout" in catch_set:
-#             catch_set.add('Weepinbell')
-#         if "Tentacool" in catch_set:
-#             catch_set.add('Tentacruel')
-#         if "Geodude" in catch_set:
-#             catch_set.add('Graveler')
-#         if "Magnemite" in catch_set:
-#             catch_set.add('Magneton')
-#         if "Gastly" in catch_set:
-#             catch_set.add('Haunter')
-#         if "Drowzee" in catch_set:
-#             catch_set.add('Hypno')
-#         if "Krabby" in catch_set:
-#             catch_set.add('Kingler')
-#         if "Voltorb" in catch_set:
-#             catch_set.add('Electrode')
-#         if "Cubone" in catch_set:
-#             catch_set.add('Marowak')
-#         if "Dratini" in catch_set:
-#             catch_set.add('Dragonair')
-#     if num_badges >= 2:
-#         if "Ivysaur" in catch_set:
-#             catch_set.add('Venusaur')
-#         if "Charmeleon" in catch_set:
-#             catch_set.add('Charizard')
-#         if "Wartortle" in catch_set:
-#             catch_set.add('Blastoise')
-#         if "Pidgeotto" in catch_set:
-#             catch_set.add('Pidgeot')
-#         if "Venonat" in catch_set:
-#             catch_set.add('Venomoth')
-#         if "Psyduck" in catch_set:
-#             catch_set.add('Golduck')
-#         if "Ponyta" in catch_set:
-#             catch_set.add('Rapidash')
-#         if "Slowpoke" in catch_set:
-#             catch_set.add('Slowbro')
-#         if "Doduo" in catch_set:
-#             catch_set.add('Dodrio')
-#         if "Seel" in catch_set:
-#             catch_set.add('Dewgong')
-#         if "Grimer" in catch_set:
-#             catch_set.add('Muk')
-#         if "Koffing" in catch_set:
-#             catch_set.add('Weezing')
-#         if "Horsea" in catch_set:
-#             catch_set.add('Seadra')
-#         if "Goldeen" in catch_set:
-#             catch_set.add('Seaking')
-#         if "Omanyte" in catch_set:
-#             catch_set.add('Omastar')
-#         if "Kabuto" in catch_set:
-#             catch_set.add('Kabutops')
-#     if num_badges >= 3:
-#         if "Rhyhorn" in catch_set:
-#             catch_set.add('Rhydon')
-#     if num_badges >= 4:
-#         if "Dragonair" in catch_set:
-#             catch_set.add('Dragonite')
-    
-#     if can_get_leaf_stone(world, state, player):
-#         if "Gloom" in catch_set:
-#             catch_set.add('Vileplume')
-#         if "Weepinbell" in catch_set:
-#             catch_set.add('Victreebel')
-#         if "Exeggcute" in catch_set:
-#             catch_set.add('Exeggutor')
-#     if can_get_fire_stone(world, state, player):
-#         if "Vulpix" in catch_set:
-#             catch_set.add('Ninetales')
-#         if "Growlithe" in catch_set:
-#             catch_set.add('Arcanine')
-#         if "Eevee" in catch_set:
-#             catch_set.add('Flareon')
-#     if can_get_water_stone(world, state, player):
-#         if "Poliwhirl" in catch_set:
-#             catch_set.add('Poliwrath')
-#         if "Shellder" in catch_set:
-#             catch_set.add('Cloyster')
-#         if "Staryu" in catch_set:
-#             catch_set.add('Starmie')
-#         if "Eevee" in catch_set:
-#             catch_set.add('Vaporeon')
-#     if can_get_thunder_stone(world, state, player):
-#         if "Pikachu" in catch_set:
-#             catch_set.add('Raichu')
-#         if "Eevee" in catch_set:
-#             catch_set.add('Jolteon')
-#     if can_get_moon_stone(world, state, player):
-#         if "Nidorina" in catch_set:
-#             catch_set.add('Nidoqueen')
-#         if "Nidorino" in catch_set:
-#             catch_set.add('Nidoking')
-#         if "Clefairy" in catch_set:
-#             catch_set.add('Clefable')
-#         if "Jigglypuff" in catch_set:
-#             catch_set.add('Wigglytuff')
-#     if can_get_linking_cord(world, state, player):
-#         if "Kadabra" in catch_set:
-#             catch_set.add('Alakazam') 
-#         if "Machoke" in catch_set:
-#             catch_set.add('Machamp')
-#         if "Graveler" in catch_set:
-#             catch_set.add('Golem')
-#         if "Haunter" in catch_set:
-#             catch_set.add('Gengar')
-
-#     return catch_set
-
 def can_catch_x_pokemon(world: World, state: CollectionState, player: int, x: int):
     """Checks if the player can obtain at least X pokemon."""
     return state.count_group("Pokemon", player) >= int(x)
-    return len(get_catchable_pokemon(world, state, player)) >= int(x)
 
 def get_party_attack(world: World, state: CollectionState, player: int, num_pokemon: int) -> set:
     """Returns the attack value of the player's expected current party."""
     num_badges = 0
-    badge_list = ["Boulder Badge", "Cascade Badge", "Thunder Badge", "Rainbow Badge", "Soul Badge", "Marsh Badge", "Volcano Badge", "Earth Badge", "Progressive Elite Badge"]
+    badge_list = ["Boulder Badge", "Cascade Badge", "Thunder Badge", "Rainbow Badge", "Soul Badge", "Marsh Badge", "Volcano Badge", "Earth Badge", "Kanto Elite Lorelei Badge", "Kanto Elite Bruno Badge", "Kanto Elite Agatha Badge", "Kanto Elite Lance Badge", "Kanto Elite Champion Badge"]
     for badge in badge_list:
         num_badges += state.count(badge, player)
-    # total_attack = 0
-    # for p in ["Bulbasaur", "Ivysaur", "Venusaur"]:
-    #     total_attack += pokemon[p]["base"]["attack"]
 
     avgBaseAttack = 70 + 4.2 * num_badges
     avgLevel = min(100, 20 + 10 * num_badges)
@@ -743,12 +451,21 @@ def get_party_attack(world: World, state: CollectionState, player: int, num_poke
 
 def get_click_attack(world: World, state: CollectionState, player: int, num_pokemon: int) -> set:
     """Returns the attack value of the player's expected clicker attack."""
-    return (1 + num_pokemon) ** 1.4
+    has_shiny_code = state.count("Shiny-Charmer Code", player) > 0
+    has_rocky_helmet = state.count("Rocky Helmet", player) > 0
+    if has_shiny_code:
+        num_pokemon += 1
+    attack = (1 + num_pokemon) ** 1.4
+    if has_rocky_helmet:
+        attack *= 1.4
+    return attack
     
 def attack_needed(world: World, state: CollectionState, player: int, attack: int):
     """Checks if the player's expected current party attack is at least X."""
     num_pokemon = state.count_group("Pokemon", player) #len(get_catchable_pokemon(world, state, player))
     auto_clicker_count = state.count("Enhanced Auto Clicker", player)
+    if world.options.use_scripts.value and not world.options.include_scripts_as_items.value:
+        auto_clicker_count = 1
     progressive_auto_clicker_count = state.count("Enhanced Auto Clicker (Progressive Clicks/Second)", player)
     if progressive_auto_clicker_count > 0:
         auto_clicker_count = 0
@@ -779,6 +496,13 @@ def dexsanity_disabled(world: World, state: CollectionState, player: int):
     """Checks if Dexsanity is disabled."""
     return world.options.dexsanity.value == 0
 
+def can_breed(world: World, state: CollectionState, player: int, pokemon: str):
+    """Checks if the pokemon has been received and can be hatched."""
+    has_pokemon = state.count(pokemon, player) > 0
+    has_8_badges = state.count_group("Badges", player) >= 8
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return has_pokemon and has_8_badges and has_hatchery
+
 def starter(world: World, state: CollectionState, player: int):
     """Checks if the starters are in logic."""
     return world.options.starter_logic.value
@@ -787,3 +511,15 @@ def kanto_starter(world: World, state: CollectionState, player: int):
     """Checks if the Kanto starters are in logic."""
     # To be implemented later
     return starter(world, state, player)
+
+def kanto_roamer(world: World, state: CollectionState, player: int):
+    """Checks if the Kanto roamers are in logic."""
+    has_champion_badge = state.count("Kanto Elite Champion Badge", player) > 0
+    return has_champion_badge and fuchsia_city(world, state, player)
+
+def has_script(world: World, state: CollectionState, player: int, script_name: str):
+    """Checks if the player needs a specific script."""
+    if not world.options.use_scripts.value or not world.options.include_scripts_as_items.value:
+        return True
+    # script_item = get_items_with_value(world, f"Script: {script_name}")
+    return state.count(script_name, player) > 0

@@ -91,6 +91,17 @@ def before_create_items_all(item_config: dict[str, int|dict], world: World, mult
 
 # The item pool before starting items are processed, in case you want to see the raw item pool at that stage
 def before_create_items_starting(item_pool: list, world: World, multiworld: MultiWorld, player: int) -> list:
+    if world.options.use_scripts.value == 1 and world.options.include_scripts_as_items.value == 0:
+        # Remove all scripts from the item pool and add them to starting items.
+        script_list = []
+        for item in item_table:
+            if item.get("category") and "Scripts" in item["category"]:
+                script_list.append(item["name"])
+        scripts_to_remove = [item for item in item_pool if item.name in script_list]
+        for item in scripts_to_remove:
+            item_pool.remove(item)
+            multiworld.push_precollected(item)
+    
     return item_pool
 
 # The item pool after starting items are processed but before filler is added, in case you want to see the raw item pool at that stage
@@ -103,14 +114,12 @@ def before_create_items_filler(item_pool: list, world: World, multiworld: MultiW
     # Because multiple copies of an item can exist, you need to add an item name
     # to the list multiple times if you want to remove multiple copies of it.
     if world.options.dexsanity.value == 0:
-        print("\nNot Dexsanity\n")
-        for key, _ in enumerate(location_table):
-            if "Pokemon Locations" in location_table[key]["category"]:
-                pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == location_table[key]["name"])
-                pokemon_item = next(i for i in item_pool if i.name == pokemon_location.name.replace("Capture ", ""))
-                pokemon_item.id = None
+        for location in multiworld.get_unfilled_locations(player=player):
+            if "Pokemon Locations" in location_name_to_location[location.name]["category"]:
+                #pokemon_location = next(l for l in multiworld.get_unfilled_locations(player=player) if l.name == location_table[key]["name"])
+                pokemon_item = next(i for i in item_pool if i.name == location.name.replace("Capture ", ""))
                 item_pool.remove(pokemon_item)
-                pokemon_location.place_locked_item(pokemon_item)
+                location.place_locked_item(pokemon_item)
 
     for itemName in itemNamesToRemove:
         item = next(i for i in item_pool if i.name == itemName)
@@ -165,7 +174,7 @@ def after_create_item(item: ManualItem, world: World, multiworld: MultiWorld, pl
 # This method is run towards the end of pre-generation, before the place_item options have been handled and before AP generation occurs
 def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
 
-    if world.options.dexsanity.value == 2:
+    if world.options.dexsanity.value == 2: # Shuffled
         for location in location_name_to_location.keys():
             if "Pokemon Locations" in location_name_to_location[location]["category"]:
                 world.location_name_to_location[location]["place_item_category"] = ["Pokemon"]

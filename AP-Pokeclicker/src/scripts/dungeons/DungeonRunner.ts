@@ -337,6 +337,12 @@ class DungeonRunner {
             if (!App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex(DungeonRunner.dungeon.name)]()) {
                 DungeonRunner.dungeon.rewardFunction();
             }
+            // send location checks if any
+            if (DungeonRunner.dungeon.locationIds.length > 0) {
+                for (const locationId of DungeonRunner.dungeon.locationIds) {
+                    (window as any).sendLocationCheck(locationId);
+                }
+            }
             if (DungeonGuides.hired()) {
                 GameHelper.incrementObservable(App.game.statistics.dungeonGuideClears[DungeonGuides.hired().index]);
             }

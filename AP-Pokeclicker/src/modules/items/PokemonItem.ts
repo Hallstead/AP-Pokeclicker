@@ -24,12 +24,10 @@ export default class PokemonItem extends PokerusIndicatingItem {
         displayName: string = undefined,
         options?: ShopOptions,
         name: string = pokemon,
-        locationId: number = null,
     ) {
         super(name, basePrice, currency, options, undefined, `Add ${pokemon} to your party.`, 'pokemonItem');
         this.type = pokemon;
         this._translatedOrDisplayName = ko.pureComputed(() => displayName ?? PokemonHelper.displayName(pokemon)());
-        this.locationId = locationId;
     }
 
     gain(amt: number) {
@@ -109,7 +107,7 @@ export default class PokemonItem extends PokerusIndicatingItem {
         // }
         return this._translatedOrDisplayName();
     }
-    
+
     set displayName(value: string) {
         this._translatedOrDisplayName = ko.pureComputed(() => value);
     }
