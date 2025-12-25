@@ -523,7 +523,7 @@ class AchievementHandler {
 
                 if (GymList[gym]?.flags?.achievement) {
                     // Visibility gate: hide Hallstead's Yacht achievements until at least one clear
-                    const visibilityGate = gym === "Hallstead's Yacht"
+                    const visibilityGate = gym === 'Hallstead\'s Yacht'
                         ? () => App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym)]() > 0
                         : null;
                     AchievementHandler.addAchievement(
