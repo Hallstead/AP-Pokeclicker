@@ -42,12 +42,15 @@ def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int)
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     # if not is_option_enabled(multiworld, player, "dexsanity"): 
-    for location in world.location_name_to_location.keys():
-        if world.options.dexsanity.value == 0:
-            if "Pokemon Locations" in location_name_to_location[location]["category"]:
-                world.location_name_to_id[location] = None
-        if "(Event)" in location:
-            world.location_name_to_id[location] = None
+    # for location in world.location_name_to_location.keys():
+    #     if world.options.dexsanity.value == 0:
+    #         if "Pokemon Locations" in location_name_to_location[location]["category"]:
+    #             world.location_name_to_id[location] = None
+    #             del world.location_name_to_id[location]
+    #     if "(Event)" in location:
+    #         world.location_name_to_id[location] = None
+    #         del world.location_name_to_id[location]
+    pass
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
