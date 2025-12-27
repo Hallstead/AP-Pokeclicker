@@ -11,6 +11,7 @@
 (function () {
     'use strict';
 
+    let mineLevel = 0;
     let mineState = JSON.parse(localStorage.getItem('autoMineState') || 'false');
     let autoMineTimer;
 
@@ -52,12 +53,12 @@
             return false;
         }
         function applyAutoMineAccessFromFlag(force) {
-            const enabled = !!getAPEnhancedAutoMineFlag() && App.game.underground.canAccess();
+            const enabled = !!getAPEnhancedAutoMineFlag();
             const btn = document.getElementById('auto-mine-start');
-            if (btn) {
+            if (btn && !enabled) {
                 btn.style.display = enabled ? '' : 'none';
             }
-            if (!enabled) {
+            if (!enabled || !App.game.underground.canAccess()) {
                 // Ensure the feature is OFF when disabled
                 mineState = false;
                 try { clearInterval(autoMineTimer); } catch (_) { }
@@ -98,7 +99,7 @@
     function toggleAutoMine(event) {
         // Guard: don't allow enabling if AP flag is false
         const flags = (window.APFlags ?? {});
-        const enabled = (typeof flags.get === 'function') ? !!flags.get('enhancedAutoMine') : !!flags.enhancedAutoMine;
+        const enabled = !!flags.get('enhancedAutoMine');
         const el = event.target;
         if (!enabled) {
             // Force OFF state and UI (do not change persisted preference)
@@ -117,12 +118,21 @@
         mineState ? setAutoMineInterval() : clearInterval(autoMineTimer);
     }
 
+
     function setAutoMineInterval() {
         clearInterval(autoMineTimer);
-        autoMineTimer = setInterval(doAutoMine, 1000);
+        let interval = (20 - App.game.underground.undergroundLevel) * 50;
+        if (interval < 100) {
+            interval = 100;
+        }
+        autoMineTimer = setInterval(doAutoMine, interval);
     }
 
     function doAutoMine() {
+        if (App.game.underground.undergroundLevel > mineLevel) {
+            mineLevel = App.game.underground.undergroundLevel;
+            setAutoMineInterval()
+        }
         const mine = App.game.underground.mine;
         const tools = App.game.underground.tools;
 
