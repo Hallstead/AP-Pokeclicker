@@ -409,17 +409,53 @@ def completed_bills_errand(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Errand questline."""
     return started_bills_errand(world, state, player) and one_island(world, state, player) and two_island(world, state, player) and three_island(world, state, player) and berry_forest(world, state, player)
 
+def bills_grandpas_treasure_hunt1(world: World, state: CollectionState, player: int):
+    """Checks if the first step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return pallet_town(world, state, player) and bills_house(world, state, player)
+
+def can_catch_jigglypuff(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Jigglypuff."""
+    return kanto_route_3(world, state, player)
+
+def bills_grandpas_treasure_hunt2(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt1(world, state, player) and can_catch_jigglypuff(world, state, player)
+
+def can_catch_oddish(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Oddish."""
+    return kanto_route_24(world, state, player) or kanto_route_25(world, state, player) or kanto_route_5(world, state, player) or kanto_route_6(world, state, player) or kanto_route_8(world, state, player) or kanto_route_7(world, state, player) or kanto_route_12(world, state, player) or kanto_route_13(world, state, player) or kanto_route_14(world, state, player) or kanto_route_15(world, state, player) or cape_brink(world, state, player) or bond_bridge(world, state, player) or berry_forest(world, state, player, False) # Oddish
+
+def bills_grandpas_treasure_hunt3(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt2(world, state, player) and can_catch_oddish(world, state, player)
+
+def can_catch_staryu(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Staryu."""
+    return kanto_route_20(world, state, player) or kanto_route_21(world, state, player)
+
+def bills_grandpas_treasure_hunt4(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt3(world, state, player) and can_catch_staryu(world, state, player)
+
+def can_catch_growlithe(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Growlithe."""
+    return kanto_route_8(world, state, player) or kanto_route_7(world, state, player) or pokemon_mansion(world, state, player, False)
+
+def bills_grandpas_treasure_hunt5(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt4(world, state, player) and can_catch_growlithe(world, state, player)
+
+def can_catch_pikachu(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Pikachu."""
+    return viridian_forest(world, state, player, True) or power_plant(world, state, player, False)
+
+def bills_grandpas_treasure_hunt6(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt5(world, state, player) and can_catch_pikachu(world, state, player)
+
 def completed_bills_grandpas_treasure_hunt(world: World, state: CollectionState, player: int):
     """Checks if the player has completed Bill's Grandpa's Treasure Hunt questline."""
-    # Must catch Jigglypuff, Oddish, Staryu, Growlithe, and Pikachu. Hatching egg does not count.
-    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
-    return ((pallet_town(world, state, player)) and
-        (kanto_route_3(world, state, player)) and # Jigglypuff 
-        (kanto_route_24(world, state, player) or kanto_route_25(world, state, player) or kanto_route_5(world, state, player) or kanto_route_6(world, state, player) or kanto_route_8(world, state, player) or kanto_route_7(world, state, player) or kanto_route_12(world, state, player) or kanto_route_13(world, state, player) or kanto_route_14(world, state, player) or kanto_route_15(world, state, player) or cape_brink(world, state, player) or bond_bridge(world, state, player) or (berry_forest(world, state, player) and has_dungeon_ticket)) and # Oddish
-        (kanto_route_20(world, state, player) or kanto_route_21(world, state, player)) and # Staryu
-        (kanto_route_8(world, state, player) or kanto_route_7(world, state, player) or pokemon_mansion(world, state, player, False)) and #Growlithe
-        (viridian_forest(world, state, player, True) or power_plant(world, state, player, False))) # Pikachu
-
+    return bills_grandpas_treasure_hunt6(world, state, player) and attack_needed(world, state, player, 525000)
 
 # Special Conditions
 def any_kanto_route(world: World, state: CollectionState, player: int):
