@@ -4262,7 +4262,7 @@ const santaJynxReq = new OneFromManyRequirement([
         new TemporaryBattleRequirement('Santa Jynx 3'),
     ]),
     new MultiRequirement([
-        new ItemOwnedRequirement('Christmas_present', 150, AchievementOption.less),
+        new ItemOwnedRequirement('Christmas_present', 49),
         new TemporaryBattleRequirement('Santa Jynx 4'),
     ]),
 ]);

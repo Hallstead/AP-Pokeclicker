@@ -559,6 +559,79 @@
             "requires": "{three_island()} and {attack_needed(443328)}"
         },
         {
+            "name": "Ash Ketchum New Island",
+            "id": 714,
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "requires": "{new_island(True, 131500)} and {attack_needed(454992)}"
+        },
+        {
+            "name": "Bill's Grandpa",
+            "id": 715,
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "{completed_bills_grandpas_treasure_hunt()}"
+        },
+        {
+            "name": "Santa Jynx Band 1",
+            "id": 716,
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "requires": "{has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)}"
+        },
+        {
+            "name": "Santa Jynx Band 2",
+            "id": 717,
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "requires": "{has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}"
+        },
+        {
+            "name": "Santa Jynx Band 3",
+            "id": 718,
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "requires": "{has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}"
+        },
+        {
+            "name": "Santa Jynx Band 4",
+            "id": 719,
+            "region": "Kanto",
+            "category": [
+                "Temporary Battles",
+                "Seasonal Events",
+                "Christmas"
+            ],
+            "requires": "{has_script(Infinite Seasonal Events)} and {bills_house()} and {attack_needed(10048)} and {any_kanto_route()}"
+        },
+        {
+            "name": "Ash Ketchum Kanto",
+            "id": 720,
+            "region": "Kanto Champion",
+            "category": [
+                "Temporary Battles"
+            ],
+            "requires": "{attack_needed(737710)}"
+        },
+        {
             "name": "Capture Bulbasaur",
             "id": 2001,
             "region": "Kanto Pokemon",
