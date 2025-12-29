@@ -4106,6 +4106,1022 @@
             "progression": true
         },
         {
+            "id": 110001,
+            "count": 1,
+            "name": "Kanto Route 1",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110002,
+            "count": 1,
+            "name": "Kanto Route 22",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110003,
+            "count": 1,
+            "name": "Kanto Route 2",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110004,
+            "count": 1,
+            "name": "Kanto Route 3",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110005,
+            "count": 1,
+            "name": "Kanto Route 4",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110006,
+            "count": 1,
+            "name": "Kanto Route 24",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110007,
+            "count": 1,
+            "name": "Kanto Route 25",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110008,
+            "count": 1,
+            "name": "Kanto Route 5",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110009,
+            "count": 1,
+            "name": "Kanto Route 6",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110010,
+            "count": 1,
+            "name": "Kanto Route 11",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110011,
+            "count": 1,
+            "name": "Kanto Route 9",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110012,
+            "count": 1,
+            "name": "Kanto Route 10",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110013,
+            "count": 1,
+            "name": "Kanto Route 8",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110014,
+            "count": 1,
+            "name": "Kanto Route 7",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110015,
+            "count": 1,
+            "name": "Kanto Route 12",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110016,
+            "count": 1,
+            "name": "Kanto Route 13",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110017,
+            "count": 1,
+            "name": "Kanto Route 14",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110018,
+            "count": 1,
+            "name": "Kanto Route 15",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110019,
+            "count": 1,
+            "name": "Kanto Route 16",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110020,
+            "count": 1,
+            "name": "Kanto Route 17",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110021,
+            "count": 1,
+            "name": "Kanto Route 18",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110022,
+            "count": 1,
+            "name": "Kanto Route 19",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110023,
+            "count": 1,
+            "name": "Kanto Route 20",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110024,
+            "count": 1,
+            "name": "Kanto Route 21",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110025,
+            "count": 1,
+            "name": "Kanto Route 23",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110026,
+            "count": 1,
+            "name": "Treasure Beach",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110027,
+            "count": 1,
+            "name": "Kindle Road",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110028,
+            "count": 1,
+            "name": "Cape Brink",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110029,
+            "count": 1,
+            "name": "Bond Bridge",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110030,
+            "count": 1,
+            "name": "Five Isle Meadow",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110031,
+            "count": 1,
+            "name": "Memorial Pillar",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110032,
+            "count": 1,
+            "name": "Water Labyrinth",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110033,
+            "count": 1,
+            "name": "Resort Gorgeous",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110034,
+            "count": 1,
+            "name": "Water Path",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110035,
+            "count": 1,
+            "name": "Green Path",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110036,
+            "count": 1,
+            "name": "Outcast Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110037,
+            "count": 1,
+            "name": "Ruin Valley",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110038,
+            "count": 1,
+            "name": "Canyon Entrance",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110039,
+            "count": 1,
+            "name": "Sevault Canyon",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110040,
+            "count": 1,
+            "name": "Valencia Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110041,
+            "count": 1,
+            "name": "Pinkan Forest",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110042,
+            "count": 1,
+            "name": "Pinkan Plains",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+                {
+            "id": 110043,
+            "count": 1,
+            "name": "Pallet Town",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110044,
+            "count": 1,
+            "name": "Viridian City",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110045,
+            "count": 1,
+            "name": "Pewter City",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110046,
+            "count": 1,
+            "name": "Route 4 Pokémon Center",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110047,
+            "count": 1,
+            "name": "Cerulean City",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110048,
+            "count": 1,
+            "name": "Bill's House",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110049,
+            "count": 1,
+            "name": "Vermilion City",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110050,
+            "count": 1,
+            "name": "Lavender Town",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110051,
+            "count": 1,
+            "name": "Celadon City",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110052,
+            "count": 1,
+            "name": "Saffron City",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110053,
+            "count": 1,
+            "name": "Fuchsia City",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110054,
+            "count": 1,
+            "name": "Safari Zone",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110055,
+            "count": 1,
+            "name": "Cinnabar Island",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110056,
+            "count": 1,
+            "name": "Indigo Plateau Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110057,
+            "count": 1,
+            "name": "One Island",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110058,
+            "count": 1,
+            "name": "Mt. Ember",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110059,
+            "count": 1,
+            "name": "Two Island",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110060,
+            "count": 1,
+            "name": "Three Island",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110061,
+            "count": 1,
+            "name": "Professor Ivy's Lab",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110062,
+            "count": 1,
+            "name": "Client Island",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110063,
+            "count": 1,
+            "name": "Four Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110064,
+            "count": 1,
+            "name": "Five Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110065,
+            "count": 1,
+            "name": "Rocket Warehouse",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110066,
+            "count": 1,
+            "name": "Six Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110067,
+            "count": 1,
+            "name": "Dotted Hole",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110068,
+            "count": 1,
+            "name": "Seven Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110069,
+            "count": 1,
+            "name": "Mikan Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110070,
+            "count": 1,
+            "name": "Navel Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110071,
+            "count": 1,
+            "name": "Trovita Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110072,
+            "count": 1,
+            "name": "Kumquat Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110073,
+            "count": 1,
+            "name": "Pummelo Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110074,
+            "count": 1,
+            "name": "Valencia Pokémon Center",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110075,
+            "count": 1,
+            "name": "Pinkan Pokémon Reserve",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110076,
+            "count": 1,
+            "name": "Viridian Forest",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110077,
+            "count": 1,
+            "name": "Mt. Moon",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110078,
+            "count": 1,
+            "name": "Diglett's Cave",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110079,
+            "count": 1,
+            "name": "Rock Tunnel",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110080,
+            "count": 1,
+            "name": "Rocket Game Corner",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110081,
+            "count": 1,
+            "name": "Pokémon Tower",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110082,
+            "count": 1,
+            "name": "Silph Co.",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110083,
+            "count": 1,
+            "name": "Power Plant",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110084,
+            "count": 1,
+            "name": "Seafoam Islands",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110085,
+            "count": 1,
+            "name": "Pokémon Mansion",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110086,
+            "count": 1,
+            "name": "Mt. Ember Summit",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110087,
+            "count": 1,
+            "name": "Berry Forest",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110088,
+            "count": 1,
+            "name": "New Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Seasonal Events",
+                "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110089,
+            "count": 1,
+            "name": "Victory Road",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110090,
+            "count": 1,
+            "name": "Cerulean Cave",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110091,
+            "count": 1,
+            "name": "Ruby Path",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110092,
+            "count": 1,
+            "name": "Icefall Cave",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110093,
+            "count": 1,
+            "name": "Sunburst Island",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110094,
+            "count": 1,
+            "name": "Lost Cave",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110095,
+            "count": 1,
+            "name": "Pattern Bush",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110096,
+            "count": 1,
+            "name": "Altering Cave",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110097,
+            "count": 1,
+            "name": "Tanoby Ruins",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 110098,
+            "count": 1,
+            "name": "Pinkan Mountain",
+            "category": [
+                "Kanto",
+                "Mapsanity",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
             "id": 112001,
             "count": 1,
             "name": "Farming-Quick-Start Code",
