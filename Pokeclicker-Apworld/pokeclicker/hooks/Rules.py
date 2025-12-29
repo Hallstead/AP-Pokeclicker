@@ -260,8 +260,8 @@ def kanto_route_23(world: World, state: CollectionState, player: int):
 def victory_road(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access Victory Road."""
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
-    mimion_attack = 24595
-    return kanto_route_23(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, mimion_attack, special_boss_attack, complete_dungeon)
+    minion_attack = 24595
+    return kanto_route_23(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 def indigo_plateau(world: World, state: CollectionState, player: int):
     """Checks if the player can access Indigo Plateau."""
@@ -274,6 +274,12 @@ def cerulean_cave(world: World, state: CollectionState, player: int, complete_du
     minion_attack = 28735
     return has_elite_champion_badge and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
+def new_island(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access New Island dungeon in Kanto."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    has_infinite_seasonal_events = has_script(world, state, player, "Infinite Seasonal Events")
+    minion_attack = 18500
+    return has_dungeon_ticket and has_infinite_seasonal_events and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 # Kanto - Sevii Islands 123
 def one_island(world: World, state: CollectionState, player: int):
@@ -317,13 +323,6 @@ def berry_forest(world: World, state: CollectionState, player: int, complete_dun
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
     minion_attack = 18120
     return bond_bridge(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
-
-def new_island(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
-    """Checks if the player can access New Island dungeon in Kanto."""
-    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
-    has_infinite_seasonal_events = has_script(world, state, player, "Infinite Seasonal Events")
-    minion_attack = 18500
-    return has_dungeon_ticket and has_infinite_seasonal_events and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 # Eggs and Stones
 def can_get_grass_egg(world: World, state: CollectionState, player: int):
