@@ -103,13 +103,13 @@ class Discord implements Saveable {
     enterCode(enteredCode: string): boolean {
         // Discord integration disabled
         // Unless dev, so we can enter codes anyway
-        if (!this.enabled && !GameHelper.isDevelopmentBuild()) {
-            Notifier.notify({
-                message: 'Discord integration not enabled',
-                type: NotificationConstants.NotificationOption.danger,
-            });
-            return false;
-        }
+        // if (!this.enabled && !GameHelper.isDevelopmentBuild()) {
+        //     Notifier.notify({
+        //         message: 'Discord integration not enabled',
+        //         type: NotificationConstants.NotificationOption.danger,
+        //     });
+        //     return false;
+        // }
         // User not logged in to Discord
         if (!this.ID()) {
             Notifier.notify({

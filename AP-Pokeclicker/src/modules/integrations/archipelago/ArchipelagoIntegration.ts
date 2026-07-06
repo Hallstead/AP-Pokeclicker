@@ -31,8 +31,8 @@ class ArchipelagoIntegrationModule {
     // Queue inbound item packets until the game is ready
     private pendingItemPackets: { items: APItem[]; startingIndex: number }[] = [];
     // If set by the public login() wrapper, prefer calling the package's
-    // login(host:port, player, game) with these arguments during init.
-    private preferLoginCall: { server: string; player: string; game: string } | null = null;
+    // login(host:port, player, game[, password]) with these arguments during init.
+    private preferLoginCall: { server: string; player: string; game: string; password?: string } | null = null;
     nowItems: {};
 
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
@@ -113,7 +113,7 @@ class ArchipelagoIntegrationModule {
 
     // Initialize and optionally auto-connect. We dynamically import the runtime
     // package so the modules bundle doesn't crash at build time if unavailable.
-    public async init(serverUrl = 'ws://localhost:38281', playerName = 'Player') {
+    public async init(serverUrl = 'ws://localhost:38281', playerName = 'Player', password?: string) {
 
         this.client = new Client();
 
@@ -181,7 +181,7 @@ class ArchipelagoIntegrationModule {
                 autoSafariZone: false,
                 autoSafariZoneProgressive: 0,
                 catchSpeedAdjuster: false,
-                infiniteSeasonalEvents: true,
+                infiniteSeasonalEvents: false,
                 oakItemsUnlimited: false,
                 omegaProteinGains: false,
                 overnightBerryGrowth: false,
@@ -335,7 +335,7 @@ class ArchipelagoIntegrationModule {
                     }
                 }
                 if (typeof options.include_seasonal_events !== 'undefined') {
-                    w.APFlags.set('infiniteSeasonalEvents', !!options.include_seasonal_events);
+                    w.APFlags.set('includeSeasonalEvents', !!options.include_seasonal_events);
                 }
                 if (typeof options.roaming_encounter_multiplier !== 'undefined') {
                     w.APFlags.set('roaming_encounter_multiplier', options.roaming_encounter_multiplier);
@@ -394,13 +394,17 @@ class ArchipelagoIntegrationModule {
         });
 
         // Connect immediately; we now gate item/check handling on game readiness.
-        await this.client.login(
-            serverUrl.startsWith('ws') ?
-                `${serverUrl}` :
-                `wss://${serverUrl}`,
-            playerName,
-            'Pokeclicker',
-        ).then(() => {
+        const normalizedUrl = serverUrl.startsWith('ws') ? `${serverUrl}` : `wss://${serverUrl}`;
+        const game = this.preferLoginCall?.game || 'Pokeclicker';
+        const effectivePassword = this.preferLoginCall?.password ?? password;
+
+        const loginOptions = (effectivePassword != null && effectivePassword !== '')
+            ? { password: effectivePassword }
+            : undefined;
+
+        const loginPromise = this.client.login(normalizedUrl, playerName, game, loginOptions);
+
+        await loginPromise.then(() => {
             Notifier.notify({
                 message: `Archipelago: connected to ${serverUrl} as '${playerName}'`,
                 type: NotificationConstants.NotificationOption.success,
@@ -416,12 +420,12 @@ class ArchipelagoIntegrationModule {
         this.ensureGameReady().catch(() => { /* ignore */ });
     }
 
-    // Public wrapper that prefers the archipelago.js login(host:port, player, game)
+    // Public wrapper that prefers the archipelago.js login(host:port, player, game[, password])
     // signature. This will import/initialize the client and then use login.
-    public async login(serverOrHostPort: string, playerName: string, gameName = 'Pokeclicker') {
-        this.preferLoginCall = { server: serverOrHostPort, player: playerName, game: gameName };
+    public async login(serverOrHostPort: string, playerName: string, gameName = 'Pokeclicker', password?: string) {
+        this.preferLoginCall = { server: serverOrHostPort, player: playerName, game: gameName, password };
         try {
-            await this.init(serverOrHostPort, playerName);
+            await this.init(serverOrHostPort, playerName, password);
         } finally {
             // clear preference regardless of success so future init() calls behave normally
             this.preferLoginCall = null;
@@ -778,9 +782,11 @@ if (typeof window !== 'undefined') {
         serverUrl?: string,
         playerName?: string,
         gameName?: string,
+        password?: string,
     ): Promise<boolean> {
         const url = serverUrl || 'ws://localhost:38281';
         let name = playerName;
+        const normalizedPassword = (typeof password === 'string' && password.trim() !== '') ? password.trim() : undefined;
         try {
             if (!name) {
                 name = (window as any).App?.game?.player?.name || 'Player';
@@ -795,9 +801,9 @@ if (typeof window !== 'undefined') {
             });
 
             if (typeof instance.login === 'function') {
-                await (instance as any).login(url, name, gameName || 'Pokeclicker');
+                await (instance as any).login(url, name, gameName || 'Pokeclicker', normalizedPassword);
             } else {
-                await instance.init(url, name);
+                await instance.init(url, name, normalizedPassword);
             }
 
             // Delay-check error state
@@ -825,9 +831,25 @@ if (typeof window !== 'undefined') {
             const hostEl = document.getElementById('ap-host') as HTMLInputElement | null;
             const portEl = document.getElementById('ap-port') as HTMLInputElement | null;
             const slotEl = document.getElementById('ap-slot') as HTMLInputElement | null;
-            const h = hostEl?.value;
-            const p = portEl?.value;
-            const s = slotEl?.value;
+            const passwordEl = document.getElementById('ap-password') as HTMLInputElement | null;
+            const h = (hostEl?.value ?? localStorage.getItem('ap-last-host') ?? '').trim();
+            const p = (portEl?.value ?? localStorage.getItem('ap-last-port') ?? '').trim();
+            const s = (slotEl?.value ?? localStorage.getItem('ap-last-slot') ?? '').trim();
+
+            const enteredPassword = passwordEl?.value;
+            const password = (typeof enteredPassword === 'string' && enteredPassword.trim() !== '')
+                ? enteredPassword.trim()
+                : ((window as any).__apLastPassword as string | undefined);
+            if (password) {
+                // Keep password only in-memory for reconnects; never persist to localStorage.
+                (window as any).__apLastPassword = password;
+            }
+
+            if (!h || !s) {
+                Notifier.notify({ message: 'Archipelago host and slot are required.', type: NotificationConstants.NotificationOption.warning });
+                return false;
+            }
+
             let url = '';
             if (h.includes('localhost')) {
                 if (p == null || p.trim() === '') {
@@ -843,7 +865,7 @@ if (typeof window !== 'undefined') {
                 }
             }
             if ((window as any).archipelagoConnect) {
-                (window as any).archipelagoConnect(url, s, 'Pokeclicker');
+                (window as any).archipelagoConnect(url, s, 'Pokeclicker', password);
                 localStorage.setItem('ap-last-host', h);
                 localStorage.setItem('ap-last-port', p);
                 localStorage.setItem('ap-last-slot', s);

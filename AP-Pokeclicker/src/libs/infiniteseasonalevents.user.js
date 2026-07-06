@@ -246,7 +246,7 @@ function initEvents() {
     addGlobalStyle('.event-select { cursor: pointer; }');
     addGlobalStyle('.event-select:hover { background-color: rgba(48, 197, 255, 0.5); }');
     function applyInfiniteEventsAccessFromFlag() {
-        const enabled = getAPInfiniteFlag();
+        const enabled = getAPInfiniteFlag() && window.APFlags.get('includeSeasonalEvents')
         // UI: hide/show menu link and modal
         if (eventLi) eventLi.style.display = enabled ? '' : 'none';
         if (eventMod) eventMod.style.display = enabled ? '' : 'none';
