@@ -3477,8 +3477,7 @@
             "name": "Baby Kangaskhan",
             "category": [
                 "Pokemon",
-                "Alt Pokemon",
-                "Not Implemented"
+                "Alt Pokemon"
             ],
             "progression": true
         },
@@ -4111,7 +4110,8 @@
             "name": "Kanto Route 1",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4544,7 +4544,8 @@
             "name": "Pallet Town",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4554,7 +4555,8 @@
             "name": "Viridian City",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4564,17 +4566,19 @@
             "name": "Pewter City",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
         {
             "id": 110046,
             "count": 1,
-            "name": "Route 4 Pokémon Center",
+            "name": "Kanto Route 4 Pokemon Center",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4584,7 +4588,8 @@
             "name": "Cerulean City",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4594,7 +4599,8 @@
             "name": "Bill's House",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4604,7 +4610,8 @@
             "name": "Vermilion City",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4614,7 +4621,8 @@
             "name": "Lavender Town",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4624,7 +4632,8 @@
             "name": "Celadon City",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4634,7 +4643,8 @@
             "name": "Saffron City",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4644,7 +4654,8 @@
             "name": "Fuchsia City",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4654,7 +4665,8 @@
             "name": "Safari Zone",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4664,7 +4676,8 @@
             "name": "Cinnabar Island",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4674,7 +4687,8 @@
             "name": "Indigo Plateau Kanto",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4684,7 +4698,8 @@
             "name": "One Island",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4694,7 +4709,8 @@
             "name": "Mt. Ember",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4704,7 +4720,8 @@
             "name": "Two Island",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4714,7 +4731,8 @@
             "name": "Three Island",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4724,7 +4742,8 @@
             "name": "Professor Ivy's Lab",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4734,7 +4753,8 @@
             "name": "Client Island",
             "category": [
                 "Kanto",
-                "Mapsanity"
+                "Mapsanity",
+                "Not Implemented"
             ],
             "progression": true
         },
@@ -4934,7 +4954,7 @@
         {
             "id": 110081,
             "count": 1,
-            "name": "Pokémon Tower",
+            "name": "Pokemon Tower",
             "category": [
                 "Kanto",
                 "Mapsanity"
@@ -4974,7 +4994,7 @@
         {
             "id": 110085,
             "count": 1,
-            "name": "Pokémon Mansion",
+            "name": "Pokemon Mansion",
             "category": [
                 "Kanto",
                 "Mapsanity"

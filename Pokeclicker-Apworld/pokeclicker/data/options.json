@@ -176,6 +176,24 @@
             "default": false,
             "group": "Game Options"
         },
+        "mapsanity": {
+            "type": "Choice",
+            "description": [
+                "This option adds all map locations to the item pool.",
+                "Instead of unlocking their normal map locations, when you would unlock a route or town, it instead sends a check to the server.",
+                "None: This option is disabled.",
+                "Shuffled: Map locations are shuffled amongst themselves.",
+                "Full: Map locations are added to the item pool with everything else."
+            ],
+            "values": {
+                "none": 0,
+                "shuffled": 1,
+                "full": 2
+            },
+            "default": 0,
+            "allow_custom_value": false,
+            "group": "Game Options"
+        },
         "roaming_encounter_multiplier": {
             "type": "Range",
             "description": [

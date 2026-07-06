@@ -922,6 +922,7 @@ TownList['Pallet Town'] = new Town(
     GameConstants.KantoSubRegions.Kanto,
     [new BulletinBoard(GameConstants.BulletinBoards.Kanto)],
     {
+        requirements: [new RouteKillRequirement(10, GameConstants.Region.kanto, 1)],
         npcs: [PalletProfOak, PalletCelebiProfOak1, PalletCelebiProfOak2, PalletMom1, PalletMom2],
     }
 );
@@ -942,7 +943,6 @@ TownList['Pewter City'] = new Town(
     [PewterCityShop],
     {
         requirements: [
-            new RouteKillRequirement(10, GameConstants.Region.kanto, 2),
             new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Viridian Forest')),
         ],
         npcs: [PewterBattleItemRival, PewterScientist],
@@ -1073,7 +1073,6 @@ TownList['Indigo Plateau Kanto'] = new Town(
     [GymList['Elite Lorelei'], GymList['Elite Bruno'], GymList['Elite Agatha'], GymList['Elite Lance'], GymList['Champion Blue'], pokeLeagueShop(), TemporaryBattleList['Unrivaled Red']],
     {
         requirements: [
-            new RouteKillRequirement(10, GameConstants.Region.kanto, 23),
             new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Victory Road')),
         ],
         npcs: [SpeedyRunner],
@@ -1309,10 +1308,7 @@ TownList['Pokémon Tower'] = new DungeonTown(
     'Pokémon Tower',
     GameConstants.Region.kanto,
     GameConstants.KantoSubRegions.Kanto,
-    [
-        new RouteKillRequirement(10, GameConstants.Region.kanto, 7),
-        new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Rocket Game Corner')),
-    ],
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Rocket Game Corner'))],
     [TemporaryBattleList['Blue 4']]
 );
 TownList['Silph Co.'] = new DungeonTown(
