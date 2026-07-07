@@ -176,6 +176,8 @@ def after_create_item(item: ManualItem, world: World, multiworld: MultiWorld, pl
 
 # This method is run towards the end of pre-generation, before the place_item options have been handled and before AP generation occurs
 def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
+    world.multiworld.early_items[player]["Town Map"] = 1
+
 
     if world.options.dexsanity.value == 2: # Shuffled
         for location in location_name_to_location.keys():
@@ -275,6 +277,7 @@ def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
     # world.location_name_to_location["Bill's Errand Questline; Ask the Game Corner owner on Two Island about the meteorite"]["place_item"] = ["Three Island"]
     # world.location_name_to_location["Bill's Errand Questline; Defeat the biker gang's leader"]["place_item"] = ["Bond Bridge"]
     # world.location_name_to_location["Unfinished Business; Talk to Professor Oak in Pallet Town."]["place_item"] = ["Professor Ivy's Lab"]
+
 
 # This method is run at the very end of pre-generation, once the place_item options have been handled and before AP generation occurs
 def after_generate_basic(world: World, multiworld: MultiWorld, player: int):
