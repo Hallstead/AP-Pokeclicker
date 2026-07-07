@@ -10,6 +10,7 @@ import {
 } from 'archipelago.js';
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
+import * as GameConstants from '../../GameConstants';
 import Rand from '../../utilities/Rand';
 import BuyKeyItem from '../../items/buyKeyItem';
 import PokemonItem from '../../items/PokemonItem';
@@ -108,6 +109,44 @@ class ArchipelagoIntegrationModule {
                 type: itemReceivedNotificationType,
                 timeout: 5000,
             });
+        }
+    }
+
+    // Rebuild missed temporary battle checks from saved defeat stats on reconnect.
+    private replaySavedTemporaryBattleChecks() {
+        if (!this.connected || !this.isGameReady() || !this.client?.room?.checkedLocations) {
+            return;
+        }
+
+        try {
+            const knownLocations = new Set<number>([
+                ...this.client.room.checkedLocations,
+                ...this.pendingLocationChecks,
+            ]);
+            const missingLocationChecks = new Set<number>();
+
+            Object.values(TemporaryBattleList).forEach((battle) => {
+                const battleIndex = GameConstants.getTemporaryBattlesIndex(battle.name);
+                if (battleIndex < 0 || App.game.statistics.temporaryBattleDefeated[battleIndex]() <= 0) {
+                    return;
+                }
+
+                battle.locationIds.forEach((locationId) => {
+                    if (typeof locationId !== 'number' || Number.isNaN(locationId) || knownLocations.has(locationId)) {
+                        return;
+                    }
+                    missingLocationChecks.add(locationId);
+                });
+            });
+
+            if (!missingLocationChecks.size) {
+                return;
+            }
+
+            this.client.socket.send({ cmd: 'LocationChecks', locations: [...missingLocationChecks] });
+        } catch (e) {
+            this.lastError = e;
+            try { console.error('Failed to replay saved temporary battle LocationChecks:', e); } catch (_) { }
         }
     }
 
@@ -351,6 +390,7 @@ class ArchipelagoIntegrationModule {
             // Only flush queued location checks if game is ready; otherwise they will be flushed later.
             if (this.isGameReady()) {
                 try {
+                    this.replaySavedTemporaryBattleChecks();
                     if (this.pendingLocationChecks.length) {
                         const batch = [...this.pendingLocationChecks];
                         this.pendingLocationChecks.length = 0;
@@ -380,7 +420,7 @@ class ArchipelagoIntegrationModule {
                 message: 'Archipelago: disconnected from server.',
                 type: NotificationConstants.NotificationOption.warning,
             });
-            (window as any).apLoginFromSaveSelector();
+            // (window as any).apLoginFromSaveSelector();
         });
 
         // add item handler
@@ -440,6 +480,11 @@ class ArchipelagoIntegrationModule {
     }
 
     public disconnect() {
+        if (this.client?.socket && typeof this.client.socket.disconnect === 'function') {
+            this.client.socket.disconnect();
+            this.connected = false;
+            return;
+        }
         if (this.client && typeof this.client.disconnect === 'function') {
             this.client.disconnect();
             this.connected = false;
@@ -736,6 +781,7 @@ class ArchipelagoIntegrationModule {
         }
         (window as any).APFlags.set('gameReady', true); // Treat timeout as ready to avoid indefinite queue
         this.flushQueuedItems();
+        this.replaySavedTemporaryBattleChecks();
         this.flushQueuedLocationChecks();
         App.game.challenges.list.requireCompletePokedex.active(!!(window as any).APFlags.get('dexsanity'));
 
@@ -781,6 +827,7 @@ if (typeof window !== 'undefined') {
         getLastError: () => (instance as any).lastError,
         isConnected: () => (instance as any).connected,
         forceConnect: () => instance.connect(),
+        forceDisconnect: () => instance.disconnect(),
     };
 
     // Minimal UI helpers (moved from bootstrap) so the Save Selector button can connect without a separate script.
