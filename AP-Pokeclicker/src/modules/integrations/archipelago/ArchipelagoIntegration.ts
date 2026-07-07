@@ -696,20 +696,26 @@ class ArchipelagoIntegrationModule {
                 if (id == -1) {
                     this.client.updateStatus(clientStatuses.goal);
                 }
-                if (id == 0) {
-                    App.game.wallet.gainMoney(100000 / ((window as any).APFlags.options.pokedollar_multiplier || 1), true);
+                let itemName = item.name;
+                if (itemName.includes('Pokedollars')) {
+                    let value = parseInt(itemName.split(' ')[0]); 
+                    App.game.wallet.gainMoney(value / ((window as any).APFlags.options.pokedollar_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 1) {
-                    App.game.wallet.gainDungeonTokens(10000 / ((window as any).APFlags.options.dungeon_token_multiplier || 1), true);
+                } else if (itemName.includes('Dungeon Tokens')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainDungeonTokens(value / ((window as any).APFlags.options.dungeon_token_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 2) {
-                    App.game.wallet.gainQuestPoints(1000 / ((window as any).APFlags.options.quest_point_multiplier || 1), true);
+                } else if (itemName.includes('Quest Points')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainQuestPoints(value / ((window as any).APFlags.options.quest_point_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 3) {
-                    App.game.wallet.gainDiamonds(100 / ((window as any).APFlags.options.diamond_multiplier || 1), true);
+                } else if (itemName.includes('Diamonds')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainDiamonds(value / ((window as any).APFlags.options.diamond_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 4) {
-                    App.game.wallet.gainFarmPoints(1000 / ((window as any).APFlags.options.farm_point_multiplier || 1), true);
+                } else if (itemName.includes('Farm Points')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainFarmPoints(value / ((window as any).APFlags.options.farm_point_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else {
                     player.gainItem('Protein', 1);

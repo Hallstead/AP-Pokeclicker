@@ -1,4 +1,6 @@
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
+import random
+
 from worlds.AutoWorld import World
 from BaseClasses import MultiWorld, CollectionState, Item
 
@@ -20,6 +22,8 @@ from ..Helpers import is_option_enabled, get_option_value, format_state_prog_ite
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
 
+from ..functions import get_filler_item_list
+
 ########################################################################################
 ## Order of method calls when the world generates:
 ##    1. create_regions - Creates regions and locations
@@ -37,7 +41,10 @@ import logging
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
 def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int) -> str | bool:
-    return False
+    filler_items = get_filler_item_list()
+    # Only return filler names that exist in the generated item lookup.
+    valid_filler_items = [name for name in filler_items if name in world.item_name_to_item]
+    return random.choice(valid_filler_items)
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
