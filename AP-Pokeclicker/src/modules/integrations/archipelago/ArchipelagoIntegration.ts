@@ -17,6 +17,7 @@ import PokemonItem from '../../items/PokemonItem';
 import { getPokemonByName } from '../../pokemons/PokemonHelper';
 import { UndergroundController } from '../../underground/UndergroundController';
 import UndergroundItems from '../../underground/UndergroundItems';
+import { Underground } from '../../underground/Underground';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -112,6 +113,25 @@ class ArchipelagoIntegrationModule {
         }
     }
 
+    private applyStartingLevelOverridesFromOptions() {
+        try {
+            const currentExp = App.game.underground.undergroundExp;
+            const targetExp = Underground.convertLevelToExperience((window as any).APFlags.options.starting_underground_level);
+            if (currentExp < targetExp) {
+                App.game.underground.addUndergroundExp(targetExp - currentExp);
+            }
+
+            return;
+
+            // if (typeof w.Safari?.setStartingLevelFromAP === 'function') {
+            //     w.Safari.setStartingLevelFromAP((window as any)?.APFlags?.options.safari_starting_level);
+            // }
+        } catch (e) {console.log("ERROR: " + e)
+            this.lastError = e;
+            try { console.error('Failed to apply AP starting level overrides:', e); } catch (_) { }
+        }
+    }
+
     // Rebuild missed temporary battle checks from saved defeat stats on reconnect.
     private replaySavedTemporaryBattleChecks() {
         if (!this.connected || !this.isGameReady() || !this.client?.room?.checkedLocations) {
@@ -173,6 +193,8 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: number,
             include_seasonal_events: boolean,
             include_codes_as_items: boolean,
+            underground_starting_level: number,
+            safari_starting_level: number
             roaming_encounter_multiplier: number,
             roaming_encounter_multiplier_route: boolean,
             pokedollar_multiplier: number,
@@ -182,7 +204,9 @@ class ArchipelagoIntegrationModule {
             farm_point_multiplier: number,
             battle_point_multiplier: number,
             conquest_token_multiplier: number,
-            exp_multiplier: number
+            exp_multiplier: number,
+            wanderer_appearance_multiplier: number,
+            wanderer_catch_rate: number,
         };
         let options: GameOptions = {
             dexsanity: 0,
@@ -192,6 +216,8 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: 0,
             include_seasonal_events: true,
             include_codes_as_items: false,
+            underground_starting_level: 0,
+            safari_starting_level: 1,
             roaming_encounter_multiplier: 1,
             roaming_encounter_multiplier_route: true,
             pokedollar_multiplier: 1,
@@ -202,6 +228,8 @@ class ArchipelagoIntegrationModule {
             battle_point_multiplier: 1,
             conquest_token_multiplier: 1,
             exp_multiplier: 1,
+            wanderer_appearance_multiplier: 1,
+            wanderer_catch_rate: 1,
         };
 
         // Ensure global runtime flag object exists and supports get/set with event dispatch
@@ -784,7 +812,7 @@ class ArchipelagoIntegrationModule {
         this.replaySavedTemporaryBattleChecks();
         this.flushQueuedLocationChecks();
         App.game.challenges.list.requireCompletePokedex.active(!!(window as any).APFlags.get('dexsanity'));
-
+        this.applyStartingLevelOverridesFromOptions();
     }
 
     private flushQueuedItems() {
