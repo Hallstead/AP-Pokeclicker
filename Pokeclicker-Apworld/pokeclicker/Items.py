@@ -2,6 +2,8 @@ from BaseClasses import Item
 from .Data import item_table
 from .Game import filler_item_name, starting_index
 
+from .functions import get_filler_item_list
+
 
 ######################
 # Generate item lookups
@@ -16,9 +18,10 @@ lastItemId = -1
 count = starting_index
 
 # add the filler item to the list of items for lookup
-if filler_item_name:
+
+for item in get_filler_item_list():
     item_table.append({
-        "name": filler_item_name
+        "name": item
     })
 
 # add sequential generated ids to the lists

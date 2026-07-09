@@ -288,7 +288,7 @@ class MapHelper {
         const openModal = () => {
             $('#ShipModal').modal('show');
         };
-        if (player.highestRegion() > 0 && (TownList[GameConstants.DockTowns[player.region]].isUnlocked())) {
+        if (player.highestRegion() > 0) { //} && (TownList[GameConstants.DockTowns[player.region]].isUnlocked())) {
             openModal();
         } else {
             Notifier.notify({

@@ -75,11 +75,13 @@ class Party implements Feature, TmpPartyType {
         const isShadow = shadow === GameConstants.ShadowStatus.Shadow;
         // Capture pre-increment stats to determine first capture
         const prevCaptured = +(App.game.statistics.pokemonCaptured[id]?.() ?? 0);
-        let dexsanity = (window as any)?.APFlags?.dexsanity === true;
-        if (dexsanity && id % 1 !== 0 &&
-                (!(window as any)?.APFlags?.options.include_alt_pokemon ||
-                !(window as any)?.APFlags?.infiniteSeasonalEvents)) {
+        let dexsanity = !!(window as any)?.APFlags?.dexsanity;
+        if (dexsanity && id % 1 !== 0 && !(window as any)?.APFlags?.options.include_alt_pokemon) {
             dexsanity = false; // Disable Dexsanity for alt forms and seasonal event pokemon
+        } else if (dexsanity && id === 54.01) {
+            dexsanity = false; // Disable Dexsanity for this specific Pokémon (id 54.01)
+        } else if (dexsanity && id > 151) {
+            dexsanity = false; // Disable Dexsanity for Pokémon with ID greater than 151
         }
 
         PokemonHelper.incrementPokemonStatistics(id, GameConstants.PokemonStatisticsType.Captured, shiny, gender, shadow);
@@ -108,7 +110,7 @@ class Party implements Feature, TmpPartyType {
         }
 
         // Send location check on first capture under Dexsanity (applies to evolutions and normal captures)
-        if (dexsanity && newCatch) {
+        if (dexsanity) {
             (window as any).sendLocationCheck(id, true);
         }
 

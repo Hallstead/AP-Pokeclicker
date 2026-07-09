@@ -10,12 +10,14 @@ import {
 } from 'archipelago.js';
 import KeyItemType from '../../enums/KeyItemType';
 import OakItemType from '../../enums/OakItemType';
+import * as GameConstants from '../../GameConstants';
 import Rand from '../../utilities/Rand';
 import BuyKeyItem from '../../items/buyKeyItem';
 import PokemonItem from '../../items/PokemonItem';
 import { getPokemonByName } from '../../pokemons/PokemonHelper';
 import { UndergroundController } from '../../underground/UndergroundController';
 import UndergroundItems from '../../underground/UndergroundItems';
+import { Underground } from '../../underground/Underground';
 
 // Modules-side Archipelago integration. This file keeps all Archipelago client
 // logic inside the modules build (webpack) and exposes a runtime global that
@@ -31,8 +33,8 @@ class ArchipelagoIntegrationModule {
     // Queue inbound item packets until the game is ready
     private pendingItemPackets: { items: APItem[]; startingIndex: number }[] = [];
     // If set by the public login() wrapper, prefer calling the package's
-    // login(host:port, player, game) with these arguments during init.
-    private preferLoginCall: { server: string; player: string; game: string } | null = null;
+    // login(host:port, player, game[, password]) with these arguments during init.
+    private preferLoginCall: { server: string; player: string; game: string; password?: string } | null = null;
     nowItems: {};
 
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
@@ -111,9 +113,63 @@ class ArchipelagoIntegrationModule {
         }
     }
 
+    private applyStartingLevelOverridesFromOptions() {
+        try {
+            const currentExp = App.game.underground.undergroundExp;
+            const targetExp = Underground.convertLevelToExperience((window as any).APFlags.options.starting_underground_level);
+            if (currentExp < targetExp) {
+                App.game.underground.addUndergroundExp(targetExp - currentExp);
+            }
+
+            return;
+
+        } catch (e) {
+            this.lastError = e;
+            try { console.error('Failed to apply AP starting level overrides:', e); } catch (_) { }
+        }
+    }
+
+    // Rebuild missed temporary battle checks from saved defeat stats on reconnect.
+    private replaySavedTemporaryBattleChecks() {
+        if (!this.connected || !this.isGameReady() || !this.client?.room?.checkedLocations) {
+            return;
+        }
+
+        try {
+            const knownLocations = new Set<number>([
+                ...this.client.room.checkedLocations,
+                ...this.pendingLocationChecks,
+            ]);
+            const missingLocationChecks = new Set<number>();
+
+            Object.values(TemporaryBattleList).forEach((battle) => {
+                const battleIndex = GameConstants.getTemporaryBattlesIndex(battle.name);
+                if (battleIndex < 0 || App.game.statistics.temporaryBattleDefeated[battleIndex]() <= 0) {
+                    return;
+                }
+
+                battle.locationIds.forEach((locationId) => {
+                    if (typeof locationId !== 'number' || Number.isNaN(locationId) || knownLocations.has(locationId)) {
+                        return;
+                    }
+                    missingLocationChecks.add(locationId);
+                });
+            });
+
+            if (!missingLocationChecks.size) {
+                return;
+            }
+
+            this.client.socket.send({ cmd: 'LocationChecks', locations: [...missingLocationChecks] });
+        } catch (e) {
+            this.lastError = e;
+            try { console.error('Failed to replay saved temporary battle LocationChecks:', e); } catch (_) { }
+        }
+    }
+
     // Initialize and optionally auto-connect. We dynamically import the runtime
     // package so the modules bundle doesn't crash at build time if unavailable.
-    public async init(serverUrl = 'ws://localhost:38281', playerName = 'Player') {
+    public async init(serverUrl = 'ws://localhost:38281', playerName = 'Player', password?: string) {
 
         this.client = new Client();
 
@@ -134,6 +190,8 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: number,
             include_seasonal_events: boolean,
             include_codes_as_items: boolean,
+            underground_starting_level: number,
+            safari_starting_level: number
             roaming_encounter_multiplier: number,
             roaming_encounter_multiplier_route: boolean,
             pokedollar_multiplier: number,
@@ -143,7 +201,9 @@ class ArchipelagoIntegrationModule {
             farm_point_multiplier: number,
             battle_point_multiplier: number,
             conquest_token_multiplier: number,
-            exp_multiplier: number
+            exp_multiplier: number,
+            wanderer_appearance_multiplier: number,
+            wanderer_catch_rate: number,
         };
         let options: GameOptions = {
             dexsanity: 0,
@@ -153,6 +213,8 @@ class ArchipelagoIntegrationModule {
             progressive_auto_safari_zone: 0,
             include_seasonal_events: true,
             include_codes_as_items: false,
+            underground_starting_level: 0,
+            safari_starting_level: 1,
             roaming_encounter_multiplier: 1,
             roaming_encounter_multiplier_route: true,
             pokedollar_multiplier: 1,
@@ -163,6 +225,8 @@ class ArchipelagoIntegrationModule {
             battle_point_multiplier: 1,
             conquest_token_multiplier: 1,
             exp_multiplier: 1,
+            wanderer_appearance_multiplier: 1,
+            wanderer_catch_rate: 1,
         };
 
         // Ensure global runtime flag object exists and supports get/set with event dispatch
@@ -181,7 +245,7 @@ class ArchipelagoIntegrationModule {
                 autoSafariZone: false,
                 autoSafariZoneProgressive: 0,
                 catchSpeedAdjuster: false,
-                infiniteSeasonalEvents: true,
+                infiniteSeasonalEvents: false,
                 oakItemsUnlimited: false,
                 omegaProteinGains: false,
                 overnightBerryGrowth: false,
@@ -335,7 +399,7 @@ class ArchipelagoIntegrationModule {
                     }
                 }
                 if (typeof options.include_seasonal_events !== 'undefined') {
-                    w.APFlags.set('infiniteSeasonalEvents', !!options.include_seasonal_events);
+                    w.APFlags.set('includeSeasonalEvents', !!options.include_seasonal_events);
                 }
                 if (typeof options.roaming_encounter_multiplier !== 'undefined') {
                     w.APFlags.set('roaming_encounter_multiplier', options.roaming_encounter_multiplier);
@@ -351,6 +415,7 @@ class ArchipelagoIntegrationModule {
             // Only flush queued location checks if game is ready; otherwise they will be flushed later.
             if (this.isGameReady()) {
                 try {
+                    this.replaySavedTemporaryBattleChecks();
                     if (this.pendingLocationChecks.length) {
                         const batch = [...this.pendingLocationChecks];
                         this.pendingLocationChecks.length = 0;
@@ -380,7 +445,7 @@ class ArchipelagoIntegrationModule {
                 message: 'Archipelago: disconnected from server.',
                 type: NotificationConstants.NotificationOption.warning,
             });
-            (window as any).apLoginFromSaveSelector();
+            // (window as any).apLoginFromSaveSelector();
         });
 
         // add item handler
@@ -394,13 +459,17 @@ class ArchipelagoIntegrationModule {
         });
 
         // Connect immediately; we now gate item/check handling on game readiness.
-        await this.client.login(
-            serverUrl.startsWith('ws') ?
-                `${serverUrl}` :
-                `wss://${serverUrl}`,
-            playerName,
-            'Pokeclicker',
-        ).then(() => {
+        const normalizedUrl = serverUrl.startsWith('ws') ? `${serverUrl}` : `wss://${serverUrl}`;
+        const game = this.preferLoginCall?.game || 'Pokeclicker';
+        const effectivePassword = this.preferLoginCall?.password ?? password;
+
+        const loginOptions = (effectivePassword != null && effectivePassword !== '')
+            ? { password: effectivePassword }
+            : undefined;
+
+        const loginPromise = this.client.login(normalizedUrl, playerName, game, loginOptions);
+
+        await loginPromise.then(() => {
             Notifier.notify({
                 message: `Archipelago: connected to ${serverUrl} as '${playerName}'`,
                 type: NotificationConstants.NotificationOption.success,
@@ -416,12 +485,12 @@ class ArchipelagoIntegrationModule {
         this.ensureGameReady().catch(() => { /* ignore */ });
     }
 
-    // Public wrapper that prefers the archipelago.js login(host:port, player, game)
+    // Public wrapper that prefers the archipelago.js login(host:port, player, game[, password])
     // signature. This will import/initialize the client and then use login.
-    public async login(serverOrHostPort: string, playerName: string, gameName = 'Pokeclicker') {
-        this.preferLoginCall = { server: serverOrHostPort, player: playerName, game: gameName };
+    public async login(serverOrHostPort: string, playerName: string, gameName = 'Pokeclicker', password?: string) {
+        this.preferLoginCall = { server: serverOrHostPort, player: playerName, game: gameName, password };
         try {
-            await this.init(serverOrHostPort, playerName);
+            await this.init(serverOrHostPort, playerName, password);
         } finally {
             // clear preference regardless of success so future init() calls behave normally
             this.preferLoginCall = null;
@@ -436,6 +505,11 @@ class ArchipelagoIntegrationModule {
     }
 
     public disconnect() {
+        if (this.client?.socket && typeof this.client.socket.disconnect === 'function') {
+            this.client.socket.disconnect();
+            this.connected = false;
+            return;
+        }
         if (this.client && typeof this.client.disconnect === 'function') {
             this.client.disconnect();
             this.connected = false;
@@ -692,20 +766,26 @@ class ArchipelagoIntegrationModule {
                 if (id == -1) {
                     this.client.updateStatus(clientStatuses.goal);
                 }
-                if (id == 0) {
-                    App.game.wallet.gainMoney(100000 / ((window as any).APFlags.options.pokedollar_multiplier || 1), true);
+                let itemName = item.name;
+                if (itemName.includes('Pokedollars')) {
+                    let value = parseInt(itemName.split(' ')[0]); 
+                    App.game.wallet.gainMoney(value / ((window as any).APFlags.options.pokedollar_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 1) {
-                    App.game.wallet.gainDungeonTokens(10000 / ((window as any).APFlags.options.dungeon_token_multiplier || 1), true);
+                } else if (itemName.includes('Dungeon Tokens')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainDungeonTokens(value / ((window as any).APFlags.options.dungeon_token_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 2) {
-                    App.game.wallet.gainQuestPoints(1000 / ((window as any).APFlags.options.quest_point_multiplier || 1), true);
+                } else if (itemName.includes('Quest Points')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainQuestPoints(value / ((window as any).APFlags.options.quest_point_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 3) {
-                    App.game.wallet.gainDiamonds(100 / ((window as any).APFlags.options.diamond_multiplier || 1), true);
+                } else if (itemName.includes('Diamonds')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainDiamonds(value / ((window as any).APFlags.options.diamond_multiplier || 1), true);
                     this.displayItemReceived(item, '');
-                } else if (id == 4) {
-                    App.game.wallet.gainFarmPoints(1000 / ((window as any).APFlags.options.farm_point_multiplier || 1), true);
+                } else if (itemName.includes('Farm Points')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainFarmPoints(value / ((window as any).APFlags.options.farm_point_multiplier || 1), true);
                     this.displayItemReceived(item, '');
                 } else {
                     player.gainItem('Protein', 1);
@@ -726,9 +806,10 @@ class ArchipelagoIntegrationModule {
         }
         (window as any).APFlags.set('gameReady', true); // Treat timeout as ready to avoid indefinite queue
         this.flushQueuedItems();
+        this.replaySavedTemporaryBattleChecks();
         this.flushQueuedLocationChecks();
         App.game.challenges.list.requireCompletePokedex.active(!!(window as any).APFlags.get('dexsanity'));
-
+        this.applyStartingLevelOverridesFromOptions();
     }
 
     private flushQueuedItems() {
@@ -771,6 +852,7 @@ if (typeof window !== 'undefined') {
         getLastError: () => (instance as any).lastError,
         isConnected: () => (instance as any).connected,
         forceConnect: () => instance.connect(),
+        forceDisconnect: () => instance.disconnect(),
     };
 
     // Minimal UI helpers (moved from bootstrap) so the Save Selector button can connect without a separate script.
@@ -778,9 +860,11 @@ if (typeof window !== 'undefined') {
         serverUrl?: string,
         playerName?: string,
         gameName?: string,
+        password?: string,
     ): Promise<boolean> {
         const url = serverUrl || 'ws://localhost:38281';
         let name = playerName;
+        const normalizedPassword = (typeof password === 'string' && password.trim() !== '') ? password.trim() : undefined;
         try {
             if (!name) {
                 name = (window as any).App?.game?.player?.name || 'Player';
@@ -795,9 +879,9 @@ if (typeof window !== 'undefined') {
             });
 
             if (typeof instance.login === 'function') {
-                await (instance as any).login(url, name, gameName || 'Pokeclicker');
+                await (instance as any).login(url, name, gameName || 'Pokeclicker', normalizedPassword);
             } else {
-                await instance.init(url, name);
+                await instance.init(url, name, normalizedPassword);
             }
 
             // Delay-check error state
@@ -825,9 +909,25 @@ if (typeof window !== 'undefined') {
             const hostEl = document.getElementById('ap-host') as HTMLInputElement | null;
             const portEl = document.getElementById('ap-port') as HTMLInputElement | null;
             const slotEl = document.getElementById('ap-slot') as HTMLInputElement | null;
-            const h = hostEl?.value;
-            const p = portEl?.value;
-            const s = slotEl?.value;
+            const passwordEl = document.getElementById('ap-password') as HTMLInputElement | null;
+            const h = (hostEl?.value ?? localStorage.getItem('ap-last-host') ?? '').trim();
+            const p = (portEl?.value ?? localStorage.getItem('ap-last-port') ?? '').trim();
+            const s = (slotEl?.value ?? localStorage.getItem('ap-last-slot') ?? '').trim();
+
+            const enteredPassword = passwordEl?.value;
+            const password = (typeof enteredPassword === 'string' && enteredPassword.trim() !== '')
+                ? enteredPassword.trim()
+                : ((window as any).__apLastPassword as string | undefined);
+            if (password) {
+                // Keep password only in-memory for reconnects; never persist to localStorage.
+                (window as any).__apLastPassword = password;
+            }
+
+            if (!h || !s) {
+                Notifier.notify({ message: 'Archipelago host and slot are required.', type: NotificationConstants.NotificationOption.warning });
+                return false;
+            }
+
             let url = '';
             if (h.includes('localhost')) {
                 if (p == null || p.trim() === '') {
@@ -843,7 +943,7 @@ if (typeof window !== 'undefined') {
                 }
             }
             if ((window as any).archipelagoConnect) {
-                (window as any).archipelagoConnect(url, s, 'Pokeclicker');
+                (window as any).archipelagoConnect(url, s, 'Pokeclicker', password);
                 localStorage.setItem('ap-last-host', h);
                 localStorage.setItem('ap-last-port', p);
                 localStorage.setItem('ap-last-slot', s);

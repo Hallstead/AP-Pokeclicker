@@ -59,13 +59,13 @@
             "requires": "{fuchsia_city()} and {attack_needed(137100)}"
         },
         {
-            "name": "Unlock Kanto Route 14 (Wailmer Pail)",
+            "name": "Unlock Kanto Route 11 (Wailmer Pail)",
             "id": 6,
             "region": "Kanto",
             "category": [
                 "Key Items"
             ],
-            "requires": "{kanto_route_14()}"
+            "requires": "{kanto_route_11()}"
         },
         {
             "name": "Purchase the Explorer Kit on Cinnabar Island (Explorer Kit)",
@@ -245,7 +245,7 @@
             "category": [
                 "Gyms"
             ],
-            "requires": "{pokemon_mansion()} and {attack_needed(175290)}"
+            "requires": "{cinnabar_island()} and {pokemon_mansion()} and {attack_needed(175290)}"
         },
         {
             "name": "Giovanni",
@@ -424,7 +424,7 @@
         {
             "name": "Cerulean Cave",
             "id": 414,
-            "region": "Kanto Champion",
+            "region": "Kanto",
             "category": [
                 "Dungeons"
             ],
@@ -493,7 +493,7 @@
             "category": [
                 "Temporary Battles"
             ],
-            "requires": "|Earth Badge| and {attack_needed(426771)}"
+            "requires": "{kanto_route_22()} and |Earth Badge| and {attack_needed(426771)}"
         },
         {
             "name": "Fighting Dojo",
@@ -1655,7 +1655,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or |Wailmer Pail| or {can_breed(Tangela)}"
+            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or {can_wander()} or {can_breed(Tangela)}"
         },
         {
             "name": "Capture Kangaskhan",
@@ -1736,7 +1736,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or |Wailmer Pail| or {can_breed(Scyther)}"
+            "requires": "{safari_zone()} or {can_wander()} or {can_breed(Scyther)}"
         },
         {
             "name": "Capture Jynx",
@@ -2011,7 +2011,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Seasonal Events",
                 "Halloween"
             ],
             "requires": "({has_script(Infinite Seasonal Events)} and {any_kanto_route()}) or {can_breed(Spooky Bulbasaur)}"
@@ -2023,7 +2023,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
             ],
@@ -2048,7 +2048,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Seasonal Events",
                 "Halloween"
             ],
             "requires": "|Spooky Bulbasaur| or {can_breed(Spooky Ivysaur)}"
@@ -2060,7 +2060,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
             ],
@@ -2107,7 +2107,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Seasonal Events",
                 "Halloween"
             ],
             "requires": "(|@Badges:2| and |Spooky Ivysaur|) or {can_breed(Spooky Venusaur)}"
@@ -2119,7 +2119,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
             ],
@@ -3357,7 +3357,7 @@
                 "Pokemon Locations",
                 "Alt Pokemon"
             ],
-            "requires": "|Safari Ticket| or {can_breed(Exeggcute (Single))}"
+            "requires": "({safari_zone()} and |Exeggcute|) or {can_breed(Exeggcute (Single))}"
         },
         {
             "name": "Capture Alolan Exeggutor",
@@ -3482,13 +3482,12 @@
         {
             "name": "Capture Baby Kangaskhan",
             "id": 16502,
-            "region": "",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
-                "Alt Pokemon",
-                "Not Implemented"
+                "Alt Pokemon"
             ],
-            "requires": ""
+            "requires": "{can_breed(Kangaskhan)} or {can_breed(Baby Kangaskhan)}"
         },
         {
             "name": "Capture Goldeen (Diva)",
@@ -3526,7 +3525,7 @@
         {
             "name": "Capture Santa Jynx",
             "id": 17401,
-            "region": "",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
@@ -4112,6 +4111,616 @@
                 "Mewtwo Strikes Back"
             ],
             "requires": "{new_island(True, 131500)} or {can_breed(Armored Mewtwo)}"
+        },
+        {
+            "name": "Kanto Route 1 - 1",
+            "id": 110001,
+            "region": "Route 1",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Kanto Route 1 - 2",
+            "id": 110002,
+            "region": "Route 1",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Kanto Route 1 - 3",
+            "id": 110003,
+            "region": "Route 1",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Kanto Route 1 - 4",
+            "id": 110004,
+            "region": "Route 1",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Kanto Route 2",
+            "id": 110005,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_2()}"
+        },
+        {
+            "name": "Kanto Route 3 - 1",
+            "id": 110006,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_3()}"
+        },
+        {
+            "name": "Kanto Route 3 - 2",
+            "id": 110007,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_3()}"
+        },
+        {
+            "name": "Kanto Route 4",
+            "id": 110008,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_4()}"
+        },
+        {
+            "name": "Kanto Route 24",
+            "id": 110009,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_24()}"
+        },
+        {
+            "name": "Kanto Route 25 - 1",
+            "id": 110010,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_25()}"
+        },
+        {
+            "name": "Kanto Route 25 - 2",
+            "id": 110011,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_25()}"
+        },
+        {
+            "name": "Kanto Route 5",
+            "id": 110012,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_5()}"
+        },
+        {
+            "name": "Kanto Route 6 - 1",
+            "id": 110013,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_6()}"
+        },
+        {
+            "name": "Kanto Route 6 - 2",
+            "id": 110014,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_6()}"
+        },
+        {
+            "name": "Kanto Route 6 - 3",
+            "id": 110015,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_6()}"
+        },
+        {
+            "name": "Kanto Route 9",
+            "id": 110016,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_9()}"
+        },
+        {
+            "name": "Kanto Route 10",
+            "id": 110017,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_10()}"
+        },
+        {
+            "name": "Kanto Route 8",
+            "id": 110018,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_8()}"
+        },
+        {
+            "name": "Kanto Route 7 - 1",
+            "id": 110019,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_7()}"
+        },
+        {
+            "name": "Kanto Route 7 - 2",
+            "id": 110020,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_7()}"
+        },
+        {
+            "name": "Kanto Route 13 or 15",
+            "id": 110021,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_13()} or {kanto_route_15()}"
+        },
+        {
+            "name": "Kanto Route 14 or 18",
+            "id": 110022,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_14()} or {kanto_route_18()}"
+        },
+        {
+            "name": "Kanto Route 14 or Snorlax (Route 12)",
+            "id": 110023,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_14()} or ({kanto_route_12()} and {pokemon_tower()} and {attack_needed(189990)})"
+        },
+        {
+            "name": "Kanto Route 15 or 17",
+            "id": 110024,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_15()} or {kanto_route_17()}"
+        },
+        {
+            "name": "Kanto Route 15 or 18",
+            "id": 110025,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_15()} or {kanto_route_18()}"
+        },
+        {
+            "name": "Kanto Route 16 or 18",
+            "id": 110026,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_16()} or {kanto_route_18()}"
+        },
+        {
+            "name": "Kanto Route 17 or Snorlax (Route 16)",
+            "id": 110027,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_17()} or ({pokemon_tower()} and {attack_needed(189990)})"
+        },
+        {
+            "name": "Kanto Route 19",
+            "id": 110028,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_19()}"
+        },
+        {
+            "name": "Kanto Route 20 or 21 - 1",
+            "id": 110029,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_20()} or {kanto_route_21()}"
+        },
+        {
+            "name": "Kanto Route 20 or 21 - 2",
+            "id": 110030,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_20()} or {kanto_route_21()}"
+        },
+        {
+            "name": "Kanto Route 21 or Seafoam Islands",
+            "id": 110031,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_21()} or {seafoam_islands()}"
+        },
+        {
+            "name": "Kanto Route 23",
+            "id": 110032,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_23()}"
+        },
+        {
+            "name": "Kindle Road - 1",
+            "id": 110033,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kindle_road()}"
+        },
+        {
+            "name": "Kindle Road - 2",
+            "id": 110034,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kindle_road()}"
+        },
+        {
+            "name": "Bond Bridge",
+            "id": 110035,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{bond_bridge()}"
+        },
+        {
+            "name": "Brock - 2",
+            "id": 110036,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{pewter_city()} and {attack_needed(2092)}"
+        },
+        {
+            "name": "Erika or Rocket Game Corner",
+            "id": 110037,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "({celadon_city()} and {attack_needed(105550)}) or {rocket_game_corner()}"
+        },
+        {
+            "name": "Koga - 2",
+            "id": 110038,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{fuchsia_city()} and {attack_needed(137100)}"
+        },
+        {
+            "name": "Koga - 3",
+            "id": 110039,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{fuchsia_city()} and {attack_needed(137100)}"
+        },
+        {
+            "name": "Koga - 4",
+            "id": 110040,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{fuchsia_city()} and {attack_needed(137100)}"
+        },
+        {
+            "name": "Blaine - 2",
+            "id": 110041,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{cinnabar_island()} and {pokemon_mansion()} and {attack_needed(175290)}"
+        },
+        {
+            "name": "Blaine - 3",
+            "id": 110042,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{cinnabar_island()} and {pokemon_mansion()} and {attack_needed(175290)}"
+        },
+        {
+            "name": "Blaine - 4",
+            "id": 110043,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{cinnabar_island()} and {pokemon_mansion()} and {attack_needed(175290)}"
+        },
+        {
+            "name": "Blaine - 5",
+            "id": 110044,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{cinnabar_island()} and {pokemon_mansion()} and {attack_needed(175290)}"
+        },
+        {
+            "name": "Champion Blue - 2",
+            "id": 110045,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{indigo_plateau()} and |Kanto Elite Lance Badge| and {attack_needed(359860)}"
+        },
+        {
+            "name": "Viridian Forest - 2",
+            "id": 110046,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{viridian_forest()}"
+        },
+        {
+            "name": "Mt. Moon - 2",
+            "id": 110047,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{mt_moon()}"
+        },
+        {
+            "name": "Rock Tunnel - 2",
+            "id": 110048,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{rock_tunnel()}"
+        },
+        {
+            "name": "Rock Tunnel - 3",
+            "id": 110049,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{rock_tunnel()}"
+        },
+        {
+            "name": "Rock Tunnel - 4",
+            "id": 110050,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{rock_tunnel()}"
+        },
+        {
+            "name": "Rocket Game Corner - 2",
+            "id": 110051,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{rocket_game_corner()}"
+        },
+        {
+            "name": "Victory Road - 2",
+            "id": 110052,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{victory_road()}"
+        },
+        {
+            "name": "Blue 2 - 2",
+            "id": 110053,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_4()} and {attack_needed(14041)}"
+        },
+        {
+            "name": "Blue 3 - 2",
+            "id": 110054,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_6()} and {attack_needed(50431)}"
+        },
+        {
+            "name": "Blue 4 - 2",
+            "id": 110055,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{pokemon_tower()} and {attack_needed(151990)}"
+        },
+        {
+            "name": "Blue 6 - 2",
+            "id": 110056,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{kanto_route_22()} and |Earth Badge| and {attack_needed(426771)}"
+        },
+        {
+            "name": "Bill's Errand Questline; Speak with Celio on One Island - 1",
+            "id": 110057,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{bills_errand1()}"
+        },
+        {
+            "name": "Bill's Errand Questline; Speak with Celio on One Island - 2",
+            "id": 110058,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{bills_errand1()}"
+        },
+        {
+            "name": "Bill's Errand Questline; Ask the Game Corner owner on Two Island about the meteorite",
+            "id": 110059,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{bills_errand2()}"
+        },
+        {
+            "name": "Bill's Errand Questline; Defeat the biker gang's leader",
+            "id": 110060,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{bills_errand4()}"
+        },
+        {
+            "name": "Unfinished Business; Talk to Professor Oak in Pallet Town.",
+            "id": 110061,
+            "region": "Kanto",
+            "category": [
+                "Kanto",
+                "Mapsanity"
+            ],
+            "requires": "{unfinished_business1()}"
         },
         {
             "name": "Travel to Johto [Goal]",

@@ -39,6 +39,10 @@ Routes.add(new RegionRoute(
     }),
     undefined,
     KantoSubRegions.Kanto,
+    undefined,
+    undefined,
+    undefined,
+    [110001, 110002, 110003, 110004],
 ));
 Routes.add(new RegionRoute(
     'Kanto Route 22', Region.kanto, 22,
@@ -78,7 +82,6 @@ Routes.add(new RegionRoute(
         water: ['Tentacool', 'Krabby', 'Horsea', 'Magikarp'],
     }),
     [
-        new RouteKillRequirement(10, Region.kanto, 3),
         new ClearDungeonRequirement(1, getDungeonIndex('Mt. Moon')),
     ],
     undefined,
@@ -319,7 +322,6 @@ Routes.add(new RegionRoute(
         water: ['Psyduck', 'Poliwag', 'Slowpoke', 'Goldeen', 'Magikarp'],
     }),
     [
-        new RouteKillRequirement(10, Region.kanto, 22),
         new TemporaryBattleRequirement('Blue 6'),
     ],
     undefined,

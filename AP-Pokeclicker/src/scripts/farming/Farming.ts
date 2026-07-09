@@ -2318,10 +2318,12 @@ class Farming implements Feature {
     public attemptCatchWanderer(plot: Plot) {
         const wanderer = plot.wanderer;
         const catchChance = GameConstants.clipNumber(
-            wanderer.catchRate
+            (
+                ((window as any).APFlags.options.wanderer_catch_rate || wanderer.catchRate)
                 + App.game.pokeballs.getCatchBonus(wanderer.pokeball(), { pokemon: wanderer.name, encounterType: EncounterType.wanderer })
                 + App.game.oakItems.calculateBonus(OakItemType.Magic_Ball)
-                + (plot.mulch === MulchType.Gooey_Mulch ? GameConstants.GOOEY_MULCH_CATCH_BONUS : 0),
+                + (plot.mulch === MulchType.Gooey_Mulch ? GameConstants.GOOEY_MULCH_CATCH_BONUS : 0)
+            ) * GameConstants.WANDERER_CATCH_CHANCE_MULTIPLIER,
             0, 100);
         if (Rand.chance(catchChance / 100)) { // Successfully caught
             App.game.oakItems.use(OakItemType.Magic_Ball);
