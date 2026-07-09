@@ -35,7 +35,8 @@ export class Underground implements Feature {
     public battery = new UndergroundBattery();
 
     canAccess(): boolean {
-        return MapHelper.accessToRoute(11, 0) && App.game.keyItems.hasKeyItem(KeyItemType.Explorer_kit);
+        //return MapHelper.accessToRoute(11, 0) && App.game.keyItems.hasKeyItem(KeyItemType.Explorer_kit);
+        return App.game.keyItems.hasKeyItem(KeyItemType.Explorer_kit);
     }
 
     initialize(): void {
@@ -118,7 +119,7 @@ export class Underground implements Feature {
     }
 
     fromJSON(json: Record<string, any>): void {
-        this._undergroundExp(json.undergroundExp || this.defaults.undergroundExp);
+        this._undergroundExp(json.undergroundExp ?? this.defaults.undergroundExp);
         this._mine(json.mine ? Mine.load(json.mine) : null);
         this.helpers.fromJSON(json.helpers);
         this.tools.fromJSON(json.tools);
