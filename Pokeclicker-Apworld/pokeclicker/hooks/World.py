@@ -1,4 +1,6 @@
 # Object classes from AP core, to represent an entire MultiWorld and this individual World that's part of it
+import random
+
 from worlds.AutoWorld import World
 from BaseClasses import MultiWorld, CollectionState, Item
 
@@ -20,6 +22,8 @@ from ..Helpers import is_option_enabled, get_option_value, format_state_prog_ite
 # calling logging.info("message") anywhere below in this file will output the message to both console and log file
 import logging
 
+from ..functions import get_filler_item_list
+
 ########################################################################################
 ## Order of method calls when the world generates:
 ##    1. create_regions - Creates regions and locations
@@ -37,7 +41,10 @@ import logging
 # Use this function to change the valid filler items to be created to replace item links or starting items.
 # Default value is the `filler_item_name` from game.json
 def hook_get_filler_item_name(world: World, multiworld: MultiWorld, player: int) -> str | bool:
-    return False
+    filler_items = get_filler_item_list()
+    # Only return filler names that exist in the generated item lookup.
+    valid_filler_items = [name for name in filler_items if name in world.item_name_to_item]
+    return random.choice(valid_filler_items)
 
 # Called before regions and locations are created. Not clear why you'd want this, but it's here. Victory location is included, but Victory event is not placed yet.
 def before_create_regions(world: World, multiworld: MultiWorld, player: int):
@@ -51,6 +58,7 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     #         world.location_name_to_id[location] = None
     #         del world.location_name_to_id[location]
     pass
+    
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
@@ -176,11 +184,18 @@ def after_create_item(item: ManualItem, world: World, multiworld: MultiWorld, pl
 
 # This method is run towards the end of pre-generation, before the place_item options have been handled and before AP generation occurs
 def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
+    world.multiworld.early_items[player]["Town Map"] = world.options.early_town_map
+
 
     if world.options.dexsanity.value == 2: # Shuffled
         for location in location_name_to_location.keys():
             if "Pokemon Locations" in location_name_to_location[location]["category"]:
                 world.location_name_to_location[location]["place_item_category"] = ["Pokemon"]
+                
+    # if world.options.mapsanity.value == 1: # Shuffled
+    #     for location in location_name_to_location.keys():
+    #         if "Mapsanity" in location_name_to_location[location]["category"]:
+    #             world.location_name_to_location[location]["place_item_category"] = ["Mapsanity"]
     
     if world.options.badge_randomization.value == 0:
         world.location_name_to_location["Brock"]["place_item"] = ["Boulder Badge"]
@@ -208,6 +223,69 @@ def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
     #     world.location_name_to_location["Bruno"]["place_item"] = ["Kanto Elite Bruno Badge"]
     #     world.location_name_to_location["Agatha"]["place_item"] = ["Kanto Elite Agatha Badge"]
     #     world.location_name_to_location["Lance"]["place_item"] = ["Kanto Elite Lance Badge"]
+
+    # world.location_name_to_location["Kanto Route 1 - 1"]["place_item"] = ["Kanto Route 22"]
+    # world.location_name_to_location["Kanto Route 1 - 2"]["place_item"] = ["Kanto Route 2"]
+    # world.location_name_to_location["Kanto Route 1 - 3"]["place_item"] = ["Pallet Town"]
+    # world.location_name_to_location["Kanto Route 1 - 4"]["place_item"] = ["Viridian City"]
+    # world.location_name_to_location["Kanto Route 2"]["place_item"] = ["Viridian Forest"]
+    # world.location_name_to_location["Kanto Route 3 - 1"]["place_item"] = ["Mt. Moon"]
+    # world.location_name_to_location["Kanto Route 3 - 2"]["place_item"] = ["Kanto Route 4 Pokemon Center"]
+    # world.location_name_to_location["Kanto Route 4"]["place_item"] = ["Cerulean City"]
+    # world.location_name_to_location["Kanto Route 24"]["place_item"] = ["Kanto Route 25"]
+    # world.location_name_to_location["Kanto Route 25 - 1"]["place_item"] = ["Kanto Route 5"]
+    # world.location_name_to_location["Kanto Route 25 - 2"]["place_item"] = ["Bill's House"]
+    # world.location_name_to_location["Kanto Route 5"]["place_item"] = ["Kanto Route 6"]
+    # world.location_name_to_location["Kanto Route 6 - 1"]["place_item"] = ["Kanto Route 11"]
+    # world.location_name_to_location["Kanto Route 6 - 2"]["place_item"] = ["Diglett's Cave"]
+    # world.location_name_to_location["Kanto Route 6 - 3"]["place_item"] = ["Vermilion City"]
+    # world.location_name_to_location["Kanto Route 9"]["place_item"] = ["Kanto Route 10"]
+    # world.location_name_to_location["Kanto Route 10"]["place_item"] = ["Rock Tunnel"]
+    # world.location_name_to_location["Kanto Route 8"]["place_item"] = ["Kanto Route 7"]
+    # world.location_name_to_location["Kanto Route 7 - 1"]["place_item"] = ["Celadon City"]
+    # world.location_name_to_location["Kanto Route 7 - 2"]["place_item"] = ["Rocket Game Corner"]
+    # world.location_name_to_location["Kanto Route 13 or 15"]["place_item"] = ["Kanto Route 14"]
+    # world.location_name_to_location["Kanto Route 14 or 18"]["place_item"] = ["Kanto Route 15"]
+    # world.location_name_to_location["Kanto Route 14 or Snorlax (Route 12)"]["place_item"] = ["Kanto Route 13"]
+    # world.location_name_to_location["Kanto Route 15 or 17"]["place_item"] = ["Kanto Route 18"]
+    # world.location_name_to_location["Kanto Route 15 or 18"]["place_item"] = ["Fuchsia City"]
+    # world.location_name_to_location["Kanto Route 16 or 18"]["place_item"] = ["Kanto Route 17"]
+    # world.location_name_to_location["Kanto Route 17 or Snorlax (Route 16)"]["place_item"] = ["Kanto Route 16"]
+    # world.location_name_to_location["Kanto Route 19"]["place_item"] = ["Seafoam Islands"]
+    # world.location_name_to_location["Kanto Route 20 or 21 - 1"]["place_item"] = ["Cinnabar Island"]
+    # world.location_name_to_location["Kanto Route 20 or 21 - 2"]["place_item"] = ["Pokemon Mansion"]
+    # world.location_name_to_location["Kanto Route 21 or Seafoam Islands"]["place_item"] = ["Kanto Route 20"]
+    # world.location_name_to_location["Kanto Route 23"]["place_item"] = ["Victory Road"]
+    # world.location_name_to_location["Kindle Road - 1"]["place_item"] = ["Mt. Ember"]
+    # world.location_name_to_location["Kindle Road - 2"]["place_item"] = ["Mt. Ember Summit"]
+    # world.location_name_to_location["Bond Bridge"]["place_item"] = ["Berry Forest"]
+    # world.location_name_to_location["Brock - 2"]["place_item"] = ["Kanto Route 3"]
+    # world.location_name_to_location["Erika or Rocket Game Corner"]["place_item"] = ["Saffron City"]
+    # world.location_name_to_location["Koga - 2"]["place_item"] = ["Kanto Route 19"]
+    # world.location_name_to_location["Koga - 3"]["place_item"] = ["Kanto Route 21"]
+    # world.location_name_to_location["Koga - 4"]["place_item"] = ["Power Plant"]
+    # world.location_name_to_location["Blaine - 2"]["place_item"] = ["One Island"]
+    # world.location_name_to_location["Blaine - 3"]["place_item"] = ["Kindle Road"]
+    # world.location_name_to_location["Blaine - 4"]["place_item"] = ["Treasure Beach"]
+    # world.location_name_to_location["Blaine - 5"]["place_item"] = ["Client Island"]
+    # world.location_name_to_location["Champion Blue - 2"]["place_item"] = ["Cerulean Cave"]
+    # world.location_name_to_location["Viridian Forest - 2"]["place_item"] = ["Pewter City"]
+    # world.location_name_to_location["Mt. Moon - 2"]["place_item"] = ["Kanto Route 4"]
+    # world.location_name_to_location["Rock Tunnel - 2"]["place_item"] = ["Lavender Town"]
+    # world.location_name_to_location["Rock Tunnel - 3"]["place_item"] = ["Kanto Route 12"]
+    # world.location_name_to_location["Rock Tunnel - 4"]["place_item"] = ["Kanto Route 8"]
+    # world.location_name_to_location["Rocket Game Corner - 2"]["place_item"] = ["Pokemon Tower"]
+    # world.location_name_to_location["Victory Road - 2"]["place_item"] = ["Indigo Plateau Kanto"]
+    # world.location_name_to_location["Blue 2 - 2"]["place_item"] = ["Kanto Route 24"]
+    # world.location_name_to_location["Blue 3 - 2"]["place_item"] = ["Kanto Route 9"]
+    # world.location_name_to_location["Blue 4 - 2"]["place_item"] = ["Silph Co."]
+    # world.location_name_to_location["Blue 6 - 2"]["place_item"] = ["Kanto Route 23"]
+    # world.location_name_to_location["Bill's Errand Questline; Speak with Celio on One Island - 1"]["place_item"] = ["Two Island"]
+    # world.location_name_to_location["Bill's Errand Questline; Speak with Celio on One Island - 2"]["place_item"] = ["Cape Brink"]
+    # world.location_name_to_location["Bill's Errand Questline; Ask the Game Corner owner on Two Island about the meteorite"]["place_item"] = ["Three Island"]
+    # world.location_name_to_location["Bill's Errand Questline; Defeat the biker gang's leader"]["place_item"] = ["Bond Bridge"]
+    # world.location_name_to_location["Unfinished Business; Talk to Professor Oak in Pallet Town."]["place_item"] = ["Professor Ivy's Lab"]
+
 
 # This method is run at the very end of pre-generation, once the place_item options have been handled and before AP generation occurs
 def after_generate_basic(world: World, multiworld: MultiWorld, player: int):

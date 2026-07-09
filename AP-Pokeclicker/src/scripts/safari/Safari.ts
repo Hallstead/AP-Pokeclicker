@@ -27,7 +27,8 @@ class Safari {
             App.game.statistics.safariBallsThrown() * 10 +
             App.game.statistics.safariPokemonCaptured() * 50 +
             App.game.statistics.safariShinyPokemonCaptured() * 50 * 4 + // Shiny increments both, so this adds up to 5x
-            App.game.statistics.safariItemsObtained() * 10;
+            App.game.statistics.safariItemsObtained() * 10 + 
+            Safari.expRequiredForLevel((window as any)?.APFlags?.options?.starting_safari_level);
     });
     static safariLevel: KnockoutComputed<number> = ko.pureComputed(() => {
         const xp = Safari.safariExp();

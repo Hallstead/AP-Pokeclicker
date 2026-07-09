@@ -183,6 +183,8 @@ export const GOOEY_MULCH_CATCH_BONUS = 10;
 
 export const WANDER_RATE = 0.0005;
 export const WANDER_SHINY_FP_MODIFIER = 5;
+export const WANDERER_BASE_CATCH_BONUS = 25;
+export const WANDERER_CATCH_CHANCE_MULTIPLIER = 1;
 
 export const BerryColor = [
     '#EE8130', // Red
