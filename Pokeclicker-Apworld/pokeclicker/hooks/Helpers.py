@@ -32,6 +32,7 @@ def before_is_category_enabled(multiworld: MultiWorld, player: int, category_nam
         return Helpers.is_option_enabled(multiworld, player, "include_codes_as_items")
     
     if category_name == "Mapsanity":
+        return False
         return Helpers.is_option_enabled(multiworld, player, "mapsanity")
     
     return None
