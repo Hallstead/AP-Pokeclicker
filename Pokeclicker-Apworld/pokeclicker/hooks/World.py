@@ -58,6 +58,7 @@ def before_create_regions(world: World, multiworld: MultiWorld, player: int):
     #         world.location_name_to_id[location] = None
     #         del world.location_name_to_id[location]
     pass
+    
 
 # Called after regions and locations are created, in case you want to see or modify that information. Victory location is included.
 def after_create_regions(world: World, multiworld: MultiWorld, player: int):
@@ -183,7 +184,7 @@ def after_create_item(item: ManualItem, world: World, multiworld: MultiWorld, pl
 
 # This method is run towards the end of pre-generation, before the place_item options have been handled and before AP generation occurs
 def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
-    world.multiworld.early_items[player]["Town Map"] = 1
+    world.multiworld.early_items[player]["Town Map"] = world.options.early_town_map
 
 
     if world.options.dexsanity.value == 2: # Shuffled
@@ -191,10 +192,10 @@ def before_generate_basic(world: World, multiworld: MultiWorld, player: int):
             if "Pokemon Locations" in location_name_to_location[location]["category"]:
                 world.location_name_to_location[location]["place_item_category"] = ["Pokemon"]
                 
-    if world.options.mapsanity.value == 1: # Shuffled
-        for location in location_name_to_location.keys():
-            if "Mapsanity" in location_name_to_location[location]["category"]:
-                world.location_name_to_location[location]["place_item_category"] = ["Mapsanity"]
+    # if world.options.mapsanity.value == 1: # Shuffled
+    #     for location in location_name_to_location.keys():
+    #         if "Mapsanity" in location_name_to_location[location]["category"]:
+    #             world.location_name_to_location[location]["place_item_category"] = ["Mapsanity"]
     
     if world.options.badge_randomization.value == 0:
         world.location_name_to_location["Brock"]["place_item"] = ["Boulder Badge"]
