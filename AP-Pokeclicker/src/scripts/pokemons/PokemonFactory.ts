@@ -402,7 +402,7 @@ class PokemonFactory {
         const shiny = PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_FARM);
         const catchChance = PokemonFactory.catchRateHelper(
             pokemonData.catchRate + GameConstants.WANDERER_BASE_CATCH_BONUS,
-            true,
+            true
         );
         const wanderer = new WandererPokemon(pokemon, berry.type, catchChance, shiny);
         return wanderer;

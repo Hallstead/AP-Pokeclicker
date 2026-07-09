@@ -123,10 +123,7 @@ class ArchipelagoIntegrationModule {
 
             return;
 
-            // if (typeof w.Safari?.setStartingLevelFromAP === 'function') {
-            //     w.Safari.setStartingLevelFromAP((window as any)?.APFlags?.options.safari_starting_level);
-            // }
-        } catch (e) {console.log("ERROR: " + e)
+        } catch (e) {
             this.lastError = e;
             try { console.error('Failed to apply AP starting level overrides:', e); } catch (_) { }
         }
