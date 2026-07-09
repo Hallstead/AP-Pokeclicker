@@ -44,16 +44,16 @@ def pallet_town(world: World, state: CollectionState, player: int):
 
 def kanto_route_22(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 22."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 22", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 22", player) > 0
+    #     return has_location
     return kanto_route_1(world, state, player)
 
 def kanto_route_2(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 2."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 2", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 2", player) > 0
+    #     return has_location
     return kanto_route_1(world, state, player)
 
 def viridian_city(world: World, state: CollectionState, player: int):
@@ -81,9 +81,9 @@ def pewter_city(world: World, state: CollectionState, player: int):
 
 def kanto_route_3(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 3."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 3", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 3", player) > 0
+    #     return has_location
     has_boulder_badge = state.count("Boulder Badge", player) > 0
     return has_boulder_badge
 
@@ -105,9 +105,9 @@ def kanto_route_4_pokecenter(world: World, state: CollectionState, player: int):
 
 def kanto_route_4(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 4."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 4", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 4", player) > 0
+    #     return has_location
     return mt_moon(world, state, player)
 
 def cerulean_city(world: World, state: CollectionState, player: int):
@@ -119,16 +119,16 @@ def cerulean_city(world: World, state: CollectionState, player: int):
 
 def kanto_route_24(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 24."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 24", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 24", player) > 0
+    #     return has_location
     return kanto_route_4(world, state, player) and attack_needed(world, state, player, 14041)
 
 def kanto_route_25(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 25."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 25", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 25", player) > 0
+    #     return has_location
     return kanto_route_24(world, state, player)
 
 def bills_house(world: World, state: CollectionState, player: int):
@@ -140,16 +140,16 @@ def bills_house(world: World, state: CollectionState, player: int):
 
 def kanto_route_5(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 5."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 5", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 5", player) > 0
+    #     return has_location
     return kanto_route_25(world, state, player)
 
 def kanto_route_6(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 6."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 6", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 6", player) > 0
+    #     return has_location
     return kanto_route_5(world, state, player)
 
 def vermilion_city(world: World, state: CollectionState, player: int):
@@ -161,9 +161,9 @@ def vermilion_city(world: World, state: CollectionState, player: int):
 
 def kanto_route_11(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 11."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 11", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 11", player) > 0
+    #     return has_location
     return kanto_route_6(world, state, player)
 
 def digletts_cave(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
@@ -177,9 +177,9 @@ def digletts_cave(world: World, state: CollectionState, player: int, complete_du
 
 def kanto_route_9(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 9."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 9", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 9", player) > 0
+    #     return has_location
     has_cascade_badge = state.count("Cascade Badge", player) > 0
     return vermilion_city(world, state, player) and attack_needed(world, state, player, 50431) and has_cascade_badge
 
@@ -195,9 +195,9 @@ def power_plant(world: World, state: CollectionState, player: int, complete_dung
 
 def kanto_route_10(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 10."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 10", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 10", player) > 0
+    #     return has_location
     return kanto_route_9(world, state, player)
 
 def rock_tunnel(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
@@ -227,16 +227,16 @@ def pokemon_tower(world: World, state: CollectionState, player: int, complete_du
 
 def kanto_route_12(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 12."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 12", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 12", player) > 0
+    #     return has_location
     return rock_tunnel(world, state, player)
 
 def kanto_route_8(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 8."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 8", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 8", player) > 0
+    #     return has_location
     return rock_tunnel(world, state, player)
 
 def saffron_city(world: World, state: CollectionState, player: int):
@@ -258,9 +258,9 @@ def silph_co(world: World, state: CollectionState, player: int, complete_dungeon
 
 def kanto_route_7(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 7."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 7", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 7", player) > 0
+    #     return has_location
     return kanto_route_8(world, state, player)
 
 def celadon_city(world: World, state: CollectionState, player: int):
@@ -281,44 +281,44 @@ def rocket_game_corner(world: World, state: CollectionState, player: int, comple
 
 def kanto_route_13(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 13."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 13", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 13", player) > 0
+    #     return has_location
     return pokemon_tower(world, state, player)
 
 def kanto_route_14(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 14."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 14", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 14", player) > 0
+    #     return has_location
     return kanto_route_13(world, state, player)
 
 def kanto_route_15(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 15."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 15", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 15", player) > 0
+    #     return has_location
     return kanto_route_14(world, state, player)
 
 def kanto_route_16(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 16."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 16", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 16", player) > 0
+    #     return has_location
     return pokemon_tower(world, state, player)
 
 def kanto_route_17(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 17."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 17", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 17", player) > 0
+    #     return has_location
     return kanto_route_16(world, state, player)
 
 def kanto_route_18(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 18."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 18", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 18", player) > 0
+    #     return has_location
     return kanto_route_17(world, state, player)
 
 def fuchsia_city(world: World, state: CollectionState, player: int):   
@@ -340,9 +340,9 @@ def safari_zone(world: World, state: CollectionState, player: int):
 
 def kanto_route_19(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 19."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 19", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 19", player) > 0
+    #     return has_location
     has_soul_badge = state.count("Soul Badge", player) > 0
     return has_soul_badge
 
@@ -358,16 +358,16 @@ def seafoam_islands(world: World, state: CollectionState, player: int, complete_
 
 def kanto_route_20(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 20."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 20", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 20", player) > 0
+    #     return has_location
     return kanto_route_21(world, state, player) or seafoam_islands(world, state, player)
 
 def kanto_route_21(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 21."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 21", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 21", player) > 0
+    #     return has_location
     has_soul_badge = state.count("Soul Badge", player) > 0
     return has_soul_badge
 
@@ -389,9 +389,9 @@ def pokemon_mansion(world: World, state: CollectionState, player: int, complete_
 
 def kanto_route_23(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kanto Route 23."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kanto Route 23", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 23", player) > 0
+    #     return has_location
     has_earth_badge = state.count("Earth Badge", player) > 0
     return kanto_route_22(world, state, player) and has_earth_badge and attack_needed(world, state, player, 426771)
 
@@ -442,17 +442,17 @@ def one_island(world: World, state: CollectionState, player: int):
 
 def treasure_beach(world: World, state: CollectionState, player: int):
     """Checks if the player can access Treasure Beach on Sevii One Island."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Treasure Beach", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Treasure Beach", player) > 0
+    #     return has_location
     has_volcano_badge = state.count("Volcano Badge", player) > 0
     return has_volcano_badge
 
 def kindle_road(world: World, state: CollectionState, player: int):
     """Checks if the player can access Kindle Road on Sevii One Island."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Kindle Road", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kindle Road", player) > 0
+    #     return has_location
     has_volcano_badge = state.count("Volcano Badge", player) > 0
     return has_volcano_badge
 
@@ -474,9 +474,9 @@ def two_island(world: World, state: CollectionState, player: int):
 
 def cape_brink(world: World, state: CollectionState, player: int):
     """Checks if the player can access Sevii Cape Brink."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Cape Brink", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Cape Brink", player) > 0
+    #     return has_location
     return two_island(world, state, player)
 
 def three_island(world: World, state: CollectionState, player: int):
@@ -488,9 +488,9 @@ def three_island(world: World, state: CollectionState, player: int):
 
 def bond_bridge(world: World, state: CollectionState, player: int):
     """Checks if the player can access Bond Bridge on Sevii Three Island."""
-    if world.options.mapsanity.value > 0:
-        has_location = state.count("Bond Bridge", player) > 0
-        return has_location
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Bond Bridge", player) > 0
+    #     return has_location
     return three_island(world, state, player) and attack_needed(world, state, player, 443328)
 
 def berry_forest(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
@@ -762,3 +762,9 @@ def has_script(world: World, state: CollectionState, player: int, script_name: s
         return True
     # script_item = get_items_with_value(world, f"Script: {script_name}")
     return state.count(script_name, player) > 0
+
+def can_wander(world: World, state: CollectionState, player: int):
+    """Checks if wanderer pokemon are in logic."""
+    if not world.options.wanderers_in_logic.value:
+        return False
+    return state.count("Wailmer Pail", player) > 0

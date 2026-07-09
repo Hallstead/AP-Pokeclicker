@@ -1655,7 +1655,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or |Wailmer Pail| or {can_breed(Tangela)}"
+            "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or {can_wander()} or {can_breed(Tangela)}"
         },
         {
             "name": "Capture Kangaskhan",
@@ -1736,7 +1736,7 @@
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "{safari_zone()} or |Wailmer Pail| or {can_breed(Scyther)}"
+            "requires": "{safari_zone()} or {can_wander()} or {can_breed(Scyther)}"
         },
         {
             "name": "Capture Jynx",
