@@ -73,7 +73,10 @@
                 "",
                 "None: Pokemon are not locations, and catching a pokemon gives that pokemon.",
                 "Shuffled: Pokemon locations only contain Pokemon",
-                "Full: All Pokemon are randomized into the item pool."
+                "Full: All Pokemon are randomized into the item pool.",
+                "",
+                "Note: Enabling Dexsanity turns on the challenge that you must capture all Pokemon before progressing to the next region.",
+                "This can be disabled in Start Menu > Challenge Modes"
             ],
             "values": {
                 "none": 0,
@@ -176,12 +179,12 @@
             "default": false,
             "group": "Game Options"
         },
-        "mapsanity": {
+        "_mapsanity": {
             "type": "Choice",
             "description": [
                 "This option adds all map locations to the item pool.",
                 "Instead of unlocking their normal map locations, when you would unlock a route or town, it instead sends a check to the server.",
-                "None: This option is disabled.",
+                "None: This option is disabled, and map location unlock as normal",
                 "Shuffled: Map locations are shuffled amongst themselves.",
                 "Full: Map locations are added to the item pool with everything else."
             ],
@@ -192,6 +195,26 @@
             },
             "default": 0,
             "allow_custom_value": false,
+            "group": "Game Options"
+        },
+        "starting_safari_level": {
+            "type": "Range",
+            "description": [
+                "Sets the starting level for the Safari Zone."
+            ],
+            "range_start": 1,
+            "default": 1,
+            "range_end": 40,
+            "group": "Game Options"
+        },
+        "starting_underground_level": {
+            "type": "Range",
+            "description": [
+                "Sets the starting level for the Underground."
+            ],
+            "range_start": 0,
+            "default": 0,
+            "range_end": 60,
             "group": "Game Options"
         },
         "roaming_encounter_multiplier": {
@@ -295,6 +318,28 @@
             "range_end": 10,
             "group": "Multiplier Options"
         },
+        "wanderer_appearance_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the chance a Wanderer has to appear in the farm.",
+                "For example, a value of 2 would double the chance/frequency for a Wanderer to appear."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "wanderer_base_catch_rate": {
+            "type": "Range",
+            "description": [
+                "Sets the base chance to catch a Wanderer.",
+                "100 would be a guaranteed catch. 0 uses the default catch rate from the game."
+            ],
+            "default": 0,
+            "range_start": 0,
+            "range_end": 100,
+            "group": "Multiplier Options"
+        },
         "starter_logic": {
             "type": "Toggle",
             "description": [
@@ -304,6 +349,14 @@
             "default": false,
             "group": "Logic Options"
             
+        },
+        "early_town_map": {
+            "type": "Toggle",
+            "description": [
+                "Determines if the Town Map is forced early."
+            ],
+            "default": true,
+            "group": "Logic Options"
         },
         "mystery_egg_in_logic": {
             "type": "Toggle",
@@ -347,6 +400,15 @@
             "description": [
                 "Is the Auto Safari Zone script logically required to obtain pokemon in the Safari Zone?",
                 "This does nothing if use_scripts or include_scripts_as_items are false."
+            ],
+            "default": false,
+            "group": "Logic Options"
+        },
+        "wanderers_in_logic": {
+            "type": "Toggle",
+            "description": [
+                "Are Wanderers considered in logic for obtaining pokemon?",
+                "This will remove wandering in the farm from logic. It does not remove those pokemon from the pool."
             ],
             "default": false,
             "group": "Logic Options"
