@@ -427,7 +427,7 @@
         },
         {
             "id": 501,
-            "count": "3",
+            "count": 3,
             "name": "Progressive Pokeball",
             "category": [
                 "Shop"
@@ -477,7 +477,8 @@
             "name": "Bulbasaur",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -487,7 +488,8 @@
             "name": "Ivysaur",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -497,7 +499,8 @@
             "name": "Venusaur",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -507,7 +510,8 @@
             "name": "Charmander",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -517,7 +521,8 @@
             "name": "Charmeleon",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -527,7 +532,8 @@
             "name": "Charizard",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -537,7 +543,8 @@
             "name": "Squirtle",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -547,7 +554,8 @@
             "name": "Wartortle",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -557,7 +565,8 @@
             "name": "Blastoise",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -567,7 +576,8 @@
             "name": "Caterpie",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -577,7 +587,8 @@
             "name": "Metapod",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -587,7 +598,8 @@
             "name": "Butterfree",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -597,7 +609,8 @@
             "name": "Weedle",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -607,7 +620,8 @@
             "name": "Kakuna",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -617,7 +631,8 @@
             "name": "Beedrill",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -627,7 +642,8 @@
             "name": "Pidgey",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -637,7 +653,8 @@
             "name": "Pidgeotto",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -647,7 +664,8 @@
             "name": "Pidgeot",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -657,7 +675,8 @@
             "name": "Rattata",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -667,7 +686,8 @@
             "name": "Raticate",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -677,7 +697,8 @@
             "name": "Spearow",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -687,7 +708,8 @@
             "name": "Fearow",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -697,7 +719,8 @@
             "name": "Ekans",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -707,7 +730,8 @@
             "name": "Arbok",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -717,7 +741,8 @@
             "name": "Pikachu",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -727,7 +752,8 @@
             "name": "Raichu",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -737,7 +763,8 @@
             "name": "Sandshrew",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -747,7 +774,8 @@
             "name": "Sandslash",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -757,7 +785,8 @@
             "name": "Nidoran (F)",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -767,7 +796,8 @@
             "name": "Nidorina",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -777,7 +807,8 @@
             "name": "Nidoqueen",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -787,7 +818,8 @@
             "name": "Nidoran (M)",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -797,7 +829,8 @@
             "name": "Nidorino",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -807,7 +840,8 @@
             "name": "Nidoking",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -817,7 +851,8 @@
             "name": "Clefairy",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -827,7 +862,8 @@
             "name": "Clefable",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -837,7 +873,8 @@
             "name": "Vulpix",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -847,7 +884,8 @@
             "name": "Ninetails",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -857,7 +895,8 @@
             "name": "Jigglypuff",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -867,7 +906,8 @@
             "name": "Wigglytuff",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -877,7 +917,8 @@
             "name": "Zubat",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -887,7 +928,8 @@
             "name": "Golbat",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -897,7 +939,8 @@
             "name": "Oddish",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -907,7 +950,8 @@
             "name": "Gloom",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -917,7 +961,8 @@
             "name": "Vileplume",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -927,7 +972,8 @@
             "name": "Paras",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -937,7 +983,8 @@
             "name": "Parasect",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -947,7 +994,8 @@
             "name": "Venonat",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -957,7 +1005,8 @@
             "name": "Venomoth",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -967,7 +1016,8 @@
             "name": "Diglett",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -977,7 +1027,8 @@
             "name": "Dugtrio",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -987,7 +1038,8 @@
             "name": "Meowth",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -997,7 +1049,8 @@
             "name": "Persian",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1007,7 +1060,8 @@
             "name": "Psyduck",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1017,7 +1071,8 @@
             "name": "Golduck",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1027,7 +1082,8 @@
             "name": "Mankey",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1037,7 +1093,8 @@
             "name": "Primape",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1047,7 +1104,8 @@
             "name": "Growlithe",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1057,7 +1115,8 @@
             "name": "Arcanine",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1067,7 +1126,8 @@
             "name": "Poliwag",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1077,7 +1137,8 @@
             "name": "Poliwhirl",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1087,7 +1148,8 @@
             "name": "Poliwrath",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1097,7 +1159,8 @@
             "name": "Abra",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1107,7 +1170,8 @@
             "name": "Kadabra",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1117,7 +1181,8 @@
             "name": "Alakazam",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1127,7 +1192,8 @@
             "name": "Machop",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1137,7 +1203,8 @@
             "name": "Machoke",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1147,7 +1214,8 @@
             "name": "Machamp",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1157,7 +1225,8 @@
             "name": "Bellsprout",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1167,7 +1236,8 @@
             "name": "Weepinbell",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1177,7 +1247,8 @@
             "name": "Victreebel",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1187,7 +1258,8 @@
             "name": "Tentacool",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1197,7 +1269,8 @@
             "name": "Tentacruel",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1207,7 +1280,8 @@
             "name": "Geodude",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1217,7 +1291,8 @@
             "name": "Graveler",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1227,7 +1302,8 @@
             "name": "Golem",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1237,7 +1313,8 @@
             "name": "Ponyta",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1247,7 +1324,8 @@
             "name": "Rapidash",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1257,7 +1335,8 @@
             "name": "Slowpoke",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1267,7 +1346,8 @@
             "name": "Slowbro",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1277,7 +1357,8 @@
             "name": "Magnemite",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1287,7 +1368,8 @@
             "name": "Magneton",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1297,7 +1379,8 @@
             "name": "Farfetch'd",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1307,7 +1390,8 @@
             "name": "Doduo",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1317,7 +1401,8 @@
             "name": "Dodrio",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1327,7 +1412,8 @@
             "name": "Seel",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1337,7 +1423,8 @@
             "name": "Dewgong",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1347,7 +1434,8 @@
             "name": "Grimer",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1357,7 +1445,8 @@
             "name": "Muk",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1367,7 +1456,8 @@
             "name": "Shellder",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1377,7 +1467,8 @@
             "name": "Cloyster",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1387,7 +1478,8 @@
             "name": "Gastly",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1397,7 +1489,8 @@
             "name": "Haunter",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1407,7 +1500,8 @@
             "name": "Gengar",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1417,7 +1511,8 @@
             "name": "Onix",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1427,7 +1522,8 @@
             "name": "Drowzee",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1437,7 +1533,8 @@
             "name": "Hypno",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1447,7 +1544,8 @@
             "name": "Krabby",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1457,7 +1555,8 @@
             "name": "Kingler",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1467,7 +1566,8 @@
             "name": "Voltorb",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1477,7 +1577,8 @@
             "name": "Electrode",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1487,7 +1588,8 @@
             "name": "Exeggcute",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1497,7 +1599,8 @@
             "name": "Exeggutor",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1507,7 +1610,8 @@
             "name": "Cubone",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1517,7 +1621,8 @@
             "name": "Marowak",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1527,7 +1632,8 @@
             "name": "Hitmonlee",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1537,7 +1643,8 @@
             "name": "Hitmonchan",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1547,7 +1654,8 @@
             "name": "Lickitung",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1557,7 +1665,8 @@
             "name": "Koffing",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1567,7 +1676,8 @@
             "name": "Weezing",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1577,7 +1687,8 @@
             "name": "Rhyhorn",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1587,7 +1698,8 @@
             "name": "Rhydon",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1597,7 +1709,8 @@
             "name": "Chansey",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1607,7 +1720,8 @@
             "name": "Tangela",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1617,7 +1731,8 @@
             "name": "Kangaskhan",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1627,7 +1742,8 @@
             "name": "Horsea",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1637,7 +1753,8 @@
             "name": "Seadra",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1647,7 +1764,8 @@
             "name": "Goldeen",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1657,7 +1775,8 @@
             "name": "Seaking",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1667,7 +1786,8 @@
             "name": "Staryu",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1677,7 +1797,8 @@
             "name": "Starmie",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1687,7 +1808,8 @@
             "name": "Mr. Mime",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1697,7 +1819,8 @@
             "name": "Scyther",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1707,7 +1830,8 @@
             "name": "Jynx",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1717,7 +1841,8 @@
             "name": "Electabuzz",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1727,7 +1852,8 @@
             "name": "Magmar",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1737,7 +1863,8 @@
             "name": "Pinsir",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1747,7 +1874,8 @@
             "name": "Tauros",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1757,7 +1885,8 @@
             "name": "Magikarp",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1767,7 +1896,8 @@
             "name": "Gyarados",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1777,7 +1907,8 @@
             "name": "Lapras",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1787,7 +1918,8 @@
             "name": "Ditto",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1797,7 +1929,8 @@
             "name": "Eevee",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1807,7 +1940,8 @@
             "name": "Vaporeon",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1817,7 +1951,8 @@
             "name": "Jolteon",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1827,7 +1962,8 @@
             "name": "Flareon",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1837,7 +1973,8 @@
             "name": "Porygon",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1847,7 +1984,8 @@
             "name": "Omanyte",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1857,7 +1995,8 @@
             "name": "Omastar",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1867,7 +2006,8 @@
             "name": "Kabuto",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1877,7 +2017,8 @@
             "name": "Kabutops",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1887,7 +2028,8 @@
             "name": "Aerodactyl",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1897,7 +2039,8 @@
             "name": "Snorlax",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1907,7 +2050,8 @@
             "name": "Articuno",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1917,7 +2061,8 @@
             "name": "Zapdos",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1927,7 +2072,8 @@
             "name": "Moltres",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1937,7 +2083,8 @@
             "name": "Dratini",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1947,7 +2094,8 @@
             "name": "Dragonair",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1957,7 +2105,8 @@
             "name": "Dragonite",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1967,7 +2116,8 @@
             "name": "Mewtwo",
             "category": [
                 "Pokemon",
-                "Base Pokemon"
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -1978,7 +2128,1110 @@
             "category": [
                 "Pokemon",
                 "Base Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2152,
+            "count": 1,
+            "name": "Chikorita",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2153,
+            "count": 1,
+            "name": "Bayleef",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2154,
+            "count": 1,
+            "name": "Meganium",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2155,
+            "count": 1,
+            "name": "Cyndaquil",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2156,
+            "count": 1,
+            "name": "Quilava",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2157,
+            "count": 1,
+            "name": "Typhlosion",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2158,
+            "count": 1,
+            "name": "Totodile",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2159,
+            "count": 1,
+            "name": "Croconaw",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2160,
+            "count": 1,
+            "name": "Feraligatr",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2161,
+            "count": 1,
+            "name": "Sentret",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2162,
+            "count": 1,
+            "name": "Furret",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2163,
+            "count": 1,
+            "name": "Hoothoot",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2164,
+            "count": 1,
+            "name": "Noctowl",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2165,
+            "count": 1,
+            "name": "Ledyba",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2166,
+            "count": 1,
+            "name": "Ledian",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2167,
+            "count": 1,
+            "name": "Spinarak",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2168,
+            "count": 1,
+            "name": "Ariados",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2169,
+            "count": 1,
+            "name": "Crobat",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2170,
+            "count": 1,
+            "name": "Chinchou",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2171,
+            "count": 1,
+            "name": "Lanturn",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2172,
+            "count": 1,
+            "name": "Pichu",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2173,
+            "count": 1,
+            "name": "Cleffa",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2174,
+            "count": 1,
+            "name": "Igglybuff",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2175,
+            "count": 1,
+            "name": "Togepi",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2176,
+            "count": 1,
+            "name": "Togetic",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2177,
+            "count": 1,
+            "name": "Natu",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2178,
+            "count": 1,
+            "name": "Xatu",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2179,
+            "count": 1,
+            "name": "Mareep",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2180,
+            "count": 1,
+            "name": "Flaaffy",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2181,
+            "count": 1,
+            "name": "Ampharos",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2182,
+            "count": 1,
+            "name": "Bellossom",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2183,
+            "count": 1,
+            "name": "Marill",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2184,
+            "count": 1,
+            "name": "Azumarill",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2185,
+            "count": 1,
+            "name": "Sudowoodo",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2186,
+            "count": 1,
+            "name": "Politoed",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2187,
+            "count": 1,
+            "name": "Hoppip",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2188,
+            "count": 1,
+            "name": "Skiploom",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2189,
+            "count": 1,
+            "name": "Jumpluff",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2190,
+            "count": 1,
+            "name": "Aipom",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2191,
+            "count": 1,
+            "name": "Sunkern",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2192,
+            "count": 1,
+            "name": "Sunflora",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2193,
+            "count": 1,
+            "name": "Yanma",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2194,
+            "count": 1,
+            "name": "Wooper",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2195,
+            "count": 1,
+            "name": "Quagsire",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2196,
+            "count": 1,
+            "name": "Espeon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2197,
+            "count": 1,
+            "name": "Umbreon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2198,
+            "count": 1,
+            "name": "Murkrow",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2199,
+            "count": 1,
+            "name": "Slowking",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2200,
+            "count": 1,
+            "name": "Misdreavus",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2201,
+            "count": 1,
+            "name": "Unown (A)",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2202,
+            "count": 1,
+            "name": "Wobbuffet",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2203,
+            "count": 1,
+            "name": "Girafarig",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2204,
+            "count": 1,
+            "name": "Pineco",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2205,
+            "count": 1,
+            "name": "Forretress",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2206,
+            "count": 1,
+            "name": "Dunsparce",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2207,
+            "count": 1,
+            "name": "Gligar",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2208,
+            "count": 1,
+            "name": "Steelix",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2209,
+            "count": 1,
+            "name": "Snubbull",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2210,
+            "count": 1,
+            "name": "Granbull",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2211,
+            "count": 1,
+            "name": "Qwilfish",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2212,
+            "count": 1,
+            "name": "Scizor",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2213,
+            "count": 1,
+            "name": "Shuckle",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2214,
+            "count": 1,
+            "name": "Heracross",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2215,
+            "count": 1,
+            "name": "Sneasel",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2216,
+            "count": 1,
+            "name": "Teddiursa",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2217,
+            "count": 1,
+            "name": "Ursaring",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2218,
+            "count": 1,
+            "name": "Slugma",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2219,
+            "count": 1,
+            "name": "Magcargo",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2220,
+            "count": 1,
+            "name": "Swinub",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2221,
+            "count": 1,
+            "name": "Piloswine",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2222,
+            "count": 1,
+            "name": "Corsola",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2223,
+            "count": 1,
+            "name": "Remoraid",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2224,
+            "count": 1,
+            "name": "Octillery",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2225,
+            "count": 1,
+            "name": "Delibird",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2226,
+            "count": 1,
+            "name": "Mantine",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2227,
+            "count": 1,
+            "name": "Skarmory",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2228,
+            "count": 1,
+            "name": "Houndour",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2229,
+            "count": 1,
+            "name": "Houndoom",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2230,
+            "count": 1,
+            "name": "Kingdra",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2231,
+            "count": 1,
+            "name": "Phanpy",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2232,
+            "count": 1,
+            "name": "Donphan",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2233,
+            "count": 1,
+            "name": "Porygon2",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2234,
+            "count": 1,
+            "name": "Stantler",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2235,
+            "count": 1,
+            "name": "Smeargle",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2236,
+            "count": 1,
+            "name": "Tyrogue",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2237,
+            "count": 1,
+            "name": "Hitmontop",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2238,
+            "count": 1,
+            "name": "Smoochum",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2239,
+            "count": 1,
+            "name": "Elekid",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2240,
+            "count": 1,
+            "name": "Magby",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2241,
+            "count": 1,
+            "name": "Miltank",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2242,
+            "count": 1,
+            "name": "Blissey",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2243,
+            "count": 1,
+            "name": "Raikou",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon",
+                "Roaming Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2244,
+            "count": 1,
+            "name": "Entei",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon",
+                "Roaming Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2245,
+            "count": 1,
+            "name": "Suicune",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2246,
+            "count": 1,
+            "name": "Larvitar",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2247,
+            "count": 1,
+            "name": "Pupitar",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2248,
+            "count": 1,
+            "name": "Tyranitar",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2249,
+            "count": 1,
+            "name": "Lugia",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2250,
+            "count": 1,
+            "name": "Ho-Oh",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 2251,
+            "count": 1,
+            "name": "Celebi",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
             ],
             "progression": true
         },
@@ -1989,6 +3242,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
@@ -2002,7 +3256,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Kanto Pokemon",
+                "Seasonal Events",
                 "Halloween"
             ],
             "progression": true
@@ -2014,7 +3269,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Sinnoh Pokemon",
+                "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
             ],
@@ -2027,6 +3283,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2039,7 +3296,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Kanto Pokemon",
+                "Seasonal Events",
                 "Halloween"
             ],
             "progression": true
@@ -2051,7 +3309,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Sinnoh Pokemon",
+                "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
             ],
@@ -2064,6 +3323,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2075,6 +3335,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2086,6 +3347,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2098,7 +3360,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Kanto Pokemon",
+                "Seasonal Events",
                 "Halloween"
             ],
             "progression": true
@@ -2110,7 +3373,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Holiday Events",
+                "Sinnoh Pokemon",
+                "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
             ],
@@ -2123,6 +3387,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
@@ -2136,6 +3401,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2148,6 +3414,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2159,6 +3426,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2170,6 +3438,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2181,6 +3450,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2193,6 +3463,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
@@ -2206,7 +3477,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
-                "Not Implemented"
+                "Johto Pokemon"
             ],
             "progression": true
         },
@@ -2217,6 +3488,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2229,6 +3501,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2240,6 +3513,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2251,6 +3525,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2263,6 +3538,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2274,6 +3550,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2285,6 +3562,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2296,6 +3574,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Roaming Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2307,6 +3587,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Roaming Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2318,6 +3600,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2329,6 +3612,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2340,6 +3624,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2351,6 +3636,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2362,6 +3648,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2373,6 +3660,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2384,6 +3672,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2395,6 +3684,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2406,6 +3696,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2417,6 +3708,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2428,6 +3720,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Flying Pikachu"
@@ -2441,6 +3734,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2452,6 +3746,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2463,6 +3758,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2474,6 +3770,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2485,6 +3782,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2496,6 +3794,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2507,6 +3806,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2518,6 +3818,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2529,6 +3830,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2540,6 +3842,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2551,6 +3854,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Flying Pikachu"
@@ -2564,6 +3868,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Redeemable Code",
                 "Codes"
             ],
@@ -2576,6 +3881,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2587,6 +3893,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Let's Go"
@@ -2611,6 +3918,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Wanderer",
                 "Not Implemented"
             ],
             "progression": true
@@ -2622,6 +3930,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2634,6 +3943,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -2645,6 +3955,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -2656,6 +3967,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -2667,6 +3979,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -2678,6 +3991,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -2689,6 +4003,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Johto Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2699,7 +4014,8 @@
             "name": "Pikachu (Palaeontologist)",
             "category": [
                 "Pokemon",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -2710,6 +4026,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2721,6 +4038,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
+                "Wanderer",
                 "Not Implemented"
             ],
             "progression": true
@@ -2732,6 +4051,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2743,6 +4063,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2754,6 +4075,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2765,6 +4087,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2776,6 +4099,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2787,6 +4111,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2798,6 +4123,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2809,6 +4135,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2820,6 +4147,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2831,6 +4159,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2842,6 +4171,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2853,6 +4183,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2864,6 +4195,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2875,6 +4207,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2886,6 +4219,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2897,6 +4231,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2908,6 +4243,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -2919,6 +4255,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2930,6 +4267,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2941,6 +4279,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2952,6 +4291,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Johto Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2963,6 +4303,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2974,6 +4315,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2985,6 +4327,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -2996,6 +4339,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3007,6 +4351,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3018,6 +4363,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3029,6 +4375,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3040,6 +4387,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3051,6 +4399,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3062,6 +4411,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3073,6 +4423,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3084,6 +4435,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3095,6 +4447,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -3106,6 +4459,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3117,6 +4471,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3128,6 +4483,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3139,6 +4495,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3150,6 +4507,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3161,6 +4519,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3172,6 +4531,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3183,6 +4543,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3194,6 +4555,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3205,6 +4567,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3216,6 +4579,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3227,6 +4591,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3238,6 +4603,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3249,6 +4615,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3260,6 +4627,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3271,6 +4639,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -3282,6 +4651,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3293,6 +4663,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -3304,6 +4675,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3315,6 +4687,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3326,6 +4699,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3337,6 +4711,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3347,7 +4722,8 @@
             "name": "Exeggcute (Single)",
             "category": [
                 "Pokemon",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -3358,6 +4734,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3369,6 +4746,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3380,6 +4758,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3391,6 +4770,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3402,6 +4782,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3413,6 +4794,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3424,6 +4806,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3435,6 +4818,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3445,7 +4829,8 @@
             "name": "Charity Chansey",
             "category": [
                 "Pokemon",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -3456,6 +4841,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -3467,6 +4853,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3477,7 +4864,8 @@
             "name": "Baby Kangaskhan",
             "category": [
                 "Pokemon",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "progression": true
         },
@@ -3488,6 +4876,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "progression": true
@@ -3499,6 +4888,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3510,6 +4900,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3521,8 +4912,9 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
-                "Christmas"
+                "Merry Christmas"
             ],
             "progression": true
         },
@@ -3533,6 +4925,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3544,6 +4937,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3555,6 +4949,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Paldea Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3566,6 +4961,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Paldea Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3577,6 +4973,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Paldea Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3588,6 +4985,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3599,6 +4997,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3610,6 +5009,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3621,6 +5021,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3632,6 +5033,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3643,6 +5045,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3654,6 +5057,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3665,6 +5069,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3676,6 +5081,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3687,6 +5093,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3698,6 +5105,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3709,6 +5117,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3720,6 +5129,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3731,6 +5141,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3742,6 +5153,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3753,6 +5165,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
+                "Roaming Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3764,6 +5178,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3775,6 +5190,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3786,6 +5202,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3797,6 +5214,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3808,6 +5226,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3819,6 +5238,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3830,6 +5250,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3841,6 +5262,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3852,6 +5274,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3863,6 +5286,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3874,6 +5298,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3885,6 +5310,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3896,6 +5322,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3907,6 +5334,8 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
+                "Roaming Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3929,6 +5358,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3940,6 +5370,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3951,6 +5382,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3962,6 +5394,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3973,6 +5406,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -3984,6 +5418,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Let's Go"
@@ -3997,6 +5432,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -4008,6 +5444,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -4019,9 +5456,10 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
-                "Christmas"
+                "Merry Christmas"
             ],
             "progression": true
         },
@@ -4032,8 +5470,9 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
-                "Christmas"
+                "Merry Christmas"
             ],
             "progression": true
         },
@@ -4044,6 +5483,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -4055,6 +5495,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -4066,6 +5507,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -4077,6 +5519,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -4088,6 +5531,7 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "progression": true
@@ -4099,8 +5543,616 @@
             "category": [
                 "Pokemon",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
+            ],
+            "progression": true
+        },
+        {
+            "id": 20701,
+            "count": 1,
+            "name": "Hisuian Typhlosion",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hisui Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 22201,
+            "count": 1,
+            "name": "Spiky-eared Pichu",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 22501,
+            "count": 1,
+            "name": "Spooky Togepi",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Halloween"
+            ],
+            "progression": true
+        },
+        {
+            "id": 22502,
+            "count": 1,
+            "name": "Togepi (Flowering Crown)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Easter"
+            ],
+            "progression": true
+        },
+        {
+            "id": 22601,
+            "count": 1,
+            "name": "Spooky Togetic",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Halloween"
+            ],
+            "progression": true
+        },
+        {
+            "id": 23101,
+            "count": 1,
+            "name": "Mega Ampharos",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 23501,
+            "count": 1,
+            "name": "Sudowoodo (Golden)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 23701,
+            "count": 1,
+            "name": "Hoppip (Chimecho)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 24401,
+            "count": 1,
+            "name": "Paldean Wooper",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Paldea Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 24901,
+            "count": 1,
+            "name": "Galarian Slowking",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Galar Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25101,
+            "count": 1,
+            "name": "Unown (B)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25102,
+            "count": 1,
+            "name": "Unown (C)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25103,
+            "count": 1,
+            "name": "Unown (D)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25104,
+            "count": 1,
+            "name": "Unown (E)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Sinnoh Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25105,
+            "count": 1,
+            "name": "Unown (F)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25106,
+            "count": 1,
+            "name": "Unown (G)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25107,
+            "count": 1,
+            "name": "Unown (H)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25108,
+            "count": 1,
+            "name": "Unown (I)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25109,
+            "count": 1,
+            "name": "Unown (J)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25110,
+            "count": 1,
+            "name": "Unown (K)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25111,
+            "count": 1,
+            "name": "Unown (L)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25112,
+            "count": 1,
+            "name": "Unown (M)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25113,
+            "count": 1,
+            "name": "Unown (N)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25114,
+            "count": 1,
+            "name": "Unown (O)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25115,
+            "count": 1,
+            "name": "Unown (P)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25116,
+            "count": 1,
+            "name": "Unown (Q)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25117,
+            "count": 1,
+            "name": "Unown (R)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25118,
+            "count": 1,
+            "name": "Unown (S)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25119,
+            "count": 1,
+            "name": "Unown (T)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25120,
+            "count": 1,
+            "name": "Unown (U)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25121,
+            "count": 1,
+            "name": "Unown (V)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25122,
+            "count": 1,
+            "name": "Unown (W)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25123,
+            "count": 1,
+            "name": "Unown (X)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25124,
+            "count": 1,
+            "name": "Unown (Y)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25125,
+            "count": 1,
+            "name": "Unown (Z)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25126,
+            "count": 1,
+            "name": "Unown (!)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25127,
+            "count": 1,
+            "name": "Unown (?)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25801,
+            "count": 1,
+            "name": "Mega Steelix",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 25802,
+            "count": 1,
+            "name": "Crystal Steelix",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 26101,
+            "count": 1,
+            "name": "Hisuian Qwilfish",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hisui Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 26201,
+            "count": 1,
+            "name": "Mega Scizor",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 26301,
+            "count": 1,
+            "name": "Shuckle (Corked)",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 26401,
+            "count": 1,
+            "name": "Mega Heracross",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 26501,
+            "count": 1,
+            "name": "Hisuian Sneasel",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hisui Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 27201,
+            "count": 1,
+            "name": "Galarian Corsola",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Galar Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 27901,
+            "count": 1,
+            "name": "Mega Houndoom",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 28401,
+            "count": 1,
+            "name": "Reindeer Stantler",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Merry Christmas"
+            ],
+            "progression": true
+        },
+        {
+            "id": 29201,
+            "count": 1,
+            "name": "Blessing Blissey",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "progression": true
+        },
+        {
+            "id": 29801,
+            "count": 1,
+            "name": "Mega Tyranitar",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 29901,
+            "count": 1,
+            "name": "XD001",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 30101,
+            "count": 1,
+            "name": "Flowering Celebi",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Galar Pokemon",
+                "Not Implemented"
+            ],
+            "progression": true
+        },
+        {
+            "id": 30102,
+            "count": 1,
+            "name": "Grinch Celebi",
+            "category": [
+                "Pokemon",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Merry Christmas"
             ],
             "progression": true
         },

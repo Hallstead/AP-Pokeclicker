@@ -185,11 +185,11 @@ def kanto_route_9(world: World, state: CollectionState, player: int):
 
 def power_plant(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access the Power Plant."""
-    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
-    minion_attack = 13507
     # if world.options.mapsanity.value > 0:
     #     has_location = state.count("Power Plant", player) > 0
     #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 13507
     has_soul_badge = state.count("Soul Badge", player) > 0
     return kanto_route_9(world, state, player) and has_soul_badge and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
@@ -506,6 +506,112 @@ def professor_ivys_lab(world: World, state: CollectionState, player: int):
     #     return has_location
     return True
     
+# Johto
+def johto_route_29(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 29"""
+    return new_bark_town(world, state, player)
+
+def cherrygrove_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Cherrygrove City."""
+    return johto_route_29(world, state, player)
+
+def johto_route_30(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 30"""
+    return johto_route_29(world, state, player)
+
+def johto_route_31(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 31"""
+    return johto_route_29(world, state, player)
+
+def johto_route_32(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 32"""
+    return johto_route_29(world, state, player)
+
+def johto_route_33(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 33"""
+    return johto_route_29(world, state, player)
+
+def johto_route_34(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 34"""
+    return johto_route_29(world, state, player)
+
+def johto_route_35(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 35"""
+    return johto_route_29(world, state, player)
+
+def johto_route_36(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 36"""
+    return johto_route_29(world, state, player)
+
+def johto_route_37(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 37"""
+    return johto_route_29(world, state, player)
+
+def johto_route_38(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 38"""
+    return johto_route_29(world, state, player)
+
+def johto_route_39(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 39"""
+    return johto_route_29(world, state, player)
+
+def johto_route_40(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 40"""
+    return johto_route_29(world, state, player)
+
+def johto_route_41(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 41"""
+    return johto_route_29(world, state, player)
+
+def johto_route_42(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 42"""
+    return johto_route_29(world, state, player)
+
+def johto_route_43(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 43"""
+    return johto_route_29(world, state, player)
+
+def johto_route_44(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 44"""
+    return johto_route_29(world, state, player)
+
+def johto_route_45(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 45"""
+    return johto_route_29(world, state, player)
+
+def johto_route_46(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 46"""
+    return johto_route_29(world, state, player)
+
+def johto_route_47(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 47"""
+    return johto_route_29(world, state, player)
+
+def johto_route_48(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 48"""
+    return johto_route_29(world, state, player)
+
+def johto_route_49(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 49"""
+    return johto_route_29(world, state, player)
+
+def johto_route_26(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 26"""
+    return johto_route_29(world, state, player)
+
+def johto_route_27(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 27"""
+    return johto_route_29(world, state, player)
+
+def johto_route_28(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 28"""
+    return johto_route_29(world, state, player)
+
+def new_bark_town(world: World, state: CollectionState, player: int):
+    """Checks if the player can access New Bark Town"""
+    kecb = state.count("Kanto Elite Champion Badge", player) > 0
+    return kecb
+
 
 # Eggs and Stones
 def can_get_grass_egg(world: World, state: CollectionState, player: int):

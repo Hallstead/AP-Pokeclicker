@@ -1,595 +1,1105 @@
-from typing import TYPE_CHECKING, Optional
-from enum import IntEnum
-from operator import eq, ge, le
+from __future__ import annotations
 
-from .Regions import regionMap
-from .hooks import Rules
-from .Helpers import clamp, is_item_enabled, is_option_enabled, get_option_value, convert_string_to_type,\
-    format_to_valid_identifier, format_state_prog_items_key, ProgItemsCat
+import dataclasses
+from collections.abc import Callable, Iterable
+from typing import TYPE_CHECKING
 
-from BaseClasses import MultiWorld, CollectionState
+from rule_builder.options import OptionFilter
+from rule_builder.rules import Has, HasAll, HasGroup, Rule
+
 from worlds.AutoWorld import World
-from worlds.generic.Rules import set_rule, add_rule
-from Options import Choice, Toggle, Range, NamedRange
+from BaseClasses import CollectionState
 
-import re
-import math
-import inspect
-import logging
+from . import options, locations
 
 if TYPE_CHECKING:
-    from . import ManualWorld
+    from .world import PokeclickerWorld
 
-class LogicErrorSource(IntEnum):
-    INFIX_TO_POSTFIX = 1 # includes more closing parentheses than opening (but not the opposite)
-    EVALUATE_POSTFIX = 2 # includes missing pipes and missing value on either side of AND/OR
-    EVALUATE_STACK_SIZE = 3 # includes missing curly brackets
-
-def construct_logic_error(location_or_region: dict, source: LogicErrorSource) -> KeyError:
-    object_type = "location/region"
-    object_name = location_or_region.get("name", "Unknown")
-
-    if location_or_region.get("is_region", False) or "starting" in location_or_region or "connects_to" in location_or_region:
-        object_type = "region"
-    elif "region" in location_or_region or "category" in location_or_region:
-        object_type = "location"
-
-    if source == LogicErrorSource.INFIX_TO_POSTFIX:
-        source_text = "There may be mismatched parentheses, or other invalid syntax for the requires."
-    elif source == LogicErrorSource.EVALUATE_POSTFIX:
-        source_text = "There may be missing || around item names, or an AND/OR that is missing a value on one side, or other invalid syntax for the requires."
-    elif source == LogicErrorSource.EVALUATE_STACK_SIZE:
-        source_text = "There may be missing {} around requirement functions like YamlEnabled() / YamlDisabled(), or other invalid syntax for the requires."
-    else:
-        source_text = "This requires includes invalid syntax."
-
-    return KeyError(f"Invalid 'requires' for {object_type} '{object_name}': {source_text} (ERROR {source})")
-
-def infix_to_postfix(expr, location):
-    prec = {"&": 2, "|": 2, "!": 3}
-    stack = []
-    postfix = ""
-
-    try:
-        for c in expr:
-            if c.isnumeric():
-                postfix += c
-            elif c in prec:
-                while stack and stack[-1] != "(" and prec[c] <= prec[stack[-1]]:
-                    postfix += stack.pop()
-                stack.append(c)
-            elif c == "(":
-                stack.append(c)
-            elif c == ")":
-                while stack and stack[-1] != "(":
-                    postfix += stack.pop()
-                stack.pop()
-
-        while stack:
-            postfix += stack.pop()
-    except Exception:
-        raise construct_logic_error(location, LogicErrorSource.INFIX_TO_POSTFIX)
-
-    return postfix
+HAS_KEY = Has("Key")  # Hmm, what could this be? A little foreshadowing perhaps? :) You'll find out if you keep reading!
 
 
-def evaluate_postfix(expr: str, location: str) -> bool:
-    stack = []
+@dataclasses.dataclass(init=False)
+class WorldRule(Rule, game="Pokeclicker"):
+    """Composable rule wrapper for functions that need (world, state, player)."""
 
-    try:
-        for c in expr:
-            if c == "0":
-                stack.append(False)
-            elif c == "1":
-                stack.append(True)
-            elif c == "&":
-                op2 = stack.pop()
-                op1 = stack.pop()
-                stack.append(op1 and op2)
-            elif c == "|":
-                op2 = stack.pop()
-                op1 = stack.pop()
-                stack.append(op1 or op2)
-            elif c == "!":
-                op = stack.pop()
-                stack.append(not op)
-    except Exception:
-        raise construct_logic_error(location, LogicErrorSource.EVALUATE_POSTFIX)
+    func: Callable[[World, CollectionState, int], bool]
 
-    if len(stack) != 1:
-        raise construct_logic_error(location, LogicErrorSource.EVALUATE_STACK_SIZE)
+    def __init__(self, func: Callable[[World, CollectionState, int], bool], options: Iterable[OptionFilter] = (), filtered_resolution: bool = False):
+        super().__init__(options=options, filtered_resolution=filtered_resolution)
+        self.func = func
 
-    return stack.pop()
+    def _instantiate(self, world: World) -> Rule.Resolved:
+        def evaluate(state: CollectionState, *, world=world, func=self.func, player=world.player) -> bool:
+            result = func(world, state, player)
+            if isinstance(result, Rule.Resolved):
+                return result(state)
+            if isinstance(result, Rule):
+                return result.resolve(world)(state)
+            return result
 
-def set_rules(world: "ManualWorld", multiworld: MultiWorld, player: int):
-    # this is only called when the area (think, location or region) has a "requires" field that is a string
-    def checkRequireStringForArea(state: CollectionState, area: dict):
-        requires_list = area["requires"]
+        return self.Resolved(evaluate, player=world.player, caching_enabled=getattr(world, "rule_caching_enabled", False))
 
-        # Get the "real" item counts of item in the pool/placed/starting_items
-        items_counts = world.get_item_counts(player, only_progression=True)
+    class Resolved(Rule.Resolved):
+        func: Callable[[CollectionState], bool]
 
-        # Preparing some variables for exception messages
-        area_type = "region" if area.get("is_region",False) else "location"
-        area_name = area.get("name", f"unknown with these parameters: {area}")
-
-        if requires_list == "":
-            return True
-
-        def findAndRecursivelyExecuteFunctions(requires_list: str, recursionDepth: int = 0) -> str:
-            found_functions = re.findall(r'\{(\w+)\((.*?)\)\}', requires_list)
-            if found_functions:
-                if recursionDepth > world.rules_functions_maximum_recursion:
-                    raise RecursionError(f'One or more functions in {area_type} "{area_name}"\'s requires looped too many time (maximum recursion is {world.rules_functions_maximum_recursion}) \
-                                         \n    As of this Exception the following function(s) are waiting to run: {[f[0] for f in found_functions]} \
-                                         \n    And the currently processed requires look like this: "{requires_list}"')
-                else:
-                    for item in found_functions:
-                        func_name = item[0]
-                        func_args = item[1].split(",")
-                        if func_args == ['']:
-                            func_args.pop()
-
-                        func = globals().get(func_name)
-
-                        if func is None:
-                            func = getattr(Rules, func_name, None)
-
-                        if not callable(func):
-                            raise ValueError(f'Invalid function "{func_name}" in {area_type} "{area_name}".')
-
-                        convert_req_function_args(state, func, func_args, area_name)
-                        try:
-                            result = func(*func_args)
-                        except Exception as ex:
-                            raise RuntimeError(f'A call to the function "{func_name}" in {area_type} "{area_name}"\'s requires raised an Exception. \
-                                                \nUnless it was called by another function, it should look something like "{{{func_name}({item[1]})}}" in {area_type}s.json. \
-                                                \nFull error message: \
-                                                \n\n{type(ex).__name__}: {ex}')
-                        if isinstance(result, bool):
-                            requires_list = requires_list.replace("{" + func_name + "(" + item[1] + ")}", "1" if result else "0")
-                        else:
-                            requires_list = requires_list.replace("{" + func_name + "(" + item[1] + ")}", str(result))
-
-                requires_list = findAndRecursivelyExecuteFunctions(requires_list, recursionDepth + 1)
-            return requires_list
-
-        requires_list = findAndRecursivelyExecuteFunctions(requires_list)
-
-        # parse user written statement into list of each item
-        for item in re.findall(r'\|[^|]+\|', requires_list):
-            require_type = 'item'
-
-            if '|@' in item:
-                require_type = 'category'
-
-            item_base = item
-            item = item.lstrip('|@$').rstrip('|')
-
-            item_parts = item.split(":")  # type: list[str]
-            item_name = item
-            item_count = "1"
+        def _evaluate(self, state: CollectionState) -> bool:
+            return self.func(state)
 
 
-            if len(item_parts) > 1:
-                item_name = item_parts[0].strip()
-                item_count = item_parts[1].strip()
+def _evaluate_rule(rule, world: PokeclickerWorld, state: CollectionState, player: int) -> bool:
+    if isinstance(rule, Rule.Resolved):
+        return rule(state)
 
-            total = 0
+    if isinstance(rule, Rule):
+        return rule.resolve(world)(state)
 
-            if require_type == 'category':
-                category_items = [item for item in world.item_name_to_item.values() if "category" in item and item_name in item["category"]]
-                category_items_counts = sum([items_counts.get(category_item["name"], 0) for category_item in category_items])
-                if item_count.lower() == 'all':
-                    item_count = category_items_counts
-                elif item_count.lower() == 'half':
-                    item_count = int(category_items_counts / 2)
-                elif item_count.endswith('%') and len(item_count) > 1:
-                    percent = clamp(float(item_count[:-1]) / 100, 0, 1)
-                    item_count = math.ceil(category_items_counts * percent)
-                else:
-                    try:
-                        item_count = int(item_count)
-                    except ValueError as e:
-                        raise ValueError(f"Invalid item count `{item_name}` in {area}.") from e
+    if callable(rule):
+        try:
+            return rule(state)
+        except TypeError:
+            return rule(state, player)
 
-                for category_item in category_items:
-                    total += state.count(category_item["name"], player)
+    raise TypeError(f"Unsupported rule type: {type(rule)!r}")
 
-                    if total >= item_count:
-                        requires_list = requires_list.replace(item_base, "1")
-            elif require_type == 'item':
-                item_current_count = items_counts.get(item_name, 0)
-                if item_count.lower() == 'all':
-                    item_count = item_current_count
-                elif item_count.lower() == 'half':
-                    item_count = int(item_current_count / 2)
-                elif item_count.endswith('%') and len(item_count) > 1:
-                    percent = clamp(float(item_count[:-1]) / 100, 0, 1)
-                    item_count = math.ceil(item_current_count * percent)
-                else:
-                    item_count = int(item_count)
 
-                total = state.count(item_name, player)
+def _resolve_rule(rule):
+    if isinstance(rule, Rule):
+        return rule
+    if isinstance(rule, Rule.Resolved):
+        return rule
+    if callable(rule):
+        return make_rule(rule)
+    raise TypeError(f"Unsupported rule type: {type(rule)!r}")
 
-                if total >= item_count:
-                    requires_list = requires_list.replace(item_base, "1")
 
-            if total <= item_count:
-                requires_list = requires_list.replace(item_base, "0")
+def make_rule(rule_func, *args, **kwargs):
+    """Create a composable rule from a function that expects (world, state, player)."""
+    if isinstance(rule_func, Rule):
+        return rule_func
+    if isinstance(rule_func, Rule.Resolved):
+        return rule_func
+    if callable(rule_func):
+        return WorldRule(lambda world, state, player: rule_func(world, state, player, *args, **kwargs))
+    raise TypeError(f"Unsupported rule type: {type(rule_func)!r}")
 
-        requires_list = re.sub(r'\s?\bAND\b\s?', '&', requires_list, 0, re.IGNORECASE)
-        requires_list = re.sub(r'\s?\bOR\b\s?', '|', requires_list, 0, re.IGNORECASE)
 
-        requires_string = infix_to_postfix("".join(requires_list), area)
-        return (evaluate_postfix(requires_string, area))
+def make_state_rule(world: PokeclickerWorld, rule_func):
+    """Wrap a rule function or a composable WorldRule into an AP rule callable."""
+    resolved_rule = _resolve_rule(rule_func)
 
-    # this is only called when the area (think, location or region) has a "requires" field that is a dict
-    def checkRequireDictForArea(state: CollectionState, area: dict):
-        canAccess = True
+    if isinstance(resolved_rule, Rule):
+        return resolved_rule.resolve(world)
 
-        for item in area["requires"]:
-            # if the require entry is an object with "or" or a list of items, treat it as a standalone require of its own
-            if (isinstance(item, dict) and "or" in item and isinstance(item["or"], list)) or (isinstance(item, list)):
-                canAccessOr = True
-                or_items = item
+    if isinstance(resolved_rule, Rule.Resolved):
+        return resolved_rule
 
-                if isinstance(item, dict):
-                    or_items = item["or"]
+    def rule(state: CollectionState) -> bool:
+        return _evaluate_rule(resolved_rule, world, state, world.player)
 
-                for or_item in or_items:
-                    or_item_parts = or_item.split(":")
-                    or_item_name = or_item
-                    or_item_count = 1
+    return rule
 
-                    if len(or_item_parts) > 1:
-                        or_item_name = or_item_parts[0]
-                        or_item_count = int(or_item_parts[1])
 
-                    if not state.has(or_item_name, player, or_item_count):
-                        canAccessOr = False
+def set_all_rules(world: PokeclickerWorld) -> None:
+    # In order for AP to generate an item layout that is actually possible for the player to complete,
+    # we need to define rules for our Entrances and Locations.
+    # Note: Regions do not have rules, the Entrances connecting them do!
+    # We'll do entrances first, then locations, and then finally we set our victory condition.
 
-                if canAccessOr:
-                    canAccess = True
-                    break
-            else:
-                item_parts = item.split(":")
-                item_name = item
-                item_count = 1
+    set_all_entrance_rules(world)
+    set_all_location_rules(world)
+    set_completion_condition(world)
 
-                if len(item_parts) > 1:
-                    item_name = item_parts[0]
-                    item_count = int(item_parts[1])
 
-                if not state.has(item_name, player, item_count):
-                    canAccess = False
+def set_all_entrance_rules(world: PokeclickerWorld) -> None:
+    # First, we need to actually grab our entrances. Luckily, there is a helper method for this.
+    # overworld_to_bottom_right_room = world.get_entrance("Overworld to Bottom Right Room")
 
-        return canAccess
+    # Now, let's make some rules!
+    # First, let's handle the transition from the overworld to the bottom right room,
+    # which requires slashing a bush with the Sword.
+    # For this, we need a rule that says "player has a Sword".
+    # We can use a "Has"-type rule from the rule_builder module for this.
+    # can_destroy_bush = Has("Sword")
 
-    # handle any type of checking needed, then ferry the check off to a dedicated method for that check
-    def fullLocationOrRegionCheck(state: CollectionState, area: dict):
-        # if it's not a usable object of some sort, default to true
-        if not area:
-            return True
+    # Now we can set our "can_destroy_bush" rule to the entrance which requires slashing a bush to clear the path.
+    # The easiest way to do this is by calling world.set_rule, which works for both Locations and Entrances.
+    
+    # world.set_rule(route1_to_kanto, Has("Town Map"))
+    # world.set_rule(kanto_to_sevii_islands_123, Has("Volcano Badge"))
+    # world.set_rule(kanto_to_indigo_plateau, has_all_kanto_badges)
 
-        # don't require the "requires" key for locations and regions if they don't need to use it
-        if "requires" not in area.keys():
-            return True
+    # Conditions can also depend on event items.
+    # button_pressed = Has("Top Left Room Button Pressed")
+    # world.set_rule(right_room_to_final_boss_room, button_pressed)
 
-        if isinstance(area["requires"], str):
-            return checkRequireStringForArea(state, area)
-        else:  # item access is in dict form
-            return checkRequireDictForArea(state, area)
+    # Some entrance rules may only apply if the player enabled certain options.
+    # In our case, if the hammer option is enabled, we need to add the Hammer requirement to the Entrance from
+    # Overworld to the Top Middle Room.
+    # if world.options.hammer:
+    #     overworld_to_top_middle_room = world.get_entrance("Overworld to Top Middle Room")
+    #     can_smash_brick = Has("Hammer")
+    #     world.set_rule(overworld_to_top_middle_room, can_smash_brick)
 
-    used_location_names = []
-    # Region access rules
-    for region in regionMap.keys():
-        used_location_names.extend([l.name for l in multiworld.get_region(region, player).locations])
-        if region != "Menu":
-            for exitRegion in multiworld.get_region(region, player).entrances:
-                def fullRegionCheck(state: CollectionState, region=regionMap[region], region_name=exitRegion.name):
-                    region['name'] = region_name
-                    region['is_region'] = True
+    # So far, we've been using "Has" from the Rule Builder to make our rules.
+    # There is another way to make rules that you will see in a lot of older worlds.
+    # A rule can just be a function that takes a "state" argument and returns a bool.
+    # As a demonstration of what that looks like, let's do it with our final Entrance rule:
+    # world.set_rule(overworld_to_top_left_room, lambda state: state.has("Key", world.player))
+    # This style is not really recommended anymore, though.
+    # Notice how you have to explicitly capture world.player here so that the rule applies to the correct player?
+    # Well, Rule Builder does this part for you, inside of world.set_rule.
+    # This doesn't just result in shorter code, it also means you can define rules statically (at the module level).
+    # APQuest opts to create its Rule objects locally, but just to show what this would look like,
+    # we'll re-set the "Overworld to Top Left Room" rule to a constant defined at the top of this file:
+    # world.set_rule(overworld_to_top_left_room, HAS_KEY)
 
-                    return fullLocationOrRegionCheck(state, region)
+    # Beyond these structural advantages,
+    # Rule Builder also allows the core AP code to do a lot of under-the-hood optimizations.
+    # Rule Builder is quite comprehensive, and even if you have really esoteric rules,
+    # you can make custom rules by subclassing CustomRule.
+    pass
 
-                add_rule(world.get_entrance(exitRegion.name), fullRegionCheck)
-            entrance_rules = regionMap[region].get("entrance_requires", {})
-            for e in entrance_rules:
-                entrance = world.get_entrance(f'{e}To{region}')
-                add_rule(entrance, lambda state, rule={"requires": entrance_rules[e]}: fullLocationOrRegionCheck(state, rule))
-            exit_rules = regionMap[region].get("exit_requires", {})
-            for e in exit_rules:
-                exit = world.get_entrance(f'{region}To{e}')
-                add_rule(exit, lambda state, rule={"requires": exit_rules[e]}: fullLocationOrRegionCheck(state, rule))
+def set_all_location_rules(world: PokeclickerWorld) -> None:
+    # # Location rules work no differently from Entrance rules.
+    # # Most of our locations are chests that can simply be opened by walking up to them.
+    # # Thus, their logical requirements are covered by the Entrance rules of the Entrances that were required to
+    # # reach the region that the chest sits in.
+    # # However, our two enemies work differently.
+    # # Entering the room with the enemy is not enough, you also need to have enough combat items to be able to defeat it.
+    # # So, we need to set requirements on the Locations themselves.
+    # # Since combat is a bit more complicated, we'll use this chance to cover some advanced access rule concepts.
 
-    # Location access rules
-    for location in world.location_table:
-        if location["name"] not in used_location_names:
+    # # In "set_all_entrance_rules", we had a rule for a location that doesn't always exist.
+    # # In this case, we had to check for its existence (by checking the player's chosen options) before setting the rule.
+    # # Other times, you may have a situation where a location can have two different rules depending on the options.
+    # # In our case, the enemy in the right room has more health if hard mode is selected,
+    # # so ontop of the Sword, the player will either need one more health or a Shield in hard mode.
+    # # First, let's make our sword condition.
+    # can_defeat_basic_enemy: Rule = Has("Sword")
+
+    # # Next, we'll check whether hard mode has been chosen in the player options.
+    # if world.options.hard_mode:
+    #     # We'll make the condition for "Has a Shield or a Health Upgrade".
+    #     # We can chain two "Has" conditions together with the | operator to make "Has Shield or has Health Upgrade".
+    #     can_withstand_a_hit = Has("Shield") | Has("Health Upgrade")
+
+    #     # Now, we chain this rule to our Sword rule.
+    #     # Since we want both conditions to be true, in this case, we have to chain them in an "and" way.
+    #     # For this, we can use the & operator.
+    #     can_defeat_basic_enemy = can_defeat_basic_enemy & can_withstand_a_hit
+
+    # # Finally, we set our rule onto the Right Room Enemy Drop location.
+    # right_room_enemy = world.get_location("Right Room Enemy Drop")
+    # world.set_rule(right_room_enemy, can_defeat_basic_enemy)
+
+    # # For the final boss, we also need to chain multiple conditions.
+    # # First of all, you always need a Sword and a Shield.
+    # # So far, we used the | and & operators to chain "Has" rules.
+    # # Instead, we can also use HasAny for an or-chain of items, or HasAll for an and-chain of items.
+    # has_sword_and_shield: Rule = HasAll("Sword", "Shield")
+
+    # # In hard mode, the player also needs both Health Upgrades to survive long enough to defeat the boss.
+    # # For this, we can use the optional "count" parameter for "Has".
+    # has_both_health_upgrades = Has("Health Upgrade", count=2)
+
+    # # Previously, we used an "if world.options.hard_mode" condition to check if we should apply the extra requirement.
+    # # However, if you're comfortable with boolean logic, there is another way.
+    # # OptionFilter is a rule component which isn't a "Rule" on its own, but when used in a boolean expression with
+    # # rules, it acts like True if the option has the specified value, and acts like False otherwise.
+    # hard_mode_is_off = OptionFilter(HardMode, False)
+
+    # # So with this option-checking rule component in hand, we can write our boss condition like this:
+    # can_defeat_final_boss = has_sword_and_shield & (hard_mode_is_off | has_both_health_upgrades)
+    # # If you're not as comfortable with boolean logic, it might be somewhat confusing why this is correct.
+    # # There is nothing wrong with using "if" conditions to check for options, if you find that easier to understand.
+
+    # # Finally, we apply the rule to our "Final Boss Defeated" event location.
+    # final_boss = world.get_location("Final Boss Defeated")
+    # world.set_rule(final_boss, can_defeat_final_boss)
+   
+    
+    for location_data_entry in world.location_data.values():
+        if location_data_entry.rule is None:
+            continue
+        if not location_data_entry.inclusion:
             continue
 
-        locFromWorld = multiworld.get_location(location["name"], player)
+        location = world.get_location(location_data_entry.name)
+        if location is None:
+            continue
 
-        locationRegion = regionMap[location["region"]] if "region" in location else None
-
-        if locationRegion:
-            locationRegion['name'] = location['region']
-            locationRegion['is_region'] = True
-
-        if "requires" in location: # Location has requires, check them alongside the region requires
-            def checkBothLocationAndRegion(state: CollectionState, location=location, region=locationRegion):
-                locationCheck = fullLocationOrRegionCheck(state, location)
-                regionCheck = True # default to true unless there's a region with requires
-
-                if region:
-                    regionCheck = fullLocationOrRegionCheck(state, region)
-
-                return locationCheck and regionCheck
-
-            set_rule(locFromWorld, checkBothLocationAndRegion)
-        elif "region" in location: # Only region access required, check the location's region's requires
-            def fullRegionCheck(state, region=locationRegion):
-                return fullLocationOrRegionCheck(state, region)
-
-            set_rule(locFromWorld, fullRegionCheck)
-        else: # No location region and no location requires? It's accessible.
-            def allRegionsAccessible(state):
-                return True
-
-            set_rule(locFromWorld, allRegionsAccessible)
-
-    # Victory requirement
-    multiworld.completion_condition[player] = lambda state: state.has("__Victory__", player)
-
-    def convert_req_function_args(state: CollectionState, func, args: list[str], areaName: str):
-        parameters = inspect.signature(func).parameters
-        knownParameters = [World, 'ManualWorld', MultiWorld, CollectionState]
-        index = -1
-        for parameter in parameters.values():
-            target_type = parameter.annotation
-            index += 1
-            if target_type in knownParameters:
-                if target_type in [World, 'ManualWorld']:
-                    args.insert(index, world)
-                elif target_type == MultiWorld:
-                    args.insert(index, multiworld)
-                elif target_type == CollectionState:
-                    args.insert(index, state)
-                continue
-            if parameter.name.lower() == "player":
-                args.insert(index, player)
-                continue
-
-            if index < len(args) and args[index] != "":
-                value = args[index].strip()
-            else:
-                if parameter.default is not inspect.Parameter.empty:
-                    if index < len(args):
-                        args[index] = parameter.default
-                    else:
-                        args.insert(index, parameter.default)
-                    continue
-                else:
-                    if parameter.annotation is inspect.Parameter.empty:
-                        raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value for its argument \"{parameter.name}\" but it's missing.")
-                    else:
-                        raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value of type {target_type} for its argument \"{parameter.name}\" but it's missing.")
-
-            if target_type == str or parameter.annotation is inspect.Parameter.empty: #Don't convert since its already a string or if we don't know the type to convert to
-                args[index] = value
-                continue
-
-            try:
-                value = convert_string_to_type(value, target_type)
-
-            except Exception as e:
-                raise Exception(f"A call of the \"{func.__name__}\" function in \"{areaName}\"'s requirement, asks for a value of type {target_type}\nfor its argument \"{parameter.name}\" but its value \"{value}\" cannot be converted to {target_type} \nOriginal Error:'{e}'")
-
-            args[index] = value
+        world.set_rule(location, make_state_rule(world, location_data_entry.rule))
 
 
-def ItemValue(state: CollectionState, player: int, valueCount: str):
-    """When passed a string with this format: 'valueName:int',
-    this function will check if the player has collect at least 'int' valueName worth of items\n
-    eg. {ItemValue(Coins:12)} will check if the player has collect at least 12 coins worth of items
-    """
+def set_completion_condition(world: PokeclickerWorld) -> None:
+    # Finally, we need to set a completion condition for our world, defining what the player needs to win the game.
+    # For this, we can use world.set_completion_rule.
+    # You can just set a completion condition directly like any other condition, referencing items the player receives:
+    # world.set_completion_rule(HasAll("Sword", "Shield"))
 
-    args: list[str] = valueCount.split(":")
-    if not len(args) == 2 or not args[1].isnumeric():
-        raise Exception(f"ItemValue needs a number after : so it looks something like 'ItemValue({args[0]}:12)'")
-    value_name = format_state_prog_items_key(ProgItemsCat.VALUE, args[0])
-    requested_count = int(args[1].strip())
-    return state.has(value_name, player, requested_count)
+    # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
+    # So lets undo what we just did, and instead set the completion condition to:
+    world.set_completion_rule(Has("Victory!"))
 
 
-# Two useful functions to make require work if an item is disabled instead of making it inaccessible
-def OptOne(world: "ManualWorld", item: str, items_counts: Optional[dict] = None):
-    """Check if the passed item (with or without ||) is enabled, then this returns |item:count|
-    where count is clamped to the maximum number of said item in the itempool.\n
-    Eg. requires: "{OptOne(|DisabledItem|)} and |other items|" become "|DisabledItem:0| and |other items|" if the item is disabled.
-    """
-    if item == "":
-        return "" #Skip this function if item is left blank
-    if not items_counts:
-        items_counts = world.get_item_counts(only_progression=True)
+# One final comment about rules:
+# If your world exclusively uses Rule Builder rules (like APQuest), it's worth trying CachedRuleBuilderWorld.
+# CachedRuleBuilderWorld is a subclass of World that has a bunch of caching magic to make rules faster.
+# Just have your world class subclass CachedRuleBuilderWorld instead of World:
+#   class APQuestWorld(CachedRuleBuilderWorld): ...
+# This may speed up your world, or it may make it slower.
+# The exact factors are complex and not well understood, but there is no harm in trying it.
+# Generate a few seeds and see if there is a noticeable difference!
+# If you're wondering, author has checked: APQuest is too simple to see any benefits, so we'll stick with "World".
 
-    require_type = 'item'
+# Kanto
+def kanto_route_1(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 1."""
+    return True
 
-    if '@' in item[:2]:
-        require_type = 'category'
+def pallet_town(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Pallet Town."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Pallet Town", player) > 0
+    #     return has_location
+    has_town_map = state.count("Town Map", player) > 0
+    return kanto_route_1(world, state, player) and has_town_map
 
-    item = item.lstrip('|@$').rstrip('|')
+def kanto_route_22(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 22."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 22", player) > 0
+    #     return has_location
+    return kanto_route_1(world, state, player)
 
-    item_parts = item.split(":")
-    item_name = item
-    item_count = '1'
+def kanto_route_2(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 2."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 2", player) > 0
+    #     return has_location
+    return kanto_route_1(world, state, player)
 
-    if len(item_parts) > 1:
-        item_name = item_parts[0]
-        item_count = item_parts[1]
+def viridian_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Viridian City."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Viridian City", player) > 0
+    #     return has_location
+    return kanto_route_1(world, state, player)
 
-    if require_type == 'category':
-        if item_count.isnumeric():
-            #Only loop if we can use the result to clamp
-            category_items = [item for item in world.item_name_to_item.values() if "category" in item and item_name in item["category"]]
-            category_items_counts = sum([items_counts.get(category_item["name"], 0) for category_item in category_items])
-            item_count = clamp(int(item_count), 0, category_items_counts)
-        return f"|@{item_name}:{item_count}|"
-    elif require_type == 'item':
-        if item_count.isnumeric():
-            item_current_count = items_counts.get(item_name, 0)
-            item_count = clamp(int(item_count), 0, item_current_count)
-        return f"|{item_name}:{item_count}|"
+def viridian_forest(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Viridian Forest."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 102
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Viridian Forest", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return kanto_route_2(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-# OptAll check the passed require string and loop every item to check if they're enabled,
-def OptAll(world: "ManualWorld", requires: str):
-    """Check the passed require string and loop every item to check if they're enabled,
-    then returns the require string with items counts adjusted using OptOne\n
-    eg. requires: "{OptAll(|DisabledItem| and |@CategoryWithModifedCount:10|)} and |other items|"
-    become "|DisabledItem:0| and |@CategoryWithModifedCount:2| and |other items|" """
-    requires_list = requires
+def pewter_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Pewter City."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Pewter City", player) > 0
+    #     return has_location
+    return viridian_forest(world, state, player)
 
-    items_counts = world.get_item_counts(only_progression=True)
+def kanto_route_3(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 3."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 3", player) > 0
+    #     return has_location
+    has_boulder_badge = state.count("Boulder Badge", player) > 0
+    return has_boulder_badge
 
-    functions = {}
-    if requires_list == "":
-        return True
-    for item in re.findall(r'\{(\w+)\(([^)]*)\)\}', requires_list):
-        #so this function doesn't try to get item from other functions, in theory.
-        func_name = item[0]
-        functions[func_name] = item[1]
-        requires_list = requires_list.replace("{" + func_name + "(" + item[1] + ")}", "{" + func_name + "(temp)}")
-    # parse user written statement into list of each item
-    for item in re.findall(r'\|[^|]+\|', requires):
-        itemScanned = OptOne(world, item, items_counts)
-        requires_list = requires_list.replace(item, itemScanned)
+def mt_moon(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Mt. Moon."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 834
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Mt. Moon", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return kanto_route_3(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-    for function in functions:
-        requires_list = requires_list.replace("{" + function + "(temp)}", "{" + func_name + "(" + functions[func_name] + ")}")
-    return requires_list
+def kanto_route_4_pokecenter(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 4 Pokecenter."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 4 Pokemon Center", player) > 0
+    #     return has_location
+    return kanto_route_3(world, state, player)
 
-# Rule to expose the can_reach_location core function
-def canReachLocation(state: CollectionState, player: int, location: str):
-    """Can the player reach the given location?"""
-    if state.can_reach_location(location, player):
-        return True
-    return False
+def kanto_route_4(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 4."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 4", player) > 0
+    #     return has_location
+    return mt_moon(world, state, player)
 
-def YamlEnabled(multiworld: MultiWorld, player: int, param: str) -> bool:
-    """Is a yaml option enabled?"""
-    return is_option_enabled(multiworld, player, param)
+def cerulean_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Cerulean City."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Cerulean City", player) > 0
+    #     return has_location
+    return kanto_route_4(world, state, player)
 
-def YamlDisabled(multiworld: MultiWorld, player: int, param: str) -> bool:
-    """Is a yaml option disabled?"""
-    return not is_option_enabled(multiworld, player, param)
+def kanto_route_24(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 24."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 24", player) > 0
+    #     return has_location
+    return kanto_route_4(world, state, player) and attack_needed(world, state, player, 14041)
 
-def YamlCompare(world: "ManualWorld", multiworld: MultiWorld, state: CollectionState, player: int, args: str, skipCache: bool = False) -> bool:
-    """Is a yaml option's value compared using {comparator} to the requested value
-    \nFormat it like {YamlCompare(OptionName==value)}
-    \nWhere == can be any of the following: ==, !=, >=, <=, <, >
-    \nExample: {YamlCompare(Example_Range > 5)}"""
-    comp_symbols = { #Maybe find a better name for this
-        '==' : eq,
-        '!=' : eq, #complement of ==
-        '>=' : ge,
-        '<=' : le,
-        '=': eq, #Alternate to be like yaml_option
-        '<' : ge, #complement of >=
-        '>' : le, #complement of <=
-    }
+def kanto_route_25(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 25."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 25", player) > 0
+    #     return has_location
+    return kanto_route_24(world, state, player)
 
-    reverse_result = False
+def bills_house(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Bill's House."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Bill's House", player) > 0
+    #     return has_location
+    return kanto_route_25(world, state, player)
 
-    #Find the comparator symbol to split the string with and for logs
-    if '==' in args:
-        comparator = '=='
-    elif '!=' in args:
-        comparator = '!='
-        reverse_result = True #complement of == thus reverse by default
-    elif '>=' in args:
-        comparator = '>='
-    elif '<=' in args:
-        comparator = '<='
-    elif '=' in args:
-        comparator = '='
-    elif '<' in args:
-        comparator = '<'
-        reverse_result = True #complement of >=
-    elif '>' in args:
-        comparator = '>'
-        reverse_result = True #complement of <=
+def kanto_route_5(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 5."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 5", player) > 0
+    #     return has_location
+    return kanto_route_25(world, state, player)
+
+def kanto_route_6(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 6."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 6", player) > 0
+    #     return has_location
+    return kanto_route_5(world, state, player)
+
+def vermilion_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Vermilion City."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Vermilion City", player) > 0
+    #     return has_location
+    return kanto_route_6(world, state, player)
+
+def kanto_route_11(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 11."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 11", player) > 0
+    #     return has_location
+    return kanto_route_6(world, state, player)
+
+def digletts_cave(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Diglett's Cave."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 2962
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Diglett's Cave", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return kanto_route_6(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+
+def kanto_route_9(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 9."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 9", player) > 0
+    #     return has_location
+    has_cascade_badge = state.count("Cascade Badge", player) > 0
+    return vermilion_city(world, state, player) and attack_needed(world, state, player, 50431) and has_cascade_badge
+
+def power_plant(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access the Power Plant."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Power Plant", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 13507
+    has_soul_badge = state.count("Soul Badge", player) > 0
+    return kanto_route_9(world, state, player) and has_soul_badge and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+
+def kanto_route_10(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 10."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 10", player) > 0
+    #     return has_location
+    return kanto_route_9(world, state, player)
+
+def rock_tunnel(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Rock Tunnel."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 2048
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Rock Tunnel", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return kanto_route_10(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+
+def lavender_town(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Lavender Town."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Lavender Town", player) > 0
+    #     return has_location
+    return rock_tunnel(world, state, player)
+
+def pokemon_tower(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Pokemon Tower."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 7523
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Pokemon Tower", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return lavender_town(world, state, player) and rocket_game_corner(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+
+def kanto_route_12(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 12."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 12", player) > 0
+    #     return has_location
+    return rock_tunnel(world, state, player)
+
+def kanto_route_8(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 8."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 8", player) > 0
+    #     return has_location
+    return rock_tunnel(world, state, player)
+
+def saffron_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Saffron City."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Saffron City", player) > 0
+    #     return has_location
+    has_rainbow_badge = state.count("Rainbow Badge", player) > 0
+    return celadon_city(world, state, player) or has_rainbow_badge
+
+def silph_co(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access the Sylph Co. building."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 10515
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Silph Co.", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return saffron_city(world, state, player) and pokemon_tower(world, state, player) and attack_needed(world, state, player, 151990) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+
+def kanto_route_7(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 7."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 7", player) > 0
+    #     return has_location
+    return kanto_route_8(world, state, player)
+
+def celadon_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Celadon City."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Celadon City", player) > 0
+    #     return has_location
+    return kanto_route_7(world, state, player)
+
+def rocket_game_corner(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access the Rocket Game Corner."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 5820
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Rocket Game Corner", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return celadon_city(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+
+def kanto_route_13(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 13."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 13", player) > 0
+    #     return has_location
+    return pokemon_tower(world, state, player)
+
+def kanto_route_14(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 14."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 14", player) > 0
+    #     return has_location
+    return kanto_route_13(world, state, player)
+
+def kanto_route_15(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 15."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 15", player) > 0
+    #     return has_location
+    return kanto_route_14(world, state, player)
+
+def kanto_route_16(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 16."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 16", player) > 0
+    #     return has_location
+    return pokemon_tower(world, state, player)
+
+def kanto_route_17(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 17."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 17", player) > 0
+    #     return has_location
+    return kanto_route_16(world, state, player)
+
+def kanto_route_18(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 18."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 18", player) > 0
+    #     return has_location
+    return kanto_route_17(world, state, player)
+
+def fuchsia_city(world: World, state: CollectionState, player: int):   
+    """Checks if the player can access Fuchsia City."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Fuchsia City", player) > 0
+    #     return has_location
+    return kanto_route_15(world, state, player) or kanto_route_18(world, state, player)
+
+def safari_zone(world: World, state: CollectionState, player: int):
+    """Checks if the player can access the Safari Zone."""
+    has_safari_ticket = state.count("Safari Ticket", player) > 0
+    completed_tutorial = state.count("Tutorial Complete", player) > 0
+    
+    if world.options.safari_zone_logic.value and world.options.use_scripts.value and world.options.include_scripts_as_items.value:
+        return has_safari_ticket and completed_tutorial and (state.count("Auto Safari Zone", player) > 0 or state.count("Auto Safari Zone (Progressive Fast Animations)", player) > 0)
     else:
-        raise  ValueError(f"Could not find a valid comparator in given string '{args}', it must be one of {comp_symbols.keys()}")
+        return has_safari_ticket and completed_tutorial
 
-    option_name, value = args.split(comparator)
+def kanto_route_19(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 19."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 19", player) > 0
+    #     return has_location
+    has_soul_badge = state.count("Soul Badge", player) > 0
+    return has_soul_badge
 
-    initial_option_name = str(option_name).strip() #For exception messages
-    option_name = format_to_valid_identifier(option_name)
+def seafoam_islands(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Seafoam Islands."""
+    had_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 17226
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Seafoam Islands", player) > 0
+    #     return has_location and had_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    has_rainbow_badge = state.count("Rainbow Badge", player) > 0
+    return kanto_route_19(world, state, player) and has_rainbow_badge and had_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-    # Detect !reversing of result like yaml_option
-    if option_name.startswith('!'):
-        reverse_result = not reverse_result
-        option_name = option_name.lstrip('!')
-        initial_option_name = initial_option_name.lstrip('!')
+def kanto_route_20(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 20."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 20", player) > 0
+    #     return has_location
+    return kanto_route_21(world, state, player) or seafoam_islands(world, state, player)
 
-    value = value.strip()
+def kanto_route_21(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 21."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 21", player) > 0
+    #     return has_location
+    has_soul_badge = state.count("Soul Badge", player) > 0
+    return has_soul_badge
 
-    option = getattr(world.options, option_name, None)
-    if option is None:
-        raise ValueError(f"YamlCompare could not find an option called '{initial_option_name}' to compare against, its either missing on misspelt")
+def cinnabar_island(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Cinnabar Island."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Cinnabar Island", player) > 0
+    #     return has_location
+    return kanto_route_21(world, state, player)
 
-    if not value: #empty string ''
-        raise ValueError(f"Could not find a valid value to compare against in given string '{args}'. \nThere must be a value to compare against after the comparator (in this case '{comparator}').")
+def pokemon_mansion(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access the Pokemon Mansion."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 17760
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Pokemon Mansion", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return cinnabar_island(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-    if not skipCache: #Cache made for optimization purposes
-        cacheindex = option_name + '_' + comp_symbols[comparator].__name__ + '_' + format_to_valid_identifier(value.lower())
+def kanto_route_23(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kanto Route 23."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kanto Route 23", player) > 0
+    #     return has_location
+    has_earth_badge = state.count("Earth Badge", player) > 0
+    return kanto_route_22(world, state, player) and has_earth_badge and attack_needed(world, state, player, 426771)
 
-        if not hasattr(world, 'yaml_compare_rule_cache'):
-            world.yaml_compare_rule_cache = dict[str,bool]()
+def victory_road(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Victory Road."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 24595
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Victory Road", player) > 0
+    #     return has_location
+    has_badges = state.count("Boulder Badge", player) + state.count("Cascade Badge", player) + state.count("Thunder Badge", player) + state.count("Rainbow Badge", player) + state.count("Soul Badge", player) + state.count("Marsh Badge", player) + state.count("Volcano Badge", player) + state.count("Earth Badge", player) == 8
+    return kanto_route_23(world, state, player) and has_badges and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-    if skipCache or world.yaml_compare_rule_cache.get(cacheindex, None) is None:
-        try:
-            if issubclass(type(option), Choice):
-                value = convert_string_to_type(value, str|int)
-                if isinstance(value, str):
-                    value = option.from_text(value).value
+def indigo_plateau(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Indigo Plateau."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Indigo Plateau Kanto", player) > 0
+    #     return has_location
+    return victory_road(world, state, player)
 
-            elif issubclass(type(option), Range):
-                if type(option).__base__ == NamedRange:
-                    value = convert_string_to_type(value, str|int)
-                    if isinstance(value, str):
-                        value = option.from_text(value).value
+def cerulean_cave(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Cerulean Cave."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 28735
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Cerulean Cave", player) > 0
+    #     return has_location and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    has_elite_champion_badge = state.count("Kanto Elite Champion Badge", player) > 0
+    return has_elite_champion_badge and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-                else:
-                    value = convert_string_to_type(value, int)
+def new_island(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access New Island dungeon in Kanto."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    has_infinite_seasonal_events = has_script(world, state, player, "Infinite Seasonal Events")
+    minion_attack = 18500
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("New Island", player) > 0
+    #     return has_location and has_dungeon_ticket and has_infinite_seasonal_events and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return has_dungeon_ticket and has_infinite_seasonal_events and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-            elif issubclass(type(option), Toggle):
-                value = int(convert_string_to_type(value, bool))
+# Kanto - Sevii Islands 123
+def one_island(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Sevii One Island."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("One Island", player) > 0
+    #     return has_location
+    has_volcano_badge = state.count("Volcano Badge", player) > 0
+    return has_volcano_badge
 
-            else:
-                raise ValueError(f"YamlCompare does not currently support Option of type {type(option)} \nAsk about it in #Manual-dev and it might be added.")
+def treasure_beach(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Treasure Beach on Sevii One Island."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Treasure Beach", player) > 0
+    #     return has_location
+    has_volcano_badge = state.count("Volcano Badge", player) > 0
+    return has_volcano_badge
 
-        except KeyError as ex:
-            raise ValueError(f"YamlCompare failed to find the requested value in what the \"{initial_option_name}\" option supports.\
-                \nRaw error:\
-                \n\n{type(ex).__name__}:{ex}")
+def kindle_road(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Kindle Road on Sevii One Island."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Kindle Road", player) > 0
+    #     return has_location
+    has_volcano_badge = state.count("Volcano Badge", player) > 0
+    return has_volcano_badge
 
-        except Exception as ex:
-            raise TypeError(f"YamlCompare failed to convert the requested value to what a {type(option).__base__.__name__} option supports.\
-                \nCaused By:\
-                \n\n{type(ex).__name__}:{ex}")
+def mount_ember(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Mount Ember on Sevii One Island."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 18120
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Mt. Ember Summit", player) > 0
+    #     return has_location
+    return kindle_road(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
-        if isinstance(value, str) and comp_symbols[comparator].__name__ != 'eq':
-            #At this point if its still a string don't try and compare with strings using > < >= <=
-            raise ValueError(f'YamlCompare can only compare strings with one of the following: {[s for s, v in comp_symbols.items() if v.__name__ == "eq"]} and you tried to do: "{option.value} {comparator} {value}"')
+def two_island(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Sevii Two Island."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Two Island", player) > 0
+    #     return has_location
+    return bills_errand1(world, state, player)
 
-        result = comp_symbols[comparator](option.value, value)
+def cape_brink(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Sevii Cape Brink."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Cape Brink", player) > 0
+    #     return has_location
+    return two_island(world, state, player)
 
-        if not skipCache:
-            world.yaml_compare_rule_cache[cacheindex] = result
+def three_island(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Sevii Three Island."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Three Island", player) > 0
+    #     return has_location
+    return bills_errand2(world, state, player)
 
-    else: #if exists and not skipCache
-        result = world.yaml_compare_rule_cache[cacheindex]
+def bond_bridge(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Bond Bridge on Sevii Three Island."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Bond Bridge", player) > 0
+    #     return has_location
+    return three_island(world, state, player) and attack_needed(world, state, player, 443328)
 
-    return not result if reverse_result else result
+def berry_forest(world: World, state: CollectionState, player: int, complete_dungeon: bool = True, special_boss_attack: int = 0):
+    """Checks if the player can access Berry Forest on Sevii Three Island."""
+    has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
+    minion_attack = 18120
+    return bond_bridge(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
+def professor_ivys_lab(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Professor Ivy's Lab."""
+    # if world.options.mapsanity.value > 0:
+    #     has_location = state.count("Professor Ivy's Lab", player) > 0
+    #     return has_location
+    return True
+    
+# Johto
+def johto_route_29(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 29"""
+    return new_bark_town(world, state, player)
+
+def cherrygrove_city(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Cherrygrove City."""
+    return johto_route_29(world, state, player)
+
+def johto_route_30(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 30"""
+    return johto_route_29(world, state, player)
+
+def johto_route_31(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 31"""
+    return johto_route_29(world, state, player)
+
+def johto_route_32(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 32"""
+    return johto_route_29(world, state, player)
+
+def johto_route_33(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 33"""
+    return johto_route_29(world, state, player)
+
+def johto_route_34(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 34"""
+    return johto_route_29(world, state, player)
+
+def johto_route_35(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 35"""
+    return johto_route_29(world, state, player)
+
+def johto_route_36(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 36"""
+    return johto_route_29(world, state, player)
+
+def johto_route_37(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 37"""
+    return johto_route_29(world, state, player)
+
+def johto_route_38(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 38"""
+    return johto_route_29(world, state, player)
+
+def johto_route_39(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 39"""
+    return johto_route_29(world, state, player)
+
+def johto_route_40(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 40"""
+    return johto_route_29(world, state, player)
+
+def johto_route_41(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 41"""
+    return johto_route_29(world, state, player)
+
+def johto_route_42(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 42"""
+    return johto_route_29(world, state, player)
+
+def johto_route_43(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 43"""
+    return johto_route_29(world, state, player)
+
+def johto_route_44(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 44"""
+    return johto_route_29(world, state, player)
+
+def johto_route_45(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 45"""
+    return johto_route_29(world, state, player)
+
+def johto_route_46(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 46"""
+    return johto_route_29(world, state, player)
+
+def johto_route_47(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 47"""
+    return johto_route_29(world, state, player)
+
+def johto_route_48(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 48"""
+    return johto_route_29(world, state, player)
+
+def johto_route_49(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 49"""
+    return johto_route_29(world, state, player)
+
+def johto_route_26(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 26"""
+    return johto_route_29(world, state, player)
+
+def johto_route_27(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 27"""
+    return johto_route_29(world, state, player)
+
+def johto_route_28(world: World, state: CollectionState, player: int):
+    """Checks if the player can access Johto Route 28"""
+    return johto_route_29(world, state, player)
+
+def new_bark_town(world: World, state: CollectionState, player: int):
+    """Checks if the player can access New Bark Town"""
+    kecb = state.count("Kanto Elite Champion Badge", player) > 0
+    return kecb
+
+
+# Eggs and Stones
+def can_get_grass_egg(world: World, state: CollectionState, player: int):
+    """Checks if the player can obtain a Grass Egg."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (lavender_town(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
+
+def can_get_fire_egg(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Fire Egg."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (cinnabar_island(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
+
+def can_get_water_egg(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Water Egg."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (cerulean_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
+
+def can_get_electric_egg(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain an Electric Egg."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (vermilion_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
+
+def can_get_fighting_egg(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Fighting Egg."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (saffron_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
+
+def can_get_dragon_egg(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Dragon Egg."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return (fuchsia_city(world, state, player) or can_get_mystery_egg(world, state, player)) and tutorial_complete and has_hatchery
+
+def can_get_mystery_egg(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Mystery Egg."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    enabled = world.options.mystery_egg_in_logic.value
+    return enabled and pewter_city(world, state, player) and tutorial_complete and has_hatchery
+
+def can_get_moon_stone(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Moon Stone."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    return saffron_city(world, state, player) and tutorial_complete
+
+def can_get_leaf_stone(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Leaf Stone."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    return saffron_city(world, state, player) and tutorial_complete
+
+def can_get_fire_stone(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Fire Stone."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    return cinnabar_island(world, state, player) and tutorial_complete
+
+def can_get_water_stone(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Water Stone."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    return cerulean_city(world, state, player) and tutorial_complete
+
+def can_get_thunder_stone(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Thunder Stone."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    return vermilion_city(world, state, player) and tutorial_complete
+
+def can_get_linking_cord(world: World, state: CollectionState, player: int) -> bool:
+    """Checks if the player can obtain a Linking Cord."""
+    tutorial_complete = state.count("Tutorial Complete", player) > 0
+    return fuchsia_city(world, state, player) and tutorial_complete
+
+
+# Questlines
+def bills_grandpas_treasure_hunt1(world: World, state: CollectionState, player: int):
+    """Checks if the first step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return pallet_town(world, state, player) and bills_house(world, state, player)
+
+def can_catch_jigglypuff(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Jigglypuff."""
+    return kanto_route_3(world, state, player)
+
+def bills_grandpas_treasure_hunt2(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt1(world, state, player) and can_catch_jigglypuff(world, state, player)
+
+def can_catch_oddish(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Oddish."""
+    return kanto_route_24(world, state, player) or kanto_route_25(world, state, player) or kanto_route_5(world, state, player) or kanto_route_6(world, state, player) or kanto_route_8(world, state, player) or kanto_route_7(world, state, player) or kanto_route_12(world, state, player) or kanto_route_13(world, state, player) or kanto_route_14(world, state, player) or kanto_route_15(world, state, player) or cape_brink(world, state, player) or bond_bridge(world, state, player) or berry_forest(world, state, player, False) # Oddish
+
+def bills_grandpas_treasure_hunt3(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt2(world, state, player) and can_catch_oddish(world, state, player)
+
+def can_catch_staryu(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Staryu."""
+    return kanto_route_20(world, state, player) or kanto_route_21(world, state, player)
+
+def bills_grandpas_treasure_hunt4(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt3(world, state, player) and can_catch_staryu(world, state, player)
+
+def can_catch_growlithe(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Growlithe."""
+    return kanto_route_8(world, state, player) or kanto_route_7(world, state, player) or pokemon_mansion(world, state, player, False)
+
+def bills_grandpas_treasure_hunt5(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt4(world, state, player) and can_catch_growlithe(world, state, player)
+
+def can_catch_pikachu(world: World, state: CollectionState, player: int):
+    """Checks if the player can catch Pikachu."""
+    return viridian_forest(world, state, player, True) or power_plant(world, state, player, False)
+
+def bills_grandpas_treasure_hunt6(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Grandpa's Treasure Hunt questline can be completed."""
+    return bills_grandpas_treasure_hunt5(world, state, player) and can_catch_pikachu(world, state, player)
+
+def completed_bills_grandpas_treasure_hunt(world: World, state: CollectionState, player: int):
+    """Checks if the player has completed Bill's Grandpa's Treasure Hunt questline."""
+    return bills_grandpas_treasure_hunt6(world, state, player) and attack_needed(world, state, player, 525000)
+
+def started_bills_errand(world: World, state: CollectionState, player: int):
+    """Checks if the player has started Bill's Errand questline."""
+    return cinnabar_island(world, state, player) and pokemon_mansion(world, state, player) and attack_needed(world, state, player, 175290) # Beat Blaine
+
+def bills_errand1(world: World, state: CollectionState, player: int):
+    """Checks if the first step of Bill's Errand questline can be completed."""
+    return started_bills_errand(world, state, player) and one_island(world, state, player)
+
+def bills_errand2(world: World, state: CollectionState, player: int):
+    """Checks if the second step of Bill's Errand questline can be completed."""
+    return bills_errand1(world, state, player) and two_island(world, state, player)
+
+def bills_errand3(world: World, state: CollectionState, player: int):
+    """Checks if the third step of Bill's Errand questline can be completed."""
+    return bills_errand2(world, state, player) and three_island(world, state, player) and attack_needed(world, state, player, 396954)
+
+def bills_errand4(world: World, state: CollectionState, player: int):
+    """Checks if the fourth step of Bill's Errand questline can be completed."""
+    return bills_errand3(world, state, player) and three_island(world, state, player) and attack_needed(world, state, player, 443328)
+
+def completed_bills_errand(world: World, state: CollectionState, player: int):
+    """Checks if the fifth step of Bill's Errand questline can be completed."""
+    return bills_errand4(world, state, player) and berry_forest(world, state, player)
+
+def unfinished_business1(world: World, state: CollectionState, player: int):
+    """Checks if the player has started the Unfinished Business questline."""
+    return pallet_town(world, state, player) and completed_bills_errand(world, state, player)
+
+
+# Special Conditions
+def any_kanto_route(world: World, state: CollectionState, player: int):
+    """Checks if the player can access any Kanto route."""
+    return (kanto_route_1(world, state, player) or kanto_route_2(world, state, player) or kanto_route_3(world, state, player) or
+            kanto_route_4(world, state, player) or kanto_route_5(world, state, player) or kanto_route_6(world, state, player) or
+            kanto_route_7(world, state, player) or kanto_route_8(world, state, player) or kanto_route_9(world, state, player) or
+            kanto_route_10(world, state, player) or kanto_route_11(world, state, player) or kanto_route_12(world, state, player) or
+            kanto_route_13(world, state, player) or kanto_route_14(world, state, player) or kanto_route_15(world, state, player) or
+            kanto_route_16(world, state, player) or kanto_route_17(world, state, player) or kanto_route_18(world, state, player) or
+            kanto_route_19(world, state, player) or kanto_route_20(world, state, player) or kanto_route_21(world, state, player) or
+            kanto_route_22(world, state, player) or kanto_route_23(world, state, player) or kanto_route_24(world, state, player) or
+            kanto_route_25(world, state, player))
+
+def can_catch_x_pokemon(world: World, state: CollectionState, player: int, x: int):
+    """Checks if the player can obtain at least X pokemon."""
+    return state.count_group("Pokemon", player) >= int(x)
+
+def get_party_attack(world: World, state: CollectionState, player: int, num_pokemon: int) -> set:
+    """Returns the attack value of the player's expected current party."""
+    num_badges = 0
+    badge_list = ["Boulder Badge", "Cascade Badge", "Thunder Badge", "Rainbow Badge", "Soul Badge", "Marsh Badge", "Volcano Badge", "Earth Badge", "Kanto Elite Lorelei Badge", "Kanto Elite Bruno Badge", "Kanto Elite Agatha Badge", "Kanto Elite Lance Badge", "Kanto Elite Champion Badge"]
+    for badge in badge_list:
+        num_badges += state.count(badge, player)
+
+    avgBaseAttack = 70 + 4.2 * num_badges
+    avgLevel = min(100, 20 + 10 * num_badges)
+    return num_pokemon * avgBaseAttack * (avgLevel / 100)
+
+def get_click_attack(world: World, state: CollectionState, player: int, num_pokemon: int) -> set:
+    """Returns the attack value of the player's expected clicker attack."""
+    has_shiny_code = state.count("Shiny-Charmer Code", player) > 0
+    has_rocky_helmet = state.count("Rocky Helmet", player) > 0
+    if has_shiny_code:
+        num_pokemon += 1
+    attack = (1 + num_pokemon) ** 1.4
+    if has_rocky_helmet:
+        attack *= 1.4
+    return attack
+    
+def attack_needed(world: World, state: CollectionState, player: int, attack: int):
+    """Checks if the player's expected current party attack is at least X."""
+    num_pokemon = state.count_group("Pokemon", player) #len(get_catchable_pokemon(world, state, player))
+    auto_clicker_count = state.count("Enhanced Auto Clicker", player)
+    if world.options.use_scripts.value and not world.options.include_scripts_as_items.value:
+        auto_clicker_count = 1
+    progressive_auto_clicker_count = state.count("Enhanced Auto Clicker (Progressive Clicks/Second)", player)
+    if progressive_auto_clicker_count > 0:
+        auto_clicker_count = 0
+    clicks_per_second = max(world.options.clicks_per_second.value, auto_clicker_count * 100, progressive_auto_clicker_count * 20)
+    attack_from_clicks = get_click_attack(world, state, player, num_pokemon) * clicks_per_second
+    return (get_party_attack(world, state, player, num_pokemon) + attack_from_clicks) * 25 >= int(attack)
+
+def dungeon_attack_needed(world: World, state: CollectionState, player: int, minion_attack: int, special_boss_attack: int, complete_dungeon: bool):
+    """Checks if the player's expected current party attack is at least X for dungeons."""
+    dungeon_logic = world.options.dungeon_logic.value
+    boss_attack = 0
+    if complete_dungeon:
+        boss_attack = special_boss_attack or minion_attack * 5
+    final_pokemon_attack = boss_attack or minion_attack
+
+    early_attack = final_pokemon_attack
+    half_attack = minion_attack * 6 + final_pokemon_attack
+    full_attack = minion_attack * 13 + boss_attack
+
+    attack = [early_attack, half_attack, full_attack][dungeon_logic]
+    return attack_needed(world, state, player, attack)
+
+def dexsanity_enabled(world: World, state: CollectionState, player: int):
+    """Checks if Dexsanity is enabled."""
+    return world.options.dexsanity.value > 0
+
+def dexsanity_disabled(world: World, state: CollectionState, player: int):
+    """Checks if Dexsanity is disabled."""
+    return world.options.dexsanity.value == 0
+
+def can_breed(world: World, state: CollectionState, player: int, pokemon: str):
+    """Checks if the pokemon has been received and can be hatched."""
+    has_pokemon = state.count(pokemon, player) > 0
+    has_8_badges = state.count_group("Badges", player) >= 8
+    has_hatchery = state.count("Mystery Egg", player) > 0
+    return has_pokemon and has_8_badges and has_hatchery
+
+def starter(world: World, state: CollectionState, player: int):
+    """Checks if the starters are in logic."""
+    return world.options.starter_logic.value
+
+def kanto_starter(world: World, state: CollectionState, player: int):
+    """Checks if the Kanto starters are in logic."""
+    # To be implemented later
+    return starter(world, state, player)
+
+def kanto_roamer(world: World, state: CollectionState, player: int):
+    """Checks if the Kanto roamers are in logic."""
+    has_champion_badge = state.count("Kanto Elite Champion Badge", player) > 0
+    return has_champion_badge and fuchsia_city(world, state, player)
+
+def has_script(world: World, state: CollectionState, player: int, script_name: str):
+    """Checks if the player needs a specific script."""
+    if not world.options.use_scripts.value or not world.options.include_scripts_as_items.value:
+        return True
+    # script_item = get_items_with_value(world, f"Script: {script_name}")
+    return state.count(script_name, player) > 0
+
+def can_wander(world: World, state: CollectionState, player: int):
+    """Checks if wanderer pokemon are in logic."""
+    if not world.options.wanderers_in_logic.value:
+        return False
+    return state.count("Wailmer Pail", player) > 0
+
+def has_all_in_group(world: World, state: CollectionState, player: int, group_name: str):
+    """Return a rule that checks whether the player has every item in the given group."""
+    group_items = world.item_name_groups.get(group_name, ())
+    return HasGroup(group_name, len(group_items))

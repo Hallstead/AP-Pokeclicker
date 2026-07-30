@@ -1,75 +1,1120 @@
-from BaseClasses import Location
-from .Data import location_table
-from .Game import starting_index
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+from BaseClasses import ItemClassification, Location
+from rule_builder.rules import Has, HasAll, HasGroup, True_
+
+from . import items, Helpers
+from .rules import *
+
+if TYPE_CHECKING:
+    from .world import PokeclickerWorld
+
+class LocationData:
+    def __init__(self, name, id, original_item, region, groups, event=False, inclusion=True, place_item=None, place_item_category=None, dont_place_item=None, dont_place_item_category=None, rule=True_()):
+        self.name = name
+        self.id = id
+        self.original_item = original_item
+        self.region = region
+        self.event = event
+        self.inclusion = inclusion
+        self.groups = groups
+        self.place_item = place_item
+        self.place_item_category = place_item_category
+        self.dont_place_item = dont_place_item
+        self.dont_place_item_category = dont_place_item_category
+        self.rule = rule
 
 
-######################
-# Generate location lookups
-######################
+location_data = {
+    "Complete the Tutorial (Event)":LocationData("Complete the Tutorial (Event)", None, "Tutorial Complete", "Kanto", ['Key Items'], place_item="Tutorial Complete",
+                 rule=make_rule(pewter_city)),
 
-count = starting_index
-victory_names: list[str] = []
+    "Defeat 10 Pokemon on Kanto Route 1 (Town Map)":LocationData("Defeat 10 Pokemon on Kanto Route 1 (Town Map)", 1, "Town Map", "Route 1", ['Key Items'],
+                 rule=make_rule(kanto_route_1)),
+    "Purchase the Dungeon Ticket in Viridian City (Dungeon Ticket)":LocationData("Purchase the Dungeon Ticket in Viridian City (Dungeon Ticket)", 2, "Dungeon Ticket", "Kanto", ['Key Items'],
+                 rule=make_rule(viridian_city)),
+    "Defeat 10 Pokemon on Kanto Route 12 (Super Rod)":LocationData("Defeat 10 Pokemon on Kanto Route 12 (Super Rod)", 3, "Super Rod", "Kanto", ['Key Items'],
+                 rule=make_rule(kanto_route_12)),
+    "Defeat 10 Pokemon on Kanto Route 3 (Mystery Egg)":LocationData("Defeat 10 Pokemon on Kanto Route 3 (Mystery Egg)", 4, "Mystery Egg", "Kanto", ['Key Items'],
+                 rule=make_rule(kanto_route_3)),
+    "Clear the Fuchsia City Gym in Kanto (Safari Ticket)":LocationData("Clear the Fuchsia City Gym in Kanto (Safari Ticket)", 5, "Safari Ticket", "Kanto", ['Key Items'],
+                 rule=make_rule(fuchsia_city) & make_rule(attack_needed, 137100)),
+    "Unlock Kanto Route 11 (Wailmer Pail)":LocationData("Unlock Kanto Route 11 (Wailmer Pail)", 6, "Wailmer Pail", "Kanto", ['Key Items'],
+                 rule=make_rule(kanto_route_11)),
+    "Purchase the Explorer Kit on Cinnabar Island (Explorer Kit)":LocationData("Purchase the Explorer Kit on Cinnabar Island (Explorer Kit)", 7, "Explorer Kit", "Kanto", ['Key Items'],
+                 rule=make_rule(cinnabar_island) & Has("Tutorial Complete")),
+    "Clear the Viridian City Gym in Kanto (Gem Case)":LocationData("Clear the Viridian City Gym in Kanto (Gem Case)", 8, "Gem Case", "Kanto", ['Key Items'],
+                 rule=make_rule(viridian_city) & HasAll("Thunder Badge", "Rainbow Badge", "Marsh Badge") & make_rule(completed_bills_errand) & make_rule(attack_needed, 244850)),
+    "Clear the Victory Road dungeon in Kanto (Holo Caster)":LocationData("Clear the Victory Road dungeon in Kanto (Holo Caster)", 9, "Holo Caster", "Indigo Plateau", ['Key Items'],
+                 rule=make_rule(victory_road)),
 
-# add sequential generated ids to the lists
-for key, _ in enumerate(location_table):
-    if "victory" in location_table[key] and location_table[key]["victory"]:
-        victory_names.append(location_table[key]["name"])
+    "Capture 20 unique Pokemon (Magic Ball)":LocationData("Capture 20 unique Pokemon (Magic Ball)", 101, "Magic Ball", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 20)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 20))),
+    "Capture 30 unique Pokemon (Amulet Coin)":LocationData("Capture 30 unique Pokemon (Amulet Coin)", 102, "Amulet Coin", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 30)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 30))),
+    "Capture 40 unique Pokemon (Rocky Helmet)":LocationData("Capture 40 unique Pokemon (Rocky Helmet)", 103, "Rocky Helmet", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 40)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 40))),
+    "Capture 50 unique Pokemon (EXP Share)":LocationData("Capture 50 unique Pokemon (EXP Share)", 104, "EXP Share", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 50)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 50))),
+    "Capture 60 unique Pokemon (Sprayduck)":LocationData("Capture 60 unique Pokemon (Sprayduck)", 105, "Sprayduck", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 60)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 60))),
+    "Capture 70 unique Pokemon (Shiny Charm)":LocationData("Capture 70 unique Pokemon (Shiny Charm)", 106, "Shiny Charm", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 70)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 70))),
+    "Capture 80 unique Pokemon (Magma Stone)":LocationData("Capture 80 unique Pokemon (Magma Stone)", 107, "Magma Stone", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 80)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 80))),
+    "Capture 90 unique Pokemon (Cell Battery)":LocationData("Capture 90 unique Pokemon (Cell Battery)", 108, "Cell Battery", "Kanto", ['Oak Items'],
+                 rule=(make_rule(dexsanity_disabled) & make_rule(can_catch_x_pokemon, 90)) | (make_rule(dexsanity_enabled) & HasGroup("Pokemon", 90))),
+    "Purchase the Explosive Charge on Cinnabar Island (Explosive Charge)":LocationData("Purchase the Explosive Charge on Cinnabar Island (Explosive Charge)", 109, "Explosive Charge", "Kanto", ['Oak Items'],
+                 rule=make_rule(cinnabar_island) & Has("Tutorial Complete")),
+    "Purchase the Treasure Scanner on Cinnabar Island (Treasure Scanner)":LocationData("Purchase the Treasure Scanner on Cinnabar Island (Treasure Scanner)", 110, "Treasure Scanner", "Kanto", ['Oak Items'],
+                 rule=make_rule(cinnabar_island) & Has("Tutorial Complete")),
 
-    if "id" in location_table[key]:
-        item_id = location_table[key]["id"]
-        if item_id >= count:
-            count = item_id
-        elif item_id == -1:
-            pass # allow -1 as a placeholder for "assign automatically"
-        else:
-            raise ValueError(f"{location_table[key]['name']} has an invalid ID. ID must be at least {count + 1}")
+    "Brock":LocationData("Brock", 201, "Boulder Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(pewter_city) & make_rule(attack_needed, 2092)),
+    "Misty":LocationData("Misty", 202, "Cascade Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(cerulean_city) & make_rule(attack_needed, 10800)),
+    "Lt. Surge":LocationData("Lt. Surge", 203, "Thunder Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(vermilion_city) & Has("Cascade Badge") & make_rule(attack_needed, 39995) & make_rule(attack_needed, 50431)),
+    "Erika":LocationData("Erika", 204, "Rainbow Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(celadon_city) & make_rule(attack_needed, 105550)),
+    "Sabrina":LocationData("Sabrina", 205, "Marsh Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(saffron_city) & make_rule(silph_co, True, 52576) & make_rule(attack_needed, 203971) & make_rule(attack_needed, 112420)),
+    "Koga":LocationData("Koga", 206, "Soul Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(fuchsia_city) & make_rule(attack_needed, 137100)),
+    "Blaine":LocationData("Blaine", 207, "Volcano Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(cinnabar_island) & make_rule(pokemon_mansion) & make_rule(attack_needed, 175290)),
+    "Giovanni":LocationData("Giovanni", 208, "Earth Badge", "Kanto", ['Gyms'],
+                 rule=make_rule(viridian_city) & HasAll("Thunder Badge", "Rainbow Badge", "Marsh Badge") & make_rule(completed_bills_errand) & make_rule(attack_needed, 244850)),
+    "Lorelei":LocationData("Lorelei", 209, "Kanto Elite Lorelei Badge", "Indigo Plateau", ['Gyms'],
+                 rule=make_rule(indigo_plateau) & make_rule(attack_needed, 262880)),
+    "Bruno":LocationData("Bruno", 210, "Kanto Elite Bruno Badge", "Indigo Plateau", ['Gyms'],
+                 rule=make_rule(indigo_plateau) & Has("Kanto Elite Lorelei Badge") & make_rule(attack_needed, 262880)),
+    "Agatha":LocationData("Agatha", 211, "Kanto Elite Agatha Badge", "Indigo Plateau", ['Gyms'],
+                 rule=make_rule(indigo_plateau) & Has("Kanto Elite Bruno Badge") & make_rule(attack_needed, 262880)),
+    "Lance":LocationData("Lance", 212, "Kanto Elite Lance Badge", "Indigo Plateau", ['Gyms'],
+                 rule=make_rule(indigo_plateau) & Has("Kanto Elite Agatha Badge") & make_rule(attack_needed, 283550)),
+    "Champion Blue":LocationData("Champion Blue", 213, "Kanto Elite Champion Badge", "Indigo Plateau", ['Gyms'], place_item="Kanto Elite Champion Badge",
+                 rule=make_rule(indigo_plateau) & Has("Kanto Elite Lance Badge") & make_rule(attack_needed, 359860)),
 
-    if "id" in location_table[key] and location_table[key]["id"] == -1:
-        # event location
-        location_table[key]["id"] = None
-    else:
-        location_table[key]["id"] = count
-        count += 1
+    "Viridian Forest":LocationData("Viridian Forest", 401, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(viridian_forest)),
+    "Mt. Moon":LocationData("Mt. Moon", 402, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(mt_moon)),
+    "Diglett's Cave":LocationData("Diglett's Cave", 403, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(digletts_cave)),
+    "Rock Tunnel":LocationData("Rock Tunnel", 404, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(rock_tunnel)),
+    "Rocket Game Corner":LocationData("Rocket Game Corner", 405, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(rocket_game_corner)),
+    "Pokemon Tower":LocationData("Pokemon Tower", 406, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(pokemon_tower)),
+    "Silph Co.":LocationData("Silph Co.", 407, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(silph_co)),
+    "Power Plant":LocationData("Power Plant", 408, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(power_plant)),
+    "Seafoam Islands":LocationData("Seafoam Islands", 409, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(seafoam_islands)),
+    "Pokemon Mansion":LocationData("Pokemon Mansion", 410, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(pokemon_mansion)),
+    "Mt. Ember Summit":LocationData("Mt. Ember Summit", 411, None, "Sevii Islands 123", ['Dungeons'],
+                 rule=make_rule(mount_ember)),
+    "Berry Forest":LocationData("Berry Forest", 412, None, "Sevii Islands 123", ['Dungeons'],
+                 rule=make_rule(berry_forest)),
+    "Victory Road":LocationData("Victory Road", 413, None, "Indigo Plateau", ['Dungeons'],
+                 rule=make_rule(victory_road)),
+    "Cerulean Cave":LocationData("Cerulean Cave", 414, None, "Kanto", ['Dungeons'],
+                 rule=make_rule(cerulean_cave)),
+    "New Island":LocationData("New Island", 415, None, "Kanto", ['Dungeons', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=make_rule(new_island, True, 131500)),
+
+    "Blue 1 (Near Viridian City)":LocationData("Blue 1 (Near Viridian City)", 701, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(kanto_route_22) & make_rule(attack_needed, 2718)),
+    "Blue 2 (Near Cerulean City)":LocationData("Blue 2 (Near Cerulean City)", 702, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(kanto_route_4) & make_rule(attack_needed, 14041)),
+    "Blue 3 (Near Vermillion City)":LocationData("Blue 3 (Near Vermillion City)", 703, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(kanto_route_6) & make_rule(attack_needed, 50431)),
+    "Blue 4 (Pokemon Tower)":LocationData("Blue 4 (Pokemon Tower)", 704, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(pokemon_tower) & make_rule(attack_needed, 151990)),
+    "Blue 5 (Silph Co.)":LocationData("Blue 5 (Silph Co.)", 705, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(silph_co) & make_rule(attack_needed, 203971)),
+    "Blue 6 (Near Viridian City)":LocationData("Blue 6 (Near Viridian City)", 706, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(kanto_route_22) & Has("Earth Badge") & make_rule(attack_needed, 426771)),
+    "Fighting Dojo":LocationData("Fighting Dojo", 707, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(saffron_city) & make_rule(attack_needed, 217970)),
+    "Snorlax (Route 12, Near Lavender Town)":LocationData("Snorlax (Route 12, Near Lavender Town)", 708, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(kanto_route_12) & make_rule(pokemon_tower) & make_rule(attack_needed, 189990)),
+    "Snorlax (Route 16, Near Celadon City)":LocationData("Snorlax (Route 16, Near Celadon City)", 709, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(pokemon_tower) & make_rule(attack_needed, 189990)),
+    "Biker Goon 1 (Three Island)":LocationData("Biker Goon 1 (Three Island)", 710, None, "Sevii Islands 123", ['Temporary Battles'],
+                 rule=make_rule(three_island) & make_rule(attack_needed, 396954)),
+    "Biker Goon 2 (Three Island)":LocationData("Biker Goon 2 (Three Island)", 711, None, "Sevii Islands 123", ['Temporary Battles'],
+                 rule=make_rule(three_island) & make_rule(attack_needed, 396954)),
+    "Biker Goon 3 (Three Island)":LocationData("Biker Goon 3 (Three Island)", 712, None, "Sevii Islands 123", ['Temporary Battles'],
+                 rule=make_rule(three_island) & make_rule(attack_needed, 396954)),
+    "Cueball Paxton (Three Island)":LocationData("Cueball Paxton (Three Island)", 713, None, "Sevii Islands 123", ['Temporary Battles'],
+                 rule=make_rule(three_island) & make_rule(attack_needed, 443328)),
+    "Ash Ketchum New Island":LocationData("Ash Ketchum New Island", 714, None, "Kanto", ['Temporary Battles', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=make_rule(new_island, True, 131500) & make_rule(attack_needed, 454992)),
+    "Bill's Grandpa":LocationData("Bill's Grandpa", 715, None, "Kanto", ['Temporary Battles'],
+                 rule=make_rule(completed_bills_grandpas_treasure_hunt)),
+    "Santa Jynx Band 1":LocationData("Santa Jynx Band 1", 716, None, "Kanto", ['Temporary Battles', 'Seasonal Events', 'Christmas'],
+                 rule=make_rule(has_script, "Infinite Seasonal Events") & make_rule(bills_house) & make_rule(attack_needed, 10048)),
+    "Santa Jynx Band 2":LocationData("Santa Jynx Band 2", 717, None, "Kanto", ['Temporary Battles', 'Seasonal Events', 'Christmas'],
+                 rule=make_rule(has_script, "Infinite Seasonal Events") & make_rule(bills_house) & make_rule(attack_needed, 10048) & make_rule(any_kanto_route)),
+    "Santa Jynx Band 3":LocationData("Santa Jynx Band 3", 718, None, "Kanto", ['Temporary Battles', 'Seasonal Events', 'Christmas'],
+                 rule=make_rule(has_script, "Infinite Seasonal Events") & make_rule(bills_house) & make_rule(attack_needed, 10048) & make_rule(any_kanto_route)),
+    "Santa Jynx Band 4":LocationData("Santa Jynx Band 4", 719, None, "Kanto", ['Temporary Battles', 'Seasonal Events', 'Christmas'],
+                 rule=make_rule(has_script, "Infinite Seasonal Events") & make_rule(bills_house) & make_rule(attack_needed, 10048) & make_rule(any_kanto_route)),
+    "Ash Ketchum Kanto":LocationData("Ash Ketchum Kanto", 720, None, "Kanto Champion", ['Temporary Battles'],
+                 rule=(make_rule(dexsanity_enabled) & make_rule(attack_needed, 737710)) | make_rule(dexsanity_disabled)),
+
+    "Capture Bulbasaur":LocationData("Capture Bulbasaur", 2001, "Bulbasaur", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(starter) | make_rule(can_get_grass_egg) | make_rule(can_breed, "Bulbasaur")),
+    "Capture Ivysaur":LocationData("Capture Ivysaur", 2002, "Ivysaur", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Bulbasaur") | make_rule(can_breed, "Ivysaur")),
+    "Capture Venusaur":LocationData("Capture Venusaur", 2003, "Venusaur", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Ivysaur")) | make_rule(can_breed, "Venusaur")),
+    "Capture Charmander":LocationData("Capture Charmander", 2004, "Charmander", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(starter) | make_rule(can_get_fire_egg) | make_rule(can_breed, "Charmander")),
+    "Capture Charmeleon":LocationData("Capture Charmeleon", 2005, "Charmeleon", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Charmander") | make_rule(can_breed, "Charmeleon")),
+    "Capture Charizard":LocationData("Capture Charizard", 2006, "Charizard", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Charmeleon")) | make_rule(can_breed, "Charizard")),
+    "Capture Squirtle":LocationData("Capture Squirtle", 2007, "Squirtle", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_starter) | make_rule(can_get_water_egg) | make_rule(can_breed, "Squirtle")),
+    "Capture Wartortle":LocationData("Capture Wartortle", 2008, "Wartortle", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Squirtle") | make_rule(can_breed, "Wartortle")),
+    "Capture Blastoise":LocationData("Capture Blastoise", 2009, "Blastoise", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Wartortle")) | make_rule(can_breed, "Blastoise")),
+    "Capture Caterpie":LocationData("Capture Caterpie", 2010, "Caterpie", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_2) | make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(viridian_forest, "False") | make_rule(can_breed, "Caterpie")),
+    "Capture Metapod":LocationData("Capture Metapod", 2011, "Metapod", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Caterpie") | make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(viridian_forest, "False") | make_rule(can_breed, "Metapod")),
+    "Capture Butterfree":LocationData("Capture Butterfree", 2012, "Butterfree", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Metapod") | make_rule(can_breed, "Butterfree")),
+    "Capture Weedle":LocationData("Capture Weedle", 2013, "Weedle", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_2) | make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(viridian_forest, "False") | make_rule(can_breed, "Weedle")),
+    "Capture Kakuna":LocationData("Capture Kakuna", 2014, "Kakuna", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Weedle") | make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(viridian_forest, "False") | make_rule(can_breed, "Kakuna")),
+    "Capture Beedrill":LocationData("Capture Beedrill", 2015, "Beedrill", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Kakuna") | make_rule(can_breed, "Beedrill")),
+    "Capture Pidgey":LocationData("Capture Pidgey", 2016, "Pidgey", "Route 1 Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'], inclusion=False,
+                 rule=make_rule(kanto_route_1) | make_rule(kanto_route_2) | make_rule(kanto_route_3) | make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(kanto_route_5) | make_rule(kanto_route_6) | make_rule(kanto_route_8) | make_rule(kanto_route_7) | make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(bond_bridge) | make_rule(can_breed, "Pidgey")),
+    "Capture Pidgeotto":LocationData("Capture Pidgeotto", 2017, "Pidgeotto", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Pidgey") | make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(bond_bridge) | make_rule(can_breed, "Pidgeotto")),
+    "Capture Pidgeot":LocationData("Capture Pidgeot", 2018, "Pidgeot", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Pidgeotto")) | make_rule(can_breed, "Pidgeot")),
+    "Capture Rattata":LocationData("Capture Rattata", 2019, "Rattata", "Route 1 Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'], inclusion=False,
+                 rule=make_rule(kanto_route_1) | make_rule(kanto_route_22) | make_rule(kanto_route_2) | make_rule(kanto_route_4) | make_rule(kanto_route_9) | make_rule(kanto_route_16) | make_rule(kanto_route_17) | make_rule(kanto_route_18) | make_rule(pokemon_mansion) | make_rule(can_breed, "Rattata")),
+    "Capture Raticate":LocationData("Capture Raticate", 2020, "Raticate", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Rattata") | make_rule(kanto_route_16) | make_rule(kanto_route_17) | make_rule(kanto_route_18) | make_rule(pokemon_mansion, "False") | make_rule(can_breed, "Raticate")),
+    "Capture Spearow":LocationData("Capture Spearow", 2021, "Spearow", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_22) | make_rule(kanto_route_3) | make_rule(kanto_route_4) | make_rule(kanto_route_11) | make_rule(kanto_route_9) | make_rule(kanto_route_10) | make_rule(kanto_route_16) | make_rule(kanto_route_17) | make_rule(kanto_route_18) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(cape_brink) | make_rule(kanto_route_23) | make_rule(can_breed, "Spearow")),
+    "Capture Fearow":LocationData("Capture Fearow", 2022, "Fearow", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Spearow") | make_rule(kanto_route_17) | make_rule(kanto_route_18) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(cape_brink) | make_rule(kanto_route_23) | make_rule(can_breed, "Fearow")),
+    "Capture Ekans":LocationData("Capture Ekans", 2023, "Ekans", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_4) | make_rule(kanto_route_11) | make_rule(kanto_route_9) | make_rule(kanto_route_10) | make_rule(kanto_route_8) | make_rule(kanto_route_23) | make_rule(can_breed, "Ekans")),
+    "Capture Arbok":LocationData("Capture Arbok", 2024, "Arbok", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Ekans")) | make_rule(kanto_route_23) | make_rule(victory_road) | make_rule(can_breed, "Arbok")),
+    "Capture Pikachu":LocationData("Capture Pikachu", 2025, "Pikachu", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(viridian_forest, "True") | make_rule(power_plant, "False") | make_rule(can_get_electric_egg) | make_rule(can_breed, "Pikachu")),
+    "Capture Raichu":LocationData("Capture Raichu", 2026, "Raichu", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Pikachu") & make_rule(can_get_thunder_stone) | make_rule(can_breed, "Raichu")),
+    "Capture Sandshrew":LocationData("Capture Sandshrew", 2027, "Sandshrew", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_4) | make_rule(kanto_route_11) | make_rule(kanto_route_9) | make_rule(kanto_route_10) | make_rule(kanto_route_8) | make_rule(kanto_route_23) | make_rule(can_breed, "Sandshrew")),
+    "Capture Sandslash":LocationData("Capture Sandslash", 2028, "Sandslash", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Sandshrew")) | make_rule(kanto_route_23) | make_rule(victory_road) | make_rule(can_breed, "Sandslash")),
+    "Capture Nidoran (F)":LocationData("Capture Nidoran (F)", 2029, "Nidoran (F)", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_3) | make_rule(safari_zone) | make_rule(can_breed, "Nidoran (F)")),
+    "Capture Nidorina":LocationData("Capture Nidorina", 2030, "Nidorina", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Nidoran (F)") | make_rule(safari_zone) | make_rule(can_breed, "Nidorina")),
+    "Capture Nidoqueen":LocationData("Capture Nidoqueen", 2031, "Nidoqueen", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Nidorina") & make_rule(can_get_moon_stone)) | make_rule(can_breed, "Nidoqueen")),
+    "Capture Nidoran (M)":LocationData("Capture Nidoran (M)", 2032, "Nidoran (M)", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_3) | make_rule(safari_zone) | make_rule(can_breed, "Nidoran (M)")),
+    "Capture Nidorino":LocationData("Capture Nidorino", 2033, "Nidorino", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Nidoran (M)") | make_rule(safari_zone) | make_rule(can_breed, "Nidorino")),
+    "Capture Nidoking":LocationData("Capture Nidoking", 2034, "Nidoking", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Nidorino") & make_rule(can_get_moon_stone)) | make_rule(can_breed, "Nidoking")),
+    "Capture Clefairy":LocationData("Capture Clefairy", 2035, "Clefairy", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(mt_moon, "False") | make_rule(can_breed, "Clefairy")),
+    "Capture Clefable":LocationData("Capture Clefable", 2036, "Clefable", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Clefairy") & make_rule(can_get_moon_stone)) | make_rule(can_breed, "Clefable")),
+    "Capture Vulpix":LocationData("Capture Vulpix", 2037, "Vulpix", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_8) | make_rule(kanto_route_7) | make_rule(pokemon_mansion, "False") | make_rule(can_get_fire_egg) | make_rule(can_breed, "Vulpix")),
+    "Capture Ninetails":LocationData("Capture Ninetails", 2038, "Ninetails", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Vulpix") & make_rule(can_get_fire_stone)) | make_rule(can_breed, "Ninetails")),
+    "Capture Jigglypuff":LocationData("Capture Jigglypuff", 2039, "Jigglypuff", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_3) | make_rule(can_get_mystery_egg) | make_rule(can_breed, "Jigglypuff")),
+    "Capture Wigglytuff":LocationData("Capture Wigglytuff", 2040, "Wigglytuff", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Jigglypuff") & make_rule(can_get_moon_stone)) | make_rule(can_breed, "Wigglytuff")),
+    "Capture Zubat":LocationData("Capture Zubat", 2041, "Zubat", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(mt_moon, "False") | make_rule(rock_tunnel, "False") | make_rule(seafoam_islands, "False") | make_rule(victory_road) | make_rule(can_breed, "Zubat")),
+    "Capture Golbat":LocationData("Capture Golbat", 2042, "Golbat", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Zubat")) | make_rule(seafoam_islands, "False") | make_rule(victory_road) | make_rule(cerulean_cave) | make_rule(can_breed, "Golbat")),
+    "Capture Oddish":LocationData("Capture Oddish", 2043, "Oddish", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(kanto_route_5) | make_rule(kanto_route_6) | make_rule(kanto_route_8) | make_rule(kanto_route_7) | make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(cape_brink) | make_rule(bond_bridge) | make_rule(berry_forest, "False") | make_rule(can_get_grass_egg) | make_rule(can_breed, "Oddish")),
+    "Capture Gloom":LocationData("Capture Gloom", 2044, "Gloom", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Oddish")) | make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(cape_brink) | make_rule(bond_bridge) | make_rule(berry_forest, "False") | make_rule(can_breed, "Gloom")),
+    "Capture Vileplume":LocationData("Capture Vileplume", 2045, "Vileplume", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Gloom") & make_rule(can_get_leaf_stone) | make_rule(can_breed, "Vileplume")),
+    "Capture Paras":LocationData("Capture Paras", 2046, "Paras", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(mt_moon, "False")) | make_rule(can_get_grass_egg) | make_rule(safari_zone) | make_rule(can_breed, "Paras")),
+    "Capture Parasect":LocationData("Capture Parasect", 2047, "Parasect", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Paras")) | make_rule(cerulean_cave) | make_rule(can_breed, "Parasect")),
+    "Capture Venonat":LocationData("Capture Venonat", 2048, "Venonat", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(bond_bridge) | make_rule(berry_forest, "False") | make_rule(can_breed, "Venonat")),
+    "Capture Venomoth":LocationData("Capture Venomoth", 2049, "Venomoth", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Venonat")) | make_rule(berry_forest, "True") | make_rule(can_breed, "Venomoth")),
+    "Capture Diglett":LocationData("Capture Diglett", 2050, "Diglett", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(digletts_cave, "False") | make_rule(can_breed, "Diglett")),
+    "Capture Dugtrio":LocationData("Capture Dugtrio", 2051, "Dugtrio", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Diglett")) | make_rule(digletts_cave, "True") | make_rule(can_breed, "Dugtrio")),
+    "Capture Meowth":LocationData("Capture Meowth", 2052, "Meowth", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_5) | make_rule(kanto_route_6) | make_rule(kanto_route_8) | make_rule(kanto_route_7) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(cape_brink) | make_rule(bond_bridge) | make_rule(can_breed, "Meowth")),
+    "Capture Persian":LocationData("Capture Persian", 2053, "Persian", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Meowth")) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(cape_brink) | make_rule(bond_bridge) | make_rule(can_breed, "Persian")),
+    "Capture Psyduck":LocationData("Capture Psyduck", 2054, "Psyduck", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(cape_brink) | make_rule(bond_bridge) | ((make_rule(kanto_route_22) | make_rule(kanto_route_25) | make_rule(kanto_route_6) | make_rule(kanto_route_23)) & Has("Super Rod")) | make_rule(seafoam_islands, "False") | make_rule(berry_forest, "False") | make_rule(cerulean_cave) | make_rule(safari_zone) | make_rule(can_breed, "Psyduck")),
+    "Capture Golduck":LocationData("Capture Golduck", 2055, "Golduck", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Psyduck")) | make_rule(cape_brink) | make_rule(seafoam_islands, "False") | make_rule(berry_forest, "False") | make_rule(cerulean_cave) | make_rule(can_breed, "Golduck")),
+    "Capture Mankey":LocationData("Capture Mankey", 2056, "Mankey", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_22) | make_rule(kanto_route_3) | make_rule(kanto_route_4) | make_rule(kanto_route_23) | (make_rule(rock_tunnel, "False")) | make_rule(can_get_fighting_egg) | make_rule(can_breed, "Mankey")),
+    "Capture Primape":LocationData("Capture Primape", 2057, "Primape", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Mankey")) | make_rule(kanto_route_23) | make_rule(victory_road) | make_rule(cerulean_cave) | make_rule(can_breed, "Primape")),
+    "Capture Growlithe":LocationData("Capture Growlithe", 2058, "Growlithe", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_8) | make_rule(kanto_route_7) | make_rule(pokemon_mansion, "False") | make_rule(can_get_fire_egg) | make_rule(can_breed, "Growlithe")),
+    "Capture Arcanine":LocationData("Capture Arcanine", 2059, "Arcanine", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Growlithe") & make_rule(can_get_fire_stone)) | make_rule(can_breed, "Arcanine")),
+    "Capture Poliwag":LocationData("Capture Poliwag", 2060, "Poliwag", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=((make_rule(kanto_route_22) | make_rule(kanto_route_25) | make_rule(kanto_route_6) | make_rule(kanto_route_12) | make_rule(cape_brink) | make_rule(kanto_route_23)) & Has("Super Rod")) | make_rule(berry_forest, "False") | make_rule(cerulean_cave) | make_rule(safari_zone) | make_rule(can_breed, "Poliwag")),
+    "Capture Poliwhirl":LocationData("Capture Poliwhirl", 2061, "Poliwhirl", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Poliwag")) | make_rule(can_breed, "Poliwhirl")),
+    "Capture Poliwrath":LocationData("Capture Poliwrath", 2062, "Poliwrath", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Poliwhirl") & make_rule(can_get_water_stone)) | make_rule(can_breed, "Poliwrath")),
+    "Capture Abra":LocationData("Capture Abra", 2063, "Abra", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(can_breed, "Abra")),
+    "Capture Kadabra":LocationData("Capture Kadabra", 2064, "Kadabra", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Abra") | make_rule(cerulean_cave) | make_rule(can_breed, "Kadabra")),
+    "Capture Alakazam":LocationData("Capture Alakazam", 2065, "Alakazam", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Kadabra") & make_rule(can_get_linking_cord)) | make_rule(can_breed, "Alakazam")),
+    "Capture Machop":LocationData("Capture Machop", 2066, "Machop", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(rock_tunnel, "False") | make_rule(mount_ember, "False") | make_rule(victory_road) | make_rule(can_get_fighting_egg) | make_rule(can_breed, "Machop")),
+    "Capture Machoke":LocationData("Capture Machoke", 2067, "Machoke", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Machop")) | make_rule(mount_ember, "False") | make_rule(cerulean_cave) | make_rule(victory_road) | make_rule(can_breed, "Machoke")),
+    "Capture Machamp":LocationData("Capture Machamp", 2068, "Machamp", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Machoke") & make_rule(can_get_linking_cord)) | make_rule(can_breed, "Machamp")),
+    "Capture Bellsprout":LocationData("Capture Bellsprout", 2069, "Bellsprout", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(kanto_route_5) | make_rule(kanto_route_6) | make_rule(kanto_route_7) | make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(cape_brink) | make_rule(bond_bridge) | make_rule(berry_forest, "False") | make_rule(can_breed, "Bellsprout")),
+    "Capture Weepinbell":LocationData("Capture Weepinbell", 2070, "Weepinbell", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Bellsprout")) | make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(cape_brink) | make_rule(bond_bridge) | make_rule(berry_forest, "False") | make_rule(can_breed, "Weepinbell")),
+    "Capture Victreebel":LocationData("Capture Victreebel", 2071, "Victreebel", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Weepinbell") & make_rule(can_get_leaf_stone)) | make_rule(can_breed, "Victreebel")),
+    "Capture Tentacool":LocationData("Capture Tentacool", 2072, "Tentacool", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_19) | make_rule(kanto_route_20) | ((make_rule(kanto_route_4) | make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(kanto_route_11) | make_rule(kanto_route_10) | make_rule(kanto_route_13) | make_rule(kanto_route_21) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(bond_bridge)) & Has("Super Rod")) | make_rule(can_breed, "Tentacool")),
+    "Capture Tentacruel":LocationData("Capture Tentacruel", 2073, "Tentacruel", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Tentacool")) | ((make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(bond_bridge)) & Has("Super Rod")) | make_rule(can_breed, "Tentacruel")),
+    "Capture Geodude":LocationData("Capture Geodude", 2074, "Geodude", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kindle_road) | make_rule(mt_moon, "False") | make_rule(rock_tunnel, "False") | make_rule(mount_ember, "False") | make_rule(victory_road) | make_rule(can_get_mystery_egg) | make_rule(can_breed, "Geodude")),
+    "Capture Graveler":LocationData("Capture Graveler", 2075, "Graveler", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Geodude")) | make_rule(mount_ember, "False") | make_rule(cerulean_cave) | make_rule(can_breed, "Graveler")),
+    "Capture Golem":LocationData("Capture Golem", 2076, "Golem", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Graveler") & make_rule(can_get_linking_cord)) | make_rule(can_breed, "Golem")),
+    "Capture Ponyta":LocationData("Capture Ponyta", 2077, "Ponyta", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kindle_road) | make_rule(mount_ember, "False") | make_rule(can_breed, "Ponyta")),
+    "Capture Rapidash":LocationData("Capture Rapidash", 2078, "Rapidash", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Ponyta")) | make_rule(kindle_road) | make_rule(mount_ember, "False") | make_rule(can_breed, "Rapidash")),
+    "Capture Slowpoke":LocationData("Capture Slowpoke", 2079, "Slowpoke", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(cape_brink) | make_rule(bond_bridge) | ((make_rule(kanto_route_22) | make_rule(kanto_route_25) | make_rule(kanto_route_6) | make_rule(kanto_route_12) | make_rule(kanto_route_23)) & Has("Super Rod")) | make_rule(seafoam_islands, "False") | make_rule(berry_forest, "False") | make_rule(cerulean_cave) | make_rule(safari_zone) | make_rule(can_get_water_egg) | make_rule(can_breed, "Slowpoke")),
+    "Capture Slowbro":LocationData("Capture Slowbro", 2080, "Slowbro", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Slowpoke")) | (make_rule(kanto_route_12) & Has("Super Rod")) | make_rule(cape_brink) | make_rule(seafoam_islands, "False") | make_rule(berry_forest, "False") | make_rule(cerulean_cave) | make_rule(can_breed, "Slowbro")),
+    "Capture Magnemite":LocationData("Capture Magnemite", 2081, "Magnemite", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(power_plant, "False") | make_rule(can_get_electric_egg) | make_rule(can_breed, "Magnemite")),
+    "Capture Magneton":LocationData("Capture Magneton", 2082, "Magneton", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Magnemite")) | make_rule(power_plant, "False") | make_rule(cerulean_cave) | make_rule(can_breed, "Magneton")),
+    "Capture Farfetch'd":LocationData("Capture Farfetch'd", 2083, "Farfetch'd", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(can_breed, "Farfetch'd")),
+    "Capture Doduo":LocationData("Capture Doduo", 2084, "Doduo", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_16) | make_rule(kanto_route_17) | make_rule(kanto_route_18) | make_rule(can_get_mystery_egg) | make_rule(can_breed, "Doduo")),
+    "Capture Dodrio":LocationData("Capture Dodrio", 2085, "Dodrio", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Doduo")) | make_rule(can_breed, "Dodrio")),
+    "Capture Seel":LocationData("Capture Seel", 2086, "Seel", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(seafoam_islands, "True") | make_rule(can_breed, "Seel")),
+    "Capture Dewgong":LocationData("Capture Dewgong", 2087, "Dewgong", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Seel")) | make_rule(can_breed, "Dewgong")),
+    "Capture Grimer":LocationData("Capture Grimer", 2088, "Grimer", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(pokemon_mansion, "False") | make_rule(can_breed, "Grimer")),
+    "Capture Muk":LocationData("Capture Muk", 2089, "Muk", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Grimer")) | make_rule(pokemon_mansion, "False") | make_rule(can_breed, "Muk")),
+    "Capture Shellder":LocationData("Capture Shellder", 2090, "Shellder", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_20) | (make_rule(kanto_route_21) & Has("Super Rod")) | make_rule(can_breed, "Shellder")),
+    "Capture Cloyster":LocationData("Capture Cloyster", 2091, "Cloyster", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Shellder") & make_rule(can_get_water_stone)) | make_rule(can_breed, "Cloyster")),
+    "Capture Gastly":LocationData("Capture Gastly", 2092, "Gastly", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(pokemon_tower, "False") | make_rule(can_get_mystery_egg) | make_rule(can_breed, "Gastly") | (Has("Infinite Seasonal Events") & make_rule(any_kanto_route))),
+    "Capture Haunter":LocationData("Capture Haunter", 2093, "Haunter", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Gastly")) | make_rule(pokemon_tower, "False") | make_rule(can_breed, "Haunter")),
+    "Capture Gengar":LocationData("Capture Gengar", 2094, "Gengar", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Haunter") & make_rule(can_get_linking_cord)) | make_rule(can_breed, "Gengar")),
+    "Capture Onix":LocationData("Capture Onix", 2095, "Onix", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(rock_tunnel, "True") | make_rule(victory_road) | make_rule(can_breed, "Onix")),
+    "Capture Drowzee":LocationData("Capture Drowzee", 2096, "Drowzee", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_11) | make_rule(berry_forest, "False") | make_rule(can_breed, "Drowzee")),
+    "Capture Hypno":LocationData("Capture Hypno", 2097, "Hypno", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=HasGroup("Badges", 1) & Has("Drowzee") | make_rule(berry_forest, "True") | make_rule(can_breed, "Hypno")),
+    "Capture Krabby":LocationData("Capture Krabby", 2098, "Krabby", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_19) | make_rule(kanto_route_20) | ((make_rule(kanto_route_4) | make_rule(kanto_route_24) | make_rule(kanto_route_11) | make_rule(kanto_route_10) | make_rule(kanto_route_13) | make_rule(kanto_route_21) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(bond_bridge)) & Has("Super Rod")) | make_rule(seafoam_islands, "False") | make_rule(can_breed, "Krabby")),
+    "Capture Kingler":LocationData("Capture Kingler", 2099, "Kingler", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Krabby")) | make_rule(can_breed, "Kingler")),
+    "Capture Voltorb":LocationData("Capture Voltorb", 2100, "Voltorb", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_10) | make_rule(power_plant, "False") | make_rule(can_get_electric_egg) | make_rule(can_breed, "Voltorb")),
+    "Capture Electrode":LocationData("Capture Electrode", 2101, "Electrode", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Voltorb")) | make_rule(power_plant, "False") | make_rule(cerulean_cave) | make_rule(silph_co, "False") | make_rule(can_breed, "Electrode")),
+    "Capture Exeggcute":LocationData("Capture Exeggcute", 2102, "Exeggcute", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(berry_forest, "False") | make_rule(safari_zone) | make_rule(can_breed, "Exeggcute")),
+    "Capture Exeggutor":LocationData("Capture Exeggutor", 2103, "Exeggutor", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Exeggcute") & make_rule(can_get_leaf_stone)) | make_rule(can_breed, "Exeggutor")),
+    "Capture Cubone":LocationData("Capture Cubone", 2104, "Cubone", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(pokemon_tower, "False") | make_rule(safari_zone) | make_rule(can_breed, "Cubone")),
+    "Capture Marowak":LocationData("Capture Marowak", 2105, "Marowak", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Cubone")) | make_rule(pokemon_tower, "True") | make_rule(victory_road) | make_rule(safari_zone) | make_rule(can_breed, "Marowak")),
+    "Capture Hitmonlee":LocationData("Capture Hitmonlee", 2106, "Hitmonlee", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(can_get_fighting_egg) | make_rule(can_breed, "Hitmonlee")),
+    "Capture Hitmonchan":LocationData("Capture Hitmonchan", 2107, "Hitmonchan", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(can_get_fighting_egg) | make_rule(can_breed, "Hitmonchan")),
+    "Capture Lickitung":LocationData("Capture Lickitung", 2108, "Lickitung", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(celadon_city) & Has("Tutorial Complete")) | make_rule(can_breed, "Lickitung")),
+    "Capture Koffing":LocationData("Capture Koffing", 2109, "Koffing", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(pokemon_mansion, "False") | make_rule(can_breed, "Koffing")),
+    "Capture Weezing":LocationData("Capture Weezing", 2110, "Weezing", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Koffing")) | make_rule(pokemon_mansion, "False") | make_rule(can_breed, "Weezing")),
+    "Capture Rhyhorn":LocationData("Capture Rhyhorn", 2111, "Rhyhorn", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(safari_zone) | make_rule(can_breed, "Rhyhorn")),
+    "Capture Rhydon":LocationData("Capture Rhydon", 2112, "Rhydon", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 3) & Has("Rhyhorn")) | make_rule(can_breed, "Rhydon")),
+    "Capture Chansey":LocationData("Capture Chansey", 2113, "Chansey", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(safari_zone) | make_rule(can_breed, "Chansey")),
+    "Capture Tangela":LocationData("Capture Tangela", 2114, "Tangela", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_21) | make_rule(treasure_beach) | make_rule(can_get_grass_egg) | make_rule(safari_zone) | make_rule(can_wander) | make_rule(can_breed, "Tangela")),
+    "Capture Kangaskhan":LocationData("Capture Kangaskhan", 2115, "Kangaskhan", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(safari_zone) | make_rule(can_breed, "Kangaskhan")),
+    "Capture Horsea":LocationData("Capture Horsea", 2116, "Horsea", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_19) | make_rule(kanto_route_20) | ((make_rule(kanto_route_4) | make_rule(kanto_route_24) | make_rule(kanto_route_11) | make_rule(kanto_route_10) | make_rule(kanto_route_13) | make_rule(kanto_route_21) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(bond_bridge)) & Has("Super Rod")) | make_rule(seafoam_islands, "False") | make_rule(can_breed, "Horsea")),
+    "Capture Seadra":LocationData("Capture Seadra", 2117, "Seadra", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Horsea")) | make_rule(can_breed, "Seadra")),
+    "Capture Goldeen":LocationData("Capture Goldeen", 2118, "Goldeen", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=((make_rule(kanto_route_22) | make_rule(kanto_route_25) | make_rule(kanto_route_6) | make_rule(kanto_route_12) | make_rule(cape_brink) | make_rule(kanto_route_23)) & Has("Super Rod")) | make_rule(berry_forest, "False") | make_rule(cerulean_cave) | make_rule(safari_zone) | make_rule(can_breed, "Goldeen")),
+    "Capture Seaking":LocationData("Capture Seaking", 2119, "Seaking", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Goldeen")) | make_rule(safari_zone) | make_rule(can_breed, "Seaking")),
+    "Capture Staryu":LocationData("Capture Staryu", 2120, "Staryu", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_20) | (make_rule(kanto_route_21) & Has("Super Rod")) | make_rule(can_get_water_egg) | make_rule(can_breed, "Staryu")),
+    "Capture Starmie":LocationData("Capture Starmie", 2121, "Starmie", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Staryu") & make_rule(can_get_water_stone) | make_rule(can_breed, "Starmie")),
+    "Capture Mr. Mime":LocationData("Capture Mr. Mime", 2122, "Mr. Mime", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(celadon_city)  & Has("Tutorial Complete")) | make_rule(can_breed, "Mr. Mime")),
+    "Capture Scyther":LocationData("Capture Scyther", 2123, "Scyther", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(safari_zone) | make_rule(can_wander) | make_rule(can_breed, "Scyther")),
+    "Capture Jynx":LocationData("Capture Jynx", 2124, "Jynx", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(celadon_city) & Has("Tutorial Complete")) | make_rule(can_breed, "Jynx")),
+    "Capture Electabuzz":LocationData("Capture Electabuzz", 2125, "Electabuzz", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(power_plant, "True") | make_rule(can_get_electric_egg) | make_rule(can_breed, "Electabuzz")),
+    "Capture Magmar":LocationData("Capture Magmar", 2126, "Magmar", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(mount_ember, "True") | make_rule(pokemon_mansion, "True") | make_rule(can_get_fire_egg) | make_rule(can_breed, "Magmar")),
+    "Capture Pinsir":LocationData("Capture Pinsir", 2127, "Pinsir", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(safari_zone) | make_rule(can_breed, "Pinsir")),
+    "Capture Tauros":LocationData("Capture Tauros", 2128, "Tauros", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(safari_zone) | make_rule(can_breed, "Tauros")),
+    "Capture Magikarp":LocationData("Capture Magikarp", 2129, "Magikarp", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_19) | make_rule(kanto_route_20) | ((make_rule(kanto_route_22) | make_rule(kanto_route_4) | make_rule(kanto_route_24) | make_rule(kanto_route_25) | make_rule(kanto_route_6) | make_rule(kanto_route_11) | make_rule(kanto_route_10) | make_rule(kanto_route_12) | make_rule(kanto_route_13) | make_rule(kanto_route_21) | make_rule(treasure_beach) | make_rule(kindle_road) | make_rule(cape_brink) | make_rule(bond_bridge) | make_rule(kanto_route_23)) & Has("Super Rod")) | make_rule(seafoam_islands, "False") | make_rule(berry_forest, "False") | make_rule(cerulean_cave) | make_rule(kanto_route_4_pokecenter) | make_rule(safari_zone) | make_rule(can_breed, "Magikarp")),
+    "Capture Gyarados":LocationData("Capture Gyarados", 2130, "Gyarados", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Magikarp") | make_rule(can_breed, "Gyarados")),
+    "Capture Lapras":LocationData("Capture Lapras", 2131, "Lapras", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(silph_co) & make_rule(attack_needed, 203971)) | make_rule(can_get_water_egg) | make_rule(can_breed, "Lapras")),
+    "Capture Ditto":LocationData("Capture Ditto", 2132, "Ditto", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(kanto_route_13) | make_rule(kanto_route_14) | make_rule(kanto_route_15) | make_rule(pokemon_mansion, "False") | make_rule(cerulean_cave) | make_rule(can_breed, "Ditto")),
+    "Capture Eevee":LocationData("Capture Eevee", 2133, "Eevee", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(celadon_city)  & Has("Tutorial Complete")) | make_rule(completed_bills_grandpas_treasure_hunt) | make_rule(can_breed, "Eevee")),
+    "Capture Vaporeon":LocationData("Capture Vaporeon", 2134, "Vaporeon", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Eevee") & make_rule(can_get_water_stone) | make_rule(can_breed, "Vaporeon")),
+    "Capture Jolteon":LocationData("Capture Jolteon", 2135, "Jolteon", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Eevee") & make_rule(can_get_thunder_stone) | make_rule(can_breed, "Jolteon")),
+    "Capture Flareon":LocationData("Capture Flareon", 2136, "Flareon", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=Has("Eevee") & make_rule(can_get_fire_stone) | make_rule(can_breed, "Flareon")),
+    "Capture Porygon":LocationData("Capture Porygon", 2137, "Porygon", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(celadon_city) & Has("Tutorial Complete")) | make_rule(can_breed, "Porygon")),
+    "Capture Omanyte":LocationData("Capture Omanyte", 2138, "Omanyte", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(cinnabar_island) & Has("Explorer Kit") & make_rule(kanto_route_11)) | make_rule(can_breed, "Omanyte")),
+    "Capture Omastar":LocationData("Capture Omastar", 2139, "Omastar", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Omanyte")) | (make_rule(cinnabar_island) & Has("Explorer Kit") & make_rule(kanto_route_11) & make_rule(has_script, "Enhanced Auto Mine") & Has("Omastar")) | make_rule(can_breed, "Omastar")),
+    "Capture Kabuto":LocationData("Capture Kabuto", 2140, "Kabuto", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(cinnabar_island) & Has("Explorer Kit") & make_rule(kanto_route_11)) | make_rule(can_breed, "Kabuto")),
+    "Capture Kabutops":LocationData("Capture Kabutops", 2141, "Kabutops", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 2) & Has("Kabuto")) | (make_rule(cinnabar_island) & Has("Explorer Kit") & make_rule(kanto_route_11) & make_rule(has_script, "Enhanced Auto Mine") & Has("Kabutops")) | make_rule(can_breed, "Kabutops")),
+    "Capture Aerodactyl":LocationData("Capture Aerodactyl", 2142, "Aerodactyl", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(cinnabar_island) & Has("Explorer Kit") & make_rule(kanto_route_11)) | make_rule(can_breed, "Aerodactyl")),
+    "Capture Snorlax":LocationData("Capture Snorlax", 2143, "Snorlax", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(pokemon_tower) & make_rule(attack_needed, 189990)) | make_rule(can_breed, "Snorlax")),
+    "Capture Articuno":LocationData("Capture Articuno", 2144, "Articuno", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(seafoam_islands, True, 129195) | make_rule(can_breed, "Articuno")),
+    "Capture Zapdos":LocationData("Capture Zapdos", 2145, "Zapdos", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(power_plant, True, 101302) | make_rule(can_breed, "Zapdos")),
+    "Capture Moltres":LocationData("Capture Moltres", 2146, "Moltres", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(mount_ember, True, 184462) | make_rule(can_breed, "Moltres")),
+    "Capture Dratini":LocationData("Capture Dratini", 2147, "Dratini", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Dratini") & make_rule(safari_zone)) | make_rule(can_get_dragon_egg) | make_rule(can_breed, "Dratini")),
+    "Capture Dragonair":LocationData("Capture Dragonair", 2148, "Dragonair", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 1) & Has("Dratini")) | (Has("Dragonair") & make_rule(safari_zone)) | make_rule(can_get_dragon_egg) | make_rule(can_breed, "Dragonair")),
+    "Capture Dragonite":LocationData("Capture Dragonite", 2149, "Dragonite", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=(HasGroup("Badges", 4) & Has("Dragonair")) | make_rule(can_get_dragon_egg) | make_rule(can_breed, "Dragonite")),
+    "Capture Mewtwo":LocationData("Capture Mewtwo", 2150, "Mewtwo", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(cerulean_cave) | make_rule(can_breed, "Mewtwo")),
+    "Capture Mew":LocationData("Capture Mew", 2151, "Mew", "Kanto Pokemon", ['Pokemon Locations', 'Base Pokemon', 'Kanto Pokemon', 'Roaming Pokemon'],
+                 rule=make_rule(kanto_roamer) | make_rule(can_breed, "Mew")),
+    "Capture Chikorita":LocationData("Capture Chikorita", 2152, "Chikorita", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Bayleef":LocationData("Capture Bayleef", 2153, "Bayleef", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Meganium":LocationData("Capture Meganium", 2154, "Meganium", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Cyndaquil":LocationData("Capture Cyndaquil", 2155, "Cyndaquil", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Quilava":LocationData("Capture Quilava", 2156, "Quilava", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Typhlosion":LocationData("Capture Typhlosion", 2157, "Typhlosion", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Totodile":LocationData("Capture Totodile", 2158, "Totodile", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Croconaw":LocationData("Capture Croconaw", 2159, "Croconaw", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Feraligatr":LocationData("Capture Feraligatr", 2160, "Feraligatr", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Sentret":LocationData("Capture Sentret", 2161, "Sentret", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Furret":LocationData("Capture Furret", 2162, "Furret", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Hoothoot":LocationData("Capture Hoothoot", 2163, "Hoothoot", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Noctowl":LocationData("Capture Noctowl", 2164, "Noctowl", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Ledyba":LocationData("Capture Ledyba", 2165, "Ledyba", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Ledian":LocationData("Capture Ledian", 2166, "Ledian", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Spinarak":LocationData("Capture Spinarak", 2167, "Spinarak", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Ariados":LocationData("Capture Ariados", 2168, "Ariados", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Crobat":LocationData("Capture Crobat", 2169, "Crobat", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Chinchou":LocationData("Capture Chinchou", 2170, "Chinchou", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Lanturn":LocationData("Capture Lanturn", 2171, "Lanturn", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Pichu":LocationData("Capture Pichu", 2172, "Pichu", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Cleffa":LocationData("Capture Cleffa", 2173, "Cleffa", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Igglybuff":LocationData("Capture Igglybuff", 2174, "Igglybuff", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Togepi":LocationData("Capture Togepi", 2175, "Togepi", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Togetic":LocationData("Capture Togetic", 2176, "Togetic", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Natu":LocationData("Capture Natu", 2177, "Natu", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Xatu":LocationData("Capture Xatu", 2178, "Xatu", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Mareep":LocationData("Capture Mareep", 2179, "Mareep", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Flaaffy":LocationData("Capture Flaaffy", 2180, "Flaaffy", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Ampharos":LocationData("Capture Ampharos", 2181, "Ampharos", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Bellossom":LocationData("Capture Bellossom", 2182, "Bellossom", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Marill":LocationData("Capture Marill", 2183, "Marill", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Azumarill":LocationData("Capture Azumarill", 2184, "Azumarill", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Sudowoodo":LocationData("Capture Sudowoodo", 2185, "Sudowoodo", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Politoed":LocationData("Capture Politoed", 2186, "Politoed", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Hoppip":LocationData("Capture Hoppip", 2187, "Hoppip", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Skiploom":LocationData("Capture Skiploom", 2188, "Skiploom", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Jumpluff":LocationData("Capture Jumpluff", 2189, "Jumpluff", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Aipom":LocationData("Capture Aipom", 2190, "Aipom", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Sunkern":LocationData("Capture Sunkern", 2191, "Sunkern", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Sunflora":LocationData("Capture Sunflora", 2192, "Sunflora", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Yanma":LocationData("Capture Yanma", 2193, "Yanma", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Wooper":LocationData("Capture Wooper", 2194, "Wooper", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Quagsire":LocationData("Capture Quagsire", 2195, "Quagsire", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Espeon":LocationData("Capture Espeon", 2196, "Espeon", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Umbreon":LocationData("Capture Umbreon", 2197, "Umbreon", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Murkrow":LocationData("Capture Murkrow", 2198, "Murkrow", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Slowking":LocationData("Capture Slowking", 2199, "Slowking", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Misdreavus":LocationData("Capture Misdreavus", 2200, "Misdreavus", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (A)":LocationData("Capture Unown (A)", 2201, "A", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Wobbuffet":LocationData("Capture Wobbuffet", 2202, "Wobbuffet", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Girafarig":LocationData("Capture Girafarig", 2203, "Girafarig", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Pineco":LocationData("Capture Pineco", 2204, "Pineco", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Forretress":LocationData("Capture Forretress", 2205, "Forretress", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Dunsparce":LocationData("Capture Dunsparce", 2206, "Dunsparce", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Gligar":LocationData("Capture Gligar", 2207, "Gligar", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Steelix":LocationData("Capture Steelix", 2208, "Steelix", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Snubbull":LocationData("Capture Snubbull", 2209, "Snubbull", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Granbull":LocationData("Capture Granbull", 2210, "Granbull", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Qwilfish":LocationData("Capture Qwilfish", 2211, "Qwilfish", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Scizor":LocationData("Capture Scizor", 2212, "Scizor", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Shuckle":LocationData("Capture Shuckle", 2213, "Shuckle", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Heracross":LocationData("Capture Heracross", 2214, "Heracross", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Sneasel":LocationData("Capture Sneasel", 2215, "Sneasel", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Teddiursa":LocationData("Capture Teddiursa", 2216, "Teddiursa", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Ursaring":LocationData("Capture Ursaring", 2217, "Ursaring", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Slugma":LocationData("Capture Slugma", 2218, "Slugma", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Magcargo":LocationData("Capture Magcargo", 2219, "Magcargo", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Swinub":LocationData("Capture Swinub", 2220, "Swinub", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Piloswine":LocationData("Capture Piloswine", 2221, "Piloswine", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Corsola":LocationData("Capture Corsola", 2222, "Corsola", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Remoraid":LocationData("Capture Remoraid", 2223, "Remoraid", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Octillery":LocationData("Capture Octillery", 2224, "Octillery", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Delibird":LocationData("Capture Delibird", 2225, "Delibird", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Mantine":LocationData("Capture Mantine", 2226, "Mantine", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Skarmory":LocationData("Capture Skarmory", 2227, "Skarmory", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Houndour":LocationData("Capture Houndour", 2228, "Houndour", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Houndoom":LocationData("Capture Houndoom", 2229, "Houndoom", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Kingdra":LocationData("Capture Kingdra", 2230, "Kingdra", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Phanpy":LocationData("Capture Phanpy", 2231, "Phanpy", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Donphan":LocationData("Capture Donphan", 2232, "Donphan", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Porygon2":LocationData("Capture Porygon2", 2233, "Porygon2", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Stantler":LocationData("Capture Stantler", 2234, "Stantler", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Smeargle":LocationData("Capture Smeargle", 2235, "Smeargle", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Tyrogue":LocationData("Capture Tyrogue", 2236, "Tyrogue", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Hitmontop":LocationData("Capture Hitmontop", 2237, "Hitmontop", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Smoochum":LocationData("Capture Smoochum", 2238, "Smoochum", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Elekid":LocationData("Capture Elekid", 2239, "Elekid", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Magby":LocationData("Capture Magby", 2240, "Magby", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Miltank":LocationData("Capture Miltank", 2241, "Miltank", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Blissey":LocationData("Capture Blissey", 2242, "Blissey", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Raikou":LocationData("Capture Raikou", 2243, "Raikou", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon', 'Roaming Pokemon'], inclusion=False),
+    "Capture Entei":LocationData("Capture Entei", 2244, "Entei", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon', 'Roaming Pokemon'], inclusion=False),
+    "Capture Suicune":LocationData("Capture Suicune", 2245, "Suicune", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Larvitar":LocationData("Capture Larvitar", 2246, "Larvitar", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Pupitar":LocationData("Capture Pupitar", 2247, "Pupitar", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Tyranitar":LocationData("Capture Tyranitar", 2248, "Tyranitar", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Lugia":LocationData("Capture Lugia", 2249, "Lugia", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Ho-Oh":LocationData("Capture Ho-Oh", 2250, "Ho-Oh", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Celebi":LocationData("Capture Celebi", 2251, "Celebi", "Johto Pokemon", ['Pokemon', 'Base Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Bulbasaur (Clone)":LocationData("Capture Bulbasaur (Clone)", 5101, "Bulbasaur (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=(make_rule(kanto_roamer) & make_rule(new_island, True, 131500)) | make_rule(can_breed, "Bulbasaur (Clone)")),
+    "Capture Spooky Bulbasaur":LocationData("Capture Spooky Bulbasaur", 5102, "Spooky Bulbasaur", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Halloween'],
+                 rule=(make_rule(has_script, "Infinite Seasonal Events") & make_rule(any_kanto_route)) | make_rule(can_breed, "Spooky Bulbasaur")),
+    "Capture Bulbasaur (Rose)":LocationData("Capture Bulbasaur (Rose)", 5103, "Bulbasaur (Rose)", "Sinnoh Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Sinnoh Pokemon', 'Seasonal Events', 'Golden Week', 'Not Implemented'], inclusion=False,
+                 rule=(make_rule(has_script, "Infinite Seasonal Events")) | make_rule(can_breed, "Bulbasaur (Rose)")),
+    "Capture Ivysaur (Clone)":LocationData("Capture Ivysaur (Clone)", 5201, "Ivysaur (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=Has("Bulbasaur (Clone)") | make_rule(can_breed, "Ivysaur (Clone)")),
+    "Capture Spooky Ivysaur":LocationData("Capture Spooky Ivysaur", 5202, "Spooky Ivysaur", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Halloween'],
+                 rule=Has("Spooky Bulbasaur") | make_rule(can_breed, "Spooky Ivysaur")),
+    "Capture Ivysaur (Rose)":LocationData("Capture Ivysaur (Rose)", 5203, "Ivysaur (Rose)", "Sinnoh Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Sinnoh Pokemon', 'Seasonal Events', 'Golden Week', 'Not Implemented'], inclusion=False,
+                 rule=Has("Bulbasaur (Rose)") | make_rule(can_breed, "Ivysaur (Rose)")),
+    "Capture Mega Venusaur":LocationData("Capture Mega Venusaur", 5301, "Mega Venusaur", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Venusaur":LocationData("Capture Gigantamax Venusaur", 5302, "Gigantamax Venusaur", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Venusaur (Clone)":LocationData("Capture Venusaur (Clone)", 5303, "Venusaur (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=(HasGroup("Badges", 2) & Has("Ivysaur (Clone)")) | make_rule(can_breed, "Venusaur (Clone)")),
+    "Capture Spooky Venusaur":LocationData("Capture Spooky Venusaur", 5304, "Spooky Venusaur", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Halloween'],
+                 rule=(HasGroup("Badges", 2) & Has("Spooky Ivysaur")) | make_rule(can_breed, "Spooky Venusaur")),
+    "Capture Venusaur (Rose)":LocationData("Capture Venusaur (Rose)", 5305, "Venusaur (Rose)", "Sinnoh Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Sinnoh Pokemon', 'Seasonal Events', 'Golden Week', 'Not Implemented'], inclusion=False,
+                 rule=(HasGroup("Badges", 2) & Has("Ivysaur (Rose)")) | make_rule(can_breed, "Venusaur (Rose)")),
+    "Capture Charmander (Clone)":LocationData("Capture Charmander (Clone)", 5401, "Charmander (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=(make_rule(kanto_roamer) & make_rule(new_island, True, 131500)) | make_rule(can_breed, "Charmander (Clone)")),
+    "Capture Charmeleon (Clone)":LocationData("Capture Charmeleon (Clone)", 5501, "Charmeleon (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=Has("Charmander (Clone)") | make_rule(can_breed, "Charmeleon (Clone)")),
+    "Capture Mega Charizard X":LocationData("Capture Mega Charizard X", 5601, "Mega Charizard X", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Charizard Y":LocationData("Capture Mega Charizard Y", 5602, "Mega Charizard Y", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Charizard":LocationData("Capture Gigantamax Charizard", 5603, "Gigantamax Charizard", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Charizard (Clone)":LocationData("Capture Charizard (Clone)", 5604, "Charizard (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=(HasGroup("Badges", 2) & Has("Charmeleon (Clone)")) | make_rule(can_breed, "Charizard (Clone)")),
+    "Capture Squirtle (Clone)":LocationData("Capture Squirtle (Clone)", 5701, "Squirtle (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=(make_rule(kanto_roamer) & make_rule(new_island, True, 131500)) | make_rule(can_breed, "Squirtle (Clone)")),
+    "Capture Squad Leader Squirtle":LocationData("Capture Squad Leader Squirtle", 5702, "Squad Leader Squirtle", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Wartortle (Clone)":LocationData("Capture Wartortle (Clone)", 5801, "Wartortle (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=Has("Squirtle (Clone)") | make_rule(can_breed, "Wartortle (Clone)")),
+    "Capture Mega Blastoise":LocationData("Capture Mega Blastoise", 5901, "Mega Blastoise", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Blastoise":LocationData("Capture Gigantamax Blastoise", 5902, "Gigantamax Blastoise", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Blastoise (Clone)":LocationData("Capture Blastoise (Clone)", 5903, "Blastoise (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=(HasGroup("Badges", 2) & Has("Wartortle (Clone)")) | make_rule(can_breed, "Blastoise (Clone)")),
+    "Capture Pinkan Caterpie":LocationData("Capture Pinkan Caterpie", 6001, "Pinkan Caterpie", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Butterfree":LocationData("Capture Gigantamax Butterfree", 6201, "Gigantamax Butterfree", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Valencian Butterfree":LocationData("Capture Valencian Butterfree", 6202, "Valencian Butterfree", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pink Butterfree":LocationData("Capture Pink Butterfree", 6203, "Pink Butterfree", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Ash's Butterfree":LocationData("Capture Ash's Butterfree", 6204, "Ash's Butterfree", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Weedle":LocationData("Capture Pinkan Weedle", 6301, "Pinkan Weedle", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Beedrill":LocationData("Capture Mega Beedrill", 6501, "Mega Beedrill", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Pidgey":LocationData("Capture Pinkan Pidgey", 6601, "Pinkan Pidgey", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Pidgeotto":LocationData("Capture Pinkan Pidgeotto", 6701, "Pinkan Pidgeotto", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Pidgeot":LocationData("Capture Mega Pidgeot", 6801, "Mega Pidgeot", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Rattata":LocationData("Capture Alolan Rattata", 6901, "Alolan Rattata", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Rattata":LocationData("Capture Pinkan Rattata", 6902, "Pinkan Rattata", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Raticate":LocationData("Capture Alolan Raticate", 7001, "Alolan Raticate", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Totem Raticate":LocationData("Capture Totem Raticate", 7002, "Totem Raticate", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Valencian Raticate":LocationData("Capture Valencian Raticate", 7003, "Valencian Raticate", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Red Spearow":LocationData("Capture Red Spearow", 7101, "Red Spearow", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', 'Flying Pikachu'],
+                 rule=make_rule(kanto_roamer) | make_rule(can_breed, "Red Spearow")),
+    "Capture Pinkan Arbok":LocationData("Capture Pinkan Arbok", 7401, "Pinkan Arbok", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Original Cap)":LocationData("Capture Pikachu (Original Cap)", 7501, "Pikachu (Original Cap)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Hoenn Cap)":LocationData("Capture Pikachu (Hoenn Cap)", 7502, "Pikachu (Hoenn Cap)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Sinnoh Cap)":LocationData("Capture Pikachu (Sinnoh Cap)", 7503, "Pikachu (Sinnoh Cap)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Unova Cap)":LocationData("Capture Pikachu (Unova Cap)", 7504, "Pikachu (Unova Cap)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Kalos Cap)":LocationData("Capture Pikachu (Kalos Cap)", 7505, "Pikachu (Kalos Cap)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Alola Cap)":LocationData("Capture Pikachu (Alola Cap)", 7506, "Pikachu (Alola Cap)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (World Cap)":LocationData("Capture Pikachu (World Cap)", 7507, "Pikachu (World Cap)", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Partner Cap)":LocationData("Capture Pikachu (Partner Cap)", 7508, "Pikachu (Partner Cap)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Pikachu":LocationData("Capture Gigantamax Pikachu", 7509, "Gigantamax Pikachu", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Flying Pikachu":LocationData("Capture Flying Pikachu", 7510, "Flying Pikachu", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', 'Flying Pikachu'],
+                 rule=(make_rule(kanto_roamer) & make_rule(has_script, "Infinite Seasonal Events")) | make_rule(can_breed, "Flying Pikachu")),
+    "Capture Surfing Pikachu":LocationData("Capture Surfing Pikachu", 7511, "Surfing Pikachu", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Redeemable Code', 'Codes'],
+                 rule=Has("Surfing Pikachu Code") | make_rule(can_breed, "Surfing Pikachu")),
+    "Capture Pikachu (Gengar)":LocationData("Capture Pikachu (Gengar)", 7512, "Pikachu (Gengar)", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Let's Go Pikachu":LocationData("Capture Let's Go Pikachu", 7513, "Let's Go Pikachu", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', "Let's Go"],
+                 rule=(make_rule(kanto_roamer) & make_rule(has_script, "Infinite Seasonal Events")) | make_rule(can_breed, "Let's Go Pikachu")),
+    "Capture Pinkan Pikachu":LocationData("Capture Pinkan Pikachu", 7514, "Pinkan Pikachu", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Detective Pikachu":LocationData("Capture Detective Pikachu", 7515, "Detective Pikachu", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Wanderer', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Clone)":LocationData("Capture Pikachu (Clone)", 7516, "Pikachu (Clone)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=(make_rule(new_island, True, 131500) & make_rule(attack_needed, 137100)) | make_rule(can_breed, "Pikachu (Clone)")),
+    "Capture Pikachu (Rock Star)":LocationData("Capture Pikachu (Rock Star)", 7517, "Pikachu (Rock Star)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Pikachu (Belle)":LocationData("Capture Pikachu (Belle)", 7518, "Pikachu (Belle)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Pikachu (Pop Star)":LocationData("Capture Pikachu (Pop Star)", 7519, "Pikachu (Pop Star)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Pikachu (Ph. D.)":LocationData("Capture Pikachu (Ph. D.)", 7520, "Pikachu (Ph. D.)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Pikachu (Libre)":LocationData("Capture Pikachu (Libre)", 7521, "Pikachu (Libre)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Pikachu (Easter)":LocationData("Capture Pikachu (Easter)", 7522, "Pikachu (Easter)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pikachu (Palaeontologist)":LocationData("Capture Pikachu (Palaeontologist)", 7523, "Pikachu (Palaeontologist)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(cinnabar_island) & ((Has("Explorer Kit") & make_rule(kanto_route_11) & make_rule(has_script, "Enhanced Auto Mine")) | Has("Palaeontologist Token"))) | make_rule(can_breed, "Pikachu (Palaeontologist)")),
+    "Capture Alolan Raichu":LocationData("Capture Alolan Raichu", 7601, "Alolan Raichu", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Detective Raichu":LocationData("Capture Detective Raichu", 7602, "Detective Raichu", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Wanderer', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Sandshrew":LocationData("Capture Alolan Sandshrew", 7701, "Alolan Sandshrew", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Sandslash":LocationData("Capture Alolan Sandslash", 7801, "Alolan Sandslash", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Nidoran(F)":LocationData("Capture Pinkan Nidoran(F)", 7901, "Pinkan Nidoran(F)", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Nidoran(M)":LocationData("Capture Pinkan Nidoran(M)", 8201, "Pinkan Nidoran(M)", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Nidoking":LocationData("Capture Pinkan Nidoking", 8401, "Pinkan Nidoking", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Vulpix":LocationData("Capture Alolan Vulpix", 8701, "Alolan Vulpix", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Ninetales":LocationData("Capture Alolan Ninetales", 8801, "Alolan Ninetales", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Oddish":LocationData("Capture Pinkan Oddish", 9301, "Pinkan Oddish", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Valencian Vileplume":LocationData("Capture Valencian Vileplume", 9501, "Valencian Vileplume", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Vileplume":LocationData("Capture Pinkan Vileplume", 9502, "Pinkan Vileplume", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Valencian Paras":LocationData("Capture Valencian Paras", 9601, "Valencian Paras", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Paras":LocationData("Capture Pinkan Paras", 9602, "Pinkan Paras", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Venonat":LocationData("Capture Pinkan Venonat", 9801, "Pinkan Venonat", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Diglett":LocationData("Capture Alolan Diglett", 10001, "Alolan Diglett", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Diglett":LocationData("Capture Pinkan Diglett", 10002, "Pinkan Diglett", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Dugtrio":LocationData("Capture Alolan Dugtrio", 10101, "Alolan Dugtrio", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Dugtrio (Punk)":LocationData("Capture Dugtrio (Punk)", 10102, "Dugtrio (Punk)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Gigantamax Meowth":LocationData("Capture Gigantamax Meowth", 10201, "Gigantamax Meowth", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Meowth":LocationData("Capture Alolan Meowth", 10202, "Alolan Meowth", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Meowth":LocationData("Capture Galarian Meowth", 10203, "Galarian Meowth", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Meowth (Phanpy)":LocationData("Capture Meowth (Phanpy)", 10204, "Meowth (Phanpy)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Persian":LocationData("Capture Alolan Persian", 10301, "Alolan Persian", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Psyduck (Dark Mage)":LocationData("Capture Psyduck (Dark Mage)", 10401, "Psyduck (Dark Mage)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Not Implemented']),
+    "Capture Pinkan Mankey":LocationData("Capture Pinkan Mankey", 10601, "Pinkan Mankey", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Primeape":LocationData("Capture Pinkan Primeape", 10701, "Pinkan Primeape", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Hisuian Growlithe":LocationData("Capture Hisuian Growlithe", 10801, "Hisuian Growlithe", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Hisuian Arcanine":LocationData("Capture Hisuian Arcanine", 10901, "Hisuian Arcanine", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Noble Arcanine":LocationData("Capture Noble Arcanine", 10902, "Noble Arcanine", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Poliwhirl":LocationData("Capture Pinkan Poliwhirl", 11101, "Pinkan Poliwhirl", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Alakazam":LocationData("Capture Mega Alakazam", 11501, "Mega Alakazam", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Machamp":LocationData("Capture Gigantamax Machamp", 11801, "Gigantamax Machamp", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Bellsprout":LocationData("Capture Pinkan Bellsprout", 11901, "Pinkan Bellsprout", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Valencian Weepinbell":LocationData("Capture Valencian Weepinbell", 12001, "Valencian Weepinbell", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Weepinbell (Fancy)":LocationData("Capture Weepinbell (Fancy)", 12002, "Weepinbell (Fancy)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Alolan Geodude":LocationData("Capture Alolan Geodude", 12401, "Alolan Geodude", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Geodude":LocationData("Capture Pinkan Geodude", 12402, "Pinkan Geodude", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Graveler":LocationData("Capture Alolan Graveler", 12501, "Alolan Graveler", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Golem":LocationData("Capture Alolan Golem", 12601, "Alolan Golem", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Ponyta":LocationData("Capture Galarian Ponyta", 12701, "Galarian Ponyta", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Rapidash":LocationData("Capture Galarian Rapidash", 12801, "Galarian Rapidash", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Slowpoke":LocationData("Capture Galarian Slowpoke", 12901, "Galarian Slowpoke", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Slowbro":LocationData("Capture Mega Slowbro", 13001, "Mega Slowbro", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Slowbro":LocationData("Capture Galarian Slowbro", 13002, "Galarian Slowbro", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Farfetch'd":LocationData("Capture Galarian Farfetch'd", 13301, "Galarian Farfetch'd", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Dodrio":LocationData("Capture Pinkan Dodrio", 13501, "Pinkan Dodrio", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Grimer":LocationData("Capture Alolan Grimer", 13801, "Alolan Grimer", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Muk":LocationData("Capture Alolan Muk", 13901, "Alolan Muk", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Gengar":LocationData("Capture Mega Gengar", 14401, "Mega Gengar", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Gengar":LocationData("Capture Gigantamax Gengar", 14402, "Gigantamax Gengar", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gengar (Punk)":LocationData("Capture Gengar (Punk)", 14403, "Gengar (Punk)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Crystal Onix":LocationData("Capture Crystal Onix", 14501, "Crystal Onix", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Onix (Rocker)":LocationData("Capture Onix (Rocker)", 14502, "Onix (Rocker)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Gigantamax Kingler":LocationData("Capture Gigantamax Kingler", 14901, "Gigantamax Kingler", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Hisuian Voltorb":LocationData("Capture Hisuian Voltorb", 15001, "Hisuian Voltorb", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Hisuian Electrode":LocationData("Capture Hisuian Electrode", 15101, "Hisuian Electrode", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Noble Electrode":LocationData("Capture Noble Electrode", 15102, "Noble Electrode", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Exeggcute (Single)":LocationData("Capture Exeggcute (Single)", 15201, "Exeggcute (Single)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon'],
+                 rule=(make_rule(safari_zone) & Has("Exeggcute")) | make_rule(can_breed, "Exeggcute (Single)")),
+    "Capture Alolan Exeggutor":LocationData("Capture Alolan Exeggutor", 15301, "Alolan Exeggutor", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Exeggutor":LocationData("Capture Pinkan Exeggutor", 15302, "Pinkan Exeggutor", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Alolan Marowak":LocationData("Capture Alolan Marowak", 15501, "Alolan Marowak", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Totem Marowak":LocationData("Capture Totem Marowak", 15502, "Totem Marowak", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Weezing":LocationData("Capture Galarian Weezing", 16001, "Galarian Weezing", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Weezing":LocationData("Capture Pinkan Weezing", 16002, "Pinkan Weezing", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Rhyhorn":LocationData("Capture Pinkan Rhyhorn", 16101, "Pinkan Rhyhorn", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Rhydon":LocationData("Capture Pinkan Rhydon", 16201, "Pinkan Rhydon", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Charity Chansey":LocationData("Capture Charity Chansey", 16301, "Charity Chansey", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon'],
+                 rule=(Has("Tutorial Complete") & make_rule(one_island)) | make_rule(can_breed, "Charity Chansey")),
+    "Capture Tangela (Pom-pom)":LocationData("Capture Tangela (Pom-pom)", 16401, "Tangela (Pom-pom)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Mega Kangaskhan":LocationData("Capture Mega Kangaskhan", 16501, "Mega Kangaskhan", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Baby Kangaskhan":LocationData("Capture Baby Kangaskhan", 16502, "Baby Kangaskhan", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon'],
+                 rule=make_rule(can_breed, "Kangaskhan") | make_rule(can_breed, "Baby Kangaskhan")),
+    "Capture Goldeen (Diva)":LocationData("Capture Goldeen (Diva)", 16801, "Goldeen (Diva)", "Unobtainable", ['Pokemon Locations', 'Alt Pokemon', 'Unobtainable', 'Not Implemented']),
+    "Capture Galarian Mr. Mime":LocationData("Capture Galarian Mr. Mime", 17201, "Galarian Mr. Mime", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Pinkan Scyther":LocationData("Capture Pinkan Scyther", 17301, "Pinkan Scyther", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Santa Jynx":LocationData("Capture Santa Jynx", 17401, "Santa Jynx", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Christmas'],
+                 rule=(make_rule(has_script, "Infinite Seasonal Events") & make_rule(bills_house) & make_rule(attack_needed, 10048) & make_rule(any_kanto_route)) | make_rule(can_breed, "Santa Jynx")),
+    "Capture Pinkan Electabuzz":LocationData("Capture Pinkan Electabuzz", 17501, "Pinkan Electabuzz", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Pinsir":LocationData("Capture Mega Pinsir", 17701, "Mega Pinsir", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Paldean Tauros (Combat)":LocationData("Capture Paldean Tauros (Combat)", 17801, "Paldean Tauros (Combat)", "Paldea Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Paldea Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Paldean Tauros (Blaze)":LocationData("Capture Paldean Tauros (Blaze)", 17802, "Paldean Tauros (Blaze)", "Paldea Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Paldea Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Paldean Tauros (Aqua)":LocationData("Capture Paldean Tauros (Aqua)", 17803, "Paldean Tauros (Aqua)", "Paldea Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Paldea Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Skelly":LocationData("Capture Magikarp Skelly", 17901, "Magikarp Skelly", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Calico (Orange, White)":LocationData("Capture Magikarp Calico (Orange, White)", 17902, "Magikarp Calico (Orange, White)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Calico (Orange, White, Black)":LocationData("Capture Magikarp Calico (Orange, White, Black)", 17903, "Magikarp Calico (Orange, White, Black)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Calico (White, Orange)":LocationData("Capture Magikarp Calico (White, Orange)", 17904, "Magikarp Calico (White, Orange)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Calico (Orange, Gold)":LocationData("Capture Magikarp Calico (Orange, Gold)", 17905, "Magikarp Calico (Orange, Gold)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Orange Two-Tone":LocationData("Capture Magikarp Orange Two-Tone", 17906, "Magikarp Orange Two-Tone", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Orange Orca":LocationData("Capture Magikarp Orange Orca", 17907, "Magikarp Orange Orca", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Orange Dapples":LocationData("Capture Magikarp Orange Dapples", 17908, "Magikarp Orange Dapples", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Pink Two-Tone":LocationData("Capture Magikarp Pink Two-Tone", 17909, "Magikarp Pink Two-Tone", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Pink Orca":LocationData("Capture Magikarp Pink Orca", 17910, "Magikarp Pink Orca", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Pink Dapples":LocationData("Capture Magikarp Pink Dapples", 17911, "Magikarp Pink Dapples", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Grey Bubbles":LocationData("Capture Magikarp Grey Bubbles", 17912, "Magikarp Grey Bubbles", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Grey Diamonds":LocationData("Capture Magikarp Grey Diamonds", 17913, "Magikarp Grey Diamonds", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Grey Patches":LocationData("Capture Magikarp Grey Patches", 17914, "Magikarp Grey Patches", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Purple Bubbles":LocationData("Capture Magikarp Purple Bubbles", 17915, "Magikarp Purple Bubbles", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Purple Diamonds":LocationData("Capture Magikarp Purple Diamonds", 17916, "Magikarp Purple Diamonds", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Roaming Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Purple Patches":LocationData("Capture Magikarp Purple Patches", 17917, "Magikarp Purple Patches", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Apricot Tiger":LocationData("Capture Magikarp Apricot Tiger", 17918, "Magikarp Apricot Tiger", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Apricot Zebra":LocationData("Capture Magikarp Apricot Zebra", 17919, "Magikarp Apricot Zebra", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Apricot Stripes":LocationData("Capture Magikarp Apricot Stripes", 17920, "Magikarp Apricot Stripes", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Brown Tiger":LocationData("Capture Magikarp Brown Tiger", 17921, "Magikarp Brown Tiger", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Brown Zebra":LocationData("Capture Magikarp Brown Zebra", 17922, "Magikarp Brown Zebra", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Brown Stripes":LocationData("Capture Magikarp Brown Stripes", 17923, "Magikarp Brown Stripes", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Orange Forehead":LocationData("Capture Magikarp Orange Forehead", 17924, "Magikarp Orange Forehead", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Orange Mask":LocationData("Capture Magikarp Orange Mask", 17925, "Magikarp Orange Mask", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Black Forehead":LocationData("Capture Magikarp Black Forehead", 17926, "Magikarp Black Forehead", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Black Mask":LocationData("Capture Magikarp Black Mask", 17927, "Magikarp Black Mask", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Blue Raindrops":LocationData("Capture Magikarp Blue Raindrops", 17928, "Magikarp Blue Raindrops", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Saucy Blue":LocationData("Capture Magikarp Saucy Blue", 17929, "Magikarp Saucy Blue", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Violet Raindrops":LocationData("Capture Magikarp Violet Raindrops", 17930, "Magikarp Violet Raindrops", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Roaming Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp Saucy Violet":LocationData("Capture Magikarp Saucy Violet", 17931, "Magikarp Saucy Violet", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Magikarp (Feebas)":LocationData("Capture Magikarp (Feebas)", 17932, "Magikarp (Feebas)", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Gyarados":LocationData("Capture Mega Gyarados", 18001, "Mega Gyarados", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Lapras":LocationData("Capture Gigantamax Lapras", 18101, "Gigantamax Lapras", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Ditto (Magikarp)":LocationData("Capture Ditto (Magikarp)", 18201, "Ditto (Magikarp)", "Alola Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Alola Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Eevee":LocationData("Capture Gigantamax Eevee", 18301, "Gigantamax Eevee", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Let's Go Eevee":LocationData("Capture Let's Go Eevee", 18302, "Let's Go Eevee", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', "Let's Go"],
+                 rule=(make_rule(kanto_roamer) & make_rule(has_script, "Infinite Seasonal Events")) | make_rule(can_breed, "Let's Go Eevee")),
+    "Capture Mega Aerodactyl":LocationData("Capture Mega Aerodactyl", 19201, "Mega Aerodactyl", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Gigantamax Snorlax":LocationData("Capture Gigantamax Snorlax", 19301, "Gigantamax Snorlax", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Santa Snorlax":LocationData("Capture Santa Snorlax", 19302, "Santa Snorlax", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', 'Christmas'],
+                 rule=(make_rule(kanto_roamer) & make_rule(has_script, "Infinite Seasonal Events")) | make_rule(can_breed, "Santa Snorlax")),
+    "Capture Snorlax (Snowman)":LocationData("Capture Snorlax (Snowman)", 19303, "Snorlax (Snowman)", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Christmas'],
+                 rule=(make_rule(seafoam_islands) & make_rule(has_script, "Infinite Seasonal Events")) | make_rule(can_breed, "Snorlax (Snowman)")),
+    "Capture Galarian Articuno":LocationData("Capture Galarian Articuno", 19401, "Galarian Articuno", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Zapdos":LocationData("Capture Galarian Zapdos", 19501, "Galarian Zapdos", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Moltres":LocationData("Capture Galarian Moltres", 19601, "Galarian Moltres", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Mewtwo X":LocationData("Capture Mega Mewtwo X", 20001, "Mega Mewtwo X", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Mewtwo Y":LocationData("Capture Mega Mewtwo Y", 20002, "Mega Mewtwo Y", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Armored Mewtwo":LocationData("Capture Armored Mewtwo", 20003, "Armored Mewtwo", "Kanto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back'],
+                 rule=make_rule(new_island, True, 131500) | make_rule(can_breed, "Armored Mewtwo")),
+    "Capture Hisuian Typhlosion":LocationData("Capture Hisuian Typhlosion", 20701, "Hisuian Typhlosion", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Spiky-eared Pichu":LocationData("Capture Spiky-eared Pichu", 22201, "Spiky-eared Pichu", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Spooky Togepi":LocationData("Capture Spooky Togepi", 22501, "Spooky Togepi", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Seasonal Events', 'Halloween'], inclusion=False),
+    "Capture Togepi (Flowering Crown)":LocationData("Capture Togepi (Flowering Crown)", 22502, "Togepi (Flowering Crown)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Seasonal Events', 'Easter'], inclusion=False),
+    "Capture Spooky Togetic":LocationData("Capture Spooky Togetic", 22601, "Spooky Togetic", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Seasonal Events', 'Halloween'], inclusion=False),
+    "Capture Mega Ampharos":LocationData("Capture Mega Ampharos", 23101, "Mega Ampharos", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Sudowoodo (Golden)":LocationData("Capture Sudowoodo (Golden)", 23501, "Sudowoodo (Golden)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Hoppip (Chimecho)":LocationData("Capture Hoppip (Chimecho)", 23701, "Hoppip (Chimecho)", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Paldean Wooper":LocationData("Capture Paldean Wooper", 24401, "Paldean Wooper", "Paldea Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Paldea Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Slowking":LocationData("Capture Galarian Slowking", 24901, "Galarian Slowking", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Unown (B)":LocationData("Capture Unown (B)", 25101, "Unown (B)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (C)":LocationData("Capture Unown (C)", 25102, "Unown (C)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Redeemable Code'], inclusion=False),
+    "Capture Unown (D)":LocationData("Capture Unown (D)", 25103, "Unown (D)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Redeemable Code'], inclusion=False),
+    "Capture Unown (E)":LocationData("Capture Unown (E)", 25104, "Unown (E)", "Sinnoh Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Sinnoh Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Unown (F)":LocationData("Capture Unown (F)", 25105, "Unown (F)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (G)":LocationData("Capture Unown (G)", 25106, "Unown (G)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (H)":LocationData("Capture Unown (H)", 25107, "Unown (H)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (I)":LocationData("Capture Unown (I)", 25108, "Unown (I)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Redeemable Code'], inclusion=False),
+    "Capture Unown (J)":LocationData("Capture Unown (J)", 25109, "Unown (J)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (K)":LocationData("Capture Unown (K)", 25110, "Unown (K)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (L)":LocationData("Capture Unown (L)", 25111, "Unown (L)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (M)":LocationData("Capture Unown (M)", 25112, "Unown (M)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (N)":LocationData("Capture Unown (N)", 25113, "Unown (N)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (O)":LocationData("Capture Unown (O)", 25114, "Unown (O)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Redeemable Code'], inclusion=False),
+    "Capture Unown (P)":LocationData("Capture Unown (P)", 25115, "Unown (P)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (Q)":LocationData("Capture Unown (Q)", 25116, "Unown (Q)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (R)":LocationData("Capture Unown (R)", 25117, "Unown (R)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Redeemable Code'], inclusion=False),
+    "Capture Unown (S)":LocationData("Capture Unown (S)", 25118, "Unown (S)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Redeemable Code'], inclusion=False),
+    "Capture Unown (T)":LocationData("Capture Unown (T)", 25119, "Unown (T)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (U)":LocationData("Capture Unown (U)", 25120, "Unown (U)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (V)":LocationData("Capture Unown (V)", 25121, "Unown (V)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (W)":LocationData("Capture Unown (W)", 25122, "Unown (W)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (X)":LocationData("Capture Unown (X)", 25123, "Unown (X)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (Y)":LocationData("Capture Unown (Y)", 25124, "Unown (Y)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (Z)":LocationData("Capture Unown (Z)", 25125, "Unown (Z)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Unown (!)":LocationData("Capture Unown (!)", 25126, "Unown (!)", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Unown (?)":LocationData("Capture Unown (?)", 25127, "Unown (?)", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Steelix":LocationData("Capture Mega Steelix", 25801, "Mega Steelix", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Crystal Steelix":LocationData("Capture Crystal Steelix", 25802, "Crystal Steelix", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Hisuian Qwilfish":LocationData("Capture Hisuian Qwilfish", 26101, "Hisuian Qwilfish", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Scizor":LocationData("Capture Mega Scizor", 26201, "Mega Scizor", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Shuckle (Corked)":LocationData("Capture Shuckle (Corked)", 26301, "Shuckle (Corked)", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Mega Heracross":LocationData("Capture Mega Heracross", 26401, "Mega Heracross", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Hisuian Sneasel":LocationData("Capture Hisuian Sneasel", 26501, "Hisuian Sneasel", "Hisui Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hisui Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Galarian Corsola":LocationData("Capture Galarian Corsola", 27201, "Galarian Corsola", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Mega Houndoom":LocationData("Capture Mega Houndoom", 27901, "Mega Houndoom", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Reindeer Stantler":LocationData("Capture Reindeer Stantler", 28401, "Reindeer Stantler", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Seasonal Events', 'Merry Christmas'], inclusion=False),
+    "Capture Blessing Blissey":LocationData("Capture Blessing Blissey", 29201, "Blessing Blissey", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon'], inclusion=False),
+    "Capture Mega Tyranitar":LocationData("Capture Mega Tyranitar", 29801, "Mega Tyranitar", "Kalos Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Kalos Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture XD001":LocationData("Capture XD001", 29901, "XD001", "Hoenn Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Flowering Celebi":LocationData("Capture Flowering Celebi", 30101, "Flowering Celebi", "Galar Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented'], inclusion=False),
+    "Capture Grinch Celebi":LocationData("Capture Grinch Celebi", 30102, "Grinch Celebi", "Johto Pokemon", ['Pokemon Locations', 'Alt Pokemon', 'Johto Pokemon', 'Seasonal Events', 'Merry Christmas'], inclusion=False),
+
+    "Kanto Route 1 - 1":LocationData("Kanto Route 1 - 1", 110001, "Kanto Route 1 - 1", "Route 1", ['Kanto', 'Mapsanity']),
+    "Kanto Route 1 - 2":LocationData("Kanto Route 1 - 2", 110002, "Kanto Route 1 - 2", "Route 1", ['Kanto', 'Mapsanity']),
+    "Kanto Route 1 - 3":LocationData("Kanto Route 1 - 3", 110003, "Kanto Route 1 - 3", "Route 1", ['Kanto', 'Mapsanity']),
+    "Kanto Route 1 - 4":LocationData("Kanto Route 1 - 4", 110004, "Kanto Route 1 - 4", "Route 1", ['Kanto', 'Mapsanity']),
+    "Kanto Route 2":LocationData("Kanto Route 2", 110005, "Kanto Route 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_2)),
+    "Kanto Route 3 - 1":LocationData("Kanto Route 3 - 1", 110006, "Kanto Route 3 - 1", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_3)),
+    "Kanto Route 3 - 2":LocationData("Kanto Route 3 - 2", 110007, "Kanto Route 3 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_3)),
+    "Kanto Route 4":LocationData("Kanto Route 4", 110008, "Kanto Route 4", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_4)),
+    "Kanto Route 24":LocationData("Kanto Route 24", 110009, "Kanto Route 24", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_24)),
+    "Kanto Route 25 - 1":LocationData("Kanto Route 25 - 1", 110010, "Kanto Route 25 - 1", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_25)),
+    "Kanto Route 25 - 2":LocationData("Kanto Route 25 - 2", 110011, "Kanto Route 25 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_25)),
+    "Kanto Route 5":LocationData("Kanto Route 5", 110012, "Kanto Route 5", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_5)),
+    "Kanto Route 6 - 1":LocationData("Kanto Route 6 - 1", 110013, "Kanto Route 6 - 1", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_6)),
+    "Kanto Route 6 - 2":LocationData("Kanto Route 6 - 2", 110014, "Kanto Route 6 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_6)),
+    "Kanto Route 6 - 3":LocationData("Kanto Route 6 - 3", 110015, "Kanto Route 6 - 3", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_6)),
+    "Kanto Route 9":LocationData("Kanto Route 9", 110016, "Kanto Route 9", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_9)),
+    "Kanto Route 10":LocationData("Kanto Route 10", 110017, "Kanto Route 10", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_10)),
+    "Kanto Route 8":LocationData("Kanto Route 8", 110018, "Kanto Route 8", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_8)),
+    "Kanto Route 7 - 1":LocationData("Kanto Route 7 - 1", 110019, "Kanto Route 7 - 1", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_7)),
+    "Kanto Route 7 - 2":LocationData("Kanto Route 7 - 2", 110020, "Kanto Route 7 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_7)),
+    "Kanto Route 13 or 15":LocationData("Kanto Route 13 or 15", 110021, "Kanto Route 13 or 15", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_13) | make_rule(kanto_route_15)),
+    "Kanto Route 14 or 18":LocationData("Kanto Route 14 or 18", 110022, "Kanto Route 14 or 18", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_14) | make_rule(kanto_route_18)),
+    "Kanto Route 14 or Snorlax (Route 12)":LocationData("Kanto Route 14 or Snorlax (Route 12)", 110023, "Route 12", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_14) | (make_rule(kanto_route_12) & make_rule(pokemon_tower) & make_rule(attack_needed, 189990))),
+    "Kanto Route 15 or 17":LocationData("Kanto Route 15 or 17", 110024, "Kanto Route 15 or 17", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_15) | make_rule(kanto_route_17)),
+    "Kanto Route 15 or 18":LocationData("Kanto Route 15 or 18", 110025, "Kanto Route 15 or 18", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_15) | make_rule(kanto_route_18)),
+    "Kanto Route 16 or 18":LocationData("Kanto Route 16 or 18", 110026, "Kanto Route 16 or 18", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_16) | make_rule(kanto_route_18)),
+    "Kanto Route 17 or Snorlax (Route 16)":LocationData("Kanto Route 17 or Snorlax (Route 16)", 110027, "Route 16", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_17) | (make_rule(pokemon_tower) & make_rule(attack_needed, 189990))),
+    "Kanto Route 19":LocationData("Kanto Route 19", 110028, "Kanto Route 19", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_19)),
+    "Kanto Route 20 or 21 - 1":LocationData("Kanto Route 20 or 21 - 1", 110029, "Kanto Route 20 or 21 - 1", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_20) | make_rule(kanto_route_21)),
+    "Kanto Route 20 or 21 - 2":LocationData("Kanto Route 20 or 21 - 2", 110030, "Kanto Route 20 or 21 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_20) | make_rule(kanto_route_21)),
+    "Kanto Route 21 or Seafoam Islands":LocationData("Kanto Route 21 or Seafoam Islands", 110031, "Kanto Route 21 or Seafoam Islands", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_21) | make_rule(seafoam_islands)),
+    "Kanto Route 23":LocationData("Kanto Route 23", 110032, "Kanto Route 23", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_23)),
+    "Kindle Road - 1":LocationData("Kindle Road - 1", 110033, "Kindle Road - 1", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kindle_road)),
+    "Kindle Road - 2":LocationData("Kindle Road - 2", 110034, "Kindle Road - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kindle_road)),
+    "Bond Bridge":LocationData("Bond Bridge", 110035, "Bond Bridge", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(bond_bridge)),
+    "Brock - 2":LocationData("Brock - 2", 110036, "Brock - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(pewter_city) & make_rule(attack_needed, 2092)),
+    "Erika or Rocket Game Corner":LocationData("Erika or Rocket Game Corner", 110037, "Erika or Rocket Game Corner", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=(make_rule(celadon_city) & make_rule(attack_needed, 105550)) | make_rule(rocket_game_corner)),
+    "Koga - 2":LocationData("Koga - 2", 110038, "Koga - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(fuchsia_city) & make_rule(attack_needed, 137100)),
+    "Koga - 3":LocationData("Koga - 3", 110039, "Koga - 3", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(fuchsia_city) & make_rule(attack_needed, 137100)),
+    "Koga - 4":LocationData("Koga - 4", 110040, "Koga - 4", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(fuchsia_city) & make_rule(attack_needed, 137100)),
+    "Blaine - 2":LocationData("Blaine - 2", 110041, "Blaine - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(cinnabar_island) & make_rule(pokemon_mansion) & make_rule(attack_needed, 175290)),
+    "Blaine - 3":LocationData("Blaine - 3", 110042, "Blaine - 3", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(cinnabar_island) & make_rule(pokemon_mansion) & make_rule(attack_needed, 175290)),
+    "Blaine - 4":LocationData("Blaine - 4", 110043, "Blaine - 4", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(cinnabar_island) & make_rule(pokemon_mansion) & make_rule(attack_needed, 175290)),
+    "Blaine - 5":LocationData("Blaine - 5", 110044, "Blaine - 5", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(cinnabar_island) & make_rule(pokemon_mansion) & make_rule(attack_needed, 175290)),
+    "Champion Blue - 2":LocationData("Champion Blue - 2", 110045, "Champion Blue - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(indigo_plateau) & Has("Kanto Elite Lance Badge") & make_rule(attack_needed, 359860)),
+    "Viridian Forest - 2":LocationData("Viridian Forest - 2", 110046, "Viridian Forest - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(viridian_forest)),
+    "Mt. Moon - 2":LocationData("Mt. Moon - 2", 110047, "Mt. Moon - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(mt_moon)),
+    "Rock Tunnel - 2":LocationData("Rock Tunnel - 2", 110048, "Rock Tunnel - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(rock_tunnel)),
+    "Rock Tunnel - 3":LocationData("Rock Tunnel - 3", 110049, "Rock Tunnel - 3", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(rock_tunnel)),
+    "Rock Tunnel - 4":LocationData("Rock Tunnel - 4", 110050, "Rock Tunnel - 4", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(rock_tunnel)),
+    "Rocket Game Corner - 2":LocationData("Rocket Game Corner - 2", 110051, "Rocket Game Corner - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(rocket_game_corner)),
+    "Victory Road - 2":LocationData("Victory Road - 2", 110052, "Victory Road - 2", "Indigo Plateau", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(victory_road)),
+    "Blue 2 - 2":LocationData("Blue 2 - 2", 110053, "Blue 2 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_4) & make_rule(attack_needed, 14041)),
+    "Blue 3 - 2":LocationData("Blue 3 - 2", 110054, "Blue 3 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_6) & make_rule(attack_needed, 50431)),
+    "Blue 4 - 2":LocationData("Blue 4 - 2", 110055, "Blue 4 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(pokemon_tower) & make_rule(attack_needed, 151990)),
+    "Blue 6 - 2":LocationData("Blue 6 - 2", 110056, "Blue 6 - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(kanto_route_22) & Has("Earth Badge") & make_rule(attack_needed, 426771)),
+    "Bill's Errand Questline; Speak with Celio on One Island - 1":LocationData("Bill's Errand Questline; Speak with Celio on One Island - 1", 110057, "Bill's Errand Questline; Speak with Celio on One Island - 1", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(bills_errand1)),
+    "Bill's Errand Questline; Speak with Celio on One Island - 2":LocationData("Bill's Errand Questline; Speak with Celio on One Island - 2", 110058, "Bill's Errand Questline; Speak with Celio on One Island - 2", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(bills_errand1)),
+    "Bill's Errand Questline; Ask the Game Corner owner on Two Island about the meteorite":LocationData("Bill's Errand Questline; Ask the Game Corner owner on Two Island about the meteorite", 110059, "Bill's Errand Questline; Ask the Game Corner owner on Two Island about the meteorite", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(bills_errand2)),
+    "Bill's Errand Questline; Defeat the biker gang's leader":LocationData("Bill's Errand Questline; Defeat the biker gang's leader", 110060, "Bill's Errand Questline; Defeat the biker gang's leader", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(bills_errand4)),
+    "Unfinished Business; Talk to Professor Oak in Pallet Town.":LocationData("Unfinished Business; Talk to Professor Oak in Pallet Town.", 110061, "Unfinished Business; Talk to Professor Oak in Pallet Town.", "Kanto", ['Kanto', 'Mapsanity'],
+                 rule=make_rule(unfinished_business1)),
+
+    "Travel to Johto [Goal]":LocationData("Travel to Johto [Goal]", 1000000, "Victory!", "Kanto Champion", ['Victory'], place_item="Victory!",
+                 rule=make_rule(has_all_in_group, "Badges") & (make_rule(dexsanity_disabled) | (make_rule(dexsanity_enabled) & make_rule(has_all_in_group, "Base Pokemon")))),
+}
+
+location_name_groups = {}
+for loc in location_data.values():
+    for group in loc.groups:
+        location_name_groups[group] = location_name_groups.get(group, []) + [loc.name]
     
 
-    if "region" not in location_table[key]:
-        location_table[key]["region"] = "Manual" # all locations are in the same region for Manual
 
-    if isinstance(location_table[key].get("category", []), str):
-        location_table[key]["category"] = [location_table[key]["category"]]
-
-if not victory_names:
-    # Add the game completion location, which will have the Victory item assigned to it automatically
-    location_table.append({
-        "id": count + 1,
-        "name": "__Manual Game Complete__",
-        "region": "Manual",
-        "requires": []
-        # "category": custom_victory_location["category"] if "category" in custom_victory_location else []
-    })
-    victory_names.append("__Manual Game Complete__")
-
-location_id_to_name: dict[int, str] = {}
-location_name_to_location: dict[str, dict] = {}
-location_name_groups: dict[str, list[str]] = {}
-
-for item in location_table:
-    location_id_to_name[item["id"]] = item["name"]
-    location_name_to_location[item["name"]] = item
-
-    for c in item.get("category", []):
-        if c not in location_name_groups:
-            location_name_groups[c] = []
-        location_name_groups[c].append(item["name"])
+# To make this simple, it is common practice to subclass the basic Location class and override the "game" field.
+class PokeclickerLocation(Location):
+    game = "Pokeclicker"
 
 
-# location_id_to_name[None] = "__Manual Game Complete__"
-location_name_to_id = {name: id for id, name in location_id_to_name.items()}
+# Let's make one more helper method before we begin actually creating locations.
+# Later on in the code, we'll want specific subsections of LOCATION_NAME_TO_ID.
+# To reduce the chance of copy-paste errors writing something like {"Chest": LOCATION_NAME_TO_ID["Chest"]},
+# let's make a helper method that takes a list of location names and returns them as a dict with their IDs.
+# Note: There is a minor typing quirk here. Some functions want location addresses to be an "int | None",
+# so while our function here only ever returns dict[str, int], we annotate it as dict[str, int | None].
+def get_location_names_with_ids(location_names: list[str]) -> dict[str, int | None]:
+    return {location.name: location.id for location in location_data.values() if location.name in location_names}
 
-######################
-# Location classes
-######################
+
+def create_all_locations(world: PokeclickerWorld) -> None:
+    create_regular_locations(world)
+    create_events(world)
 
 
-class ManualLocation(Location):
-    game = "Manual"
+def create_regular_locations(world: PokeclickerWorld) -> None:
+    # # Finally, we need to put the Locations ("checks") into their regions.
+    # # Once again, before we do anything, we can grab our regions we created by using world.get_region()
+    # overworld = world.get_region("Overworld")
+    # top_left_room = world.get_region("Top Left Room")
+    # bottom_right_room = world.get_region("Bottom Right Room")
+    # right_room = world.get_region("Right Room")
+
+    # # One way to create locations is by just creating them directly via their constructor.
+    # bottom_left_chest = PokeclickerLocation(
+    #     world.player, "Bottom Left Chest", world.location_name_to_id["Bottom Left Chest"], overworld
+    # )
+
+    # # You can then add them to the region.
+    # overworld.locations.append(bottom_left_chest)
+
+    # # A simpler way to do this is by using the region.add_locations helper.
+    # # For this, you need to have a dict of location names to their IDs (i.e. a subset of location_name_to_id)
+    # # Aha! So that's why we made that "get_location_names_with_ids" helper method earlier.
+    # # You also need to pass your overridden Location class.
+    # bottom_right_room_locations = get_location_names_with_ids(
+    #     ["Bottom Right Room Left Chest", "Bottom Right Room Right Chest"]
+    # )
+    # bottom_right_room.add_locations(bottom_right_room_locations, PokeclickerLocation)
+
+    # top_left_room_locations = get_location_names_with_ids(["Top Left Room Chest"])
+    # top_left_room.add_locations(top_left_room_locations, PokeclickerLocation)
+
+    # right_room_locations = get_location_names_with_ids(["Right Room Enemy Drop"])
+    # right_room.add_locations(right_room_locations, PokeclickerLocation)
+
+    # # Locations may be in different regions depending on the player's options.
+    # # In our case, the hammer option puts the Top Middle Chest into its own room called Top Middle Room.
+    # top_middle_room_locations = get_location_names_with_ids(["Top Middle Chest"])
+    # if world.options.hammer:
+    #     top_middle_room = world.get_region("Top Middle Room")
+    #     top_middle_room.add_locations(top_middle_room_locations, PokeclickerLocation)
+    # else:
+    #     overworld.add_locations(top_middle_room_locations, PokeclickerLocation)
+
+    # # Locations may exist only if the player enables certain options.
+    # # In our case, the extra_starting_chest option adds the Bottom Left Extra Chest location.
+    # if world.options.extra_starting_chest:
+    #     # Once again, it is important to stress that even though the Bottom Left Extra Chest location doesn't always
+    #     # exist, it must still always be present in the world's location_name_to_id.
+    #     # Whether the location actually exists in the seed is purely determined by whether we create and add it here.
+    #     bottom_left_extra_chest = get_location_names_with_ids(["Bottom Left Extra Chest"])
+    #     overworld.add_locations(bottom_left_extra_chest, PokeclickerLocation)
+
+    for location in location_data.values():
+        make_location = True
+        for group in location.groups:
+            if Helpers.is_category_enabled(world, group) == False:
+                make_location = False
+                break
+        if not make_location:
+            # print(f"Skipping location: {location.name}")
+            location.inclusion = False
+            continue
+
+        if "Pokemon Locations" in location.groups and world.options.dexsanity.value == 0:
+            location.id = None
+            location.place_item = location.original_item
+            # print(f"changing location to event: {location.name}")
+
+        name = location.name
+        id = location.id
+        region = world.get_region(location.region)
+        included = location.inclusion
+
+        if included == True and id != None:
+            # print(f"Processing location: {location.name}")
+            loc = PokeclickerLocation(world.player, name, id, region)
+            region.locations.append(loc)
+
+
+def create_events(world: PokeclickerWorld) -> None:
+    # # Sometimes, the player may perform in-game actions that allow them to progress which are not related to Items.
+    # # In our case, the player must press a button in the top left room to open the final boss door.
+    # # AP has something for this purpose: "Event locations" and "Event items".
+    # # An event location is no different than a regular location, except it has the address "None".
+    # # It is treated during generation like any other location, but then it is discarded.
+    # # This location cannot be "sent" and its item cannot be "received", but the item can be used in logic rules.
+    # # Since we are creating more locations and adding them to regions, we need to grab those regions again first.
+    # top_left_room = world.get_region("Top Left Room")
+    # final_boss_room = world.get_region("Final Boss Room")
+
+    # # One way to create an event is simply to use one of the normal methods of creating a location.
+    # button_in_top_left_room = PokeclickerLocation(world.player, "Top Left Room Button", None, top_left_room)
+    # top_left_room.locations.append(button_in_top_left_room)
+
+    # # We then need to put an event item onto the location.
+    # # An event item is an item whose code is "None" (same as the event location's address),
+    # # and whose classification is "progression". Item creation will be discussed more in items.py.
+    # # Note: Usually, items are created in world.create_items(), which for us happens in items.py.
+    # # However, when the location of an item is known ahead of time (as is the case with an event location/item pair),
+    # # it is common practice to create the item when creating the location.
+    # # Since locations also have to be finalized after world.create_regions(), which runs before world.create_items(),
+    # # we'll create both the event location and the event item in our locations.py code.
+    # button_item = items.PokeclickerItem("Top Left Room Button Pressed", ItemClassification.progression, None, world.player)
+    # button_in_top_left_room.place_locked_item(button_item)
+
+    # # A way simpler way to do create an event location/item pair is by using the region.create_event helper.
+    # # Luckily, we have another event we want to create: The Victory event.
+    # # We will use this event to track whether the player can win the game.
+    # # The Victory event is a completely optional abstraction - This will be discussed more in set_rules().
+    # final_boss_room.add_event(
+    #     "Final Boss Defeated", "Victory", location_type=PokeclickerLocation, item_type=items.PokeclickerItem
+    # )
+
+    # # If you create all your regions and locations line-by-line like this,
+    # # the length of your create_regions might get out of hand.
+    # # Many worlds use more data-driven approaches using dataclasses or NamedTuples.
+    # # However, it is worth understanding how the actual creation of regions and locations works,
+    # # That way, we're not just mindlessly copy-pasting! :)
+
+    for location in location_data.values():
+        if location.id == None:
+            region = world.get_region(location.region)
+            print(f"Adding event location: {location.name} to region: {location.region} and placing item: {location.place_item}")
+            region.add_event(
+                location.name, location.place_item, location_type=PokeclickerLocation, item_type=items.PokeclickerItem
+            )
+            items.item_table[location.place_item].id = None

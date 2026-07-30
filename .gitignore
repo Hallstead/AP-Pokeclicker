@@ -6,3 +6,5 @@ extra files/test.py
 Pokeclicker-Apworld/~move_to_dev.bat
 Pokeclicker-Apworld/~place_apworld.bat
 Pokeclicker-Apworld/pokeclicker.apworld
+Pokeclicker-Apworld/~open_dev_launcher.bat
+Pokeclicker-Apworld/pokeclicker/__pycache__/*

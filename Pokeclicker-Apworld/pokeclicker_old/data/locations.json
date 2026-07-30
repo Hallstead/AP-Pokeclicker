@@ -636,7 +636,9 @@
             "id": 2001,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{starter()} or {can_get_grass_egg()} or {can_breed(Bulbasaur)}"
         },
@@ -645,7 +647,9 @@
             "id": 2002,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Bulbasaur| or {can_breed(Ivysaur)}"
         },
@@ -654,7 +658,9 @@
             "id": 2003,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Ivysaur|) or {can_breed(Venusaur)}"
         },
@@ -663,7 +669,9 @@
             "id": 2004,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{starter()} or {can_get_fire_egg()} or {can_breed(Charmander)}"
         },
@@ -672,7 +680,9 @@
             "id": 2005,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Charmander| or {can_breed(Charmeleon)}"
         },
@@ -681,7 +691,9 @@
             "id": 2006,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Charmeleon|) or {can_breed(Charizard)}"
         },
@@ -690,7 +702,9 @@
             "id": 2007,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_starter()} or {can_get_water_egg()} or {can_breed(Squirtle)}"
         },
@@ -699,7 +713,9 @@
             "id": 2008,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Squirtle| or {can_breed(Wartortle)}"
         },
@@ -708,7 +724,9 @@
             "id": 2009,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Wartortle|) or {can_breed(Blastoise)}"
         },
@@ -717,7 +735,9 @@
             "id": 2010,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Caterpie)}"
         },
@@ -726,7 +746,9 @@
             "id": 2011,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Caterpie| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Metapod)}"
         },
@@ -735,7 +757,9 @@
             "id": 2012,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Metapod| or {can_breed(Butterfree)}"
         },
@@ -744,7 +768,9 @@
             "id": 2013,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_2()} or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Weedle)}"
         },
@@ -753,7 +779,9 @@
             "id": 2014,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Weedle| or {kanto_route_24()} or {kanto_route_25()} or {viridian_forest(False)} or {can_breed(Kakuna)}"
         },
@@ -762,7 +790,9 @@
             "id": 2015,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Kakuna| or {can_breed(Beedrill)}"
         },
@@ -771,7 +801,9 @@
             "id": 2016,
             "region": "Route 1 Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_1()} or {kanto_route_2()} or {kanto_route_3()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed(Pidgey)}"
         },
@@ -780,7 +812,9 @@
             "id": 2017,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Pidgey| or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {can_breed(Pidgeotto)}"
         },
@@ -789,7 +823,9 @@
             "id": 2018,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Pidgeotto|) or {can_breed(Pidgeot)}"
         },
@@ -798,7 +834,9 @@
             "id": 2019,
             "region": "Route 1 Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_1()} or {kanto_route_22()} or {kanto_route_2()} or {kanto_route_4()} or {kanto_route_9()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion()} or {can_breed(Rattata)}"
         },
@@ -807,7 +845,9 @@
             "id": 2020,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Rattata| or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {pokemon_mansion(False)} or {can_breed(Raticate)}"
         },
@@ -816,7 +856,9 @@
             "id": 2021,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed(Spearow)}"
         },
@@ -825,7 +867,9 @@
             "id": 2022,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Spearow| or {kanto_route_17()} or {kanto_route_18()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {kanto_route_23()} or {can_breed(Fearow)}"
         },
@@ -834,7 +878,9 @@
             "id": 2023,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed(Ekans)}"
         },
@@ -843,7 +889,9 @@
             "id": 2024,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Ekans|) or {kanto_route_23()} or {victory_road()} or {can_breed(Arbok)}"
         },
@@ -852,7 +900,9 @@
             "id": 2025,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{viridian_forest(True)} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed(Pikachu)}"
         },
@@ -861,7 +911,9 @@
             "id": 2026,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Pikachu| and {can_get_thunder_stone()} or {can_breed(Raichu)}"
         },
@@ -870,7 +922,9 @@
             "id": 2027,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_4()} or {kanto_route_11()} or {kanto_route_9()} or {kanto_route_10()} or {kanto_route_8()} or {kanto_route_23()} or {can_breed(Sandshrew)}"
         },
@@ -879,7 +933,9 @@
             "id": 2028,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Sandshrew|) or {kanto_route_23()} or {victory_road()} or {can_breed(Sandslash)}"
         },
@@ -888,7 +944,9 @@
             "id": 2029,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed(Nidoran (F))}"
         },
@@ -897,7 +955,9 @@
             "id": 2030,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Nidoran (F)| or {safari_zone()} or {can_breed(Nidorina)}"
         },
@@ -906,7 +966,9 @@
             "id": 2031,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Nidorina| and {can_get_moon_stone()}) or {can_breed(Nidoqueen)}"
         },
@@ -915,7 +977,9 @@
             "id": 2032,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_3()} or {safari_zone()} or {can_breed(Nidoran (M))}"
         },
@@ -924,7 +988,9 @@
             "id": 2033,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Nidoran (M)| or {safari_zone()} or {can_breed(Nidorino)}"
         },
@@ -933,7 +999,9 @@
             "id": 2034,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Nidorino| and {can_get_moon_stone()}) or {can_breed(Nidoking)}"
         },
@@ -942,7 +1010,9 @@
             "id": 2035,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{mt_moon(False)} or {can_breed(Clefairy)}"
         },
@@ -951,7 +1021,9 @@
             "id": 2036,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Clefairy| and {can_get_moon_stone()}) or {can_breed(Clefable)}"
         },
@@ -960,7 +1032,9 @@
             "id": 2037,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed(Vulpix)}"
         },
@@ -969,7 +1043,9 @@
             "id": 2038,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Vulpix| and {can_get_fire_stone()}) or {can_breed(Ninetails)}"
         },
@@ -978,7 +1054,9 @@
             "id": 2039,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_3()} or {can_get_mystery_egg()} or {can_breed(Jigglypuff)}"
         },
@@ -987,7 +1065,9 @@
             "id": 2040,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Jigglypuff| and {can_get_moon_stone()}) or {can_breed(Wigglytuff)}"
         },
@@ -996,7 +1076,9 @@
             "id": 2041,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{mt_moon(False)} or {rock_tunnel(False)} or {seafoam_islands(False)} or {victory_road()} or {can_breed(Zubat)}"
         },
@@ -1005,7 +1087,9 @@
             "id": 2042,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Zubat|) or {seafoam_islands(False)} or {victory_road()} or {cerulean_cave()} or {can_breed(Golbat)}"
         },
@@ -1014,7 +1098,9 @@
             "id": 2043,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_get_grass_egg()} or {can_breed(Oddish)}"
         },
@@ -1023,7 +1109,9 @@
             "id": 2044,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Oddish|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Gloom)}"
         },
@@ -1032,7 +1120,9 @@
             "id": 2045,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Gloom| and {can_get_leaf_stone()} or {can_breed(Vileplume)}"
         },
@@ -1041,7 +1131,9 @@
             "id": 2046,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({mt_moon(False)}) or {can_get_grass_egg()} or {safari_zone()} or {can_breed(Paras)}"
         },
@@ -1050,7 +1142,9 @@
             "id": 2047,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Paras|) or {cerulean_cave()} or {can_breed(Parasect)}"
         },
@@ -1059,7 +1153,9 @@
             "id": 2048,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Venonat)}"
         },
@@ -1068,7 +1164,9 @@
             "id": 2049,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Venonat|) or {berry_forest(True)} or {can_breed(Venomoth)}"
         },
@@ -1077,7 +1175,9 @@
             "id": 2050,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{digletts_cave(False)} or {can_breed(Diglett)}"
         },
@@ -1086,7 +1186,9 @@
             "id": 2051,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Diglett|) or {digletts_cave(True)} or {can_breed(Dugtrio)}"
         },
@@ -1095,7 +1197,9 @@
             "id": 2052,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_5()} or {kanto_route_6()} or {kanto_route_8()} or {kanto_route_7()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed(Meowth)}"
         },
@@ -1104,7 +1208,9 @@
             "id": 2053,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Meowth|) or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {can_breed(Persian)}"
         },
@@ -1113,7 +1219,9 @@
             "id": 2054,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Psyduck)}"
         },
@@ -1122,7 +1230,9 @@
             "id": 2055,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Psyduck|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed(Golduck)}"
         },
@@ -1131,7 +1241,9 @@
             "id": 2056,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_22()} or {kanto_route_3()} or {kanto_route_4()} or {kanto_route_23()} or ({rock_tunnel(False)}) or {can_get_fighting_egg()} or {can_breed(Mankey)}"
         },
@@ -1140,7 +1252,9 @@
             "id": 2057,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Mankey|) or {kanto_route_23()} or {victory_road()} or {cerulean_cave()} or {can_breed(Primape)}"
         },
@@ -1149,7 +1263,9 @@
             "id": 2058,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed(Growlithe)}"
         },
@@ -1158,7 +1274,9 @@
             "id": 2059,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Growlithe| and {can_get_fire_stone()}) or {can_breed(Arcanine)}"
         },
@@ -1167,7 +1285,9 @@
             "id": 2060,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Poliwag)}"
         },
@@ -1176,7 +1296,9 @@
             "id": 2061,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Poliwag|) or {can_breed(Poliwhirl)}"
         },
@@ -1185,7 +1307,9 @@
             "id": 2062,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Poliwhirl| and {can_get_water_stone()}) or {can_breed(Poliwrath)}"
         },
@@ -1194,7 +1318,9 @@
             "id": 2063,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_24()} or {kanto_route_25()} or {can_breed(Abra)}"
         },
@@ -1203,7 +1329,9 @@
             "id": 2064,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Abra| or {cerulean_cave()} or {can_breed(Kadabra)}"
         },
@@ -1212,7 +1340,9 @@
             "id": 2065,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Kadabra| and {can_get_linking_cord()}) or {can_breed(Alakazam)}"
         },
@@ -1221,7 +1351,9 @@
             "id": 2066,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_fighting_egg()} or {can_breed(Machop)}"
         },
@@ -1230,7 +1362,9 @@
             "id": 2067,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Machop|) or {mount_ember(False)} or {cerulean_cave()} or {victory_road()} or {can_breed(Machoke)}"
         },
@@ -1239,7 +1373,9 @@
             "id": 2068,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Machoke| and {can_get_linking_cord()}) or {can_breed(Machamp)}"
         },
@@ -1248,7 +1384,9 @@
             "id": 2069,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_24()} or {kanto_route_25()} or {kanto_route_5()} or {kanto_route_6()} or {kanto_route_7()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Bellsprout)}"
         },
@@ -1257,7 +1395,9 @@
             "id": 2070,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Bellsprout|) or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {cape_brink()} or {bond_bridge()} or {berry_forest(False)} or {can_breed(Weepinbell)}"
         },
@@ -1266,7 +1406,9 @@
             "id": 2071,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Weepinbell| and {can_get_leaf_stone()}) or {can_breed(Victreebel)}"
         },
@@ -1275,7 +1417,9 @@
             "id": 2072,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed(Tentacool)}"
         },
@@ -1284,7 +1428,9 @@
             "id": 2073,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Tentacool|) or (({treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {can_breed(Tentacruel)}"
         },
@@ -1293,7 +1439,9 @@
             "id": 2074,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kindle_road()} or {mt_moon(False)} or {rock_tunnel(False)} or {mount_ember(False)} or {victory_road()} or {can_get_mystery_egg()} or {can_breed(Geodude)}"
         },
@@ -1302,7 +1450,9 @@
             "id": 2075,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Geodude|) or {mount_ember(False)} or {cerulean_cave()} or {can_breed(Graveler)}"
         },
@@ -1311,7 +1461,9 @@
             "id": 2076,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Graveler| and {can_get_linking_cord()}) or {can_breed(Golem)}"
         },
@@ -1320,7 +1472,9 @@
             "id": 2077,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kindle_road()} or {mount_ember(False)} or {can_breed(Ponyta)}"
         },
@@ -1329,7 +1483,9 @@
             "id": 2078,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Ponyta|) or {kindle_road()} or {mount_ember(False)} or {can_breed(Rapidash)}"
         },
@@ -1338,7 +1494,9 @@
             "id": 2079,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or (({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_get_water_egg()} or {can_breed(Slowpoke)}"
         },
@@ -1347,7 +1505,9 @@
             "id": 2080,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Slowpoke|) or ({kanto_route_12()} and |Super Rod|) or {cape_brink()} or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {can_breed(Slowbro)}"
         },
@@ -1356,7 +1516,9 @@
             "id": 2081,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{power_plant(False)} or {can_get_electric_egg()} or {can_breed(Magnemite)}"
         },
@@ -1365,7 +1527,9 @@
             "id": 2082,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Magnemite|) or {power_plant(False)} or {cerulean_cave()} or {can_breed(Magneton)}"
         },
@@ -1374,7 +1538,9 @@
             "id": 2083,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_12()} or {kanto_route_13()} or {can_breed(Farfetch'd)}"
         },
@@ -1383,7 +1549,9 @@
             "id": 2084,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_16()} or {kanto_route_17()} or {kanto_route_18()} or {can_get_mystery_egg()} or {can_breed(Doduo)}"
         },
@@ -1392,7 +1560,9 @@
             "id": 2085,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Doduo|) or {can_breed(Dodrio)}"
         },
@@ -1401,7 +1571,9 @@
             "id": 2086,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{seafoam_islands(True)} or {can_breed(Seel)}"
         },
@@ -1410,7 +1582,9 @@
             "id": 2087,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Seel|) or {can_breed(Dewgong)}"
         },
@@ -1419,7 +1593,9 @@
             "id": 2088,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{pokemon_mansion(False)} or {can_breed(Grimer)}"
         },
@@ -1428,7 +1604,9 @@
             "id": 2089,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Grimer|) or {pokemon_mansion(False)} or {can_breed(Muk)}"
         },
@@ -1437,7 +1615,9 @@
             "id": 2090,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_breed(Shellder)}"
         },
@@ -1446,7 +1626,9 @@
             "id": 2091,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Shellder| and {can_get_water_stone()}) or {can_breed(Cloyster)}"
         },
@@ -1455,7 +1637,9 @@
             "id": 2092,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{pokemon_tower(False)} or {can_get_mystery_egg()} or {can_breed(Gastly)} or (|Infinite Seasonal Events| and {any_kanto_route()})"
         },
@@ -1464,7 +1648,9 @@
             "id": 2093,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Gastly|) or {pokemon_tower(False)} or {can_breed(Haunter)}"
         },
@@ -1473,16 +1659,20 @@
             "id": 2094,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
-            "requires": "(|Haunter| and {can_get_linking_cord()} or {can_breed(Gengar)}"
+            "requires": "(|Haunter| and {can_get_linking_cord()}) or {can_breed(Gengar)}"
         },
         {
             "name": "Capture Onix",
             "id": 2095,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{rock_tunnel(True)} or {victory_road()} or {can_breed(Onix)}"
         },
@@ -1491,7 +1681,9 @@
             "id": 2096,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_11()} or {berry_forest(False)} or {can_breed(Drowzee)}"
         },
@@ -1500,7 +1692,9 @@
             "id": 2097,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|@Badges:1| and |Drowzee| or {berry_forest(True)} or {can_breed(Hypno)}"
         },
@@ -1509,7 +1703,9 @@
             "id": 2098,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed(Krabby)}"
         },
@@ -1518,7 +1714,9 @@
             "id": 2099,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Krabby|) or {can_breed(Kingler)}"
         },
@@ -1527,7 +1725,9 @@
             "id": 2100,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_10()} or {power_plant(False)} or {can_get_electric_egg()} or {can_breed(Voltorb)}"
         },
@@ -1536,7 +1736,9 @@
             "id": 2101,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Voltorb|) or {power_plant(False)} or {cerulean_cave()} or {silph_co(False)} or {can_breed(Electrode)}"
         },
@@ -1545,7 +1747,9 @@
             "id": 2102,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{berry_forest(False)} or {safari_zone()} or {can_breed(Exeggcute)}"
         },
@@ -1554,7 +1758,9 @@
             "id": 2103,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Exeggcute| and {can_get_leaf_stone()}) or {can_breed(Exeggutor)}"
         },
@@ -1563,7 +1769,9 @@
             "id": 2104,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{pokemon_tower(False)} or {safari_zone()} or {can_breed(Cubone)}"
         },
@@ -1572,7 +1780,9 @@
             "id": 2105,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Cubone|) or {pokemon_tower(True)} or {victory_road()} or {safari_zone()} or {can_breed(Marowak)}"
         },
@@ -1581,7 +1791,9 @@
             "id": 2106,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{can_get_fighting_egg()} or {can_breed(Hitmonlee)}"
         },
@@ -1590,7 +1802,9 @@
             "id": 2107,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{can_get_fighting_egg()} or {can_breed(Hitmonchan)}"
         },
@@ -1599,7 +1813,9 @@
             "id": 2108,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Lickitung)}"
         },
@@ -1608,7 +1824,9 @@
             "id": 2109,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{pokemon_mansion(False)} or {can_breed(Koffing)}"
         },
@@ -1617,7 +1835,9 @@
             "id": 2110,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Koffing|) or {pokemon_mansion(False)} or {can_breed(Weezing)}"
         },
@@ -1626,7 +1846,9 @@
             "id": 2111,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{safari_zone()} or {can_breed(Rhyhorn)}"
         },
@@ -1635,7 +1857,9 @@
             "id": 2112,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:3| and |Rhyhorn|) or {can_breed(Rhydon)}"
         },
@@ -1644,7 +1868,9 @@
             "id": 2113,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{safari_zone()} or {can_breed(Chansey)}"
         },
@@ -1653,7 +1879,9 @@
             "id": 2114,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_21()} or {treasure_beach()} or {can_get_grass_egg()} or {safari_zone()} or {can_wander()} or {can_breed(Tangela)}"
         },
@@ -1662,7 +1890,9 @@
             "id": 2115,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{safari_zone()} or {can_breed(Kangaskhan)}"
         },
@@ -1671,7 +1901,9 @@
             "id": 2116,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_4()} or {kanto_route_24()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {bond_bridge()}) and |Super Rod|) or {seafoam_islands(False)} or {can_breed(Horsea)}"
         },
@@ -1680,7 +1912,9 @@
             "id": 2117,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Horsea|) or {can_breed(Seadra)}"
         },
@@ -1689,7 +1923,9 @@
             "id": 2118,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(({kanto_route_22()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_12()} or {cape_brink()} or {kanto_route_23()}) and |Super Rod|) or {berry_forest(False)} or {cerulean_cave()} or {safari_zone()} or {can_breed(Goldeen)}"
         },
@@ -1698,7 +1934,9 @@
             "id": 2119,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Goldeen|) or {safari_zone()} or {can_breed(Seaking)}"
         },
@@ -1707,7 +1945,9 @@
             "id": 2120,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_20()} or ({kanto_route_21()} and |Super Rod|) or {can_get_water_egg()} or {can_breed(Staryu)}"
         },
@@ -1716,7 +1956,9 @@
             "id": 2121,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Staryu| and {can_get_water_stone()} or {can_breed(Starmie)}"
         },
@@ -1725,7 +1967,9 @@
             "id": 2122,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({celadon_city()}  and |Tutorial Complete|) or {can_breed(Mr. Mime)}"
         },
@@ -1734,7 +1978,9 @@
             "id": 2123,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{safari_zone()} or {can_wander()} or {can_breed(Scyther)}"
         },
@@ -1743,7 +1989,9 @@
             "id": 2124,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Jynx)}"
         },
@@ -1752,7 +2000,9 @@
             "id": 2125,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{power_plant(True)} or {can_get_electric_egg()} or {can_breed(Electabuzz)}"
         },
@@ -1761,7 +2011,9 @@
             "id": 2126,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{mount_ember(True)} or {pokemon_mansion(True)} or {can_get_fire_egg()} or {can_breed(Magmar)}"
         },
@@ -1770,7 +2022,9 @@
             "id": 2127,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{safari_zone()} or {can_breed(Pinsir)}"
         },
@@ -1779,7 +2033,9 @@
             "id": 2128,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{safari_zone()} or {can_breed(Tauros)}"
         },
@@ -1788,7 +2044,9 @@
             "id": 2129,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_19()} or {kanto_route_20()} or (({kanto_route_22()} or {kanto_route_4()} or {kanto_route_24()} or {kanto_route_25()} or {kanto_route_6()} or {kanto_route_11()} or {kanto_route_10()} or {kanto_route_12()} or {kanto_route_13()} or {kanto_route_21()} or {treasure_beach()} or {kindle_road()} or {cape_brink()} or {bond_bridge()} or {kanto_route_23()}) and |Super Rod|) or {seafoam_islands(False)} or {berry_forest(False)} or {cerulean_cave()} or {kanto_route_4_pokecenter()} or {safari_zone()} or {can_breed(Magikarp)}"
         },
@@ -1797,7 +2055,9 @@
             "id": 2130,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Magikarp| or {can_breed(Gyarados)}"
         },
@@ -1806,7 +2066,9 @@
             "id": 2131,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({silph_co()} and {attack_needed(203971)}) or {can_get_water_egg()} or {can_breed(Lapras)}"
         },
@@ -1815,7 +2077,9 @@
             "id": 2132,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{kanto_route_13()} or {kanto_route_14()} or {kanto_route_15()} or {pokemon_mansion(False)} or {cerulean_cave()} or {can_breed(Ditto)}"
         },
@@ -1824,7 +2088,9 @@
             "id": 2133,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({celadon_city()}  and |Tutorial Complete|) or {completed_bills_grandpas_treasure_hunt()} or {can_breed(Eevee)}"
         },
@@ -1833,7 +2099,9 @@
             "id": 2134,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Eevee| and {can_get_water_stone()} or {can_breed(Vaporeon)}"
         },
@@ -1842,7 +2110,9 @@
             "id": 2135,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Eevee| and {can_get_thunder_stone()} or {can_breed(Jolteon)}"
         },
@@ -1851,7 +2121,9 @@
             "id": 2136,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "|Eevee| and {can_get_fire_stone()} or {can_breed(Flareon)}"
         },
@@ -1860,7 +2132,9 @@
             "id": 2137,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({celadon_city()} and |Tutorial Complete|) or {can_breed(Porygon)}"
         },
@@ -1869,7 +2143,9 @@
             "id": 2138,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Omanyte)}"
         },
@@ -1878,7 +2154,9 @@
             "id": 2139,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Omanyte|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)} and |Omastar|) or {can_breed(Omastar)}"
         },
@@ -1887,7 +2165,9 @@
             "id": 2140,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Kabuto)}"
         },
@@ -1896,7 +2176,9 @@
             "id": 2141,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:2| and |Kabuto|) or ({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)} and |Kabutops|) or {can_breed(Kabutops)}"
         },
@@ -1905,7 +2187,9 @@
             "id": 2142,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({cinnabar_island()} and |Explorer Kit| and {kanto_route_11()}) or {can_breed(Aerodactyl)}"
         },
@@ -1914,7 +2198,9 @@
             "id": 2143,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({pokemon_tower()} and {attack_needed(189990)}) or {can_breed(Snorlax)}"
         },
@@ -1923,7 +2209,9 @@
             "id": 2144,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{seafoam_islands(True, 129195)} or {can_breed(Articuno)}"
         },
@@ -1932,7 +2220,9 @@
             "id": 2145,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{power_plant(True, 101302)} or {can_breed(Zapdos)}"
         },
@@ -1941,7 +2231,9 @@
             "id": 2146,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{mount_ember(True, 184462)} or {can_breed(Moltres)}"
         },
@@ -1950,7 +2242,9 @@
             "id": 2147,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Dratini| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed(Dratini)}"
         },
@@ -1959,7 +2253,9 @@
             "id": 2148,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:1| and |Dratini|) or (|Dragonair| and {safari_zone()}) or {can_get_dragon_egg()} or {can_breed(Dragonair)}"
         },
@@ -1968,7 +2264,9 @@
             "id": 2149,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|@Badges:4| and |Dragonair|) or {can_get_dragon_egg()} or {can_breed(Dragonite)}"
         },
@@ -1977,7 +2275,9 @@
             "id": 2150,
             "region": "Kanto Pokemon",
             "category": [
-                "Pokemon Locations"
+                "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{cerulean_cave()} or {can_breed(Mewtwo)}"
         },
@@ -1987,9 +2287,1113 @@
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
+                "Base Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon"
             ],
             "requires": "{kanto_roamer()} or {can_breed(Mew)}"
+        },
+        {
+            "name": "Capture Chikorita",
+            "id": 2152,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Bayleef",
+            "id": 2153,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Meganium",
+            "id": 2154,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Cyndaquil",
+            "id": 2155,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Quilava",
+            "id": 2156,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Typhlosion",
+            "id": 2157,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Totodile",
+            "id": 2158,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Croconaw",
+            "id": 2159,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Feraligatr",
+            "id": 2160,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Sentret",
+            "id": 2161,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Furret",
+            "id": 2162,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hoothoot",
+            "id": 2163,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Noctowl",
+            "id": 2164,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ledyba",
+            "id": 2165,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ledian",
+            "id": 2166,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Spinarak",
+            "id": 2167,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ariados",
+            "id": 2168,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Crobat",
+            "id": 2169,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Chinchou",
+            "id": 2170,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Lanturn",
+            "id": 2171,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pichu",
+            "id": 2172,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Cleffa",
+            "id": 2173,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Igglybuff",
+            "id": 2174,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Togepi",
+            "id": 2175,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Togetic",
+            "id": 2176,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Natu",
+            "id": 2177,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Xatu",
+            "id": 2178,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mareep",
+            "id": 2179,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Flaaffy",
+            "id": 2180,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ampharos",
+            "id": 2181,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Bellossom",
+            "id": 2182,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Marill",
+            "id": 2183,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Azumarill",
+            "id": 2184,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Sudowoodo",
+            "id": 2185,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Politoed",
+            "id": 2186,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hoppip",
+            "id": 2187,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Skiploom",
+            "id": 2188,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Jumpluff",
+            "id": 2189,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Aipom",
+            "id": 2190,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Sunkern",
+            "id": 2191,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Sunflora",
+            "id": 2192,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Yanma",
+            "id": 2193,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Wooper",
+            "id": 2194,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Quagsire",
+            "id": 2195,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Espeon",
+            "id": 2196,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Umbreon",
+            "id": 2197,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Murkrow",
+            "id": 2198,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Slowking",
+            "id": 2199,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Misdreavus",
+            "id": 2200,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (A)",
+            "id": 2201,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Wobbuffet",
+            "id": 2202,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Girafarig",
+            "id": 2203,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pineco",
+            "id": 2204,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Forretress",
+            "id": 2205,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Dunsparce",
+            "id": 2206,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Gligar",
+            "id": 2207,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Steelix",
+            "id": 2208,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Snubbull",
+            "id": 2209,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Granbull",
+            "id": 2210,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Qwilfish",
+            "id": 2211,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Scizor",
+            "id": 2212,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Shuckle",
+            "id": 2213,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Heracross",
+            "id": 2214,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Sneasel",
+            "id": 2215,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Teddiursa",
+            "id": 2216,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ursaring",
+            "id": 2217,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Slugma",
+            "id": 2218,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magcargo",
+            "id": 2219,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Swinub",
+            "id": 2220,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Piloswine",
+            "id": 2221,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Corsola",
+            "id": 2222,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Remoraid",
+            "id": 2223,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Octillery",
+            "id": 2224,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Delibird",
+            "id": 2225,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mantine",
+            "id": 2226,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Skarmory",
+            "id": 2227,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Houndour",
+            "id": 2228,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Houndoom",
+            "id": 2229,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Kingdra",
+            "id": 2230,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Phanpy",
+            "id": 2231,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Donphan",
+            "id": 2232,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Porygon2",
+            "id": 2233,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Stantler",
+            "id": 2234,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Smeargle",
+            "id": 2235,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Tyrogue",
+            "id": 2236,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hitmontop",
+            "id": 2237,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Smoochum",
+            "id": 2238,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Elekid",
+            "id": 2239,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Magby",
+            "id": 2240,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Miltank",
+            "id": 2241,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Blissey",
+            "id": 2242,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Raikou",
+            "id": 2243,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon",
+                "Roaming Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Entei",
+            "id": 2244,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon",
+                "Roaming Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Suicune",
+            "id": 2245,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Larvitar",
+            "id": 2246,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Pupitar",
+            "id": 2247,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Tyranitar",
+            "id": 2248,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Lugia",
+            "id": 2249,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Ho-Oh",
+            "id": 2250,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Celebi",
+            "id": 2251,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon",
+                "Base Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
         },
         {
             "name": "Capture Bulbasaur (Clone)",
@@ -1998,6 +3402,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
@@ -2011,6 +3416,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Halloween"
             ],
@@ -2023,6 +3429,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Sinnoh Pokemon",
                 "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
@@ -2036,6 +3443,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2048,6 +3456,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Halloween"
             ],
@@ -2060,6 +3469,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Sinnoh Pokemon",
                 "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
@@ -2073,6 +3483,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2084,6 +3495,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2095,6 +3507,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2107,6 +3520,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Halloween"
             ],
@@ -2119,6 +3533,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Sinnoh Pokemon",
                 "Seasonal Events",
                 "Golden Week",
                 "Not Implemented"
@@ -2132,6 +3547,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
@@ -2145,6 +3561,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2157,6 +3574,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2168,6 +3586,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2179,6 +3598,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2190,6 +3610,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2202,6 +3623,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2214,6 +3636,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Johto Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2225,6 +3648,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2237,6 +3661,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2248,6 +3673,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2259,6 +3685,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2271,6 +3698,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2282,6 +3710,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2293,6 +3722,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2304,6 +3734,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2315,6 +3746,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2326,6 +3758,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2337,6 +3770,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2348,6 +3782,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2359,6 +3794,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2370,6 +3806,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2381,6 +3818,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2392,6 +3830,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2403,6 +3842,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2414,6 +3854,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2425,6 +3866,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2436,6 +3878,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Flying Pikachu"
@@ -2449,6 +3892,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2460,6 +3904,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2471,6 +3916,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2482,6 +3928,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2493,6 +3940,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2504,6 +3952,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2515,6 +3964,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2526,6 +3976,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2537,6 +3988,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2548,6 +4000,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2559,6 +4012,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Flying Pikachu"
@@ -2572,6 +4026,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Redeemable Code",
                 "Codes"
             ],
@@ -2584,6 +4039,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2595,6 +4051,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Let's Go"
@@ -2608,6 +4065,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2619,6 +4077,8 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
+                "Wanderer",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2630,6 +4090,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
@@ -2642,6 +4103,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2653,6 +4115,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2664,6 +4127,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2675,6 +4139,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2686,6 +4151,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2693,10 +4159,11 @@
         {
             "name": "Capture Pikachu (Easter)",
             "id": 7522,
-            "region": "",
+            "region": "Johto Pokemon",
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Johto Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2707,7 +4174,8 @@
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({cinnabar_island()} and ((|Explorer Kit| and {kanto_route_11()} and {has_script(Enhanced Auto Mine)}) or |Palaeontologist Token|)) or {can_breed(Pikachu (Palaeontologist))}"
         },
@@ -2718,6 +4186,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2729,6 +4198,8 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
+                "Wanderer",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2740,6 +4211,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2751,6 +4223,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2762,6 +4235,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2773,6 +4247,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2784,6 +4259,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2795,6 +4271,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2806,6 +4283,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2817,6 +4295,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2828,6 +4307,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2839,6 +4319,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2850,6 +4331,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2861,6 +4343,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2872,6 +4355,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2883,6 +4367,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2894,6 +4379,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2905,6 +4391,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2916,6 +4403,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2927,6 +4415,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2938,6 +4427,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2949,6 +4439,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2956,10 +4447,11 @@
         {
             "name": "Capture Meowth (Phanpy)",
             "id": 10204,
-            "region": "",
+            "region": "Johto Pokemon",
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Johto Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2971,6 +4463,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2978,10 +4471,11 @@
         {
             "name": "Capture Psyduck (Dark Mage)",
             "id": 10401,
-            "region": "",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -2993,6 +4487,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3004,6 +4499,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3015,6 +4511,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3026,6 +4523,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3037,6 +4535,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3048,6 +4547,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3059,6 +4559,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3070,6 +4571,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3081,6 +4583,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3092,6 +4595,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3103,6 +4607,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3114,6 +4619,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3125,6 +4631,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3136,6 +4643,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3147,6 +4655,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3158,6 +4667,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3169,6 +4679,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3180,6 +4691,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3191,6 +4703,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3202,6 +4715,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3213,6 +4727,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3224,6 +4739,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3235,6 +4751,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3246,6 +4763,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3257,6 +4775,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3268,6 +4787,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3279,6 +4799,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3290,6 +4811,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3301,6 +4823,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3312,6 +4835,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3323,6 +4847,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3334,6 +4859,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3345,6 +4871,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hisui Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3355,7 +4882,8 @@
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "({safari_zone()} and |Exeggcute|) or {can_breed(Exeggcute (Single))}"
         },
@@ -3366,6 +4894,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3377,6 +4906,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3388,6 +4918,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3399,6 +4930,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3410,6 +4942,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3421,6 +4954,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3432,6 +4966,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3443,6 +4978,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3453,7 +4989,8 @@
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "(|Tutorial Complete| and {one_island()}) or {can_breed(Charity Chansey)}"
         },
@@ -3464,6 +5001,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3475,6 +5013,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3485,7 +5024,8 @@
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
-                "Alt Pokemon"
+                "Alt Pokemon",
+                "Kanto Pokemon"
             ],
             "requires": "{can_breed(Kangaskhan)} or {can_breed(Baby Kangaskhan)}"
         },
@@ -3496,6 +5036,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Unobtainable",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3507,6 +5048,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3518,6 +5060,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3529,6 +5072,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Christmas"
             ],
@@ -3541,6 +5085,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3552,6 +5097,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3563,6 +5109,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Paldea Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3574,6 +5121,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Paldea Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3585,6 +5133,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Paldea Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3596,6 +5145,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3607,6 +5157,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3618,6 +5169,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3629,6 +5181,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3640,6 +5193,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3651,6 +5205,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3662,6 +5217,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3673,6 +5229,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3684,6 +5241,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3695,6 +5253,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3706,6 +5265,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3717,6 +5277,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3728,6 +5289,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3739,6 +5301,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3750,6 +5313,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3761,6 +5325,8 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
+                "Roaming Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3772,6 +5338,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3783,6 +5350,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3794,6 +5362,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3805,6 +5374,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3816,6 +5386,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3827,6 +5398,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3838,6 +5410,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3849,6 +5422,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3860,6 +5434,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3871,6 +5446,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3882,6 +5458,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3893,6 +5470,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3904,6 +5482,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3915,6 +5494,8 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
+                "Roaming Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3926,6 +5507,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3937,6 +5519,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Hoenn Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3948,6 +5531,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3959,6 +5543,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3970,6 +5555,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Alola Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3981,6 +5567,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -3992,6 +5579,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Let's Go"
@@ -4005,6 +5593,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -4016,6 +5605,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -4027,6 +5617,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Roaming Pokemon",
                 "Seasonal Events",
                 "Christmas"
@@ -4040,6 +5631,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Christmas"
             ],
@@ -4052,6 +5644,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -4063,6 +5656,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -4074,6 +5668,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Galar Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -4085,6 +5680,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -4096,6 +5692,7 @@
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kalos Pokemon",
                 "Not Implemented"
             ],
             "requires": ""
@@ -4103,14 +5700,622 @@
         {
             "name": "Capture Armored Mewtwo",
             "id": 20003,
-            "region": "",
+            "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations",
                 "Alt Pokemon",
+                "Kanto Pokemon",
                 "Seasonal Events",
                 "Mewtwo Strikes Back"
             ],
             "requires": "{new_island(True, 131500)} or {can_breed(Armored Mewtwo)}"
+        },
+        {
+            "name": "Capture Hisuian Typhlosion",
+            "id": 20701,
+            "region": "Hisui Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hisui Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Spiky-eared Pichu",
+            "id": 22201,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Spooky Togepi",
+            "id": 22501,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Halloween"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Togepi (Flowering Crown)",
+            "id": 22502,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Easter"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Spooky Togetic",
+            "id": 22601,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Halloween"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Ampharos",
+            "id": 23101,
+            "region": "Kalos Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Sudowoodo (Golden)",
+            "id": 23501,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hoppip (Chimecho)",
+            "id": 23701,
+            "region": "Hoenn Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Paldean Wooper",
+            "id": 24401,
+            "region": "Paldea Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Paldea Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Slowking",
+            "id": 24901,
+            "region": "Galar Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Galar Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (B)",
+            "id": 25101,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (C)",
+            "id": 25102,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (D)",
+            "id": 25103,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (E)",
+            "id": 25104,
+            "region": "Sinnoh Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Sinnoh Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (F)",
+            "id": 25105,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (G)",
+            "id": 25106,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (H)",
+            "id": 25107,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (I)",
+            "id": 25108,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (J)",
+            "id": 25109,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (K)",
+            "id": 25110,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (L)",
+            "id": 25111,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (M)",
+            "id": 25112,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (N)",
+            "id": 25113,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (O)",
+            "id": 25114,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (P)",
+            "id": 25115,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (Q)",
+            "id": 25116,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (R)",
+            "id": 25117,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (S)",
+            "id": 25118,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Redeemable Code"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (T)",
+            "id": 25119,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (U)",
+            "id": 25120,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (V)",
+            "id": 25121,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (W)",
+            "id": 25122,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (X)",
+            "id": 25123,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (Y)",
+            "id": 25124,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (Z)",
+            "id": 25125,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (!)",
+            "id": 25126,
+            "region": "Hoenn Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Unown (?)",
+            "id": 25127,
+            "region": "Hoenn Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Steelix",
+            "id": 25801,
+            "region": "Kalos Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Crystal Steelix",
+            "id": 25802,
+            "region": "Hoenn Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hisuian Qwilfish",
+            "id": 26101,
+            "region": "Hisui Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hisui Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Scizor",
+            "id": 26201,
+            "region": "Kalos Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Shuckle (Corked)",
+            "id": 26301,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Heracross",
+            "id": 26401,
+            "region": "Kalos Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Hisuian Sneasel",
+            "id": 26501,
+            "region": "Hisui Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hisui Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Galarian Corsola",
+            "id": 27201,
+            "region": "Galar Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Galar Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Houndoom",
+            "id": 27901,
+            "region": "Kalos Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Reindeer Stantler",
+            "id": 28401,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Merry Christmas"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Blessing Blissey",
+            "id": 29201,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Mega Tyranitar",
+            "id": 29801,
+            "region": "Kalos Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Kalos Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture XD001",
+            "id": 29901,
+            "region": "Hoenn Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Hoenn Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Flowering Celebi",
+            "id": 30101,
+            "region": "Galar Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Galar Pokemon",
+                "Not Implemented"
+            ],
+            "requires": ""
+        },
+        {
+            "name": "Capture Grinch Celebi",
+            "id": 30102,
+            "region": "Johto Pokemon",
+            "category": [
+                "Pokemon Locations",
+                "Alt Pokemon",
+                "Johto Pokemon",
+                "Seasonal Events",
+                "Merry Christmas"
+            ],
+            "requires": ""
         },
         {
             "name": "Kanto Route 1 - 1",
@@ -4625,7 +6830,7 @@
         {
             "name": "Victory Road - 2",
             "id": 110052,
-            "region": "Kanto",
+            "region": "Indigo Plateau",
             "category": [
                 "Kanto",
                 "Mapsanity"

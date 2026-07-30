@@ -1,80 +1,121 @@
-from BaseClasses import Entrance, MultiWorld, Region
-from .Helpers import is_category_enabled, is_location_enabled
-from .Data import region_table
-from .Locations import ManualLocation, location_name_to_location
-from worlds.AutoWorld import World
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+from BaseClasses import Entrance, Region
+from rule_builder.rules import Has, HasAll, Rule
+
+if TYPE_CHECKING:
+    from .world import PokeclickerWorld
+
+# A region is a container for locations ("checks"), which connects to other regions via "Entrance" objects.
+# Many games will model their Regions after physical in-game places, but you can also have more abstract regions.
+# For a location to be in logic, its containing region must be reachable.
+# The Entrances connecting regions can have rules - more on that in rules.py.
+# This makes regions especially useful for traversal logic ("Can the player reach this part of the map?")
+
+# Every location must be inside a region, and you must have at least one region.
+# This is why we create regions first, and then later we create the locations (in locations.py).
+
+class RegionData:
+    def __init__(self, name: str, connections: list[str], requires=[]):
+        self.name = name
+        self.connections = connections
+        self.requires = requires
+
+regions_list = [
+    RegionData("Route 1", ["Route 1 Pokemon", "Kanto"]),
+    RegionData("Route 1 Pokemon", []),
+    RegionData("Kanto", ["Kanto Pokemon", "Sevii Islands 123", "Indigo Plateau"], ["Town Map"]),
+    RegionData("Kanto Pokemon", []),
+    RegionData("Sevii Islands 123", [], ["Volcano Badge"]),
+    RegionData("Indigo Plateau", ["Kanto Champion"], ["Boulder Badge", "Cascade Badge", "Thunder Badge", "Rainbow Badge", "Marsh Badge", "Soul Badge", "Volcano Badge", "Earth Badge"]),
+    RegionData("Kanto Champion", ["Johto"], ["Kanto Elite Champion Badge"]),
+    RegionData("Johto", [])
+]
+
+def create_and_connect_regions(world: PokeclickerWorld) -> None:
+    create_all_regions(world)
+    connect_regions(world)
 
 
-if not region_table:
-    region_table = {}
+def create_all_regions(world: PokeclickerWorld) -> None:
+    regions = []
 
-regionMap = { **region_table }
-starting_regions = [ name for name in regionMap if "starting" in regionMap[name].keys() and regionMap[name]["starting"] ]
+    # Creating a region is as simple as calling the constructor of the Region class.
+    for region in regions_list:
+        regions.append(Region(region.name, world.player, world.multiworld))
 
-if len(starting_regions) == 0:
-    starting_regions = region_table.keys() # the Manual region connects to all user-defined regions automatically if you specify no starting regions
+    # Let's put all these regions in a list.
+    # (Already done by appending to the 'regions' list above)
 
-regionMap["Manual"] = {
-    "requires": [],
-    "connects_to": starting_regions
-}
+    # Some regions may only exist if the player enables certain options.
+    # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
+    # if world.options.hammer:
+    #     top_middle_room = Region("Top Middle Room", world.player, world.multiworld)
+    #     regions.append(top_middle_room)
+
+    # We now need to add these regions to multiworld.regions so that AP knows about their existence.
+    world.multiworld.regions += regions
 
 
-def create_regions(world: World, multiworld: MultiWorld, player: int):
-    # Create regions and assign locations to each region
-    for region in regionMap:
-        if "connects_to" not in regionMap[region]:
-            exit_array = None
-        else:
-            exit_array = regionMap[region]["connects_to"] or None
+def connect_regions(world: PokeclickerWorld) -> None:
+    # We have regions now, but still need to connect them to each other.
+    # But wait, we no longer have access to the region variables we created in create_all_regions()!
+    # Luckily, once you've submitted your regions to multiworld.regions,
+    # you can get them at any time using world.get_region(...).
+    regions_by_name = {r.name: r for r in regions_list}
+    for region in regions_list:
+        source_region = world.get_region(region.name)
 
-        # safeguard for bad value at the end
-        if not exit_array:
-            exit_array = None
+    # overworld = world.get_region("Overworld")
+    # top_left_room = world.get_region("Top Left Room")
+    # bottom_right_room = world.get_region("Bottom Right Room")
+    # right_room = world.get_region("Right Room")
+    # final_boss_room = world.get_region("Final Boss Room")
 
-        locations = []
-        for location in world.location_table:
-            if "Pokemon" in location["category"]:
-                location["id"] = None
-            if "region" in location and location["region"] == region:
-                if is_location_enabled(multiworld, player, location):
-                    locations.append(location["name"])
+    # Okay, now we can get connecting. For this, we need to create Entrances.
+    # Entrances are inherently one-way, but crucially, AP assumes you can always return to the origin region.
+    # One way to create an Entrance is by calling the Entrance constructor.
+    # overworld_to_bottom_right_room = Entrance(world.player, "Overworld to Bottom Right Room", parent=overworld)
+    # overworld.exits.append(overworld_to_bottom_right_room)
 
-        new_region = create_region(world, multiworld, player, region, locations, exit_array)
-        multiworld.regions += [new_region]
+    # You can then connect the Entrance to the target region.
+    # overworld_to_bottom_right_room.connect(bottom_right_room)
 
-    menu = create_region(world, multiworld, player, "Menu", None, ["Manual"])
-    multiworld.regions += [menu]
-    menuConn = multiworld.get_entrance("MenuToManual", player)
-    menuConn.connect(multiworld.get_region("Manual", player))
+    # An even easier way is to use the region.connect helper.
+    # overworld.connect(right_room, "Overworld to Right Room")
+    # right_room.connect(final_boss_room, "Right Room to Final Boss Room")
+        for connection_name in region.connections:
+            target_data = regions_by_name.get(connection_name)
+            if target_data is None:
+                raise ValueError(f"Unknown region in connections: {connection_name}")
 
-    # Link regions together
-    for region in regionMap:
-        if "connects_to" in regionMap[region] and regionMap[region]["connects_to"]:
-            for linkedRegion in regionMap[region]["connects_to"]:
-                connection = multiworld.get_entrance(getConnectionName(region, linkedRegion), player)
-                connection.connect(multiworld.get_region(linkedRegion, player))
+            target_region = world.get_region(connection_name)
+            # r.connect(conn, f"{region.name} to {connection}")
 
-def create_region(world: World, multiworld: MultiWorld, player: int, name: str, locations=None, exits=None):
-    ret = Region(name, player, multiworld)
+    # The region.connect helper even allows adding a rule immediately.
+    # We'll talk more about rule creation in the set_all_rules() function in rules.py.
+    # overworld.connect(top_left_room, "Overworld to Top Left Room", lambda state: state.has("Key", world.player))
+            # required_items = []
+            # for req in target_data.requires:
+            #     if isinstance(req, (list, tuple, set)):
+            #         required_items.extend(req)
+            #     else:
+            #         required_items.append(req)
 
-    if locations:
-        for location in locations:
-            loc_id = world.location_name_to_id.get(location, 0)
-            if world.options.dexsanity.value == 0:
-                if "Pokemon Locations" in location_name_to_location[location]["category"]:
-                    loc_id = None
-            if "(Event)" in location:
-                loc_id = None
-            locationObj = ManualLocation(player, location, loc_id, ret)
-            if location_name_to_location[location].get('prehint'):
-                world.options.start_location_hints.value.add(location)
-            ret.locations.append(locationObj)
-    
-    if exits:
-        for exit in exits:
-            ret.exits.append(Entrance(player, getConnectionName(name, exit), ret))
-    return ret
 
-def getConnectionName(entranceName: str, exitName: str):
-    return entranceName + "To" + exitName
+            # rule = HasAll(*required_items) if required_items else Rule()
+            rule = target_data.requires
+            source_region.connect(target_region, f"{region.name} to {connection_name}")
+            entrance = source_region.exits[-1]  # Get the last added entrance
+            if len(target_data.requires) > 0:
+                for item in target_data.requires:
+                    world.set_rule(entrance, HasAll(*target_data.requires))
+
+    # Some Entrances may only exist if the player enables certain options.
+    # In our case, the Hammer locks the top middle chest in its own room if the hammer option is enabled.
+    # In this case, we previously created an extra "Top Middle Room" region that we now need to connect to Overworld.
+    # if world.options.hammer:
+    #     top_middle_room = world.get_region("Top Middle Room")
+    #     overworld.connect(top_middle_room, "Overworld to Top Middle Room")
