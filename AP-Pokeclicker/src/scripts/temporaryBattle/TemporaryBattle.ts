@@ -58,7 +58,8 @@ class TemporaryBattle extends TownContent implements TmpTemporaryBattleType {
         public defeatMessage: string,
         requirements: Requirement[] = [],
         completeRequirements: Requirement[] = undefined,
-        public optionalArgs: TemporaryBattleOptionalArgument = {}
+        public optionalArgs: TemporaryBattleOptionalArgument = {},
+        public locationIds: number[] = []
     ) {
         super(requirements);
         if (!completeRequirements) {

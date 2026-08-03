@@ -624,10 +624,10 @@ function initAutoSafari() {
     // - Base factors match original script (anim: /5, move: /10)
     // - Each progressive tier t multiplies those bases by (1 + 1*t) for anim and (1 + 2*t) for move
     //   => animFactor = 5 * (1 + t), moveFactor = 10 * (1 + 2t)
-    const baseAnim = 5;
+    const baseAnim = 3;
     const baseMove = 10;
     const tiers = getAPAutoSafariProgressive();
-    const animFactor = tiers ? tiers : baseAnim; //baseAnim * Math.max(1, 1 + (tiers * 1));
+    const animFactor = tiers ? Math.floor(tiers / 2 + .5) : baseAnim; //baseAnim * Math.max(1, 1 + (tiers * 1));
     const moveFactor = tiers ? tiers * 2 : baseMove; //baseMove * Math.max(1, 1 + (tiers * 2));
 
     for (const anim of Object.keys(SafariBattle.Speed)) {

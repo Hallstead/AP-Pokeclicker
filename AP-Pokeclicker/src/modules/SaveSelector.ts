@@ -20,8 +20,8 @@ export default class SaveSelector {
         });
 
         if (saves.length >= SaveSelector.MAX_SAVES) {
-            const newImportButton: HTMLDivElement = document.querySelector('#saveSelector .new-import-buttons');
-            newImportButton.style.display = 'none';
+            // const newImportButton: HTMLDivElement = document.querySelector('#saveSelector .new-import-buttons');
+            // newImportButton.style.display = 'none';
         }
 
         $('[data-toggle="tooltip"]').tooltip();
@@ -65,7 +65,14 @@ export default class SaveSelector {
         // Sort our saves
         SortSaves();
 
-        $(document).on('keydown', SaveSelector.LoadSaveOnKeydown);
+        // $(document).on('keydown', SaveSelector.LoadSaveOnKeydown);
+
+        const hostEl = document.getElementById('ap-host') as HTMLInputElement | null;
+        const portEl = document.getElementById('ap-port') as HTMLInputElement | null;
+        const slotEl = document.getElementById('ap-slot') as HTMLInputElement | null;
+        hostEl.value = localStorage.getItem('ap-last-host') ?? '';
+        portEl.value = localStorage.getItem('ap-last-port') ?? '';
+        slotEl.value = localStorage.getItem('ap-last-slot') ?? '';
     }
 
     static LoadSaveOnKeydown(e: JQuery.KeyDownEvent) {

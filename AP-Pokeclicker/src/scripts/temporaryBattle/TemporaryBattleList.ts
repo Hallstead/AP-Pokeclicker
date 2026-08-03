@@ -61,10 +61,8 @@ TemporaryBattleList['Blue 1'] = new TemporaryBattle(
         returnTown: 'Viridian City',
         imageName: 'Blue1',
         battleBackground: 'Default',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(701);
-        },
-    }
+    },
+    [701]
 );
 TemporaryBattleList['Blue 2'] = new TemporaryBattle(
     'Blue 2',
@@ -84,10 +82,8 @@ TemporaryBattleList['Blue 2'] = new TemporaryBattle(
         displayName: 'Rival Blue',
         returnTown: 'Cerulean City',
         imageName: 'Blue1',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(702);
-        },
-    }
+    },
+    [702]
 );
 TemporaryBattleList['Blue 3'] = new TemporaryBattle(
     'Blue 3',
@@ -107,10 +103,8 @@ TemporaryBattleList['Blue 3'] = new TemporaryBattle(
         displayName: 'Rival Blue',
         returnTown: 'Vermilion City',
         imageName: 'Blue2',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(703);
-        },
-    }
+    },
+    [703]
 );
 TemporaryBattleList['Blue 4'] = new TemporaryBattle(
     'Blue 4',
@@ -136,10 +130,8 @@ TemporaryBattleList['Blue 4'] = new TemporaryBattle(
     {
         displayName: 'Rival Blue',
         imageName: 'Blue2',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(704);
-        },
-    }
+    },
+    [704]
 );
 TemporaryBattleList['Fighting Dojo'] = new TemporaryBattle(
     'Fighting Dojo',
@@ -157,7 +149,6 @@ TemporaryBattleList['Fighting Dojo'] = new TemporaryBattle(
     undefined,
     {
         firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(707);
             BagHandler.gainItem({type: ItemType.item, id: 'Fighting_egg'}, 1);
             Notifier.notify({
                 message: 'You were awarded a Fighting Egg for defeating the Fighting Dojo!',
@@ -166,7 +157,8 @@ TemporaryBattleList['Fighting Dojo'] = new TemporaryBattle(
             });
         },
         imageName: 'Black Belt',
-    }
+    },
+    [707]
 );
 TemporaryBattleList['Snorlax route 12'] = new TemporaryBattle(
     'Snorlax route 12',
@@ -183,10 +175,8 @@ TemporaryBattleList['Snorlax route 12'] = new TemporaryBattle(
         isTrainerBattle: false,
         hideTrainer: true,
         visibleRequirement: new OneFromManyRequirement([new RouteKillRequirement(10, GameConstants.Region.kanto, 11), new RouteKillRequirement(5, GameConstants.Region.kanto, 12)]),
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(708);
-        },
-    }
+    },
+    [708]
 );
 TemporaryBattleList['Snorlax route 16'] = new TemporaryBattle(
     'Snorlax route 16',
@@ -200,10 +190,8 @@ TemporaryBattleList['Snorlax route 16'] = new TemporaryBattle(
         isTrainerBattle: false,
         hideTrainer: true,
         visibleRequirement: new RouteKillRequirement(10, GameConstants.Region.kanto, 7),
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(709);
-        },
-    }
+    },
+    [709]
 );
 TemporaryBattleList['Blue 5'] = new TemporaryBattle(
     'Blue 5',
@@ -229,10 +217,8 @@ TemporaryBattleList['Blue 5'] = new TemporaryBattle(
     {
         displayName: 'Rival Blue',
         imageName: 'Blue2',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(705);
-        },
-    }
+    },
+    [705]
 );
 TemporaryBattleList['Biker Goon 1'] = new TemporaryBattle(
     'Biker Goon 1',
@@ -246,10 +232,8 @@ TemporaryBattleList['Biker Goon 1'] = new TemporaryBattle(
     {
         displayName: 'Biker Goon',
         imageName: 'Biker Goon',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(710);
-        },
-    }
+    },
+    [710]
 );
 TemporaryBattleList['Biker Goon 2'] = new TemporaryBattle(
     'Biker Goon 2',
@@ -260,10 +244,8 @@ TemporaryBattleList['Biker Goon 2'] = new TemporaryBattle(
     {
         displayName: 'Biker Goon',
         imageName: 'Biker Goon',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(711);
-        },
-    }
+    },
+    [711]
 );
 TemporaryBattleList['Biker Goon 3'] = new TemporaryBattle(
     'Biker Goon 3',
@@ -274,10 +256,8 @@ TemporaryBattleList['Biker Goon 3'] = new TemporaryBattle(
     {
         displayName: 'Biker Goon',
         imageName: 'Biker Goon',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(712);
-        },
-    }
+    },
+    [712]
 );
 TemporaryBattleList['Cue Ball Paxton'] = new TemporaryBattle(
     'Cue Ball Paxton',
@@ -292,11 +272,8 @@ TemporaryBattleList['Cue Ball Paxton'] = new TemporaryBattle(
         new TemporaryBattleRequirement('Biker Goon 3'),
     ],
     undefined,
-    {
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(713);
-        },
-    }
+    undefined,
+    [713]
 );
 TemporaryBattleList['Ash Ketchum New Island'] = new TemporaryBattle(
     'Ash Ketchum New Island',
@@ -314,7 +291,8 @@ TemporaryBattleList['Ash Ketchum New Island'] = new TemporaryBattle(
         firstTimeRewardFunction: () => {
             App.game.party.gainPokemonByName('Pikachu (Clone)', PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_REWARD));
         },
-    }
+    },
+    [714]
 );
 TemporaryBattleList['Bill\'s Grandpa'] = new TemporaryBattle(
     'Bill\'s Grandpa',
@@ -326,7 +304,8 @@ TemporaryBattleList['Bill\'s Grandpa'] = new TemporaryBattle(
     'Hahaha, that was one of the best battles I\'ve ever had.',
     [new QuestLineStepCompletedRequirement('Bill\'s Grandpa Treasure Hunt', 10)],
     undefined,
-    {imageName: 'Bill\'s Grandpa with Eevee'}
+    {imageName: 'Bill\'s Grandpa with Eevee'},
+    [715]
 );
 TemporaryBattleList['Blue 6'] = new TemporaryBattle(
     'Blue 6',
@@ -357,10 +336,8 @@ TemporaryBattleList['Blue 6'] = new TemporaryBattle(
         displayName: 'Rival Blue',
         returnTown: 'Viridian City',
         imageName: 'Blue2',
-        firstTimeRewardFunction: () => {
-            (window as any).sendLocationCheck(706);
-        },
-    }
+    },
+    [706]
 );
 // Kanto Christmas Temporary Battles, based on Blue 2
 TemporaryBattleList['Santa Jynx 1'] = new TemporaryBattle(
@@ -375,20 +352,21 @@ TemporaryBattleList['Santa Jynx 1'] = new TemporaryBattle(
     [
         new SpecialEventRequirement('Merry Christmas!'),
         new ItemOwnedRequirement('Christmas_present', 11, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 2', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 3', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 4', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 2', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 3', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 4', 1, GameConstants.AchievementOption.less),
     ],
     undefined,
     {
-        displayName: 'Santa Jynx Band',
+        displayName: 'Santa Jynx Band 1',
         firstTimeRewardFunction: () => {
             (ItemList.Christmas_present as ChristmasPresent).gain();
         },
         resetDaily: true,
         hideTrainer: true,
         imageName: 'Bill\'s Grandpa without Eevee',
-    }
+    },
+    [716]
 );
 TemporaryBattleList['Santa Jynx 2'] = new TemporaryBattle(
     'Santa Jynx 2',
@@ -404,20 +382,21 @@ TemporaryBattleList['Santa Jynx 2'] = new TemporaryBattle(
         new SpecialEventRequirement('Merry Christmas!'),
         new ItemOwnedRequirement('Christmas_present', 27, GameConstants.AchievementOption.less),
         new ItemOwnedRequirement('Christmas_present', 11),
-        new TemporaryBattleRequirement('Santa Jynx 1', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 3', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 4', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 1', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 3', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 4', 1, GameConstants.AchievementOption.less),
     ],
     undefined,
     {
-        displayName: 'Santa Jynx Band',
+        displayName: 'Santa Jynx Band 2',
         firstTimeRewardFunction: () => {
             new ChristmasPresent(3).gain();
         },
         resetDaily: true,
         hideTrainer: true,
         imageName: 'Bill\'s Grandpa without Eevee',
-    }
+    },
+    [717]
 );
 TemporaryBattleList['Santa Jynx 3'] = new TemporaryBattle(
     'Santa Jynx 3',
@@ -434,20 +413,21 @@ TemporaryBattleList['Santa Jynx 3'] = new TemporaryBattle(
         new SpecialEventRequirement('Merry Christmas!'),
         new ItemOwnedRequirement('Christmas_present', 49, GameConstants.AchievementOption.less),
         new ItemOwnedRequirement('Christmas_present', 27),
-        new TemporaryBattleRequirement('Santa Jynx 1', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 2', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 4', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 1', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 2', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 4', 1, GameConstants.AchievementOption.less),
     ],
     undefined,
     {
-        displayName: 'Santa Jynx Band',
+        displayName: 'Santa Jynx Band 3',
         firstTimeRewardFunction: () => {
             new ChristmasPresent(6).gain();
         },
         resetDaily: true,
         hideTrainer: true,
         imageName: 'Bill\'s Grandpa without Eevee',
-    }
+    },
+    [718]
 );
 TemporaryBattleList['Santa Jynx 4'] = new TemporaryBattle(
     'Santa Jynx 4',
@@ -462,13 +442,13 @@ TemporaryBattleList['Santa Jynx 4'] = new TemporaryBattle(
     [
         new SpecialEventRequirement('Merry Christmas!'),
         new ItemOwnedRequirement('Christmas_present', 49),
-        new TemporaryBattleRequirement('Santa Jynx 1', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 2', 1, GameConstants.AchievementOption.less),
-        new TemporaryBattleRequirement('Santa Jynx 3', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 1', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 2', 1, GameConstants.AchievementOption.less),
+        // new TemporaryBattleRequirement('Santa Jynx 3', 1, GameConstants.AchievementOption.less),
     ],
     undefined,
     {
-        displayName: 'Santa Jynx Band',
+        displayName: 'Santa Jynx Band 4',
         firstTimeRewardFunction: () => {
             new ChristmasPresent(10).gain();
         },
@@ -480,7 +460,8 @@ TemporaryBattleList['Santa Jynx 4'] = new TemporaryBattle(
         resetDaily: true,
         hideTrainer: true,
         imageName: 'Bill\'s Grandpa without Eevee',
-    }
+    },
+    [719]
 );
 
 //Johto Temporary Battles
@@ -3571,7 +3552,8 @@ TemporaryBattleList['Ash Ketchum Kanto'] = new TemporaryBattle(
         displayName: 'Ash Ketchum',
         returnTown: 'Pallet Town',
         imageName: 'Ash Ketchum',
-    }
+    },
+    [720]
 );
 TemporaryBattleList['Ash Ketchum Johto'] = new TemporaryBattle(
     'Ash Ketchum Johto',

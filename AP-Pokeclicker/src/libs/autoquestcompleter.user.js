@@ -319,10 +319,17 @@ function initAutoQuest() {
             return res;
         }
 
-        App.game.quests.canStartNewQuest = function() {
-            // Check we haven't already used up all quest slots
+        // Preserve the original behavior to use when the script is disabled
+        const canStartNewQuestOld = App.game.quests.canStartNewQuest;
+        App.game.quests.canStartNewQuest = function(...args) {
             const apEnabled = getAPAutoQuestFlag();
-            const cap = apEnabled ? maxQuests : 1;
+            // If AP gating is OFF, defer entirely to the base game's logic
+            if (!apEnabled) {
+                return canStartNewQuestOld.apply(this, args);
+            }
+
+            // AP-enabled: allow up to `maxQuests` active slots
+            const cap = maxQuests;
             if (this.currentQuests().length >= cap) {
                 return false;
             }

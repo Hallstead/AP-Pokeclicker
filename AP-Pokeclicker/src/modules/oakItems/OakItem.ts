@@ -16,6 +16,7 @@ export default class OakItem extends ExpUpgrade {
     private receivedKO: any;
     private locationID: number | null;
     private locationSent: boolean;
+    private levelLocationIds: number[];
 
     constructor(
         name: any,
@@ -32,12 +33,14 @@ export default class OakItem extends ExpUpgrade {
         public bonusSymbol: string = '×',
         locationID: number | null = null,
         locationSent: boolean = false,
+        levelLocationIds: number[] = [],
     ) {
         super(name, displayName, maxLevel, expList, costList, bonusList, increasing);
         this.isActiveKO = ko.observable(false);
         this.receivedKO = ko.observable(false);
         this.locationID = locationID;
         this.locationSent = locationSent;
+        this.levelLocationIds = levelLocationIds;
     }
 
     use(exp: number = this.expGain, scale = 1) {
@@ -132,5 +135,13 @@ export default class OakItem extends ExpUpgrade {
 
     set received(bool: boolean) {
         this.receivedKO(bool);
+    }
+
+    buy(): void {
+        let level = this.level;
+        super.buy();
+        if (this.level > level) {
+            (window as any).sendLocationCheck?.(this.levelLocationIds[this.level - 1]);
+        }
     }
 }

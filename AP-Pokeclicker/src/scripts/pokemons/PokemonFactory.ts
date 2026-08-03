@@ -265,10 +265,14 @@ class PokemonFactory {
         const bonus = skipBonus ? 1 : App.game.multiplier.getBonus('roaming');
         const maxRoute = allRoutes.length - 1;
         const routeInd = allRoutes.indexOf(curRoute);
+
+        const regionName = GameConstants.Region[region];
+        const roamerRate = (window as any).APFlags[`${regionName}_roamer_rate`] || 1;
+        const roamerRoute = (window as any).APFlags.roaming_encounter_multiplier_route || true;
         // Check if we should have increased chances on this route (3 x rate)
         const increasedChance = RoamingPokemonList.getIncreasedChanceRouteBySubRegionGroup(player.region, RoamingPokemonList.findGroup(region, subRegion.id))()?.number == curRoute?.number;
-        const roamingChance = (max + ((min - max) * (maxRoute - routeInd) / (maxRoute))) / ((increasedChance ? GameConstants.ROAMING_INCREASED_CHANCE : 1) * bonus);
-        return Rand.chance(roamingChance);
+        const roamingChance = (max + ((min - max) * (maxRoute - routeInd) / (maxRoute))) / ((increasedChance ? GameConstants.ROAMING_INCREASED_CHANCE : 1) * bonus * (roamerRoute ? roamerRate : 1));
+        return Rand.chance(roamingChance / (roamerRoute ? 1 : roamerRate));
     }
 
     private static catchRateHelper(baseCatchRate: number, noVariation = false): number {
@@ -396,7 +400,10 @@ class PokemonFactory {
         const pokemon = Rand.fromWeightedArray(availablePokemon, weights);
         const pokemonData = pokemonMap[pokemon];
         const shiny = PokemonFactory.generateShiny(GameConstants.SHINY_CHANCE_FARM);
-        const catchChance = PokemonFactory.catchRateHelper(pokemonData.catchRate + 25, true);
+        const catchChance = PokemonFactory.catchRateHelper(
+            pokemonData.catchRate + GameConstants.WANDERER_BASE_CATCH_BONUS,
+            true
+        );
         const wanderer = new WandererPokemon(pokemon, berry.type, catchChance, shiny);
         return wanderer;
     }

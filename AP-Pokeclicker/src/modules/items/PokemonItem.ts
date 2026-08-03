@@ -14,6 +14,7 @@ import { LogBookTypes } from '../logbook/LogBookTypes';
 export default class PokemonItem extends PokerusIndicatingItem {
     type: PokemonNameType;
     private _translatedOrDisplayName: KnockoutComputed<string>;
+    public locationId: number = null;
 
     constructor(
         pokemon: PokemonNameType,
@@ -98,6 +99,18 @@ export default class PokemonItem extends PokerusIndicatingItem {
     }
 
     get displayName(): string {
+        // let chain = Promise.resolve();
+        // if (this.locationId) {
+        //     chain = chain.then(() => (window as any).scout(this.locationId)
+        //         .then((result: any) => {console.log(result.name); return result.name;}));
+        //     return chain;
+        // }
         return this._translatedOrDisplayName();
     }
+
+    set displayName(value: string) {
+        this._translatedOrDisplayName = ko.pureComputed(() => value);
+    }
+
+
 }

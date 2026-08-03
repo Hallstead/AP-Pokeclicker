@@ -66,14 +66,49 @@
             "group": "Example Options"
         },
         "dexsanity": {
+            "type": "Choice",
+            "description": [
+                "Pokemon join the pool of locations and items.",
+                "With this enabled, capturing all pokemon before traveling to the next region is logically required.",
+                "",
+                "None: Pokemon are not locations, and catching a pokemon gives that pokemon.",
+                "Shuffled: Pokemon locations only contain Pokemon",
+                "Full: All Pokemon are randomized into the item pool.",
+                "",
+                "Note: Enabling Dexsanity turns on the challenge that you must capture all Pokemon before progressing to the next region.",
+                "This can be disabled in Start Menu > Challenge Modes"
+            ],
+            "values": {
+                "none": 0,
+                "shuffled": 2,
+                "full": 3
+            },
+            "default": 0,
+            "allow_custom_value": false,
+            "group": "Game Options"
+        },
+        "include_alt_pokemon": {
             "type": "Toggle",
             "description": [
-                "Include all pokemon in the Pokedex as locations?",
-                "Pokemon will be randomized into the item pool, and when you catch/evolve/hatch",
-                "a new pokemon, instead of obtaining that pokemon it sends a check.",
-                "This option forces obtaining all pokemon before traveling to Johto."
+                "With this enabled, alternate forms of Pokemon will be included in the randomization pool.",
+                "This does nothing if dexsanity is set to none."
             ],
             "default": false,
+            "group": "Game Options"
+        },
+        "badge_randomization": {
+            "type": "Choice",
+            "description": [
+                "This option sets how badges are randomized.",
+                "None: Badges are placed in their vanilla locations. This option leads to more vanilla progression.",
+                "Full: Badges are put into the item pool with everything else."
+            ],
+            "values": {
+                "none": 0,
+                "full": 2
+            },
+            "default": 0,
+            "allow_custom_value": false,
             "group": "Game Options"
         },
         "use_scripts": {
@@ -117,26 +152,231 @@
             "default": false,
             "group": "Game Options"
         },
-        "mystery_egg": {
+        "include_seasonal_events": {
+            "type": "Toggle",
+            "description": [
+                "Are Seasonal Event locations and pokemon included in the pool?",
+                "This option overrides the use_scripts option."
+            ],
+            "default": true,
+            "group": "Game Options"
+        },
+        "include_codes_as_items": {
+            "type": "Toggle",
+            "description": [
+                "Should the codes be included as items in the item pool?",
+                "With this enabled, the input to enter codes manually will be disabled."
+            ],
+            "default": false,
+            "group": "Game Options"
+        },
+        "include_palaeontologist_token": {
+            "type": "Toggle",
+            "description": [
+                "Should a Palaeontologist Token be included in the item pool?",
+                "With this enabled, a Palaeontologist Token will be available to trade for Pikachu (Palaeontologist) on Cinnabar Island."
+            ],
+            "default": false,
+            "group": "Game Options"
+        },
+        "_mapsanity": {
+            "type": "Choice",
+            "description": [
+                "This option adds all map locations to the item pool.",
+                "Instead of unlocking their normal map locations, when you would unlock a route or town, it instead sends a check to the server.",
+                "None: This option is disabled, and map location unlock as normal",
+                "Shuffled: Map locations are shuffled amongst themselves.",
+                "Full: Map locations are added to the item pool with everything else."
+            ],
+            "values": {
+                "none": 0,
+                "shuffled": 1,
+                "full": 2
+            },
+            "default": 0,
+            "allow_custom_value": false,
+            "group": "Game Options"
+        },
+        "starting_safari_level": {
+            "type": "Range",
+            "description": [
+                "Sets the starting level for the Safari Zone."
+            ],
+            "range_start": 1,
+            "default": 1,
+            "range_end": 40,
+            "group": "Game Options"
+        },
+        "starting_underground_level": {
+            "type": "Range",
+            "description": [
+                "Sets the starting level for the Underground."
+            ],
+            "range_start": 0,
+            "default": 0,
+            "range_end": 60,
+            "group": "Game Options"
+        },
+        "roaming_encounter_multiplier": {
+            "type": "Range",
+            "description": [
+                "Sets the multiplier for roaming encounter rates on the boosted route.",
+                "Higher values make roaming Pokemon appear more frequently on that route."
+            ],
+            "range_start": 1,
+            "default": 2,
+            "range_end": 100,
+            "group": "Multiplier Options"
+        },
+        "roaming_encounter_multiplier_route": {
+            "type": "Toggle",
+            "description": [
+                "Should the roaming encounter rate multiplier apply to the boosted route only?",
+                "With this enabled, only the boosted route will have increased roaming encounter rates.",
+                "With this disabled, all routes will have increased roaming encounter rates."
+            ],
+            "default": true,
+            "group": "Multiplier Options"
+        },
+        "pokedollar_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Pokedollars earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "dungeon_token_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Dungion Tokens earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "quest_point_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Quest Points earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "diamond_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Diamonds earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "farm_point_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Farm Points earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "_battle_point_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Battle Points earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "_conquest_token_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of Conquest Tokens earned from all sources."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "exp_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the amount of exp earned from battles."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "wanderer_appearance_multiplier": {
+            "type": "Range",
+            "description": [
+                "A multiplier for the chance a Wanderer has to appear in the farm.",
+                "For example, a value of 2 would double the chance/frequency for a Wanderer to appear."
+            ],
+            "default": 1,
+            "range_start": 1,
+            "range_end": 10,
+            "group": "Multiplier Options"
+        },
+        "wanderer_base_catch_rate": {
+            "type": "Range",
+            "description": [
+                "Sets the base chance to catch a Wanderer.",
+                "100 would be a guaranteed catch. 0 uses the default catch rate from the game."
+            ],
+            "default": 0,
+            "range_start": 0,
+            "range_end": 100,
+            "group": "Multiplier Options"
+        },
+        "starter_logic": {
+            "type": "Toggle",
+            "description": [
+                "Are starter Pokemon considered in logic at the beginning of the region?",
+                "With this enabled, you would be expected to reset the game to obtain all the starters."
+            ],
+            "default": false,
+            "group": "Logic Options"
+            
+        },
+        "early_town_map": {
+            "type": "Toggle",
+            "description": [
+                "Determines if the Town Map is forced early."
+            ],
+            "default": true,
+            "group": "Logic Options"
+        },
+        "mystery_egg_in_logic": {
             "type": "Toggle",
             "description": [
                 "Are Mystery Eggs considered in logic for obtaining pokemon?"
             ],
             "default": false,
-            "group": "Game Options"
+            "group": "Logic Options"
         },
         "clicks_per_second": {
             "type": "Range",
             "description": [
                 "Sets the assumed clicks per second for the player.",
                 "This affects the logic for attack needed for the player to be expected to defeat dungeons and gym leaders.",
-                "Higher values make the game easier.",
-                "It is recommended to check your clicks per second rate with an online CPS tester."
+                "It is recommended to check your clicks per second rate with an online CPS tester to ensure you can click as fast as your setting."
             ],
             "range_start": 1,
             "default": 5,
             "range_end": 20,
-            "group": "Game Options"
+            "group": "Logic Options"
         },
         "dungeon_logic": {
             "type": "Choice",
@@ -153,7 +393,25 @@
             },
             "default": 1,
             "allow_custom_value": false,
-            "group": "Game Options"
+            "group": "Logic Options"
+        },
+        "safari_zone_logic": {
+            "type": "Toggle",
+            "description": [
+                "Is the Auto Safari Zone script logically required to obtain pokemon in the Safari Zone?",
+                "This does nothing if use_scripts or include_scripts_as_items are false."
+            ],
+            "default": false,
+            "group": "Logic Options"
+        },
+        "wanderers_in_logic": {
+            "type": "Toggle",
+            "description": [
+                "Are Wanderers considered in logic for obtaining pokemon?",
+                "This will remove wandering in the farm from logic. It does not remove those pokemon from the pool."
+            ],
+            "default": false,
+            "group": "Logic Options"
         }
     }
 }

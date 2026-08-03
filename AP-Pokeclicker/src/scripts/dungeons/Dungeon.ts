@@ -110,7 +110,8 @@ class Dungeon {
         public tokenCost: number,
         public difficultyRoute: number, // Closest route in terms of difficulty, used for egg steps, dungeon tokens etc.
         public rewardFunction = () => {},
-        private optionalParameters: optionalDungeonParameters = {}
+        private optionalParameters: optionalDungeonParameters = {},
+        public locationIds: number[] = []
     ) {
         // Keep a list of mimics to use with getCaughtMimics()
         Object.entries(this.lootTable).forEach(([_, itemList]) => {
@@ -572,7 +573,10 @@ dungeonList['Viridian Forest'] = new Dungeon('Viridian Forest',
             hide: true,
         }),
     ],
-    50, 1, () => (window as any).sendLocationCheck(401)
+    50, 1,
+    undefined,
+    undefined,
+    [401]
 );
 
 dungeonList['Mt. Moon'] = new Dungeon('Mt. Moon',
@@ -682,7 +686,10 @@ dungeonList['Mt. Moon'] = new Dungeon('Mt. Moon',
             setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
         });
         (window as any).sendLocationCheck(402);
-    });
+    },
+    undefined,
+    [402]
+);
 
 dungeonList['Diglett\'s Cave'] = new Dungeon('Diglett\'s Cave',
     ['Diglett'],
@@ -712,7 +719,11 @@ dungeonList['Diglett\'s Cave'] = new Dungeon('Diglett\'s Cave',
             hide: true,
         }),
     ],
-    250, 11, () => (window as any).sendLocationCheck(403));
+    250, 11,
+    undefined,
+    undefined,
+    [403]
+);
 
 dungeonList['Rock Tunnel'] = new Dungeon('Rock Tunnel',
     [
@@ -827,7 +838,11 @@ dungeonList['Rock Tunnel'] = new Dungeon('Rock Tunnel',
                 new GymPokemon('Bellsprout', 5147, 19),
             ], { weight: 1 }, 'Ariana'),
     ],
-    500, 9, () => (window as any).sendLocationCheck(404));
+    500, 9,
+    undefined,
+    undefined,
+    [404]
+);
 
 dungeonList['Rocket Game Corner'] = new Dungeon('Rocket Game Corner',
     [
@@ -926,7 +941,11 @@ dungeonList['Rocket Game Corner'] = new Dungeon('Rocket Game Corner',
                 new GymPokemon('Kangaskhan', 10101, 29),
             ], { weight: 1 }, 'Giovanni', 'Giovanni'),
     ],
-    625, 7, () => (window as any).sendLocationCheck(405));
+    625, 7,
+    undefined,
+    undefined,
+    [405]
+);
 
 dungeonList['Pokémon Tower'] = new Dungeon('Pokémon Tower',
     [
@@ -1026,7 +1045,11 @@ dungeonList['Pokémon Tower'] = new Dungeon('Pokémon Tower',
             hide: true,
         }),
     ],
-    750, 7, () => (window as any).sendLocationCheck(406));
+    750, 7,
+    undefined,
+    undefined,
+    [406]
+);
 
 dungeonList['Silph Co.'] = new Dungeon('Silph Co.',
     [
@@ -1230,7 +1253,11 @@ dungeonList['Silph Co.'] = new Dungeon('Silph Co.',
                 new GymPokemon('Nidoqueen', 16144, 41),
             ], { weight: 1, hide: true, requirement: new QuestLineStepCompletedRequirement('Team Rocket', 2)}, 'Giovanni', 'Giovanni'),
     ],
-    875, 7, () => (window as any).sendLocationCheck(407));
+    875, 7,
+    undefined,
+    undefined,
+    [407]
+);
 
 dungeonList['Power Plant'] = new Dungeon('Power Plant',
     ['Pikachu', 'Magnemite', 'Magneton', 'Voltorb', 'Electrode'],
@@ -1256,7 +1283,11 @@ dungeonList['Power Plant'] = new Dungeon('Power Plant',
             hide: true,
         }),
     ],
-    1000, 18, () => (window as any).sendLocationCheck(408));
+    1000, 18,
+    undefined,
+    undefined,
+    [408]
+);
 
 dungeonList['Seafoam Islands'] = new Dungeon('Seafoam Islands',
     ['Zubat', 'Golbat', 'Psyduck', 'Golduck', 'Slowpoke', 'Slowbro', 'Krabby', 'Horsea', 'Magikarp'],
@@ -1283,7 +1314,11 @@ dungeonList['Seafoam Islands'] = new Dungeon('Seafoam Islands',
             hide: true,
         }),
     ],
-    1250, 19, () => (window as any).sendLocationCheck(409));
+    1250, 19,
+    undefined,
+    undefined,
+    [409]
+);
 
 dungeonList['Pokémon Mansion'] = new Dungeon('Pokémon Mansion',
     [
@@ -1347,7 +1382,11 @@ dungeonList['Pokémon Mansion'] = new Dungeon('Pokémon Mansion',
     },
     17760,
     [new DungeonBossPokemon('Magmar', 88800, 40)],
-    1500, 20, () => (window as any).sendLocationCheck(410));
+    1500, 20,
+    undefined,
+    undefined,
+    [410]
+);
 
 dungeonList['Mt. Ember Summit'] = new Dungeon('Mt. Ember Summit',
     [
@@ -1389,7 +1428,11 @@ dungeonList['Mt. Ember Summit'] = new Dungeon('Mt. Ember Summit',
         new DungeonBossPokemon('Magmar', 101427, 40),
         new DungeonBossPokemon('Moltres', 184462, 50),
     ],
-    1750, 27, () => (window as any).sendLocationCheck(411));
+    1750, 27,
+    undefined,
+    undefined,
+    [411]
+);
 
 dungeonList['Berry Forest'] = new Dungeon('Berry Forest',
     ['Pidgey', 'Pidgeotto', 'Oddish', 'Gloom', 'Venonat', 'Psyduck', 'Golduck', 'Poliwag', 'Bellsprout', 'Weepinbell', 'Slowpoke', 'Slowbro', 'Drowzee', 'Exeggcute', 'Goldeen', 'Magikarp'],
@@ -1424,7 +1467,11 @@ dungeonList['Berry Forest'] = new Dungeon('Berry Forest',
         new DungeonBossPokemon('Venomoth', 101427, 30),
         new DungeonBossPokemon('Hypno', 101427, 30),
     ],
-    1750, 29, () => (window as any).sendLocationCheck(412));
+    1750, 29,
+    undefined,
+    undefined,
+    [412]
+);
 
 dungeonList['New Island'] = new Dungeon('New Island',
     [
@@ -1477,7 +1524,11 @@ dungeonList['New Island'] = new Dungeon('New Island',
     },
     18500,
     [new DungeonBossPokemon('Armored Mewtwo', 131500, 70)],
-    1800, 40);
+    1800, 40,
+    undefined,
+    undefined,
+    [415]
+);
 
 dungeonList['Victory Road'] = new Dungeon('Victory Road',
     [
@@ -1604,10 +1655,11 @@ dungeonList['Victory Road'] = new Dungeon('Victory Road',
             hide: true,
         }),
     ],
-    2000, 23, () => {
-        (window as any).sendLocationCheck(413);
-        (window as any).sendLocationCheck(9); // Holo Caster check
-    });
+    2000, 23,
+    undefined,
+    undefined,
+    [413, 9] // Holo Caster check
+);
 
 dungeonList['Cerulean Cave'] = new Dungeon('Cerulean Cave',
     ['Golbat', 'Parasect', 'Psyduck', 'Golduck', 'Primeape', 'Poliwag', 'Machoke', 'Slowpoke', 'Slowbro', 'Magneton', 'Electrode', 'Goldeen', 'Magikarp', 'Ditto'],
@@ -1649,7 +1701,11 @@ dungeonList['Cerulean Cave'] = new Dungeon('Cerulean Cave',
                 ]),
             ])}),
     ],
-    2500, 23, () => (window as any).sendLocationCheck(414));
+    2500, 23,
+    undefined,
+    undefined,
+    [414]
+);
 
 dungeonList['Ruby Path'] = new Dungeon('Ruby Path',
     ['Geodude', 'Graveler', 'Machop', 'Machoke', 'Slugma'],

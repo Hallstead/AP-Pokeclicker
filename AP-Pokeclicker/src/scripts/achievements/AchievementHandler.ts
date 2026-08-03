@@ -511,7 +511,7 @@ class AchievementHandler {
                 if (GymList[gym].requirements.some((req) => req instanceof DevelopmentRequirement)) {
                     return;
                 }
-                const elite = gym.includes('Elite') || gym.includes('Champion') || gym.includes('Supreme');
+                const elite = gym.includes('Elite') || gym.includes('Champion') || gym.includes('Supreme') || gym.includes('Hallstead');
                 const displayName = GymList[gym]?.displayName;
 
                 const gymRegion = subregion ? subregion : GameConstants.camelCaseToString(GameConstants.Region[GameConstants.getGymRegion(gym)]);
@@ -522,15 +522,19 @@ class AchievementHandler {
                 const leaderName: string = !elite && !displayName ? `${GymList[gym].leaderName}'s` : '';
 
                 if (GymList[gym]?.flags?.achievement) {
+                    // Visibility gate: hide Hallstead's Yacht achievements until at least one clear
+                    const visibilityGate = gym === 'Hallstead\'s Yacht'
+                        ? () => App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym)]() > 0
+                        : null;
                     AchievementHandler.addAchievement(
                         `${elite ? `${gymRegion} ` : ''}${gymTitle} Regular`,
-                        `Defeat ${leaderName} ${gymTitle} in ${gymRegion} 10 times.`, new ClearGymRequirement(GameConstants.ACHIEVEMENT_DEFEAT_GYM_VALUES[0], GameConstants.getGymIndex(gym)), 1, category);
+                        `Defeat ${leaderName} ${gymTitle} in ${gymRegion} 10 times.`, new ClearGymRequirement(GameConstants.ACHIEVEMENT_DEFEAT_GYM_VALUES[0], GameConstants.getGymIndex(gym)), 1, category, visibilityGate);
                     AchievementHandler.addAchievement(
                         `${elite ? `${gymRegion} ` : ''}${gymTitle} Ruler`,
-                        `Defeat ${leaderName} ${gymTitle} in ${gymRegion} 100 times.`, new ClearGymRequirement(GameConstants.ACHIEVEMENT_DEFEAT_GYM_VALUES[1], GameConstants.getGymIndex(gym)), 2, category);
+                        `Defeat ${leaderName} ${gymTitle} in ${gymRegion} 100 times.`, new ClearGymRequirement(GameConstants.ACHIEVEMENT_DEFEAT_GYM_VALUES[1], GameConstants.getGymIndex(gym)), 2, category, visibilityGate);
                     AchievementHandler.addAchievement(
                         `${elite ? `${gymRegion} ` : ''}${gymTitle} Owner`,
-                        `Defeat ${leaderName} ${gymTitle} in ${gymRegion} 1,000 times.`, new ClearGymRequirement(GameConstants.ACHIEVEMENT_DEFEAT_GYM_VALUES[2], GameConstants.getGymIndex(gym)), 3, category);
+                        `Defeat ${leaderName} ${gymTitle} in ${gymRegion} 1,000 times.`, new ClearGymRequirement(GameConstants.ACHIEVEMENT_DEFEAT_GYM_VALUES[2], GameConstants.getGymIndex(gym)), 3, category, visibilityGate);
                 }
             });
         };

@@ -27,10 +27,10 @@ export default class RedeemableCodes implements Saveable {
         this.codeList = [
             new RedeemableCode('dev', GameHelper.hash('dev'), false, async () => {
                 // Give the player 10k of each currency
-                App.game.wallet.gainMoney(10000);
-                App.game.wallet.gainDungeonTokens(10000);
-                App.game.wallet.gainQuestPoints(10000);
-                App.game.wallet.gainFarmPoints(10000);
+                App.game.wallet.gainMoney(100000);
+                App.game.wallet.gainDungeonTokens(100000);
+                App.game.wallet.gainQuestPoints(100000);
+                App.game.wallet.gainFarmPoints(100000);
 
                 Notifier.notify({
                     title: 'Code activated!',

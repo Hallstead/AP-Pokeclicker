@@ -77,6 +77,30 @@ export default class Wallet implements Feature {
             amount.amount = Math.floor(amount.amount * this.calcBonus(amount));
         }
 
+        switch (amount.currency) {
+            case Currency.money:
+                amount.amount *= (window as any).APFlags.options.pokedollar_multiplier || 1;
+                break;
+            case Currency.dungeonToken:
+                amount.amount *= (window as any).APFlags.options.dungeon_token_multiplier || 1;
+                break;
+            case Currency.questPoint:
+                amount.amount *= (window as any).APFlags.options.quest_point_multiplier || 1;
+                break;
+            case Currency.diamond:
+                amount.amount *= (window as any).APFlags.options.diamond_multiplier || 1;
+                break;
+            case Currency.farmPoint:
+                amount.amount *= (window as any).APFlags.options.farm_point_multiplier || 1;
+                break;
+            case Currency.battlePoint:
+                amount.amount *= (window as any).APFlags.options.battle_point_multiplier || 1;
+                break;
+            case Currency.contestToken:
+                amount.amount *= (window as any).APFlags.options.conquest_token_multiplier || 1;
+                break;
+        }
+
         GameHelper.incrementObservable(this.currencies[amount.currency], amount.amount);
         animateCurrency(amount);
 

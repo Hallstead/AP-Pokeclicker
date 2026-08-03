@@ -8,9 +8,11 @@ class Save {
     static key = '';
 
     public static store(player: Player) {
+        const w = (window as any);
         localStorage.setItem(`player${Save.key}`, JSON.stringify(player));
         localStorage.setItem(`save${Save.key}`, JSON.stringify(this.getSaveObject()));
         localStorage.setItem(`settings${Save.key}`, JSON.stringify(Settings.toJSON()));
+        //this.copySaveToAP();
 
         this.counter = 0;
         //console.log('%cGame saved', 'color:#3498db;font-weight:900;');
@@ -28,10 +30,12 @@ class Save {
     }
 
     public static load(): Player {
+        const w = (window as any);
         const saved = localStorage.getItem(`player${Save.key}`);
 
         // Load our settings, or the saved default settings, or no settings
         const settings = localStorage.getItem(`settings${Save.key}`) || localStorage.getItem('settings') || '{}';
+
         Settings.fromJSON(JSON.parse(settings));
 
         // Sort modules now, save settings, load settings
@@ -80,6 +84,35 @@ class Save {
         });
     }
 
+    public static copySaveToAP() {
+        const backupSaveData = {player, save: this.getSaveObject(), settings: Settings.toJSON()};
+        const apSave = {
+            save: '',
+            receivedItems: {},
+        };
+        apSave.save = SaveSelector.btoa(JSON.stringify(backupSaveData));
+        apSave.receivedItems = (window as any).APFlags.receivedItems || {};
+        console.log('Copying save to AP data storage:', apSave);
+        (window as any).setItem('save', apSave);
+        Notifier.notify({
+            title: 'Save stored',
+            message: 'Save stored in AP data storage.',
+            type: NotificationConstants.NotificationOption.info,
+        });
+        Save.printAPSave();
+    }
+
+    public static async printAPSave() {
+        const data = await (window as any).getItem('save');
+        console.log('AP Save Data:', data.save);
+        console.log('AP Received Items:', data.receivedItems);
+        Notifier.notify({
+            title: 'Save printed',
+            message: 'Save data printed to console.',
+            type: NotificationConstants.NotificationOption.info,
+        });
+    }
+
     public static async delete(): Promise<void> {
         const confirmDelete = await Notifier.prompt({
             title: 'Delete save file',
@@ -92,6 +125,9 @@ class Save {
             localStorage.removeItem(`player${Save.key}`);
             localStorage.removeItem(`save${Save.key}`);
             localStorage.removeItem(`settings${Save.key}`);
+
+            (window as any).setItem('receivedItems', {});
+
             // Prevent the old save from being saved again
             window.onbeforeunload = () => {};
             location.reload();
@@ -184,6 +220,45 @@ class Save {
         setTimeout(() => {
             try {
                 const decoded = SaveSelector.atob(fr.result as string);
+                console.debug('decoded:', decoded);
+                const json = JSON.parse(decoded);
+                console.debug('json:', json);
+                if (decoded && json && json.player && json.save) {
+                    localStorage.setItem(`player${Save.key}`, JSON.stringify(json.player));
+                    localStorage.setItem(`save${Save.key}`, JSON.stringify(json.save));
+                    if (json.settings) {
+                        localStorage.setItem(`settings${Save.key}`, JSON.stringify(json.settings));
+                    } else {
+                        localStorage.removeItem(`settings${Save.key}`);
+                    }
+                    // Prevent the old save from being saved again
+                    window.onbeforeunload = () => {};
+                    location.reload();
+                } else {
+                    Notifier.notify({
+                        message: 'This is not a valid decoded savefile',
+                        type: NotificationConstants.NotificationOption.danger,
+                    });
+                }
+            } catch (err) {
+                Notifier.notify({
+                    message: 'This is not a valid savefile',
+                    type: NotificationConstants.NotificationOption.danger,
+                });
+            }
+        }, 1000);
+    }
+
+    public static async importSaveFromAP() {
+        const apPlayer = (window as any).APFlags.name;
+        const data = await (window as any).getItem('save');
+        const save = data.save;
+        const receivedItems = data.receivedItems;
+
+        setTimeout(() => {
+            try {
+                (window as any).setItem('receivedItems', receivedItems);
+                const decoded = SaveSelector.atob(save);
                 console.debug('decoded:', decoded);
                 const json = JSON.parse(decoded);
                 console.debug('json:', json);

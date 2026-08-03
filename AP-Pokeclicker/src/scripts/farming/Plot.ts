@@ -450,7 +450,7 @@ class Plot implements Saveable {
             return undefined;
         }
         // Chance to generate wandering Pokemon
-        if (Rand.chance(GameConstants.WANDER_RATE * App.game.farming.externalAuras[AuraType.Attract]())) {
+        if (Rand.chance(GameConstants.WANDER_RATE * App.game.farming.externalAuras[AuraType.Attract]() * ((window as any).APFlags.options.wanderer_appearance_multiplier || 1))) {
             // Get a random Pokemon from the list of possible encounters
             const wanderer = PokemonFactory.generateWandererData(this);
             this.wanderer = wanderer;

@@ -12,6 +12,7 @@ import Rand from '../utilities/Rand';
 import Amount from '../wallet/Amount';
 import type BattlePokemon from './BattlePokemon';
 import type { Observable as KnockoutObservable, PureComputed } from 'knockout';
+import RegionRoute from '../routes/RegionRoute';
 
 /**
  * Handles all logic related to battling
@@ -84,6 +85,15 @@ export default class Battle {
         enemyPokemon.defeat();
 
         GameHelper.incrementObservable(App.game.statistics.routeKills[player.region][Battle.route]);
+        
+        const kills = App.game.statistics.routeKills[player.region][Battle.route]();
+        if (kills >= GameConstants.ROUTE_KILLS_NEEDED) {
+            if ((Battle.route as RegionRoute).locationIds !== undefined) {
+                for (const id of (Battle.route as RegionRoute).locationIds) {
+                    (window as any).sendLocationCheck(id);
+                }
+            }
+        }
 
         App.game.breeding.progressEggsBattle(Battle.route, player.region);
         const isShiny: boolean = enemyPokemon.shiny;

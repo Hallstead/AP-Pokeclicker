@@ -36,6 +36,9 @@
     },
     "Kanto Champion": {
         "connects_to": [],
-        "requires": "|Progressive Elite Badge:5|"
+        "requires": "|Kanto Elite Champion Badge|"
+    },
+    "": {
+        "starting": true
     }
 }

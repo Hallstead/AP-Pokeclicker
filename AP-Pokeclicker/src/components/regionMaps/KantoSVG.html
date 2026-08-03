@@ -721,11 +721,11 @@
 
         <%- include('templates/mapOverlay',
             { name: "Route 4 Pokémon Center"
-            , x: 40, y: 10
-            , width: 1, height: 1
+            , x: 39, y: 9
+            , width: 2, height: 2
             , databind: "click:function(){MapHelper.moveToTown('Route 4 Pokémon Center')}, attr:{ class: MapHelper.calculateTownCssClass('Route 4 Pokémon Center') }"
             , visible:  "App.game.statistics.routeKills['kanto'][3]() >= 10"
-            , image: "assets/images/map/transparent.png"
+            , image: "assets/images/map/buildings/pokecenter_small.png"
             })
         %>
 

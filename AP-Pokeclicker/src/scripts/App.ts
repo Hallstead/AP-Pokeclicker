@@ -31,7 +31,7 @@ class App {
 
             // Signal that App.game has been created for integrations that need to wait
             try {
-                (window as any).__AP_GAME_READY__ = true;
+                (window as any).APFlags.set('gameReady', true);
                 if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
                     window.dispatchEvent(new Event('ap:game-ready'));
                 }

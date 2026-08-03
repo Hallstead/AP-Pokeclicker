@@ -21,7 +21,7 @@
 class EnhancedAutoClicker {
     // Constants
     static ticksPerSecond = 20;
-    static maxClickMultiplier = 1;
+    static maxClickMultiplier = 5;
     // Auto Clicker
     static autoClickState = ko.observable(validateStorage('autoClickState', false));
     static autoClickMultiplier = validateStorage('autoClickMultiplier', 1, (v) => (Number.isInteger(v) && v >= 1));
@@ -326,7 +326,7 @@ class EnhancedAutoClicker {
         const next = Math.max(1, Math.floor(raw));
         this.maxClickMultiplier = next;
         this.autoClickMultiplier = next;
-        try { localStorage.setItem('autoClickMultiplier', this.autoClickMultiplier); } catch (_) { /* ignore */ }
+        // try { localStorage.setItem('autoClickMultiplier', this.autoClickMultiplier); } catch (_) { /* ignore */ }
 
         const slider = document.getElementById('auto-click-rate');
         if (slider && slider instanceof HTMLInputElement) {
@@ -653,8 +653,14 @@ class EnhancedAutoClicker {
             if (GymRunner.running()) {
                 GymRunner.running(false);
                 // First time defeating this gym
-                if (!App.game.badgeCase.hasBadge(gym.badgeReward)) {
+                if (App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)] === 0) {
                     gym.firstWinReward();
+                }
+                // send location checks
+                if (gym.locationIdList.length > 0) {
+                    for (const id of gym.locationIdList) {
+                        window.sendLocationCheck(id);
+                    }
                 }
                 GameHelper.incrementObservable(App.game.statistics.gymsDefeated[GameConstants.getGymIndex(gym.town)]);
                 // Award money for defeating gym as we're auto clicking
@@ -1003,6 +1009,13 @@ class EnhancedAutoClicker {
                     DungeonRunner.dungeon.rewardFunction();
                 }
                 GameHelper.incrementObservable(App.game.statistics.dungeonsCleared[GameConstants.getDungeonIndex(DungeonRunner.dungeon.name)]);
+                
+                // send location checks if any
+                if (DungeonRunner.dungeon.locationIds.length > 0) {
+                    for (const locationId of DungeonRunner.dungeon.locationIds) {
+                        window.sendLocationCheck(locationId);
+                    }
+                }
 
                 if (EnhancedAutoClicker.autoDungeonTracker.stopAfterFinishing) {
                     EnhancedAutoClicker.toggleAutoDungeon();

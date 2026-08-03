@@ -288,7 +288,7 @@ class MapHelper {
         const openModal = () => {
             $('#ShipModal').modal('show');
         };
-        if (player.highestRegion() > 0 && (TownList[GameConstants.DockTowns[player.region]].isUnlocked())) {
+        if (player.highestRegion() > 0) { //} && (TownList[GameConstants.DockTowns[player.region]].isUnlocked())) {
             openModal();
         } else {
             Notifier.notify({
@@ -313,7 +313,8 @@ class MapHelper {
 
     public static travelToNextRegion() {
         if (MapHelper.ableToTravel()) {
-            (window as any).sendVictory?.();
+            (window as any).sendVictory();
+            (window as any).sendLocationCheck(1000000);
             // Gain queue slots based on highest region
             App.game.breeding.gainQueueSlot(App.game.breeding.queueSlotsGainedFromRegion(player.highestRegion()));
             GameHelper.incrementObservable(player.highestRegion);

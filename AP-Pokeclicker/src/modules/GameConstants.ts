@@ -183,6 +183,8 @@ export const GOOEY_MULCH_CATCH_BONUS = 10;
 
 export const WANDER_RATE = 0.0005;
 export const WANDER_SHINY_FP_MODIFIER = 5;
+export const WANDERER_BASE_CATCH_BONUS = 25;
+export const WANDERER_CATCH_CHANCE_MULTIPLIER = 1;
 
 export const BerryColor = [
     '#EE8130', // Red
@@ -1321,7 +1323,6 @@ export const EnergyRestoreEffect = {
 
 // For random quest, name matches entry in gymList (created in Gym.ts)
 export const KantoGyms = [
-    'Hallstead\'s Yacht',
     'Pewter City',
     'Cerulean City',
     'Vermilion City',
@@ -1335,6 +1336,7 @@ export const KantoGyms = [
     'Elite Agatha',
     'Elite Lance',
     'Champion Blue',
+    'Hallstead\'s Yacht',
 ];
 
 export const JohtoGyms = [

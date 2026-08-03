@@ -62,9 +62,9 @@ def create_region(world: World, multiworld: MultiWorld, player: int, name: str, 
         for location in locations:
             loc_id = world.location_name_to_id.get(location, 0)
             if world.options.dexsanity.value == 0:
-                if "Pokemon" in location_name_to_location[location]["category"]:
+                if "Pokemon Locations" in location_name_to_location[location]["category"]:
                     loc_id = None
-            if location == "Complete the Tutorial":
+            if "(Event)" in location:
                 loc_id = None
             locationObj = ManualLocation(player, location, loc_id, ret)
             if location_name_to_location[location].get('prehint'):

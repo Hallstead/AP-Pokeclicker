@@ -39,6 +39,10 @@ Routes.add(new RegionRoute(
     }),
     undefined,
     KantoSubRegions.Kanto,
+    undefined,
+    undefined,
+    undefined,
+    [110001, 110002, 110003, 110004],
 ));
 Routes.add(new RegionRoute(
     'Kanto Route 22', Region.kanto, 22,
@@ -78,7 +82,6 @@ Routes.add(new RegionRoute(
         water: ['Tentacool', 'Krabby', 'Horsea', 'Magikarp'],
     }),
     [
-        new RouteKillRequirement(10, Region.kanto, 3),
         new ClearDungeonRequirement(1, getDungeonIndex('Mt. Moon')),
     ],
     undefined,
@@ -319,7 +322,6 @@ Routes.add(new RegionRoute(
         water: ['Psyduck', 'Poliwag', 'Slowpoke', 'Goldeen', 'Magikarp'],
     }),
     [
-        new RouteKillRequirement(10, Region.kanto, 22),
         new TemporaryBattleRequirement('Blue 6'),
     ],
     undefined,
@@ -4229,8 +4231,8 @@ Routes.add(new RegionRoute(
 SeededRand.seed(new Date().getFullYear());
 Routes.getRoutesByRegion(Region.kanto).forEach((route) => {
     route.pokemon.special.push(
-        new SpecialRoutePokemon(['Spooky Bulbasaur'], new SpecialEventRandomRequirement('Halloween!')),
-        new SpecialRoutePokemon(['Gastly'], new SpecialEventRandomRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Spooky Bulbasaur'], new SpecialEventRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Gastly'], new SpecialEventRequirement('Halloween!')),
     );
 });
 Routes.getRoutesByRegion(Region.johto).forEach(route => {
@@ -4262,7 +4264,7 @@ const santaJynxReq = new OneFromManyRequirement([
         new TemporaryBattleRequirement('Santa Jynx 3'),
     ]),
     new MultiRequirement([
-        new ItemOwnedRequirement('Christmas_present', 150, AchievementOption.less),
+        new ItemOwnedRequirement('Christmas_present', 49),
         new TemporaryBattleRequirement('Santa Jynx 4'),
     ]),
 ]);
