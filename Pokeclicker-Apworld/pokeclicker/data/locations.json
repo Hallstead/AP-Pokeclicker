@@ -965,13 +965,13 @@
             "requires": "{kanto_route_8()} or {kanto_route_7()} or {pokemon_mansion(False)} or {can_get_fire_egg()} or {can_breed(Vulpix)}"
         },
         {
-            "name": "Capture Ninetails",
+            "name": "Capture Ninetales",
             "id": 2038,
             "region": "Kanto Pokemon",
             "category": [
                 "Pokemon Locations"
             ],
-            "requires": "(|Vulpix| and {can_get_fire_stone()}) or {can_breed(Ninetails)}"
+            "requires": "(|Vulpix| and {can_get_fire_stone()}) or {can_breed(Ninetales)}"
         },
         {
             "name": "Capture Jigglypuff",
