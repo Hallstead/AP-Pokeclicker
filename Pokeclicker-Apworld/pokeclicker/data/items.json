@@ -308,7 +308,8 @@
             "count": 1,
             "name": "Boulder Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
@@ -317,7 +318,8 @@
             "count": 1,
             "name": "Cascade Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
@@ -326,7 +328,8 @@
             "count": 1,
             "name": "Thunder Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
@@ -335,7 +338,8 @@
             "count": 1,
             "name": "Rainbow Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
@@ -344,7 +348,8 @@
             "count": 1,
             "name": "Marsh Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
@@ -353,7 +358,8 @@
             "count": 1,
             "name": "Soul Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
@@ -362,7 +368,8 @@
             "count": 1,
             "name": "Volcano Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
@@ -371,7 +378,8 @@
             "count": 1,
             "name": "Earth Badge",
             "category": [
-                "Badges"
+                "Badges",
+                "Kanto Gym Badges"
             ],
             "progression": true
         },
