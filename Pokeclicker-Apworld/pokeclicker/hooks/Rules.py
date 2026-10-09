@@ -399,10 +399,11 @@ def victory_road(world: World, state: CollectionState, player: int, complete_dun
     """Checks if the player can access Victory Road."""
     has_dungeon_ticket = state.count("Dungeon Ticket", player) > 0
     minion_attack = 24595
+    has_kanto_gym_badges = state.count("Kanto Gym Badges", player) >= 8
     # if world.options.mapsanity.value > 0:
     #     has_location = state.count("Victory Road", player) > 0
     #     return has_location
-    return kanto_route_23(world, state, player) and has_dungeon_ticket and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
+    return has_dungeon_ticket and has_kanto_gym_badges and kanto_route_23(world, state, player) and dungeon_attack_needed(world, state, player, minion_attack, special_boss_attack, complete_dungeon)
 
 def indigo_plateau(world: World, state: CollectionState, player: int):
     """Checks if the player can access Indigo Plateau."""
