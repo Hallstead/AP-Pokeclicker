@@ -224,6 +224,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('autobattleitems') === 'true') {
-    loadEpheniaScript('autobattleitems', initAutoBattleItems);
-}
+loadEpheniaScript('autobattleitems', initAutoBattleItems);

@@ -105,6 +105,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('perkypokeruspandemic') === 'true') {
-    loadEpheniaScript('perkypokeruspandemic', initPokerusPandemic);
-}
+loadEpheniaScript('perkypokeruspandemic', initPokerusPandemic);

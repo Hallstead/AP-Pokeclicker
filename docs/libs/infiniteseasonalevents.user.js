@@ -381,6 +381,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('infiniteseasonalevents') === 'true') {
-    loadEpheniaScript('infiniteseasonalevents', initEvents);
-}
+loadEpheniaScript('infiniteseasonalevents', initEvents);

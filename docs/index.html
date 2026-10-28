@@ -2883,6 +2883,9 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
 <div id="middle-bottom-sort-column">
     <div id="townMap" class="card sortable border-secondary mb-3" data-bind="visible: App.game.keyItems.hasKeyItem(KeyItemType.Town_map) && (App.game.gameState === GameConstants.GameState.fighting || App.game.gameState === GameConstants.GameState.gym || App.game.gameState === GameConstants.GameState.town||
         App.game.gameState === GameConstants.GameState.shop || App.game.gameState === GameConstants.GameState.farm || App.game.gameState === GameConstants.GameState.temporaryBattle || App.game.gameState === GameConstants.GameState.paused)">
+        <div id="townMap-header" class="card-header p-0">
+            <span data-bind="text: `Middle Bottom Column (${GameConstants.camelCaseToString(GameConstants.Region[player.region])})`">Middle Bottom Column</span>
+        </div>
         <div class="card-header p-0" data-toggle="collapse" href="#mapBody">
             <span data-bind="text: `Town Map (${GameConstants.camelCaseToString(GameConstants.Region[player.region])})`">Town Map</span>
         </div>

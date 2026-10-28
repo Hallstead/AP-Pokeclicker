@@ -162,7 +162,7 @@ class AdditionalVisualSettings {
             button.className = 'btn btn-block btn-success';
             button.style = `position: absolute; left: ${pos.left}px; top: ${pos.top}px; width: auto; height: 41px; font-size: 11px;`;
             button.addEventListener('click', func);
-            document.getElementById('townMap').appendChild(button);
+            document.getElementById('townMap-header').appendChild(button);
         });
 
         // Prevent ship modal sequence-breaking
@@ -581,10 +581,9 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('additionalvisualsettings') === 'true') {
-    if (!App.isUsingClient) {
-        // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
-        (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).AdditionalVisualSettings = AdditionalVisualSettings;
-    }
-    loadEpheniaScript('additionalvisualsettings', () => AdditionalVisualSettings.initVisualSettings(), () => AdditionalVisualSettings.initOnLoad());
+if (!App.isUsingClient) {
+    // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
+    (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).AdditionalVisualSettings = AdditionalVisualSettings;
 }
+loadEpheniaScript('additionalvisualsettings', () => AdditionalVisualSettings.initVisualSettings(), () => AdditionalVisualSettings.initOnLoad());
+

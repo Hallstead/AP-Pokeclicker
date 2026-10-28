@@ -391,6 +391,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('simpleautofarmer') === 'true') {
-    loadEpheniaScript('simpleautofarmer', initAutoFarm, initSelectedBerryTracking);
-}
+loadEpheniaScript('simpleautofarmer', initAutoFarm, initSelectedBerryTracking);

@@ -146,6 +146,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('discordcodegenerator') === 'true') {
-    loadEpheniaScript('discordcodegenerator', initCodeGen);
-}
+loadEpheniaScript('discordcodegenerator', initCodeGen);

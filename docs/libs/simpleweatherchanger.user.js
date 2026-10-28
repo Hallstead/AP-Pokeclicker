@@ -186,6 +186,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('simpleweatherchanger') === 'true') {
-    loadEpheniaScript('simpleweatherchanger', initWeatherChange);
-}
+loadEpheniaScript('simpleweatherchanger', initWeatherChange);

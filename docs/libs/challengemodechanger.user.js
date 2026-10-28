@@ -120,6 +120,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('challengemodechanger') === 'true') {
-    loadEpheniaScript('challengemodechanger', initChallenger);
-}
+loadEpheniaScript('challengemodechanger', initChallenger);

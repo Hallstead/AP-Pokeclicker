@@ -118,6 +118,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('oakitemsunlimited') === 'true') {
-    loadEpheniaScript('oakitemsunlimited', initOakItems);
-}
+loadEpheniaScript('oakitemsunlimited', initOakItems);

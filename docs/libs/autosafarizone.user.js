@@ -850,6 +850,5 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('autosafarizone') === 'true') {
-  loadEpheniaScript('autosafarizone', initAutoSafari);
-}
+loadEpheniaScript('autosafarizone', initAutoSafari);
+

@@ -609,6 +609,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('catchfilterfantasia') === 'true') {
-    loadEpheniaScript('catchfilterfantasia', initCatchFilter);
-}
+loadEpheniaScript('catchfilterfantasia', initCatchFilter);

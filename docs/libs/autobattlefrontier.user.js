@@ -161,13 +161,11 @@ function addGlobalStyle(css) {
     head.appendChild(style);
 }
 
-if (!App.isUsingClient || localStorage.getItem('autobattlefrontier') === 'true') {
-    // This script currently does all its initializing before the game loads, so doesn't need the normal loader function
-    if (!App.isUsingClient) {
-        // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
-        (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).AutoBattleFrontier = AutoBattleFrontier;
-    }
-    $(document).ready(() => {
-        AutoBattleFrontier.initAutoBattleFrontier();
-    });
+// This script currently does all its initializing before the game loads, so doesn't need the normal loader function
+if (!App.isUsingClient) {
+    // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
+    (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).AutoBattleFrontier = AutoBattleFrontier;
 }
+$(document).ready(() => {
+    AutoBattleFrontier.initAutoBattleFrontier();
+});
