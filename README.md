@@ -1,4 +1,4 @@
-This is Pokeclicker for [Archipelago](archipelago.gg). It is not a standalone game and must be connected to an AP server to make progress.
+This is Pokeclicker for [Archipelago](https://archipelago.gg/). It is not a standalone game and must be connected to an AP server to make progress.
 
 The web client is located at:
 https://hallstead.github.io/AP-Pokeclicker/
