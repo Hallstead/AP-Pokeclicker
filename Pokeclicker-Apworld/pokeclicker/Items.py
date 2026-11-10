@@ -3,13 +3,15 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
+from worlds.pokeclicker import world
 from . import Helpers
+from worlds.generic.Rules import forbid_items_for_player
 
 if TYPE_CHECKING:
     from .world import PokeclickerWorld
 
 class ItemData:
-    def __init__(self, item_id, classification, groups, count=1):
+    def __init__(self, item_id, classification, groups=[], count=1):
         self.groups = groups
         self.classification = classification
         self.id = item_id
@@ -17,6 +19,11 @@ class ItemData:
 
 
 item_table = {
+    "Tutorial Complete": ItemData(None, ItemClassification.progression),
+    "Kanto": ItemData(None, ItemClassification.progression),
+    "Johto": ItemData(None, ItemClassification.progression),
+
+    # Key Items
     "Town Map": ItemData(1, ItemClassification.progression, ['Key Items']),
     "Dungeon Ticket": ItemData(2, ItemClassification.progression, ['Key Items']),
     "Mystery Egg": ItemData(3, ItemClassification.progression, ['Key Items']),
@@ -26,7 +33,13 @@ item_table = {
     "Explorer Kit": ItemData(7, ItemClassification.progression, ['Key Items']),
     "Gem Case": ItemData(8, ItemClassification.useful, ['Key Items']),
     "Holo Caster": ItemData(9, ItemClassification.useful, ['Key Items']),
+    # "Eon Ticket": ItemData(10, ItemClassification.progression, ['Key Items']),
+    # "Event Calendar": ItemData(11, ItemClassification.progression, ['Key Items']),
+    # "DNA Splicers": ItemData(12, ItemClassification.progression, ['Key Items']),
+    # "Reins of Unity": ItemData(13, ItemClassification.progression, ['Key Items']),
+    # "Pokerus Virus": ItemData(14, ItemClassification.progression, ['Key Items']),
 
+    # Oak Items
     "Magic Ball": ItemData(101, ItemClassification.useful, ['Oak Items']),
     "Amulet Coin": ItemData(102, ItemClassification.useful, ['Oak Items']),
     "Rocky Helmet": ItemData(103, ItemClassification.useful, ['Oak Items']),
@@ -37,7 +50,10 @@ item_table = {
     "Cell Battery": ItemData(108, ItemClassification.useful, ['Oak Items']),
     "Explosive Charge": ItemData(109, ItemClassification.useful, ['Oak Items']),
     "Treasure Scanner": ItemData(110, ItemClassification.useful, ['Oak Items']),
+    "Squirtbottle": ItemData(111, ItemClassification.useful, ['Oak Items', 'Johto']),
+    # "Sprinklotad": ItemData(112, ItemClassification.useful, ['Oak Items']),
 
+    # Scripts
     "Auto Battle Items": ItemData(201, ItemClassification.useful, ['Scripts']),
     "Catch Filter Fantasia": ItemData(202, ItemClassification.useful, ['Scripts']),
     "Enhanced Auto Clicker": ItemData(203, ItemClassification.useful, ['Scripts', 'Not Progressive Auto Clicker']),
@@ -53,27 +69,43 @@ item_table = {
     "Oak Items Unlimited": ItemData(213, ItemClassification.useful, ['Scripts']),
     "Simple Weather Changer": ItemData(214, ItemClassification.useful, ['Scripts']),
 
-    "Boulder Badge": ItemData(301, ItemClassification.progression, ['Badges']),
-    "Cascade Badge": ItemData(302, ItemClassification.progression, ['Badges']),
-    "Thunder Badge": ItemData(303, ItemClassification.progression, ['Badges']),
-    "Rainbow Badge": ItemData(304, ItemClassification.progression, ['Badges']),
-    "Marsh Badge": ItemData(305, ItemClassification.progression, ['Badges']),
-    "Soul Badge": ItemData(306, ItemClassification.progression, ['Badges']),
-    "Volcano Badge": ItemData(307, ItemClassification.progression, ['Badges']),
-    "Earth Badge": ItemData(308, ItemClassification.progression, ['Badges']),
-    "Kanto Elite Lorelei Badge": ItemData(309, ItemClassification.progression, ['Badges', 'Kanto Elite Badges']),
-    "Kanto Elite Bruno Badge": ItemData(310, ItemClassification.progression, ['Badges', 'Kanto Elite Badges']),
-    "Kanto Elite Agatha Badge": ItemData(311, ItemClassification.progression, ['Badges', 'Kanto Elite Badges']),
-    "Kanto Elite Lance Badge": ItemData(312, ItemClassification.progression, ['Badges', 'Kanto Elite Badges']),
-    "Kanto Elite Champion Badge": ItemData(313, ItemClassification.progression, ['Badges', 'Kanto Elite Badges']),
+    # Badges
+    "Boulder Badge": ItemData(301, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Cascade Badge": ItemData(302, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Thunder Badge": ItemData(303, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Rainbow Badge": ItemData(304, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Marsh Badge": ItemData(305, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Soul Badge": ItemData(306, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Volcano Badge": ItemData(307, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Earth Badge": ItemData(308, ItemClassification.progression, ['Badges', "Kanto Gym Badges", "Kanto Badges"]),
+    "Kanto Elite Lorelei Badge": ItemData(309, ItemClassification.progression, ['Badges', 'Kanto Elite Badges', "Kanto Badges"]),
+    "Kanto Elite Bruno Badge": ItemData(310, ItemClassification.progression, ['Badges', 'Kanto Elite Badges', "Kanto Badges"]),
+    "Kanto Elite Agatha Badge": ItemData(311, ItemClassification.progression, ['Badges', 'Kanto Elite Badges', "Kanto Badges"]),
+    "Kanto Elite Lance Badge": ItemData(312, ItemClassification.progression, ['Badges', 'Kanto Elite Badges', "Kanto Badges"]),
+    "Kanto Elite Champion Badge": ItemData(313, ItemClassification.progression, ['Badges', 'Kanto Elite Badges', "Kanto Badges"]),
 
+    "Zephyr Badge": ItemData(314, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Hive Badge": ItemData(315, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Plain Badge": ItemData(316, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Fog Badge": ItemData(317, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Storm Badge": ItemData(318, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Mineral Badge": ItemData(319, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Glacier Badge": ItemData(320, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Rising Badge": ItemData(321, ItemClassification.progression, ["Badges", "Johto Gym Badges", "Johto Badges"]),
+    "Johto Elite Will Badge": ItemData(322, ItemClassification.progression, ["Badges", "Johto Elite Badges", "Johto Badges"]),
+    "Johto Elite Koga Badge": ItemData(323, ItemClassification.progression, ["Badges", "Johto Elite Badges", "Johto Badges"]),
+    "Johto Elite Bruno Badge": ItemData(324, ItemClassification.progression, ["Badges", "Johto Elite Badges", "Johto Badges"]),
+    "Johto Elite Karen Badge": ItemData(325, ItemClassification.progression, ["Badges", "Johto Elite Badges", "Johto Badges"]),
+    "Johto Elite Champion Badge": ItemData(326, ItemClassification.progression, ["Badges", "Johto Elite Badges", "Johto Badges"]),
+
+    # Extras
     "Progressive Pokeball": ItemData(501, ItemClassification.progression, ['Shop', 'Not Implemented'], 3),
     "Extra Egg Slot": ItemData(502, ItemClassification.useful, ['Extra Slots'], 4),
     "Primary Egg Slot": ItemData(503, ItemClassification.useful, ['Extra Slots', 'Not Implemented']),
     "Palaeontologist Token": ItemData(504, ItemClassification.progression, ['Palaeontologist']),
+    "Black Glasses": ItemData(505, ItemClassification.progression, ['Squirtle Squad', 'Johto']),
 
-    "Tutorial Complete": ItemData(1001, ItemClassification.progression, ['Event']),
-
+    # Base Pokemon
     "Bulbasaur": ItemData(2001, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Ivysaur": ItemData(2002, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Venusaur": ItemData(2003, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
@@ -102,16 +134,16 @@ item_table = {
     "Raichu": ItemData(2026, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Sandshrew": ItemData(2027, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Sandslash": ItemData(2028, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
-    "Nidoran (F)": ItemData(2029, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
+    "Nidoran(F)": ItemData(2029, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Nidorina": ItemData(2030, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Nidoqueen": ItemData(2031, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
-    "Nidoran (M)": ItemData(2032, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
+    "Nidoran(M)": ItemData(2032, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Nidorino": ItemData(2033, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Nidoking": ItemData(2034, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Clefairy": ItemData(2035, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Clefable": ItemData(2036, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Vulpix": ItemData(2037, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
-    "Ninetails": ItemData(2038, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
+    "Ninetales": ItemData(2038, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Jigglypuff": ItemData(2039, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Wigglytuff": ItemData(2040, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Zubat": ItemData(2041, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
@@ -130,7 +162,7 @@ item_table = {
     "Psyduck": ItemData(2054, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Golduck": ItemData(2055, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Mankey": ItemData(2056, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
-    "Primape": ItemData(2057, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
+    "Primeape": ItemData(2057, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Growlithe": ItemData(2058, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Arcanine": ItemData(2059, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
     "Poliwag": ItemData(2060, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Kanto Pokemon']),
@@ -327,6 +359,7 @@ item_table = {
     "Ho-Oh": ItemData(2250, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Johto Pokemon']),
     "Celebi": ItemData(2251, ItemClassification.progression, ['Pokemon', 'Base Pokemon', 'Johto Pokemon']),
 
+    # Alt Pokemon
     "Bulbasaur (Clone)": ItemData(5101, ItemClassification.progression, ['Pokemon', 'Alt Pokemon', 'Kanto Pokemon', 'Roaming Pokemon', 'Seasonal Events', 'Mewtwo Strikes Back']),
     "Spooky Bulbasaur": ItemData(5102, ItemClassification.progression, ['Pokemon', 'Alt Pokemon', 'Kanto Pokemon', 'Seasonal Events', 'Halloween']),
     "Bulbasaur (Rose)": ItemData(5103, ItemClassification.progression, ['Pokemon', 'Alt Pokemon', 'Sinnoh Pokemon', 'Seasonal Events', 'Golden Week', 'Not Implemented']),
@@ -570,7 +603,8 @@ item_table = {
     "XD001": ItemData(29901, ItemClassification.progression, ['Pokemon', 'Alt Pokemon', 'Hoenn Pokemon', 'Not Implemented']),
     "Flowering Celebi": ItemData(30101, ItemClassification.progression, ['Pokemon', 'Alt Pokemon', 'Galar Pokemon', 'Not Implemented']),
     "Grinch Celebi": ItemData(30102, ItemClassification.progression, ['Pokemon', 'Alt Pokemon', 'Johto Pokemon', 'Seasonal Events', 'Merry Christmas']),
-    
+
+    # Mapsanity
     "Kanto Route 1": ItemData(110001, ItemClassification.progression, ['Kanto', 'Mapsanity', 'Not Implemented']),
     "Kanto Route 22": ItemData(110002, ItemClassification.progression, ['Kanto', 'Mapsanity']),
     "Kanto Route 2": ItemData(110003, ItemClassification.progression, ['Kanto', 'Mapsanity']),
@@ -670,6 +704,7 @@ item_table = {
     "Tanoby Ruins": ItemData(110097, ItemClassification.progression, ['Kanto', 'Mapsanity', 'Not Implemented']),
     "Pinkan Mountain": ItemData(110098, ItemClassification.progression, ['Kanto', 'Mapsanity', 'Not Implemented']),
 
+    # Codes
     "Farming-Quick-Start Code": ItemData(112001, ItemClassification.filler, ['Codes']),
     "Shiny-Charmer Code": ItemData(112002, ItemClassification.useful, ['Codes']),
     "Great-Balls Code": ItemData(112003, ItemClassification.filler, ['Codes']),
@@ -678,6 +713,8 @@ item_table = {
     "Eon-Ticket Code": ItemData(112006, ItemClassification.progression, ['Codes', 'Not Implemented']),
     "Ampharosite Code": ItemData(112007, ItemClassification.progression, ['Codes', 'Not Implemented']),
     "Rare-Candy Code": ItemData(112009, ItemClassification.filler, ['Codes']),
+
+    # Discord Codes
     "Surfing Pikachu Code": ItemData(112101, ItemClassification.progression, ['Codes']),
     "Rotom (Discord) Code": ItemData(112102, ItemClassification.progression, ['Codes', 'Not Implemented']),
     "Unown (D) Code": ItemData(112103, ItemClassification.progression, ['Codes', 'Not Implemented']),
@@ -687,6 +724,7 @@ item_table = {
     "Unown (O) Code": ItemData(112107, ItemClassification.progression, ['Codes', 'Not Implemented']),
     "Unown (R) Code": ItemData(112108, ItemClassification.progression, ['Codes', 'Not Implemented']),
 
+    # Victory
     "Victory!": ItemData(1000000, ItemClassification.progression, ['Victory']),
 }
 
@@ -701,7 +739,8 @@ filler_items = [
     "10000 Dungeon Tokens",
     "1000 Quest Points",
     "100 Diamonds",
-    "1000 Farm Points"
+    "1000 Farm Points",
+    "100 Contest Tokens",
 ]
 
 FILLER_ID_START = 1000001
@@ -747,6 +786,14 @@ class PokeclickerItem(Item):
 def get_random_filler_item_name(world: PokeclickerWorld) -> str:
     return world.random.choice(filler_items)
 
+def is_item_enabled(world: PokeclickerWorld, item_name: str) -> bool:
+    item = item_table.get(item_name)
+    if not item:
+        return False
+    for group in item.groups:
+        if not Helpers.is_category_enabled(world, group):
+            return False
+    return True
 
 def create_item_with_correct_classification(world: PokeclickerWorld, name: str) -> PokeclickerItem:
     if name in filler_items:
@@ -783,6 +830,9 @@ def create_all_items(world: PokeclickerWorld) -> None:
                 break
         if not make_item:
             continue
+
+        # if "Badges" in item.groups and world.options.badge_randomization.value == 0:
+        #     continue
 
         id = item.id
         classification = item.classification
@@ -869,3 +919,119 @@ def create_all_items(world: PokeclickerWorld) -> None:
     #     # We're adding a filler item, but you can also add progression items to the player's precollected inventory.
     #     starting_confetti_cannon = world.create_item("Confetti Cannon")
     #     world.push_precollected(starting_confetti_cannon)
+    if world.options.use_scripts and not world.options.include_scripts_as_items:
+        for item in item_groups.get("Scripts", []):
+            if is_item_enabled(world, item):
+                world.push_precollected(world.create_item(item))
+
+def set_place_items(world: "PokeclickerWorld"):
+    # Goal
+    if world.options.goal.value == 0: # Travel to Johto
+        world.location_data["Travel to Johto [Goal]"].place_item = world.location_data["Travel to Johto [Goal]"].original_item
+    elif world.options.goal.value == 1: # Travel to Hoenn
+        world.location_data["Travel to Hoenn [Goal]"].place_item = world.location_data["Travel to Hoenn [Goal]"].original_item
+
+    # Early Town Map
+    world.multiworld.early_items[world.player]["Town Map"] = world.options.early_town_map
+
+    # Dexsanity
+    if world.options.dexsanity.value == 2: # Shuffled
+        for location in world.location_data.values():
+            if "Pokemon Locations" in location.groups:
+                location.place_item_category = ["Pokemon"]
+
+    # Badge Randomization
+    if world.options.badge_randomization.value == 0:
+        for location_name in world.location_name_groups["Gyms"]:
+            world.location_data[location_name].place_item = world.location_data[location_name].original_item
+    #         location = world.location_data[location_name]
+    #         item_to_place = location.original_item
+    #         location.place_locked_item(world.create_item(item_to_place))
+
+
+def pre_place_items(world):
+    def _as_list(value):
+        if value is None:
+            return []
+        if isinstance(value, list):
+            return value
+        return [value]
+
+    # Handle item forbidding
+    manual_locations_with_forbid = {location.name: location for location in world.location_data.values() if location.dont_place_item or location.dont_place_item_category}
+    locations_with_forbid = [l for l in world.multiworld.get_unfilled_locations(player=world.player) if l.name in manual_locations_with_forbid.keys()]
+    for location in locations_with_forbid:
+        manual_location = manual_locations_with_forbid[location.name]
+        forbidden_item_names = []
+
+        if manual_location.dont_place_item:
+            forbidden_item_names.extend([i for i in item_table.keys() if i in manual_location.dont_place_item])
+
+        if manual_location.dont_place_item_category:
+            forbidden_item_names.extend([
+                item_name
+                for item_name, item_data in item_table.items()
+                if set(item_data.groups).intersection(manual_location.dont_place_item_category)
+            ])
+
+        if forbidden_item_names:
+            forbid_items_for_player(location, set(forbidden_item_names), world.player)
+
+    # Handle specific item placements using fill_restrictive
+    manual_locations_with_placements = {location.name: location for location in world.location_data.values() if location.place_item or location.place_item_category}
+    locations_with_placements = [l for l in world.multiworld.get_unfilled_locations(player=world.player) if l.name in manual_locations_with_placements.keys()]
+    for location in locations_with_placements:
+        location_data = manual_locations_with_placements[location.name]
+        eligible_items = []
+        eligible_item_names = []
+        forbidden_item_names = []
+        place_messages = []
+        forbid_messages = []
+
+        #First we get possible items names
+        if location_data.place_item:
+            place_item_names = _as_list(location_data.place_item)
+            eligible_item_names += place_item_names
+            place_messages.append('", "'.join(place_item_names))
+
+        if location_data.place_item_category:
+            eligible_item_names += [
+                item_name
+                for item_name, item_data in item_table.items()
+                if set(item_data.groups).intersection(location_data.place_item_category)
+            ]
+            place_messages.append('", "'.join(location_data.place_item_category) + " category(ies)")
+
+        # Second we check for forbidden items names
+        if location_data.dont_place_item:
+            dont_place_item_names = _as_list(location_data.dont_place_item)
+            forbidden_item_names += dont_place_item_names
+            forbid_messages.append('", "'.join(dont_place_item_names) + ' items')
+
+        if location_data.dont_place_item_category:
+            forbidden_item_names += [
+                item_name
+                for item_name, item_data in item_table.items()
+                if set(item_data.groups).intersection(location_data.dont_place_item_category)
+            ]
+            forbid_messages.append('", "'.join(location_data.dont_place_item_category) + ' category(ies)')
+
+        # If we forbid some names, check for those in the possible names and remove them
+        if forbidden_item_names:
+            eligible_item_names = [name for name in eligible_item_names if name not in forbidden_item_names]
+
+        if eligible_item_names:
+            eligible_items = [item for item in world.multiworld.itempool if item.player == world.player and item.name in eligible_item_names]
+
+        if len(eligible_items) == 0:
+            nl = "\n"
+            if forbidden_item_names:
+                raise Exception(f'Could not find a suitable item to place at "{location_data.name}".\n    No items that match "{f"{nl}     or ".join(place_messages)}"\n    Maybe because of forbidden "{f"{nl}     or ".join(forbid_messages)}"')
+            raise Exception(f'Could not find a suitable item to place at "{location_data.name}". \n    No items that match "{f"{nl}     or ".join(place_messages)}"')
+
+        print(f'Placing item at location "{location_data.name}"')
+        item_to_place = world.random.choice(eligible_items)
+        location.place_locked_item(item_to_place)
+
+        # remove the item we're about to place from the pool so it isn't placed twice
+        world.multiworld.itempool.remove(item_to_place)

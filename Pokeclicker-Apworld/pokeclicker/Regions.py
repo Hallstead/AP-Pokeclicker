@@ -31,7 +31,12 @@ regions_list = [
     RegionData("Sevii Islands 123", [], ["Volcano Badge"]),
     RegionData("Indigo Plateau", ["Kanto Champion"], ["Boulder Badge", "Cascade Badge", "Thunder Badge", "Rainbow Badge", "Marsh Badge", "Soul Badge", "Volcano Badge", "Earth Badge"]),
     RegionData("Kanto Champion", ["Johto"], ["Kanto Elite Champion Badge"]),
-    RegionData("Johto", [])
+    RegionData("Johto", ["Johto Pokemon", "Indigo Plateau Johto"]),
+    RegionData("Johto Pokemon", []),
+    RegionData("Indigo Plateau Johto", ["Johto Champion"], ["Zephyr Badge", "Hive Badge", "Plain Badge", "Fog Badge", "Storm Badge", "Mineral Badge", "Glacier Badge", "Rising Badge"]),
+    RegionData("Johto Champion", ["Hoenn"], ["Johto Elite Champion Badge"]),
+    RegionData("Hoenn", ["Hoenn Pokemon"]),
+    RegionData("Hoenn Pokemon", []),
 ]
 
 def create_and_connect_regions(world: PokeclickerWorld) -> None:
@@ -108,6 +113,7 @@ def connect_regions(world: PokeclickerWorld) -> None:
             # rule = HasAll(*required_items) if required_items else Rule()
             rule = target_data.requires
             source_region.connect(target_region, f"{region.name} to {connection_name}")
+            
             entrance = source_region.exits[-1]  # Get the last added entrance
             if len(target_data.requires) > 0:
                 for item in target_data.requires:

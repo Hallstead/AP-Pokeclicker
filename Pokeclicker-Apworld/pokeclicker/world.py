@@ -1,5 +1,7 @@
 from collections.abc import Mapping
 from typing import Any
+from dataclasses import dataclass, fields
+
 
 # Imports of base Archipelago modules must be absolute.
 from worlds.AutoWorld import World
@@ -7,6 +9,8 @@ from worlds.AutoWorld import World
 # Imports of your world's files must be relative.
 from . import generate_basic, items, locations, regions, rules, web_world
 from . import options as pokeclicker_options  # rename due to a name conflict with World.options
+
+import copy
 
 # APQuest will go through all the parts of the world api one step at a time,
 # with many examples and comments across multiple files.
@@ -43,11 +47,11 @@ class PokeclickerWorld(World):
 
     # Our world class must have a static location_name_to_id and item_name_to_id defined.
     # We define these in regions.py and items.py respectively, so we just set them here.
-    location_name_to_id = {location.name: location.id for location in locations.location_data.values()}
-    item_name_to_id = items.item_name_to_id
-    item_name_groups = items.item_groups
-    location_name_groups = locations.location_name_groups
-    location_data = locations.location_data
+    item_name_to_id = copy.deepcopy(items.item_name_to_id)
+    item_name_groups = copy.deepcopy(items.item_groups)
+    location_name_groups = copy.deepcopy(locations.location_name_groups)
+    location_data = copy.deepcopy(locations.location_data)
+    location_name_to_id = {location.name: location.id for location in location_data.values()}
 
     # There is always one region that the generator starts from & assumes you can always go back to.
     # This defaults to "Menu", but you can change it by overriding origin_region_name.
@@ -65,11 +69,13 @@ class PokeclickerWorld(World):
 
     def create_items(self) -> None:
         items.create_all_items(self)
+        items.set_place_items(self)
+        items.pre_place_items(self)
 
     def generate_basic(self):
-        generate_basic.before_generate_basic(self)
-        generate_basic.generate_basic(self)
-
+        # generate_basic.before_generate_basic(self)
+        # generate_basic.generate_basic(self)
+        pass
         
 
     # Our world class must also have a create_item function that can create any one of our items by name at any time.
@@ -90,7 +96,10 @@ class PokeclickerWorld(World):
     # slot_data is just a dictionary using basic types, that will be converted to json when sent to the client.
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
+        attribute_names = [field.name for field in fields(self.options)]
         return self.options.as_dict(
+            # *attribute_names
+            "goal",
             "dexsanity",
             "include_alt_pokemon",
             "badge_randomization",
@@ -101,6 +110,7 @@ class PokeclickerWorld(World):
             "include_seasonal_events",
             "include_codes_as_items",
             "include_palaeontologist_token",
+            "include_black_glasses",
             "starting_safari_level",
             "starting_underground_level",
             "roaming_encounter_multiplier",
@@ -110,6 +120,7 @@ class PokeclickerWorld(World):
             "quest_point_multiplier",
             "diamond_multiplier",
             "farm_point_multiplier",
+            "contest_token_multiplier",
             "exp_multiplier",
             "wanderer_appearance_multiplier",
             "wanderer_base_catch_rate",

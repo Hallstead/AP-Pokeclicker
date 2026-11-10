@@ -18,6 +18,17 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, Te
 # A toggle is an option that can either be on or off. This will be represented by a checkbox on the website.
 # The default for a toggle is "off".
 # If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
+class Goal(Choice):
+    """
+    What is the goal of the game?
+    """
+    display_name = "Goal"
+
+    option_travel_to_johto = 0
+    option_travel_to_hoenn = 1
+
+    default = option_travel_to_johto
+
 
 class Dexsanity(Choice):
     """
@@ -116,9 +127,17 @@ class IncludeCodesAsItems(Toggle):
 class IncludePalaeontologistToken(Toggle):
     """
     Should a Palaeontologist Token be included in the item pool?
-    With this enabled, a Palaeontologist Token will be available to trade for Pikachu (Palaeontologist) on Cinnabar Island.
+    With this enabled, a Palaeontologist Token will be available and logically required to trade for Pikachu (Palaeontologist) on Cinnabar Island.
     """
     display_name = "Include Palaeontologist Token"
+    default = False
+
+class IncludeBlackGlasses(Toggle):
+    """
+    Should a pair of Black Glasses be included as an item in the item pool?
+    With this enabled, the Black Glasses will be available and logically required, so you will not need to grind for the rare loot.
+    """
+    display_name = "Include Black Glasses"
     default = False
 
 class Mapsanity(Choice):
@@ -226,11 +245,11 @@ class BattlePointMultiplier(Range):
     range_end = 10
     default = 1
 
-class ConquestTokenMultiplier(Range):
+class ContestTokenMultiplier(Range):
     """
-    A multiplier for the amount of Conquest Tokens earned from all sources.
+    A multiplier for the amount of Contest Tokens earned from all sources.
     """
-    display_name = "Conquest Token Multiplier"
+    display_name = "Contest Token Multiplier"
     range_start = 1
     range_end = 10
     default = 1
@@ -321,6 +340,7 @@ class WanderersInLogic(Toggle):
     """
     Are Wanderers considered in logic for obtaining pokemon?
     This will remove wandering in the farm from logic. It does not remove those pokemon from the pool.
+    **At this time wanderers are not implemented in logic and this option has no effect.**
     """
     display_name = "Wanderers In Logic"
     default = False
@@ -330,6 +350,7 @@ class WanderersInLogic(Toggle):
 # This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
 class PokeclickerOptions(PerGameCommonOptions):
+    goal: Goal
     dexsanity: Dexsanity
     include_alt_pokemon: IncludeAltPokemon
     badge_randomization: BadgeRandomization
@@ -340,6 +361,7 @@ class PokeclickerOptions(PerGameCommonOptions):
     include_seasonal_events: IncludeSeasonalEvents
     include_codes_as_items: IncludeCodesAsItems
     include_palaeontologist_token: IncludePalaeontologistToken
+    include_black_glasses: IncludeBlackGlasses
     starting_safari_level: StartingSafariLevel
     starting_underground_level: StartingUndergroundLevel
     roaming_encounter_multiplier: RoamingEncounterMultiplier
@@ -349,6 +371,8 @@ class PokeclickerOptions(PerGameCommonOptions):
     quest_point_multiplier: QuestPointMultiplier
     diamond_multiplier: DiamondMultiplier
     farm_point_multiplier: FarmPointMultiplier
+    contest_token_multiplier: ContestTokenMultiplier
+    # battle_point_multiplier: BattlePointMultiplier
     exp_multiplier: ExpMultiplier
     wanderer_appearance_multiplier: WandererAppearanceMultiplier
     wanderer_base_catch_rate: WandererBaseCatchRate
@@ -365,11 +389,11 @@ class PokeclickerOptions(PerGameCommonOptions):
 option_groups = [
     OptionGroup(
         "Game Options",
-        [Dexsanity, IncludeAltPokemon, BadgeRandomization, UseScripts, IncludeScriptsAsItems, ProgressiveAutoClicker, ProgressiveAutoSafariZone, IncludeSeasonalEvents, IncludeCodesAsItems, IncludePalaeontologistToken, StartingSafariLevel, StartingUndergroundLevel],
+        [Goal, Dexsanity, IncludeAltPokemon, BadgeRandomization, UseScripts, IncludeScriptsAsItems, ProgressiveAutoClicker, ProgressiveAutoSafariZone, IncludeSeasonalEvents, IncludeCodesAsItems, IncludePalaeontologistToken, IncludeBlackGlasses, StartingSafariLevel, StartingUndergroundLevel],
     ),
     OptionGroup(
         "Multiplier Options",
-        [PokedollarMultiplier, DungeonTokenMultiplier, QuestPointMultiplier, DiamondMultiplier, FarmPointMultiplier, ExpMultiplier, WandererAppearanceMultiplier, WandererBaseCatchRate],
+        [PokedollarMultiplier, DungeonTokenMultiplier, QuestPointMultiplier, DiamondMultiplier, FarmPointMultiplier, ContestTokenMultiplier, ExpMultiplier, WandererAppearanceMultiplier, WandererBaseCatchRate],
     ),
     OptionGroup(
         "Logic Options",

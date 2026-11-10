@@ -25,10 +25,6 @@ def before_generate_basic(world: PokeclickerWorld):
     #     for location in location_name_to_location.keys():
     #         if "Mapsanity" in location_name_to_location[location]["category"]:
     #             world.location_name_to_location[location]["place_item_category"] = ["Mapsanity"]
-    
-    if world.options.badge_randomization.value == 0:
-        for location_name in world.location_name_groups["Gyms"]:
-            world.location_data[location_name].place_item = world.location_data[location_name].original_item
     # elif world.options.badge_randomization.value == 1:
     #     world.location_name_to_location["Brock"]["place_item_category"] = ["Badges"]
     #     world.location_name_to_location["Misty"]["place_item_category"] = ["Badges"]
