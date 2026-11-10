@@ -97,7 +97,7 @@ export default class Wallet implements Feature {
                 amount.amount *= (window as any).APFlags.options.battle_point_multiplier || 1;
                 break;
             case Currency.contestToken:
-                amount.amount *= (window as any).APFlags.options.conquest_token_multiplier || 1;
+                amount.amount *= (window as any).APFlags.options.contest_token_multiplier || 1;
                 break;
         }
 
