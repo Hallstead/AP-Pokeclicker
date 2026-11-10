@@ -20,6 +20,7 @@
 
 var resCodes;
 var validPoke = [];
+var redeemableCodes = [];
 
 function initCodeGen() {
     App.game.discord.codes.forEach(e => validPoke.push(e.name));
@@ -28,19 +29,38 @@ function initCodeGen() {
     var fragment = new DocumentFragment();
     for (let i = 0; i < validPoke.length; i++) {
         var codeHTML = document.createElement("div");
+        codeHTML.id = `disc-wrap-${i}`;
         codeHTML.innerHTML = `<button id="disc-${i}" class="btn btn-primary btn-block">${validPoke[i] + ` - ` + resCodes[i]}</button>`
-        if (i == validPoke.length - 1) {
-            codeHTML.innerHTML += `<hr>`
-        }
         fragment.appendChild(codeHTML)
     }
+    const divider = document.createElement("hr");
+    divider.id = 'disc-divider';
+    fragment.appendChild(divider);
     saveTab.prepend(fragment)
     for (let ii = 0; ii < validPoke.length; ii++) {
        document.getElementById('disc-'+ii).addEventListener('click', submitCode, false);
     }
+    updateVisibility();
+    window.addEventListener('ap:flag-changed', updateVisibility);
     if (window.APFlags.options.include_codes_as_items == true) {
-        saveTab.style.display = "none"
+        document.getElementById('redeemable-code-form').style.display = "none";
     }
+
+    // Redeemable code buttons are hidden if include_codes_as_items is true
+    if (window.APFlags.options.include_codes_as_items == true) {
+        App.game.redeemableCodes.codeList.forEach(code => redeemableCodes.push(code));
+        
+    }
+}
+
+function updateVisibility() {
+    let anyVisible = false;
+    for (let i = 0; i < validPoke.length; i++) {
+        const unlocked = window.APFlags?.[`discordCode${i}`] === true;
+        document.getElementById(`disc-wrap-${i}`).style.display = unlocked ? '' : 'none';
+        anyVisible = anyVisible || unlocked;
+    }
+    document.getElementById('disc-divider').style.display = anyVisible ? '' : 'none';
 }
 
 function submitCode() {
@@ -146,6 +166,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('discordcodegenerator') === 'true') {
-    loadEpheniaScript('discordcodegenerator', initCodeGen);
-}
+loadEpheniaScript('discordcodegenerator', initCodeGen);

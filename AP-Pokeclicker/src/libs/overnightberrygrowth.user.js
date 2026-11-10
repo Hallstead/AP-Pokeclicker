@@ -295,6 +295,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('overnightberrygrowth') === 'true') {
-    loadEpheniaScript('overnightberrygrowth', initOvernightBerrySettings, initOfflineGrowth);
-}
+loadEpheniaScript('overnightberrygrowth', initOvernightBerrySettings, initOfflineGrowth);

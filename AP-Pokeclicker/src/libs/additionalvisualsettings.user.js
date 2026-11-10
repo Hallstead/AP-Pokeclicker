@@ -581,10 +581,9 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('additionalvisualsettings') === 'true') {
-    if (!App.isUsingClient) {
-        // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
-        (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).AdditionalVisualSettings = AdditionalVisualSettings;
-    }
-    loadEpheniaScript('additionalvisualsettings', () => AdditionalVisualSettings.initVisualSettings(), () => AdditionalVisualSettings.initOnLoad());
+if (!App.isUsingClient) {
+    // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
+    (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).AdditionalVisualSettings = AdditionalVisualSettings;
 }
+loadEpheniaScript('additionalvisualsettings', () => AdditionalVisualSettings.initVisualSettings(), () => AdditionalVisualSettings.initOnLoad());
+

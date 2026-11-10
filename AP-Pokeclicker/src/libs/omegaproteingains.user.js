@@ -129,6 +129,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('omegaproteingains') === 'true') {
-    loadEpheniaScript('omegaproteingains', initOmegaProtein);
-}
+loadEpheniaScript('omegaproteingains', initOmegaProtein);

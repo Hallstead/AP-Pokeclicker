@@ -474,6 +474,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('autoquestcompleter') === 'true') {
-    loadEpheniaScript('autoquestcompleter', initAutoQuest);
-}
+loadEpheniaScript('autoquestcompleter', initAutoQuest);
