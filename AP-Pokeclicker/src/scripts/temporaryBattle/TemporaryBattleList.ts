@@ -479,7 +479,8 @@ TemporaryBattleList['Silver 1'] = new TemporaryBattle(
         displayName: 'Rival Silver',
         returnTown: 'Cherrygrove City',
         imageName: 'Silver',
-    }
+    },
+    [721]
 );
 TemporaryBattleList['Silver 2'] = new TemporaryBattle(
     'Silver 2',
@@ -497,7 +498,8 @@ TemporaryBattleList['Silver 2'] = new TemporaryBattle(
         displayName: 'Rival Silver',
         returnTown: 'Azalea Town',
         imageName: 'Silver',
-    }
+    },
+    [722]
 );
 TemporaryBattleList.Sudowoodo = new TemporaryBattle(
     'Sudowoodo',
@@ -510,7 +512,8 @@ TemporaryBattleList.Sudowoodo = new TemporaryBattle(
         returnTown: 'Goldenrod City',
         hideTrainer: true,
         visibleRequirement: new RouteKillRequirement(10, GameConstants.Region.johto, 31),
-    }
+    },
+    [723]
 );
 TemporaryBattleList['Silver 3'] = new TemporaryBattle(
     'Silver 3',
@@ -528,7 +531,8 @@ TemporaryBattleList['Silver 3'] = new TemporaryBattle(
     {
         displayName: 'Rival Silver',
         imageName: 'Silver',
-    }
+    },
+    [724]
 );
 TemporaryBattleList['Silver 4'] = new TemporaryBattle(
     'Silver 4',
@@ -551,7 +555,8 @@ TemporaryBattleList['Silver 4'] = new TemporaryBattle(
         displayName: 'Rival Silver',
         imageName: 'Silver',
         visibleRequirement: new QuestLineStepCompletedRequirement('Team Rocket Again', 1),
-    }
+    },
+    [725]
 );
 TemporaryBattleList['Silver 5'] = new TemporaryBattle(
     'Silver 5',
@@ -572,7 +577,8 @@ TemporaryBattleList['Silver 5'] = new TemporaryBattle(
         displayName: 'Rival Silver',
         returnTown: 'Victory Road Johto',
         imageName: 'Silver',
-    }
+    },
+    [726]
 );
 TemporaryBattleList['Suicune 1'] = new TemporaryBattle(
     'Suicune 1',
@@ -588,7 +594,8 @@ TemporaryBattleList['Suicune 1'] = new TemporaryBattle(
         returnTown: 'Cianwood City',
         imageName: '../pokemon/245',
         hideTrainer: true,
-    }
+    },
+    [727]
 );
 TemporaryBattleList.Eusine = new TemporaryBattle(
     'Eusine',
@@ -603,7 +610,8 @@ TemporaryBattleList.Eusine = new TemporaryBattle(
     {
         displayName: 'Eusine',
         returnTown: 'Cianwood City',
-    }
+    },
+    [728]
 );
 TemporaryBattleList['Suicune 2'] = new TemporaryBattle(
     'Suicune 2',
@@ -619,7 +627,8 @@ TemporaryBattleList['Suicune 2'] = new TemporaryBattle(
         returnTown: 'Mahogany Town',
         imageName: '../pokemon/245',
         hideTrainer: true,
-    }
+    },
+    [729]
 );
 TemporaryBattleList['Red Gyarados'] = new TemporaryBattle(
     'Red Gyarados',
@@ -636,7 +645,8 @@ TemporaryBattleList['Red Gyarados'] = new TemporaryBattle(
         isTrainerBattle: false,
         hideTrainer: true,
         visibleRequirement: new QuestLineStartedRequirement('Team Rocket Again'),
-    }
+    },
+    [730]
 );
 TemporaryBattleList['Suicune 3'] = new TemporaryBattle(
     'Suicune 3',
@@ -650,7 +660,8 @@ TemporaryBattleList['Suicune 3'] = new TemporaryBattle(
         imageName: '../pokemon/245',
         hideTrainer: true,
         visibleRequirement: new QuestLineStepCompletedRequirement('Eusine\'s Chase', 4),
-    }
+    },
+    [731]
 );
 TemporaryBattleList['Suicune 4'] = new TemporaryBattle(
     'Suicune 4',
@@ -666,7 +677,8 @@ TemporaryBattleList['Suicune 4'] = new TemporaryBattle(
         returnTown: 'Fuchsia City',
         imageName: '../pokemon/245',
         hideTrainer: true,
-    }
+    },
+    [732]
 );
 TemporaryBattleList['Suicune 5'] = new TemporaryBattle(
     'Suicune 5',
@@ -679,7 +691,8 @@ TemporaryBattleList['Suicune 5'] = new TemporaryBattle(
         returnTown: 'Bill\'s House',
         imageName: '../pokemon/245',
         hideTrainer: true,
-    }
+    },
+    [733]
 );
 TemporaryBattleList['Suicune 6'] = new TemporaryBattle(
     'Suicune 6',
@@ -693,7 +706,8 @@ TemporaryBattleList['Suicune 6'] = new TemporaryBattle(
         imageName: '../pokemon/245',
         hideTrainer: true,
         isTrainerBattle: false,
-    }
+    },
+    [734]
 );
 TemporaryBattleList['Kimono Girls'] = new TemporaryBattle(
     'Kimono Girls',
@@ -709,7 +723,8 @@ TemporaryBattleList['Kimono Girls'] = new TemporaryBattle(
     undefined,
     {
         imageName: 'Kimono Girl',
-    }
+    },
+    [735]
 );
 TemporaryBattleList['Spiky-eared Pichu'] = new TemporaryBattle(
     'Spiky-eared Pichu',
@@ -721,7 +736,8 @@ TemporaryBattleList['Spiky-eared Pichu'] = new TemporaryBattle(
         displayName: 'Strange Pichu',
         hideTrainer: true,
         imageName: '../pokemon/172.01',
-    }
+    },
+    [736]
 );
 TemporaryBattleList['Rocket Boss Giovanni'] = new TemporaryBattle(
     'Rocket Boss Giovanni',
@@ -732,7 +748,10 @@ TemporaryBattleList['Rocket Boss Giovanni'] = new TemporaryBattle(
         new GymPokemon('Kangaskhan', 875275, 40),
     ],
     'What in the world are you? How this is possible...? How can a kid like you manage to destroy my dream once again? The precious dream of Team Rocket has become little more than an illusion...',
-    [new QuestLineStepCompletedRequirement('Unfinished Business', 9)]
+    [new QuestLineStepCompletedRequirement('Unfinished Business', 9)],
+    undefined,
+    undefined,
+    [737]
 );
 TemporaryBattleList['Silver 6'] = new TemporaryBattle(
     'Silver 6',
@@ -752,7 +771,8 @@ TemporaryBattleList['Silver 6'] = new TemporaryBattle(
     {
         displayName: 'Rival Silver',
         imageName: 'Silver',
-    }
+    },
+    [738]
 );
 TemporaryBattleList['Silver 7'] = new TemporaryBattle(
     'Silver 7',
@@ -774,7 +794,8 @@ TemporaryBattleList['Silver 7'] = new TemporaryBattle(
         imageName: 'Silver',
         rewardFunction: () =>
             Notifier.notify({message: 'Congratulations on beating Silver at his best! Come back to fight him again at any time.'}),
-    }
+    },
+    [739]
 );
 
 TemporaryBattleList.Red = new TemporaryBattle(
@@ -800,8 +821,9 @@ TemporaryBattleList.Red = new TemporaryBattle(
             });
         },
         resetDaily: true,
-        returnTown: 'Mt. Silver',
-    }
+        returnTown: 'Mt. Silver'
+    },
+    [740]
 );
 
 TemporaryBattleList['Youngster Joey'] = new TemporaryBattle(
@@ -825,7 +847,8 @@ $playername$ got <img src="./assets/images/currency/money.svg" height="24px"/> $
                 title: 'You defeated Youngster Joey!',
             });
         },
-    }
+    },
+    [741]
 );
 
 //Hoenn Temporary Battles
@@ -3572,7 +3595,8 @@ TemporaryBattleList['Ash Ketchum Johto'] = new TemporaryBattle(
         displayName: 'Ash Ketchum',
         returnTown: 'Cianwood City',
         imageName: 'Ash Ketchum',
-    }
+    },
+    [742]
 );
 TemporaryBattleList['Ash Ketchum Hoenn'] = new TemporaryBattle(
     'Ash Ketchum Hoenn',
