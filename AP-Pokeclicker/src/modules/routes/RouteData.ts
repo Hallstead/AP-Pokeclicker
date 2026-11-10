@@ -652,13 +652,13 @@ Routes.add(new RegionRoute(
 ));
 const cuteMeowthReq = new MultiRequirement([
     new StatisticRequirement(['pokemonHatched', getPokemonByName('Phanpy').id], 1, 'Hatch Phanpy first.'),
-    new OneFromManyRequirement([
-        new PokemonLevelRequirement('Phanpy', 21, AchievementOption.less),
-        new MultiRequirement([
-            new PokemonLevelRequirement('Phanpy', 51, AchievementOption.less),
-            new ClearDungeonRequirement(250, getDungeonIndex('Team Rocket\'s Hideout')),
-        ]),
-    ]),
+    // new OneFromManyRequirement([
+    //     new PokemonLevelRequirement('Phanpy', 21, AchievementOption.less),
+    //     new MultiRequirement([
+    //         new PokemonLevelRequirement('Phanpy', 51, AchievementOption.less),
+    //         new ClearDungeonRequirement(250, getDungeonIndex('Team Rocket\'s Hideout')),
+    //     ]),
+    // ]),
 ]);
 Routes.add(new RegionRoute(
     'Johto Route 42', Region.johto, 42,
