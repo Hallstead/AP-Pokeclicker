@@ -80,8 +80,8 @@ class Party implements Feature, TmpPartyType {
             dexsanity = false; // Disable Dexsanity for alt forms and seasonal event pokemon
         } else if (dexsanity && id === 54.01) {
             dexsanity = false; // Disable Dexsanity for this specific Pokémon (id 54.01)
-        } else if (dexsanity && id > 151) {
-            dexsanity = false; // Disable Dexsanity for Pokémon with ID greater than 151
+        } else if (dexsanity && id >= 252) {
+            dexsanity = false; // Disable Dexsanity for Pokémon with ID greater than 251
         }
 
         PokemonHelper.incrementPokemonStatistics(id, GameConstants.PokemonStatisticsType.Captured, shiny, gender, shadow);
