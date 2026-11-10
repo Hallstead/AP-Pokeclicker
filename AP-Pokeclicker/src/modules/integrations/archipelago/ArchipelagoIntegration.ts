@@ -35,7 +35,7 @@ class ArchipelagoIntegrationModule {
     // If set by the public login() wrapper, prefer calling the package's
     // login(host:port, player, game[, password]) with these arguments during init.
     private preferLoginCall: { server: string; player: string; game: string; password?: string } | null = null;
-    nowItems: {};
+    private nowItems: {};
 
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
     private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
@@ -200,7 +200,7 @@ class ArchipelagoIntegrationModule {
             diamond_multiplier: number,
             farm_point_multiplier: number,
             battle_point_multiplier: number,
-            conquest_token_multiplier: number,
+            contest_token_multiplier: number,
             exp_multiplier: number,
             wanderer_appearance_multiplier: number,
             wanderer_catch_rate: number,
@@ -223,7 +223,7 @@ class ArchipelagoIntegrationModule {
             diamond_multiplier: 1,
             farm_point_multiplier: 1,
             battle_point_multiplier: 1,
-            conquest_token_multiplier: 1,
+            contest_token_multiplier: 1,
             exp_multiplier: 1,
             wanderer_appearance_multiplier: 1,
             wanderer_catch_rate: 1,
@@ -442,8 +442,9 @@ class ArchipelagoIntegrationModule {
         this.client.socket.on('disconnected', async () => {
             this.connected = false;
             Notifier.notify({
-                message: 'Archipelago: disconnected from server.',
-                type: NotificationConstants.NotificationOption.warning,
+                message: 'Archipelago: disconnected from server. Location checks will be queued until you reconnect.',
+                type: NotificationConstants.NotificationOption.danger,
+                timeout: 15000,
             });
             // (window as any).apLoginFromSaveSelector();
         });
@@ -516,7 +517,20 @@ class ArchipelagoIntegrationModule {
         }
     }
 
-    public async processItemPacket(items: APItem[], startingIndex: number) {
+    // Packets must run one at a time; the async storage fetch on a sync packet would otherwise race with later packets.
+    private packetQueue: Promise<void> = Promise.resolve();
+
+    public processItemPacket(items: APItem[], startingIndex: number): Promise<void> {
+        this.packetQueue = this.packetQueue
+            .then(() => this.handleItemPacket(items, startingIndex))
+            .catch((e) => {
+                this.lastError = e;
+                try { console.error('Failed to process item packet:', e); } catch (_) { }
+            });
+        return this.packetQueue;
+    }
+
+    private async handleItemPacket(items: APItem[], startingIndex: number) {
         const w: any = window as any;
         // Set APFlags for each script item
         const setFlag = (key: string, value: any) => {
@@ -565,6 +579,8 @@ class ArchipelagoIntegrationModule {
                 this.nowItems[item.id] = 0;
             }
             this.nowItems[item.id] += 1;
+            // True when this copy was already applied in a previous session.
+            const alreadyApplied = (w.APFlags.receivedItems?.[item.id] || 0) >= this.nowItems[item.id];
 
             if (item.id >= keyItemsOffset && item.id < oakItemsOffset) {
                 // Key items
@@ -579,6 +595,11 @@ class ArchipelagoIntegrationModule {
                     KeyItemType.Explorer_kit,
                     KeyItemType.Gem_case,
                     KeyItemType.Holo_caster,
+                    KeyItemType.Eon_ticket,
+                    KeyItemType.Event_calendar,
+                    KeyItemType.DNA_splicers,
+                    KeyItemType.Reins_of_unity,
+                    KeyItemType.Pokerus_virus,
                 ];
                 if (!App.game.keyItems.hasKeyItem(keyItems[index])) {
                     App.game.keyItems.gainKeyItem(keyItems[index], false);
@@ -598,6 +619,8 @@ class ArchipelagoIntegrationModule {
                     OakItemType.Cell_Battery,
                     OakItemType.Explosive_Charge,
                     OakItemType.Treasure_Scanner,
+                    OakItemType.Squirtbottle,
+                    OakItemType.Sprinklotad,
                 ];
                 if (!App.game.oakItems.isUnlocked(oakItems[index])) {
                     App.game.oakItems.itemList[oakItems[index]].received = true;
@@ -647,75 +670,50 @@ class ArchipelagoIntegrationModule {
                 this.displayItemReceived(item, 'the');
             } else if (item.id >= badgesOffset && item.id < otherItemsOffset) {
                 // Badges
-                let index = item.id - badgesOffset;
-                const badges = [
-                    BadgeEnums.Boulder,
-                    BadgeEnums.Cascade,
-                    BadgeEnums.Thunder,
-                    BadgeEnums.Rainbow,
-                    BadgeEnums.Marsh,
-                    BadgeEnums.Soul,
-                    BadgeEnums.Volcano,
-                    BadgeEnums.Earth,
-                    BadgeEnums.Elite_Lorelei,
-                    BadgeEnums.Elite_Bruno,
-                    BadgeEnums.Elite_Agatha,
-                    BadgeEnums.Elite_Lance,
-                    BadgeEnums.Elite_KantoChampion,
-                ];
-                const eliteBadges = [
-                    BadgeEnums.Elite_Lorelei,
-                    BadgeEnums.Elite_Bruno,
-                    BadgeEnums.Elite_Agatha,
-                    BadgeEnums.Elite_Lance,
-                    BadgeEnums.Elite_KantoChampion,
-                ];
+                let index = item.id - badgesOffset + 1;
 
-                if (index == 8) {
-                    const currentEliteBadges = w.APFlags.get('progressiveEliteBadges') || 0;
-                    if (currentEliteBadges < 5 && !App.game.badgeCase.hasBadge(eliteBadges[currentEliteBadges])) {
-                        App.game.badgeCase.gainBadge(eliteBadges[currentEliteBadges]);
-                        if (item.name.includes('Progressive')) {
-                            this.displayItemReceived(item, 'a');
-                        } else {
-                            this.displayItemReceived(item, 'the');
-                        }
-
-                    }
-                    w.APFlags.set('progressiveEliteBadges', currentEliteBadges + 1);
-                } else {
-                    if (!App.game.badgeCase.hasBadge(badges[index])) {
-                        this.displayItemReceived(item, 'the');
-                        App.game.badgeCase.gainBadge(badges[index]);
-                    }
+                // Marsh and Soul badges are swapped in the index
+                if (index == 5) {
+                    index = 6;
+                } else if (index == 6) {
+                    index = 5;
                 }
+                if (!App.game.badgeCase.hasBadge(index as BadgeEnums)) {
+                    this.displayItemReceived(item, 'the');
+                    App.game.badgeCase.gainBadge(index as BadgeEnums);
+                }
+                // }
 
             } else if (item.id >= otherItemsOffset && item.id < eventItemsOffset) {
                 // Other items
-                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
-                    // Already received this item in a previous sync packet
-                    continue;
-                }
-
                 let index = item.id - otherItemsOffset;
                 if (index == 0) {
                     // Progressive Pokeballs
                     // TODO: Establish global variable for progressive pokeball state
+                    if (alreadyApplied) continue;
                     this.displayItemReceived(item, 'a');
                 } else if (index == 1) {
-                    // Extra Egg Slot
-                    const currentExtraEggSlots = w.APFlags.get('extraEggSlots') + 1 || 1;
+                    // Extra Egg Slot: the flag counts every copy, even ones applied in a previous session
+                    const currentExtraEggSlots = (w.APFlags.get('extraEggSlots') || 0) + 1;
                     w.APFlags.set('extraEggSlots', currentExtraEggSlots);
-                    if (currentExtraEggSlots > App.game.breeding._eggList().length - 4) {
+                    // Breeding.fromJSON resets the egg list to 4, so rebuild it even for copies applied earlier
+                    while (App.game.breeding._eggList().length < 4 + currentExtraEggSlots) {
                         App.game.breeding.gainAdditionalEggSlot();
-                        App.game.breeding.gainEggSlot();
-                        this.displayItemReceived(item, 'a');
                     }
+                    if (alreadyApplied) continue;
+                    App.game.breeding.gainEggSlot();
+                    this.displayItemReceived(item, 'a');
                 } else if (index == 2) {
                     // Primary Egg Slot
                 } else if (index == 3) {
                     // Palaeontologist Token
+                    if (alreadyApplied) continue;
                     UndergroundController.gainMineItem(UndergroundItems.getByName('Palaeontologist Token').id, 1);
+                    this.displayItemReceived(item, 'a');
+                } else if (index == 4) {
+                    // Black Glasses
+                    if (alreadyApplied) continue;
+                    player.gainItem('Black_Glasses', 1);
                     this.displayItemReceived(item, 'a');
                 }
             } else if (item.id >= eventItemsOffset && item.id < pokemonOffset) {
@@ -742,26 +740,15 @@ class ArchipelagoIntegrationModule {
             } else if (item.id >= splitDungeonTicketsOffset && item.id < codeOffset) {
             } else if (item.id >= codeOffset && item.id < discordCodeOffset) {
                 // Redeemable Codes
-                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
-                    // Already received this item in a previous sync packet
-                    continue;
-                }
                 let id = item.id - codeOffset + 1;
-                App.game.redeemableCodes.codeList[id].redeem();
+                setFlag(`redeemableCode${id}`, true);
             } else if (item.id >= discordCodeOffset && item.id < fillerOffset - 1) {
                 // Discord Codes
-                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
-                    // Already received this item in a previous sync packet
-                    continue;
-                }
                 let id = item.id - discordCodeOffset;
-                App.game.discord.codes[id].claim();
+                setFlag(`discordCode${id}`, true);
             } else {
                 // Filler
-                if (w.APFlags.receivedItems[item.id] && w.APFlags.receivedItems[item.id] >= this.nowItems[item.id]) {
-                    // Already received this item in a previous sync packet
-                    continue;
-                }
+                if (alreadyApplied) continue;
                 let id = item.id - fillerOffset;
                 if (id == -1) {
                     this.client.updateStatus(clientStatuses.goal);
@@ -787,14 +774,23 @@ class ArchipelagoIntegrationModule {
                     let value = parseInt(itemName.split(' ')[0]);
                     App.game.wallet.gainFarmPoints(value / ((window as any).APFlags.options.farm_point_multiplier || 1), true);
                     this.displayItemReceived(item, '');
+                } else if (itemName.includes('Contest Tokens')) {
+                    let value = parseInt(itemName.split(' ')[0]);
+                    App.game.wallet.gainContestTokens(value / ((window as any).APFlags.options.contest_token_multiplier || 1), true);
+                    this.displayItemReceived(item, '');
                 } else {
                     player.gainItem('Protein', 1);
                     this.displayItemReceived(item, 'a');
                 }
             }
         }
-        // Save received items state
-        await w.setItem('receivedItems', this.nowItems);
+        // Persist the highest count seen per item so a partial packet can't lower the baseline
+        const merged: Record<number, number> = { ...(w.APFlags.receivedItems || {}) };
+        for (const [id, count] of Object.entries(this.nowItems)) {
+            merged[id as any] = Math.max(merged[id as any] || 0, count as number);
+        }
+        w.APFlags.receivedItems = merged;
+        await w.setItem('receivedItems', merged);
     }
 
     // Wait for App.game, mark ready, then flush queued packets.
