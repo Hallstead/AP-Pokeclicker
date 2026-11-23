@@ -13,7 +13,7 @@ class Shop extends TownContent {
         }
         return !(this.hideBeforeUnlocked && !this.isUnlocked());
     }
-    public onclick(): void {
+    public replaceAPItemNames() {
         let chain = Promise.resolve();    // Start empty chain
 
         for (const item of this.items) {
@@ -28,6 +28,10 @@ class Shop extends TownContent {
                     })
             );
         }
+        return chain;
+    }
+    public onclick(): void {
+        let chain = this.replaceAPItemNames();
 
         // After ALL async renames:
         chain.then(() => {
