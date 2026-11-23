@@ -32,6 +32,8 @@ class PokeclickerWorld(World):
     Good games don't need more than six checks.
     """
 
+    debug = False
+
     # The docstring should contain a description of the game, to be displayed on the WebHost.
 
     # You must override the "game" field to say the name of the game.
@@ -52,6 +54,7 @@ class PokeclickerWorld(World):
     location_name_groups = copy.deepcopy(locations.location_name_groups)
     location_data = copy.deepcopy(locations.location_data)
     location_name_to_id = {location.name: location.id for location in location_data.values()}
+    location_id_to_alias = {}
 
     # There is always one region that the generator starts from & assumes you can always go back to.
     # This defaults to "Menu", but you can change it by overriding origin_region_name.
@@ -69,6 +72,9 @@ class PokeclickerWorld(World):
 
     def create_items(self) -> None:
         items.create_all_items(self)
+        items.handle_goal(self)
+        if self.debug:
+            items.debug(self)
         items.set_place_items(self)
         items.pre_place_items(self)
 
@@ -122,15 +128,25 @@ class PokeclickerWorld(World):
             "farm_point_multiplier",
             "contest_token_multiplier",
             "exp_multiplier",
-            "wanderer_appearance_multiplier",
-            "wanderer_base_catch_rate",
+            # "wanderer_appearance_multiplier",
+            # "wanderer_base_catch_rate",
             "starter_logic",
             "early_town_map",
             "mystery_egg_in_logic",
             "clicks_per_second",
             "dungeon_logic",
             "safari_zone_logic",
-            "wanderers_in_logic"
+            # "wanderers_in_logic"
+            "regional_attack_debuff",
+            "require_complete_pokedex",
+            "no_click_attack",
+            "no_battle_items",
+            "no_master_balls",
+            "no_oak_items",
+            "no_gem_upgrades",
+            "no_vitamins",
+            # "slow_evs",
+            "real_evolution"
         )
 
     def interpret_slot_data(self, slot_data: dict[str, any]):
