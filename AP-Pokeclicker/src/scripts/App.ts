@@ -46,6 +46,11 @@ class App {
             GameController.addKeyListeners();
 
             App.game.initialize();
+            // Save data (including saved challenge states) is loaded during
+            // initialize(), so notify integrations only after it has finished.
+            try {
+                window.dispatchEvent(new Event('ap:game-initialized'));
+            } catch (e) {}
             GameLoadState.updateLoadState(GameLoadState.states.initialized);
 
             // Fix any settings that conflict with the now-loaded game data
