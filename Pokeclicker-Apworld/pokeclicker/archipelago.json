@@ -1,6 +1,6 @@
 {
 	"game": "Pokeclicker",
-	"minimum_ap_version": "0.6.6",
+	"minimum_ap_version": "0.6.8",
 	"world_version": "2.0.0",
 	"authors": ["Hallstead"]
 }
