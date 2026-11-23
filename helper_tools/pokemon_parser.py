@@ -537,6 +537,15 @@ def compile_pokemon_dictionary():
 
         return arg
 
+    def badge_name(value):
+        badge = value.rsplit(".", 1)[-1].replace("_", " ")
+        badge = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", badge)
+        badge = " ".join(word.capitalize() for word in badge.split()) + " Badge"
+        elite_champion = re.fullmatch(r"Elite (.+) Champion Badge", badge)
+        if elite_champion:
+            return f"{elite_champion.group(1)} Elite Champion Badge"
+        return badge
+
     def strip_quotes(text):
         text = text.strip()
 
@@ -763,8 +772,11 @@ def compile_pokemon_dictionary():
                         unsupported.extend(child_unsupported)
                 return terms, unsupported
 
-            if requirement_type in ("DayOfWeekRequirement", "WeatherRequirement"):
+            if requirement_type == "DayOfWeekRequirement":
                 return [], []
+
+            if requirement_type == "WeatherRequirement":
+                return ['make_rule(has_script, "Simple Weather Changer Script")'], []
 
             if requirement_type == "ObtainedPokemonRequirement" and args:
                 pokemon_name = strip_quotes(args[0])
@@ -772,10 +784,7 @@ def compile_pokemon_dictionary():
                 return [f"Has({quoted_name})"], []
 
             if requirement_type == "GymBadgeRequirement" and args:
-                badge = args[0].rsplit(".", 1)[-1].replace("_", " ")
-                badge = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", badge)
-                badge_name = " ".join(word.capitalize() for word in badge.split()) + " Badge"
-                quoted_badge = "'" + badge_name.replace("'", "\\'") + "'"
+                quoted_badge = "'" + badge_name(args[0]).replace("'", "\\'") + "'"
                 return [f"Has({quoted_badge})"], []
 
             if (
@@ -801,7 +810,7 @@ def compile_pokemon_dictionary():
                 return [f"make_rule(completed_{quest_function})"], []
 
             if requirement_type == "SpecialEventRequirement" and args:
-                return ['make_rule(has_script, "Infinite Seasonal Events")'], []
+                return ['make_rule(has_script, "Infinite Seasonal Events Script")'], []
 
             if requirement_type == "TemporaryBattleRequirement" and args:
                 battle_name = re.sub(r"_(?=\d)", "", functionify(strip_quotes(args[0])))
@@ -1876,6 +1885,14 @@ def compile_pokemon_dictionary():
                     (match.group(1).replace("\\'", "'"), int(match.group(2)))
                     for match in quest_step_pattern.finditer(complete_requirements)
                 }
+                caught_pokemon = {
+                    match.group(1).replace("\\'", "'")
+                    for match in re.finditer(
+                        r"new\s+StatisticRequirement\(\s*\[\s*['\"]pokemonCaptured['\"]\s*,\s*PokemonHelper\.getPokemonByName\(\s*['\"]((?:\\'|[^'\"])+)['\"]\s*\)\.id\s*\]\s*,\s*(\d+)",
+                        complete_requirements,
+                    )
+                    if int(match.group(2)) > 0
+                }
                 for match in re.finditer(
                     r"new\s+GymPokemon\(\s*'((?:\\'|[^'])*)'",
                     args[1],
@@ -1890,7 +1907,7 @@ def compile_pokemon_dictionary():
                             r"new\s+ObtainedPokemonRequirement\(\s*'((?:\\'|[^'])*)'",
                             complete_requirements,
                         )
-                    )
+                    ) or name in caught_pokemon
                     completes_next_quest_step = any(
                         required_quest == completed_quest and completed_step == required_step + 1
                         for required_quest, required_step in required_quest_steps
@@ -2057,6 +2074,7 @@ def compile_pokemon_dictionary():
             "water": [],
             "headbutt": [],
             "special": [],
+            "weather_land": False,
             "region": region_match.group(1).lower() if region_match else None,
         }
 
@@ -2070,8 +2088,7 @@ def compile_pokemon_dictionary():
             content = extract_bracket_content(block, open_bracket)
             routes[route][method].extend(extract_pokemon_names(content))
 
-        # Weather/day-of-week specials count as land encounters; other specials
-        # are retained with their requirements but do not become land encounters.
+        # Day-of-week specials count as land encounters; weather specials remain conditional.
         special_marker = "new SpecialRoutePokemon("
         search_pos = 0
 
@@ -2126,25 +2143,31 @@ def compile_pokemon_dictionary():
                 requirements = [
                     {
                         "type": call["type"],
-                        "args": [format_requirement_arg(arg) for arg in call["args"]],
+                        "args": (
+                            [] if call["type"] == "WeatherRequirement"
+                            else [format_requirement_arg(arg) for arg in call["args"]]
+                        ),
                     }
                     for call in requirement_calls
-                    if call["type"] not in ("WeatherRequirement", "DayOfWeekRequirement")
+                    if call["type"] != "DayOfWeekRequirement"
                 ]
-                is_weather_or_day = any(
-                    call["type"] in ("WeatherRequirement", "DayOfWeekRequirement")
-                    for call in requirement_calls
+                is_weather = re.search(r"\bnew\s+WeatherRequirement\s*\(", special_block) is not None
+                is_day = any(call["type"] == "DayOfWeekRequirement" for call in requirement_calls)
+                routes[route]["weather_land"] |= any(
+                    call["type"] == "WeatherRequirement" for call in requirement_calls
                 )
 
                 for name in special_pokemon:
-                    if is_weather_or_day and name not in routes[route]["land"]:
+                    if is_day and not is_weather and name not in routes[route]["land"]:
                         routes[route]["land"].append(name)
 
                     if requirements:
-                        routes[route]["special"].append({
+                        special = {
                             "name": name,
                             "requirements": requirements,
-                        })
+                        }
+                        if not is_weather or special not in routes[route]["special"]:
+                            routes[route]["special"].append(special)
 
             search_pos = close_paren + 1
 
@@ -2206,7 +2229,7 @@ def compile_pokemon_dictionary():
             add_pokemon(name, functionify(route), "land")
 
         # If the route has land, water stays water; if not, water becomes land.
-        if land:
+        if land or encounters["weather_land"]:
             for name in water:
                 add_pokemon(name, functionify(route), "water")
         else:
@@ -2582,7 +2605,10 @@ def compile_pokemon_dictionary():
         args = requirement["args"]
 
         if requirement_type == "SpecialEventRequirement":
-            return 'make_rule(has_script, "Infinite Seasonal Events")'
+            return 'make_rule(has_script, "Infinite Seasonal Events Script")'
+
+        if requirement_type == "WeatherRequirement":
+            return 'make_rule(has_script, "Simple Weather Changer Script")'
 
         if requirement_type == "ClearDungeonRequirement" and len(args) > 1:
             dungeon_match = re.search(
@@ -2608,7 +2634,7 @@ def compile_pokemon_dictionary():
                         nested,
                     )
                     if event_match:
-                        terms.append('make_rule(has_script, "Infinite Seasonal Events")')
+                        terms.append('make_rule(has_script, "Infinite Seasonal Events Script")')
                     elif dungeon_match:
                         dungeon_name = dungeon_match.group(1).replace(chr(92) + chr(39), chr(39))
                         terms.append(f"make_rule({functionify(dungeon_name)}, True)")
@@ -2668,11 +2694,6 @@ def compile_pokemon_dictionary():
 
         return terms
 
-    def badge_name(value):
-        badge = value.rsplit(".", 1)[-1].replace("_", " ")
-        badge = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", badge)
-        return " ".join(word.capitalize() for word in badge.split()) + " Badge"
-
     def quest_rule_name(quest, step):
         quest_name = re.sub(r"[^a-z0-9]+", "_", quest.lower().replace("'", "")).strip("_")
         return f"{quest_name}{step}"
@@ -2725,7 +2746,11 @@ def compile_pokemon_dictionary():
                 "SpecialEventRequirement",
                 "SpecialEventRandomRequirement",
             ):
-                terms.append('make_rule(has_script, "Infinite Seasonal Events")')
+                terms.append('make_rule(has_script, "Infinite Seasonal Events Script")')
+            elif requirement["type"] == "WeatherRequirement":
+                weather_term = 'make_rule(has_script, "Simple Weather Changer Script")'
+                if weather_term not in terms:
+                    terms.append(weather_term)
             elif requirement["type"] == "CustomRequirement":
                 pokemon_name = omitted_level_pokemon(special)
                 if pokemon_name:
@@ -2752,7 +2777,12 @@ def compile_pokemon_dictionary():
                         elif badge:
                             terms.append(f"Has({quoted(badge_name(badge.group(1).strip()))})")
                         elif event:
-                            terms.append('make_rule(has_script, "Infinite Seasonal Events")')
+                            terms.append('make_rule(has_script, "Infinite Seasonal Events Script")')
+
+                        if re.search(r"\bnew\s+WeatherRequirement\s*\(", nested):
+                            weather_term = 'make_rule(has_script, "Simple Weather Changer Script")'
+                            if weather_term not in terms:
+                                terms.append(weather_term)
 
         return quest_terms + terms, bool(quest_terms)
 
@@ -3097,7 +3127,7 @@ route = "route"
                                     if term != dungeon_clear_term and not term.startswith(f"Has({quoted(name)})")
                                 ]
                                 terms.append(f"make_rule({functionify(dungeon)}, True, {attack})")
-                                seasonal_term = "make_rule(has_script, 'Infinite Seasonal Events')"
+                                seasonal_term = "make_rule(has_script, 'Infinite Seasonal Events Script')"
                                 if boss_special["seasonal_event_requirement"] and seasonal_term not in terms:
                                     terms.append(seasonal_term)
                                 print(
@@ -3182,7 +3212,7 @@ route = "route"
                                 if term != dungeon_clear_term
                             ]
                             terms.append(f"make_rule({functionify(dungeon)}, True, {attack})")
-                            seasonal_term = 'make_rule(has_script, "Infinite Seasonal Events")'
+                            seasonal_term = 'make_rule(has_script, "Infinite Seasonal Events Script")'
                             if special["seasonal_event_requirement"] and seasonal_term not in terms:
                                 terms.append(seasonal_term)
                             if special["unprocessed_requirements"]:
@@ -3236,7 +3266,7 @@ route = "route"
                         terms = list(prepared["terms"])
                         route_helper = f"any_{special.get('region', 'none')}_route"
                         can_group = (
-                            "make_rule(has_script, 'Infinite Seasonal Events')" in prepared["base_terms"]
+                            "make_rule(has_script, 'Infinite Seasonal Events Script')" in prepared["base_terms"]
                             or (
                                 special.get("region") == "alola"
                                 and "make_rule(lets_go_meltan9)" in prepared["base_terms"]
