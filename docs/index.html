@@ -42,6 +42,7 @@
     <script src="libs/catchfilterfantasia.user.js"></script>
     <script src="libs/catchspeedadjuster.user.js"></script>
     <script src="libs/challengemodechanger.user.js"></script>
+    <script src="libs/redeemablecodegenerator.user.js"></script>
     <script src="libs/discordcodegenerator.user.js"></script>
     <script src="libs/enhancedautohatchery.user.js"></script>
     <script src="libs/enhancedautomine.user.js"></script>
@@ -52,6 +53,7 @@
     <script src="libs/perkypokeruspandemic.user.js"></script>
     <script src="libs/simpleautofarmer.user.js"></script>
     <script src="libs/simpleweatherchanger.user.js"></script>
+    <script src="libs/timetravel.user.js"></script>
 
     <!--Intro.js-->
     <script src="libs/intro.min.js"></script>
@@ -136,10 +138,10 @@
             <img style="width:100%" src="assets/images/pokeclickerlogo.png">
         </div>
         <div class="col-12 d-flex align-items-center justify-content-center my-3 flex-column flex-md-row">
-            <a class="mb-1 mr-md-1" href="https://discord.gg/a6DFe4p" target="_blank">
+            <a class="mb-1 mr-md-1" href="https://discord.gg/5UtJtzhSnp" target="_blank">
                 <img alt="Join our Discord!" src="https://img.shields.io/discord/450412847017754644?color=7289DA&label=Discord&logo=discord&logoColor=7289DA&style=for-the-badge">
             </a>
-            <a class="mb-1 mr-md-1" href="https://github.com/pokeclicker/pokeclicker" target="_blank">
+            <a class="mb-1 mr-md-1" href="https://github.com/Hallstead/AP-Pokeclicker" target="_blank">
                 <img alt="Visit our GitHub!" src="https://img.shields.io/github/package-json/v/pokeclicker/pokeclicker/master?label=GitHub&logo=github&style=for-the-badge">
             </a>
             <a class="mb-1 mr-md-1" href="https://wiki.pokeclicker.com/" target="_blank">
@@ -2883,10 +2885,10 @@ selectAllClick - (Optional) Function called when the Select All button is clicke
 <div id="middle-bottom-sort-column">
     <div id="townMap" class="card sortable border-secondary mb-3" data-bind="visible: App.game.keyItems.hasKeyItem(KeyItemType.Town_map) && (App.game.gameState === GameConstants.GameState.fighting || App.game.gameState === GameConstants.GameState.gym || App.game.gameState === GameConstants.GameState.town||
         App.game.gameState === GameConstants.GameState.shop || App.game.gameState === GameConstants.GameState.farm || App.game.gameState === GameConstants.GameState.temporaryBattle || App.game.gameState === GameConstants.GameState.paused)">
-        <!-- <div id="townMap-header" class="card-header p-0">
+        <div id="townMap-header" class="card-header p-0">
             <span data-bind="text: `Map Tools`">Middle Bottom Column</span>
-        </div> -->
-        <div class="card-header p-0" data-toggle="collapse" href="#mapBody">
+        </div>
+        <div id="townMap-body" class="card-header p-0" data-toggle="collapse" href="#mapBody">
             <span data-bind="text: `Town Map (${GameConstants.camelCaseToString(GameConstants.Region[player.region])})`">Town Map</span>
         </div>
         <button class='btn btn-sm' style="position: absolute; left: 0px; top: 0px; width: auto; height: 41px;" data-toggle="popover" data-trigger="hover" data-html="true" data-title="Map Legend:"
@@ -49187,13 +49189,14 @@ aria-labelledby="AchievementsModalLabel" aria-hidden="true">
             <div class="px-3">
                 <div class="border-bottom border-dark font-weight-bold">What is this?</div>
                 <p class="small">
-                    This is a fan-made modification of PokéClicker that integrates with the Archipelago multiworld randomizer system.
+                    This is a fan-made modification of PokéClicker that integrates with the <a href="https://archipelago.gg/">Archipelago</a> multiworld randomizer system.
                 </p>
 
                 <div class="border-bottom border-dark font-weight-bold">What is the goal?</div>
                 <p class="small">
-                    The current goal is to Travel to Johto. This will change in the future as more regions are added.<br />
-                    Note that you are not required to complete the pokedex before traveling to Johto.
+                    The current goal is to Travel to Johto or Hoenn, depending on your game settings. This will change in the future as more regions are added.<br />
+                    Note that you are not required to complete the pokedex before traveling to the next region, however, some settings may turn on the challenge
+                    that enforces it. You can always deactivate the challenge in the menu.
                 </p>
 
                 <div class="border-bottom border-dark font-weight-bold">Help. I cant progress in the game.</div>
@@ -53290,10 +53293,10 @@ aria-labelledby="badgeCaseModalLabel">
             <div class="modal-body">
                 <div id="saveTab">
                     <div id="codeEntry">
-                        <form class="form-inline input-group">
-                            <input class="outline-dark form-control" placeholder="Enter code..." id="redeemable-code-input" type="text" />
+                        <form id="redeemable-code-form" class="form-inline input-group">
+                            <input id="redeemable-code-input" class="outline-dark form-control" placeholder="Enter code..." type="text" />
                             <div class="input-group-append">
-                                <button class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
+                                <button id="redeemable-code-claim" class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
                             </div>
                         </form>
                     </div>

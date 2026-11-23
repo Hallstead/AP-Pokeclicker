@@ -67,6 +67,15 @@ function initEvents() {
         activeSeasonalEvents[event.title] = eventActive;
     }
 
+    // On load, end active events when the script is not unlocked.
+    if (!getAPInfiniteFlag()) {
+        for (const event of App.game.specialEvents.events) {
+            if (event.hasStarted()) {
+                event.end();
+            }
+        }
+    }
+
     // Apply time expansion and auto-start only when AP flag is enabled
     function enableInfiniteWindowsAndStart() {
         for (const event of App.game.specialEvents.events) {
@@ -152,6 +161,24 @@ function initEvents() {
                 <img src="assets/images/pokemon/7.01.png">
                 </div><hr>`
                 break
+            // case "A Pirate's Life":
+            //     modalBody.innerHTML +=
+            //         `<div id="event-${title}" class="event-select" data-value="${title}"><b>${title}</b><br>${description}<br>
+            //     <img src="assets/images/pokemon/6.05.png">
+            //     <img src="assets/images/pokemon/448.02.png">
+            //     <img src="assets/images/pokemon/720.02.png">
+            //     <img src="assets/images/pokemon/888.02.png"><br>
+            //     <img src="assets/images/pokemon/129.33.png">
+            //     <img src="assets/images/pokemon/130.02.png">
+            //     <img src="assets/images/pokemon/761.01.png">
+            //     <img src="assets/images/pokemon/762.01.png">
+            //     <img src="assets/images/pokemon/763.01.png">
+            //     <img src="assets/images/pokemon/813.01.png">
+            //     <img src="assets/images/pokemon/814.01.png">
+            //     <img src="assets/images/pokemon/815.02.png">
+            //     <img src="assets/images/pokemon/570.02.png">
+            //     </div><hr>`
+            //     break
             case "Halloween!":
                 modalBody.innerHTML +=
                     `<div id="event-${title}" class="event-select" data-value="${title}"><b>${title}</b><br>${description}<br>

@@ -161,8 +161,11 @@ class AdditionalVisualSettings {
             button.textContent = name;
             button.className = 'btn btn-block btn-success';
             button.style = `position: absolute; left: ${pos.left}px; top: ${pos.top}px; width: auto; height: 41px; font-size: 11px;`;
-            button.addEventListener('click', func);
-            document.getElementById('townMap').appendChild(button);
+            button.addEventListener('click', (event) => {
+                event.stopPropagation();
+                func.call(button, event);
+            });
+            document.getElementById('townMap-body').appendChild(button);
         });
 
         // Prevent ship modal sequence-breaking

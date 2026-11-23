@@ -15,6 +15,24 @@
     let mineState = JSON.parse(localStorage.getItem('autoMineState') || 'false');
     let autoMineTimer;
 
+    function getAPEnhancedAutoMineFlag() {
+        try {
+            const flags = (window.APFlags ?? {});
+            if (typeof flags.get === 'function') {
+                const value = flags.get('enhancedAutoMine');
+                if (typeof value !== 'undefined') return !!value;
+            }
+            if (Object.prototype.hasOwnProperty.call(flags, 'enhancedAutoMine')) {
+                return !!flags.enhancedAutoMine;
+            }
+        } catch (_) { /* ignore */ }
+        return false;
+    }
+
+    function hasAutoMineAccess() {
+        return getAPEnhancedAutoMineFlag() && App.game.underground.canAccess();
+    }
+
     function addGlobalStyle(css) {
         const head = document.head || document.getElementsByTagName('head')[0];
         if (!head) return;
@@ -38,78 +56,43 @@
 
         document.getElementById('auto-mine-start').addEventListener('click', toggleAutoMine);
         
-        // --- APFlags gate: start hidden and OFF; show when APFlags.enhancedAutoMine is true ---
-        function getAPEnhancedAutoMineFlag() {
-            try {
-                const flags = (window.APFlags ?? {});
-                if (typeof flags.get === 'function') {
-                    const v = flags.get('enhancedAutoMine');
-                    if (typeof v !== 'undefined') return !!v;
-                }
-                if (Object.prototype.hasOwnProperty.call(flags, 'enhancedAutoMine')) {
-                    return !!flags.enhancedAutoMine;
-                }
-            } catch (_) { /* ignore */ }
-            return false;
-        }
-        function applyAutoMineAccessFromFlag(force) {
-            const enabled = !!getAPEnhancedAutoMineFlag();
+        function applyAutoMineAccess() {
+            const enabled = hasAutoMineAccess();
             const btn = document.getElementById('auto-mine-start');
-            if (btn && !enabled) {
+            if (btn) {
                 btn.style.display = enabled ? '' : 'none';
+                btn.disabled = !enabled;
+                btn.classList.toggle('btn-success', enabled && !!mineState);
+                btn.classList.toggle('btn-danger', !enabled || !mineState);
+                btn.textContent = `Auto Mine [${enabled && mineState ? 'ON' : 'OFF'}]`;
             }
-            if (!enabled || !App.game.underground.canAccess()) {
-                // Ensure the feature is OFF when disabled
-                mineState = false;
-                try { clearInterval(autoMineTimer); } catch (_) { }
-                if (btn) {
-                    btn.classList.remove('btn-success');
-                    if (!btn.classList.contains('btn-danger')) btn.classList.add('btn-danger');
-                    btn.textContent = 'Auto Mine [OFF]';
-                }
+            if (enabled && mineState) {
+                setAutoMineInterval();
             } else {
-                // When enabled, reflect persisted preference and start if ON
-                if (btn) {
-                    btn.classList.toggle('btn-success', !!mineState);
-                    btn.classList.toggle('btn-danger', !mineState);
-                    btn.textContent = `Auto Mine [${mineState ? 'ON' : 'OFF'}]`;
-                }
-                if (mineState) {
-                    setTimeout(setAutoMineInterval, 100);
-                }
+                clearInterval(autoMineTimer);
+                autoMineTimer = undefined;
             }
         }
 
-        // Apply current APFlags state and subscribe for changes
-        try { applyAutoMineAccessFromFlag(true); } catch (_) { }
+        // canAccess() tracks the Explorer Kit's observable unlock state.
+        const mineAccess = ko.pureComputed(() => App.game.underground.canAccess());
+        mineAccess.subscribe(applyAutoMineAccess);
+        applyAutoMineAccess();
         window.addEventListener('ap:flag-changed', (ev) => {
             try {
                 const detail = ev && ev.detail;
                 if (detail && detail.key === 'enhancedAutoMine') {
-                    applyAutoMineAccessFromFlag(true);
+                    applyAutoMineAccess();
                 }
             } catch (_) { /* ignore */ }
         });
-
-        if (mineState && getAPEnhancedAutoMineFlag()) {
-            setTimeout(setAutoMineInterval, 1000);
-        }
     }
 
     function toggleAutoMine(event) {
-        // Guard: don't allow enabling if AP flag is false
-        const flags = (window.APFlags ?? {});
-        const enabled = !!flags.get('enhancedAutoMine');
-        const el = event.target;
-        if (!enabled) {
-            // Force OFF state and UI (do not change persisted preference)
-            mineState = false;
-            try { clearInterval(autoMineTimer); } catch (_) { }
-            el.classList.toggle('btn-success', false);
-            el.classList.toggle('btn-danger', true);
-            el.textContent = 'Auto Mine [OFF]';
+        if (!hasAutoMineAccess()) {
             return;
         }
+        const el = event.currentTarget;
         mineState = !mineState;
         localStorage.setItem('autoMineState', mineState);
         el.classList.toggle('btn-success', mineState);
@@ -121,6 +104,8 @@
 
     function setAutoMineInterval() {
         clearInterval(autoMineTimer);
+        autoMineTimer = undefined;
+        if (!mineState || !hasAutoMineAccess()) return;
         let interval = (20 - App.game.underground.undergroundLevel) * 50;
         if (interval < 100) {
             interval = 100;
@@ -129,6 +114,7 @@
     }
 
     function doAutoMine() {
+        if (!mineState || !hasAutoMineAccess()) return;
         if (App.game.underground.undergroundLevel > mineLevel) {
             mineLevel = App.game.underground.undergroundLevel;
             setAutoMineInterval()

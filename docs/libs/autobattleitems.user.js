@@ -70,6 +70,7 @@ function initAutoBattleItems() {
             // Stop runtime while disabled without overwriting saved state
             try {
                 clearInterval(itemABLoop);
+                itemABLoop = undefined;
                 btn.classList.remove('btn-success');
                 btn.classList.add('btn-danger');
                 btn.textContent = 'Auto Use [OFF]';
@@ -111,7 +112,8 @@ function initAutoBattleItems() {
     }
 
     function switchABItems(event) {
-        const element = event.target;
+        if (!getAPAutoBattleFlag()) return;
+        const element = event.currentTarget;
         battleItemState = !battleItemState;
         battleItemState ? ABItems() : clearInterval(itemABLoop);
         element.setAttribute('class', `btn btn-${battleItemState ? 'success' : 'danger'}`);
@@ -120,7 +122,14 @@ function initAutoBattleItems() {
     }
 
     function ABItems() {
+        if (!battleItemState || !getAPAutoBattleFlag()) return;
+        clearInterval(itemABLoop);
         itemABLoop = setInterval(() => {
+            if (!battleItemState || !getAPAutoBattleFlag()) {
+                clearInterval(itemABLoop);
+                itemABLoop = undefined;
+                return;
+            }
             //In order the towns required to be unlocked for each Battle Item
             const townReqs = ['Viridian City','Pewter City','Lavender Town'].flatMap(i => [i,i]);
             const battleItems = GameHelper.chunk(6, Object.keys(ItemList).filter(i=>ItemList[i].constructor.name == 'BattleItem'))[0];
@@ -145,7 +154,6 @@ function initAutoBattleItems() {
         }, 500);
     }
 
-    if (battleItemState) { ABItems(); }
 }
 
 if (!localStorage.getItem('autoBattleItems')) {
