@@ -60,43 +60,43 @@ POKEMON_RULES = {
     'Bulbasaur (Clone)': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto') & make_rule('new_island', True),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto') & make_rule('new_island', True),
         ],
     },
     'Spooky Bulbasaur': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_1'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_22'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_2'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_3'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_4'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_24'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_25'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_5'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_6'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_11'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_9'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_10'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_8'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_7'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_12'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_13'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_14'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_15'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_16'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_17'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_18'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_19'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_20'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_21'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_23'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_1'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_22'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_2'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_3'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_4'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_24'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_25'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_5'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_6'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_11'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_9'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_10'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_8'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_7'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_12'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_13'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_14'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_15'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_16'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_17'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_18'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_19'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_20'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_21'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_23'),
         ],
     },
     'Bulbasaur (Rose)': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('flower_paradise', True, 16000000),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('flower_paradise', True, 16000000),
         ],
     },
     'Ivysaur': {
@@ -224,7 +224,7 @@ POKEMON_RULES = {
     'Charmander (Clone)': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto') & make_rule('new_island', True),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto') & make_rule('new_island', True),
         ],
     },
     'Charmeleon': {
@@ -313,7 +313,7 @@ POKEMON_RULES = {
     'Squirtle (Clone)': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto') & make_rule('new_island', True),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto') & make_rule('new_island', True),
         ],
     },
     'Squad Leader Squirtle': {
@@ -462,7 +462,6 @@ POKEMON_RULES = {
                 'alola_route_5',
                 'rolling_fields',
                 'east_lake_axewell',
-                'giants_mirror',
             ],
             headbutt: [
                 'johto_route_47',
@@ -485,6 +484,9 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'cipher_key_lair',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Gigantamax Butterfree': {
         native_region: 'Kanto',
@@ -503,13 +505,13 @@ POKEMON_RULES = {
     'Pink Butterfree': {
         native_region: 'Kanto',
         special: [
-            Has('Elite Orange Champion Badge') & make_rule('roamer', 'Kanto - Sevii Islands'),
+            Has('Orange Elite Champion Badge') & make_rule('roamer', 'Kanto - Sevii Islands'),
         ],
     },
     'Ash\'s Butterfree': {
         native_region: 'Kanto',
         special: [
-            Has('Elite Orange Champion Badge') & make_rule('roamer', 'Kanto - Sevii Islands'),
+            Has('Orange Elite Champion Badge') & make_rule('roamer', 'Kanto - Sevii Islands'),
         ],
     },
     'Weedle': {
@@ -892,7 +894,7 @@ POKEMON_RULES = {
     'Red Spearow': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto'),
         ],
     },
     'Fearow': {
@@ -981,11 +983,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_3',
-                'rolling_fields',
                 'galar_route_4',
-                'stony_wilderness',
-                'fields_of_honor',
-                'soothing_wetlands',
                 'forest_of_focus',
                 'natures_pantry',
                 'south_province_area_two',
@@ -1008,6 +1006,12 @@ POKEMON_RULES = {
         egg: 'Electric Egg',
         starter: ['Kanto'],
         farm_wandering: ['Wacan Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+        ],
     },
     'Pikachu (Original Cap)': {
         native_region: 'Kanto',
@@ -1048,7 +1052,7 @@ POKEMON_RULES = {
     'Pikachu (World Cap)': {
         native_region: 'Kanto',
         special: [
-            Has('Elite Galar Champion Badge') & make_rule('pikachu_valley', True, 59764020),
+            Has('Galar Elite Champion Badge') & make_rule('pikachu_valley', True, 59764020),
         ],
     },
     'Pikachu (Partner Cap)': {
@@ -1066,7 +1070,7 @@ POKEMON_RULES = {
     'Flying Pikachu': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto'),
         ],
     },
     'Surfing Pikachu': {
@@ -1079,46 +1083,46 @@ POKEMON_RULES = {
     'Pikachu (Gengar)': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_101'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_102'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_103'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_104'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_105'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_106'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_107'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_108'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_109'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_110'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_111'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_112'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_113'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_114'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_115'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_116'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_117'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_118'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_119'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_120'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_121'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_122'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_123'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_124'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_125'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_126'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_127'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_128'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_129'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_130'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_131'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_132'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_133'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_134'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_101'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_102'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_103'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_104'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_105'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_106'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_107'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_108'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_109'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_110'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_111'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_112'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_113'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_114'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_115'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_116'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_117'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_118'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_119'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_120'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_121'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_122'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_123'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_124'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_125'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_126'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_127'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_128'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_129'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_130'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_131'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_132'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_133'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_134'),
         ],
     },
     'Let\'s Go Pikachu': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto'),
         ],
     },
     'Pinkan Pikachu': {
@@ -1137,7 +1141,7 @@ POKEMON_RULES = {
             'ash_ketchum_new_island',
         ],
         special: [
-            Has('Pikachu (Clone)') & make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto'),
+            Has('Pikachu (Clone)') & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto'),
         ],
     },
     'Pikachu (Easter)': {
@@ -1145,7 +1149,7 @@ POKEMON_RULES = {
         special: [
             {
                 dungeon: 'viridian_forest',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('viridian_forest', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('viridian_forest', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -1160,7 +1164,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'digletts_cave',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('digletts_cave', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('digletts_cave', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -1175,7 +1179,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'pokemon_tower',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('pokemon_tower', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('pokemon_tower', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -1190,7 +1194,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'power_plant',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('power_plant', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('power_plant', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -1205,7 +1209,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'seafoam_islands',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('seafoam_islands', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('seafoam_islands', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -1220,7 +1224,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'victory_road',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('victory_road', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('victory_road', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -1243,12 +1247,6 @@ POKEMON_RULES = {
     },
     'Raichu': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'soothing_wetlands',
-                'forest_of_focus',
-            ],
-        },
         dungeons: [
             'area_zero',
         ],
@@ -1258,6 +1256,10 @@ POKEMON_RULES = {
                 item: 'Thunder Stone',
                 region: 'allButAlola',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
         ],
     },
     'Alolan Raichu': {
@@ -1320,8 +1322,6 @@ POKEMON_RULES = {
                 'johto_route_27',
                 'unova_route_15',
                 'kalos_route_18',
-                'forest_of_focus',
-                'potbottom_desert',
             ],
         },
         dungeons: [
@@ -1337,6 +1337,10 @@ POKEMON_RULES = {
                 prev: 'Sandshrew',
                 level: 22,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
         ],
     },
     'Alolan Sandslash': {
@@ -1356,12 +1360,14 @@ POKEMON_RULES = {
                 'valencia_island',
                 'johto_route_35',
                 'johto_route_36',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
             ],
         },
         safari: ['Kanto'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+        ],
     },
     'Pinkan Nidoran(F)': {
         native_region: 'Kanto',
@@ -1393,16 +1399,14 @@ POKEMON_RULES = {
     },
     'Nidoqueen': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Nidorina',
                 item: 'Moon Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Nidoran(M)': {
@@ -1413,12 +1417,14 @@ POKEMON_RULES = {
                 'valencia_island',
                 'johto_route_35',
                 'johto_route_36',
-                'frostpoint_field',
                 'giants_bed',
-                'old_cemetery',
             ],
         },
         safari: ['Kanto'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+        ],
     },
     'Pinkan Nidoran(M)': {
         native_region: 'Kanto',
@@ -1449,16 +1455,14 @@ POKEMON_RULES = {
     },
     'Nidoking': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Nidorino',
                 item: 'Moon Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Pinkan Nidoking': {
@@ -1471,10 +1475,6 @@ POKEMON_RULES = {
         native_region: 'Kanto',
         routes: {
             land: [
-                'motostoke_riverbank',
-                'giants_cap',
-                'giants_bed',
-                'snowslide_slope',
                 'fabled_spring',
             ],
         },
@@ -1494,14 +1494,17 @@ POKEMON_RULES = {
             },
         ],
         farm_wandering: ['Roseli Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Clefable': {
         native_region: 'Kanto',
         routes: {
             land: [
-                'motostoke_riverbank',
-                'giants_bed',
-                'snowslide_slope',
                 'fabled_spring',
             ],
         },
@@ -1518,6 +1521,11 @@ POKEMON_RULES = {
                 item: 'Moon Stone',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Vulpix': {
         native_region: 'Kanto',
@@ -1528,16 +1536,7 @@ POKEMON_RULES = {
                 'johto_route_36',
                 'johto_route_37',
                 'johto_route_48',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'axews_eye',
-                'watchtower_ruins',
                 'galar_route_3',
-                'hammerlocke_hills',
             ],
         },
         dungeons: [
@@ -1551,6 +1550,17 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'pyrite_building',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Alolan Vulpix': {
         native_region: 'Alola',
@@ -1560,11 +1570,6 @@ POKEMON_RULES = {
     },
     'Ninetales': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         dungeon_boss: [
             ('firespit_island', 10000000),
         ],
@@ -1573,6 +1578,9 @@ POKEMON_RULES = {
                 prev: 'Vulpix',
                 item: 'Fire Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Alolan Ninetales': {
@@ -1612,21 +1620,19 @@ POKEMON_RULES = {
     },
     'Wigglytuff': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'forest_of_focus',
-                'challenge_beach',
-                'loop_lagoon',
-                'training_lowlands',
-            ],
-        },
         evolution: [
             {
                 prev: 'Jigglypuff',
                 item: 'Moon Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Zubat': {
@@ -1797,10 +1803,6 @@ POKEMON_RULES = {
                 'sinnoh_route_224',
                 'sinnoh_route_230',
                 'kalos_route_6',
-                'rolling_fields',
-                'dappled_grove',
-                'east_lake_axewell',
-                'watchtower_ruins',
             ],
         },
         dungeons: [
@@ -1808,6 +1810,12 @@ POKEMON_RULES = {
             'ilex_forest',
         ],
         egg: 'Grass Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+        ],
     },
     'Pinkan Oddish': {
         native_region: 'Kanto',
@@ -1832,9 +1840,6 @@ POKEMON_RULES = {
                 'hoenn_route_123',
                 'sinnoh_route_224',
                 'sinnoh_route_230',
-                'axews_eye',
-                'giants_mirror',
-                'giants_cap',
             ],
         },
         dungeons: [
@@ -1847,21 +1852,24 @@ POKEMON_RULES = {
                 level: 21,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Vileplume': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'dappled_grove',
-                'giants_mirror',
-                'hammerlocke_hills',
-            ],
-        },
         evolution: [
             {
                 prev: 'Gloom',
                 item: 'Leaf Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
         ],
     },
     'Valencian Vileplume': {
@@ -2002,7 +2010,6 @@ POKEMON_RULES = {
                 'sinnoh_route_228',
                 'rolling_fields',
                 'galar_route_4',
-                'giants_mirror',
                 'south_province_area_two',
             ],
         },
@@ -2010,6 +2017,9 @@ POKEMON_RULES = {
             'digletts_cave',
             'galar_mine',
             'inlet_grotto',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Alolan Diglett': {
@@ -2034,9 +2044,6 @@ POKEMON_RULES = {
                 'sinnoh_route_228',
                 'kalos_route_13',
                 'giants_mirror',
-                'giants_cap',
-                'lake_of_outrage',
-                'hammerlocke_hills',
                 'galar_route_6',
             ],
         },
@@ -2054,6 +2061,11 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'citadark_isle_dome',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
         ],
     },
     'Alolan Dugtrio': {
@@ -2243,8 +2255,6 @@ POKEMON_RULES = {
                 'unova_route_22',
                 'unova_route_23',
                 'poni_gauntlet',
-                'forest_of_focus',
-                'challenge_beach',
                 'holm_of_trials',
                 'bathers_lagoon',
             ],
@@ -2284,6 +2294,10 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'citadark_isle',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
         ],
     },
     'Mankey': {
@@ -2358,16 +2372,7 @@ POKEMON_RULES = {
                 'johto_route_37',
                 'johto_route_48',
                 'alola_route_2',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'axews_eye',
-                'watchtower_ruins',
                 'galar_route_3',
-                'hammerlocke_hills',
                 'south_province_area_three',
             ],
         },
@@ -2377,6 +2382,17 @@ POKEMON_RULES = {
         egg: 'Fire Egg',
         shadow_pokemon: [
             'cipher_key_lair',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
         ],
     },
     'Hisuian Growlithe': {
@@ -2392,16 +2408,14 @@ POKEMON_RULES = {
     },
     'Arcanine': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         evolution: [
             {
                 prev: 'Growlithe',
                 item: 'Fire Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Hisuian Arcanine': {
@@ -2458,9 +2472,6 @@ POKEMON_RULES = {
     'Poliwhirl': {
         native_region: 'Kanto',
         routes: {
-            land: [
-                'soothing_wetlands',
-            ],
             water: [
                 'ruin_valley',
                 'valencia_island',
@@ -2491,6 +2502,9 @@ POKEMON_RULES = {
                 prev: 'Poliwag',
                 level: 25,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
         ],
     },
     'Pinkan Poliwhirl': {
@@ -2544,8 +2558,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sinnoh_route_215',
-                'fields_of_honor',
-                'soothing_wetlands',
                 'sandgem_flats',
             ],
         },
@@ -2563,13 +2575,15 @@ POKEMON_RULES = {
                 level: 16,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+        ],
     },
     'Alakazam': {
         native_region: 'Kanto',
         routes: {
             land: [
-                'loop_lagoon',
-                'insular_sea',
                 'sandgem_flats',
             ],
         },
@@ -2578,6 +2592,10 @@ POKEMON_RULES = {
                 prev: 'Kadabra',
                 item: 'Linking Cord',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
         ],
     },
     'Mega Alakazam': {
@@ -2597,10 +2615,7 @@ POKEMON_RULES = {
                 'sinnoh_route_207',
                 'sinnoh_route_210',
                 'sinnoh_route_211',
-                'giants_seat',
                 'south_lake_miloch',
-                'north_lake_miloch',
-                'watchtower_ruins',
                 'galar_route_3',
                 'giants_mirror',
                 'castaway_shore',
@@ -2624,6 +2639,11 @@ POKEMON_RULES = {
             'oreburrow_tunnel',
         ],
         egg: 'Fighting Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+        ],
     },
     'Machoke': {
         native_region: 'Kanto',
@@ -2633,11 +2653,7 @@ POKEMON_RULES = {
                 'sinnoh_route_211',
                 'sinnoh_route_225',
                 'sinnoh_route_226',
-                'giants_seat',
                 'south_lake_miloch',
-                'axews_eye',
-                'stony_wilderness',
-                'hammerlocke_hills',
                 'ginkgo_landing',
                 'castaway_shore',
                 'bolderoll_ravine',
@@ -2663,12 +2679,17 @@ POKEMON_RULES = {
                 level: 28,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Machamp': {
         native_region: 'Kanto',
         routes: {
             land: [
-                'giants_mirror',
                 'arenas_approach',
             ],
         },
@@ -2677,6 +2698,9 @@ POKEMON_RULES = {
                 prev: 'Machoke',
                 item: 'Linking Cord',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Gigantamax Machamp': {
@@ -2882,14 +2906,6 @@ POKEMON_RULES = {
                 'sinnoh_route_223',
                 'alola_route_14',
                 'poni_breaker_coast',
-                'fields_of_honor',
-                'challenge_beach',
-                'loop_lagoon',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
                 'lunkers_lair',
             ],
             water: [
@@ -2926,6 +2942,16 @@ POKEMON_RULES = {
                 prev: 'Tentacool',
                 level: 30,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
         ],
     },
     'Geodude': {
@@ -3160,13 +3186,11 @@ POKEMON_RULES = {
     },
     'Galarian Ponyta': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'old_cemetery',
-            ],
-        },
         dungeons: [
             'glimwood_tangle',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
         ],
     },
     'Rapidash': {
@@ -3193,11 +3217,6 @@ POKEMON_RULES = {
     },
     'Galarian Rapidash': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'old_cemetery',
-            ],
-        },
         dungeon_boss: [
             ('crown_shrine', 161099869),
         ],
@@ -3206,6 +3225,9 @@ POKEMON_RULES = {
                 prev: 'Galarian Ponyta',
                 level: 40,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
         ],
     },
     'Slowpoke': {
@@ -3324,9 +3346,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sinnoh_route_222',
-                'challenge_beach',
-                'training_lowlands',
-                'challenge_road',
             ],
         },
         dungeons: [
@@ -3348,6 +3367,11 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'cipher_key_lair',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Farfetch\'d': {
@@ -3373,10 +3397,12 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'galar_route_5',
-                'giants_mirror',
             ],
         },
         egg: 'Fighting Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Doduo': {
         native_region: 'Kanto',
@@ -3511,7 +3537,6 @@ POKEMON_RULES = {
             land: [
                 'kanto_route_20',
                 'johto_route_41',
-                'west_lake_axewell',
             ],
             water: [
                 'kanto_route_21',
@@ -3534,14 +3559,13 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'cipher_key_lair',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+        ],
     },
     'Cloyster': {
         native_region: 'Kanto',
         routes: {
-            land: [
-                'west_lake_axewell',
-                'east_lake_axewell',
-            ],
             water: [
                 'valencia_island',
                 'giants_seat',
@@ -3557,15 +3581,15 @@ POKEMON_RULES = {
                 item: 'Water Stone',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+        ],
     },
     'Gastly': {
         native_region: 'Kanto',
         routes: {
             land: [
-                'giants_seat',
-                'north_lake_miloch',
-                'watchtower_ruins',
-                'hammerlocke_hills',
                 'golden_lowlands',
                 'scarlet_bog',
                 'cottonsedge_prairie',
@@ -3599,31 +3623,35 @@ POKEMON_RULES = {
         egg: 'Mystery Egg',
         farm_wandering: ['Kasib Berry'],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_1'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_22'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_2'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_3'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_4'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_24'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_25'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_5'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_6'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_11'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_9'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_10'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_8'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_7'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_12'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_13'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_14'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_15'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_16'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_17'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_18'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_19'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_20'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_21'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('kanto_route_23'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_1'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_22'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_2'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_3'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_4'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_24'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_25'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_5'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_6'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_11'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_9'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_10'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_8'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_7'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_12'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_13'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_14'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_15'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_16'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_17'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_18'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_19'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_20'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_21'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('kanto_route_23'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
         ],
     },
     'Haunter': {
@@ -3632,9 +3660,6 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_14',
                 'kalos_route_19',
-                'rolling_fields',
-                'giants_seat',
-                'watchtower_ruins',
                 'galar_route_8',
                 'scarlet_bog',
                 'cottonsedge_prairie',
@@ -3669,14 +3694,14 @@ POKEMON_RULES = {
                 level: 25,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+        ],
     },
     'Gengar': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'giants_cap',
-            ],
-        },
         dungeons: [
             'old_chateau',
             'thrifty_megamart',
@@ -3687,6 +3712,9 @@ POKEMON_RULES = {
                 prev: 'Haunter',
                 item: 'Linking Cord',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Mega Gengar': {
@@ -3710,9 +3738,6 @@ POKEMON_RULES = {
             land: [
                 'sevault_canyon',
                 'rolling_fields',
-                'east_lake_axewell',
-                'giants_seat',
-                'motostoke_riverbank',
                 'celestica_trail',
             ],
         },
@@ -3732,6 +3757,11 @@ POKEMON_RULES = {
             ('rock_tunnel', 20585),
             ('relic_passage', 21000000),
             ('ten_carat_hill', 59489105),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
         ],
     },
     'Crystal Onix': {
@@ -3792,10 +3822,6 @@ POKEMON_RULES = {
                 'green_path',
                 'outcast_island',
                 'johto_route_40',
-                'west_lake_axewell',
-                'south_lake_miloch',
-                'fields_of_honor',
-                'loop_lagoon',
             ],
             water: [
                 'kanto_route_4',
@@ -3820,6 +3846,12 @@ POKEMON_RULES = {
             'tanoby_ruins',
             'whirl_islands',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+        ],
     },
     'Kingler': {
         native_region: 'Kanto',
@@ -3831,12 +3863,7 @@ POKEMON_RULES = {
                 'green_path',
                 'outcast_island',
                 'johto_route_40',
-                'west_lake_axewell',
-                'south_lake_miloch',
-                'axews_eye',
                 'galar_route_9',
-                'fields_of_honor',
-                'training_lowlands',
             ],
             water: [
                 'five_isle_meadow',
@@ -3857,6 +3884,13 @@ POKEMON_RULES = {
                 prev: 'Krabby',
                 level: 28,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Gigantamax Kingler': {
@@ -3965,12 +3999,6 @@ POKEMON_RULES = {
     },
     'Exeggutor': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'workout_sea',
-                'insular_sea',
-            ],
-        },
         evolution: [
             {
                 prev: 'Exeggcute',
@@ -3980,6 +4008,10 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'citadark_isle_dome',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
         ],
     },
     'Alolan Exeggutor': {
@@ -3995,8 +4027,8 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('exeggutor_island_hill', False),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('exeggutor_island_hill', True, 78865330),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('exeggutor_island_hill', False),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('exeggutor_island_hill', True, 78865330),
         ],
     },
     'Pinkan Exeggutor': {
@@ -4012,7 +4044,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sevault_canyon',
-                'forest_of_focus',
             ],
         },
         dungeons: [
@@ -4022,13 +4053,15 @@ POKEMON_RULES = {
             'warm_up_tunnel',
         ],
         safari: ['Kanto'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+        ],
     },
     'Marowak': {
         native_region: 'Kanto',
         routes: {
             land: [
                 'sevault_canyon',
-                'potbottom_desert',
             ],
         },
         dungeons: [
@@ -4047,6 +4080,9 @@ POKEMON_RULES = {
         safari: ['Kanto', 'Kalos'],
         shadow_pokemon: [
             'citadark_isle_dome',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
         ],
     },
     'Alolan Marowak': {
@@ -4132,7 +4168,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'motostoke_outskirts',
-                'motostoke_riverbank',
                 'giants_mirror',
             ],
         },
@@ -4142,6 +4177,9 @@ POKEMON_RULES = {
             'team_rockets_hideout',
             'fiery_path',
             'dusty_bowl',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
         ],
     },
     'Weezing': {
@@ -4169,11 +4207,6 @@ POKEMON_RULES = {
     },
     'Galarian Weezing': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         dungeon_boss: [
             ('slumbering_weald_shrine', 135047520),
         ],
@@ -4183,6 +4216,9 @@ POKEMON_RULES = {
                 level: 35,
                 region: 'galarOnly',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Pinkan Weezing': {
@@ -4197,10 +4233,6 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_214',
                 'sinnoh_route_227',
-                'motostoke_riverbank',
-                'bridge_field',
-                'stony_wilderness',
-                'giants_mirror',
                 'galar_route_8',
                 'potbottom_desert',
                 'diamond_heath',
@@ -4218,6 +4250,12 @@ POKEMON_RULES = {
         ],
         safari: ['Kanto'],
         farm_wandering: ['Charti Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Pinkan Rhyhorn': {
         native_region: 'Kanto',
@@ -4231,14 +4269,9 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_227',
                 'sinnoh_route_228',
-                'giants_seat',
-                'motostoke_riverbank',
-                'bridge_field',
                 'stony_wilderness',
                 'giants_cap',
-                'lake_of_outrage',
                 'white_hill_station',
-                'potbottom_desert',
                 'celestica_trail',
             ],
         },
@@ -4259,6 +4292,13 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'citadark_isle_dome',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+        ],
     },
     'Pinkan Rhydon': {
         native_region: 'Kanto',
@@ -4278,18 +4318,6 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_209',
                 'sinnoh_route_210',
-                'fields_of_honor',
-                'soothing_wetlands',
-                'forest_of_focus',
-                'challenge_beach',
-                'loop_lagoon',
-                'training_lowlands',
-                'potbottom_desert',
-                'challenge_road',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_island',
                 'hideaway_bay',
                 'tombolo_walk',
                 'avalanche_slopes',
@@ -4302,6 +4330,20 @@ POKEMON_RULES = {
         safari: ['Kanto'],
         shadow_pokemon: [
             'citadark_isle',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
         ],
     },
     'Charity Chansey': {
@@ -4337,11 +4379,6 @@ POKEMON_RULES = {
     },
     'Kangaskhan': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'training_lowlands',
-            ],
-        },
         dungeons: [
             'wela_volcano_park',
         ],
@@ -4353,6 +4390,7 @@ POKEMON_RULES = {
             'citadark_isle',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
             make_rule('a_beautiful_world3') & make_rule('glittering_cave', True, 63749659),
         ],
     },
@@ -4423,7 +4461,6 @@ POKEMON_RULES = {
                 'resort_gorgeous',
                 'green_path',
                 'outcast_island',
-                'honeycalm_sea',
             ],
             water: [
                 'five_isle_meadow',
@@ -4441,6 +4478,9 @@ POKEMON_RULES = {
                 prev: 'Horsea',
                 level: 32,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
         ],
     },
     'Goldeen': {
@@ -4502,14 +4542,6 @@ POKEMON_RULES = {
     'Seaking': {
         native_region: 'Kanto',
         routes: {
-            land: [
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'bridge_field',
-                'lake_of_outrage',
-            ],
             water: [
                 'johto_route_42',
                 'sinnoh_route_203',
@@ -4532,6 +4564,14 @@ POKEMON_RULES = {
             },
         ],
         safari: ['Kanto'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Staryu': {
         native_region: 'Kanto',
@@ -4559,12 +4599,6 @@ POKEMON_RULES = {
     },
     'Starmie': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'fields_of_honor',
-                'challenge_beach',
-            ],
-        },
         evolution: [
             {
                 prev: 'Staryu',
@@ -4573,6 +4607,10 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'citadark_isle_dome',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
         ],
     },
     'Mr. Mime': {
@@ -4605,7 +4643,6 @@ POKEMON_RULES = {
         native_region: 'Galar',
         routes: {
             land: [
-                'lake_of_outrage',
                 'white_hill_station',
                 'galar_route_10',
             ],
@@ -4616,6 +4653,9 @@ POKEMON_RULES = {
                 level: 32,
                 region: 'galarOnly',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Scyther': {
@@ -4649,12 +4689,6 @@ POKEMON_RULES = {
     },
     'Jynx': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'slippery_slope',
-                'frostpoint_field',
-            ],
-        },
         dungeons: [
             'ice_path',
             'frost_cavern',
@@ -4672,35 +4706,39 @@ POKEMON_RULES = {
         shops: [
             ('celadon_city', 'questPoint'),
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+        ],
     },
     'Santa Jynx': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_1'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_22'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_2'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_3'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_4'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_24'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_25'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_5'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_6'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_11'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_9'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_10'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_8'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_7'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_12'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_13'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_14'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_15'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_16'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_17'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_18'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_19'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_20'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_21'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('santa_jynx1') & make_rule('kanto_route_23'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_1'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_22'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_2'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_3'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_4'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_24'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_25'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_5'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_6'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_11'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_9'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_10'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_8'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_7'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_12'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_13'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_14'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_15'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_16'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_17'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_18'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_19'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_20'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_21'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('santa_jynx1') & make_rule('kanto_route_23'),
         ],
     },
     'Electabuzz': {
@@ -4708,12 +4746,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sinnoh_route_222',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
                 'cloudcap_pass',
                 'arenas_approach',
                 'icebound_falls',
@@ -4737,6 +4769,14 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'citadark_isle_dome',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Pinkan Electabuzz': {
         native_region: 'Kanto',
@@ -4746,18 +4786,6 @@ POKEMON_RULES = {
     },
     'Magmar': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'three_point_pass',
-                'ballimere_lake',
-                'snowslide_slope',
-            ],
-        },
         dungeons: [
             'wela_volcano_park',
             'dyna_tree_hill',
@@ -4778,6 +4806,16 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'citadark_isle',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Pinsir': {
         native_region: 'Kanto',
@@ -4786,9 +4824,7 @@ POKEMON_RULES = {
                 'unova_route_12',
                 'kalos_route_12',
                 'poni_grove',
-                'forest_of_focus',
                 'training_lowlands',
-                'challenge_road',
             ],
         },
         dungeons: [
@@ -4803,6 +4839,8 @@ POKEMON_RULES = {
             'citadark_isle',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
             make_rule('emissary_of_light2') & make_rule('exeggutor_island_hill', True, 78865330),
         ],
     },
@@ -5273,9 +5311,6 @@ POKEMON_RULES = {
                 'sinnoh_route_219',
                 'sinnoh_route_220',
                 'sinnoh_route_223',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'challenge_beach',
                 'obsidian_falls',
             ],
             water: [
@@ -5343,6 +5378,11 @@ POKEMON_RULES = {
             },
         ],
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+        ],
     },
     'Mega Gyarados': {
         native_region: 'Kanto',
@@ -5358,10 +5398,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'poni_breaker_coast',
-                'west_lake_axewell',
-                'north_lake_miloch',
-                'lake_of_outrage',
-                'frigid_sea',
             ],
             water: [
                 'kalos_route_12',
@@ -5380,6 +5416,10 @@ POKEMON_RULES = {
             'citadark_isle_dome',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
             Has('Fog Badge') & make_rule('union_cave', True, 450000),
             make_rule('silph_co') & make_rule('blue5'),
         ],
@@ -5431,9 +5471,6 @@ POKEMON_RULES = {
                 'alola_route_4',
                 'alola_route_6',
                 'galar_route_4',
-                'frostpoint_field',
-                'giants_bed',
-                'ballimere_lake',
                 'horseshoe_plains',
                 'south_province_area_two',
             ],
@@ -5447,6 +5484,11 @@ POKEMON_RULES = {
         quest_rewards: [
             'completed_bills_grandpa_treasure_hunt',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Gigantamax Eevee': {
         native_region: 'Kanto',
@@ -5457,52 +5499,46 @@ POKEMON_RULES = {
     'Let\'s Go Eevee': {
         native_region: 'Kanto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto'),
         ],
     },
     'Vaporeon': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
                 item: 'Water Stone',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+        ],
     },
     'Jolteon': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
                 item: 'Thunder Stone',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+        ],
     },
     'Flareon': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
                 item: 'Fire Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Porygon': {
@@ -5584,9 +5620,6 @@ POKEMON_RULES = {
         native_region: 'Kanto',
         routes: {
             land: [
-                'motostoke_riverbank',
-                'slippery_slope',
-                'frostpoint_field',
                 'giants_bed',
                 'arenas_approach',
                 'snowfall_hot_spring',
@@ -5609,6 +5642,11 @@ POKEMON_RULES = {
             'snorlax_route12',
             'snorlax_route16',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+        ],
     },
     'Gigantamax Snorlax': {
         native_region: 'Kanto',
@@ -5625,27 +5663,27 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kanto - Sevii Islands'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Johto'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Hoenn'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Hoenn - Orre'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Sinnoh'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Unova'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kalos'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Alola'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Alola - Magikarp Jump'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Galar - South'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Galar - Isle of Armor'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Galar - Crown Tundra'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Hisui'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Paldea'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kanto - Sevii Islands'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Johto'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Hoenn'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Hoenn - Orre'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Sinnoh'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Unova'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kalos'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Alola'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Alola - Magikarp Jump'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Galar - South'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Galar - Isle of Armor'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Galar - Crown Tundra'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Hisui'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Paldea'),
         ],
     },
     'Snorlax (Snowman)': {
         native_region: 'Kanto',
         special: [
-            make_rule('seafoam_islands', False) & make_rule('has_script', "Infinite Seasonal Events"),
+            make_rule('seafoam_islands', False) & make_rule('has_script', "Infinite Seasonal Events Script"),
         ],
     },
     'Articuno': {
@@ -5725,9 +5763,6 @@ POKEMON_RULES = {
     'Dragonair': {
         native_region: 'Kanto',
         routes: {
-            land: [
-                'ballimere_lake',
-            ],
             water: [
                 'johto_route_45',
                 'kalos_route_21',
@@ -5745,17 +5780,13 @@ POKEMON_RULES = {
         ],
         egg: 'Dragon Egg',
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
             Has('Dragonair') & make_rule('poni_meadow', False),
             Has('Dragonair') & make_rule('region_safari', 'Kanto'),
         ],
     },
     'Dragonite': {
         native_region: 'Kanto',
-        routes: {
-            land: [
-                'ballimere_lake',
-            ],
-        },
         dungeon_boss: [
             ('dragonspiral_tower', 48000000),
         ],
@@ -5768,6 +5799,9 @@ POKEMON_RULES = {
         egg: 'Dragon Egg',
         shadow_pokemon: [
             'gateon_port_battles',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Mewtwo': {
@@ -5970,7 +6004,6 @@ POKEMON_RULES = {
                 'sinnoh_route_211',
                 'galar_route_1',
                 'galar_route_2',
-                'dappled_grove',
             ],
             headbutt: [
                 'johto_route_32',
@@ -5991,6 +6024,9 @@ POKEMON_RULES = {
             'lush_jungle',
         ],
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+        ],
     },
     'Noctowl': {
         native_region: 'Johto',
@@ -6002,9 +6038,6 @@ POKEMON_RULES = {
                 'sinnoh_route_211',
                 'kalos_route_20',
                 'motostoke_outskirts',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_cap',
             ],
         },
         dungeons: [
@@ -6024,6 +6057,11 @@ POKEMON_RULES = {
         safari: ['Sinnoh'],
         shadow_pokemon: [
             'pyrite_town_battles',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Ledyba': {
@@ -6163,13 +6201,6 @@ POKEMON_RULES = {
                 'johto_route_41',
                 'sinnoh_route_220',
                 'undella_bay',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
             ],
             water: [
                 'johto_route_47',
@@ -6182,20 +6213,19 @@ POKEMON_RULES = {
             ],
         },
         egg: 'Electric Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
+        ],
     },
     'Lanturn': {
         native_region: 'Johto',
         routes: {
-            land: [
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
-            ],
             water: [
                 'johto_route_47',
                 'johto_route_26',
@@ -6213,13 +6243,22 @@ POKEMON_RULES = {
                 level: 27,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
+        ],
     },
     'Pichu': {
         native_region: 'Johto',
         routes: {
             land: [
                 'alola_route_1',
-                'forest_of_focus',
                 'natures_pantry',
                 'south_province_area_one',
                 'south_province_area_two',
@@ -6230,6 +6269,9 @@ POKEMON_RULES = {
             'floaro_gardens',
         ],
         breeding: ['Pikachu', 'Raichu', 'Alolan Raichu'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+        ],
     },
     'Spiky-eared Pichu': {
         native_region: 'Johto',
@@ -6267,7 +6309,6 @@ POKEMON_RULES = {
         native_region: 'Johto',
         routes: {
             land: [
-                'bridge_field',
                 'cottonsedge_prairie',
                 'bathers_lagoon',
                 'tranquility_cove',
@@ -6281,34 +6322,37 @@ POKEMON_RULES = {
             ('violet_city', 'questPoint'),
         ],
         breeding: ['Togetic', 'Togekiss'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+        ],
     },
     'Spooky Togepi': {
         native_region: 'Johto',
         breeding: ['Spooky Togetic', 'Spooky Togekiss'],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_29'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_30'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_31'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_32'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_33'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_34'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_35'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_36'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_37'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_38'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_39'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_40'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_41'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_42'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_43'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_44'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_45'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_46'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_47'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_48'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_26'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_27'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_28'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_29'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_30'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_31'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_32'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_33'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_34'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_35'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_36'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_37'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_38'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_39'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_40'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_41'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_42'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_43'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_44'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_45'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_46'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_47'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_48'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_26'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_27'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_28'),
         ],
     },
     'Togepi (Flowering Crown)': {
@@ -6316,7 +6360,7 @@ POKEMON_RULES = {
         special: [
             {
                 dungeon: 'ruins_of_alph',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('ruins_of_alph', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('ruins_of_alph', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -6331,7 +6375,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'slowpoke_well',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('slowpoke_well', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('slowpoke_well', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -6346,7 +6390,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'ilex_forest',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('ilex_forest', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('ilex_forest', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -6361,7 +6405,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'tin_tower',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('tin_tower', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('tin_tower', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -6376,7 +6420,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'whirl_islands',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('whirl_islands', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('whirl_islands', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -6391,7 +6435,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'ice_path',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('ice_path', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('ice_path', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -6410,7 +6454,6 @@ POKEMON_RULES = {
         native_region: 'Johto',
         routes: {
             land: [
-                'stony_wilderness',
                 'tranquility_cove',
             ],
         },
@@ -6422,6 +6465,9 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'under_colosseum',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
         ],
     },
     'Spooky Togetic': {
@@ -6439,13 +6485,6 @@ POKEMON_RULES = {
             land: [
                 'ruin_valley',
                 'akala_outskirts',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'giants_mirror',
             ],
             headbutt: [
                 'johto_route_28',
@@ -6459,22 +6498,29 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'phenac_city_battles',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Xatu': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'east_lake_axewell',
-                'giants_seat',
-                'north_lake_miloch',
-                'giants_mirror',
-            ],
-        },
         evolution: [
             {
                 prev: 'Natu',
                 level: 25,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Mareep': {
@@ -6539,16 +6585,14 @@ POKEMON_RULES = {
     },
     'Bellossom': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'giants_mirror',
-            ],
-        },
         evolution: [
             {
                 prev: 'Gloom',
                 item: 'Sun Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Marill': {
@@ -6565,9 +6609,6 @@ POKEMON_RULES = {
                 'unova_route_6',
                 'unova_route_11',
                 'unova_route_22',
-                'fields_of_honor',
-                'soothing_wetlands',
-                'challenge_beach',
             ],
             water: [
                 'hoenn_route_102',
@@ -6591,6 +6632,9 @@ POKEMON_RULES = {
         ],
         egg: 'Water Egg',
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
             make_rule('brooklet_hill', False),
         ],
     },
@@ -6599,10 +6643,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_22',
-                'soothing_wetlands',
-                'forest_of_focus',
-                'challenge_beach',
-                'training_lowlands',
             ],
         },
         dungeons: [
@@ -6617,6 +6657,12 @@ POKEMON_RULES = {
                 level: 18,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Sudowoodo': {
         native_region: 'Johto',
@@ -6624,10 +6670,6 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_221',
                 'motostoke_outskirts',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_mirror',
-                'hammerlocke_hills',
             ],
         },
         dungeons: [
@@ -6649,6 +6691,12 @@ POKEMON_RULES = {
         temporary_battle: [
             'sudowoodo',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Sudowoodo (Golden)': {
         native_region: 'Johto',
@@ -6659,9 +6707,6 @@ POKEMON_RULES = {
     'Politoed': {
         native_region: 'Johto',
         routes: {
-            land: [
-                'soothing_wetlands',
-            ],
             water: [
                 'kalos_route_19',
             ],
@@ -6674,6 +6719,9 @@ POKEMON_RULES = {
                 prev: 'Poliwhirl',
                 item: 'Kings Rock',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
         ],
     },
     'Hoppip': {
@@ -6779,7 +6827,7 @@ POKEMON_RULES = {
         ],
         egg: 'Grass Egg',
         special: [
-            Has('Sunkern') & Has('Elite Johto Champion Badge') & make_rule('kanto_route_24'),
+            Has('Sunkern') & Has('Johto Elite Champion Badge') & make_rule('kanto_route_24'),
         ],
     },
     'Sunflora': {
@@ -6824,9 +6872,6 @@ POKEMON_RULES = {
                 'ruin_valley',
                 'johto_route_32',
                 'cave_poke_spot',
-                'west_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
             ],
             water: [
                 'soothing_wetlands',
@@ -6839,6 +6884,11 @@ POKEMON_RULES = {
         ],
         egg: 'Water Egg',
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+        ],
     },
     'Paldean Wooper': {
         native_region: 'Paldea',
@@ -6857,11 +6907,6 @@ POKEMON_RULES = {
                 'sinnoh_route_212',
                 'kalos_route_14',
                 'kalos_route_19',
-                'west_lake_axewell',
-                'giants_seat',
-                'giants_cap',
-                'lake_of_outrage',
-                'soothing_wetlands',
             ],
             water: [
                 'johto_route_32',
@@ -6881,15 +6926,16 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'pyrite_town_battles',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+        ],
     },
     'Espeon': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
@@ -6897,21 +6943,23 @@ POKEMON_RULES = {
                 time: 'day',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+        ],
     },
     'Umbreon': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
                 item: 'Soothe Bell',
                 time: 'night',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Murkrow': {
@@ -6981,29 +7029,29 @@ POKEMON_RULES = {
             'pyrite_town_battles',
         ],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_29'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_30'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_31'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_32'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_33'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_34'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_35'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_36'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_37'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_38'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_39'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_40'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_41'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_42'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_43'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_44'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_45'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_46'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_47'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_48'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_26'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_27'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('johto_route_28'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_29'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_30'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_31'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_32'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_33'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_34'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_35'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_36'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_37'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_38'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_39'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_40'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_41'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_42'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_43'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_44'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_45'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_46'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_47'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_48'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_26'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_27'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('johto_route_28'),
         ],
     },
     'Unown (A)': {
@@ -7032,6 +7080,7 @@ POKEMON_RULES = {
             ('solaceon_ruins', 4100000),
             ('ancient_solaceon_ruins', 4100000),
         ],
+        discord: ['Johto'],
     },
     'Unown (D)': {
         native_region: 'Johto',
@@ -7041,6 +7090,7 @@ POKEMON_RULES = {
             ('solaceon_ruins', 4100000),
             ('ancient_solaceon_ruins', 4100000),
         ],
+        discord: ['Johto'],
     },
     'Unown (E)': {
         native_region: 'Johto',
@@ -7080,6 +7130,7 @@ POKEMON_RULES = {
             ('solaceon_ruins', 4100000),
             ('ancient_solaceon_ruins', 4100000),
         ],
+        discord: ['Johto'],
     },
     'Unown (J)': {
         native_region: 'Johto',
@@ -7134,6 +7185,7 @@ POKEMON_RULES = {
             ('solaceon_ruins', 4100000),
             ('ancient_solaceon_ruins', 4100000),
         ],
+        discord: ['Johto'],
     },
     'Unown (P)': {
         native_region: 'Johto',
@@ -7159,6 +7211,7 @@ POKEMON_RULES = {
             ('solaceon_ruins', 4100000),
             ('ancient_solaceon_ruins', 4100000),
         ],
+        discord: ['Johto'],
     },
     'Unown (S)': {
         native_region: 'Johto',
@@ -7168,6 +7221,7 @@ POKEMON_RULES = {
             ('solaceon_ruins', 4100000),
             ('ancient_solaceon_ruins', 4100000),
         ],
+        discord: ['Johto'],
     },
     'Unown (T)': {
         native_region: 'Johto',
@@ -7252,10 +7306,6 @@ POKEMON_RULES = {
             land: [
                 'ruin_valley',
                 'galar_route_5',
-                'motostoke_riverbank',
-                'bridge_field',
-                'lake_of_outrage',
-                'hammerlocke_hills',
             ],
         },
         dungeons: [
@@ -7270,6 +7320,12 @@ POKEMON_RULES = {
                 prev: 'Wynaut',
                 level: 15,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
         ],
     },
     'Girafarig': {
@@ -7490,12 +7546,6 @@ POKEMON_RULES = {
     },
     'Scizor': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'training_lowlands',
-                'challenge_road',
-            ],
-        },
         evolution: [
             {
                 prev: 'Scyther',
@@ -7504,6 +7554,10 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'phenac_stadium',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Mega Scizor': {
@@ -7517,14 +7571,6 @@ POKEMON_RULES = {
     },
     'Shuckle': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'watchtower_ruins',
-                'stony_wilderness',
-                'giants_cap',
-                'ballimere_lake',
-            ],
-        },
         dungeons: [
             'altering_cave',
             'galar_mine_no_2',
@@ -7538,6 +7584,12 @@ POKEMON_RULES = {
             'deep_colosseum',
         ],
         dream_orbs: ['Pink'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Shuckle (Corked)': {
         native_region: 'Johto',
@@ -7550,9 +7602,7 @@ POKEMON_RULES = {
                 'unova_route_12',
                 'kalos_route_12',
                 'poni_grove',
-                'forest_of_focus',
                 'training_lowlands',
-                'challenge_road',
                 'gruelling_grove',
                 'wayward_wood',
             ],
@@ -7577,6 +7627,10 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'realgam_tower_battles',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Mega Heracross': {
         native_region: 'Johto',
@@ -7595,17 +7649,8 @@ POKEMON_RULES = {
                 'sinnoh_route_216',
                 'sinnoh_route_217',
                 'kalos_route_17',
-                'motostoke_riverbank',
-                'bridge_field',
-                'stony_wilderness',
-                'giants_cap',
-                'hammerlocke_hills',
                 'steamdrift_way',
                 'galar_route_10',
-                'slippery_slope',
-                'frostpoint_field',
-                'frigid_sea',
-                'snowslide_slope',
             ],
         },
         dungeons: [
@@ -7621,6 +7666,17 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'the_under',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Hisuian Sneasel': {
@@ -7696,9 +7752,9 @@ POKEMON_RULES = {
             'pyrite_town_battles',
         ],
         special: [
-            Has('Slugma') & Has('Elite Johto Champion Badge') & make_rule('kanto_route_16'),
-            Has('Slugma') & Has('Elite Johto Champion Badge') & make_rule('kanto_route_17'),
-            Has('Slugma') & Has('Elite Johto Champion Badge') & make_rule('kanto_route_18'),
+            Has('Slugma') & Has('Johto Elite Champion Badge') & make_rule('kanto_route_16'),
+            Has('Slugma') & Has('Johto Elite Champion Badge') & make_rule('kanto_route_17'),
+            Has('Slugma') & Has('Johto Elite Champion Badge') & make_rule('kanto_route_18'),
         ],
     },
     'Magcargo': {
@@ -7724,10 +7780,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sinnoh_route_217',
-                'rolling_fields',
-                'giants_seat',
-                'giants_mirror',
-                'slippery_slope',
                 'bonechill_wastes',
                 'avalanche_slopes',
             ],
@@ -7741,15 +7793,17 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'phenac_city_battles',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+        ],
     },
     'Piloswine': {
         native_region: 'Johto',
         routes: {
             land: [
-                'rolling_fields',
-                'east_lake_axewell',
-                'lake_of_outrage',
-                'slippery_slope',
                 'bonechill_wastes',
                 'arenas_approach',
                 'avalanche_slopes',
@@ -7769,6 +7823,12 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'the_under',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
         ],
     },
     'Corsola': {
@@ -7843,10 +7903,8 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sinnoh_route_223',
-                'south_lake_miloch',
                 'galar_route_9',
                 'circhester_bay',
-                'challenge_beach',
                 'castaway_shore',
             ],
             water: [
@@ -7869,6 +7927,10 @@ POKEMON_RULES = {
                 level: 25,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+        ],
     },
     'Delibird': {
         native_region: 'Johto',
@@ -7876,18 +7938,7 @@ POKEMON_RULES = {
             land: [
                 'unova_route_22',
                 'kalos_route_17',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'axews_eye',
-                'watchtower_ruins',
-                'giants_mirror',
-                'giants_cap',
                 'steamdrift_way',
-                'snowslide_slope',
             ],
         },
         dungeons: [
@@ -7902,6 +7953,19 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'realgam_tower_battles',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Mantine': {
@@ -7933,7 +7997,6 @@ POKEMON_RULES = {
                 'sinnoh_route_227',
                 'alola_route_10',
                 'mount_hokulani',
-                'training_lowlands',
                 'challenge_road',
             ],
         },
@@ -7949,6 +8012,9 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'realgam_tower_battles',
             'snagem_hideout',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Houndour': {
@@ -7969,7 +8035,7 @@ POKEMON_RULES = {
             'cipher_lab',
         ],
         special: [
-            Has('Houndour') & Has('Elite Johto Champion Badge') & make_rule('kanto_route_7'),
+            Has('Houndour') & Has('Johto Elite Champion Badge') & make_rule('kanto_route_7'),
         ],
     },
     'Houndoom': {
@@ -8006,16 +8072,14 @@ POKEMON_RULES = {
     },
     'Kingdra': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'honeycalm_sea',
-            ],
-        },
         evolution: [
             {
                 prev: 'Seadra',
                 item: 'Dragon Scale',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
         ],
     },
     'Phanpy': {
@@ -8085,7 +8149,7 @@ POKEMON_RULES = {
     'Reindeer Stantler': {
         native_region: 'Johto',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Johto'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Johto'),
         ],
     },
     'Smeargle': {
@@ -8111,27 +8175,22 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'giants_seat',
                 'south_lake_miloch',
                 'galar_route_3',
-                'stony_wilderness',
             ],
         },
         egg: 'Fighting Egg',
         breeding: ['Hitmonlee', 'Hitmonchan', 'Hitmontop'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
             make_rule('mt_mortar', True, 420000),
         ],
     },
     'Hitmontop': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         evolution: [
             {
                 prev: 'Tyrogue',
@@ -8141,15 +8200,12 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'relic_cave',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Smoochum': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'slippery_slope',
-                'frostpoint_field',
-            ],
-        },
         dungeons: [
             'snowpoint_temple',
             'frost_cavern',
@@ -8157,18 +8213,16 @@ POKEMON_RULES = {
         ],
         dream_orbs: ['Blue'],
         breeding: ['Jynx'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+        ],
     },
     'Elekid': {
         native_region: 'Johto',
         routes: {
             land: [
                 'mount_hokulani',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
                 'cloudcap_pass',
                 'arenas_approach',
                 'icebound_falls',
@@ -8179,27 +8233,33 @@ POKEMON_RULES = {
         ],
         egg: 'Electric Egg',
         breeding: ['Electabuzz', 'Electivire'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Magby': {
         native_region: 'Johto',
-        routes: {
-            land: [
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'three_point_pass',
-                'ballimere_lake',
-                'snowslide_slope',
-            ],
-        },
         dungeons: [
             'wela_volcano_park',
             'firespit_island',
         ],
         egg: 'Fire Egg',
         breeding: ['Magmar', 'Magmortar'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Miltank': {
         native_region: 'Johto',
@@ -8224,18 +8284,6 @@ POKEMON_RULES = {
         native_region: 'Johto',
         routes: {
             land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'forest_of_focus',
-                'challenge_beach',
-                'loop_lagoon',
-                'training_lowlands',
-                'potbottom_desert',
-                'challenge_road',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_island',
                 'avalanche_slopes',
             ],
         },
@@ -8247,6 +8295,20 @@ POKEMON_RULES = {
                 prev: 'Chansey',
                 item: 'Soothe Bell',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
         ],
     },
     'Blessing Blissey': {
@@ -8295,7 +8357,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sevault_canyon',
-                'lake_of_outrage',
             ],
         },
         dungeons: [
@@ -8307,6 +8368,9 @@ POKEMON_RULES = {
             ('digletts_tunnel', 66079195),
         ],
         farm_wandering: ['Shuca Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Pupitar': {
         native_region: 'Johto',
@@ -8314,7 +8378,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_15',
                 'kalos_route_18',
-                'lake_of_outrage',
             ],
         },
         dungeons: [
@@ -8325,6 +8388,9 @@ POKEMON_RULES = {
                 prev: 'Larvitar',
                 level: 30,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Tyranitar': {
@@ -8389,7 +8455,7 @@ POKEMON_RULES = {
     'Grinch Celebi': {
         native_region: 'Johto',
         special: [
-            Has('Elite Johto Champion Badge') & make_rule('has_script', "Infinite Seasonal Events") & make_rule('ilex_forest', True, 1600000),
+            Has('Johto Elite Champion Badge') & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('ilex_forest', True, 1600000),
         ],
     },
     'Treecko': {
@@ -8447,7 +8513,7 @@ POKEMON_RULES = {
         special: [
             {
                 dungeon: 'petalburg_woods',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('petalburg_woods', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('petalburg_woods', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -8462,7 +8528,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'rusturf_tunnel',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('rusturf_tunnel', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('rusturf_tunnel', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -8477,7 +8543,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'meteor_falls',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('meteor_falls', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('meteor_falls', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -8492,7 +8558,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'new_mauville',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('new_mauville', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('new_mauville', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -8507,7 +8573,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'sky_pillar',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('sky_pillar', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('sky_pillar', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -8522,7 +8588,7 @@ POKEMON_RULES = {
             },
             {
                 dungeon: 'sealed_chamber',
-                rule: make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_egg_hunt') & make_rule('sealed_chamber', True, 2700000),
+                rule: make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_egg_hunt') & make_rule('sealed_chamber', True, 2700000),
                 requirements: [
                     {
                         type: 'PokemonDefeatedSelectNRequirement',
@@ -8677,10 +8743,12 @@ POKEMON_RULES = {
                 'galar_route_2',
                 'galar_route_3',
                 'bridge_field',
-                'stony_wilderness',
                 'galar_route_2_lakeside',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+        ],
     },
     'Linoone': {
         native_region: 'Hoenn',
@@ -8702,9 +8770,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'bridge_field',
-                'giants_cap',
-                'giants_bed',
-                'ballimere_lake',
             ],
         },
         evolution: [
@@ -8712,6 +8777,11 @@ POKEMON_RULES = {
                 prev: 'Galarian Zigzagoon',
                 level: 20,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Wurmple': {
@@ -8845,12 +8915,14 @@ POKEMON_RULES = {
                 'hoenn_route_102',
                 'hoenn_route_114',
                 'galar_route_2',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
                 'galar_route_2_lakeside',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+        ],
     },
     'Lombre': {
         native_region: 'Hoenn',
@@ -8858,10 +8930,7 @@ POKEMON_RULES = {
             land: [
                 'hoenn_route_114',
                 'dappled_grove',
-                'giants_seat',
-                'south_lake_miloch',
                 'galar_route_5',
-                'giants_cap',
             ],
             water: [
                 'kalos_route_15',
@@ -8880,19 +8949,22 @@ POKEMON_RULES = {
                 level: 14,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Ludicolo': {
         native_region: 'Hoenn',
-        routes: {
-            land: [
-                'dappled_grove',
-            ],
-        },
         evolution: [
             {
                 prev: 'Lombre',
                 item: 'Water Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
         ],
     },
     'Seedot': {
@@ -8903,8 +8975,6 @@ POKEMON_RULES = {
                 'hoenn_route_117',
                 'hoenn_route_120',
                 'galar_route_2',
-                'dappled_grove',
-                'west_lake_axewell',
                 'galar_route_2_lakeside',
             ],
         },
@@ -8914,18 +8984,18 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'cipher_lab',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+        ],
     },
     'Nuzleaf': {
         native_region: 'Hoenn',
         routes: {
             land: [
                 'hoenn_route_114',
-                'rolling_fields',
                 'dappled_grove',
-                'giants_seat',
-                'south_lake_miloch',
                 'galar_route_5',
-                'giants_cap',
             ],
         },
         evolution: [
@@ -8934,14 +9004,15 @@ POKEMON_RULES = {
                 level: 14,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Shiftry': {
         native_region: 'Hoenn',
-        routes: {
-            land: [
-                'dappled_grove',
-            ],
-        },
         dungeons: [
             'grasswither_shrine',
         ],
@@ -8950,6 +9021,9 @@ POKEMON_RULES = {
                 prev: 'Nuzleaf',
                 item: 'Leaf Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
         ],
     },
     'Taillow': {
@@ -9019,11 +9093,7 @@ POKEMON_RULES = {
                 'melemele_sea',
                 'kalae_bay',
                 'akala_outskirts',
-                'rolling_fields',
-                'west_lake_axewell',
                 'south_lake_miloch',
-                'north_lake_miloch',
-                'watchtower_ruins',
                 'loop_lagoon',
                 'stepping_stone_sea',
                 'insular_sea',
@@ -9049,6 +9119,12 @@ POKEMON_RULES = {
             'trainers_school',
             'brooklet_hill',
             'minas_houseboat',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
         ],
     },
     'Pelipper': {
@@ -9086,25 +9162,7 @@ POKEMON_RULES = {
                 'poni_breaker_coast',
                 'poni_plains',
                 'poni_gauntlet',
-                'rolling_fields',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'axews_eye',
-                'bridge_field',
-                'lake_of_outrage',
-                'hammerlocke_hills',
                 'galar_route_9',
-                'fields_of_honor',
-                'challenge_beach',
-                'loop_lagoon',
-                'training_lowlands',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
             ],
             water: [
                 'hoenn_route_103',
@@ -9133,6 +9191,24 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
             make_rule('exeggutor_island_hill', False) & make_rule('emissary_of_light2'),
         ],
     },
@@ -9146,13 +9222,6 @@ POKEMON_RULES = {
                 'sinnoh_route_212',
                 'kalos_route_4',
                 'alola_route_6',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'watchtower_ruins',
-                'fields_of_honor',
                 'gapejaw_bog',
                 'hearts_crag',
                 'south_province_area_one',
@@ -9167,14 +9236,21 @@ POKEMON_RULES = {
             'pyrite_building',
         ],
         dream_orbs: ['Orange'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+        ],
     },
     'Kirlia': {
         native_region: 'Hoenn',
         routes: {
             land: [
                 'sinnoh_route_212',
-                'rolling_fields',
-                'dappled_grove',
                 'hearts_crag',
             ],
         },
@@ -9190,16 +9266,15 @@ POKEMON_RULES = {
                 level: 20,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+        ],
     },
     'Gardevoir': {
         native_region: 'Hoenn',
         routes: {
             land: [
-                'rolling_fields',
-                'dappled_grove',
-                'lake_of_outrage',
-                'forest_of_focus',
-                'training_lowlands',
                 'hearts_crag',
             ],
         },
@@ -9214,6 +9289,13 @@ POKEMON_RULES = {
                 prev: 'Kirlia',
                 level: 30,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Mega Gardevoir': {
@@ -9341,13 +9423,13 @@ POKEMON_RULES = {
             land: [
                 'hoenn_route_116',
                 'kalos_route_6',
-                'west_lake_axewell',
-                'south_lake_miloch',
                 'galar_route_5',
             ],
         },
         farm_wandering: ['Tanga Berry'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
             Has('Nincada') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -9356,7 +9438,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'rolling_fields',
-                'stony_wilderness',
             ],
         },
         evolution: [
@@ -9364,6 +9445,9 @@ POKEMON_RULES = {
                 prev: 'Nincada',
                 level: 20,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
         ],
     },
     'Shedinja': {
@@ -9547,11 +9631,6 @@ POKEMON_RULES = {
     },
     'Mawile': {
         native_region: 'Hoenn',
-        routes: {
-            land: [
-                'bridge_field',
-            ],
-        },
         dungeons: [
             'cave_of_origin',
             'sky_pillar',
@@ -9567,6 +9646,7 @@ POKEMON_RULES = {
             'pyrite_building',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
             make_rule('a_beautiful_world3') & make_rule('glittering_cave', True, 61285398),
         ],
     },
@@ -9700,13 +9780,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_10',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'watchtower_ruins',
                 'galar_route_4',
             ],
         },
@@ -9714,6 +9787,13 @@ POKEMON_RULES = {
         special: [
             Has('Electrike') & make_rule('hoenn_route_110'),
             Has('Electrike') & make_rule('hoenn_route_118'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
         ],
     },
     'Manectric': {
@@ -9721,10 +9801,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'alola_route_12',
-                'rolling_fields',
-                'giants_seat',
-                'axews_eye',
-                'giants_cap',
             ],
         },
         evolution: [
@@ -9738,6 +9814,10 @@ POKEMON_RULES = {
         ],
         special: [
             Has('Manectric') & make_rule('hoenn_route_118'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Mega Manectric': {
@@ -9821,11 +9901,6 @@ POKEMON_RULES = {
                 'sinnoh_route_230',
                 'unova_route_12',
                 'kalos_route_7',
-                'rolling_fields',
-                'dappled_grove',
-                'south_lake_miloch',
-                'axews_eye',
-                'giants_mirror',
                 'cloudpool_ridge',
                 'gapejaw_bog',
                 'fabled_spring',
@@ -9852,6 +9927,11 @@ POKEMON_RULES = {
         ],
         special: [
             Has('Roselia') & make_rule('hoenn_route_117'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Gulpin': {
@@ -10067,9 +10147,6 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_18',
                 'alola_route_12',
-                'motostoke_riverbank',
-                'giants_mirror',
-                'giants_cap',
                 'galar_route_6',
                 'potbottom_desert',
             ],
@@ -10080,6 +10157,11 @@ POKEMON_RULES = {
         ],
         dungeon_boss: [
             ('fiery_path', 1200000),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Spoink': {
@@ -10130,7 +10212,6 @@ POKEMON_RULES = {
                 'desert_resort',
                 'kalos_route_13',
                 'haina_desert',
-                'hammerlocke_hills',
                 'galar_route_6',
             ],
         },
@@ -10138,6 +10219,9 @@ POKEMON_RULES = {
             'reversal_mountain',
         ],
         egg: 'Mystery Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Vibrava': {
         native_region: 'Hoenn',
@@ -10156,11 +10240,6 @@ POKEMON_RULES = {
     },
     'Flygon': {
         native_region: 'Hoenn',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         dungeon_boss: [
             ('dusty_bowl', 114616050),
         ],
@@ -10169,6 +10248,9 @@ POKEMON_RULES = {
                 prev: 'Vibrava',
                 level: 45,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Cacnea': {
@@ -10208,14 +10290,6 @@ POKEMON_RULES = {
                 'hoenn_route_115',
                 'sinnoh_route_210',
                 'unova_route_14',
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
-                'path_to_the_peak',
             ],
         },
         dungeons: [
@@ -10228,6 +10302,16 @@ POKEMON_RULES = {
             'pyrite_cave',
         ],
         dream_orbs: ['Pink'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
+        ],
     },
     'Altaria': {
         native_region: 'Hoenn',
@@ -10235,11 +10319,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_14',
                 'kalos_route_21',
-                'giants_bed',
-                'giants_foot',
-                'frigid_sea',
-                'ballimere_lake',
-                'path_to_the_peak',
             ],
         },
         dungeons: [
@@ -10259,6 +10338,13 @@ POKEMON_RULES = {
         ],
         shadow_pokemon: [
             'citadark_isle',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
         ],
     },
     'Zangoose': {
@@ -10335,9 +10421,6 @@ POKEMON_RULES = {
     'Barboach': {
         native_region: 'Hoenn',
         routes: {
-            land: [
-                'stony_wilderness',
-            ],
             water: [
                 'hoenn_route_111',
                 'hoenn_route_114',
@@ -10380,14 +10463,13 @@ POKEMON_RULES = {
             ('seaward_cave', 59226690),
         ],
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+        ],
     },
     'Whiscash': {
         native_region: 'Hoenn',
         routes: {
-            land: [
-                'south_lake_miloch',
-                'north_lake_miloch',
-            ],
             water: [
                 'sinnoh_route_205',
                 'sinnoh_route_208',
@@ -10421,14 +10503,14 @@ POKEMON_RULES = {
             },
         ],
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+        ],
     },
     'Corphish': {
         native_region: 'Hoenn',
         routes: {
-            land: [
-                'south_lake_miloch',
-                'soothing_wetlands',
-            ],
             water: [
                 'hoenn_route_102',
                 'hoenn_route_117',
@@ -10442,24 +10524,26 @@ POKEMON_RULES = {
             'vast_poni_canyon',
             'galar_mine_no_2',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+        ],
     },
     'Crawdaunt': {
         native_region: 'Hoenn',
-        routes: {
-            land: [
-                'giants_seat',
-                'south_lake_miloch',
-                'axews_eye',
-                'forest_of_focus',
-                'challenge_beach',
-                'training_lowlands',
-            ],
-        },
         evolution: [
             {
                 prev: 'Corphish',
                 level: 30,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Baltoy': {
@@ -10468,17 +10552,7 @@ POKEMON_RULES = {
             land: [
                 'hoenn_route_111',
                 'haina_desert',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'axews_eye',
-                'bridge_field',
                 'stony_wilderness',
-                'giants_cap',
-                'hammerlocke_hills',
             ],
         },
         dungeons: [
@@ -10487,18 +10561,24 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'cipher_lab',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Claydol': {
         native_region: 'Hoenn',
         routes: {
             land: [
-                'dappled_grove',
-                'axews_eye',
-                'bridge_field',
-                'stony_wilderness',
-                'lake_of_outrage',
                 'giants_foot',
-                'three_point_pass',
             ],
         },
         dungeon_boss: [
@@ -10509,6 +10589,14 @@ POKEMON_RULES = {
                 prev: 'Baltoy',
                 level: 36,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
         ],
     },
     'Lileep': {
@@ -10557,16 +10645,12 @@ POKEMON_RULES = {
             ('rustboro_city', ['Claw Fossil']),
         ],
         special: [
-            Has('Armaldo') & make_rule('ballimere_lake'),
+            Has('Armaldo') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Feebas': {
         native_region: 'Hoenn',
         routes: {
-            land: [
-                'giants_bed',
-                'giants_foot',
-            ],
             water: [
                 'galar_route_2_lakeside',
                 'ballimere_lake',
@@ -10580,21 +10664,23 @@ POKEMON_RULES = {
             ('mt_coronet_north', 4960000),
         ],
         egg: 'Water Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+        ],
     },
     'Milotic': {
         native_region: 'Hoenn',
-        routes: {
-            land: [
-                'south_lake_miloch',
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Feebas',
                 item: 'Prism Scale',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Castform': {
@@ -10606,19 +10692,19 @@ POKEMON_RULES = {
     'Castform (Sunny)': {
         native_region: 'Hoenn',
         special: [
-            Has('Castform') & make_rule('weather_institute', True, 1820000),
+            Has('Castform') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('weather_institute', True, 1820000),
         ],
     },
     'Castform (Rainy)': {
         native_region: 'Hoenn',
         special: [
-            Has('Castform') & make_rule('weather_institute', True, 1820000),
+            Has('Castform') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('weather_institute', True, 1820000),
         ],
     },
     'Castform (Snowy)': {
         native_region: 'Hoenn',
         special: [
-            Has('Castform') & make_rule('weather_institute', True, 1820000),
+            Has('Castform') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('weather_institute', True, 1820000),
         ],
     },
     'Kecleon': {
@@ -10655,40 +10741,40 @@ POKEMON_RULES = {
             ('mt_pyre', 1880000),
         ],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_101'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_102'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_103'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_104'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_105'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_106'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_107'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_108'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_109'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_110'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_111'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_112'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_113'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_114'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_115'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_116'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_117'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_118'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_119'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_120'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_121'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_122'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_123'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_124'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_125'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_126'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_127'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_128'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_129'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_130'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_131'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_132'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_133'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_134'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_101'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_102'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_103'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_104'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_105'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_106'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_107'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_108'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_109'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_110'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_111'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_112'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_113'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_114'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_115'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_116'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_117'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_118'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_119'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_120'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_121'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_122'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_123'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_124'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_125'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_126'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_127'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_128'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_129'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_130'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_131'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_132'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_133'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_134'),
         ],
     },
     'Banette': {
@@ -10732,10 +10818,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sinnoh_route_209',
-                'giants_seat',
                 'watchtower_ruins',
-                'motostoke_riverbank',
-                'giants_cap',
                 'galar_route_6',
                 'deadwood_haunt',
                 'arenas_approach',
@@ -10753,48 +10836,49 @@ POKEMON_RULES = {
             'pyrite_building',
         ],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_101'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_102'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_103'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_104'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_105'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_106'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_107'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_108'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_109'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_110'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_111'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_112'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_113'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_114'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_115'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_116'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_117'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_118'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_119'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_120'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_121'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_122'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_123'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_124'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_125'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_126'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_127'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_128'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_129'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_130'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_131'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_132'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_133'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('hoenn_route_134'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_101'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_102'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_103'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_104'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_105'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_106'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_107'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_108'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_109'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_110'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_111'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_112'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_113'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_114'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_115'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_116'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_117'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_118'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_119'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_120'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_121'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_122'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_123'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_124'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_125'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_126'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_127'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_128'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_129'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_130'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_131'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_132'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_133'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('hoenn_route_134'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Dusclops': {
         native_region: 'Hoenn',
         routes: {
             land: [
-                'giants_seat',
-                'watchtower_ruins',
                 'galar_route_8',
                 'deadwood_haunt',
                 'arenas_approach',
@@ -10814,6 +10898,10 @@ POKEMON_RULES = {
                 prev: 'Duskull',
                 level: 37,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
         ],
     },
     'Tropius': {
@@ -10868,14 +10956,6 @@ POKEMON_RULES = {
                 'unova_route_13',
                 'unova_route_14',
                 'kalos_route_8',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'snowslide_slope',
-                'path_to_the_peak',
             ],
         },
         dungeons: [
@@ -10890,6 +10970,16 @@ POKEMON_RULES = {
         farm_wandering: ['Colbur Berry'],
         shadow_pokemon: [
             'realgam_colosseum',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
         ],
     },
     'Mega Absol': {
@@ -10916,20 +11006,7 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_216',
                 'sinnoh_route_217',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'watchtower_ruins',
-                'giants_cap',
-                'hammerlocke_hills',
                 'steamdrift_way',
-                'giants_bed',
-                'giants_foot',
-                'snowslide_slope',
                 'whiteout_valley',
                 'bonechill_wastes',
                 'avalanche_slopes',
@@ -10952,20 +11029,28 @@ POKEMON_RULES = {
         shadow_pokemon: [
             'phenac_city_battles',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Glalie': {
         native_region: 'Hoenn',
         routes: {
             land: [
-                'giants_seat',
-                'watchtower_ruins',
-                'giants_cap',
-                'lake_of_outrage',
                 'galar_route_9',
                 'white_hill_station',
-                'slippery_slope',
-                'giants_bed',
-                'snowslide_slope',
                 'bonechill_wastes',
                 'avalanche_slopes',
             ],
@@ -10993,6 +11078,13 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
             make_rule('icy_boulder') & make_rule('shoal_cave', True, 61614300),
         ],
     },
@@ -11050,7 +11142,6 @@ POKEMON_RULES = {
         native_region: 'Hoenn',
         routes: {
             land: [
-                'frigid_sea',
                 'ginkgo_landing',
                 'islespy_shore',
             ],
@@ -11060,6 +11151,9 @@ POKEMON_RULES = {
                 prev: 'Sealeo',
                 level: 44,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
         ],
     },
     'Clamperl': {
@@ -11176,11 +11270,6 @@ POKEMON_RULES = {
     },
     'Salamence': {
         native_region: 'Hoenn',
-        routes: {
-            land: [
-                'path_to_the_peak',
-            ],
-        },
         dungeon_boss: [
             ('tunnel_to_the_top', 167825980),
         ],
@@ -11193,6 +11282,9 @@ POKEMON_RULES = {
         egg: 'Dragon Egg',
         shadow_pokemon: [
             'citadark_isle_dome',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
         ],
     },
     'Mega Salamence': {
@@ -11332,7 +11424,7 @@ POKEMON_RULES = {
     'Kyogre': {
         native_region: 'Hoenn',
         special: [
-            Has('Elite Hoenn Champion Badge') & make_rule('the_weather_trio5') & make_rule('cave_of_origin', True, 4700000),
+            Has('Hoenn Elite Champion Badge') & make_rule('the_weather_trio5') & make_rule('cave_of_origin', True, 4700000),
         ],
     },
     'Primal Kyogre': {
@@ -11344,13 +11436,13 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            make_rule('completed_primal_reversion') & make_rule('cave_of_origin', True, 95743340),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('completed_primal_reversion') & make_rule('cave_of_origin', True, 95743340),
         ],
     },
     'Groudon': {
         native_region: 'Hoenn',
         special: [
-            Has('Elite Hoenn Champion Badge') & make_rule('the_weather_trio5') & make_rule('cave_of_origin', True, 4700000),
+            Has('Hoenn Elite Champion Badge') & make_rule('the_weather_trio5') & make_rule('cave_of_origin', True, 4700000),
         ],
     },
     'Primal Groudon': {
@@ -11362,7 +11454,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            make_rule('completed_primal_reversion') & make_rule('cave_of_origin', True, 95743340),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('completed_primal_reversion') & make_rule('cave_of_origin', True, 95743340),
         ],
     },
     'Meta Groudon': {
@@ -11740,10 +11832,6 @@ POKEMON_RULES = {
                 'sinnoh_route_202',
                 'sinnoh_route_203',
                 'sinnoh_route_204',
-                'challenge_beach',
-                'training_lowlands',
-                'potbottom_desert',
-                'challenge_road',
                 'aspiration_hill',
                 'deertrack_heights',
                 'sonorous_path',
@@ -11754,6 +11842,12 @@ POKEMON_RULES = {
             'floaro_gardens',
         ],
         egg: 'Electric Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Luxio': {
         native_region: 'Sinnoh',
@@ -11761,10 +11855,6 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_222',
                 'alola_route_8',
-                'fields_of_honor',
-                'soothing_wetlands',
-                'loop_lagoon',
-                'training_lowlands',
                 'sandgem_flats',
                 'heavenward_lookout',
                 'sonorous_path',
@@ -11782,15 +11872,17 @@ POKEMON_RULES = {
                 level: 15,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Luxray': {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'soothing_wetlands',
-                'forest_of_focus',
-                'loop_lagoon',
-                'training_lowlands',
                 'sandgem_flats',
                 'heavenward_lookout',
                 'sonorous_path',
@@ -11810,6 +11902,12 @@ POKEMON_RULES = {
                 level: 30,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Budew': {
         native_region: 'Sinnoh',
@@ -11819,12 +11917,7 @@ POKEMON_RULES = {
                 'sinnoh_route_205',
                 'sinnoh_route_208',
                 'kalos_route_4',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
                 'galar_route_4',
-                'giants_mirror',
                 'golden_lowlands',
                 'gapejaw_bog',
                 'fabled_spring',
@@ -11835,12 +11928,18 @@ POKEMON_RULES = {
         ],
         egg: 'Grass Egg',
         breeding: ['Roselia', 'Roserade'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Roserade': {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'hammerlocke_hills',
                 'cloudpool_ridge',
             ],
         },
@@ -11852,6 +11951,9 @@ POKEMON_RULES = {
                 prev: 'Roselia',
                 item: 'Shiny Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
         ],
     },
     'Cranidos': {
@@ -12119,7 +12221,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_12',
                 'kalos_route_4',
-                'rolling_fields',
                 'honeycalm_island',
                 'gruelling_grove',
                 'cloudpool_ridge',
@@ -12142,6 +12243,7 @@ POKEMON_RULES = {
             ('pal_park', 'questPoint'),
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
             Has('Combee') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -12150,7 +12252,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'unova_route_12',
-                'rolling_fields',
                 'south_province_area_two',
             ],
             headbutt: [
@@ -12165,6 +12266,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
             Has('Vespiquen') & make_rule('lostlorn_forest', False),
             Has('Vespiquen') & make_rule('region_safari', 'Johto'),
         ],
@@ -12297,7 +12399,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            Has('Cherrim (Overcast)') & make_rule('unova_route_12'),
+            Has('Cherrim (Overcast)') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('unova_route_12'),
         ],
     },
     'Cherrim (Sunshine)': {
@@ -12310,7 +12412,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            Has('Cherrim (Sunshine)') & make_rule('unova_route_12'),
+            Has('Cherrim (Sunshine)') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('unova_route_12'),
         ],
     },
     'Shellos (West)': {
@@ -12333,17 +12435,19 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_213',
                 'sinnoh_route_212',
-                'motostoke_riverbank',
-                'bridge_field',
-                'stony_wilderness',
                 'giants_mirror',
-                'giants_cap',
                 'tranquility_cove',
                 'seagrass_haven',
             ],
         },
         dungeons: [
             'galar_mine_no_2',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Gastrodon (West)': {
@@ -12421,17 +12525,7 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_8',
                 'south_lake_miloch',
-                'north_lake_miloch',
-                'watchtower_ruins',
                 'galar_route_5',
-                'fields_of_honor',
-                'challenge_beach',
-                'loop_lagoon',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
                 'aspiration_hill',
                 'horseshoe_plains',
                 'deertrack_path',
@@ -12463,6 +12557,16 @@ POKEMON_RULES = {
         farm_wandering: ['Kasib Berry'],
         dream_orbs: ['Green'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
             make_rule('valley_windworks', True, 3803000),
         ],
     },
@@ -12472,13 +12576,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_13',
                 'unova_route_14',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'axews_eye',
-                'watchtower_ruins',
-                'challenge_beach',
-                'training_lowlands',
-                'challenge_road',
                 'sandgem_flats',
                 'ramanas_island',
                 'crossing_slope',
@@ -12507,6 +12604,15 @@ POKEMON_RULES = {
                 level: 28,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Buneary': {
         native_region: 'Sinnoh',
@@ -12530,9 +12636,6 @@ POKEMON_RULES = {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'challenge_beach',
                 'bonechill_wastes',
                 'arenas_approach',
                 'snowfall_hot_spring',
@@ -12543,6 +12646,11 @@ POKEMON_RULES = {
                 prev: 'Buneary',
                 item: 'Soothe Bell',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
         ],
     },
     'Mega Lopunny': {
@@ -12653,11 +12761,8 @@ POKEMON_RULES = {
                 'sinnoh_route_214',
                 'sinnoh_route_221',
                 'kalos_route_11',
-                'dappled_grove',
-                'south_lake_miloch',
                 'north_lake_miloch',
                 'galar_route_3',
-                'giants_cap',
                 'scarlet_bog',
             ],
         },
@@ -12667,6 +12772,11 @@ POKEMON_RULES = {
         ],
         egg: 'Mystery Egg',
         farm_wandering: ['Colbur Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Skuntank': {
         native_region: 'Sinnoh',
@@ -12674,9 +12784,6 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_221',
                 'sinnoh_route_225',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'lake_of_outrage',
                 'scarlet_bog',
             ],
         },
@@ -12689,6 +12796,11 @@ POKEMON_RULES = {
                 level: 34,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Bronzor': {
         native_region: 'Sinnoh',
@@ -12696,11 +12808,6 @@ POKEMON_RULES = {
             land: [
                 'sinnoh_route_211',
                 'giants_seat',
-                'south_lake_miloch',
-                'bridge_field',
-                'stony_wilderness',
-                'giants_foot',
-                'three_point_pass',
                 'stonetooth_rows',
                 'south_province_area_two',
                 'south_province_area_three',
@@ -12728,20 +12835,20 @@ POKEMON_RULES = {
         egg: 'Mystery Egg',
         farm_wandering: ['Babiri Berry'],
         dream_orbs: ['Green'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+        ],
     },
     'Bronzong': {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'east_lake_axewell',
-                'giants_seat',
-                'axews_eye',
-                'bridge_field',
-                'stony_wilderness',
-                'lake_of_outrage',
                 'galar_route_8',
                 'giants_bed',
-                'giants_foot',
                 'three_point_pass',
                 'stonetooth_rows',
             ],
@@ -12766,14 +12873,21 @@ POKEMON_RULES = {
                 level: 33,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+        ],
     },
     'Bonsly': {
         native_region: 'Sinnoh',
         routes: {
             land: [
                 'alola_route_5',
-                'bridge_field',
-                'stony_wilderness',
                 'south_province_area_one',
                 'south_province_area_two',
             ],
@@ -12788,6 +12902,8 @@ POKEMON_RULES = {
         farm_wandering: ['Charti Berry'],
         breeding: ['Sudowoodo'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
             make_rule('roamer', 'Hoenn - Orre') & make_rule('completed_gale_of_darkness'),
         ],
     },
@@ -12795,7 +12911,6 @@ POKEMON_RULES = {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'rolling_fields',
                 'slippery_slope',
                 'frostpoint_field',
                 'giants_bed',
@@ -12814,6 +12929,9 @@ POKEMON_RULES = {
             'trainers_school',
         ],
         breeding: ['Mr. Mime', 'Galarian Mr. Mime', 'Mr. Rime'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+        ],
     },
     'Happiny': {
         native_region: 'Sinnoh',
@@ -12928,7 +13046,6 @@ POKEMON_RULES = {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'path_to_the_peak',
                 'avalanche_slopes',
             ],
         },
@@ -12947,6 +13064,9 @@ POKEMON_RULES = {
             },
         ],
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
+        ],
     },
     'Mega Garchomp': {
         native_region: 'Sinnoh',
@@ -12961,7 +13081,6 @@ POKEMON_RULES = {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'motostoke_riverbank',
                 'deertrack_path',
                 'arenas_approach',
                 'snowfall_hot_spring',
@@ -12972,6 +13091,9 @@ POKEMON_RULES = {
         },
         farm_wandering: ['Chilan Berry'],
         breeding: ['Snorlax', 'Gigantamax Snorlax'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+        ],
     },
     'Elf Munchlax': {
         native_region: 'Sinnoh',
@@ -12985,7 +13107,6 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_22',
                 'poni_grove',
-                'giants_cap',
                 'arenas_approach',
                 'icebound_falls',
                 'snowfall_hot_spring',
@@ -13001,12 +13122,14 @@ POKEMON_RULES = {
         farm_wandering: ['Chople Berry'],
         dream_orbs: ['Pink'],
         breeding: ['Lucario', 'Mega Lucario'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Lucario': {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'north_lake_miloch',
                 'arenas_approach',
                 'icebound_falls',
                 'snowfall_hot_spring',
@@ -13024,6 +13147,9 @@ POKEMON_RULES = {
                 item: 'Soothe Bell',
                 time: 'day',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
         ],
     },
     'Mega Lucario': {
@@ -13056,8 +13182,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'sinnoh_route_228',
-                'giants_mirror',
-                'lake_of_outrage',
                 'galar_route_8',
                 'scarlet_bog',
                 'gapejaw_bog',
@@ -13070,6 +13194,10 @@ POKEMON_RULES = {
                 level: 34,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Skorupi': {
         native_region: 'Sinnoh',
@@ -13078,8 +13206,6 @@ POKEMON_RULES = {
                 'kalos_route_14',
                 'kalos_route_15',
                 'kalos_route_16',
-                'motostoke_riverbank',
-                'giants_mirror',
                 'galar_route_6',
                 'soothing_wetlands',
                 'ginkgo_landing',
@@ -13091,19 +13217,17 @@ POKEMON_RULES = {
         ],
         safari: ['Sinnoh'],
         farm_wandering: ['Kebia Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Drapion': {
         native_region: 'Sinnoh',
         routes: {
             land: [
                 'kalos_route_19',
-                'motostoke_riverbank',
-                'bridge_field',
-                'lake_of_outrage',
                 'galar_route_8',
-                'soothing_wetlands',
-                'challenge_beach',
-                'training_lowlands',
                 'castaway_shore',
             ],
         },
@@ -13114,6 +13238,14 @@ POKEMON_RULES = {
             },
         ],
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Croagunk': {
         native_region: 'Sinnoh',
@@ -13123,11 +13255,6 @@ POKEMON_RULES = {
                 'unova_route_8',
                 'kalos_route_7',
                 'motostoke_outskirts',
-                'bridge_field',
-                'stony_wilderness',
-                'giants_cap',
-                'soothing_wetlands',
-                'forest_of_focus',
                 'scarlet_bog',
                 'gapejaw_bog',
                 'holm_of_trials',
@@ -13141,13 +13268,18 @@ POKEMON_RULES = {
         ],
         egg: 'Fighting Egg',
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+        ],
     },
     'Toxicroak': {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'training_lowlands',
-                'challenge_road',
                 'holm_of_trials',
                 'spring_path',
             ],
@@ -13163,6 +13295,10 @@ POKEMON_RULES = {
             },
         ],
         safari: ['Sinnoh'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Carnivine': {
         native_region: 'Sinnoh',
@@ -13248,10 +13384,6 @@ POKEMON_RULES = {
                 'undella_bay',
                 'unova_route_21',
                 'melemele_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
             ],
             water: [
                 'kalos_route_12',
@@ -13269,6 +13401,12 @@ POKEMON_RULES = {
             ],
         },
         breeding: ['Mantine'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
+        ],
     },
     'Snover': {
         native_region: 'Sinnoh',
@@ -13277,19 +13415,9 @@ POKEMON_RULES = {
                 'sinnoh_route_216',
                 'sinnoh_route_217',
                 'kalos_route_17',
-                'dappled_grove',
-                'east_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'axews_eye',
-                'watchtower_ruins',
-                'giants_mirror',
-                'giants_cap',
                 'steamdrift_way',
                 'white_hill_station',
                 'galar_route_10',
-                'frostpoint_field',
                 'bonechill_wastes',
                 'glacier_terrace',
             ],
@@ -13301,6 +13429,18 @@ POKEMON_RULES = {
         ],
         egg: 'Grass Egg',
         farm_wandering: ['Yache Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+        ],
     },
     'Snover (Berry)': {
         native_region: 'Sinnoh',
@@ -13311,14 +13451,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_17',
-                'giants_seat',
-                'axews_eye',
-                'giants_mirror',
-                'lake_of_outrage',
-                'hammerlocke_hills',
                 'galar_route_10',
-                'slippery_slope',
-                'frostpoint_field',
                 'bonechill_wastes',
                 'glacier_terrace',
             ],
@@ -13336,6 +13469,13 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
             make_rule('a_beautiful_world17') & make_rule('frost_cavern', True, 85376500),
         ],
     },
@@ -13350,14 +13490,6 @@ POKEMON_RULES = {
     },
     'Weavile': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'bridge_field',
-                'slippery_slope',
-                'frostpoint_field',
-                'snowslide_slope',
-            ],
-        },
         dungeons: [
             'iceberg_ruins',
             'icerend_shrine',
@@ -13373,16 +13505,15 @@ POKEMON_RULES = {
                 time: 'night',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Magnezone': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'challenge_beach',
-                'loop_lagoon',
-                'insular_sea',
-            ],
-        },
         dungeons: [
             'temple_of_sinnoh',
         ],
@@ -13399,6 +13530,9 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
             make_rule('p2_laboratory', True, 58000000),
         ],
     },
@@ -13406,7 +13540,6 @@ POKEMON_RULES = {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'soothing_wetlands',
                 'avalanche_slopes',
             ],
         },
@@ -13419,14 +13552,12 @@ POKEMON_RULES = {
                 level: 33,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+        ],
     },
     'Rhyperior': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'potbottom_desert',
-            ],
-        },
         dungeons: [
             'rock_peak_ruins',
         ],
@@ -13436,12 +13567,14 @@ POKEMON_RULES = {
                 item: 'Protector',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+        ],
     },
     'Tangrowth': {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'forest_of_focus',
                 'gapejaw_bog',
             ],
         },
@@ -13452,6 +13585,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
             make_rule('ghetsis2') & make_rule('giant_chasm', True, 30000000),
         ],
     },
@@ -13459,10 +13593,6 @@ POKEMON_RULES = {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'giants_bed',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
                 'cloudcap_pass',
             ],
         },
@@ -13475,23 +13605,27 @@ POKEMON_RULES = {
                 item: 'Electirizer',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Magmortar': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'slippery_slope',
-                'giants_bed',
-                'frigid_sea',
-                'ballimere_lake',
-                'snowslide_slope',
-            ],
-        },
         evolution: [
             {
                 prev: 'Magmar',
                 item: 'Magmarizer',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Togekiss': {
@@ -13541,12 +13675,6 @@ POKEMON_RULES = {
     },
     'Leafeon': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
@@ -13559,15 +13687,13 @@ POKEMON_RULES = {
                 region: 'galarOnly',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+        ],
     },
     'Glaceon': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
@@ -13579,6 +13705,10 @@ POKEMON_RULES = {
                 item: 'Ice Stone',
                 region: 'galarOnly',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Gliscor': {
@@ -13596,11 +13726,6 @@ POKEMON_RULES = {
     },
     'Mamoswine': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'slippery_slope',
-            ],
-        },
         dungeons: [
             'crown_shrine',
         ],
@@ -13614,6 +13739,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
             make_rule('ghetsis2') & make_rule('giant_chasm', True, 32000000),
         ],
     },
@@ -13628,12 +13754,6 @@ POKEMON_RULES = {
     },
     'Gallade': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'bridge_field',
-                'challenge_road',
-            ],
-        },
         dungeon_boss: [
             ('ancient_snowpoint_temple', 10000000),
         ],
@@ -13642,6 +13762,10 @@ POKEMON_RULES = {
                 prev: 'Kirlia',
                 item: 'Dawn Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Mega Gallade': {
@@ -13688,10 +13812,6 @@ POKEMON_RULES = {
         native_region: 'Sinnoh',
         routes: {
             land: [
-                'slippery_slope',
-                'giants_bed',
-                'old_cemetery',
-                'snowslide_slope',
                 'bonechill_wastes',
                 'avalanche_slopes',
             ],
@@ -13712,14 +13832,18 @@ POKEMON_RULES = {
                 item: 'Dawn Stone',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Rotom': {
         native_region: 'Sinnoh',
         routes: {
             land: [
                 'poni_gauntlet',
-                'lake_of_outrage',
-                'workout_sea',
                 'stonetooth_rows',
             ],
         },
@@ -13732,81 +13856,65 @@ POKEMON_RULES = {
             ('lost_hotel', 82376500),
         ],
         dream_orbs: ['Orange'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+        ],
     },
     'Rotom (Heat)': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'workout_sea',
-            ],
-        },
         dungeon_chest: [
             'lost_hotel',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
             Has('Rotom') & make_rule('team_galactic_eterna_building', True, 4300000),
         ],
     },
     'Rotom (Wash)': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'workout_sea',
-            ],
-        },
         dungeon_chest: [
             'lost_hotel',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
             Has('Rotom') & make_rule('team_galactic_eterna_building', True, 4300000),
         ],
     },
     'Rotom (Frost)': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'workout_sea',
-            ],
-        },
         dungeon_chest: [
             'lost_hotel',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
             Has('Rotom') & make_rule('team_galactic_eterna_building', True, 4300000),
         ],
     },
     'Rotom (Fan)': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'workout_sea',
-            ],
-        },
         dungeon_chest: [
             'lost_hotel',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
             Has('Rotom') & make_rule('team_galactic_eterna_building', True, 4300000),
         ],
     },
     'Rotom (Mow)': {
         native_region: 'Sinnoh',
-        routes: {
-            land: [
-                'workout_sea',
-            ],
-        },
         dungeon_chest: [
             'lost_hotel',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
             Has('Rotom') & make_rule('team_galactic_eterna_building', True, 4300000),
         ],
     },
     'Rotom (Discord)': {
         native_region: 'Sinnoh',
         special: [
-            Has('Rotom (Discord)') & make_rule('workout_sea'),
+            Has('Rotom (Discord)') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
             Has('Rotom') & Has('Rotom (Discord)') & make_rule('team_galactic_eterna_building', True, 4300000),
             make_rule('lost_hotel', False) & Has('Rotom (Discord)'),
         ],
@@ -13874,7 +13982,7 @@ POKEMON_RULES = {
     'Dialga': {
         native_region: 'Sinnoh',
         special: [
-            Has('Elite Sinnoh Champion Badge') & make_rule('spear_pillar', True, 11880000),
+            Has('Sinnoh Elite Champion Badge') & make_rule('spear_pillar', True, 11880000),
         ],
     },
     'Dialga (Origin)': {
@@ -13896,7 +14004,7 @@ POKEMON_RULES = {
     'Palkia': {
         native_region: 'Sinnoh',
         special: [
-            Has('Elite Sinnoh Champion Badge') & make_rule('spear_pillar', True, 11880000),
+            Has('Sinnoh Elite Champion Badge') & make_rule('spear_pillar', True, 11880000),
         ],
     },
     'Palkia (Origin)': {
@@ -13921,7 +14029,7 @@ POKEMON_RULES = {
             ('stark_mountain', 11000000),
         ],
         special: [
-            Has('Elite Unova Champion Badge') & make_rule('reversal_mountain', True, 30000000),
+            Has('Unova Elite Champion Badge') & make_rule('reversal_mountain', True, 30000000),
             {
                 dungeon: 'firespit_island',
                 rule: make_rule('firespit_island', True, 10000000),
@@ -14253,7 +14361,6 @@ POKEMON_RULES = {
                 'unova_route_3',
                 'unova_route_2',
                 'unova_route_1',
-                'training_lowlands',
             ],
         },
         dungeons: [
@@ -14265,14 +14372,12 @@ POKEMON_RULES = {
                 level: 16,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Stoutland': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'training_lowlands',
-            ],
-        },
         evolution: [
             {
                 prev: 'Herdier',
@@ -14280,6 +14385,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
             make_rule('p2_laboratory', True, 58000000),
         ],
     },
@@ -14291,14 +14397,16 @@ POKEMON_RULES = {
                 'unova_route_20',
                 'unova_route_3',
                 'galar_route_2',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'north_lake_miloch',
-                'watchtower_ruins',
                 'motostoke_riverbank',
                 'galar_route_2_lakeside',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+        ],
     },
     'Liepard': {
         native_region: 'Unova',
@@ -14309,11 +14417,7 @@ POKEMON_RULES = {
                 'unova_route_9',
                 'unova_route_2',
                 'kalos_route_15',
-                'giants_seat',
                 'north_lake_miloch',
-                'axews_eye',
-                'bridge_field',
-                'giants_cap',
                 'galar_route_7',
                 'outer_spikemuth',
             ],
@@ -14326,6 +14430,12 @@ POKEMON_RULES = {
                 prev: 'Purrloin',
                 level: 20,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Pansage': {
@@ -14378,38 +14488,34 @@ POKEMON_RULES = {
     },
     'Munna': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'rolling_fields',
-                'dappled_grove',
-                'east_lake_axewell',
-                'giants_seat',
-                'axews_eye',
-                'bridge_field',
-                'stony_wilderness',
-                'giants_cap',
-            ],
-        },
         dungeons: [
             'dreamyard',
             'ruins_of_life',
             'slumbering_weald_shrine',
         ],
         dream_orbs: ['Pink'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Musharna': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'giants_seat',
-                'bridge_field',
-            ],
-        },
         evolution: [
             {
                 prev: 'Munna',
                 item: 'Moon Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
         ],
     },
     'Pidove': {
@@ -14419,13 +14525,15 @@ POKEMON_RULES = {
                 'unova_route_20',
                 'rolling_fields',
                 'east_lake_axewell',
-                'north_lake_miloch',
-                'watchtower_ruins',
             ],
         },
         dungeons: [
             'floccesy_ranch',
             'liberty_garden',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
         ],
     },
     'Tranquill': {
@@ -14436,7 +14544,6 @@ POKEMON_RULES = {
                 'unova_route_7',
                 'unova_route_12',
                 'unova_route_3',
-                'giants_seat',
                 'bridge_field',
                 'stony_wilderness',
                 'giants_mirror',
@@ -14452,14 +14559,14 @@ POKEMON_RULES = {
                 level: 21,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+        ],
     },
     'Unfezant': {
         native_region: 'Unova',
         routes: {
             land: [
-                'axews_eye',
-                'stony_wilderness',
-                'giants_mirror',
                 'hammerlocke_hills',
             ],
         },
@@ -14474,6 +14581,11 @@ POKEMON_RULES = {
                 prev: 'Tranquill',
                 level: 32,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Blitzle': {
@@ -14516,10 +14628,8 @@ POKEMON_RULES = {
         native_region: 'Unova',
         routes: {
             land: [
-                'stony_wilderness',
                 'giants_mirror',
                 'giants_cap',
-                'lake_of_outrage',
                 'galar_route_8',
             ],
         },
@@ -14537,6 +14647,10 @@ POKEMON_RULES = {
                 prev: 'Roggenrola',
                 level: 25,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Gigalith': {
@@ -14561,7 +14675,6 @@ POKEMON_RULES = {
             land: [
                 'watchtower_ruins',
                 'bridge_field',
-                'giants_mirror',
             ],
         },
         dungeons: [
@@ -14576,15 +14689,12 @@ POKEMON_RULES = {
             'brawlers_cave',
         ],
         safari: ['Kalos'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Swoobat': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'challenge_beach',
-                'training_lowlands',
-            ],
-        },
         dungeons: [
             'courageous_cavern',
             'brawlers_cave',
@@ -14595,17 +14705,13 @@ POKEMON_RULES = {
                 item: 'Soothe Bell',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Drilbur': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'stony_wilderness',
-                'giants_mirror',
-                'giants_cap',
-                'hammerlocke_hills',
-            ],
-        },
         dungeons: [
             'galar_mine',
         ],
@@ -14615,14 +14721,18 @@ POKEMON_RULES = {
             ('mistralton_cave', 23000000),
         ],
         egg: 'Mystery Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Excadrill': {
         native_region: 'Unova',
         routes: {
             land: [
                 'giants_mirror',
-                'giants_cap',
-                'lake_of_outrage',
             ],
         },
         dungeons: [
@@ -14637,6 +14747,10 @@ POKEMON_RULES = {
                 level: 31,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Audino': {
         native_region: 'Unova',
@@ -14645,13 +14759,8 @@ POKEMON_RULES = {
                 'slippery_slope',
                 'frostpoint_field',
                 'giants_bed',
-                'old_cemetery',
                 'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
                 'ballimere_lake',
-                'snowslide_slope',
-                'path_to_the_peak',
             ],
         },
         dungeons: [
@@ -14666,6 +14775,11 @@ POKEMON_RULES = {
         ],
         farm_wandering: ['Chilan Berry'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
             make_rule('ghetsis2') & make_rule('giant_chasm', True, 32000000),
         ],
     },
@@ -14690,10 +14804,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_18',
-                'stony_wilderness',
                 'galar_route_8',
-                'giants_bed',
-                'giants_foot',
             ],
         },
         dungeons: [
@@ -14710,15 +14821,17 @@ POKEMON_RULES = {
                 level: 25,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+        ],
     },
     'Conkeldurr': {
         native_region: 'Unova',
         routes: {
             land: [
                 'poni_plains',
-                'motostoke_riverbank',
-                'giants_bed',
-                'giants_foot',
             ],
         },
         evolution: [
@@ -14727,37 +14840,37 @@ POKEMON_RULES = {
                 item: 'Linking Cord',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+        ],
     },
     'Tympole': {
         native_region: 'Unova',
         routes: {
             land: [
                 'unova_route_8',
-                'dappled_grove',
-                'west_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'watchtower_ruins',
             ],
         },
         dungeons: [
             'pinwheel_forest',
         ],
         egg: 'Water Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+        ],
     },
     'Palpitoad': {
         native_region: 'Unova',
         routes: {
             land: [
                 'unova_route_8',
-                'west_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'north_lake_miloch',
                 'bridge_field',
-                'giants_mirror',
-                'giants_cap',
-                'hammerlocke_hills',
             ],
         },
         dungeons: [
@@ -14770,18 +14883,20 @@ POKEMON_RULES = {
                 level: 25,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Seismitoad': {
         native_region: 'Unova',
         routes: {
             land: [
-                'dappled_grove',
-                'north_lake_miloch',
-                'axews_eye',
-                'bridge_field',
-                'giants_mirror',
-                'giants_cap',
-                'lake_of_outrage',
                 'galar_route_7',
             ],
         },
@@ -14795,6 +14910,15 @@ POKEMON_RULES = {
                 level: 36,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Throh': {
         native_region: 'Unova',
@@ -14802,9 +14926,6 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_11',
                 'motostoke_outskirts',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_mirror',
                 'steamdrift_way',
             ],
         },
@@ -14813,6 +14934,9 @@ POKEMON_RULES = {
             Has('Throh') & make_rule('unova_route_23'),
             Has('Throh') & make_rule('unova_route_15'),
             Has('Throh') & make_rule('unova_route_18'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
             Has('Throh') & make_rule('victory_road_unova', False),
             Has('Throh') & make_rule('pinwheel_forest', False),
         ],
@@ -14823,9 +14947,6 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_11',
                 'motostoke_outskirts',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_mirror',
                 'steamdrift_way',
             ],
         },
@@ -14834,6 +14955,9 @@ POKEMON_RULES = {
             Has('Sawk') & make_rule('unova_route_23'),
             Has('Sawk') & make_rule('unova_route_15'),
             Has('Sawk') & make_rule('unova_route_18'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
             Has('Sawk') & make_rule('victory_road_unova', False),
             Has('Sawk') & make_rule('pinwheel_forest', False),
         ],
@@ -14922,11 +15046,6 @@ POKEMON_RULES = {
     },
     'Scolipede': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'forest_of_focus',
-            ],
-        },
         dungeon_boss: [
             ('pinwheel_forest', 48000000),
         ],
@@ -14937,6 +15056,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
             Has('Scolipede') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -14945,8 +15065,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'poni_plains',
-                'stony_wilderness',
-                'ballimere_lake',
             ],
         },
         dungeons: [
@@ -14960,19 +15078,21 @@ POKEMON_RULES = {
             'ruins_of_abundance',
             'poni_meadow',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Whimsicott': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'ballimere_lake',
-            ],
-        },
         evolution: [
             {
                 prev: 'Cottonee',
                 item: 'Sun Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Petilil': {
@@ -14999,19 +15119,17 @@ POKEMON_RULES = {
     },
     'Lilligant': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'soothing_wetlands',
-                'training_lowlands',
-                'honeycalm_island',
-            ],
-        },
         evolution: [
             {
                 prev: 'Petilil',
                 item: 'Sun Stone',
                 region: 'allButHisui',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
         ],
     },
     'Hisuian Lilligant': {
@@ -15133,7 +15251,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'haina_desert',
-                'potbottom_desert',
             ],
         },
         dungeons: [
@@ -15145,14 +15262,12 @@ POKEMON_RULES = {
                 level: 29,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+        ],
     },
     'Krookodile': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'potbottom_desert',
-            ],
-        },
         dungeons: [
             'groundblight_shrine',
         ],
@@ -15161,6 +15276,9 @@ POKEMON_RULES = {
                 prev: 'Krokorok',
                 level: 40,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
         ],
     },
     'Darumaka': {
@@ -15180,11 +15298,13 @@ POKEMON_RULES = {
                 'steamdrift_way',
                 'white_hill_station',
                 'galar_route_10',
-                'snowslide_slope',
             ],
         },
         dungeons: [
             'iceberg_ruins',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Darmanitan': {
@@ -15207,16 +15327,14 @@ POKEMON_RULES = {
     },
     'Galarian Darmanitan': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'snowslide_slope',
-            ],
-        },
         evolution: [
             {
                 prev: 'Galarian Darumaka',
                 item: 'Ice Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Galarian Darmanitan (Zen)': {
@@ -15230,9 +15348,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'desert_resort',
-                'bridge_field',
-                'stony_wilderness',
-                'hammerlocke_hills',
                 'galar_route_6',
             ],
         },
@@ -15241,21 +15356,17 @@ POKEMON_RULES = {
         ],
         egg: 'Grass Egg',
         safari: ['Kalos'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Dwebble': {
         native_region: 'Unova',
         routes: {
             land: [
                 'desert_resort',
-                'rolling_fields',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'watchtower_ruins',
-                'stony_wilderness',
-                'hammerlocke_hills',
                 'loop_lagoon',
             ],
         },
@@ -15264,6 +15375,15 @@ POKEMON_RULES = {
             'courageous_cavern',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
             Has('Dwebble') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -15272,13 +15392,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'unova_route_18',
-                'rolling_fields',
-                'south_lake_miloch',
-                'axews_eye',
-                'stony_wilderness',
                 'galar_route_8',
-                'training_lowlands',
-                'challenge_road',
             ],
         },
         dungeons: [
@@ -15294,6 +15408,14 @@ POKEMON_RULES = {
                 level: 34,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Scraggy': {
         native_region: 'Unova',
@@ -15304,12 +15426,6 @@ POKEMON_RULES = {
                 'alola_route_16',
                 'alola_route_17',
                 'motostoke_outskirts',
-                'bridge_field',
-                'stony_wilderness',
-                'giants_cap',
-                'soothing_wetlands',
-                'potbottom_desert',
-                'challenge_road',
             ],
         },
         dungeons: [
@@ -15317,6 +15433,14 @@ POKEMON_RULES = {
         ],
         egg: 'Fighting Egg',
         farm_wandering: ['Chople Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Scrafty': {
         native_region: 'Unova',
@@ -15324,8 +15448,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_1',
                 'unova_route_18',
-                'training_lowlands',
-                'challenge_road',
             ],
         },
         dungeons: [
@@ -15337,6 +15459,10 @@ POKEMON_RULES = {
                 level: 39,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Sigilyph': {
         native_region: 'Unova',
@@ -15346,13 +15472,15 @@ POKEMON_RULES = {
                 'kalos_route_10',
                 'motostoke_riverbank',
                 'stony_wilderness',
-                'lake_of_outrage',
             ],
         },
         dungeon_boss: [
             ('dusty_bowl', 114616050),
         ],
         dream_orbs: ['Green'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Yamask': {
         native_region: 'Unova',
@@ -15401,7 +15529,7 @@ POKEMON_RULES = {
             ('nacrene_city', ['Cover Fossil']),
         ],
         special: [
-            Has('Carracosta') & make_rule('frigid_sea'),
+            Has('Carracosta') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
         ],
     },
     'Archen': {
@@ -15450,9 +15578,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'unova_route_9',
-                'east_lake_axewell',
                 'bridge_field',
-                'lake_of_outrage',
             ],
         },
         dungeon_chest: [
@@ -15465,6 +15591,10 @@ POKEMON_RULES = {
                 level: 36,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Gigantamax Garbodor': {
         native_region: 'Unova',
@@ -15474,19 +15604,17 @@ POKEMON_RULES = {
     },
     'Zorua': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'forest_of_focus',
-            ],
-        },
         dungeons: [
             'trainers_school',
         ],
         farm_wandering: ['Colbur Berry'],
         shops: [
             ('driftveil_city', 'questPoint'),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
         ],
     },
     'Hisuian Zorua': {
@@ -15502,8 +15630,6 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_20',
                 'poni_grove',
-                'loop_lagoon',
-                'insular_sea',
             ],
         },
         dungeon_boss: [
@@ -15519,6 +15645,8 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
             make_rule('lostlorn_forest', False) & make_rule('lostlorn_forest', True),
         ],
     },
@@ -15543,25 +15671,25 @@ POKEMON_RULES = {
                 'unova_route_5',
                 'unova_route_16',
                 'unova_route_9',
-                'rolling_fields',
-                'east_lake_axewell',
                 'galar_route_5',
                 'giants_cap',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+        ],
     },
     'Cinccino': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'giants_cap',
-            ],
-        },
         evolution: [
             {
                 prev: 'Minccino',
                 item: 'Shiny Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Gothita': {
@@ -15571,11 +15699,13 @@ POKEMON_RULES = {
                 'unova_route_5',
                 'unova_route_16',
                 'alola_route_6',
-                'giants_cap',
-                'slippery_slope',
-                'frostpoint_field',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+        ],
     },
     'Gothorita': {
         native_region: 'Unova',
@@ -15583,8 +15713,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_9',
                 'kalos_route_20',
-                'slippery_slope',
-                'frostpoint_field',
             ],
         },
         dungeons: [
@@ -15596,21 +15724,23 @@ POKEMON_RULES = {
                 level: 32,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+        ],
     },
     'Gothitelle': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'slippery_slope',
-                'frostpoint_field',
-            ],
-        },
         evolution: [
             {
                 prev: 'Gothorita',
                 level: 41,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
         ],
     },
     'Solosis': {
@@ -15619,13 +15749,15 @@ POKEMON_RULES = {
             land: [
                 'unova_route_5',
                 'unova_route_16',
-                'giants_cap',
-                'slippery_slope',
-                'frostpoint_field',
             ],
         },
         dungeons: [
             'reflection_cave',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
         ],
     },
     'Duosion': {
@@ -15634,8 +15766,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_9',
                 'alola_route_16',
-                'slippery_slope',
-                'frostpoint_field',
             ],
         },
         evolution: [
@@ -15644,16 +15774,13 @@ POKEMON_RULES = {
                 level: 32,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+        ],
     },
     'Reuniclus': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'slippery_slope',
-                'frostpoint_field',
-            ],
-        },
         dungeons: [
             'crown_shrine',
         ],
@@ -15662,6 +15789,11 @@ POKEMON_RULES = {
                 prev: 'Duosion',
                 level: 41,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
         ],
     },
     'Ducklett': {
@@ -15692,50 +15824,41 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'unova_route_6',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_mirror',
-                'giants_cap',
-                'hammerlocke_hills',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
-                'snowslide_slope',
             ],
         },
         dungeons: [
             'frost_cavern',
         ],
         egg: 'Mystery Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Vanillish': {
         native_region: 'Unova',
         routes: {
             land: [
-                'dappled_grove',
-                'north_lake_miloch',
-                'axews_eye',
                 'steamdrift_way',
                 'white_hill_station',
                 'galar_route_10',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
-                'snowslide_slope',
             ],
         },
         dungeons: [
@@ -15748,22 +15871,25 @@ POKEMON_RULES = {
                 level: 35,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Vanilluxe': {
         native_region: 'Unova',
         routes: {
             land: [
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'bridge_field',
-                'lake_of_outrage',
                 'white_hill_station',
-                'frostpoint_field',
-                'giants_bed',
-                'ballimere_lake',
-                'snowslide_slope',
             ],
         },
         dungeons: [
@@ -15777,6 +15903,18 @@ POKEMON_RULES = {
                 prev: 'Vanillish',
                 level: 47,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Deerling (Spring)': {
@@ -15890,34 +16028,34 @@ POKEMON_RULES = {
                 'unova_route_8',
                 'kalos_route_14',
                 'kalos_route_19',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_cap',
-                'hammerlocke_hills',
                 'galar_route_7',
                 'forest_of_focus',
-                'training_lowlands',
-                'old_cemetery',
             ],
         },
         dungeons: [
             'moor_of_icirrus',
         ],
         farm_wandering: ['Cheri Berry', 'Chesto Berry', 'Pecha Berry', 'Rawst Berry', 'Aspear Berry', 'Leppa Berry', 'Oran Berry', 'Sitrus Berry', 'Persim Berry', 'Razz Berry', 'Bluk Berry', 'Nanab Berry', 'Wepear Berry', 'Pinap Berry', 'Figy Berry', 'Wiki Berry', 'Mago Berry', 'Aguav Berry', 'Iapapa Berry', 'Lum Berry', 'Pomeg Berry', 'Kelpsy Berry', 'Qualot Berry', 'Hondew Berry', 'Grepa Berry', 'Tamato Berry', 'Cornn Berry', 'Magost Berry', 'Rabuta Berry', 'Nomel Berry', 'Spelon Berry', 'Pamtre Berry', 'Watmel Berry', 'Durin Berry', 'Belue Berry', 'Pinkan Berry', 'Occa Berry', 'Passho Berry', 'Wacan Berry', 'Rindo Berry', 'Yache Berry', 'Chople Berry', 'Kebia Berry', 'Shuca Berry', 'Coba Berry', 'Payapa Berry', 'Tanga Berry', 'Charti Berry', 'Kasib Berry', 'Haban Berry', 'Colbur Berry', 'Babiri Berry', 'Chilan Berry', 'Roseli Berry', 'Snover Berry', 'Micle Berry', 'Custap Berry', 'Jaboca Berry', 'Rowap Berry', 'Kee Berry', 'Maranga Berry', 'Liechi Berry', 'Ganlon Berry', 'Salac Berry', 'Petaya Berry', 'Apicot Berry', 'Lansat Berry', 'Starf Berry', 'Enigma Berry', 'Hopo Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+        ],
     },
     'Escavalier': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'forest_of_focus',
-                'training_lowlands',
-            ],
-        },
         evolution: [
             {
                 prev: 'Karrablast',
                 item: 'Linking Cord',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Foongus': {
@@ -15943,7 +16081,6 @@ POKEMON_RULES = {
                 'unova_route_22',
                 'unova_route_23',
                 'kalos_route_20',
-                'forest_of_focus',
             ],
         },
         dungeons: [
@@ -15960,6 +16097,9 @@ POKEMON_RULES = {
                 level: 39,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+        ],
     },
     'Frillish': {
         native_region: 'Unova',
@@ -15968,10 +16108,6 @@ POKEMON_RULES = {
                 'undella_bay',
                 'unova_route_17',
                 'alola_route_14',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'bridge_field',
-                'giants_mirror',
             ],
             water: [
                 'unova_route_4',
@@ -15985,26 +16121,20 @@ POKEMON_RULES = {
             'seaside_cave',
             'p2_laboratory',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Jellicent': {
         native_region: 'Unova',
         routes: {
             land: [
                 'undella_bay',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'bridge_field',
-                'lake_of_outrage',
                 'galar_route_9',
                 'outer_spikemuth',
-                'challenge_beach',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
             ],
         },
         dungeons: [
@@ -16015,6 +16145,20 @@ POKEMON_RULES = {
                 prev: 'Frillish',
                 level: 40,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
         ],
     },
     'Alomomola': {
@@ -16035,36 +16179,30 @@ POKEMON_RULES = {
         native_region: 'Unova',
         routes: {
             land: [
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
                 'galar_route_4',
-                'giants_mirror',
-                'giants_cap',
             ],
         },
         dungeons: [
             'chargestone_cave',
         ],
         egg: 'Electric Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Galvantula': {
         native_region: 'Unova',
         routes: {
             land: [
-                'giants_seat',
                 'south_lake_miloch',
-                'giants_cap',
-                'lake_of_outrage',
                 'galar_route_7',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'three_point_pass',
-                'ballimere_lake',
             ],
         },
         dungeons: [
@@ -16076,20 +16214,32 @@ POKEMON_RULES = {
                 level: 36,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Ferroseed': {
         native_region: 'Unova',
         routes: {
             land: [
                 'galar_route_4',
-                'motostoke_riverbank',
                 'bridge_field',
-                'stony_wilderness',
             ],
         },
         dungeons: [
             'chargestone_cave',
             'lakeside_cave',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
         ],
     },
     'Ferrothorn': {
@@ -16114,11 +16264,6 @@ POKEMON_RULES = {
         native_region: 'Unova',
         routes: {
             land: [
-                'dappled_grove',
-                'west_lake_axewell',
-                'south_lake_miloch',
-                'north_lake_miloch',
-                'axews_eye',
                 'galar_route_3',
                 'hammerlocke_hills',
             ],
@@ -16126,12 +16271,18 @@ POKEMON_RULES = {
         dungeons: [
             'chargestone_cave',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+        ],
     },
     'Klang': {
         native_region: 'Unova',
         routes: {
             land: [
-                'hammerlocke_hills',
                 'white_hill_station',
             ],
         },
@@ -16145,15 +16296,12 @@ POKEMON_RULES = {
                 level: 38,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Klinklang': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'hammerlocke_hills',
-            ],
-        },
         evolution: [
             {
                 prev: 'Klang',
@@ -16161,6 +16309,8 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
             make_rule('p2_laboratory', True, 58000000),
         ],
     },
@@ -16204,23 +16354,19 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'mount_hokulani',
-                'motostoke_riverbank',
-                'bridge_field',
             ],
         },
         dungeons: [
             'near_space',
             'celestial_tower',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+        ],
     },
     'Beheeyem': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'bridge_field',
-                'lake_of_outrage',
-            ],
-        },
         dungeons: [
             'near_space',
         ],
@@ -16230,15 +16376,13 @@ POKEMON_RULES = {
                 level: 42,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Litwick': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'motostoke_riverbank',
-                'bridge_field',
-            ],
-        },
         dungeons: [
             'lost_hotel',
         ],
@@ -16246,36 +16390,36 @@ POKEMON_RULES = {
             ('celestial_tower', 25000000),
             ('hauoli_cemetery', 28968625),
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+        ],
     },
     'Lampent': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-                'old_cemetery',
-            ],
-        },
         evolution: [
             {
                 prev: 'Litwick',
                 level: 41,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+        ],
     },
     'Chandelure': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Lampent',
                 item: 'Dusk Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Axew': {
@@ -16283,14 +16427,16 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'mount_hokulani',
-                'axews_eye',
-                'hammerlocke_hills',
                 'galar_route_6',
             ],
         },
         dungeon_boss: [
             ('mistralton_cave', 24000000),
             ('connecting_cave', 59867590),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
         ],
     },
     'Fraxure': {
@@ -16307,17 +16453,15 @@ POKEMON_RULES = {
     },
     'Haxorus': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'axews_eye',
-                'lake_of_outrage',
-            ],
-        },
         evolution: [
             {
                 prev: 'Fraxure',
                 level: 48,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Cubchoo': {
@@ -16325,10 +16469,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'unova_route_7',
-                'bridge_field',
-                'stony_wilderness',
-                'giants_mirror',
-                'hammerlocke_hills',
                 'white_hill_station',
                 'galar_route_10',
             ],
@@ -16336,16 +16476,18 @@ POKEMON_RULES = {
         dungeons: [
             'frost_cavern',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Beartic': {
         native_region: 'Unova',
         routes: {
             land: [
-                'bridge_field',
-                'giants_cap',
                 'galar_route_10',
-                'frigid_sea',
-                'snowslide_slope',
             ],
         },
         dungeons: [
@@ -16361,22 +16503,15 @@ POKEMON_RULES = {
                 level: 37,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Cryogonal': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
-                'snowslide_slope',
-            ],
-        },
         dungeons: [
             'frost_cavern',
             'iceberg_ruins',
@@ -16385,6 +16520,17 @@ POKEMON_RULES = {
         ],
         dungeon_boss: [
             ('twist_mountain', 48000000),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Shelmet': {
@@ -16396,34 +16542,34 @@ POKEMON_RULES = {
                 'unova_route_8',
                 'kalos_route_14',
                 'kalos_route_19',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_cap',
-                'hammerlocke_hills',
                 'galar_route_7',
                 'soothing_wetlands',
-                'forest_of_focus',
-                'training_lowlands',
-                'giants_bed',
             ],
         },
         dungeons: [
             'moor_of_icirrus',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+        ],
     },
     'Accelgor': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'forest_of_focus',
-                'training_lowlands',
-            ],
-        },
         evolution: [
             {
                 prev: 'Shelmet',
                 item: 'Linking Cord',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Stunfisk': {
@@ -16474,11 +16620,6 @@ POKEMON_RULES = {
     },
     'Mienshao': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'challenge_road',
-            ],
-        },
         dungeons: [
             'dragonspiral_tower',
         ],
@@ -16488,16 +16629,12 @@ POKEMON_RULES = {
                 level: 50,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Druddigon': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'three_point_pass',
-                'snowslide_slope',
-                'path_to_the_peak',
-            ],
-        },
         dungeons: [
             'victory_road_unova',
             'victory_road_kalos',
@@ -16510,6 +16647,11 @@ POKEMON_RULES = {
             ('brawlers_cave', 135047520),
         ],
         farm_wandering: ['Haban Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
+        ],
     },
     'Golett': {
         native_region: 'Unova',
@@ -16517,26 +16659,26 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_10',
                 'haina_desert',
-                'rolling_fields',
-                'dappled_grove',
-                'giants_seat',
-                'north_lake_miloch',
-                'watchtower_ruins',
                 'stony_wilderness',
-                'giants_cap',
                 'galar_route_8',
             ],
         },
         dungeons: [
             'dragonspiral_tower',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Golurk': {
         native_region: 'Unova',
         routes: {
             land: [
-                'giants_seat',
-                'watchtower_ruins',
                 'stony_wilderness',
                 'lake_of_outrage',
                 'three_point_pass',
@@ -16555,6 +16697,10 @@ POKEMON_RULES = {
             },
         ],
         safari: ['Kalos'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+        ],
     },
     'Pawniard': {
         native_region: 'Unova',
@@ -16563,20 +16709,22 @@ POKEMON_RULES = {
                 'unova_route_9',
                 'kalos_route_15',
                 'motostoke_outskirts',
-                'motostoke_riverbank',
-                'stony_wilderness',
-                'giants_mirror',
-                'giants_cap',
                 'galar_route_8',
-                'soothing_wetlands',
-                'forest_of_focus',
-                'potbottom_desert',
-                'challenge_road',
             ],
         },
         dungeons: [
             'lost_hotel',
             'area_zero',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Bisharp': {
@@ -16585,9 +16733,6 @@ POKEMON_RULES = {
             land: [
                 'alola_route_17',
                 'giants_seat',
-                'lake_of_outrage',
-                'training_lowlands',
-                'challenge_road',
             ],
         },
         dungeons: [
@@ -16600,6 +16745,11 @@ POKEMON_RULES = {
                 prev: 'Pawniard',
                 level: 52,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Bouffalant': {
@@ -16617,7 +16767,6 @@ POKEMON_RULES = {
             land: [
                 'unova_route_23',
                 'alola_route_3',
-                'bridge_field',
                 'galar_route_8',
                 'potbottom_desert',
                 'hearts_crag',
@@ -16626,14 +16775,15 @@ POKEMON_RULES = {
         dungeons: [
             'ancient_lake_acuity',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+        ],
     },
     'Braviary': {
         native_region: 'Unova',
         routes: {
             land: [
-                'lake_of_outrage',
                 'potbottom_desert',
-                'challenge_road',
             ],
         },
         dungeons: [
@@ -16644,6 +16794,10 @@ POKEMON_RULES = {
                 prev: 'Rufflet',
                 level: 54,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Hisuian Braviary': {
@@ -16670,9 +16824,7 @@ POKEMON_RULES = {
         native_region: 'Unova',
         routes: {
             land: [
-                'lake_of_outrage',
                 'potbottom_desert',
-                'challenge_road',
             ],
         },
         evolution: [
@@ -16681,22 +16833,28 @@ POKEMON_RULES = {
                 level: 54,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Heatmor': {
         native_region: 'Unova',
         routes: {
             land: [
                 'kalos_route_18',
-                'giants_mirror',
-                'lake_of_outrage',
                 'galar_route_6',
-                'giants_bed',
-                'old_cemetery',
-                'three_point_pass',
             ],
         },
         dungeon_boss: [
             ('twist_mountain', 48000000),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
         ],
     },
     'Durant': {
@@ -16704,12 +16862,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_18',
-                'giants_mirror',
-                'lake_of_outrage',
                 'galar_route_6',
-                'giants_bed',
-                'old_cemetery',
-                'three_point_pass',
             ],
         },
         dungeons: [
@@ -16720,16 +16873,16 @@ POKEMON_RULES = {
             ('twist_mountain', 48000000),
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
             Has('Durant') & make_rule('region_safari', 'Johto'),
         ],
     },
     'Deino': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         dungeons: [
             'roaring_sea_caves',
         ],
@@ -16738,16 +16891,12 @@ POKEMON_RULES = {
         ],
         egg: 'Dragon Egg',
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
             Has('Deino') & make_rule('victory_road_unova', False),
         ],
     },
     'Zweilous': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         dungeons: [
             'victory_road_kalos',
             'area_zero_depths',
@@ -16760,6 +16909,7 @@ POKEMON_RULES = {
         ],
         egg: 'Dragon Egg',
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
             Has('Zweilous') & make_rule('victory_road_unova', False),
         ],
     },
@@ -16778,23 +16928,14 @@ POKEMON_RULES = {
     },
     'Larvesta': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'forest_of_focus',
-                'loop_lagoon',
-            ],
-        },
         breeding: ['Volcarona'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+        ],
     },
     'Volcarona': {
         native_region: 'Unova',
-        routes: {
-            land: [
-                'challenge_beach',
-                'potbottom_desert',
-                'insular_sea',
-            ],
-        },
         dungeons: [
             'area_zero',
         ],
@@ -16805,6 +16946,9 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
             make_rule('relic_passage', True) & make_rule('relic_castle', True, 21000000),
         ],
     },
@@ -16876,7 +17020,7 @@ POKEMON_RULES = {
     'Kyurem': {
         native_region: 'Unova',
         special: [
-            Has('Elite Unova Champion Badge') & make_rule('completed_hollow_truth_and_ideals') & make_rule('completed_swords_of_justice') & make_rule('giant_chasm', True, 35000000),
+            Has('Unova Elite Champion Badge') & make_rule('completed_hollow_truth_and_ideals') & make_rule('completed_swords_of_justice') & make_rule('giant_chasm', True, 35000000),
         ],
     },
     'Kyurem (White)': {
@@ -16912,7 +17056,7 @@ POKEMON_RULES = {
     'Meloetta (Aria)': {
         native_region: 'Unova',
         special: [
-            Has('Elite Unova Champion Badge') & make_rule('roamer', 'Unova'),
+            Has('Unova Elite Champion Badge') & make_rule('roamer', 'Unova'),
         ],
     },
     'Meloetta (Pirouette)': {
@@ -17427,12 +17571,14 @@ POKEMON_RULES = {
                 'kalos_route_22',
                 'kalos_route_5',
                 'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'north_lake_miloch',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+        ],
     },
     'Diggersby': {
         native_region: 'Kalos',
@@ -17440,13 +17586,7 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_22',
                 'rolling_fields',
-                'west_lake_axewell',
-                'giants_seat',
-                'north_lake_miloch',
                 'axews_eye',
-                'bridge_field',
-                'giants_mirror',
-                'giants_cap',
             ],
         },
         evolution: [
@@ -17454,6 +17594,14 @@ POKEMON_RULES = {
                 prev: 'Bunnelby',
                 level: 20,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Fletchling': {
@@ -17464,9 +17612,6 @@ POKEMON_RULES = {
                 'kalos_route_2',
                 'kalos_route_3',
                 'alola_route_8',
-                'loop_lagoon',
-                'potbottom_desert',
-                'challenge_road',
                 'poco_path',
                 'south_province_area_one',
                 'south_province_area_two',
@@ -17476,36 +17621,36 @@ POKEMON_RULES = {
             'santalune_forest',
             'wela_volcano_park',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Fletchinder': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'loop_lagoon',
-                'training_lowlands',
-                'workout_sea',
-                'stepping_stone_sea',
-                'insular_sea',
-                'honeycalm_sea',
-                'honeycalm_island',
-            ],
-        },
         evolution: [
             {
                 prev: 'Fletchling',
                 level: 17,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('workout_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stepping_stone_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
+        ],
     },
     'Talonflame': {
         native_region: 'Kalos',
         routes: {
             land: [
-                'soothing_wetlands',
-                'loop_lagoon',
-                'training_lowlands',
                 'south_province_area_three',
             ],
         },
@@ -17517,6 +17662,11 @@ POKEMON_RULES = {
                 prev: 'Fletchinder',
                 level: 35,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
         ],
     },
     'Scatterbug': {
@@ -17563,128 +17713,128 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kalos'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Alola'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kalos'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Alola'),
         ],
     },
     'Vivillon (Icy Snow)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Icy Snow)') | make_rule('the_great_vivillon_hunt32')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('frost_cavern', True, 96662023),
+            (Has('Vivillon (Icy Snow)') | make_rule('the_great_vivillon_hunt32')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('frost_cavern', True, 96662023),
         ],
     },
     'Vivillon (Polar)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Polar)') | make_rule('the_great_vivillon_hunt22')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('sky_pillar', True, 96662023),
+            (Has('Vivillon (Polar)') | make_rule('the_great_vivillon_hunt22')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('sky_pillar', True, 96662023),
         ],
     },
     'Vivillon (Tundra)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Tundra)') | make_rule('the_great_vivillon_hunt8')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('poke_ball_factory', True, 96662023),
+            (Has('Vivillon (Tundra)') | make_rule('the_great_vivillon_hunt8')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('poke_ball_factory', True, 96662023),
         ],
     },
     'Vivillon (Continental)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Continental)') | make_rule('the_great_vivillon_hunt18')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('new_mauville', True, 96662023),
+            (Has('Vivillon (Continental)') | make_rule('the_great_vivillon_hunt18')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('new_mauville', True, 96662023),
         ],
     },
     'Vivillon (Garden)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Garden)') | make_rule('the_great_vivillon_hunt26')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('flower_paradise', True, 96662023),
+            (Has('Vivillon (Garden)') | make_rule('the_great_vivillon_hunt26')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('flower_paradise', True, 96662023),
         ],
     },
     'Vivillon (Elegant)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Elegant)') | make_rule('the_great_vivillon_hunt14')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('lost_hotel', True, 96662023),
+            (Has('Vivillon (Elegant)') | make_rule('the_great_vivillon_hunt14')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('lost_hotel', True, 96662023),
         ],
     },
     'Vivillon (Modern)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Modern)') | make_rule('the_great_vivillon_hunt2')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('cerulean_cave', True, 96662023),
+            (Has('Vivillon (Modern)') | make_rule('the_great_vivillon_hunt2')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('cerulean_cave', True, 96662023),
         ],
     },
     'Vivillon (Marine)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Marine)') | make_rule('the_great_vivillon_hunt0')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('lake_valor', True, 96662023),
-            (Has('Vivillon (Marine)') | make_rule('the_great_vivillon_hunt0')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('lake_verity', True, 96662023),
-            (Has('Vivillon (Marine)') | make_rule('the_great_vivillon_hunt0')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('lake_acuity', True, 96662023),
+            (Has('Vivillon (Marine)') | make_rule('the_great_vivillon_hunt0')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('lake_valor', True, 96662023),
+            (Has('Vivillon (Marine)') | make_rule('the_great_vivillon_hunt0')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('lake_verity', True, 96662023),
+            (Has('Vivillon (Marine)') | make_rule('the_great_vivillon_hunt0')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('lake_acuity', True, 96662023),
         ],
     },
     'Vivillon (Archipelago)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Archipelago)') | make_rule('the_great_vivillon_hunt12')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('sprout_tower', True, 96662023),
+            (Has('Vivillon (Archipelago)') | make_rule('the_great_vivillon_hunt12')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('sprout_tower', True, 96662023),
         ],
     },
     'Vivillon (High Plains)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (High Plains)') | make_rule('the_great_vivillon_hunt28')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('mt_moon', True, 96662023),
+            (Has('Vivillon (High Plains)') | make_rule('the_great_vivillon_hunt28')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('mt_moon', True, 96662023),
         ],
     },
     'Vivillon (Sandstorm)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Sandstorm)') | make_rule('the_great_vivillon_hunt24')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('relic_castle', True, 96662023),
+            (Has('Vivillon (Sandstorm)') | make_rule('the_great_vivillon_hunt24')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('relic_castle', True, 96662023),
         ],
     },
     'Vivillon (River)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (River)') | make_rule('the_great_vivillon_hunt20')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('eterna_forest', True, 96662023),
+            (Has('Vivillon (River)') | make_rule('the_great_vivillon_hunt20')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('eterna_forest', True, 96662023),
         ],
     },
     'Vivillon (Monsoon)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Monsoon)') | make_rule('the_great_vivillon_hunt6')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('dark_cave', True, 96662023),
+            (Has('Vivillon (Monsoon)') | make_rule('the_great_vivillon_hunt6')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('dark_cave', True, 96662023),
         ],
     },
     'Vivillon (Savanna)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Savanna)') | make_rule('the_great_vivillon_hunt30')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('dragonspiral_tower', True, 96662023),
+            (Has('Vivillon (Savanna)') | make_rule('the_great_vivillon_hunt30')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('dragonspiral_tower', True, 96662023),
         ],
     },
     'Vivillon (Sun)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Sun)') | make_rule('the_great_vivillon_hunt10')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('mt_chimney_crater', True, 96662023),
+            (Has('Vivillon (Sun)') | make_rule('the_great_vivillon_hunt10')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('mt_chimney_crater', True, 96662023),
         ],
     },
     'Vivillon (Ocean)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Ocean)') | make_rule('the_great_vivillon_hunt16')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('dreamyard', True, 96662023),
+            (Has('Vivillon (Ocean)') | make_rule('the_great_vivillon_hunt16')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('dreamyard', True, 96662023),
         ],
     },
     'Vivillon (Jungle)': {
         native_region: 'Kalos',
         special: [
-            (Has('Vivillon (Jungle)') | make_rule('the_great_vivillon_hunt4')) & make_rule('has_script', "Infinite Seasonal Events") & make_rule('has_script', 'Infinite Seasonal Events') & make_rule('moor_of_icirrus', True, 96662023),
+            (Has('Vivillon (Jungle)') | make_rule('the_great_vivillon_hunt4')) & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('has_script', 'Infinite Seasonal Events Script') & make_rule('moor_of_icirrus', True, 96662023),
         ],
     },
     'Vivillon (Poké Ball)': {
         native_region: 'Kalos',
         special: [
-            Has('Vivillon (Poké Ball)') & make_rule('has_script', "Infinite Seasonal Events") & make_rule('completed_child_of_the_stars') & make_rule('thrifty_megamart', True, 96662023),
+            Has('Vivillon (Poké Ball)') & make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('completed_child_of_the_stars') & make_rule('thrifty_megamart', True, 96662023),
             make_rule('battle_frontier', 666) & make_rule('the_great_vivillon_hunt34'),
         ],
     },
     'Vivillon (Fancy)': {
         native_region: 'Kalos',
         special: [
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Kalos'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Galar - South'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Galar - Isle of Armor'),
-            make_rule('has_script', "Infinite Seasonal Events") & make_rule('roamer', 'Galar - Crown Tundra'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Kalos'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Galar - South'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Galar - Isle of Armor'),
+            make_rule('has_script', "Infinite Seasonal Events Script") & make_rule('roamer', 'Galar - Crown Tundra'),
         ],
     },
     'Litleo': {
@@ -17909,28 +18059,28 @@ POKEMON_RULES = {
                 'alola_route_10',
                 'alola_route_11',
                 'rolling_fields',
-                'west_lake_axewell',
-                'east_lake_axewell',
                 'galar_route_3',
             ],
         },
         egg: 'Fighting Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+        ],
     },
     'Pangoro': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'rolling_fields',
-                'dappled_grove',
-                'bridge_field',
-                'lake_of_outrage',
-            ],
-        },
         evolution: [
             {
                 prev: 'Pancham',
                 level: 32,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Furfrou': {
@@ -18001,10 +18151,12 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_6',
                 'galar_route_5',
-                'motostoke_riverbank',
-                'hammerlocke_hills',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Meowstic': {
         native_region: 'Kalos',
@@ -18029,19 +18181,15 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_6',
                 'akala_outskirts',
-                'hammerlocke_hills',
             ],
         },
         egg: 'Mystery Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Doublade': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'giants_cap',
-                'lake_of_outrage',
-            ],
-        },
         dungeons: [
             'energy_plant',
         ],
@@ -18051,19 +18199,21 @@ POKEMON_RULES = {
                 level: 35,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Aegislash (Shield)': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'giants_cap',
-            ],
-        },
         evolution: [
             {
                 prev: 'Doublade',
                 item: 'Dusk Stone',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
         ],
     },
     'Aegislash (Blade)': {
@@ -18079,13 +18229,15 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_7',
                 'galar_route_5',
-                'stony_wilderness',
-                'giants_mirror',
             ],
         },
         dungeons: [
             'minas_houseboat',
             'glimwood_tangle',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Aromatisse': {
@@ -18103,13 +18255,15 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_7',
                 'galar_route_5',
-                'stony_wilderness',
-                'giants_mirror',
             ],
         },
         dungeons: [
             'minas_houseboat',
             'glimwood_tangle',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
         ],
     },
     'Slurpuff': {
@@ -18131,19 +18285,21 @@ POKEMON_RULES = {
                 'poni_wilds',
                 'ancient_poni_path',
                 'poni_gauntlet',
-                'giants_mirror',
-                'hammerlocke_hills',
                 'galar_route_7',
                 'circhester_bay',
-                'fields_of_honor',
-                'challenge_beach',
-                'loop_lagoon',
-                'training_lowlands',
             ],
             water: [
                 'bridge_field',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Inkay (Pikachu)': {
         native_region: 'Kalos',
@@ -18153,40 +18309,35 @@ POKEMON_RULES = {
     },
     'Malamar': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'challenge_beach',
-                'loop_lagoon',
-                'training_lowlands',
-            ],
-        },
         evolution: [
             {
                 prev: 'Inkay',
                 level: 30,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Binacle': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'motostoke_riverbank',
-                'bridge_field',
-            ],
-        },
         dungeons: [
             'sea_spirits_den',
             'galar_mine_no_2',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
         ],
     },
     'Barbaracle': {
         native_region: 'Kalos',
         routes: {
             land: [
-                'lake_of_outrage',
                 'circhester_bay',
             ],
         },
@@ -18199,6 +18350,9 @@ POKEMON_RULES = {
                 prev: 'Binacle',
                 level: 39,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Skrelp': {
@@ -18270,7 +18424,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_9',
-                'giants_mirror',
                 'galar_route_6',
             ],
         },
@@ -18278,6 +18431,9 @@ POKEMON_RULES = {
             'lake_of_the_sunne_and_moone',
         ],
         egg: 'Electric Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Heliolisk': {
         native_region: 'Kalos',
@@ -18320,8 +18476,8 @@ POKEMON_RULES = {
         ],
         special: [
             Has('Amaura') & make_rule('slippery_slope'),
-            Has('Amaura') & make_rule('frostpoint_field'),
-            Has('Amaura') & make_rule('snowslide_slope'),
+            Has('Amaura') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            Has('Amaura') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Aurorus': {
@@ -18337,23 +18493,21 @@ POKEMON_RULES = {
             ('ambrette_town', ['Sail Fossil']),
         ],
         special: [
-            Has('Aurorus') & make_rule('snowslide_slope'),
+            Has('Aurorus') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
             Has('Aurorus') & make_rule('iceberg_ruins', False),
         ],
     },
     'Sylveon': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'giants_bed',
-            ],
-        },
         evolution: [
             {
                 prev: 'Eevee',
                 level: 29,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
         ],
     },
     'Hawlucha': {
@@ -18405,9 +18559,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_14',
-                'lake_of_outrage',
-                'soothing_wetlands',
-                'forest_of_focus',
                 'holm_of_trials',
             ],
         },
@@ -18415,13 +18566,17 @@ POKEMON_RULES = {
             'ancient_quarry',
         ],
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+        ],
     },
     'Sliggoo': {
         native_region: 'Kalos',
         routes: {
             land: [
                 'kalos_route_19',
-                'lake_of_outrage',
             ],
         },
         evolution: [
@@ -18431,6 +18586,9 @@ POKEMON_RULES = {
             },
         ],
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Hisuian Sliggoo': {
         native_region: 'Hisui',
@@ -18499,11 +18657,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'kalos_route_16',
-                'slippery_slope',
-                'old_cemetery',
-                'giants_foot',
-                'three_point_pass',
-                'snowslide_slope',
             ],
         },
         dungeons: [
@@ -18511,15 +18664,19 @@ POKEMON_RULES = {
             'glimwood_tangle',
         ],
         egg: 'Grass Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Trevenant': {
         native_region: 'Kalos',
         routes: {
             land: [
                 'kalos_route_20',
-                'slippery_slope',
-                'old_cemetery',
-                'snowslide_slope',
             ],
         },
         dungeon_boss: [
@@ -18531,6 +18688,11 @@ POKEMON_RULES = {
                 item: 'Linking Cord',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Pumpkaboo (Average)': {
         native_region: 'Kalos',
@@ -18538,10 +18700,12 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_16',
                 'galar_route_4',
-                'giants_mirror',
                 'hammerlocke_hills',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Pumpkaboo (Small)': {
         native_region: 'Kalos',
@@ -18549,10 +18713,12 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_16',
                 'galar_route_4',
-                'giants_mirror',
                 'hammerlocke_hills',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Pumpkaboo (Large)': {
         native_region: 'Kalos',
@@ -18560,10 +18726,12 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_16',
                 'galar_route_4',
-                'giants_mirror',
                 'hammerlocke_hills',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Pumpkaboo (Super Size)': {
         native_region: 'Kalos',
@@ -18571,10 +18739,12 @@ POKEMON_RULES = {
             land: [
                 'kalos_route_16',
                 'galar_route_4',
-                'giants_mirror',
                 'hammerlocke_hills',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Gourgeist (Average)': {
         native_region: 'Kalos',
@@ -18636,11 +18806,8 @@ POKEMON_RULES = {
         native_region: 'Kalos',
         routes: {
             land: [
-                'lake_of_outrage',
                 'circhester_bay',
                 'outer_spikemuth',
-                'frigid_sea',
-                'three_point_pass',
                 'bonechill_wastes',
                 'arenas_approach',
             ],
@@ -18654,14 +18821,15 @@ POKEMON_RULES = {
             'ice_column_chamber',
             'icepeak_cavern',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+        ],
     },
     'Avalugg': {
         native_region: 'Kalos',
         routes: {
-            land: [
-                'lake_of_outrage',
-                'three_point_pass',
-            ],
             water: [
                 'frigid_sea',
             ],
@@ -18671,6 +18839,10 @@ POKEMON_RULES = {
                 prev: 'Bergmite',
                 level: 37,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
         ],
     },
     'Hisuian Avalugg': {
@@ -18701,13 +18873,6 @@ POKEMON_RULES = {
     },
     'Noivern': {
         native_region: 'Kalos',
-        routes: {
-            land: [
-                'bridge_field',
-                'lake_of_outrage',
-                'ballimere_lake',
-            ],
-        },
         dungeon_boss: [
             ('resolution_cave', 85572310),
             ('lakeside_cave', 166608415),
@@ -18717,6 +18882,11 @@ POKEMON_RULES = {
                 prev: 'Noibat',
                 level: 48,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Xerneas': {
@@ -18750,7 +18920,7 @@ POKEMON_RULES = {
             ('resolution_cave', 88406970),
         ],
         special: [
-            Has('Elite Kalos Champion Badge') & make_rule('terminus_cave', True, 92485360),
+            Has('Kalos Elite Champion Badge') & make_rule('terminus_cave', True, 92485360),
         ],
     },
     'Diancie': {
@@ -18772,7 +18942,7 @@ POKEMON_RULES = {
         native_region: 'Kalos',
         farm_wandering: ['Micle Berry'],
         special: [
-            Has('Elite Kalos Champion Badge') & make_rule('roamer', 'Kalos'),
+            Has('Kalos Elite Champion Badge') & make_rule('roamer', 'Kalos'),
         ],
     },
     'Hoopa (Unbound)': {
@@ -18787,7 +18957,7 @@ POKEMON_RULES = {
     'Volcanion': {
         native_region: 'Kalos',
         special: [
-            Has('Elite Kalos Champion Badge') & make_rule('kalos_power_plant', True, 83945700),
+            Has('Kalos Elite Champion Badge') & make_rule('kalos_power_plant', True, 83945700),
         ],
     },
     'Rowlet': {
@@ -18998,27 +19168,21 @@ POKEMON_RULES = {
                 'alola_route_5',
                 'alola_route_6',
                 'galar_route_1',
-                'dappled_grove',
-                'east_lake_axewell',
-                'north_lake_miloch',
-                'watchtower_ruins',
             ],
         },
         dungeons: [
             'hokulani_observatory',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
             Has('Grubbin') & make_rule('region_safari', 'Johto'),
         ],
     },
     'Charjabug': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'axews_eye',
-                'hammerlocke_hills',
-            ],
-        },
         dungeons: [
             'hokulani_observatory',
         ],
@@ -19029,17 +19193,13 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
             Has('Charjabug') & make_rule('region_safari', 'Johto'),
         ],
     },
     'Vikavolt': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'giants_seat',
-                'giants_mirror',
-            ],
-        },
         dungeon_boss: [
             ('hokulani_observatory', 69418380),
         ],
@@ -19056,6 +19216,8 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
             Has('Vikavolt') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -19125,9 +19287,6 @@ POKEMON_RULES = {
                 'alola_route_2',
                 'alola_route_3',
                 'galar_route_4',
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_mirror',
             ],
         },
         dungeons: [
@@ -19136,18 +19295,14 @@ POKEMON_RULES = {
         ],
         farm_wandering: ['Cheri Berry', 'Chesto Berry', 'Pecha Berry', 'Rawst Berry', 'Aspear Berry', 'Leppa Berry', 'Oran Berry', 'Sitrus Berry', 'Persim Berry', 'Razz Berry', 'Bluk Berry', 'Nanab Berry', 'Wepear Berry', 'Pinap Berry', 'Figy Berry', 'Wiki Berry', 'Mago Berry', 'Aguav Berry', 'Iapapa Berry', 'Lum Berry', 'Pomeg Berry', 'Kelpsy Berry', 'Qualot Berry', 'Hondew Berry', 'Grepa Berry', 'Tamato Berry', 'Cornn Berry', 'Magost Berry', 'Rabuta Berry', 'Nomel Berry', 'Spelon Berry', 'Pamtre Berry', 'Watmel Berry', 'Durin Berry', 'Belue Berry', 'Pinkan Berry', 'Occa Berry', 'Passho Berry', 'Wacan Berry', 'Rindo Berry', 'Yache Berry', 'Chople Berry', 'Kebia Berry', 'Shuca Berry', 'Coba Berry', 'Payapa Berry', 'Tanga Berry', 'Charti Berry', 'Kasib Berry', 'Haban Berry', 'Colbur Berry', 'Babiri Berry', 'Chilan Berry', 'Roseli Berry', 'Snover Berry', 'Micle Berry', 'Custap Berry', 'Jaboca Berry', 'Rowap Berry', 'Kee Berry', 'Maranga Berry', 'Liechi Berry', 'Ganlon Berry', 'Salac Berry', 'Petaya Berry', 'Apicot Berry', 'Lansat Berry', 'Starf Berry', 'Enigma Berry', 'Hopo Berry'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
             Has('Cutiefly') & make_rule('region_safari', 'Johto'),
         ],
     },
     'Ribombee': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'motostoke_riverbank',
-                'bridge_field',
-                'stony_wilderness',
-            ],
-        },
         dungeons: [
             'ulaula_meadow',
             'poni_meadow',
@@ -19161,6 +19316,11 @@ POKEMON_RULES = {
                 level: 25,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+        ],
     },
     'Totem Ribombee': {
         native_region: 'Alola',
@@ -19172,9 +19332,6 @@ POKEMON_RULES = {
         native_region: 'Alola',
         routes: {
             land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'loop_lagoon',
                 'challenge_road',
                 'south_province_area_two',
             ],
@@ -19184,14 +19341,14 @@ POKEMON_RULES = {
         ],
         egg: 'Mystery Egg',
         farm_wandering: ['Charti Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+        ],
     },
     'Lycanroc (Midday)': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'challenge_road',
-            ],
-        },
         dungeons: [
             'vast_poni_canyon',
             'area_zero',
@@ -19203,14 +19360,12 @@ POKEMON_RULES = {
                 dayCyclePart: ['Day'],
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Lycanroc (Midnight)': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'challenge_road',
-            ],
-        },
         dungeons: [
             'vast_poni_canyon',
             'area_zero',
@@ -19221,6 +19376,9 @@ POKEMON_RULES = {
                 level: 25,
                 dayCyclePart: ['Night'],
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Lycanroc (Dusk)': {
@@ -19308,9 +19466,6 @@ POKEMON_RULES = {
             land: [
                 'circhester_bay',
                 'outer_spikemuth',
-                'fields_of_honor',
-                'challenge_beach',
-                'loop_lagoon',
             ],
         },
         evolution: [
@@ -19318,6 +19473,11 @@ POKEMON_RULES = {
                 prev: 'Mareanie',
                 level: 38,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
         ],
     },
     'Mudbray': {
@@ -19327,32 +19487,29 @@ POKEMON_RULES = {
                 'alola_route_4',
                 'alola_route_6',
                 'alola_route_12',
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'giants_seat',
-                'south_lake_miloch',
-                'north_lake_miloch',
                 'galar_route_3',
-                'giants_cap',
             ],
         },
         dungeons: [
             'paniola_ranch',
         ],
         egg: 'Mystery Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('south_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+        ],
     },
     'Mudsdale': {
         native_region: 'Alola',
         routes: {
             land: [
                 'poni_plains',
-                'rolling_fields',
-                'dappled_grove',
-                'east_lake_axewell',
-                'giants_seat',
-                'axews_eye',
             ],
         },
         evolution: [
@@ -19361,43 +19518,38 @@ POKEMON_RULES = {
                 level: 30,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+        ],
     },
     'Dewpider': {
         native_region: 'Alola',
         routes: {
             land: [
                 'galar_route_5',
-                'motostoke_riverbank',
-                'stony_wilderness',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
             ],
         },
         dungeons: [
             'brooklet_hill',
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
             Has('Dewpider') & make_rule('region_safari', 'Johto'),
         ],
     },
     'Araquanid': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'stony_wilderness',
-                'lake_of_outrage',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
-            ],
-        },
         dungeons: [
             'malie_garden',
         ],
@@ -19411,6 +19563,14 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
             Has('Araquanid') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -19425,25 +19585,22 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'alola_route_5',
-                'fields_of_honor',
-                'soothing_wetlands',
-                'forest_of_focus',
-                'challenge_beach',
-                'training_lowlands',
             ],
         },
         dungeons: [
             'lush_jungle',
         ],
         egg: 'Grass Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Lurantis': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'forest_of_focus',
-            ],
-        },
         dungeon_boss: [
             ('lush_jungle', 65451660),
         ],
@@ -19454,6 +19611,9 @@ POKEMON_RULES = {
                 time: 'day',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+        ],
     },
     'Totem Lurantis': {
         native_region: 'Alola',
@@ -19463,25 +19623,16 @@ POKEMON_RULES = {
     },
     'Morelull': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'giants_mirror',
-                'hammerlocke_hills',
-            ],
-        },
         egg: 'Grass Egg',
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
             Has('Morelull') & make_rule('brooklet_hill', False),
             Has('Morelull') & make_rule('lush_jungle', False),
         ],
     },
     'Shiinotic': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         dungeons: [
             'glimwood_tangle',
         ],
@@ -19496,6 +19647,7 @@ POKEMON_RULES = {
         ],
         special: [
             Has('Shiinotic') & make_rule('alola_route_11'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Salandit': {
@@ -19503,8 +19655,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'motostoke_outskirts',
-                'motostoke_riverbank',
-                'stony_wilderness',
                 'challenge_road',
             ],
         },
@@ -19515,15 +19665,12 @@ POKEMON_RULES = {
         farm_wandering: ['Kebia Berry'],
         special: [
             Has('Salandit') & make_rule('alola_route_8'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
         ],
     },
     'Salazzle': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'challenge_road',
-            ],
-        },
         dungeon_boss: [
             ('wela_volcano_park', 64481960),
         ],
@@ -19532,6 +19679,9 @@ POKEMON_RULES = {
                 prev: 'Salandit',
                 level: 33,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
         ],
     },
     'Totem Salazzle': {
@@ -19546,16 +19696,18 @@ POKEMON_RULES = {
             land: [
                 'alola_route_8',
                 'akala_outskirts',
-                'dappled_grove',
                 'east_lake_axewell',
-                'giants_seat',
-                'north_lake_miloch',
                 'galar_route_5',
-                'bridge_field',
-                'hammerlocke_hills',
             ],
         },
         egg: 'Fighting Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_seat'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('north_lake_miloch'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Bewear': {
         native_region: 'Alola',
@@ -19565,8 +19717,6 @@ POKEMON_RULES = {
                 'dappled_grove',
                 'giants_seat',
                 'axews_eye',
-                'bridge_field',
-                'lake_of_outrage',
             ],
         },
         evolution: [
@@ -19575,16 +19725,15 @@ POKEMON_RULES = {
                 level: 27,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Bounsweet': {
         native_region: 'Alola',
         routes: {
             land: [
-                'rolling_fields',
-                'dappled_grove',
-                'west_lake_axewell',
-                'east_lake_axewell',
-                'watchtower_ruins',
                 'south_province_area_one',
                 'south_province_area_two',
             ],
@@ -19593,14 +19742,16 @@ POKEMON_RULES = {
             'lush_jungle',
         ],
         farm_wandering: ['Cheri Berry', 'Chesto Berry', 'Pecha Berry', 'Rawst Berry', 'Aspear Berry', 'Leppa Berry', 'Oran Berry', 'Sitrus Berry', 'Persim Berry', 'Razz Berry', 'Bluk Berry', 'Nanab Berry', 'Wepear Berry', 'Pinap Berry', 'Figy Berry', 'Wiki Berry', 'Mago Berry', 'Aguav Berry', 'Iapapa Berry', 'Lum Berry', 'Pomeg Berry', 'Kelpsy Berry', 'Qualot Berry', 'Hondew Berry', 'Grepa Berry', 'Tamato Berry', 'Cornn Berry', 'Magost Berry', 'Rabuta Berry', 'Nomel Berry', 'Spelon Berry', 'Pamtre Berry', 'Watmel Berry', 'Durin Berry', 'Belue Berry', 'Pinkan Berry', 'Occa Berry', 'Passho Berry', 'Wacan Berry', 'Rindo Berry', 'Yache Berry', 'Chople Berry', 'Kebia Berry', 'Shuca Berry', 'Coba Berry', 'Payapa Berry', 'Tanga Berry', 'Charti Berry', 'Kasib Berry', 'Haban Berry', 'Colbur Berry', 'Babiri Berry', 'Chilan Berry', 'Roseli Berry', 'Snover Berry', 'Micle Berry', 'Custap Berry', 'Jaboca Berry', 'Rowap Berry', 'Kee Berry', 'Maranga Berry', 'Liechi Berry', 'Ganlon Berry', 'Salac Berry', 'Petaya Berry', 'Apicot Berry', 'Lansat Berry', 'Starf Berry', 'Enigma Berry', 'Hopo Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('rolling_fields'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('dappled_grove'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('east_lake_axewell'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('watchtower_ruins'),
+        ],
     },
     'Steenee': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'axews_eye',
-            ],
-        },
         dungeons: [
             'lush_jungle',
         ],
@@ -19610,34 +19761,24 @@ POKEMON_RULES = {
                 level: 18,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+        ],
     },
     'Tsareena': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'stony_wilderness',
-            ],
-        },
         evolution: [
             {
                 prev: 'Steenee',
                 level: 29,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+        ],
     },
     'Comfey': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'fields_of_honor',
-                'soothing_wetlands',
-                'forest_of_focus',
-                'challenge_beach',
-                'training_lowlands',
-                'insular_sea',
-                'honeycalm_island',
-            ],
-        },
         dungeons: [
             'lush_jungle',
             'minas_houseboat',
@@ -19645,6 +19786,15 @@ POKEMON_RULES = {
             'ruins_of_life',
             'ruins_of_abundance',
             'ruins_of_hope',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('insular_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('honeycalm_island'),
         ],
     },
     'Oranguru': {
@@ -19673,14 +19823,6 @@ POKEMON_RULES = {
     },
     'Wimpod': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'motostoke_riverbank',
-                'bridge_field',
-                'giants_mirror',
-                'hammerlocke_hills',
-            ],
-        },
         dungeons: [
             'galar_mine_no_2',
         ],
@@ -19688,19 +19830,15 @@ POKEMON_RULES = {
         special: [
             Has('Wimpod') & make_rule('alola_route_8'),
             Has('Wimpod') & make_rule('poni_breaker_coast'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
             Has('Wimpod') & make_rule('region_safari', 'Johto'),
         ],
     },
     'Golisopod': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'bridge_field',
-                'giants_cap',
-                'lake_of_outrage',
-                'challenge_beach',
-            ],
-        },
         dungeons: [
             'energy_plant',
         ],
@@ -19714,6 +19852,10 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
             Has('Golisopod') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -19728,16 +19870,14 @@ POKEMON_RULES = {
     },
     'Palossand': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'loop_lagoon',
-            ],
-        },
         evolution: [
             {
                 prev: 'Sandygast',
                 level: 42,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
         ],
     },
     'Pyukumuku': {
@@ -19953,18 +20093,15 @@ POKEMON_RULES = {
     },
     'Turtonator': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Togedemaru': {
         native_region: 'Alola',
         routes: {
             land: [
-                'lake_of_outrage',
                 'galar_route_8',
             ],
         },
@@ -19973,6 +20110,9 @@ POKEMON_RULES = {
         ],
         egg: 'Electric Egg',
         farm_wandering: ['Wacan Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Totem Togedemaru': {
         native_region: 'Alola',
@@ -19982,23 +20122,21 @@ POKEMON_RULES = {
     },
     'Mimikyu': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'bridge_field',
-                'giants_mirror',
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
-                'snowslide_slope',
-            ],
-        },
         dungeon_boss: [
             ('thrifty_megamart', 73527110),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Totem Mimikyu': {
@@ -20021,13 +20159,11 @@ POKEMON_RULES = {
     },
     'Drampa': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         egg: 'Dragon Egg',
         farm_wandering: ['Haban Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Dhelmise': {
         native_region: 'Alola',
@@ -20048,26 +20184,19 @@ POKEMON_RULES = {
     },
     'Jangmo-o': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'training_lowlands',
-                'potbottom_desert',
-                'challenge_road',
-            ],
-        },
         dungeons: [
             'vast_poni_canyon',
         ],
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Hakamo-o': {
         native_region: 'Alola',
-        routes: {
-            land: [
-                'lake_of_outrage',
-            ],
-        },
         dungeons: [
             'vast_poni_canyon',
         ],
@@ -20078,6 +20207,9 @@ POKEMON_RULES = {
             },
         ],
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Kommo-o': {
         native_region: 'Alola',
@@ -20562,10 +20694,12 @@ POKEMON_RULES = {
                 'galar_route_1',
                 'galar_route_2',
                 'galar_route_3',
-                'motostoke_riverbank',
                 'south_province_area_three',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+        ],
     },
     'Corvisquire': {
         native_region: 'Galar',
@@ -20575,7 +20709,6 @@ POKEMON_RULES = {
                 'motostoke_riverbank',
                 'giants_mirror',
                 'hammerlocke_hills',
-                'ballimere_lake',
             ],
         },
         evolution: [
@@ -20583,6 +20716,9 @@ POKEMON_RULES = {
                 prev: 'Rookidee',
                 level: 18,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Corviknight': {
@@ -20595,7 +20731,6 @@ POKEMON_RULES = {
                 'lake_of_outrage',
                 'hammerlocke_hills',
                 'galar_route_7',
-                'ballimere_lake',
             ],
         },
         dungeons: [
@@ -20610,6 +20745,9 @@ POKEMON_RULES = {
                 prev: 'Corvisquire',
                 level: 38,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Gigantamax Corviknight': {
@@ -20646,9 +20784,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'galar_route_5',
-                'stony_wilderness',
-                'giants_mirror',
-                'giants_cap',
             ],
         },
         evolution: [
@@ -20658,6 +20793,9 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
             Has('Dottler') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -20667,7 +20805,6 @@ POKEMON_RULES = {
             land: [
                 'dappled_grove',
                 'giants_cap',
-                'lake_of_outrage',
             ],
         },
         dungeons: [
@@ -20680,6 +20817,7 @@ POKEMON_RULES = {
             },
         ],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
             Has('Orbeetle') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -20695,20 +20833,19 @@ POKEMON_RULES = {
             land: [
                 'galar_route_1',
                 'galar_route_2',
-                'stony_wilderness',
-                'giants_mirror',
                 'galar_route_2_lakeside',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Thievul': {
         native_region: 'Galar',
         routes: {
             land: [
                 'south_lake_miloch',
-                'bridge_field',
-                'stony_wilderness',
-                'hammerlocke_hills',
                 'galar_route_7',
                 'outer_spikemuth',
             ],
@@ -20719,19 +20856,26 @@ POKEMON_RULES = {
                 level: 18,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+        ],
     },
     'Gossifleur': {
         native_region: 'Galar',
         routes: {
             land: [
                 'galar_route_3',
-                'motostoke_riverbank',
                 'galar_route_2_lakeside',
-                'ballimere_lake',
             ],
         },
         egg: 'Grass Egg',
         farm_wandering: ['Cheri Berry', 'Chesto Berry', 'Pecha Berry', 'Rawst Berry', 'Aspear Berry', 'Leppa Berry', 'Oran Berry', 'Sitrus Berry', 'Persim Berry', 'Razz Berry', 'Bluk Berry', 'Nanab Berry', 'Wepear Berry', 'Pinap Berry', 'Figy Berry', 'Wiki Berry', 'Mago Berry', 'Aguav Berry', 'Iapapa Berry', 'Lum Berry', 'Pomeg Berry', 'Kelpsy Berry', 'Qualot Berry', 'Hondew Berry', 'Grepa Berry', 'Tamato Berry', 'Cornn Berry', 'Magost Berry', 'Rabuta Berry', 'Nomel Berry', 'Spelon Berry', 'Pamtre Berry', 'Watmel Berry', 'Durin Berry', 'Belue Berry', 'Pinkan Berry', 'Occa Berry', 'Passho Berry', 'Wacan Berry', 'Rindo Berry', 'Yache Berry', 'Chople Berry', 'Kebia Berry', 'Shuca Berry', 'Coba Berry', 'Payapa Berry', 'Tanga Berry', 'Charti Berry', 'Kasib Berry', 'Haban Berry', 'Colbur Berry', 'Babiri Berry', 'Chilan Berry', 'Roseli Berry', 'Snover Berry', 'Micle Berry', 'Custap Berry', 'Jaboca Berry', 'Rowap Berry', 'Kee Berry', 'Maranga Berry', 'Liechi Berry', 'Ganlon Berry', 'Salac Berry', 'Petaya Berry', 'Apicot Berry', 'Lansat Berry', 'Starf Berry', 'Enigma Berry', 'Hopo Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Eldegoss': {
         native_region: 'Galar',
@@ -20739,9 +20883,6 @@ POKEMON_RULES = {
             land: [
                 'galar_route_5',
                 'motostoke_riverbank',
-                'stony_wilderness',
-                'giants_cap',
-                'ballimere_lake',
             ],
         },
         evolution: [
@@ -20750,6 +20891,11 @@ POKEMON_RULES = {
                 level: 20,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Wooloo': {
         native_region: 'Galar',
@@ -20757,27 +20903,22 @@ POKEMON_RULES = {
             land: [
                 'galar_route_1',
                 'galar_route_4',
-                'motostoke_riverbank',
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'three_point_pass',
-                'snowslide_slope',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Dubwool': {
         native_region: 'Galar',
         routes: {
             land: [
                 'rolling_fields',
-                'motostoke_riverbank',
-                'hammerlocke_hills',
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'three_point_pass',
-                'snowslide_slope',
             ],
         },
         dungeons: [
@@ -20789,6 +20930,15 @@ POKEMON_RULES = {
                 level: 24,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Chewtle': {
         native_region: 'Galar',
@@ -20796,8 +20946,6 @@ POKEMON_RULES = {
             land: [
                 'galar_route_2',
                 'motostoke_outskirts',
-                'motostoke_riverbank',
-                'giants_mirror',
                 'galar_route_2_lakeside',
             ],
             water: [
@@ -20813,16 +20961,16 @@ POKEMON_RULES = {
             'courageous_cavern',
         ],
         egg: 'Water Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Drednaw': {
         native_region: 'Galar',
         routes: {
             land: [
                 'giants_cap',
-                'fields_of_honor',
-                'soothing_wetlands',
-                'challenge_beach',
-                'loop_lagoon',
             ],
             water: [
                 'west_lake_axewell',
@@ -20842,6 +20990,12 @@ POKEMON_RULES = {
                 level: 22,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('fields_of_honor'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('soothing_wetlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
+        ],
     },
     'Gigantamax Drednaw': {
         native_region: 'Galar',
@@ -20855,21 +21009,21 @@ POKEMON_RULES = {
             land: [
                 'galar_route_2',
                 'galar_route_4',
-                'motostoke_riverbank',
-                'stony_wilderness',
-                'giants_mirror',
                 'galar_route_2_lakeside',
-                'ballimere_lake',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Boltund': {
         native_region: 'Galar',
         routes: {
             land: [
                 'north_lake_miloch',
-                'motostoke_riverbank',
-                'lake_of_outrage',
                 'ballimere_lake',
             ],
         },
@@ -20879,13 +21033,16 @@ POKEMON_RULES = {
                 level: 25,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Rolycoly': {
         native_region: 'Galar',
         routes: {
             land: [
                 'galar_route_3',
-                'motostoke_riverbank',
                 'giants_cap',
             ],
         },
@@ -20893,17 +21050,12 @@ POKEMON_RULES = {
             'galar_mine',
         ],
         egg: 'Mystery Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+        ],
     },
     'Carkol': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'bridge_field',
-                'stony_wilderness',
-                'giants_cap',
-                'ballimere_lake',
-            ],
-        },
         dungeons: [
             'lakeside_cave',
         ],
@@ -20919,14 +21071,18 @@ POKEMON_RULES = {
                 level: 18,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Coalossal': {
         native_region: 'Galar',
         routes: {
             land: [
                 'giants_cap',
-                'lake_of_outrage',
-                'ballimere_lake',
             ],
         },
         dungeons: [
@@ -20941,6 +21097,10 @@ POKEMON_RULES = {
                 level: 34,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Gigantamax Coalossal': {
         native_region: 'Galar',
@@ -20953,8 +21113,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'galar_route_5',
-                'stony_wilderness',
-                'giants_mirror',
                 'south_province_area_two',
             ],
             headbutt: [
@@ -20974,6 +21132,10 @@ POKEMON_RULES = {
         ],
         egg: 'Grass Egg',
         farm_wandering: ['Haban Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Exposed Applin': {
         native_region: 'Galar',
@@ -21024,20 +21186,20 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'galar_route_6',
-                'forest_of_focus',
-                'training_lowlands',
-                'potbottom_desert',
-                'challenge_road',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_road'),
+        ],
     },
     'Sandaconda': {
         native_region: 'Galar',
         routes: {
             land: [
-                'lake_of_outrage',
                 'galar_route_8',
-                'potbottom_desert',
             ],
         },
         evolution: [
@@ -21045,6 +21207,10 @@ POKEMON_RULES = {
                 prev: 'Silicobra',
                 level: 36,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('potbottom_desert'),
         ],
     },
     'Gigantamax Sandaconda': {
@@ -21055,45 +21221,39 @@ POKEMON_RULES = {
     },
     'Cramorant': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'axews_eye',
-                'galar_route_9',
-                'circhester_bay',
-                'forest_of_focus',
-                'challenge_beach',
-                'training_lowlands',
-            ],
-        },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('galar_route_9'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('circhester_bay'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Cramorant (Gulping)': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'axews_eye',
-                'bridge_field',
-                'stony_wilderness',
-                'lake_of_outrage',
-                'galar_route_9',
-                'circhester_bay',
-                'forest_of_focus',
-                'challenge_beach',
-                'training_lowlands',
-            ],
-        },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('galar_route_9'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('circhester_bay'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Cramorant (Gorging)': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'axews_eye',
-                'galar_route_9',
-                'circhester_bay',
-                'forest_of_focus',
-                'challenge_beach',
-                'training_lowlands',
-            ],
-        },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('axews_eye'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('galar_route_9'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('circhester_bay'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('forest_of_focus'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Arrokuda': {
         native_region: 'Galar',
@@ -21115,10 +21275,6 @@ POKEMON_RULES = {
     'Barraskewda': {
         native_region: 'Galar',
         routes: {
-            land: [
-                'challenge_beach',
-                'training_lowlands',
-            ],
             water: [
                 'motostoke_riverbank',
                 'lake_of_outrage',
@@ -21131,6 +21287,10 @@ POKEMON_RULES = {
                 level: 26,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('challenge_beach'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('training_lowlands'),
+        ],
     },
     'Toxel': {
         native_region: 'Galar',
@@ -21138,11 +21298,11 @@ POKEMON_RULES = {
         farm_wandering: ['Kebia Berry'],
         breeding: ['Toxtricity (Amped)', 'Toxtricity (Low Key)', 'Gigantamax Toxtricity'],
         special: [
-            Has('Toxel') & make_rule('motostoke_riverbank'),
-            Has('Toxel') & make_rule('bridge_field'),
-            Has('Toxel') & make_rule('stony_wilderness'),
-            Has('Toxel') & make_rule('giants_cap'),
-            Has('Toxel') & make_rule('hammerlocke_hills'),
+            Has('Toxel') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('motostoke_riverbank'),
+            Has('Toxel') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            Has('Toxel') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            Has('Toxel') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_cap'),
+            Has('Toxel') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
             Has('Toxel') & make_rule('galar_route_7'),
         ],
     },
@@ -21181,27 +21341,25 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'galar_route_3',
-                'giants_foot',
             ],
         },
         egg: 'Fire Egg',
         farm_wandering: ['Tanga Berry'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
             Has('Sizzlipede') & make_rule('region_safari', 'Johto'),
         ],
     },
     'Centiskorch': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'giants_foot',
-            ],
-        },
         evolution: [
             {
                 prev: 'Sizzlipede',
                 level: 28,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
         ],
     },
     'Gigantamax Centiskorch': {
@@ -21230,35 +21388,31 @@ POKEMON_RULES = {
             },
         ],
         special: [
-            Has('Grapploct') & make_rule('west_lake_axewell'),
+            Has('Grapploct') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('west_lake_axewell'),
             Has('Grapploct') & make_rule('lake_of_outrage'),
             Has('Grapploct') & make_rule('circhester_bay'),
-            Has('Grapploct') & make_rule('loop_lagoon'),
+            Has('Grapploct') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('loop_lagoon'),
         ],
     },
     'Sinistea': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'old_cemetery',
-            ],
-        },
         dungeons: [
             'glimwood_tangle',
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
         ],
     },
     'Polteageist': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'old_cemetery',
-            ],
-        },
         evolution: [
             {
                 prev: 'Sinistea',
                 item: 'Cracked Pot',
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
         ],
     },
     'Hatenna': {
@@ -21266,33 +21420,23 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'motostoke_outskirts',
-                'stony_wilderness',
-                'hammerlocke_hills',
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
             ],
         },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Hattrem': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'slippery_slope',
-                'frostpoint_field',
-                'giants_bed',
-                'old_cemetery',
-                'giants_foot',
-                'frigid_sea',
-                'three_point_pass',
-                'ballimere_lake',
-            ],
-        },
         dungeons: [
             'dusty_bowl',
         ],
@@ -21305,16 +21449,22 @@ POKEMON_RULES = {
                 level: 32,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Hatterene': {
         native_region: 'Galar',
         routes: {
             land: [
                 'lake_of_outrage',
-                'frostpoint_field',
-                'giants_bed',
-                'frigid_sea',
-                'ballimere_lake',
             ],
         },
         dungeons: [
@@ -21325,6 +21475,12 @@ POKEMON_RULES = {
                 prev: 'Hattrem',
                 level: 42,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frostpoint_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Gigantamax Hatterene': {
@@ -21338,26 +21494,21 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'motostoke_outskirts',
-                'stony_wilderness',
-                'giants_mirror',
-                'hammerlocke_hills',
-                'slippery_slope',
             ],
         },
         dungeons: [
             'glimwood_tangle',
         ],
         farm_wandering: ['Colbur Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('stony_wilderness'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('hammerlocke_hills'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+        ],
     },
     'Morgrem': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'giants_bed',
-                'giants_foot',
-                'snowslide_slope',
-            ],
-        },
         dungeon_boss: [
             ('glimwood_tangle', 118824240),
         ],
@@ -21367,16 +21518,17 @@ POKEMON_RULES = {
                 level: 32,
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+        ],
     },
     'Grimmsnarl': {
         native_region: 'Galar',
         routes: {
             land: [
                 'stony_wilderness',
-                'lake_of_outrage',
-                'slippery_slope',
-                'giants_bed',
-                'snowslide_slope',
             ],
         },
         evolution: [
@@ -21384,6 +21536,12 @@ POKEMON_RULES = {
                 prev: 'Morgrem',
                 level: 42,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
         ],
     },
     'Gigantamax Grimmsnarl': {
@@ -21397,10 +21555,7 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'bridge_field',
-                'lake_of_outrage',
                 'galar_route_2_lakeside',
-                'giants_bed',
-                'ballimere_lake',
             ],
         },
         evolution: [
@@ -21410,13 +21565,17 @@ POKEMON_RULES = {
                 time: 'night',
             },
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_bed'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Perrserker': {
         native_region: 'Galar',
         routes: {
             land: [
                 'giants_mirror',
-                'lake_of_outrage',
                 'galar_route_7',
                 'outer_spikemuth',
             ],
@@ -21429,6 +21588,9 @@ POKEMON_RULES = {
                 prev: 'Galarian Meowth',
                 level: 28,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Cursola': {
@@ -21486,11 +21648,13 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'galar_route_4',
-                'bridge_field',
-                'giants_mirror',
             ],
         },
         egg: 'Mystery Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_mirror'),
+        ],
     },
     'Milcery (Cheesy)': {
         native_region: 'Galar',
@@ -21886,11 +22050,13 @@ POKEMON_RULES = {
         native_region: 'Galar',
         routes: {
             land: [
-                'lake_of_outrage',
                 'galar_route_8',
             ],
         },
         egg: 'Fighting Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Pincurchin': {
         native_region: 'Galar',
@@ -21899,29 +22065,31 @@ POKEMON_RULES = {
                 'galar_route_9',
                 'circhester_bay',
                 'loop_lagoon',
-                'frigid_sea',
             ],
         },
         dungeons: [
             'courageous_cavern',
         ],
         egg: 'Electric Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+        ],
     },
     'Snom': {
         native_region: 'Galar',
         routes: {
             land: [
-                'lake_of_outrage',
                 'steamdrift_way',
                 'white_hill_station',
                 'galar_route_10',
-                'slippery_slope',
-                'snowslide_slope',
-                'path_to_the_peak',
             ],
         },
         farm_wandering: ['Yache Berry'],
         special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('slippery_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('snowslide_slope'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('path_to_the_peak'),
             Has('Snom') & make_rule('region_safari', 'Johto'),
         ],
     },
@@ -21947,70 +22115,66 @@ POKEMON_RULES = {
         native_region: 'Galar',
         routes: {
             land: [
-                'lake_of_outrage',
                 'galar_route_10',
                 'giants_bed',
-                'giants_foot',
             ],
         },
         dungeons: [
             'rock_peak_ruins',
             'split_decision_ruins',
         ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+        ],
     },
     'Eiscue (Ice Face)': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'lake_of_outrage',
-                'galar_route_10',
-                'frigid_sea',
-            ],
-        },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('galar_route_10'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+        ],
     },
     'Eiscue (Noice Face)': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'galar_route_10',
-                'frigid_sea',
-            ],
-        },
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('galar_route_10'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('frigid_sea'),
+        ],
     },
     'Indeedee (Male)': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'ballimere_lake',
-            ],
-        },
         dungeon_boss: [
             ('glimwood_tangle', 118824240),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Indeedee (Female)': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'ballimere_lake',
-            ],
-        },
         dungeon_boss: [
             ('glimwood_tangle', 118824240),
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
         ],
     },
     'Morpeko': {
         native_region: 'Galar',
         routes: {
             land: [
-                'lake_of_outrage',
                 'galar_route_7',
                 'outer_spikemuth',
                 'challenge_beach',
-                'ballimere_lake',
             ],
         },
         egg: 'Electric Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('ballimere_lake'),
+        ],
     },
     'Morpeko (Hangry)': {
         native_region: 'Galar',
@@ -22018,19 +22182,16 @@ POKEMON_RULES = {
     },
     'Cufant': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'bridge_field',
-                'giants_foot',
-            ],
-        },
         farm_wandering: ['Babiri Berry'],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('bridge_field'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('giants_foot'),
+        ],
     },
     'Copperajah': {
         native_region: 'Galar',
         routes: {
             land: [
-                'lake_of_outrage',
                 'hammerlocke_hills',
                 'giants_foot',
             ],
@@ -22043,6 +22204,9 @@ POKEMON_RULES = {
                 prev: 'Cufant',
                 level: 34,
             },
+        ],
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Gigantamax Copperajah': {
@@ -22080,7 +22244,6 @@ POKEMON_RULES = {
         routes: {
             land: [
                 'giants_seat',
-                'lake_of_outrage',
                 'galar_route_10',
             ],
         },
@@ -22088,6 +22251,9 @@ POKEMON_RULES = {
             'iron_ruins',
         ],
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
+        ],
     },
     'Gigantamax Duraludon': {
         native_region: 'Galar',
@@ -22102,7 +22268,7 @@ POKEMON_RULES = {
         ],
         egg: 'Dragon Egg',
         special: [
-            Has('Dreepy') & make_rule('lake_of_outrage'),
+            Has('Dreepy') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Drakloak': {
@@ -22123,17 +22289,11 @@ POKEMON_RULES = {
         ],
         egg: 'Dragon Egg',
         special: [
-            Has('Drakloak') & make_rule('lake_of_outrage'),
+            Has('Drakloak') & make_rule('has_script', "Simple Weather Changer Script") & make_rule('lake_of_outrage'),
         ],
     },
     'Dragapult': {
         native_region: 'Galar',
-        routes: {
-            land: [
-                'old_cemetery',
-                'three_point_pass',
-            ],
-        },
         evolution: [
             {
                 prev: 'Drakloak',
@@ -22141,6 +22301,10 @@ POKEMON_RULES = {
             },
         ],
         egg: 'Dragon Egg',
+        special: [
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('old_cemetery'),
+            make_rule('has_script', "Simple Weather Changer Script") & make_rule('three_point_pass'),
+        ],
     },
     'Zacian (Battle Hero)': {
         native_region: 'Galar',
