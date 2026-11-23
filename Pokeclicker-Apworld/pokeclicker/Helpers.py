@@ -18,11 +18,14 @@ def is_category_enabled(world: World, category_name: str) -> Optional[bool]:
     if category_name == "Not Implemented":
         return False
 
-    if category_name == "Johto":
-        return bool(world.options.goal)
+    if category_name in ["Johto", "Johto Pokemon", "Johto Badges"]:
+        return bool(world.options.goal.value > 0)
     
-    if category_name == "Johto Pokemon":
-        return bool(world.options.goal) and bool(world.options.dexsanity)
+    if category_name == "Hoenn":
+        return bool(world.options.goal.value >= 1)
+
+    if category_name == "Pokemon":
+        return world.options.dexsanity.value >= 2
     
     if category_name == "Alt Pokemon":
         return bool(world.options.include_alt_pokemon)
@@ -60,6 +63,8 @@ def is_category_enabled(world: World, category_name: str) -> Optional[bool]:
 
     if category_name == "Wanderers":
         return False
+
+    return True
 
 # # Use this if you want to override the default behavior of is_option_enabled
 # # Return True to enable the item, False to disable it, or None to use the default behavior
