@@ -168,7 +168,7 @@ TemporaryBattleList['Snorlax route 12'] = new TemporaryBattle(
         new RouteKillRequirement(10, GameConstants.Region.kanto, 12),
         new TemporaryBattleRequirement('Blue 4'),
     ],
-    [new TemporaryBattleRequirement('Snorlax route 12'), new ObtainedPokemonRequirement('Snorlax')],
+    [new TemporaryBattleRequirement('Snorlax route 12'), new StatisticRequirement(['pokemonCaptured', PokemonHelper.getPokemonByName('Snorlax').id], 1, 'Capture Snorlax.')],
     {
         displayName: 'Snorlax',
         returnTown: 'Lavender Town',
@@ -183,7 +183,7 @@ TemporaryBattleList['Snorlax route 16'] = new TemporaryBattle(
     [new GymPokemon('Snorlax', 189990, 30)],
     undefined,
     [new TemporaryBattleRequirement('Blue 4')],
-    [new TemporaryBattleRequirement('Snorlax route 16'), new ObtainedPokemonRequirement('Snorlax')],
+    [new TemporaryBattleRequirement('Snorlax route 16'), new StatisticRequirement(['pokemonCaptured', PokemonHelper.getPokemonByName('Snorlax').id], 1, 'Capture Snorlax.')],
     {
         displayName: 'Snorlax',
         returnTown: 'Celadon City',
@@ -506,7 +506,7 @@ TemporaryBattleList.Sudowoodo = new TemporaryBattle(
     [new GymPokemon('Sudowoodo', 540000, 20)],
     undefined,
     [new GymBadgeRequirement(BadgeEnums.Plain)],
-    [new TemporaryBattleRequirement('Sudowoodo'), new ObtainedPokemonRequirement('Sudowoodo')],
+    [new TemporaryBattleRequirement('Sudowoodo'), new StatisticRequirement(['pokemonCaptured', PokemonHelper.getPokemonByName('Sudowoodo').id], 1, 'Capture Sudowoodo.')],
     {
         isTrainerBattle: false,
         returnTown: 'Goldenrod City',
@@ -948,14 +948,14 @@ TemporaryBattleList['Kecleon 1'] = new TemporaryBattle(
     [new GymPokemon('Kecleon', 6000000, 20)],
     undefined,
     [new TemporaryBattleRequirement('May 4')],
-    [new TemporaryBattleRequirement('Kecleon 1'), new ObtainedPokemonRequirement('Kecleon')],
+    [new TemporaryBattleRequirement('Kecleon 1'), new StatisticRequirement(['pokemonCaptured', PokemonHelper.getPokemonByName('Kecleon').id], 1, 'Capture Kecleon.')],
     {
         isTrainerBattle: false,
         returnTown: 'Fortree City',
         hideTrainer: true,
         visibleRequirement: new RouteKillRequirement(10, GameConstants.Region.hoenn, 119),
     }
-);
+); 
 TemporaryBattleList['Kecleon 2'] = new TemporaryBattle(
     'Kecleon 2',
     [new GymPokemon('Kecleon', 7000000, 20)],
