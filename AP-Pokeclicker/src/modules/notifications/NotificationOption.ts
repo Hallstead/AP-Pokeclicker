@@ -7,6 +7,10 @@ enum NotificationOption {
     secondary,
     dark,
     light,
+    progression,
+    useful,
+    filler,
+    trap,
 }
 
 export default NotificationOption;
