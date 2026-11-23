@@ -1,0 +1,1 @@
+"""Pokeclicker world regression tests."""
