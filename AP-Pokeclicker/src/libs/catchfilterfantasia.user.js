@@ -167,7 +167,7 @@ function initCatchFilter() {
     document.getElementById('catch-filter').addEventListener('click', (event) => { toggleCatchFilter(event); });
     document.getElementById('filter-search').addEventListener('input', (event) => { filterPokeSearch(event); });
 
-    overloadPokeballMethod();
+    overloadPokeballMethod(getAPCatchFilterFlag);
     loadFilteredList();
 
     // Apply APFlags state now and subscribe to future changes
@@ -457,12 +457,15 @@ function resetBallFilter(event) {
     localStorage.setItem('filterBallPref', JSON.stringify(filterBallPref));
 }
 
-function overloadPokeballMethod() {
+function overloadPokeballMethod(getAPCatchFilterFlag) {
     const hasBall = function(ballId) {
         return App.game.pokeballs.pokeballs[ballId].quantity() > 0;
     }
 
     const newMethod = function(id, isShiny, isShadow, encounterType) {
+        if (!getAPCatchFilterFlag()) {
+            return App.game.pokeballs.oldCalculatePokeballToUse(id, isShiny, isShadow, encounterType);
+        }
         const pokemon = PokemonHelper.getPokemonById(id);
         const type1 = pokemon.type1;
         const type2 = pokemon.type2;

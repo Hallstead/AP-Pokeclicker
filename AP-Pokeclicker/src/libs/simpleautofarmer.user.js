@@ -37,7 +37,7 @@ function initAutoFarm() {
 
     createMenu();
     
-    // --- APFlags gate: hide/disable until APFlags.simpleAutoFarmer is true ---
+    // Both the Archipelago flag and access to the farm are required.
     function getAPSimpleAutoFarmerFlag() {
         try {
             const flags = (window.APFlags ?? {});
@@ -52,8 +52,12 @@ function initAutoFarm() {
         return false;
     }
 
-    function setButtonStateFromFlag() {
-        const enabled = !!getAPSimpleAutoFarmerFlag();
+    function hasAutoFarmAccess() {
+        return getAPSimpleAutoFarmerFlag() && App.game.farming.canAccess();
+    }
+
+    function updateAutoFarmAccess() {
+        const enabled = hasAutoFarmAccess();
         const ids = [
             ['auto-plant-toggle',    !!plantState,   'Plant'],
             ['auto-harvest-toggle',  !!harvestState, 'Harvest'],
@@ -77,28 +81,22 @@ function initAutoFarm() {
                 btn.classList.toggle('btn-danger', true);
             }
         });
-        // Ensure the loop respects the flag
+        // Stop or resume the loop without changing saved preferences.
         toggleFarmLoop();
-        // If disabled by flag, make sure loop is stopped
-        if (!enabled && autoFarmLoop) {
-            autoFarmLoop = clearInterval(autoFarmLoop);
-        }
     }
 
-    // Apply once now, then subscribe to AP flag changes
-    setButtonStateFromFlag();
+    // canAccess() depends on the Wailmer Pail's observable unlock state.
+    const farmAccess = ko.pureComputed(() => App.game.farming.canAccess());
+    farmAccess.subscribe(updateAutoFarmAccess);
+    updateAutoFarmAccess();
     window.addEventListener('ap:flag-changed', (ev) => {
         try {
             const detail = ev && ev.detail;
             if (detail && detail.key === 'simpleAutoFarmer') {
-                setButtonStateFromFlag();
+                updateAutoFarmAccess();
             }
         } catch (_) { /* ignore */ }
     });
-
-    if (plantState || replantState || harvestState || mulchState) {
-        toggleFarmLoop();
-    }
 
     function createMenu() {
         var elemAF = document.createElement("div");
@@ -122,7 +120,7 @@ function initAutoFarm() {
             button.className = 'btn btn-block btn-' + (state ? 'success' : 'danger');
             button.style.height = '50px';
             button.style.fontSize = '9pt';
-            button.textContent = `Auto ${name[0].toUpperCase() + name.slice(1)}\n[${plantState ? 'ON' : 'OFF'}]`;
+            button.textContent = `Auto ${name[0].toUpperCase() + name.slice(1)}\n[${state ? 'ON' : 'OFF'}]`;
             button.onclick = function() { func(); };
 
             buttonDiv.appendChild(button);
@@ -140,9 +138,9 @@ function initAutoFarm() {
     }
 
     function toggleFarmLoop() {
-        const apEnabled = getAPSimpleAutoFarmerFlag();
+        const enabled = hasAutoFarmAccess();
         if (plantState || replantState || harvestState || mulchState) {
-            if (apEnabled) {
+            if (enabled) {
                 if (!autoFarmLoop) {
                     autoFarmLoop = setInterval(autoFarmTick, 1000);
                 }
@@ -155,6 +153,9 @@ function initAutoFarm() {
     }
 
     function autoFarmTick() {
+        if (!hasAutoFarmAccess()) {
+            return;
+        }
         if (replantState) {
             doReplant();
         } else {
@@ -171,6 +172,7 @@ function initAutoFarm() {
     }
 
     function autoPlantToggle() {
+        if (!hasAutoFarmAccess()) return;
         plantState = !plantState;
         localStorage.setItem("autoPlantState", plantState);
         toggleFarmLoop();
@@ -194,6 +196,7 @@ function initAutoFarm() {
     }
 
     function autoHarvestToggle() {
+        if (!hasAutoFarmAccess()) return;
         harvestState = !harvestState;
         localStorage.setItem("autoHarvestState", harvestState);
         toggleFarmLoop();
@@ -217,6 +220,7 @@ function initAutoFarm() {
     }
 
     function autoReplantToggle() {
+        if (!hasAutoFarmAccess()) return;
         replantState = !replantState;
         localStorage.setItem("autoReplantState", replantState);
         toggleFarmLoop();
@@ -261,6 +265,7 @@ function initAutoFarm() {
     }
 
     function autoMulchToggle() {
+        if (!hasAutoFarmAccess()) return;
         mulchState = !mulchState;
         localStorage.setItem("autoMulchState", mulchState);
         toggleFarmLoop();
