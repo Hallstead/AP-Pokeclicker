@@ -105,7 +105,6 @@ def make_state_rule(world: PokeclickerWorld, rule_func):
 
 def make_pokemon_rule(
     name,
-    *,
     allow_breed=True,
 ):
     # Import here to avoid the rules <-> pokemon_data module import cycle.
@@ -137,13 +136,6 @@ def make_pokemon_rule(
         add_or(make_rule(dungeon, True, attack))
     for dungeon in pokemon.get("dungeon chest", ()):
         add_or(make_rule(dungeon, False))
-
-    # Egg and Breeding
-    if pokemon.get("egg", None) is not None:
-        egg = pokemon.get("egg")
-        add_or((Has(region) if region is not None else True_()) & make_rule(can_get_egg, egg))
-    for mon in pokemon.get("breeding", ()):
-        add_or((Has(region) if region is not None else True_()) & make_rule(can_breed, mon))
 
     # Evolution
     for data_dict in pokemon.get("evolution", []):
@@ -201,8 +193,17 @@ def make_pokemon_rule(
     for s in pokemon.get("special", ()):
         add_or((s))
 
-    # Self Breeding
     if allow_breed:
+        # Egg
+        if pokemon.get("egg", None) is not None:
+            egg = pokemon.get("egg")
+            add_or((Has(region) if region is not None else True_()) & make_rule(can_get_egg, egg))
+
+        # Breeding Other Pokemon (for babys)
+        for mon in pokemon.get("breeding", ()):
+            add_or((Has(region) if region is not None else True_()) & make_rule(can_breed, mon))
+
+        # Self Breeding
         add_or(make_rule(can_breed, name))
 
     return access_rule
@@ -284,7 +285,8 @@ def set_all_rules(world: PokeclickerWorld) -> None:
     set_all_entrance_rules(world)
     set_all_location_rules(world)
     set_completion_condition(world)
-    print(world.options)
+    if world.debug:
+        print(world.options)
             
 
 
@@ -826,7 +828,7 @@ def cerulean_cave(world: World, state: CollectionState, complete_dungeon: bool =
 def new_island(world: World, state: CollectionState, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access New Island dungeon in Kanto."""
     has_dungeon_ticket = state.count("Dungeon Ticket", world.player) > 0
-    has_infinite_seasonal_events = has_script(world, state, "Infinite Seasonal Events")
+    has_infinite_seasonal_events = has_script(world, state, "Infinite Seasonal Events Script")
     minion_attack = 18500
     # if world.options.mapsanity.value > 0:
     #     has_location = state.count("New Island", world.player) > 0
@@ -970,7 +972,7 @@ def bills_grandpa(world: World, state: CollectionState):
 
 def santa_jynx1(world: World, state: CollectionState):
     """Checks if the player can beat Santa Jynx Band 1."""
-    return has_script(world, state, "Infinite Seasonal Events") and bills_house(world, state) and attack_needed(world, state, 10048, "Kanto")
+    return has_script(world, state, "Infinite Seasonal Events Script") and bills_house(world, state) and attack_needed(world, state, 10048, "Kanto")
 
 def ash_ketchum_kanto(world: World, state: CollectionState):
     """Checks if the player can beat Ash Ketchum in Kanto."""
@@ -1153,8 +1155,9 @@ def indigo_plateau_johto(world: World, state: CollectionState):
 
 def national_park(world: World, state: CollectionState):
     """Checks if the player can access National Park."""
+    quest_points = can_get_quest_point(world, state)
     johto = state.has("Johto", world.player)
-    return johto and johto_route_35(world, state)
+    return johto and johto_route_35(world, state) and quest_points
 
 def sprout_tower(world: World, state: CollectionState, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access Sprout Tower."""
@@ -1197,7 +1200,7 @@ def burned_tower(world: World, state: CollectionState, complete_dungeon: bool = 
     has_dungeon_ticket = state.count("Dungeon Ticket", world.player) > 0
     minion_attack = 88500
     johto = state.has("Johto", world.player)
-    return johto and legendary_beasts0(world, state) and has_dungeon_ticket and dungeon_attack_needed(world, state, minion_attack, special_boss_attack, complete_dungeon, "Johto")
+    return johto and the_legendary_beasts0(world, state) and has_dungeon_ticket and dungeon_attack_needed(world, state, minion_attack, special_boss_attack, complete_dungeon, "Johto")
     
 def olivine_lighthouse(world: World, state: CollectionState, complete_dungeon: bool = True, special_boss_attack: int = 0):
     """Checks if the player can access Olivine Lighthouse."""
@@ -1291,7 +1294,7 @@ def sudowoodo(world: World, state: CollectionState):
 
 def silver3(world: World, state: CollectionState):
     """Checks if the player can beat Silver 3."""
-    return legendary_beasts1(world, state) and burned_tower(world, state, False) and attack_needed(world, state, 930600, "Johto")
+    return the_legendary_beasts1(world, state) and burned_tower(world, state, False) and attack_needed(world, state, 930600, "Johto")
 
 def silver4(world: World, state: CollectionState):
     """Checks if the player can beat Silver 4."""
@@ -1359,7 +1362,7 @@ def red(world: World, state: CollectionState):
 
 def youngster_joey(world: World, state: CollectionState):
     """Checks if the player can beat Youngster Joey."""
-    return state.has("Kanto Elite Champion Badge", world.player) and cherrygrove_city(world, state) and has_script(world, state, "Infinite Seasonal Events") and cherrygrove_city(world, state) and attack_needed(world, state, 548919101828, "Johto")
+    return state.has("Kanto Elite Champion Badge", world.player) and cherrygrove_city(world, state) and has_script(world, state, "Infinite Seasonal Events Script") and cherrygrove_city(world, state) and attack_needed(world, state, 548919101828, "Johto")
 
 def ash_ketchum_johto(world: World, state: CollectionState):
     """Checks if the player can beat Ash Ketchum (Johto)."""
@@ -1507,11 +1510,11 @@ def can_get_palaeontologist_token(world: World, state: CollectionState) -> bool:
     """Checks if the player can obtain a Palaeontologist Token."""
     if world.options.include_palaeontologist_token.value:
         return state.has("Palaeontologist Token", world.player)
-    return state.has("Explorer Kit", world.player) and has_script(world, state, "Enhanced Auto Mine")
+    return state.has("Explorer Kit", world.player) and has_script(world, state, "Enhanced Auto Mine Script")
 
 def can_get_fossil(world: World, state: CollectionState, region: str) -> bool:
     """Checks if the player can obtain a Fossil in the specified region."""
-    return state.has("Explorer Kit", world.player) and has_script(world, state, "Enhanced Auto Mine") #and state.has(region, world.player)
+    return state.has("Explorer Kit", world.player) and has_script(world, state, "Enhanced Auto Mine Script") #and state.has(region, world.player)
 
 def can_get_quest_point(world: World, state: CollectionState) -> bool:
     """Checks if the player can obtain a Quest Point."""
@@ -1521,6 +1524,14 @@ def can_get_quest_point(world: World, state: CollectionState) -> bool:
 def can_get_farm_point(world: World, state: CollectionState) -> bool:
     """Checks if the player can obtain a Farm Point."""
     return state.has("Wailmer Pail", world.player)
+
+def can_get_contest_token(world: World, state: CollectionState) -> bool:
+    """Checks if the player can obtain a Contest Token."""
+    return national_park(world, state)
+
+def can_get_diamond(world: World, state: CollectionState) -> bool:
+    """Checks if the player can obtain a Diamond."""
+    return state.has("Explorer Kit", world.player) and has_script(world, state, "Enhanced Auto Mine Script")
 
 ITEM_TYPES = {
     "Moon Stone": can_get_moon_stone,
@@ -1574,8 +1585,8 @@ ITEM_TYPES = {
     "dungeonToken": lambda world, state: False,
     "questPoint": can_get_quest_point,
     'farmPoint': can_get_farm_point,
-    'diamond': lambda world, state: False,
-    'contestToken': lambda world, state: False,
+    'diamond': can_get_diamond,
+    'contestToken': can_get_contest_token,
     'battlePoint': lambda world, state: False,
     'Normal Gems': lambda world, state: False,
     'Water Gems': lambda world, state: False,
@@ -1804,9 +1815,29 @@ def unfinished_business9(world: World, state: CollectionState):
     """Checks if the ninth step of the Unfinished Business questline can be completed."""
     return unfinished_business8(world, state) and tohjo_falls(world, state)
 
+def unfinished_business10(world: World, state: CollectionState):
+    """Checks if the tenth step of the Unfinished Business questline can be completed."""
+    return unfinished_business9(world, state)
+
+def unfinished_business11(world: World, state: CollectionState):
+    """Checks if the eleventh step of the Unfinished Business questline can be completed."""
+    return unfinished_business10(world, state)
+    
+def unfinished_business12(world: World, state: CollectionState):
+    """Checks if the twelfth step of the Unfinished Business questline can be completed."""
+    return unfinished_business11(world, state)
+    
+def unfinished_business13(world: World, state: CollectionState):
+    """Checks if the thirteenth step of the Unfinished Business questline can be completed."""
+    return unfinished_business12(world, state)
+
+def unfinished_business14(world: World, state: CollectionState):
+    """Checks if the fourteenth step of the Unfinished Business questline can be completed."""
+    return unfinished_business13(world, state)
+                
 def completed_unfinished_business(world: World, state: CollectionState):
     """Checks if the Unfinished Business questline has been completed."""
-    return unfinished_business9(world, state)
+    return unfinished_business14(world, state)
 
 def started_sick_ampharos(world: World, state: CollectionState):
     """Checks if the player has started the Sick Ampharos questline."""
@@ -1844,37 +1875,37 @@ def completed_team_rocket_again(world: World, state: CollectionState):
     """Checks if the Team Rocket Again questline has been completed."""
     return team_rocket_again2(world, state)
 
-def started_legendary_beasts(world: World, state: CollectionState):
+def started_the_legendary_beasts(world: World, state: CollectionState):
     """Checks if the player has started the Legendary Beasts questline."""
     return new_bark_town(world, state) and johto_route_37(world, state)
 
-def legendary_beasts0(world: World, state: CollectionState): # Talk to Eusine in Ecruteak City
+def the_legendary_beasts0(world: World, state: CollectionState): # Talk to Eusine in Ecruteak City
     """Checks if the first step of the Legendary Beasts questline can be completed."""
-    return started_legendary_beasts(world, state) and ecruteak_city(world, state)
+    return started_the_legendary_beasts(world, state) and ecruteak_city(world, state)
 
-def legendary_beasts1(world: World, state: CollectionState): # Clear the Burned Tower
+def the_legendary_beasts1(world: World, state: CollectionState): # Clear the Burned Tower
     """Checks if the second step of the Legendary Beasts questline can be completed."""
-    return legendary_beasts0(world, state) and burned_tower(world, state)
+    return the_legendary_beasts0(world, state) and burned_tower(world, state)
 
-def legendary_beasts2(world: World, state: CollectionState): # Silver 3
+def the_legendary_beasts2(world: World, state: CollectionState): # Silver 3
     """Checks if the third step of the Legendary Beasts questline can be completed."""
-    return legendary_beasts1(world, state)
+    return the_legendary_beasts1(world, state)
 
-def legendary_beasts3(world: World, state: CollectionState): # Talk to Pokéfan Derek in Ecruteak City
+def the_legendary_beasts3(world: World, state: CollectionState): # Talk to Pokéfan Derek in Ecruteak City
     """Checks if the fourth step of the Legendary Beasts questline can be completed."""
-    return legendary_beasts2(world, state)
+    return the_legendary_beasts2(world, state)
 
-def legendary_beasts4(world: World, state: CollectionState): # Catch the Legendary Beasts
+def the_legendary_beasts4(world: World, state: CollectionState): # Catch the Legendary Beasts
     """Checks if the fifth step of the Legendary Beasts questline can be completed."""
-    return legendary_beasts3(world, state) and johto_roamer(world, state) and eusines_chase11(world, state)
+    return the_legendary_beasts3(world, state) and johto_roamer(world, state) and eusines_chase11(world, state)
 
-def completed_legendary_beasts(world: World, state: CollectionState):
+def completed_the_legendary_beasts(world: World, state: CollectionState):
     """Checks if the Legendary Beasts questline has been completed."""
-    return legendary_beasts4(world, state)
+    return the_legendary_beasts4(world, state)
 
 def started_eusines_chase(world: World, state: CollectionState):
     """Checks if the player has started the Eusine's Chase questline."""
-    return legendary_beasts3(world, state)
+    return the_legendary_beasts3(world, state)
 
 def eusines_chase0(world: World, state: CollectionState): # Suicune 1
     """Checks if the first step of the Eusine's Chase questline can be completed."""
@@ -1982,7 +2013,7 @@ def completed_whirl_guardian(world: World, state: CollectionState):
 
 def started_rainbow_guardian(world: World, state: CollectionState):
     """Checks if the player has started the Rainbow Guardian questline."""
-    return completed_whirl_guardian(world, state) and completed_legendary_beasts(world, state) and new_bark_town(world, state)
+    return completed_whirl_guardian(world, state) and completed_the_legendary_beasts(world, state) and new_bark_town(world, state)
 
 def rainbow_guardian0(world: World, state: CollectionState): # Meet the Kimono Girls at the Ecruteak Dance Theatre
     """Checks if the first step of the Rainbow Guardian questline can be completed."""
@@ -2002,7 +2033,7 @@ def completed_rainbow_guardian(world: World, state: CollectionState):
 
 def started_how_blue_mouse(world: World, state: CollectionState):
     """Checks if the player has started the How Blue Mouse questline."""
-    return has_script(world, state, "Infinite Seasonal Events") and any_bulletin_board(world, state)
+    return has_script(world, state, "Infinite Seasonal Events Script") and any_bulletin_board(world, state)
 
 def how_blue_mouse(world: World, state: CollectionState): # Talk to the Blue Mouse in New Bark Town
     """Checks if the How Blue Mouse questline can be completed."""
@@ -2010,7 +2041,7 @@ def how_blue_mouse(world: World, state: CollectionState): # Talk to the Blue Mou
 
 def started_egg_hunt(world: World, state: CollectionState):
     """Checks if the player has started the Easter Egg Hunt questline."""
-    return has_script(world, state, "Infinite Seasonal Events") and any_bulletin_board(world, state)
+    return has_script(world, state, "Infinite Seasonal Events Script") and any_bulletin_board(world, state)
 
 def egg_hunt0(world: World, state: CollectionState): 
     """Checks if the first step of the Easter Egg Hunt questline can be completed."""
@@ -2115,24 +2146,29 @@ def can_catch_x_pokemon(world: World, state: CollectionState, x: int):
     """Checks if the player can obtain at least X pokemon."""
     return state.count_group("Pokemon", world.player) >= int(x)
 
-def get_party_attack(world: World, state: CollectionState, num_pokemon: int, region: str = "Kanto") -> set:
+def get_party_attack(world: World, state: CollectionState, count_pokemon: int, region: str = "Kanto") -> float:
     """Returns the attack value of the player's expected current party."""
-    count_pokemon = state.count_group("Pokemon", world.player)
+    num_regions = len([r for r in ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos", "Alola", "Galar"] if state.has(r, world.player)]) - 1
+    # count_pokemon = state.count_group("Pokemon", world.player)
     count_region = state.count_group(f"{region} Pokemon", world.player)
+    count_other_region = count_pokemon - count_region
     num_badges = state.count_group("Badges", world.player)
     avgBaseAttack = 70 + 4.2 * num_badges
     avgLevel = min(100, 20 + 10 * num_badges)
-    return num_pokemon * avgBaseAttack * (avgLevel / 100)
+    base = avgBaseAttack * (avgLevel / 100)
+    return count_region * base + count_other_region * base * (max(0.2, 0.1 + (num_regions / 10)) if world.options.regional_attack_debuff.value else 1)
 
-def get_click_attack(world: World, state: CollectionState, num_pokemon: int) -> set:
+def get_click_attack(world: World, state: CollectionState, num_pokemon: int) -> float:
     """Returns the attack value of the player's expected clicker attack."""
+    if world.options.no_click_attack.value:
+        return 0
     achievement_bonus = 1
     num_caught = num_pokemon
     num_shiny = 0
     num_resistant = 0
     num_purified = 0
     has_shiny_code = state.has("Shiny-Charmer Code", world.player)
-    has_rocky_helmet = state.has("Rocky Helmet", world.player)
+    has_rocky_helmet = state.has("Rocky Helmet", world.player) and not world.options.no_oak_items.value
     has_black_flute = state.has("Black Flute", world.player)
     has_x_click = state.has("X Click", world.player)
     if has_shiny_code:
@@ -2185,6 +2221,14 @@ def dexsanity_disabled(world: World, state: CollectionState):
     """Checks if Dexsanity is disabled."""
     return world.options.dexsanity.value == 0
 
+def require_complete_pokedex(world: World, state: CollectionState):
+    """Checks if the Require Complete Pokedex option is enabled."""
+    return world.options.require_complete_pokedex.value
+
+def optional_complete_pokedex(world: World, state: CollectionState):
+    """Checks if the Require Complete Pokedex option is disabled."""
+    return not world.options.require_complete_pokedex.value
+
 def can_breed(world: World, state: CollectionState, pokemon: str):
     """Checks if the pokemon has been received and can be hatched."""
     has_pokemon = state.count(pokemon, world.player) > 0
@@ -2229,9 +2273,8 @@ def roamer(world: World, state: CollectionState, region: str):
 
 def has_script(world: World, state: CollectionState, script_name: str):
     """Checks if the player needs a specific script."""
-    if not world.options.use_scripts.value:
+    if world.options.use_scripts.value == 0:
         return True
-    # script_item = get_items_with_value(world, f"Script: {script_name}")
     return state.has(script_name, world.player)
 
 def can_wander(world: World, state: CollectionState):
