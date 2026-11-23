@@ -25,7 +25,7 @@ GymList['Hallstead\'s Yacht'] = new Gym(
         BagHandler.gainItem({type: ItemType.item, id: 'Mystery_egg'}, 100);
         App.game.pokeballs.gainPokeballs(GameConstants.Pokeball.Masterball, 100, false);
         Notifier.notify({
-            message: 'You were awarded 100 Mystery Eggs and 100 Masterballs for defeating the Hallstead!',
+            message: 'You were awarded 100 Mystery Eggs and 100 Masterballs for defeating Hallstead!',
             type: NotificationConstants.NotificationOption.success,
             setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
         });
