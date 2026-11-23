@@ -16,7 +16,7 @@ def before_generate_basic(world: PokeclickerWorld):
     world.multiworld.early_items[world.player]["Town Map"] = world.options.early_town_map
 
 
-    if world.options.dexsanity.value == 2: # Shuffled
+    if world.options.dexsanity.value == 3: # Shuffled
         for location in world.location_data.values():
             if "Pokemon Locations" in location.groups:
                 location.place_item_category = ["Pokemon"]
