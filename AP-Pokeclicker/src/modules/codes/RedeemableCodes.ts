@@ -1,4 +1,5 @@
 import { Saveable } from '../DataStore/common/Saveable';
+import * as GameConstants from '../GameConstants';
 import BerryType from '../enums/BerryType';
 import {
     Currency, MegaStoneType, Pokeball, Region, VitaminType,
@@ -74,7 +75,7 @@ export default class RedeemableCodes implements Saveable {
             }),
             new RedeemableCode('great-balls', -1761161712, false, async () => {
                 // Give the player 10 Great Balls
-                App.game.pokeballs.gainPokeballs(Pokeball.Greatball, 10);
+                App.game.pokeballs.gainPokeballs(GameConstants.Pokeball.Greatball, 10);
                 // Notify that the code was activated successfully
                 Notifier.notify({
                     title: 'Code activated!',
