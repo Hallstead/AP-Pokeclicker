@@ -297,14 +297,15 @@ function autoHatchFossil() {
     if (fossilList.length == 0) {
         return false;
     }
+    const fossilToPokemon = (typeof GameConstants !== 'undefined' && GameConstants.FossilToPokemon)
+        || (typeof FossilToPokemon !== 'undefined' && FossilToPokemon);
     let priorityList = fossilList.filter(f => { 
-        // Defensive: GameConstants.FossilToPokemon may be missing in some builds
-        const mappingExists = typeof GameConstants.FossilToPokemon !== 'undefined' && GameConstants.FossilToPokemon[f.name];
-        if (!mappingExists) {
+        const pokemonName = fossilToPokemon?.[f.name];
+        if (!pokemonName) {
             // If no mapping, treat as not priority (avoid throwing)
             return false;
         }
-        const caughtStatus = PartyController.getCaughtStatusByName(GameConstants.FossilToPokemon[f.name]);
+        const caughtStatus = PartyController.getCaughtStatusByName(pokemonName);
         return caughtStatus == CaughtStatus.NotCaught || (shinyFossilState && caughtStatus == CaughtStatus.Caught);
     });
     if (priorityList.length) {
@@ -426,6 +427,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('enhancedautohatchery') === 'true') {
-    loadEpheniaScript('enhancedautohatchery', initAutoHatch, bindAutoHatcher);
-}
+loadEpheniaScript('enhancedautohatchery', initAutoHatch, bindAutoHatcher);

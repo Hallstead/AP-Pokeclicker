@@ -46,7 +46,7 @@ function initWeatherChange() {
     document.getElementById('change-weather-select').addEventListener('change', (event) => { changeWeather(event); });
     addGlobalStyle('#change-weather-select { position: absolute; right: 100px; top: 10px; width: auto; height: 20px; font-size: 9px; }');
 
-    overrideGenerateWeather();
+    overrideGenerateWeather(getAPSimpleWeatherFlag);
     Weather.generateWeather(new Date());
 
     // Apply AP gating on startup and listen for changes
@@ -99,12 +99,13 @@ function changeWeather(event) {
     localStorage.setItem('weatherChangerWeather', weatherChangerWeather);
 }
 
-function overrideGenerateWeather() {
+function overrideGenerateWeather(getAPSimpleWeatherFlag) {
     const oldGenerateWeather = Weather.generateWeather;
     Weather.generateWeather = function(...args) {
-        if (weatherChangerWeather >= 0) {
+        if (getAPSimpleWeatherFlag() && weatherChangerWeather >= 0) {
             Weather.regionalWeather.forEach((weather) => weather(weatherChangerWeather));
         } else {
+            // Always retain the game's normal weather calculation while gated.
             return oldGenerateWeather.apply(this, args);
         }
     }
@@ -186,6 +187,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('simpleweatherchanger') === 'true') {
-    loadEpheniaScript('simpleweatherchanger', initWeatherChange);
-}
+loadEpheniaScript('simpleweatherchanger', initWeatherChange);

@@ -20,7 +20,7 @@ import RegionRoute from './RegionRoute';
 import RoutePokemon from './RoutePokemon';
 import Routes from './Routes';
 import SpecialRoutePokemon from './SpecialRoutePokemon';
-import SpecialEventRandomRequirement from '../requirements/SpecialEventRandomRequirement';
+// import SpecialEventRandomRequirement from '../requirements/SpecialEventRandomRequirement';
 import SeededRand from '../utilities/SeededRand';
 import ItemOwnedRequirement from '../requirements/ItemOwnedRequirement';
 import SpecialEventRequirement from '../requirements/SpecialEventRequirement';
@@ -652,13 +652,13 @@ Routes.add(new RegionRoute(
 ));
 const cuteMeowthReq = new MultiRequirement([
     new StatisticRequirement(['pokemonHatched', getPokemonByName('Phanpy').id], 1, 'Hatch Phanpy first.'),
-    new OneFromManyRequirement([
-        new PokemonLevelRequirement('Phanpy', 21, AchievementOption.less),
-        new MultiRequirement([
-            new PokemonLevelRequirement('Phanpy', 51, AchievementOption.less),
-            new ClearDungeonRequirement(250, getDungeonIndex('Team Rocket\'s Hideout')),
-        ]),
-    ]),
+    // new OneFromManyRequirement([
+    //     new PokemonLevelRequirement('Phanpy', 21, AchievementOption.less),
+    //     new MultiRequirement([
+    //         new PokemonLevelRequirement('Phanpy', 51, AchievementOption.less),
+    //         new ClearDungeonRequirement(250, getDungeonIndex('Team Rocket\'s Hideout')),
+    //     ]),
+    // ]),
 ]);
 Routes.add(new RegionRoute(
     'Johto Route 42', Region.johto, 42,
@@ -4237,15 +4237,15 @@ Routes.getRoutesByRegion(Region.kanto).forEach((route) => {
 });
 Routes.getRoutesByRegion(Region.johto).forEach(route => {
     route.pokemon.special.push(
-        new SpecialRoutePokemon(['Spooky Togepi'], new SpecialEventRandomRequirement('Halloween!')),
-        new SpecialRoutePokemon(['Misdreavus'], new SpecialEventRandomRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Spooky Togepi'], new SpecialEventRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Misdreavus'], new SpecialEventRequirement('Halloween!')),
     );
 });
 Routes.getRoutesByRegion(Region.hoenn).forEach(route => {
     route.pokemon.special.push(
-        new SpecialRoutePokemon(['Pikachu (Gengar)'], new SpecialEventRandomRequirement('Halloween!')),
-        new SpecialRoutePokemon(['Shuppet'], new SpecialEventRandomRequirement('Halloween!')),
-        new SpecialRoutePokemon(['Duskull'], new SpecialEventRandomRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Pikachu (Gengar)'], new SpecialEventRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Shuppet'], new SpecialEventRequirement('Halloween!')),
+        new SpecialRoutePokemon(['Duskull'], new SpecialEventRequirement('Halloween!')),
     );
 });
 

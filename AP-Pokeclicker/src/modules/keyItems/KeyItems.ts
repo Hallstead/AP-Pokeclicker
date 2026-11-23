@@ -50,12 +50,12 @@ export default class KeyItems implements Feature {
                 () => MapHelper.accessToRoute(11, Region.kanto), undefined, undefined, 'Wailmer Pail', undefined, 6),
 
             new KeyItem(KeyItemType.Explorer_kit, 'A bag filled with convenient tools for exploring. It provides access to the Underground.', undefined, undefined, undefined, 'Explorer Kit'),
-            new KeyItem(KeyItemType.Eon_ticket, 'A limited edition ticket for a cruise to the Southern Island.', undefined, undefined, undefined, 'Eon Ticket'),
-            new KeyItem(KeyItemType.Event_calendar, 'This calendar will keep you up to date on the latest events and let you start events early.', undefined, undefined, undefined, 'Event Calendar'),
+            new KeyItem(KeyItemType.Eon_ticket, 'A limited edition ticket for a cruise to the Southern Island.', undefined, undefined, undefined, 'Eon Ticket', undefined, 10),
+            new KeyItem(KeyItemType.Event_calendar, 'This calendar will keep you up to date on the latest events and let you start events early.', undefined, undefined, undefined, 'Event Calendar', undefined, 11),
             new KeyItem(KeyItemType.Gem_case, 'A case specifically designed for holding gems.', 
                 () => App.game.statistics.gymsDefeated[getGymIndex('Viridian City')]() >= 1, undefined, undefined, 'Gem Case', undefined, 8),
-            new KeyItem(KeyItemType.DNA_splicers, 'A splicer that fuses certain Pokémon.', undefined, undefined, undefined, 'DNA Splicers'),
-            new KeyItem(KeyItemType.Reins_of_unity, 'Reins that people presented to the king. They enhance Calyrex’s power over bountiful harvests and unite Calyrex with its beloved steeds.', undefined, undefined, undefined, 'Reins of Unity'),
+            new KeyItem(KeyItemType.DNA_splicers, 'A splicer that fuses certain Pokémon.', undefined, undefined, undefined, 'DNA Splicers', undefined, 12),
+            new KeyItem(KeyItemType.Reins_of_unity, 'Reins that people presented to the king. They enhance Calyrex’s power over bountiful harvests and unite Calyrex with its beloved steeds.', undefined, undefined, undefined, 'Reins of Unity', undefined, 13),
             new KeyItem(KeyItemType.Pokerus_virus,
                 'A virus sample collected from your starter Pokémon. Infect more Pokémon in the hatchery, and use the new Pokérus Poké Ball option to focus catching Contagious pokemon for a damage boost.',
                 () => App.game.statistics.dungeonsCleared[getDungeonIndex('Distortion World')]() > 0,
@@ -78,7 +78,7 @@ export default class KeyItems implements Feature {
                         RegionalStarters[Region.kanto][player.regionStarters[Region.kanto]()],
                     ) || App.game.party.caughtPokemon[0];
                     patientZero.pokerus = Pokerus.Contagious;
-                }),
+                }, 14),
             /*new KeyItem(KeyItemType['Z-Power_Ring'],
                 // Using a Z-Crystal boosts the power of all your Pokémon of a shared type for a short while, after which some time is needed to recharge.'
                 'A gift from Melemele\'s kahuna that enables the use of Z-Crystals. What they do is still under development.',

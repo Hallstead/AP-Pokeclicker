@@ -20,6 +20,12 @@ def before_is_category_enabled(multiworld: MultiWorld, player: int, category_nam
         return False
     
     if category_name == "Alt Pokemon":
+        return False
+    
+    if category_name == "Johto Pokemon":
+        return False
+    
+    if category_name == "Alt Pokemon":
         return Helpers.is_option_enabled(multiworld, player, "include_alt_pokemon")
     
     if category_name == "Seasonal Events":

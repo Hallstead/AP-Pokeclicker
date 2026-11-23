@@ -7,7 +7,7 @@ export default class BuyOakItem extends Item {
     item: OakItemType;
     locationId: number | null = null;
 
-    constructor(item: OakItemType, basePrice: number, currency: Currency = Currency.questPoint, locationId = null) {
+    constructor(item: OakItemType, basePrice: number, currency: Currency = Currency.questPoint, locationId: number = 0) {
         super(OakItemType[item], basePrice, currency, { maxAmount: 1 }, undefined, 'Purchase to unlock this Oak Item');
         this.item = item;
         this.locationId = locationId;

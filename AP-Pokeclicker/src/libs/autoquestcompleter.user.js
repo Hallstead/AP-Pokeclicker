@@ -55,14 +55,14 @@ function initAutoQuest() {
         return false;
     }
 
-    createSettings();
+    function hasAutoQuestAccess() {
+        return App.game.quests.isDailyQuestsUnlocked() && getAPAutoQuestFlag();
+    }
 
     /* Initialize quest handling */
 
     overrideMethods();
-    if (autoQuestEnabled && getAPAutoQuestFlag()) {
-        refreshQuestSubscriptions();
-    }
+    createSettings();
 
     /* Functions */
 
@@ -122,62 +122,60 @@ function initAutoQuest() {
             settingsBody.appendChild(elem);
         });
 
-        // --- APFlags gate: hide toggle button and disable multi-quests until enabled ---
-        function applyAutoQuestAccessFromFlag() {
-            const enabled = !!getAPAutoQuestFlag();
-            // Hide/disable main toggle button when flag is false
+        // Hide controls and disable automation until both gates are open.
+        function applyAutoQuestAccess() {
+            const enabled = hasAutoQuestAccess();
             try {
                 if (autoQuestBtnRef) {
                     autoQuestBtnRef.style.display = enabled ? '' : 'none';
-                    autoQuestBtnRef.title = enabled ? '' : 'Disabled: Not enabled by Archipelago yet.';
+                    autoQuestBtnRef.title = enabled ? '' : 'Disabled until the tutorial is complete and Archipelago enables Auto Quest.';
                 }
                 if (questResetBtnRef) {
                     questResetBtnRef.style.display = enabled ? '' : 'none';
-                    questResetBtnRef.title = enabled ? '' : 'Disabled: Not enabled by Archipelago yet.';
+                    questResetBtnRef.title = enabled ? '' : 'Disabled until the tutorial is complete and Archipelago enables Auto Quest.';
                 }
                 if (settingsBodyRef && settingsBodyRef.parentElement) {
                     settingsBodyRef.parentElement.style.display = enabled ? '' : 'none';
                 }
             } catch (_) { /* ignore */ }
-            // Disable multi-quest UI when flag is false (preserve saved value)
+            // Reflect the gate in the UI without changing the saved value.
             try {
                 if (maxSelectRef) {
                     maxSelectRef.disabled = !enabled;
-                    // Reflect UI to 1 when disabled (without changing stored maxQuests)
-                    if (!enabled) {
-                        maxSelectRef.setAttribute('data-prev', String(maxSelectRef.value));
-                        maxSelectRef.value = 1;
-                    } else {
-                        const prev = maxSelectRef.getAttribute('data-prev');
-                        if (prev) maxSelectRef.value = prev;
-                    }
+                    maxSelectRef.value = enabled ? maxQuests : 1;
                 }
             } catch (_) { /* ignore */ }
-            // Stop auto when disabled; resume if enabled and user had it ON
+            // Stop automation while gated, without changing the saved preferences.
             try {
                 if (!enabled) {
                     clearQuestSubscriptions();
+                    clearTimeout(questResetTimeout);
                 } else if (autoQuestEnabled) {
                     refreshQuestSubscriptions();
+                } else {
+                    resetQuestResetTimeout();
                 }
             } catch (_) { /* ignore */ }
         }
 
-        // Initial apply and subscribe
-        applyAutoQuestAccessFromFlag();
+        // Tutorial state is per save; script preferences remain in local storage.
+        const tutorial = App.game.quests.getQuestLine('Tutorial Quests');
+        if (tutorial) {
+            tutorial.state.subscribe(applyAutoQuestAccess);
+        }
+        applyAutoQuestAccess();
         window.addEventListener('ap:flag-changed', (ev) => {
             try {
                 const detail = ev && ev.detail;
                 if (detail && detail.key === 'autoQuestCompleter') {
-                    applyAutoQuestAccessFromFlag();
+                    applyAutoQuestAccess();
                 }
             } catch (_) { /* ignore */ }
         });
     }
 
     function toggleAutoQuest() {
-        // Do not allow enabling while gated off
-        if (!getAPAutoQuestFlag() && !autoQuestEnabled) {
+        if (!hasAutoQuestAccess()) {
             return;
         }
         autoQuestEnabled = !autoQuestEnabled;
@@ -196,6 +194,9 @@ function initAutoQuest() {
     }
 
     function changeMaxQuests(event) {
+        if (!hasAutoQuestAccess()) {
+            return;
+        }
         const newVal = +event.target.value;
         if (Number.isInteger(newVal) && 0 < newVal && newVal <= 10) {
             maxQuests = newVal;
@@ -205,6 +206,9 @@ function initAutoQuest() {
     }
 
     function toggleQuestResetState() {
+        if (!hasAutoQuestAccess()) {
+            return;
+        }
         questResetState = !questResetState;
         resetQuestResetTimeout();
         const questResetBtn = document.getElementById('toggle-auto-quest-reset');
@@ -214,6 +218,9 @@ function initAutoQuest() {
     }
 
     function changeQuestResetTimer() {
+        if (!hasAutoQuestAccess()) {
+            return;
+        }
         const form = document.getElementById('input-autoQuestResetTimer');
         let val = +form.value;
         val = (Number.isInteger(val) && val > 0 ? val : 10);
@@ -227,6 +234,9 @@ function initAutoQuest() {
     }
 
     function toggleIgnoreQuestType(type) {
+        if (!hasAutoQuestAccess()) {
+            return;
+        }
         let i = ignoredQuestTypes.indexOf(type);
         if (i >= 0) {
             ignoredQuestTypes.splice(i, 1);
@@ -239,6 +249,9 @@ function initAutoQuest() {
     function refreshQuestSubscriptions() {
         // Dispose of old subscriptions
         clearQuestSubscriptions();
+        if (!autoQuestEnabled || !hasAutoQuestAccess()) {
+            return;
+        }
 
         // Subscribe to new quests
         App.game.quests.questList().forEach((quest, i) => {
@@ -248,7 +261,7 @@ function initAutoQuest() {
             } else if (!quest.isCompleted()){
                 // Subscribe to in-progress quests
                 const sub = quest.isCompleted.subscribe(() => {
-                    if (!quest.autoComplete && quest.inProgress() && quest.isCompleted()) {
+                    if (autoQuestEnabled && hasAutoQuestAccess() && !quest.autoComplete && quest.inProgress() && quest.isCompleted()) {
                         App.game.quests.claimQuest(i);
                         beginQuests();
                         sub.dispose();
@@ -271,13 +284,17 @@ function initAutoQuest() {
 
     function resetQuestResetTimeout() {
         clearTimeout(questResetTimeout);
-        if (questResetState && getAPAutoQuestFlag()) {
-            questResetTimeout = setTimeout(() => { App.game.quests.refreshQuests() }, questResetTimer * GameConstants.MINUTE);
+        if (questResetState && hasAutoQuestAccess()) {
+            questResetTimeout = setTimeout(() => {
+                if (questResetState && hasAutoQuestAccess()) {
+                    App.game.quests.refreshQuests();
+                }
+            }, questResetTimer * GameConstants.MINUTE);
         }
     }
 
     function beginQuests() {
-        if (!getAPAutoQuestFlag()) {
+        if (!autoQuestEnabled || !hasAutoQuestAccess()) {
             return;
         }
         var preferredQuests = [];
@@ -312,8 +329,8 @@ function initAutoQuest() {
     function overrideMethods() {
         const generateQuestListOld = App.game.quests.generateQuestList;
         App.game.quests.generateQuestList = function(...args) {
-            const res = generateQuestListOld.apply(this, ...args);
-            if (autoQuestEnabled && getAPAutoQuestFlag()) {
+            const res = generateQuestListOld.apply(this, args);
+            if (autoQuestEnabled && hasAutoQuestAccess()) {
                 refreshQuestSubscriptions();
             }
             return res;
@@ -322,13 +339,12 @@ function initAutoQuest() {
         // Preserve the original behavior to use when the script is disabled
         const canStartNewQuestOld = App.game.quests.canStartNewQuest;
         App.game.quests.canStartNewQuest = function(...args) {
-            const apEnabled = getAPAutoQuestFlag();
-            // If AP gating is OFF, defer entirely to the base game's logic
-            if (!apEnabled) {
+            // While gated, preserve the base game's quest slot behavior.
+            if (!hasAutoQuestAccess()) {
                 return canStartNewQuestOld.apply(this, args);
             }
 
-            // AP-enabled: allow up to `maxQuests` active slots
+            // With access, allow up to `maxQuests` active slots.
             const cap = maxQuests;
             if (this.currentQuests().length >= cap) {
                 return false;
@@ -474,6 +490,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('autoquestcompleter') === 'true') {
-    loadEpheniaScript('autoquestcompleter', initAutoQuest);
-}
+loadEpheniaScript('autoquestcompleter', initAutoQuest);

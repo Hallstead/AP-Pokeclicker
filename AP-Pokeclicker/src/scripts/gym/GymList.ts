@@ -25,7 +25,7 @@ GymList['Hallstead\'s Yacht'] = new Gym(
         BagHandler.gainItem({type: ItemType.item, id: 'Mystery_egg'}, 100);
         App.game.pokeballs.gainPokeballs(GameConstants.Pokeball.Masterball, 100, false);
         Notifier.notify({
-            message: 'You were awarded 100 Mystery Eggs and 100 Masterballs for defeating the Hallstead!',
+            message: 'You were awarded 100 Mystery Eggs and 100 Masterballs for defeating Hallstead!',
             type: NotificationConstants.NotificationOption.success,
             setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
         });
@@ -315,7 +315,11 @@ GymList['Violet City'] = new Gym(
     BadgeEnums.Zephyr,
     500,
     '...Darn! My Dad\'s cherished bird Pokémon... All right. Take this. It\'s the official Pokémon League Zephyr Badge.',
-    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Sprout Tower'))]
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Sprout Tower'))],
+    undefined,
+    undefined,
+    undefined,
+    [214]
 );
 GymList['Azalea Town'] = new Gym(
     'Bugsy',
@@ -328,7 +332,11 @@ GymList['Azalea Town'] = new Gym(
     BadgeEnums.Hive,
     1000,
     'Whoa, amazing! You\'re an expert on Pokémon! My research isn\'t complete yet. Ok, you win. Take this Badge.',
-    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Slowpoke Well'))]
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Slowpoke Well'))],
+    undefined,
+    undefined,
+    undefined,
+    [215]
 );
 GymList['Goldenrod City'] = new Gym(
     'Whitney',
@@ -340,7 +348,11 @@ GymList['Goldenrod City'] = new Gym(
     BadgeEnums.Plain,
     1500,
     '...Sniff... What? What do you want? A badge? Oh, right. I forgot. Here\'s the Plain Badge.',
-    [new RouteKillRequirement(10, GameConstants.Region.johto, 34)]
+    [new RouteKillRequirement(10, GameConstants.Region.johto, 34)],
+    undefined,
+    undefined,
+    undefined,
+    [216]
 );
 GymList['Ecruteak City'] = new Gym(
     'Morty',
@@ -358,7 +370,10 @@ GymList['Ecruteak City'] = new Gym(
     () => {
         App.game.quests.getQuestLine('Team Rocket Again').beginQuest(0, undefined, true);
         App.game.quests.getQuestLine('The Sick Ampharos').beginQuest(0, undefined, true);
-    }
+    },
+    undefined,
+    undefined,
+    [217]
 );
 GymList['Cianwood City'] = new Gym(
     'Chuck',
@@ -370,7 +385,11 @@ GymList['Cianwood City'] = new Gym(
     BadgeEnums.Storm,
     3500,
     'Wha? Huh? I lost? How about that! You\'re worthy of the Storm Badge!',
-    [new QuestLineStepCompletedRequirement('The Sick Ampharos', 2)]
+    [new QuestLineStepCompletedRequirement('The Sick Ampharos', 2)],
+    undefined,
+    undefined,
+    undefined,
+    [218]
 );
 GymList['Olivine City'] = new Gym(
     'Jasmine',
@@ -383,7 +402,11 @@ GymList['Olivine City'] = new Gym(
     BadgeEnums.Mineral,
     4000,
     '...You are a better trainer than me, in both skill and kindness. In accordance with League rules, I confer upon you this Badge.',
-    [new QuestLineCompletedRequirement('The Sick Ampharos')]
+    [new QuestLineCompletedRequirement('The Sick Ampharos')],
+    undefined,
+    undefined,
+    undefined,
+    [219]
 );
 GymList['Mahogany Town'] = new Gym(
     'Pryce',
@@ -396,7 +419,11 @@ GymList['Mahogany Town'] = new Gym(
     BadgeEnums.Glacier,
     5000,
     'Ah, I am impressed by your prowess. With your strong will, I know you will overcome all life\'s obstacles. You are worthy of this Badge!',
-    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Team Rocket\'s Hideout'))]
+    [new ClearDungeonRequirement(1, GameConstants.getDungeonIndex('Team Rocket\'s Hideout'))],
+    undefined,
+    undefined,
+    undefined,
+    [220]
 );
 GymList['Blackthorn City'] = new Gym(
     'Clair',
@@ -410,7 +437,11 @@ GymList['Blackthorn City'] = new Gym(
     BadgeEnums.Rising,
     7500,
     'Here, this is the Rising Badge... Hurry up! Take it!',
-    [new GymBadgeRequirement(BadgeEnums.Glacier)]
+    [new GymBadgeRequirement(BadgeEnums.Glacier)],
+    undefined,
+    undefined,
+    undefined,
+    [221]
 );
 
 //Johto Elite 4
@@ -427,7 +458,11 @@ GymList['Elite Will'] = new Gym(
     BadgeEnums.Elite_Will,
     10000,
     'Even though I was defeated, I won\'t change my course. I will continue battling until I stand above all Trainers! Now move on and experience the true ferocity of the Elite Four.',
-    [new TemporaryBattleRequirement('Silver 5')]
+    [new TemporaryBattleRequirement('Silver 5')],
+    undefined,
+    undefined,
+    undefined,
+    [222]
 );
 GymList['Elite Koga'] = new Gym(
     'Koga2',
@@ -443,7 +478,8 @@ GymList['Elite Koga'] = new Gym(
     10000,
     'I subjected you to everything I could muster. But my efforts failed. I must hone my skills. Go on to the next room, and put your abilities to the test!',
     [new GymBadgeRequirement(BadgeEnums.Elite_Will)],
-    undefined, undefined, { displayName: 'Elite Koga' }
+    undefined, undefined, { displayName: 'Elite Koga' },
+    [223]
 );
 GymList['Elite Bruno2'] = new Gym(
     'Bruno2',
@@ -459,7 +495,8 @@ GymList['Elite Bruno2'] = new Gym(
     10000,
     'Having lost, I have no right to say anything… Go face your next challenge!',
     [new GymBadgeRequirement(BadgeEnums.Elite_Koga)],
-    undefined, undefined, { displayName: 'Elite Bruno' }
+    undefined, undefined, { displayName: 'Elite Bruno' },
+    [224]
 );
 GymList['Elite Karen'] = new Gym(
     'Karen',
@@ -474,7 +511,11 @@ GymList['Elite Karen'] = new Gym(
     BadgeEnums.Elite_Karen,
     10000,
     'Strong Pokémon. Weak Pokémon. That is only the selfish perception of people. Truly skilled Trainers should try to win with the Pokémon they love best. I like your style. You understand what\'s important. Go on — — the Champion is waiting.',
-    [new GymBadgeRequirement(BadgeEnums.Elite_Bruno2)]
+    [new GymBadgeRequirement(BadgeEnums.Elite_Bruno2)],
+    undefined,
+    undefined,
+    undefined,
+    [225]
 );
 // Johto Champion
 GymList['Champion Lance'] = new Gym(
@@ -493,7 +534,9 @@ GymList['Champion Lance'] = new Gym(
     '…It\'s over. But it\'s an odd feeling. I\'m not angry that I lost. In fact, I feel happy. Happy that I witnessed the rise of a great new Champion!',
     [new GymBadgeRequirement(BadgeEnums.Elite_Karen)],
     () => {},
-    { champion: true }
+    { champion: true },
+    undefined,
+    [226]
 );
 
 // Hoenn Gyms

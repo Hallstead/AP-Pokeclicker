@@ -523,7 +523,7 @@ class Breeding implements Feature {
     }
 
     public getEggSlotCost(slot: number): number {
-        return 500 * slot;
+        return 500 * Math.max(slot - 1, 0);
     }
 
     public buyEggSlot(): void {
@@ -534,7 +534,10 @@ class Breeding implements Feature {
     }
 
     public nextEggSlotCost(): Amount {
-        return new Amount(this.getEggSlotCost(this.eggSlots + 1), GameConstants.Currency.questPoint);
+        // Slots from AP items don't count toward the price of purchasable slots
+        const extraSlots = (window as any).APFlags?.extraEggSlots || 0;
+        const purchasedSlots = Math.max(this.eggSlots - extraSlots, 0);
+        return new Amount(this.getEggSlotCost(purchasedSlots + 1), GameConstants.Currency.questPoint);
     }
 
     // Knockout getters/setters

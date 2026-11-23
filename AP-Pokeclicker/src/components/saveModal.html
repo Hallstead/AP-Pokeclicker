@@ -12,10 +12,10 @@
             <div class="modal-body">
                 <div id="saveTab">
                     <div id="codeEntry">
-                        <form class="form-inline input-group">
-                            <input class="outline-dark form-control" placeholder="Enter code..." id="redeemable-code-input" type="text" />
+                        <form id="redeemable-code-form" class="form-inline input-group">
+                            <input id="redeemable-code-input" class="outline-dark form-control" placeholder="Enter code..." type="text" />
                             <div class="input-group-append">
-                                <button class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
+                                <button id="redeemable-code-claim" class="btn btn-info" name="name" value="value" type="submit" onclick="RedeemableCodeController.enterCode(); return false;">Claim!</button>
                             </div>
                         </form>
                     </div>

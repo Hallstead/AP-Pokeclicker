@@ -1401,10 +1401,8 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('enhancedautoclicker') === 'true') {
-    if (!App.isUsingClient) {
-        // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
-        (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).EnhancedAutoClicker = EnhancedAutoClicker;
-    }
-    loadEpheniaScript('enhancedautoclicker', () => EnhancedAutoClicker.initAutoClicker(), () => EnhancedAutoClicker.initOverrides());
+if (!App.isUsingClient) {
+    // Necessary for userscript managers — fall back to the page window when unsafeWindow isn't present
+    (typeof unsafeWindow !== 'undefined' ? unsafeWindow : window).EnhancedAutoClicker = EnhancedAutoClicker;
 }
+loadEpheniaScript('enhancedautoclicker', () => EnhancedAutoClicker.initAutoClicker(), () => EnhancedAutoClicker.initOverrides());

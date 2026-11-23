@@ -175,6 +175,4 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('catchspeedadjuster') === 'true') {
-    loadEpheniaScript('catchspeedadjuster', initBallAdjust);
-}
+loadEpheniaScript('catchspeedadjuster', initBallAdjust);

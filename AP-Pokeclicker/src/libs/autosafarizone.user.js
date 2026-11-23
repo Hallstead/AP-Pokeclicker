@@ -44,6 +44,7 @@ function initAutoSafari() {
   GameHelper.enumNumbers(GameConstants.SafariTile).forEach((tile) => mapHasTileType[tile] = false);
   // To add delay to start of battles to avoid animation issues
   var inBattle = false;
+  var waitingForBattleModal = false;
 
   var autoSafariProcessId;
   var skipTicks = 0;
@@ -500,6 +501,32 @@ function initAutoSafari() {
   }
 
   function fightSafariPokemon() {
+    const battleModal = document.getElementById('safariBattleModal');
+
+    if (!battleModal) {
+        return;
+    }
+
+    const modalInstance = $(battleModal).data('bs.modal');
+
+    if (
+        !modalInstance ||
+        !modalInstance._isShown ||
+        modalInstance._isTransitioning
+    ) {
+        if (!waitingForBattleModal) {
+            waitingForBattleModal = true;
+
+            $(battleModal).one(
+                'shown.bs.modal.autoSafariGuard',
+                () => {
+                    waitingForBattleModal = false;
+                }
+            );
+        }
+
+        return;
+    }
     // TODO skip ticks proportional to animation speed
     const forceRunAway = !SafariBattle.enemy.shiny && (scriptState !== SCRIPT_STATES.encounters
         || (Safari.balls() == 1 && autoSafariPickItemsState && Safari.itemGrid().length > 0 && !forceSkipItems));
@@ -564,8 +591,56 @@ function initAutoSafari() {
       SafariBattle.throwBait();
     }
     // Flee if looking for specific pokemon or if gathering items before using the last safari ball
-    else if (forceRunAway || ((autoSafariSeekUncaught || autoSafariSeekContagious) && hasPrioritySpawns == 1 && !isPriority)) {
-      SafariBattle.run();
+    else if (
+        forceRunAway ||
+        (
+            (autoSafariSeekUncaught || autoSafariSeekContagious) &&
+            hasPrioritySpawns == 1 &&
+            !isPriority
+        )
+    ) {
+        if (autoSafariFastAnimationsState) {
+            const battleModal = document.getElementById('safariBattleModal');
+
+            if (battleModal) {
+                const modalInstance = $(battleModal).data('bs.modal');
+
+                // Modal is completely finished opening.
+                if (
+                    modalInstance &&
+                    modalInstance._isShown &&
+                    !modalInstance._isTransitioning
+                ) {
+                    waitingForBattleModal = false;
+                    SafariBattle.run();
+                    return;
+                }
+
+                // Modal is still opening. Wait for Bootstrap to
+                // tell us that the transition has finished.
+                if (!waitingForBattleModal) {
+                    waitingForBattleModal = true;
+
+                    $(battleModal).one(
+                        'shown.bs.modal.autoSafariRun',
+                        () => {
+                            waitingForBattleModal = false;
+
+                            if (
+                                Safari.inBattle() &&
+                                !SafariBattle.busy()
+                            ) {
+                                SafariBattle.run();
+                            }
+                        }
+                    );
+                }
+
+                return;
+            }
+        }
+
+        SafariBattle.run();
     }
     // Use rock/bait to increase catch chance
     else if (SafariBattle.enemy.angry === 0) {
@@ -624,10 +699,10 @@ function initAutoSafari() {
     // - Base factors match original script (anim: /5, move: /10)
     // - Each progressive tier t multiplies those bases by (1 + 1*t) for anim and (1 + 2*t) for move
     //   => animFactor = 5 * (1 + t), moveFactor = 10 * (1 + 2t)
-    const baseAnim = 3;
+    const baseAnim = 5;
     const baseMove = 10;
     const tiers = getAPAutoSafariProgressive();
-    const animFactor = tiers ? Math.floor(tiers / 2 + .5) : baseAnim; //baseAnim * Math.max(1, 1 + (tiers * 1));
+    const animFactor = tiers ? Math.floor(tiers) : baseAnim; //baseAnim * Math.max(1, 1 + (tiers * 1));
     const moveFactor = tiers ? tiers * 2 : baseMove; //baseMove * Math.max(1, 1 + (tiers * 2));
 
     for (const anim of Object.keys(SafariBattle.Speed)) {
@@ -686,6 +761,36 @@ function initAutoSafari() {
     if (getAPAutoSafariFlag() && autoSafariFastAnimationsState) {
       autoSafariFastAnimations();
     }
+  }
+  
+  // Disable fast animations whenever the player clicks during a Safari battle.
+  document.addEventListener('click', disableFastAnimationsOnBattleClick);
+
+  function disableFastAnimationsOnBattleClick() {
+    // Only react while a Safari battle is active.
+    if (!Safari.inBattle()) {
+      return;
+    }
+
+    // Nothing to do if fast animations are already off.
+    if (!autoSafariFastAnimationsState) {
+      return;
+    }
+
+    autoSafariFastAnimationsState = false;
+
+    const toggleButton = document.getElementById('auto-fast-anim-toggle');
+
+    if (toggleButton) {
+      toggleButton.classList.remove('btn-success');
+      toggleButton.classList.add('btn-danger');
+      toggleButton.innerHTML = 'Auto Fast Anim [OFF]';
+    }
+
+    localStorage.setItem('autoSafariFastAnimationsState', JSON.stringify(false));
+
+    // Restore the normal animation speeds.
+    autoSafariFastAnimations();
   }
 
   function toggleAutoSafari(allowDelayedStop = false) {
@@ -850,6 +955,5 @@ function loadEpheniaScript(scriptName, initFunction, priorityFunction) {
     }
 }
 
-if (!App.isUsingClient || localStorage.getItem('autosafarizone') === 'true') {
-  loadEpheniaScript('autosafarizone', initAutoSafari);
-}
+loadEpheniaScript('autosafarizone', initAutoSafari);
+

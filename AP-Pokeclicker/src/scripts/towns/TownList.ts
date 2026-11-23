@@ -1557,7 +1557,7 @@ const JohtoBerryMaster = new BerryMasterShop(GameConstants.BerryTraderLocations[
     ItemList.Freeze_Mulch,
     ItemList.Berry_Shovel,
     ItemList.Mulch_Shovel,
-    ItemList.Squirtbottle,
+    ItemList.AP_logo_Squirtbottle,
     ItemList.FarmHandBailey,
     ItemList.ChopleBerry,
     ItemList.KebiaBerry,

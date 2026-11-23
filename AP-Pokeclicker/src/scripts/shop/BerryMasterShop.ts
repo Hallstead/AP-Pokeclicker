@@ -10,8 +10,12 @@ class BerryMasterShop extends Shop {
         super(items, name, requirements);
     }
     public onclick(): void {
-        ShopHandler.showShop(this);
-        $('#berryMasterModal').modal('show');
+        let chain = this.replaceAPItemNames();
+
+        chain.then(() => {
+            ShopHandler.showShop(this);
+            $('#berryMasterModal').modal('show');
+        });
     }
 
     public amountInput = () => $('#berryMasterModal').find('input[name="amountOfItems"]');

@@ -2116,7 +2116,11 @@ dungeonList['Sprout Tower'] = new Dungeon('Sprout Tower',
                 ]),
             ])}),
     ],
-    2500, 31);
+    2500, 31,
+    undefined,
+    undefined,
+    [416]
+);
 
 // All Unown except "E?!"
 const AlphUnownList = 'ABCDFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -2178,7 +2182,11 @@ dungeonList['Ruins of Alph'] = new Dungeon('Ruins of Alph',
             hide: true,
         }),
     ],
-    3000, 32);
+    3000, 32,
+    undefined,
+    undefined,
+    [417]
+);
 
 dungeonList['Union Cave'] = new Dungeon('Union Cave',
     [
@@ -2241,7 +2249,11 @@ dungeonList['Union Cave'] = new Dungeon('Union Cave',
                 new DayOfWeekRequirement(GameConstants.DayOfWeek.Friday),
             ])}),
     ],
-    3000, 32);
+    3000, 32,
+    undefined,
+    undefined,
+    [418]
+);
 
 dungeonList['Slowpoke Well'] = new Dungeon('Slowpoke Well',
     [
@@ -2294,7 +2306,11 @@ dungeonList['Slowpoke Well'] = new Dungeon('Slowpoke Well',
             hide: true,
         }),
     ],
-    3500, 33);
+    3500, 33,
+    undefined,
+    undefined,
+    [419]
+);
 
 dungeonList['Ilex Forest'] = new Dungeon('Ilex Forest',
     [
@@ -2358,7 +2374,11 @@ dungeonList['Ilex Forest'] = new Dungeon('Ilex Forest',
             hide: true,
         }),
     ],
-    4000, 34);
+    4000, 34,
+    undefined,
+    undefined,
+    [420]
+);
 
 dungeonList['Burned Tower'] = new Dungeon('Burned Tower',
     ['Rattata', 'Raticate', 'Zubat', 'Koffing'],
@@ -2377,7 +2397,11 @@ dungeonList['Burned Tower'] = new Dungeon('Burned Tower',
     },
     88500,
     [new DungeonBossPokemon('Golbat', 360000, 35), new DungeonBossPokemon('Weezing', 320000, 35), new DungeonBossPokemon('Shuckle', 610000, 50)],
-    4500, 37);
+    4500, 37,
+    undefined,
+    undefined,
+    [421]
+);
 
 dungeonList['Olivine Lighthouse'] = new Dungeon('Olivine Lighthouse',
     [
@@ -2450,7 +2474,11 @@ dungeonList['Olivine Lighthouse'] = new Dungeon('Olivine Lighthouse',
                 new GymPokemon('Poliwhirl', 125000, 18),
             ], { weight: 1 }, 'Roberto'),
     ],
-    4500, 40);
+    4500, 40,
+    undefined,
+    undefined,
+    [422]
+);
 
 dungeonList['Tin Tower'] = new Dungeon('Tin Tower',
     ['Rattata', 'Gastly'],
@@ -2487,7 +2515,11 @@ dungeonList['Tin Tower'] = new Dungeon('Tin Tower',
             hide: true,
         }),
     ],
-    4500, 37);
+    4500, 37,
+    undefined,
+    undefined,
+    [423]
+);
 
 dungeonList['Whirl Islands'] = new Dungeon('Whirl Islands',
     ['Zubat', 'Golbat', 'Seel', 'Krabby', 'Horsea'],
@@ -2520,7 +2552,11 @@ dungeonList['Whirl Islands'] = new Dungeon('Whirl Islands',
             hide: true,
         }),
     ],
-    5000, 41);
+    5000, 41,
+    undefined,
+    undefined,
+    [424]
+);
 
 dungeonList['Mt. Mortar'] = new Dungeon('Mt. Mortar',
     [
@@ -2580,7 +2616,10 @@ dungeonList['Mt. Mortar'] = new Dungeon('Mt. Mortar',
             type: NotificationConstants.NotificationOption.success,
             setting: NotificationConstants.NotificationSetting.Dungeons.rare_dungeon_item_found,
         });
-    });
+    },
+    undefined,
+    [425]
+);
 
 dungeonList['Team Rocket\'s Hideout'] = new Dungeon('Team Rocket\'s Hideout',
     [
@@ -2682,7 +2721,11 @@ dungeonList['Team Rocket\'s Hideout'] = new Dungeon('Team Rocket\'s Hideout',
                 new GymPokemon('Murkrow', 140000, 25),
             ], { weight: 1 }, 'Ariana', '(ariana)'),
     ],
-    5500, 43);
+    5500, 43,
+    undefined,
+    undefined,
+    [426]
+);
 
 dungeonList['Radio Tower'] = new Dungeon('Radio Tower',
     [
@@ -2851,7 +2894,11 @@ dungeonList['Radio Tower'] = new Dungeon('Radio Tower',
                 new GymPokemon('Murkrow', 144000, 32),
             ], { weight: 1 }, 'Ariana', '(ariana)'),
     ],
-    5750, 43);
+    5750, 43,
+    undefined,
+    undefined,
+    [427]
+);
 
 dungeonList['Ice Path'] = new Dungeon('Ice Path',
     ['Zubat', 'Jynx', 'Swinub'],
@@ -2884,7 +2931,11 @@ dungeonList['Ice Path'] = new Dungeon('Ice Path',
             hide: true,
         }),
     ],
-    6000, 44);
+    6000, 44,
+    undefined,
+    undefined,
+    [428]
+);
 
 dungeonList['Dark Cave'] = new Dungeon('Dark Cave',
     ['Zubat', 'Golbat', 'Geodude', 'Graveler', 'Wobbuffet'],
@@ -2922,7 +2973,11 @@ dungeonList['Dark Cave'] = new Dungeon('Dark Cave',
                 ]),
             ])}),
     ],
-    6500, 45);
+    6500, 45,
+    undefined,
+    undefined,
+    [429]
+);
 
 dungeonList['Tohjo Falls'] = new Dungeon('Tohjo Falls',
     ['Rattata', 'Raticate', 'Zubat', 'Slowpoke', 'Goldeen', 'Magikarp'],
@@ -2948,7 +3003,11 @@ dungeonList['Tohjo Falls'] = new Dungeon('Tohjo Falls',
         new DungeonBossPokemon('Golbat', 480000, 55),
         new DungeonBossPokemon('Seaking', 480000, 55),
     ],
-    6750, 45);
+    6750, 45,
+    undefined,
+    undefined,
+    [430]
+);
 
 dungeonList['Victory Road Johto'] = new Dungeon('Victory Road Johto',
     ['Golbat', 'Graveler', 'Onix', 'Rhyhorn'],
@@ -2979,7 +3038,11 @@ dungeonList['Victory Road Johto'] = new Dungeon('Victory Road Johto',
         new DungeonBossPokemon('Sandslash', 500000, 55),
         new DungeonBossPokemon('Rhydon', 500000, 55),
     ],
-    7000, 26);
+    7000, 26,
+    undefined,
+    undefined,
+    [431]
+);
 
 dungeonList['Mt. Silver'] = new Dungeon('Mt. Silver',
     ['Ponyta', 'Doduo', 'Tangela', 'Sneasel', 'Ursaring', 'Donphan', 'Teddiursa', 'Phanpy', 'Quagsire', 'Misdreavus'],
@@ -3013,7 +3076,11 @@ dungeonList['Mt. Silver'] = new Dungeon('Mt. Silver',
     },
     130500,
     [new DungeonBossPokemon('Larvitar', 840000, 60)],
-    10000, 28);
+    10000, 28,
+    undefined,
+    undefined,
+    [432]
+);
 
 // Hoenn Dungeons
 

@@ -313,14 +313,14 @@ class MapHelper {
 
     public static travelToNextRegion() {
         if (MapHelper.ableToTravel()) {
-            (window as any).sendVictory();
-            (window as any).sendLocationCheck(1000000);
             // Gain queue slots based on highest region
             App.game.breeding.gainQueueSlot(App.game.breeding.queueSlotsGainedFromRegion(player.highestRegion()));
             GameHelper.incrementObservable(player.highestRegion);
             player.highestSubRegion(0);
             MapHelper.moveToTown(GameConstants.StartingTowns[player.highestRegion()]);
             player.region = player.highestRegion();
+            // Send location check for travel to next region
+            (window as any).sendLocationCheck(1000000 + player.region - 1);
             // Update hatchery region filter to include new region if all previous regions selected
             const previousRegionFullMask = (2 << (player.highestRegion() - 1)) - 1;
             const regionFilterMask = Settings.getSetting('breedingRegionFilter').value & previousRegionFullMask;
