@@ -737,7 +737,7 @@ def safari_zone(world: World, state: CollectionState):
     quest_points = can_get_quest_point(world, state)
     
     if world.options.safari_zone_logic.value and world.options.use_scripts.value:
-        return has_safari_ticket and quest_points and (state.count("Auto Safari Zone", world.player) > 0 or state.count("Auto Safari Zone (Progressive Fast Animations)", world.player) > 0)
+        return has_safari_ticket and quest_points and (state.count("Auto Safari Zone Script", world.player) > 0 or state.count("Auto Safari Zone Script (Progressive Fast Animations)", world.player) > 0)
     else:
         return has_safari_ticket and quest_points
 
@@ -2051,13 +2051,17 @@ def egg_hunt1(world: World, state: CollectionState):
     """Checks if the second step of the Easter Egg Hunt questline can be completed."""
     return egg_hunt0(world, state) and ilex_forest(world, state)
 
-def egg_hunt23(world: World, state: CollectionState): 
+def egg_hunt2(world: World, state: CollectionState): 
     """Checks if the third step of the Easter Egg Hunt questline can be completed."""
     return egg_hunt1(world, state) # and petalburg_woods(world, state)
 
+def egg_hunt3(world: World, state: CollectionState):
+    """Checks if the fourth step of the Easter Egg Hunt questline can be completed."""
+    return egg_hunt2(world, state)
+
 def completed_egg_hunt(world: World, state: CollectionState):
     """Checks if the Easter Egg Hunt questline has been completed."""
-    return egg_hunt23(world, state)
+    return egg_hunt3(world, state)
 
 # def started_detective_pikachu(world: World, state: CollectionState):
 #     """Checks if the player has started the Detective Pikachu questline."""
@@ -2187,10 +2191,10 @@ def get_click_attack(world: World, state: CollectionState, num_pokemon: int) -> 
 def attack_needed(world: World, state: CollectionState, attack: int, region: str = "Kanto"):
     """Checks if the player's expected current party attack is at least X."""
     num_pokemon = state.count_group("Pokemon", world.player) #len(get_catchable_pokemon(world, state))
-    auto_clicker_count = state.count("Enhanced Auto Clicker", world.player)
+    auto_clicker_count = state.has("Enhanced Auto Clicker Script", world.player)
     if world.options.use_scripts.value and not world.options.include_scripts_as_items.value:
         auto_clicker_count = 1
-    progressive_auto_clicker_count = state.count("Enhanced Auto Clicker (Progressive Clicks/Second)", world.player)
+    progressive_auto_clicker_count = state.count("Enhanced Auto Clicker Script (Progressive Clicks/Second)", world.player)
     if progressive_auto_clicker_count > 0:
         auto_clicker_count = 0
     clicks_per_second = max(world.options.clicks_per_second.value, auto_clicker_count * 100, progressive_auto_clicker_count * 20)
