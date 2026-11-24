@@ -2,7 +2,7 @@ import { Saveable } from '../DataStore/common/Saveable';
 import * as GameConstants from '../GameConstants';
 import BerryType from '../enums/BerryType';
 import {
-    Currency, MegaStoneType, Pokeball, Region, VitaminType,
+    Currency, MegaStoneType, Region, VitaminType,
 } from '../GameConstants';
 import { ItemList } from '../items/ItemList';
 import KeyItemType from '../enums/KeyItemType';

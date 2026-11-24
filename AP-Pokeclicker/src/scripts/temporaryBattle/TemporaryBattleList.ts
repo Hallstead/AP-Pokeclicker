@@ -821,7 +821,7 @@ TemporaryBattleList.Red = new TemporaryBattle(
             });
         },
         resetDaily: true,
-        returnTown: 'Mt. Silver'
+        returnTown: 'Mt. Silver',
     },
     [740]
 );
@@ -955,7 +955,7 @@ TemporaryBattleList['Kecleon 1'] = new TemporaryBattle(
         hideTrainer: true,
         visibleRequirement: new RouteKillRequirement(10, GameConstants.Region.hoenn, 119),
     }
-); 
+);
 TemporaryBattleList['Kecleon 2'] = new TemporaryBattle(
     'Kecleon 2',
     [new GymPokemon('Kecleon', 7000000, 20)],
