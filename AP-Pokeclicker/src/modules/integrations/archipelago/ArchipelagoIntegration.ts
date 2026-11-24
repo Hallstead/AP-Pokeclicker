@@ -38,6 +38,9 @@ class ArchipelagoIntegrationModule {
     private preferLoginCall: { server: string; player: string; game: string; password?: string } | null = null;
     private nowItems: {};
 
+    // Packets must run one at a time; the async storage fetch on a sync packet would otherwise race with later packets.
+    private packetQueue: Promise<void> = Promise.resolve();
+
     // Wait until the legacy game is ready (App.game exists). Returns true if ready, false if timed out.
     private async waitForGameReady(timeoutMs = 10000, intervalMs = 100): Promise<boolean> {
         const start = Date.now();
@@ -144,7 +147,6 @@ class ArchipelagoIntegrationModule {
                 return;
             }
 
-            console.log(!!(window as any).APFlags.get('regional_attack_debuff'));
             App.game.challenges.list.regionalAttackDebuff.active(!!(window as any).APFlags.get('regional_attack_debuff'));
             App.game.challenges.list.requireCompletePokedex.active(!!(window as any).APFlags.get('require_complete_pokedex'));
             App.game.challenges.list.disableClickAttack.active(!!(window as any).APFlags.get('no_click_attack'));
@@ -221,6 +223,7 @@ class ArchipelagoIntegrationModule {
 
         type GameOptions = {
             dexsanity: number,
+            include_alt_pokemon: boolean,
             use_scripts: number,
             include_scripts_as_items: number,
             progressive_autoclicker: number,
@@ -255,6 +258,7 @@ class ArchipelagoIntegrationModule {
         };
         let options: GameOptions = {
             dexsanity: 0,
+            include_alt_pokemon: false,
             use_scripts: 0,
             include_scripts_as_items: 0,
             progressive_autoclicker: 0,
@@ -603,9 +607,6 @@ class ArchipelagoIntegrationModule {
             this.connected = false;
         }
     }
-
-    // Packets must run one at a time; the async storage fetch on a sync packet would otherwise race with later packets.
-    private packetQueue: Promise<void> = Promise.resolve();
 
     public processItemPacket(items: APItem[], startingIndex: number): Promise<void> {
         this.packetQueue = this.packetQueue
