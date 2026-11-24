@@ -2191,7 +2191,7 @@ def get_click_attack(world: World, state: CollectionState, num_pokemon: int) -> 
 def attack_needed(world: World, state: CollectionState, attack: int, region: str = "Kanto"):
     """Checks if the player's expected current party attack is at least X."""
     num_pokemon = state.count_group("Pokemon", world.player) #len(get_catchable_pokemon(world, state))
-    auto_clicker_count = state.has("Enhanced Auto Clicker Script", world.player)
+    auto_clicker_count = state.count("Enhanced Auto Clicker Script", world.player)
     if world.options.use_scripts.value and not world.options.include_scripts_as_items.value:
         auto_clicker_count = 1
     progressive_auto_clicker_count = state.count("Enhanced Auto Clicker Script (Progressive Clicks/Second)", world.player)
