@@ -31,7 +31,7 @@ class Shop extends TownContent {
         return chain;
     }
     public onclick(): void {
-        let chain = this.replaceAPItemNames();
+        const chain = this.replaceAPItemNames();
 
         // After ALL async renames:
         chain.then(() => {

@@ -25,7 +25,6 @@ import SeededRand from '../utilities/SeededRand';
 import ItemOwnedRequirement from '../requirements/ItemOwnedRequirement';
 import SpecialEventRequirement from '../requirements/SpecialEventRequirement';
 import StatisticRequirement from '../requirements/StatisticRequirement';
-import PokemonLevelRequirement from '../requirements/PokemonLevelRequirement';
 import { getPokemonByName } from '../pokemons/PokemonHelper';
 import CustomRequirement from '../requirements/CustomRequirement';
 

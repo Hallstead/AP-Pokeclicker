@@ -10,7 +10,7 @@ class BerryMasterShop extends Shop {
         super(items, name, requirements);
     }
     public onclick(): void {
-        let chain = this.replaceAPItemNames();
+        const chain = this.replaceAPItemNames();
 
         chain.then(() => {
             ShopHandler.showShop(this);
